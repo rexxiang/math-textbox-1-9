@@ -1,0 +1,68 @@
+name: Build PDF and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-lang-chinese texlive-fonts-recommended texlive-fonts-extra lmodern fonts-noto-cjk
+
+      - name: Convert Markdown to PDF
+        run: |
+          mkdir -p output
+
+          for file in 00-导读与目录.md 01-数与运算.md 02-代数.md 03-几何.md 04-统计与概率.md; do
+            basename="${file%.md}"
+            echo "Converting $file to PDF..."
+            pandoc "$file" \
+              -o "output/${basename}.pdf" \
+              --pdf-engine=xelatex \
+              -V CJKmainfont="Noto Serif CJK SC" \
+              -V CJKsansfont="Noto Sans CJK SC" \
+              -V CJKmonofont="Noto Sans Mono CJK SC" \
+              -V mainfont="Noto Serif CJK SC" \
+              -V sansfont="Noto Sans CJK SC" \
+              -V monofont="Noto Sans Mono CJK SC" \
+              -V geometry:margin=1in \
+              -V fontsize=11pt \
+              -V documentclass=report \
+              --toc \
+              --toc-depth=3 \
+              -V colorlinks=true \
+              -V linkcolor=blue \
+              -V urlcolor=blue \
+              --highlight-style=tango
+          done
+
+          echo "All PDFs generated successfully."
+          ls -lh output/
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: math-textbook-pdfs
+          path: output/*.pdf
+
+      - name: Create Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: output/*.pdf
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
