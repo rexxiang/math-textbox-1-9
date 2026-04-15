@@ -10,25 +10,26 @@
 \subsection*{整体脉络}
 
 
-```
-§4.1 数据的收集与整理
-  │  收集数据 → 统计表 → 统计图（条形图、折线图、扇形图）
-  ▼
-§4.2 平均数、中位数与众数
-  │  用一个数代表一组数据的"中心"
-  ▼
-§4.3 数据的波动程度
-  │  用极差和方差衡量数据的离散程度
-  ▼
-§4.4 频率分布直方图与频率分布表
-  │  把大量数据分组，了解数据的分布
-  ▼
-§4.5 概率初步
-  │  度量随机事件发生的可能性大小
-  ▼
-§4.6 总体与样本
-     用样本推断总体 —— 统计推断的核心思想
-```
+\begin{center}
+\begin{tikzpicture}[
+  node distance=6mm and 0mm,
+  every node/.style={font=\small},
+  box/.style={draw, rounded corners, fill=blue!8, text width=9cm, align=left, inner sep=4pt},
+  arrow/.style={->, thick, blue!60},
+]
+\node[box] (n1) {\textbf{§4.1 数据的收集与整理}\\收集数据 $\to$ 统计表 $\to$ 统计图（条形图、折线图、扇形图）};
+\node[box, below=of n1] (n2) {\textbf{§4.2 平均数、中位数与众数}\\用一个数代表一组数据的"中心"};
+\node[box, below=of n2] (n3) {\textbf{§4.3 数据的波动程度}\\用极差和方差衡量数据的离散程度};
+\node[box, below=of n3] (n4) {\textbf{§4.4 频率分布直方图与频率分布表}\\把大量数据分组，了解数据的分布};
+\node[box, below=of n4] (n5) {\textbf{§4.5 概率初步}\\度量随机事件发生的可能性大小};
+\node[box, below=of n5] (n6) {\textbf{§4.6 总体与样本}\\用样本推断总体——统计推断的核心思想};
+\draw[arrow] (n1) -- (n2);
+\draw[arrow] (n2) -- (n3);
+\draw[arrow] (n3) -- (n4);
+\draw[arrow] (n4) -- (n5);
+\draw[arrow] (n5) -- (n6);
+\end{tikzpicture}
+\end{center}
 
 \subsection*{核心公式汇总}
 

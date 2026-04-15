@@ -129,8 +129,7 @@ $n = 10$
 
 \textbf{平行四边形}：两组对边分别平行的四边形叫做平行四边形。平行四边形 $ABCD$ 记作 $\square ABCD$ 。
 
-\begin{figure}[htbp]
-\centering
+\begin{center}
 \begin{tikzpicture}[every node/.style={font=\small}]
   \coordinate (A) at (0,0);
   \coordinate (B) at (3.5,0);
@@ -156,9 +155,9 @@ $n = 10$
   \draw ($(A)!0.5!(D)$)++(0:0.12)--++(-0.24,0);
   \draw ($(B)!0.5!(C)$)++(0:0.12)--++(-0.24,0);
 \end{tikzpicture}
-\caption{平行四边形 $ABCD$：对角线 $AC$ 和 $BD$ 互相平分于点 $O$}
+\captionof{figure}{平行四边形 $ABCD$：对角线 $AC$ 和 $BD$ 互相平分于点 $O$}
 \label{fig:parallelogram}
-\end{figure}
+\end{center}
 
 
 \textbf{平行四边形的性质}：
@@ -438,8 +437,7 @@ $S = 4 \times \dfrac{1}{2} \times \dfrac{d_1}{2} \times \dfrac{d_2}{2} = \dfrac{
 
 \textbf{梯形}：只有一组对边平行的四边形叫做梯形。平行的两条边叫做\textbf{上底}和\textbf{下底}（短的为上底，长的为下底），不平行的两条边叫做\textbf{腰}。
 
-\begin{figure}[htbp]
-\centering
+\begin{center}
 \begin{tikzpicture}[every node/.style={font=\small}]
   \coordinate (A) at (0,0);
   \coordinate (B) at (4.5,0);
@@ -456,9 +454,9 @@ $S = 4 \times \dfrac{1}{2} \times \dfrac{d_1}{2} \times \dfrac{d_2}{2} = \dfrac{
   \node[below] at ($(A)!0.5!(B)$) {$AB$（下底）};
   \node[above] at ($(D)!0.5!(C)$) {$DC$（上底）};
 \end{tikzpicture}
-\caption{梯形：$AB \parallel DC$，$AB$ 为下底，$DC$ 为上底，$AD$、$BC$ 为两腰}
+\captionof{figure}{梯形：$AB \parallel DC$，$AB$ 为下底，$DC$ 为上底，$AD$、$BC$ 为两腰}
 \label{fig:trapezoid}
-\end{figure}
+\end{center}
 
 
 \textbf{等腰梯形}：两腰相等的梯形叫做等腰梯形。
@@ -504,8 +502,7 @@ S = \frac{1}{2}(a + b) \times h
 \textbf{解：}
 过 $A$ 、 $D$ 分别作 $BC$ 的垂线，垂足分别为 $E$ 、 $F$ 。
 
-\begin{figure}[htbp]
-\centering
+\begin{center}
 \begin{tikzpicture}[every node/.style={font=\small}]
   \coordinate (A) at (0,0);
   \coordinate (B) at (4.5,0);
@@ -528,9 +525,9 @@ S = \frac{1}{2}(a + b) \times h
   % Lower base label
   \draw[<->, >=Stealth, thin] (0,-0.4) -- (4.5,-0.4) node[midway,below] {$a$（下底）};
 \end{tikzpicture}
-\caption{梯形面积 $S = \dfrac{(a+b) \cdot h}{2}$，$h$ 为两底之间的距离（高）}
+\captionof{figure}{梯形面积 $S = \dfrac{(a+b) \cdot h}{2}$，$h$ 为两底之间的距离（高）}
 \label{fig:trapezoid-height}
-\end{figure}
+\end{center}
 
 
 因为 $AEFD$ 是矩形（ $AE \perp BC$ ， $DF \perp BC$ ， $AD \parallel BC$ ），所以 $EF = AD = 4$ cm。
@@ -603,8 +600,7 @@ $AD = EF = BC - BE - CF = 12 - 2 - 2 = 8$ cm。
 \begin{understand}
 
 
-\begin{figure}[htbp]
-\centering
+\begin{center}
 \begin{tikzpicture}[
   every node/.style={draw, rounded corners, align=center, font=\small,
                      minimum width=2.4cm, minimum height=0.7cm, fill=white},
@@ -620,22 +616,35 @@ $AD = EF = BC - BE - CF = 12 - 2 - 2 = 8$ cm。
     }
     child { node {梯形\\（一组平行）} };
 \end{tikzpicture}
-\caption{四边形家族关系（从上到下为特殊化关系）}
+\captionof{figure}{四边形家族关系（从上到下为特殊化关系）}
 \label{fig:quadrilateral-family}
-\end{figure}
+\end{center}
 
 
 四边形的家族层级：
 
-```
-            四边形
-           /      \
-       梯形     平行四边形
-       |        /       \
-    等腰梯形  矩形      菱形
-                \       /
-                正方形
-```
+\begin{center}
+\begin{tikzpicture}[
+  every node/.style={draw, rounded corners, fill=orange!10, font=\small, inner sep=3pt},
+  arr/.style={->, thick, gray!60},
+  node distance=7mm and 14mm,
+]
+\node (quad) {四边形};
+\node[below left=8mm and 14mm of quad] (trap) {梯形};
+\node[below right=8mm and 14mm of quad] (para) {平行四边形};
+\node[below=8mm of trap] (itrap) {等腰梯形};
+\node[below left=8mm and 8mm of para] (rect) {矩形};
+\node[below right=8mm and 8mm of para] (rhom) {菱形};
+\node[below right=8mm and 0mm of rect] (sq) {正方形};
+\draw[arr] (quad) -- (trap);
+\draw[arr] (quad) -- (para);
+\draw[arr] (trap) -- (itrap);
+\draw[arr] (para) -- (rect);
+\draw[arr] (para) -- (rhom);
+\draw[arr] (rect) -- (sq);
+\draw[arr] (rhom) -- (sq);
+\end{tikzpicture}
+\end{center}
 
 \begin{itemize}
   \item \textbf{平行四边形} $\xrightarrow{+\text{一个直角}}$ \textbf{矩形}

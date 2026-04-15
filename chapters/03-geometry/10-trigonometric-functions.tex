@@ -24,8 +24,7 @@
 
 在直角三角形中，设一个锐角为 $\angle A$ ，则：
 
-\begin{figure}[htbp]
-\centering
+\begin{center}
 \begin{tikzpicture}[every node/.style={font=\small}, scale=1.0]
   \coordinate (C) at (0,0);
   \coordinate (A) at (4,0);
@@ -50,9 +49,9 @@
      \cos\alpha = \dfrac{\text{邻边}}{\text{斜边}},\quad
      \tan\alpha = \dfrac{\text{对边}}{\text{邻边}}$};
 \end{tikzpicture}
-\caption{锐角三角函数定义（以直角三角形中 $\angle C = \alpha$ 为例）}
+\captionof{figure}{锐角三角函数定义（以直角三角形中 $\angle C = \alpha$ 为例）}
 \label{fig:trig-definition}
-\end{figure}
+\end{center}
 
 
 \[
@@ -171,8 +170,7 @@ $AB = \sqrt{BC^2 + AC^2} = \sqrt{36 + 144} = \sqrt{180} = 6\sqrt{5}$ 。
 
 \textbf{ $30°$ 和 $60°$ 角}：将一个等边三角形沿高对折，得到含 $30°$ 和 $60°$ 角的直角三角形。设等边三角形边长为 $2$ ，则短直角边（ $30°$ 对边） $= 1$ ，长直角边（ $60°$ 对边） $= \sqrt{3}$ ，斜边 $= 2$ 。
 
-\begin{figure}[htbp]
-\centering
+\begin{center}
 \begin{tikzpicture}[every node/.style={font=\small}, scale=0.9]
   % 30-60-90 triangle (left)
   \begin{scope}
@@ -206,9 +204,9 @@ $AB = \sqrt{BC^2 + AC^2} = \sqrt{36 + 144} = \sqrt{180} = 6\sqrt{5}$ 。
     \node[above left, rotate=45] at (1,1) {$\sqrt{2}$};
   \end{scope}
 \end{tikzpicture}
-\caption{特殊角三角函数的精确值（$30°$-$60°$-$90°$ 和 $45°$-$45°$-$90°$ 三角形）}
+\captionof{figure}{特殊角三角函数的精确值（$30°$-$60°$-$90°$ 和 $45°$-$45°$-$90°$ 三角形）}
 \label{fig:special-angles-trig}
-\end{figure}
+\end{center}
 
 
 \[
@@ -520,8 +518,7 @@ $\cos 60° = \dfrac{d}{l}$ ， $d = l \cos 60° = 8\sqrt{3} \times \dfrac{1}{2} 
 
 从水平线向下看某个目标的角度叫做\textbf{俯角}（depression angle）。
 
-\begin{figure}[htbp]
-\centering
+\begin{center}
 \begin{tikzpicture}[every node/.style={font=\small}]
   % Observer at O
   \coordinate (O) at (0,0);
@@ -543,9 +540,9 @@ $\cos 60° = \dfrac{d}{l}$ ， $d = l \cos 60° = 8\sqrt{3} \times \dfrac{1}{2} 
     (0:1.2) arc[start angle=0,end angle={-atan2(1.8,4)},radius=1.2];
   \node[blue!70!black] at ({-atan2(1.8,4)/2}:1.7) {俯角 $\phi$};
 \end{tikzpicture}
-\caption{仰角与俯角：从水平视线分别向上（仰角）和向下（俯角）量起}
+\captionof{figure}{仰角与俯角：从水平视线分别向上（仰角）和向下（俯角）量起}
 \label{fig:elevation-depression}
-\end{figure}
+\end{center}
 
 
 \textbf{坡度}：
@@ -577,8 +574,7 @@ $\tan 45° = \dfrac{h}{50}$ ， $1 = \dfrac{h}{50}$ ， $h = 50$ m。
 
 \textbf{例 2.} 从山顶测得山脚处一棵树底部的俯角为 $60°$ ，树顶的俯角为 $45°$ 。山高 $100$ m。求树的高度。
 
-\begin{figure}[htbp]
-\centering
+\begin{center}
 \begin{tikzpicture}[every node/.style={font=\small}, scale=0.85]
   % Building
   \draw[main line] (0,0) -- (0,4) -- (0.5,4) -- (0.5,0) -- cycle;
@@ -605,9 +601,9 @@ $\tan 45° = \dfrac{h}{50}$ ， $1 = \dfrac{h}{50}$ ， $h = 50$ m。
   \draw[<->, >=Stealth, thin] (0.25,-0.5) -- (4,-0.5) node[midway,below] {$d$};
   \node[font=\scriptsize] at (2.5,2) {$\tan\alpha = \dfrac{h}{d}$};
 \end{tikzpicture}
-\caption{俯角例题：$\tan\alpha = h/d$，已知两量可求第三量}
+\captionof{figure}{俯角例题：$\tan\alpha = h/d$，已知两量可求第三量}
 \label{fig:depression-angle-ex}
-\end{figure}
+\end{center}
 
 
 \textbf{解：}

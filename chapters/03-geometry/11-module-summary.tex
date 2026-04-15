@@ -162,20 +162,32 @@ V - E + F = 2
 \subsection*{全景图}
 
 
-```
-              §3.1 点线面
-                  |
-              §3.2 角
-                  |
-           §3.3 平行与垂直
-            /         \
-     §3.4 三角形    §3.8 图形变换
-      /    |    \
-§3.5 四边形  §3.7 勾股定理  §3.6 圆
-              |
-        §3.9 坐标几何
-              |
-       §3.10 三角函数
-```
+\begin{center}
+\begin{tikzpicture}[
+  every node/.style={draw, rounded corners, fill=green!8, font=\small, inner sep=3pt, text centered},
+  arr/.style={->, thick, gray!70},
+  node distance=7mm and 12mm,
+]
+\node (n1) {§3.1 点线面};
+\node[below=of n1] (n2) {§3.2 角};
+\node[below=of n2] (n3) {§3.3 平行与垂直};
+\node[below left=10mm and 15mm of n3] (n4) {§3.4 三角形};
+\node[below right=10mm and 15mm of n3] (n8) {§3.8 图形变换};
+\node[below left=8mm and 8mm of n4] (n5) {§3.5 四边形};
+\node[below=8mm of n4] (n7) {§3.7 勾股定理};
+\node[below right=8mm and 8mm of n4] (n6) {§3.6 圆};
+\node[below=8mm of n7] (n9) {§3.9 坐标几何};
+\node[below=8mm of n9] (n10) {§3.10 三角函数};
+\draw[arr] (n1) -- (n2);
+\draw[arr] (n2) -- (n3);
+\draw[arr] (n3) -- (n4);
+\draw[arr] (n3) -- (n8);
+\draw[arr] (n4) -- (n5);
+\draw[arr] (n4) -- (n7);
+\draw[arr] (n4) -- (n6);
+\draw[arr] (n7) -- (n9);
+\draw[arr] (n9) -- (n10);
+\end{tikzpicture}
+\end{center}
 
 每一章都建立在前面章节的基础上，同时又为后续的学习做好准备。回顾这条知识链，你会发现几何的发展脉络清晰而自然：从最朴素的"点线面"概念出发，经过图形性质的探索，最终用代数工具将几何问题"数值化"——这正是数学发展的缩影。

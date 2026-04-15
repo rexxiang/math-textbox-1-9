@@ -22,8 +22,7 @@
 
 在平面上画两条互相垂直且有公共原点的数轴，就构成了\textbf{平面直角坐标系}（笛卡尔坐标系）。
 
-\begin{figure}[htbp]
-\centering
+\begin{center}
 \begin{tikzpicture}[every node/.style={font=\small}, scale=0.8]
   % Axes
   \draw[ray arrow] (-3.3,0) -- (3.5,0) node[right] {$x$};
@@ -51,9 +50,9 @@
   \node[font=\scriptsize, gray] at (-2,-1.5) {第三象限};
   \node[font=\scriptsize, gray] at (2,-1.5) {第四象限};
 \end{tikzpicture}
-\caption{直角坐标系：点 $P(x,y)$ 由横坐标 $x$ 和纵坐标 $y$ 唯一确定}
+\captionof{figure}{直角坐标系：点 $P(x,y)$ 由横坐标 $x$ 和纵坐标 $y$ 唯一确定}
 \label{fig:cartesian-plane}
-\end{figure}
+\end{center}
 
 
 \begin{itemize}
@@ -384,7 +383,7 @@ $R(-a, -b)$ 就是 $P(a, b)$ 关于原点的对称点。
 
 
 \begin{enumerate}
-  \item 点 $M(-5, 2)$ 关于 $x$ 轴的对称点是_____，关于 $y$ 轴的对称点是_____，关于原点的对称点是_____。
+  \item 点 $M(-5, 2)$ 关于 $x$ 轴的对称点是\underline{\hspace{2cm}}，关于 $y$ 轴的对称点是\underline{\hspace{2cm}}，关于原点的对称点是\underline{\hspace{2cm}}。
   \item 直线 $y = x + 2$ 关于 $x$ 轴对称后的方程是什么？
 \end{enumerate}
 
@@ -415,8 +414,7 @@ AB = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
 \]
 
 
-\begin{figure}[htbp]
-\centering
+\begin{center}
 \begin{tikzpicture}[every node/.style={font=\small}, scale=0.9]
   \coordinate (A) at (0,0);
   \coordinate (B) at (4,3);
@@ -438,9 +436,9 @@ AB = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
   \node[above left, rotate={atan2(3,4)}] at (2,1.5)
     {$d = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$};
 \end{tikzpicture}
-\caption{两点间距离公式：$|AB| = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$}
+\captionof{figure}{两点间距离公式：$|AB| = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$}
 \label{fig:distance-formula}
-\end{figure}
+\end{center}
 
 
 推导：过 $A$ 、 $B$ 分别作坐标轴的平行线，构成直角三角形。水平距离 $= \lvert x_2 - x_1 \rvert$ ，竖直距离 $= \lvert y_2 - y_1 \rvert$ 。由勾股定理：

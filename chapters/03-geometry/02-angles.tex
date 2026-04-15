@@ -22,7 +22,24 @@
 
 \textbf{角}是从同一个点出发的两条射线所组成的图形。这个公共端点叫做\textbf{顶点}，两条射线叫做角的\textbf{两条边}。
 
-% TODO-TikZ: 角的基本结构 (was: ../assets/03-geometry/angle-basic.svg)
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small}]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (150:2.8);
+  \coordinate (B) at (30:2.8);
+
+  \draw[ray arrow] (O) -- (A) node[above left] {$A$};
+  \draw[ray arrow] (O) -- (B) node[right] {$B$};
+  \node[below] at (O) {$O$};
+
+  % Arc: endpoints precisely on rays at radius 1
+  \draw[angle arc] (30:1) arc[start angle=30, end angle=150, radius=1];
+  % Label in center of angle, above arc
+  \node at (90:1.35) {$\angle AOB$};
+\end{tikzpicture}
+\captionof{figure}{角 $\angle AOB$：顶点 $O$，两边分别是射线 $OA$ 和射线 $OB$}
+\label{fig:angle-basic}
+\end{center}
 
 
 角的表示方法有三种：
@@ -159,7 +176,41 @@ $30'36'' = 30.6' = \dfrac{30.6}{60}° = 0.51°$
 \end{center}
 
 
-% TODO-TikZ: 各类角的示意图 (was: ../assets/03-geometry/angle-types.svg)
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small}, scale=0.85]
+  % Acute (40°)
+  \begin{scope}[xshift=0cm]
+    \draw[ray arrow] (0,0) -- (2.2,0);
+    \draw[ray arrow] (0,0) -- (40:2.2);
+    \draw[angle arc] (0:0.65) arc[start angle=0,end angle=40,radius=0.65];
+    \node at (20:0.95) {$40°$};
+    \node[below] at (1.1,-0.4) {锐角};
+  \end{scope}
+  % Right angle (90°)
+  \begin{scope}[xshift=3.2cm]
+    \draw[ray arrow] (0,0) -- (2.2,0);
+    \draw[ray arrow] (0,0) -- (90:2.2);
+    \draw (0.35,0) -- (0.35,0.35) -- (0,0.35);
+    \node[below] at (1.1,-0.4) {直角};
+  \end{scope}
+  % Obtuse (130°)
+  \begin{scope}[xshift=6.4cm]
+    \draw[ray arrow] (0,0) -- (2.2,0);
+    \draw[ray arrow] (0,0) -- (130:2.2);
+    \draw[angle arc] (0:0.65) arc[start angle=0,end angle=130,radius=0.65];
+    \node at (65:0.95) {$130°$};
+    \node[below] at (1.1,-0.4) {钝角};
+  \end{scope}
+  % Straight angle (180°)
+  \begin{scope}[xshift=9.6cm]
+    \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick] (-1.1,0) -- (1.1,0);
+    \fill (0,0) circle (2pt);
+    \node[below] at (0,-0.4) {平角 $180°$};
+  \end{scope}
+\end{tikzpicture}
+\captionof{figure}{角的分类：锐角、直角、钝角与平角}
+\label{fig:angle-types}
+\end{center}
 
 
 直角在图形中用一个小正方形标记来表示。
@@ -324,7 +375,26 @@ $\alpha = 45°$
 
 两条直线相交，形成两对\textbf{对顶角}。对顶角是指：两个角的顶点相同，且每个角的两条边分别是另一个角的两条边的反向延长线。
 
-% TODO-TikZ: 对顶角示意图 (was: ../assets/03-geometry/vertical-angles.svg)
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small}]
+  % Two intersecting lines
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick] (-2,0.8) -- (2,-0.8)
+    node[right] {$B$};
+  \node[left] at (-2,0.8) {$A$};
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick] (-1.8,-1) -- (1.8,1)
+    node[right] {$D$};
+  \node[left] at (-1.8,-1) {$C$};
+  \coordinate (O) at (0,0);
+  \fill (O) circle (2pt) node[above right] {$O$};
+  % Label the 4 angles
+  \node[mathred] at (0.8, 0.15) {$\angle 1$};
+  \node at (0.1, -0.6) {$\angle 2$};
+  \node[mathred] at (-0.8,-0.15) {$\angle 3$};
+  \node at (-0.1, 0.6) {$\angle 4$};
+\end{tikzpicture}
+\captionof{figure}{对顶角：$\angle 1 = \angle 3$（对顶角相等），$\angle 2 = \angle 4$}
+\label{fig:vertical-angles}
+\end{center}
 
 
 如图，直线 $AB$ 和直线 $CD$ 相交于点 $O$ ，则 $\angle 1$ 和 $\angle 3$ 是对顶角， $\angle 2$ 和 $\angle 4$ 是对顶角。
@@ -367,7 +437,22 @@ $\angle 4 = \angle 2 = 125°$ （对顶角相等）
 
 \textbf{例 3.} 如图，三条直线两两相交于同一点 $O$ ， $\angle 1 = 40°$ ， $\angle 2 = 90°$ ，求 $\angle 3$ 的度数。
 
-% TODO-TikZ: 三线共点示意图 (was: ../assets/03-geometry/three-lines-intersect.svg)
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small}]
+  \coordinate (O) at (0,0);
+  \fill (O) circle (2pt) node[below right] {$O$};
+  % Three lines through O
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick] (-2,0) -- (2,0);
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick] (-1.4,-1.4) -- (1.4,1.4);
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick] (-0.6,-1.8) -- (0.6,1.8);
+  % Angle labels
+  \node[mathred] at (0.85,0.3)  {$\angle 1$};
+  \node[mathblue] at (0.15,0.9) {$\angle 2$};
+  \node[mathgreen] at (-0.7,0.35) {$\angle 3$};
+\end{tikzpicture}
+\captionof{figure}{三线共点：$\angle 1 + \angle 2 + \angle 3 = 180°$（在一条直线的同侧）}
+\label{fig:three-lines-intersect}
+\end{center}
 
 
 \textbf{解：}

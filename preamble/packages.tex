@@ -3,11 +3,12 @@
 % Page layout
 \usepackage[b5paper, margin=2.5cm, headheight=14pt]{geometry}
 
-% CJK and math fonts (loaded after geometry)
-\input{preamble/fonts}
-
-% Math
+% Math (unicode-math must be loaded before fonts)
 \usepackage{amsmath, amssymb, amsthm}
+\usepackage{unicode-math}
+
+% CJK and math fonts (loaded after geometry and unicode-math)
+\input{preamble/fonts}
 
 % Colors
 \usepackage{xcolor}
@@ -34,6 +35,9 @@
 % PDF hyperlinks and cross-references
 \usepackage[hidelinks, unicode]{hyperref}
 \usepackage{cleveref}
+
+% Caption support (for \captionof inside tcolorbox)
+\usepackage{caption}
 
 % Custom environments
 \input{preamble/environments}

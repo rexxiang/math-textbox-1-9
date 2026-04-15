@@ -56,7 +56,29 @@
 
 \textbf{线段}是连接两个点之间的最短路径，它有两个\textbf{端点}，有确定的\textbf{长度}。线段 $AB$ （或 $BA$ ）表示以 $A$ 、 $B$ 为端点的线段。
 
-% TODO-TikZ: 线段、射线与直线示意图 (was: ../assets/03-geometry/segment-ray-line.svg)
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small}]
+  % Segment AB
+  \draw[main line] (0,2) -- (2.5,2);
+  \fill (0,2) circle (2pt) node[below] {$A$};
+  \fill (2.5,2) circle (2pt) node[below] {$B$};
+  \node[right] at (2.8,2) {线段 $AB$（两端点，有限长）};
+
+  % Ray CD
+  \draw[ray arrow] (0,1) -- (3,1);
+  \fill (0,1) circle (2pt) node[below] {$C$};
+  \fill (1.2,1) circle (2pt) node[below] {$D$};
+  \node[right] at (3,1) {射线 $CD$（一端点，无限延伸）};
+
+  % Line EF with arrows on both ends
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick] (-0.3,0) -- (3,0);
+  \fill (0.8,0) circle (2pt) node[below] {$E$};
+  \fill (2.0,0) circle (2pt) node[below] {$F$};
+  \node[right] at (3,0) {直线 $EF$（无端点，双向无限）};
+\end{tikzpicture}
+\captionof{figure}{线段、射线与直线的比较}
+\label{fig:segment-ray-line}
+\end{center}
 
 
 \textbf{射线}是从一个端点出发、向一个方向无限延伸的部分。射线 $AB$ 表示从点 $A$ 出发经过点 $B$ 方向延伸的射线——注意，射线 $AB$ 与射线 $BA$ 是不同的（端点不同，方向不同）。
@@ -178,7 +200,22 @@
 
 此时 $AM = MB = \dfrac{1}{2} AB$ ，也可以写成 $AB = 2 \cdot AM = 2 \cdot MB$ 。
 
-% TODO-TikZ: 线段中点示意图 (was: ../assets/03-geometry/midpoint.svg)
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small}]
+  \draw[main line] (0,0) -- (5,0);
+  \fill (0,0) circle (2pt) node[below] {$A$};
+  \fill (2.5,0) circle (2pt) node[below] {$M$};
+  \fill (5,0) circle (2pt) node[below] {$B$};
+  % Equal tick marks on AM and MB
+  \draw (1.1,0.12) -- (1.3,-0.12)  (1.3,0.12) -- (1.5,-0.12);
+  \draw (3.6,0.12) -- (3.8,-0.12)  (3.8,0.12) -- (4.0,-0.12);
+  % Labels
+  \draw[<->, >=Stealth, thin] (0,0.5) -- (2.5,0.5) node[midway,above] {$AM$};
+  \draw[<->, >=Stealth, thin] (2.5,0.5) -- (5,0.5) node[midway,above] {$MB$};
+\end{tikzpicture}
+\captionof{figure}{中点 $M$：$AM = MB = \dfrac{1}{2}AB$}
+\label{fig:midpoint}
+\end{center}
 
 
 \end{understand}

@@ -22,7 +22,21 @@
 
 在同一平面内，\textbf{不相交}的两条直线叫做\textbf{平行线}。直线 $a$ 与直线 $b$ 平行，记作 $a \parallel b$ 。
 
-% TODO-TikZ: 平行线与相交线 (was: ../assets/03-geometry/parallel-lines.svg)
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small}]
+  % Two parallel lines
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick] (-0.3,1.5) -- (4.5,1.5) node[right] {$a$};
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick] (-0.3,0)   -- (4.5,0)   node[right] {$b$};
+  % Parallel tick marks
+  \foreach \y in {0,1.5} {
+    \draw (1.9,\y-0.12) -- (2.1,\y+0.12);
+    \draw (2.1,\y-0.12) -- (2.3,\y+0.12);
+  }
+  \node[left] at (-0.3,0.75) {$a \parallel b$};
+\end{tikzpicture}
+\captionof{figure}{平行线 $a \parallel b$：同一平面内不相交的两条直线}
+\label{fig:parallel-lines}
+\end{center}
 
 
 平行公理：经过直线外一点，有且只有一条直线与已知直线平行。
@@ -60,7 +74,32 @@
 
 当一条直线（称为\textbf{截线}）与两条直线相交时，会形成 $8$ 个角。这些角之间有特殊的名称和位置关系。
 
-% TODO-TikZ: 截线与两条直线形成的角 (was: ../assets/03-geometry/transversal-angles.svg)
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\scriptsize}]
+  % Lines a and b
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick] (-0.5,2) -- (5,2) node[right,font=\small] {$a$};
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick] (-0.5,0) -- (5,0) node[right,font=\small] {$b$};
+  % Transversal l: from (0.5,3) to (3.5,-1)
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick] (0.5,3) -- (3.5,-1) node[below,font=\small] {$l$};
+  % Intersections: A at (1.25,2), B at (2.75,0)  [line: x=0.5+t*3, y=3-t*4 → y=2: t=0.25→x=1.25; y=0: t=0.75→x=2.75]
+  \coordinate (A) at (1.25,2);
+  \coordinate (B) at (2.75,0);
+  \fill (A) circle (1.5pt) node[above right, font=\small] {$A$};
+  \fill (B) circle (1.5pt) node[above right, font=\small] {$B$};
+  % Angle labels at A (upper intersection)
+  \node[mathred]   at (0.55,2.2)  {$\angle 1$};
+  \node            at (1.8,2.2)   {$\angle 2$};
+  \node            at (1.7,1.75)  {$\angle 3$};
+  \node[mathblue]  at (0.6,1.75)  {$\angle 4$};
+  % Angle labels at B (lower intersection)
+  \node[mathblue]  at (2.1,0.2)   {$\angle 5$};
+  \node            at (3.3,0.2)   {$\angle 6$};
+  \node[mathred]   at (3.25,-0.25){$\angle 7$};
+  \node            at (2.15,-0.25){$\angle 8$};
+\end{tikzpicture}
+\captionof{figure}{截线 $l$ 与直线 $a$、$b$ 相交形成 8 个角：同位角（如 $\angle 1$ 和 $\angle 5$），内错角（如 $\angle 4$ 和 $\angle 6$），同旁内角（如 $\angle 3$ 和 $\angle 5$）}
+\label{fig:transversal-angles}
+\end{center}
 
 
 设截线 $l$ 分别交直线 $a$ 、 $b$ 于点 $A$ 、 $B$ 。标记八个角后，我们可以识别三类特殊的角对：
@@ -105,7 +144,31 @@
 
 \textbf{例 2.} 如图， $\angle BAC = 70°$ ， $\angle ACD = 110°$ ，判断 $AB$ 与 $CD$ 的位置关系并说明理由。
 
-% TODO-TikZ: 例2示意图 (was: ../assets/03-geometry/parallel-judge-ex2.svg)
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small}]
+  % Lines AB and CD with transversal AC
+  \coordinate (A) at (0,2);
+  \coordinate (B) at (3.5,2);
+  \coordinate (C) at (0.8,0);
+  \coordinate (D) at (4,0);
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick] (-0.3,2) -- (3.8,2);
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick] (0.2,0) -- (4.3,0);
+  \draw[main line] (A) -- (C);
+  \node[above left] at (A) {$A$};
+  \node[above right] at (B) {$B$};
+  \node[below left] at (C) {$C$};
+  \node[below right] at (D) {$D$};
+  % Angle marks
+  \draw[angle arc, mathred, thick]
+    ($(A)+(0:0.55)$) arc[start angle=0, end angle={-atan2(2,0.8)}, radius=0.55];
+  \node[mathred, font=\scriptsize] at ($(A)+(333:0.85)$) {$70°$};
+  \draw[angle arc, mathblue, thick]
+    ($(C)+(90:0.55)$) arc[start angle=90, end angle={180-atan2(2,0.8)}, radius=0.55];
+  \node[mathblue, font=\scriptsize] at ($(C)+(130:0.9)$) {$110°$};
+\end{tikzpicture}
+\captionof{figure}{同旁内角之和 $= 70° + 110° = 180°$，故 $AB \parallel CD$}
+\label{fig:parallel-judge-ex2}
+\end{center}
 
 
 \textbf{解：}
@@ -188,7 +251,24 @@
 
 \textbf{例 1.} 如图， $a \parallel b$ ，截线 $l$ 与直线 $a$ 交于点 $A$ ，与直线 $b$ 交于点 $B$ 。 $\angle 1 = 65°$ ，求 $\angle 2$ 和 $\angle 3$ 。
 
-% TODO-TikZ: 平行线性质例1 (was: ../assets/03-geometry/parallel-property-ex1.svg)
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small}]
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick] (-0.3,2) -- (4.5,2) node[right] {$a$};
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick] (-0.3,0) -- (4.5,0) node[right] {$b$};
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, thick] (0.8,3) -- (3,-1) node[below] {$l$};
+  % Intersections at A(1.5,2) and B(2.25,0)
+  \coordinate (A) at (1.5,2);
+  \coordinate (B) at (2.25,0);
+  \fill (A) circle (2pt) node[above left] {$A$};
+  \fill (B) circle (2pt) node[above left] {$B$};
+  % Angle 1 at A (above-right of transversal), angle 2 at B (same side = corresponding)
+  \node[mathred] at (1.95,2.25) {$\angle 1$};
+  \node[mathblue] at (2.75,0.25) {$\angle 2$};
+  \node[mathgreen] at (1.6,1.65) {$\angle 3$};
+\end{tikzpicture}
+\captionof{figure}{$a \parallel b$，$\angle 1 = 65°$；同位角 $\angle 2 = 65°$；同旁内角 $\angle 3 = 115°$}
+\label{fig:parallel-property-ex1}
+\end{center}
 
 
 \textbf{解：}
@@ -204,7 +284,30 @@
 
 \textbf{例 2.} 如图， $AB \parallel CD$ ， $\angle ABE = 50°$ ， $\angle DCE = 30°$ 。求 $\angle BEC$ 。
 
-% TODO-TikZ: 平行线性质例2 (was: ../assets/03-geometry/parallel-property-ex2.svg)
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small}]
+  % AB and CD parallel lines
+  \coordinate (A) at (0,2); \coordinate (B) at (4,2);
+  \coordinate (C) at (0,0); \coordinate (D) at (4,0);
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]},thick] (-0.3,2)--(4.3,2);
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]},thick] (-0.3,0)--(4.3,0);
+  \node[above left] at (0,2) {$A$}; \node[above right] at (4,2) {$B$};
+  \node[below left] at (0,0) {$C$}; \node[below right] at (4,0) {$D$};
+  % Point E between the lines
+  \coordinate (E) at (2.5,1);
+  \fill (E) circle (2pt) node[right] {$E$};
+  \draw[main line] (B)--(E)--(C);
+  % Angle marks
+  \draw[angle arc,mathred,thick]
+    ($(B)+(180:0.6)$) arc[start angle=180,end angle={180+atan2(-1,1.5)},radius=0.6];
+  \node[mathred,font=\scriptsize] at ($(B)+(200:1.0)$) {$50°$};
+  \draw[angle arc,mathblue,thick]
+    ($(C)+(0:0.6)$) arc[start angle=0,end angle={atan2(1,2.5)},radius=0.6];
+  \node[mathblue,font=\scriptsize] at ($(C)+(15:1.0)$) {$30°$};
+\end{tikzpicture}
+\captionof{figure}{$AB \parallel CD$，$\angle ABE=50°$，$\angle DCE=30°$，求 $\angle BEC$}
+\label{fig:parallel-property-ex2}
+\end{center}
 
 
 \textbf{解：}
@@ -226,7 +329,31 @@
 
 \textbf{例 3.} 如图， $AB \parallel CD$ ， $\angle A = 40°$ ， $\angle C = 30°$ ，求 $\angle AEC$ 。
 
-% TODO-TikZ: 平行线性质例3 (was: ../assets/03-geometry/parallel-property-ex3.svg)
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small}]
+  % AB (upper) and CD (lower) parallel
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]},thick] (-0.3,2)--(4.3,2);
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]},thick] (-0.3,0)--(4.3,0);
+  \node[above] at (-0.1,2) {$A$}; \node[above right] at (4.3,2) {$B$};
+  \node[below] at (-0.1,0) {$C$}; \node[below right] at (4.3,0) {$D$};
+  % E is a point between the lines; AE and CE are drawn
+  \coordinate (AE_start) at (0.5,2);
+  \coordinate (CE_start) at (1.0,0);
+  \coordinate (E) at (2.0,1.0);
+  \fill (E) circle (2pt) node[right] {$E$};
+  \draw[main line] (AE_start)--(E)--(CE_start);
+  % Angle A = 40°
+  \draw[angle arc,mathred,thick]
+    ($(AE_start)+(0:0.5)$) arc[start angle=0,end angle={-atan2(1,1.5)},radius=0.5];
+  \node[mathred,font=\scriptsize] at ($(AE_start)+(-15:0.85)$) {$40°$};
+  % Angle C = 30°
+  \draw[angle arc,mathblue,thick]
+    ($(CE_start)+(0:0.5)$) arc[start angle=0,end angle={atan2(1,1.0)},radius=0.5];
+  \node[mathblue,font=\scriptsize] at ($(CE_start)+(25:0.85)$) {$30°$};
+\end{tikzpicture}
+\captionof{figure}{$AB \parallel CD$，$\angle A=40°$，$\angle C=30°$，求 $\angle AEC$（答：$70°$）}
+\label{fig:parallel-property-ex3}
+\end{center}
 
 
 \textbf{解：}
@@ -282,7 +409,21 @@
 
 直线 $a$ 与直线 $b$ 垂直，记作 $a \perp b$ 。
 
-% TODO-TikZ: 垂直示意图 (was: ../assets/03-geometry/perpendicular.svg)
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small}]
+  % Horizontal line a
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]},thick] (-1.8,0)--(1.8,0) node[right] {$a$};
+  % Vertical line b
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]},thick] (0,-1.2)--(0,1.8) node[above] {$b$};
+  % Right angle mark
+  \draw (0.22,0)--(0.22,0.22)--(0,0.22);
+  \fill (0,0) circle (2pt);
+  \node[below right] at (0,0) {$O$};
+  \node[mathred] at (0.6,0.5) {$90°$};
+\end{tikzpicture}
+\captionof{figure}{$a \perp b$：直线 $a$ 与直线 $b$ 垂直，垂足 $O$，交角均为直角}
+\label{fig:perpendicular}
+\end{center}
 
 
 性质：\textbf{过一点有且只有一条直线与已知直线垂直。}
@@ -343,7 +484,31 @@ $\angle 4 = \angle 2 = 90°$ （对顶角）。
 
 从直线外一点 $P$ 向直线 $l$ 引一条垂线，垂足为 $H$ 。再从 $P$ 向 $l$ 上的其他任意点 $A$ 连线段。
 
-% TODO-TikZ: 垂线段最短示意图 (was: ../assets/03-geometry/perpendicular-shortest.svg)
+\begin{center}
+\begin{tikzpicture}[every node/.style={font=\small}]
+  % Line l
+  \draw[{Stealth[length=5pt]}-{Stealth[length=5pt]},thick] (-0.5,0)--(5,0) node[right] {$l$};
+  % Point P above line
+  \coordinate (P) at (1.5,2.2);
+  \fill (P) circle (2pt) node[above] {$P$};
+  % Perpendicular foot H
+  \coordinate (H) at (1.5,0);
+  \fill (H) circle (2pt) node[below] {$H$};
+  \draw[main line, mathblue] (P)--(H);
+  \draw (1.72,0)--(1.72,0.22)--(1.5,0.22);
+  \node[mathblue] at (1.1,1.1) {$PH$};
+  % Other points A and B on line
+  \coordinate (A) at (3.2,0);
+  \coordinate (B) at (0.2,0);
+  \fill (A) circle (2pt) node[below] {$A$};
+  \fill (B) circle (2pt) node[below] {$B$};
+  \draw[aux line] (P)--(A);
+  \draw[aux line] (P)--(B);
+  \node[mathred] at (2.7,1.3) {$PA > PH$};
+\end{tikzpicture}
+\captionof{figure}{垂线段最短：$PH \perp l$，对 $l$ 上任意 $A \neq H$，$PH < PA$；$PH$ 即点 $P$ 到直线 $l$ 的距离}
+\label{fig:perpendicular-shortest}
+\end{center}
 
 
 结论：\textbf{从直线外一点到这条直线上各点的连线中，垂线段最短。}
