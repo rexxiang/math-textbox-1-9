@@ -1,0 +1,53 @@
+<!-- 描述：SSA不能判定全等的反例，从B出发固定BA，以A为圆心r为半径有两个交点C1和C2 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="280" viewBox="0 0 380 280">
+  <style>
+    text { font-size: 13px; font-family: sans-serif; }
+    line { stroke: black; stroke-width: 1.5; }
+    path { stroke: black; stroke-width: 1.5; fill: none; }
+    circle { fill: black; stroke: none; }
+  </style>
+
+  <!-- Point B at (60,180), Point A at (220,180) -->
+  <circle cx="60" cy="180" r="3"/>
+  <circle cx="220" cy="180" r="3"/>
+  <text x="48" y="196">B</text>
+  <text x="222" y="196">A</text>
+
+  <!-- Side BA -->
+  <line x1="60" y1="180" x2="220" y2="180"/>
+
+  <!-- Arc from A with radius r (showing circle of possible C positions) -->
+  <circle cx="220" cy="180" r="80" stroke="black" stroke-width="1" stroke-dasharray="4,3" fill="none"/>
+
+  <!-- C1 at roughly (220,100) on circle, y=100 → dist from A = 80 -->
+  <circle cx="220" cy="100" r="3"/>
+  <text x="225" y="96">C₁</text>
+
+  <!-- C2 at roughly (140,180+something), solve: (x-220)^2+(y-180)^2=6400, and angle at B is same -->
+  <!-- With angle at B ~35°, line from B at 35° up: y=180 - tan(35°)*dx -->
+  <!-- Another intersection: approximately x=172, y=105 -->
+  <circle cx="172" cy="108" r="3"/>
+  <text x="150" y="103">C₂</text>
+
+  <!-- Triangle 1: B-A-C1 -->
+  <line x1="60" y1="180" x2="220" y2="100" stroke="#d00" stroke-width="1.5"/>
+  <line x1="220" y1="180" x2="220" y2="100" stroke="#d00" stroke-width="1.5"/>
+  <text x="245" y="145" fill="#d00" font-size="12">△BAC₁</text>
+
+  <!-- Triangle 2: B-A-C2 -->
+  <line x1="60" y1="180" x2="172" y2="108" stroke="#00a" stroke-width="1.5"/>
+  <line x1="220" y1="180" x2="172" y2="108" stroke="#00a" stroke-width="1.5"/>
+  <text x="80" y="115" fill="#00a" font-size="12">△BAC₂</text>
+
+  <!-- Angle at B marks (same angle for both) -->
+  <path d="M 88,180 A 28,28 0 0,1 83,152" stroke="black" stroke-width="1.5" fill="none"/>
+
+  <!-- Tick marks: same BA (no marks needed), same radius from A (AC1=AC2=r) -->
+  <!-- 1 tick on AC1 -->
+  <line x1="214" y1="137" x2="226" y2="143" stroke="black" stroke-width="2"/>
+  <!-- 1 tick on AC2 -->
+  <line x1="191" y1="140" x2="202" y2="146" stroke="black" stroke-width="2"/>
+
+  <text x="30" y="240" font-size="12">已知BA=BA, ∠B=∠B, AC₁=AC₂</text>
+  <text x="30" y="260" font-size="12">但△BAC₁ ≇ △BAC₂（SSA不能判定全等）</text>
+</svg>

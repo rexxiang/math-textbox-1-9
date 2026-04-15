@@ -1,0 +1,52 @@
+<!-- 描述：两个相似三角形△ABC和△DEF，标注比例边，比例系数 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="220" viewBox="0 0 460 220">
+  <style>
+    text { font-size: 13px; font-family: sans-serif; }
+    line { stroke: black; stroke-width: 1.5; }
+    path { stroke: black; stroke-width: 1.5; fill: none; }
+    circle { fill: black; stroke: none; }
+  </style>
+
+  <!-- Large triangle ABC: B(30,190), C(150,190), A(60,50) -->
+  <!-- Sides: BC=120, AB≈148, AC≈145 -->
+  <polygon points="60,50 30,190 150,190" stroke="black" stroke-width="1.5" fill="none"/>
+  <circle cx="60" cy="50" r="3"/>
+  <circle cx="30" cy="190" r="3"/>
+  <circle cx="150" cy="190" r="3"/>
+  <text x="55" y="38">A</text>
+  <text x="14" y="205">B</text>
+  <text x="152" y="205">C</text>
+
+  <!-- Side labels for ABC -->
+  <text x="0" y="125" font-size="12">6</text>
+  <text x="85" y="210" font-size="12">8</text>
+  <text x="115" y="115" font-size="12">10</text>
+
+  <!-- Small triangle DEF: E(270,190), F(350,190), D(290,90) -->
+  <!-- Sides: EF=80→scaled 3:4:5 → use 3,4,5 scaled x20 = 60,80,100, halved = 30,40,50 -->
+  <polygon points="290,90 270,190 350,190" stroke="black" stroke-width="1.5" fill="none"/>
+  <circle cx="290" cy="90" r="3"/>
+  <circle cx="270" cy="190" r="3"/>
+  <circle cx="350" cy="190" r="3"/>
+  <text x="285" y="78">D</text>
+  <text x="254" y="205">E</text>
+  <text x="352" y="205">F</text>
+
+  <!-- Side labels for DEF -->
+  <text x="246" y="146" font-size="12">3</text>
+  <text x="298" y="210" font-size="12">4</text>
+  <text x="324" y="142" font-size="12">5</text>
+
+  <!-- Similar marks (angle arcs) -->
+  <path d="M 47,66 A 20,20 0 0,1 71,57" stroke="black" stroke-width="1.5" fill="none"/>
+  <path d="M 277,106 A 16,16 0 0,1 301,97" stroke="black" stroke-width="1.5" fill="none"/>
+
+  <path d="M 52,190 A 20,20 0 0,1 43,170" stroke="black" stroke-width="1.5" fill="none"/>
+  <path d="M 289,190 A 16,16 0 0,1 281,173" stroke="black" stroke-width="1.5" fill="none"/>
+
+  <!-- Ratio annotation -->
+  <text x="175" y="130" font-size="14">∽</text>
+  <text x="390" y="100" font-size="13">△ABC ∽ △DEF</text>
+  <text x="390" y="120" font-size="13">相似比 = 2:1</text>
+  <text x="385" y="140" font-size="13">6:3 = 8:4 = 10:5</text>
+</svg>

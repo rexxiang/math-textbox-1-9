@@ -20,14 +20,15 @@ clean:
 
 check:
 	@echo "=== 检查交叉引用一致性 ==="
-	@grep -roh '§[0-9]\+\.[0-9]\+' 0[0-4]-*/ | sort -u | while read ref; do \
+	@errors=0; \
+	for ref in $$(grep -roh '§[0-9]\+\.[0-9]\+' 0[0-4]-*/ | sort -u); do \
 		section=$$(echo "$$ref" | sed 's/§//'); \
-		module=$$(echo "$$section" | cut -d. -f1); \
-		chapter=$$(echo "$$section" | cut -d. -f2); \
-		if ! grep -rq "§$$section" 0[0-4]-*/; then \
-			echo "WARNING: $$ref referenced but not defined"; \
+		if ! grep -rqE "^#{1,4} §$$section([^0-9]|$$)" 0[0-4]-*/; then \
+			echo "WARNING: $$ref 已引用但未作为标题定义"; \
+			errors=$$((errors + 1)); \
 		fi; \
-	done
+	done; \
+	if [ $$errors -eq 0 ]; then echo "所有交叉引用正确 ✓"; fi
 	@echo "=== 检查完成 ==="
 
 _docker-image:

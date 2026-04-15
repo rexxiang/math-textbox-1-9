@@ -1,0 +1,57 @@
+<!-- 描述：直角三角形三边各作正方形，标注a²+b²=c²，勾股定理图示 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="400" viewBox="0 0 420 400">
+  <style>
+    text { font-size: 14px; font-family: sans-serif; }
+    polygon, rect { stroke: black; stroke-width: 1.5; fill: none; }
+    line { stroke: black; stroke-width: 1.5; }
+    circle { fill: black; stroke: none; }
+  </style>
+
+  <!-- Right triangle: C(150,250), A(150,90), B(310,250) -->
+  <!-- a=BC=160 (horizontal), b=AC=160 (vertical), c=AB=hyp -->
+  <!-- Actually use: C(160,250), A(160,90), B(320,250) -->
+  <!-- a=BC=160, b=AC=160, c=AB=sqrt(160^2+160^2)=226 too messy -->
+  <!-- Use 3-4-5 scaled: C(160,250), A(160,130), B(240,250) -->
+  <!-- a=BC=80, b=CA=120, c=AB=sqrt(80^2+120^2)=sqrt(6400+14400)=sqrt(20800)≈144 -->
+  <!-- Use: C(180,230), A(180,110), B(300,230) -->
+  <!-- b=CA=120, a=CB=120, c=AB = sqrt(120^2+120^2)= 170 — too square -->
+  <!-- Use 3:4:5 x 30: C(180,230), A(180,140), B(300,230) -->
+  <!-- b=CA=90, a=CB=120, c=AB=sqrt(90^2+120^2)=sqrt(8100+14400)=sqrt(22500)=150 -->
+
+  <!-- Triangle: right angle at C(180,230), A(180,140), B(300,230) -->
+  <polygon points="180,230 180,140 300,230" style="stroke:black; stroke-width:2; fill:none;"/>
+  <circle cx="180" cy="230" r="3"/>
+  <circle cx="180" cy="140" r="3"/>
+  <circle cx="300" cy="230" r="3"/>
+  <text x="158" y="248">C</text>
+  <text x="165" y="130">A</text>
+  <text x="305" y="246">B</text>
+
+  <!-- Right angle mark at C -->
+  <rect x="180" y="214" width="14" height="16" stroke="black" stroke-width="1.5" fill="none"/>
+
+  <!-- Square on side CA (vertical, left side) width=90 -->
+  <!-- CA from (180,230) to (180,140). Square goes to the left: -->
+  <!-- Points: (180,230), (180,140), (90,140), (90,230) -->
+  <polygon points="180,230 180,140 90,140 90,230" style="stroke:#00a; stroke-width:1.5; fill:rgba(200,200,255,0.3);"/>
+  <text x="115" y="192" fill="#00a">b²</text>
+  <text x="185" y="192" fill="black" font-size="12">b</text>
+
+  <!-- Square on side CB (horizontal, bottom side) width=120 -->
+  <!-- CB from (180,230) to (300,230). Square goes downward: -->
+  <!-- Points: (180,230), (300,230), (300,350), (180,350) -->
+  <polygon points="180,230 300,230 300,350 180,350" style="stroke:#d00; stroke-width:1.5; fill:rgba(255,200,200,0.3);"/>
+  <text x="225" y="300" fill="#d00">a²</text>
+  <text x="235" y="247" fill="black" font-size="12">a</text>
+
+  <!-- Square on hypotenuse AB: width=150 -->
+  <!-- AB from (180,140) to (300,230). The square on AB needs perpendicular direction. -->
+  <!-- AB direction: (120,90), perp direction: (-90,120) normalized scaled by 150/150=1: (-90,120) -->
+  <!-- Square vertices: A(180,140), B(300,230), B+perp(300-90,230+120)=(210,350), A+perp(180-90,140+120)=(90,260) -->
+  <polygon points="180,140 300,230 210,350 90,260" style="stroke:#080; stroke-width:1.5; fill:rgba(200,255,200,0.3);"/>
+  <text x="175" y="300" fill="#080">c²</text>
+  <text x="228" y="178" fill="black" font-size="12">c</text>
+
+  <!-- Theorem text -->
+  <text x="80" y="385" font-size="16" font-weight="bold">a² + b² = c²</text>
+</svg>

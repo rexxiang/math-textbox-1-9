@@ -1,0 +1,37 @@
+<!-- 描述：两平行线被截线所截，同位角相等，带弧线标记 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="260" viewBox="0 0 360 260">
+  <style>
+    text { font-size: 13px; font-family: sans-serif; }
+    line { stroke: black; stroke-width: 1.5; }
+    path { stroke: black; stroke-width: 1.5; fill: none; }
+  </style>
+
+  <!-- l1 at y=80 -->
+  <line x1="30" y1="80" x2="320" y2="80"/>
+  <text x="325" y="85">l₁</text>
+
+  <!-- l2 at y=190 -->
+  <line x1="30" y1="190" x2="320" y2="190"/>
+  <text x="325" y="195">l₂</text>
+
+  <!-- Parallel marks -->
+  <line x1="168" y1="74" x2="173" y2="86" stroke="black" stroke-width="1.5"/>
+  <line x1="174" y1="74" x2="179" y2="86" stroke="black" stroke-width="1.5"/>
+  <line x1="168" y1="184" x2="173" y2="196" stroke="black" stroke-width="1.5"/>
+  <line x1="174" y1="184" x2="179" y2="196" stroke="black" stroke-width="1.5"/>
+
+  <!-- Transversal -->
+  <line x1="100" y1="20" x2="230" y2="250"/>
+
+  <!-- At l1 intersection (~144, 80): ∠1 above-left -->
+  <path d="M 122,80 A 22,22 0 0,1 133,59" stroke="#d00" stroke-width="1.8" fill="none"/>
+  <text x="102" y="68" fill="#d00">∠1</text>
+
+  <!-- At l2 intersection (~188, 190): ∠5 above-left (corresponding position) -->
+  <path d="M 166,190 A 22,22 0 0,1 177,169" stroke="#d00" stroke-width="1.8" fill="none"/>
+  <text x="146" y="178" fill="#d00">∠5</text>
+
+  <!-- Labels -->
+  <text x="30" y="228" font-size="13">l₁ ∥ l₂</text>
+  <text x="30" y="248" font-size="13">∴ ∠1 = ∠5（同位角相等）</text>
+</svg>

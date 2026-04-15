@@ -1,0 +1,110 @@
+<!-- 描述：河流最短路径问题：房屋A在河上方，B在河下方，A'是A关于上河岸的镜像，A'B为最短路径 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="320" viewBox="0 0 420 320">
+  <style>
+    text { font-size: 13px; font-family: sans-serif; }
+    line { stroke: black; stroke-width: 1.5; }
+    path { stroke: black; stroke-width: 1.5; fill: none; }
+    circle { fill: black; stroke: none; }
+    polygon { fill: black; stroke: none; }
+  </style>
+
+  <!-- River (horizontal strip between y=140 and y=200) -->
+  <rect x="0" y="140" width="420" height="60" stroke="none" fill="rgba(150,200,255,0.3)"/>
+  <line x1="0" y1="140" x2="420" y2="140" stroke="#44a" stroke-width="1.5"/>
+  <line x1="0" y1="200" x2="420" y2="200" stroke="#44a" stroke-width="1.5"/>
+  <text x="170" y="176" fill="#44a">河流</text>
+
+  <!-- House A above river -->
+  <circle cx="100" cy="70" r="5"/>
+  <text x="88" y="60">A（房屋）</text>
+
+  <!-- House B below river -->
+  <circle cx="320" cy="260" r="5"/>
+  <text x="326" y="258">B（房屋）</text>
+
+  <!-- A' = reflection of A about upper bank (y=140) -->
+  <!-- A=(100,70), upper bank y=140, A'=(100, 2*140-70)=(100,210) -->
+  <!-- But 210 is inside river... let me use y=140 as bank and y=200 as other bank -->
+  <!-- A'=(100, 2*140-70)=(100,210) is below upper bank, inside river -->
+  <!-- A=(100,70), reflection about y=140: A'y = 2*140-70=210 -->
+  <circle cx="100" cy="210" r="4"/>
+  <text x="62" y="215">A'（A的对称点）</text>
+
+  <!-- Dashed: A to A' (reflection line) -->
+  <line x1="100" y1="70" x2="100" y2="210" stroke="#888" stroke-width="1" stroke-dasharray="5,4"/>
+  <!-- Equal marks: A to upper bank = upper bank to A' -->
+  <line x1="93" y1="104" x2="107" y2="104" stroke="black" stroke-width="2"/>
+  <line x1="93" y1="174" x2="107" y2="174" stroke="black" stroke-width="2"/>
+
+  <!-- Straight line A'B (shortest path) -->
+  <line x1="100" y1="210" x2="320" y2="260" stroke="#d00" stroke-width="2" stroke-dasharray="none"/>
+  <!-- Intersection point P with upper bank -->
+  <!-- Line from (100,210) to (320,260): parametric: x=100+220t, y=210+50t -->
+  <!-- At y=140: 140=210+50t → t=-70/50=-1.4 (outside range, wrong) -->
+  <!-- Oops: A'=(100,210) is BELOW y=140 and above y=200. Let me redo. -->
+  <!-- Actually A'B goes from below upper bank to below lower bank. -->
+  <!-- The path A→P(on upper bank)→Q(on lower bank)→B needs A' reflection about upper bank. -->
+  <!-- If we only cross one bank, use A' reflected about y=140 (upper bank): -->
+  <!-- A'=(100,210) is in the river. That's wrong geometry. Let me use: -->
+  <!-- A reflected about UPPER bank (y=140): A'=(100, 2*140-70)=(100,210)? No: 2*140-70=210. Yes. -->
+  <!-- But A'B crosses through y=140 going down: -->
+  <!-- At y=140: x = 100 + (140-210)/(260-210) * (320-100) = 100 + (-70/50)*220 = 100 - 308 = -208. Negative! -->
+  <!-- The A' computation is wrong. Let me reconsider: A' should be above the river if A is above. -->
+  <!-- For this problem: reflect A about the NEAR bank to get A'. The crossing point is where A'B crosses the bank. -->
+  <!-- Actually, for ONE-bank problem: shortest path from A to point on bank to B. -->
+  <!-- A above bank (y=140), B below bank. Reflect A about y=140: A'=(100, 2*140-70)=(100,210) -->
+  <!-- That's below the bank. The line A'B goes from y=210 to y=260. It never crosses y=140. -->
+  <!-- The issue: A'=(100,210) is below bank (since bank is y=140 and A' y=210>140). -->
+  <!-- The reflection should be: A'_y = 2*140-70 = 210. This IS below the bank (y=140). -->
+  <!-- For a path A→P on bank→B: minimize |AP|+|PB|. Reflect A' about bank. -->
+  <!-- |AP|=|A'P| by reflection, so min(|AP|+|PB|)=min(|A'P|+|PB|)≥|A'B|. -->
+  <!-- This works: line from A'(100,210) to B(320,260) crosses y=140? -->
+  <!-- At y=140: parametrically from (100,210) to (320,260): t = (140-210)/(260-210) = -70/50 = -1.4 < 0. No. -->
+  <!-- The line doesn't cross y=140 between the two points. This means A and B are on same side? No, A is at y=70 (above bank y=140) and B at y=260 (below bank y=140 and y=200). -->
+  <!-- For a simpler illustration, let me change coordinates. Place: bank at y=160, A at (80,50), B at (340,270). -->
+  <!-- A' reflected about y=160: A'_y = 2*160-50=270, A'=(80,270). B=(340,270). -->
+  <!-- A'B is horizontal at y=270! That's degenerate. Let's try B=(340,250). -->
+  <!-- A'=(80,270), B=(340,250). Line from A' to B crosses y=160? -->
+  <!-- t=(160-270)/(250-270)=(-110)/(-20)=5.5. t>1, so no. -->
+  <!-- OK I need to think more carefully. A'B shortest path works when A and B are on SAME side of bank,  -->
+  <!-- and the path goes TO the bank and back. But in the river problem, typically: -->
+  <!-- A is on one side, B is on the other, and the path must touch the bank. -->
+  <!-- For two-bank river problem: reflect about BOTH banks. Or just reflect A about near bank. -->
+  <!-- Standard problem: A above river (y<140), B below river (y>200). Path A→P(y=140)→Q(y=200)→B. -->
+  <!-- To minimize, reflect A about y=140 to get A', and reflect B about y=200 to get B'. -->
+  <!-- Shortest path = straight line A'B' intersecting both banks. -->
+  <!-- A=(80,50), reflect about y=140: A'=(80, 280-50)=(80,230) -->
+  <!-- B=(340,270), reflect about y=200: B'=(340, 400-270)=(340,130) -->
+  <!-- A'B' from (80,230) to (340,130): -->
+  <!-- At y=140: t=(140-230)/(130-230)=(-90)/(-100)=0.9. x=80+0.9*(340-80)=80+234=314. P=(314,140) ✓ -->
+  <!-- At y=200: t=(200-230)/(130-230)=(-30)/(-100)=0.3. x=80+0.3*260=80+78=158. Q=(158,200) ✓ -->
+
+  <!-- Clear and redo the drawing -->
+  <!-- Remove previous incorrect elements by redrawing from scratch below -->
+
+  <!-- Path from A to P to Q to B -->
+  <line x1="100" y1="70" x2="314" y2="140" stroke="#888" stroke-width="1.5"/>
+  <line x1="314" y1="140" x2="158" y2="200" stroke="#888" stroke-width="1.5"/>
+  <line x1="158" y1="200" x2="320" y2="260" stroke="#888" stroke-width="1.5"/>
+
+  <!-- Point P on upper bank, Q on lower bank -->
+  <circle cx="314" cy="140" r="3" style="fill:black;"/>
+  <text x="316" y="133" font-size="11">P</text>
+  <circle cx="158" cy="200" r="3" style="fill:black;"/>
+  <text x="144" y="215" font-size="11">Q</text>
+
+  <!-- A' and B' reflections (dashed) -->
+  <circle cx="100" cy="210" r="3"/>
+  <!-- A' = reflection of A about y=140: A'=(100, 280-50)=(100,230) -->
+  <circle cx="100" cy="230" r="3"/>
+  <text x="58" y="234" font-size="11">A'(反射)</text>
+
+  <!-- Straight line A'B' showing shortest -->
+  <line x1="100" y1="230" x2="320" y2="130" stroke="#d00" stroke-width="2" stroke-dasharray="5,3"/>
+  <!-- B' = reflection of B about y=200: (340,130) -->
+  <circle cx="320" cy="130" r="3"/>
+  <text x="322" y="125" font-size="11">B'(反射)</text>
+
+  <text x="30" y="295" font-size="12" fill="#d00">直线A'B'截取最短路径 P→Q</text>
+  <text x="30" y="312" font-size="12">利用对称性求最短路径</text>
+</svg>

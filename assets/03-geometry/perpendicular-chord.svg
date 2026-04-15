@@ -1,0 +1,45 @@
+<!-- 描述：圆中直径垂直于弦并平分弦，带直角标记和等长刻度 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="300" viewBox="0 0 320 300">
+  <style>
+    text { font-size: 14px; font-family: sans-serif; }
+    line { stroke: black; stroke-width: 1.5; }
+    path { stroke: black; stroke-width: 1.5; fill: none; }
+    circle { stroke: black; stroke-width: 1.5; fill: none; }
+    rect { stroke: black; stroke-width: 1.5; fill: none; }
+  </style>
+
+  <!-- Circle centered at O(160,150) radius 110 -->
+  <circle cx="160" cy="150" r="110"/>
+  <circle cx="160" cy="150" r="3" style="fill:black; stroke:none;"/>
+  <text x="166" y="148">O</text>
+
+  <!-- Diameter: vertical from (160,40) to (160,260) -->
+  <line x1="160" y1="40" x2="160" y2="260"/>
+
+  <!-- Chord: horizontal from (80,150) to... actually let's use a chord at y=100 -->
+  <!-- Chord at y=100: x = 160 ± sqrt(110^2 - 50^2) = 160 ± sqrt(12100-2500) = 160 ± sqrt(9600) = 160 ± 98 -->
+  <!-- So chord from (62,100) to (258,100) but that's large, let's pick y=110 -->
+  <!-- At y=110: dx = sqrt(110^2 - 40^2) = sqrt(12100-1600) = sqrt(10500) ≈ 102.5 -->
+  <!-- Chord from (57.5, 110) to (262.5, 110), but width limit 320 ok -->
+  <!-- Let's use y=105: dx=sqrt(110^2-45^2)=sqrt(12100-2025)=sqrt(10075)≈100.4 -->
+  <!-- Use simpler: chord endpoints at (60,110) and (260,110) (approximate on circle) -->
+  <line x1="62" y1="110" x2="258" y2="110"/>
+  <circle cx="62" cy="110" r="3" style="fill:black; stroke:none;"/>
+  <circle cx="258" cy="110" r="3" style="fill:black; stroke:none;"/>
+  <text x="38" y="115">A</text>
+  <text x="261" y="115">B</text>
+
+  <!-- Midpoint M of chord at (160,110) -->
+  <circle cx="160" cy="110" r="3" style="fill:black; stroke:none;"/>
+  <text x="164" y="108">M</text>
+
+  <!-- Right angle mark at M -->
+  <rect x="160" y="110" width="14" height="14"/>
+
+  <!-- Equal tick marks on AM and MB -->
+  <line x1="105" y1="106" x2="109" y2="114" stroke="black" stroke-width="2"/>
+  <line x1="207" y1="106" x2="211" y2="114" stroke="black" stroke-width="2"/>
+
+  <!-- Label -->
+  <text x="30" y="290" font-size="13">直径⊥弦，则平分弦（AM = MB）</text>
+</svg>

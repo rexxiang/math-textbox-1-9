@@ -1,0 +1,66 @@
+<!-- 描述：标准直角坐标系，x轴y轴带箭头，原点O，四个象限，示例点P(3,2)带虚线 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="340" viewBox="0 0 380 340">
+  <style>
+    text { font-size: 13px; font-family: sans-serif; }
+    line { stroke: black; stroke-width: 1.5; }
+    path { stroke: black; stroke-width: 1.5; fill: none; }
+    circle { fill: black; stroke: none; }
+  </style>
+
+  <!-- Grid lines (light) -->
+  <g stroke="#ddd" stroke-width="0.8">
+    <!-- Vertical grid lines -->
+    <line x1="80" y1="20" x2="80" y2="320"/>
+    <line x1="130" y1="20" x2="130" y2="320"/>
+    <line x1="180" y1="20" x2="180" y2="320"/>
+    <line x1="230" y1="20" x2="230" y2="320"/>
+    <line x1="280" y1="20" x2="280" y2="320"/>
+    <line x1="330" y1="20" x2="330" y2="320"/>
+    <!-- Horizontal grid lines -->
+    <line x1="30" y1="70" x2="360" y2="70"/>
+    <line x1="30" y1="120" x2="360" y2="120"/>
+    <line x1="30" y1="170" x2="360" y2="170"/>
+    <line x1="30" y1="220" x2="360" y2="220"/>
+    <line x1="30" y1="270" x2="360" y2="270"/>
+  </g>
+
+  <!-- Axes: x-axis at y=170, y-axis at x=180 -->
+  <!-- x axis -->
+  <line x1="30" y1="170" x2="360" y2="170"/>
+  <polygon points="360,170 349,165 349,175" fill="black" stroke="none"/>
+  <text x="364" y="175">x</text>
+
+  <!-- y axis -->
+  <line x1="180" y1="320" x2="180" y2="20"/>
+  <polygon points="180,20 175,31 185,31" fill="black" stroke="none"/>
+  <text x="184" y="15">y</text>
+
+  <!-- Origin O -->
+  <circle cx="180" cy="170" r="3"/>
+  <text x="162" y="186">O</text>
+
+  <!-- Axis labels -->
+  <text x="230" y="186">1</text>
+  <text x="280" y="186">2</text>
+  <text x="330" y="186">3</text>
+  <text x="130" y="186">-1</text>
+  <text x="75" y="186">-2</text>
+  <text x="166" y="122">1</text>
+  <text x="166" y="72">2</text>
+  <text x="166" y="222">-1</text>
+  <text x="166" y="272">-2</text>
+
+  <!-- Quadrant labels -->
+  <text x="290" y="90" font-size="13" fill="#888">I</text>
+  <text x="80" y="90" font-size="13" fill="#888">II</text>
+  <text x="80" y="260" font-size="13" fill="#888">III</text>
+  <text x="290" y="260" font-size="13" fill="#888">IV</text>
+
+  <!-- Point P(3,2): x=180+3*50=330, y=170-2*50=70 -->
+  <circle cx="330" cy="70" r="4"/>
+  <text x="336" y="65">P(3,2)</text>
+
+  <!-- Dashed lines to axes -->
+  <line x1="330" y1="70" x2="330" y2="170" stroke="black" stroke-width="1" stroke-dasharray="5,4"/>
+  <line x1="330" y1="70" x2="180" y2="70" stroke="black" stroke-width="1" stroke-dasharray="5,4"/>
+</svg>

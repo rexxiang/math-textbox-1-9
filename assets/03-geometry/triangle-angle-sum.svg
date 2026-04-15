@@ -1,0 +1,52 @@
+<!-- 描述：三角形ABC三角之和等于180°的证明，过A作BC的平行线，展示错角关系 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="280" viewBox="0 0 400 280">
+  <style>
+    text { font-size: 14px; font-family: sans-serif; }
+    line { stroke: black; stroke-width: 1.5; }
+    path { stroke: black; stroke-width: 1.5; fill: none; }
+    circle { fill: black; stroke: none; }
+  </style>
+
+  <!-- Triangle ABC: A at top, B bottom-left, C bottom-right -->
+  <polygon points="200,40 60,200 340,200" stroke="black" stroke-width="1.5" fill="none"/>
+
+  <!-- Vertices -->
+  <circle cx="200" cy="40" r="3"/>
+  <circle cx="60" cy="200" r="3"/>
+  <circle cx="340" cy="200" r="3"/>
+  <text x="195" y="28">A</text>
+  <text x="46" y="215">B</text>
+  <text x="344" y="215">C</text>
+
+  <!-- Parallel line through A, parallel to BC -->
+  <line x1="60" y1="40" x2="340" y2="40" stroke="black" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <!-- Parallel marks -->
+  <line x1="180" y1="194" x2="185" y2="206" stroke="black" stroke-width="1.5"/>
+  <line x1="190" y1="194" x2="195" y2="206" stroke="black" stroke-width="1.5"/>
+  <line x1="167" y1="34" x2="172" y2="46" stroke="black" stroke-width="1.5"/>
+  <line x1="177" y1="34" x2="182" y2="46" stroke="black" stroke-width="1.5"/>
+
+  <!-- Angle α at A (between parallel line left and AB) -->
+  <path d="M 178,40 A 22,22 0 0,0 186,19" stroke="#d00" stroke-width="1.8" fill="none"/>
+  <text x="148" y="38" fill="#d00" font-size="13">α</text>
+
+  <!-- Angle β at B -->
+  <path d="M 80,200 A 22,22 0 0,1 71,179" stroke="#00a" stroke-width="1.8" fill="none"/>
+  <text x="55" y="185" fill="#00a" font-size="13">β</text>
+
+  <!-- Angle γ at A middle part -->
+  <path d="M 180,55 A 20,20 0 0,1 220,55" stroke="#080" stroke-width="1.8" fill="none"/>
+  <text x="193" y="75" fill="#080" font-size="13">γ</text>
+
+  <!-- Angle α' at A right side (= β, alternate interior with AB and parallel) -->
+  <path d="M 222,40 A 22,22 0 0,1 214,19" stroke="#00a" stroke-width="1.8" fill="none"/>
+  <text x="224" y="37" fill="#00a" font-size="13">β</text>
+
+  <!-- Angle at C = α by alternate interior angles -->
+  <path d="M 318,200 A 22,22 0 0,0 330,179" stroke="#d00" stroke-width="1.8" fill="none"/>
+  <text x="320" y="185" fill="#d00" font-size="13">α</text>
+
+  <!-- Equation -->
+  <text x="90" y="250" font-size="15">α + γ + β = 180°</text>
+  <text x="80" y="272" font-size="12">（三角形内角和等于180°）</text>
+</svg>
