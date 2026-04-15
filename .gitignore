@@ -327,3 +327,6 @@ TSWLatexianTemp*
 
 # Build output
 output/
+
+# Generated GitHub Pages content
+docs/
