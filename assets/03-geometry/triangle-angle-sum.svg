@@ -40,7 +40,7 @@
 
   <!-- Angle α' at A right side (= β, alternate interior with AB and parallel) -->
   <path d="M 222,40 A 22,22 0 0,1 214,19" stroke="#00a" stroke-width="1.8" fill="none"/>
-  <text x="224" y="37" fill="#00a" font-size="13">β</text>
+  <text x="228" y="35" fill="#00a" font-size="13">β</text>
 
   <!-- Angle at C = α by alternate interior angles -->
   <path d="M 318,200 A 22,22 0 0,0 330,179" stroke="#d00" stroke-width="1.8" fill="none"/>

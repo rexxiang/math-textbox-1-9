@@ -46,7 +46,7 @@
 
   <!-- ∠7 below-right -->
   <path d="M 232,200 A 22,22 0 0,1 221,221" stroke="purple" stroke-width="1.8" fill="none"/>
-  <text x="222" y="220" fill="purple">∠7</text>
+  <text x="230" y="228" fill="purple">∠7</text>
 
   <!-- Legend -->
   <text x="30" y="248" fill="#e44" font-size="13">∠1=∠5 同位角</text>

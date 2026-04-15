@@ -26,5 +26,5 @@
   <path d="M 125,163 A 30,30 0 0,1 175,163" stroke="black" stroke-width="1.5" fill="none"/>
 
   <!-- Label ∠AOB -->
-  <text x="120" y="155">∠AOB</text>
+  <text x="135" y="143">∠AOB</text>
 </svg>

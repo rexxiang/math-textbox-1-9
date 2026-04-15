@@ -27,11 +27,11 @@
 
   <!-- Angle ∠6 at l2 (above-right of intersection) = internal angle on other side -->
   <path d="M 221,200 A 22,22 0 0,0 210,179" stroke="#d00" stroke-width="1.8" fill="none"/>
-  <text x="220" y="180" fill="#d00">∠6</text>
+  <text x="226" y="184" fill="#d00">∠6</text>
 
   <!-- Equal marks on the two angles -->
   <text x="100" y="120" fill="#d00" font-size="12">= 50°</text>
-  <text x="218" y="169" fill="#d00" font-size="12">= 50°</text>
+  <text x="226" y="170" fill="#d00" font-size="12">= 50°</text>
 
   <!-- Conclusion -->
   <text x="30" y="245" font-size="13">∠3 = ∠6（内错角相等）</text>
