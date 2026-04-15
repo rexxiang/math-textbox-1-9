@@ -24,7 +24,35 @@
 
 在直角三角形中，设一个锐角为 $\angle A$ ，则：
 
-% TODO-TikZ: 锐角三角函数定义 (was: ../assets/03-geometry/trig-definition.svg)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}, scale=1.0]
+  \coordinate (C) at (0,0);
+  \coordinate (A) at (4,0);
+  \coordinate (B) at (4,3);
+  \draw[main line] (A)--(B)--(C)--cycle;
+  \node[below left]  at (C) {$C$};
+  \node[below right] at (A) {$A$};
+  \node[above right] at (B) {$B$};
+  % Right angle at A
+  \draw (3.75,0)--(3.75,0.25)--(4,0.25);
+  % Angle α at C
+  \draw[angle arc, draw=red!70!black, thick]
+    (0:0.75) arc[start angle=0, end angle={atan2(3,4)}, radius=0.75];
+  \node[red!70!black] at (18:1.1) {$\alpha$};
+  % Side labels
+  \node[below] at (2,0) {邻边（adjacent）};
+  \node[right] at (4,1.5) {对边（opposite）};
+  \node[above left, rotate={atan2(3,4)}] at (2,1.5) {斜边（hypotenuse）};
+  % Trig ratios below
+  \node[below=1.5cm] at (2,0)
+    {$\sin\alpha = \dfrac{\text{对边}}{\text{斜边}},\quad
+     \cos\alpha = \dfrac{\text{邻边}}{\text{斜边}},\quad
+     \tan\alpha = \dfrac{\text{对边}}{\text{邻边}}$};
+\end{tikzpicture}
+\caption{锐角三角函数定义（以直角三角形中 $\angle C = \alpha$ 为例）}
+\label{fig:trig-definition}
+\end{figure}
 
 
 \[
@@ -143,7 +171,44 @@ $AB = \sqrt{BC^2 + AC^2} = \sqrt{36 + 144} = \sqrt{180} = 6\sqrt{5}$ 。
 
 \textbf{ $30°$ 和 $60°$ 角}：将一个等边三角形沿高对折，得到含 $30°$ 和 $60°$ 角的直角三角形。设等边三角形边长为 $2$ ，则短直角边（ $30°$ 对边） $= 1$ ，长直角边（ $60°$ 对边） $= \sqrt{3}$ ，斜边 $= 2$ 。
 
-% TODO-TikZ: 特殊角三角函数 (was: ../assets/03-geometry/special-angles-trig.svg)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}, scale=0.9]
+  % 30-60-90 triangle (left)
+  \begin{scope}
+    \coordinate (C1) at (0,0);
+    \coordinate (A1) at (2,0);
+    \coordinate (B1) at (2,{2*tan(60)});
+    \draw[main line] (C1)--(A1)--(B1)--cycle;
+    \draw (1.75,0)--(1.75,0.25)--(2,0.25);
+    \draw[angle arc, draw=red!70!black]
+      (0:0.5) arc[start angle=0,end angle=60,radius=0.5];
+    \node[red!70!black] at (30:0.75) {$60°$};
+    \draw[angle arc, draw=blue!70!black]
+      ($(B1)+(270:0.5)$) arc[start angle=270,end angle={270-30},radius=0.5];
+    \node[blue!70!black, font=\scriptsize] at ($(B1)+(-0.5,-0.5)$) {$30°$};
+    \node[below] at (1,0) {$1$};
+    \node[right] at (2,{tan(60)}) {$\sqrt{3}$};
+    \node[above left, rotate=60] at (1,{tan(60)}) {$2$};
+  \end{scope}
+  % 45-45-90 triangle (right)
+  \begin{scope}[xshift=5cm]
+    \coordinate (C2) at (0,0);
+    \coordinate (A2) at (2,0);
+    \coordinate (B2) at (2,2);
+    \draw[main line] (C2)--(A2)--(B2)--cycle;
+    \draw (1.75,0)--(1.75,0.25)--(2,0.25);
+    \draw[angle arc, draw=red!70!black]
+      (0:0.5) arc[start angle=0,end angle=45,radius=0.5];
+    \node[red!70!black] at (22:0.8) {$45°$};
+    \node[below] at (1,0) {$1$};
+    \node[right] at (2,1) {$1$};
+    \node[above left, rotate=45] at (1,1) {$\sqrt{2}$};
+  \end{scope}
+\end{tikzpicture}
+\caption{特殊角三角函数的精确值（$30°$-$60°$-$90°$ 和 $45°$-$45°$-$90°$ 三角形）}
+\label{fig:special-angles-trig}
+\end{figure}
 
 
 \[
@@ -455,7 +520,32 @@ $\cos 60° = \dfrac{d}{l}$ ， $d = l \cos 60° = 8\sqrt{3} \times \dfrac{1}{2} 
 
 从水平线向下看某个目标的角度叫做\textbf{俯角}（depression angle）。
 
-% TODO-TikZ: 仰角与俯角 (was: ../assets/03-geometry/elevation-depression.svg)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}]
+  % Observer at O
+  \coordinate (O) at (0,0);
+  \fill (O) circle (2pt) node[left] {$O$（观测者）};
+  % Horizontal line
+  \draw[ext line] (-0.5,0) -- (4.5,0);
+  % Elevation angle: target T above
+  \coordinate (T) at (4,2.5);
+  \fill (T) circle (2pt) node[right] {目标 $T$（在上方）};
+  \draw[main line] (O)--(T);
+  \draw[angle arc, draw=red!70!black, thick]
+    (0:1.2) arc[start angle=0,end angle={atan2(2.5,4)},radius=1.2];
+  \node[red!70!black] at ({atan2(2.5,4)/2}:1.6) {仰角 $\theta$};
+  % Depression angle: target D below
+  \coordinate (D) at (4,-1.8);
+  \fill (D) circle (2pt) node[right] {目标 $D$（在下方）};
+  \draw[main line] (O)--(D);
+  \draw[angle arc, draw=blue!70!black, thick]
+    (0:1.2) arc[start angle=0,end angle={-atan2(1.8,4)},radius=1.2];
+  \node[blue!70!black] at ({-atan2(1.8,4)/2}:1.7) {俯角 $\phi$};
+\end{tikzpicture}
+\caption{仰角与俯角：从水平视线分别向上（仰角）和向下（俯角）量起}
+\label{fig:elevation-depression}
+\end{figure}
 
 
 \textbf{坡度}：
@@ -487,7 +577,37 @@ $\tan 45° = \dfrac{h}{50}$ ， $1 = \dfrac{h}{50}$ ， $h = 50$ m。
 
 \textbf{例 2.} 从山顶测得山脚处一棵树底部的俯角为 $60°$ ，树顶的俯角为 $45°$ 。山高 $100$ m。求树的高度。
 
-% TODO-TikZ: 俯角测量例题 (was: ../assets/03-geometry/depression-angle-ex.svg)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}, scale=0.85]
+  % Building
+  \draw[main line] (0,0) -- (0,4) -- (0.5,4) -- (0.5,0) -- cycle;
+  \fill[gray!20] (0,0) -- (0,4) -- (0.5,4) -- (0.5,0) -- cycle;
+  % Ground
+  \draw[main line] (-0.5,0) -- (5,0);
+  % Observer O at top of building
+  \coordinate (O) at (0.25,4);
+  \fill (O) circle (2pt) node[above left] {$O$};
+  % Target A on ground
+  \coordinate (A) at (4,0);
+  \fill (A) circle (2pt) node[below] {$A$};
+  % Horizontal line from O
+  \draw[ext line] (-0.5,4) -- (5,4);
+  % Line OA
+  \draw[main line] (O)--(A);
+  % Depression angle
+  \draw[angle arc, draw=red!70!black, thick]
+    ($(O)+(0:0.8)$) arc[start angle=0,end angle={-atan2(4,3.75)},radius=0.8];
+  \node[red!70!black, font=\scriptsize] at ($(O)+({-atan2(4,3.75)/2}:1.2)$) {$\alpha$（俯角）};
+  % Height label
+  \draw[<->, >=Stealth, thin] (-0.7,0) -- (-0.7,4) node[midway,left] {$h$};
+  % Horizontal distance
+  \draw[<->, >=Stealth, thin] (0.25,-0.5) -- (4,-0.5) node[midway,below] {$d$};
+  \node[font=\scriptsize] at (2.5,2) {$\tan\alpha = \dfrac{h}{d}$};
+\end{tikzpicture}
+\caption{俯角例题：$\tan\alpha = h/d$，已知两量可求第三量}
+\label{fig:depression-angle-ex}
+\end{figure}
 
 
 \textbf{解：}

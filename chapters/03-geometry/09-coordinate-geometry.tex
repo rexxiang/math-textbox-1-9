@@ -22,7 +22,38 @@
 
 在平面上画两条互相垂直且有公共原点的数轴，就构成了\textbf{平面直角坐标系}（笛卡尔坐标系）。
 
-% TODO-TikZ: 平面直角坐标系 (was: ../assets/03-geometry/cartesian-plane.svg)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}, scale=0.8]
+  % Axes
+  \draw[ray arrow] (-3.3,0) -- (3.5,0) node[right] {$x$};
+  \draw[ray arrow] (0,-2.8) -- (0,3.3) node[above] {$y$};
+  \node[below left] at (0,0) {$O$};
+  % Grid ticks
+  \foreach \x in {-3,-2,-1,1,2,3} {
+    \draw (\x, 0.07) -- (\x,-0.07) node[below, font=\scriptsize] {\x};
+  }
+  \foreach \y in {-2,-1,1,2,3} {
+    \draw (0.07,\y) -- (-0.07,\y) node[left, font=\scriptsize] {\y};
+  }
+  % Sample points
+  \fill[draw=red!70!black, fill=red!70!black] (2,3) circle (2.5pt)
+    node[above right] {$P(2,3)$};
+  \fill[draw=blue!70!black, fill=blue!70!black] (-2,1) circle (2.5pt)
+    node[above left] {$Q(-2,1)$};
+  \fill[draw=green!60!black, fill=green!60!black] (1,-2) circle (2.5pt)
+    node[below right] {$R(1,-2)$};
+  % Dashed projection for P
+  \draw[aux line] (2,0) -- (2,3) -- (0,3);
+  % Quadrant labels
+  \node[font=\scriptsize, gray] at (2,1.5) {第一象限};
+  \node[font=\scriptsize, gray] at (-2,1.5) {第二象限};
+  \node[font=\scriptsize, gray] at (-2,-1.5) {第三象限};
+  \node[font=\scriptsize, gray] at (2,-1.5) {第四象限};
+\end{tikzpicture}
+\caption{直角坐标系：点 $P(x,y)$ 由横坐标 $x$ 和纵坐标 $y$ 唯一确定}
+\label{fig:cartesian-plane}
+\end{figure}
 
 
 \begin{itemize}
@@ -384,7 +415,32 @@ AB = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
 \]
 
 
-% TODO-TikZ: 距离公式推导 (was: ../assets/03-geometry/distance-formula.svg)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}, scale=0.9]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (4,3);
+  \coordinate (C) at (4,0);
+  % Draw the right triangle
+  \draw[main line] (A)--(B);
+  \draw[aux line] (A)--(C)--(B);
+  % Right angle at C
+  \draw (3.75,0)--(3.75,0.25)--(4,0.25);
+  % Points
+  \fill[draw=red!70!black, fill=red!70!black] (A) circle (2.5pt)
+    node[below left] {$A(x_1,y_1)$};
+  \fill[draw=blue!70!black, fill=blue!70!black] (B) circle (2.5pt)
+    node[above right] {$B(x_2,y_2)$};
+  \fill (C) circle (2pt) node[below right] {};
+  % Labels
+  \node[below] at (2,0) {$|x_2-x_1|$};
+  \node[right] at (4,1.5) {$|y_2-y_1|$};
+  \node[above left, rotate={atan2(3,4)}] at (2,1.5)
+    {$d = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$};
+\end{tikzpicture}
+\caption{两点间距离公式：$|AB| = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$}
+\label{fig:distance-formula}
+\end{figure}
 
 
 推导：过 $A$ 、 $B$ 分别作坐标轴的平行线，构成直角三角形。水平距离 $= \lvert x_2 - x_1 \rvert$ ，竖直距离 $= \lvert y_2 - y_1 \rvert$ 。由勾股定理：
