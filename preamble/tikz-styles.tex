@@ -1,0 +1,36 @@
+% preamble/tikz-styles.tex — Global TikZ library loads and style definitions
+
+\usetikzlibrary{
+  arrows.meta,
+  calc,
+  angles,
+  quotes,
+  patterns,
+  decorations.markings,
+  intersections,
+  through,
+  backgrounds,
+  positioning,
+  shapes.geometric,
+}
+
+% Standard colors
+\definecolor{mathblue}{HTML}{2255AA}
+\definecolor{mathred}{HTML}{CC2200}
+\definecolor{mathgreen}{HTML}{117700}
+\definecolor{mathorange}{HTML}{CC6600}
+
+% Global TikZ styles
+\tikzset{
+  % Lines
+  main line/.style   = {thick, black},
+  aux line/.style    = {dashed, gray!70, thin},
+  angle arc/.style   = {thin, black},
+  ext line/.style    = {dashed, black!50, thin},   % extension lines
+  % Points
+  point mark/.style  = {circle, fill=black, inner sep=1.5pt, outer sep=0pt},
+  % Arrows
+  ray arrow/.style   = {-{Stealth[length=6pt]}, thick},
+  % Labels
+  node label/.style  = {font=\small},
+}
