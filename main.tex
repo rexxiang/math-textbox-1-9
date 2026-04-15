@@ -1,5 +1,7 @@
 % main.tex — 数学自学教材（1-9 年级）入口文件
-\documentclass[b5paper, openany, 12pt]{ctexbook}
+% Use fontset=none to prevent ctex from loading fandol/other fonts automatically;
+% our fonts are set explicitly in preamble/fonts.tex via xeCJK/fontspec commands.
+\documentclass[b5paper, openany, 12pt, fontset=none]{ctexbook}
 
 \input{preamble/packages}   % loads fonts, tikz-styles, environments internally
 

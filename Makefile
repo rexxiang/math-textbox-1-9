@@ -45,5 +45,5 @@ _pdf:
 
 _html:
 	mkdir -p build docs/html
-	make4ht -lm xelatex -f html5 -d build main.tex "svg,mathml"
+	make4ht -x -c main.cfg -f html5 -d build main.tex "svg,mathml"
 	cp -r build/. docs/html/

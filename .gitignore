@@ -330,3 +330,12 @@ output/
 
 # Generated GitHub Pages content
 docs/
+
+# make4ht intermediate files
+build/
+
+# make4ht root-level artifacts (should be in build/ but tex4ht writes here too)
+main.html
+main.css
+main.tmp
+main*.svg

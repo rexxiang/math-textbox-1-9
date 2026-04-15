@@ -1,0 +1,36 @@
+name: Build and Deploy Math Textbook
+
+on:
+  push:
+    branches: [main, claude/math-textbook-generation]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t math-textbook-builder .
+
+      - name: Build PDF
+        run: docker run --rm -v "$(pwd):/book" math-textbook-builder make _pdf
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: math-textbook-pdf
+          path: output/math-textbook.pdf
+
+      - name: Build HTML
+        run: docker run --rm -v "$(pwd):/book" math-textbook-builder make _html
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/html
+          publish_branch: gh-pages
