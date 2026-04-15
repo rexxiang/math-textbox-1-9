@@ -1,1 +1,465 @@
-% stub
+\chapter{§3.2 角}
+\label{sec:3.2}
+
+
+\prerequisite{§3.1}
+
+\gradelevel{4-7 年级}
+
+
+\section*{角的概念与表示}
+
+
+\begin{explore}
+
+
+把一把折扇慢慢展开——两根扇骨从完全合拢到完全张开，它们之间形成的"张口"就是一个\textbf{角}。张开得越大，角越大。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{角}是从同一个点出发的两条射线所组成的图形。这个公共端点叫做\textbf{顶点}，两条射线叫做角的\textbf{两条边}。
+
+% TODO-TikZ: 角的基本结构 (was: ../assets/03-geometry/angle-basic.svg)
+
+
+角的表示方法有三种：
+\begin{enumerate}
+  \item 用三个字母表示： $\angle AOB$ （ $O$ 是顶点，写在中间）
+  \item 用一个字母表示： $\angle O$ （当顶点处只有一个角时）
+  \item 用数字编号： $\angle 1$ 、 $\angle 2$ （图中标注角的编号时使用）
+\end{enumerate}
+
+
+\end{understand}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 角由一个顶点和两条边（射线）组成。
+  \item 三字母表示法中，顶点字母写在中间。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+
+
+\section*{角的度量}
+
+
+\begin{explore}
+
+
+"这个角有多大？"要回答这个问题，我们需要一个度量单位。把一个圆周等分成 $360$ 份，每一份对应的角就是 $1°$ （一度）。
+
+\end{explore}
+
+\begin{understand}
+
+
+角的度量单位是\textbf{度}（°）。将一个周角（完整转一圈）等分为 $360$ 份，每份为 $1°$ 。
+
+更精细的度量：
+\begin{itemize}
+  \item $1°= 60'$ （ $1$ 度 $= 60$ 分）
+  \item $1' = 60''$ （ $1$ 分 $= 60$ 秒）
+\end{itemize}
+
+
+例如， $30°15'20''$ 读作" $30$ 度 $15$ 分 $20$ 秒"。
+
+测量角的工具是\textbf{量角器}。使用量角器时：
+\begin{enumerate}
+  \item 将量角器的中心对准角的顶点
+  \item $0°$ 刻度线与角的一条边重合
+  \item 另一条边所对的刻度就是角的度数
+\end{enumerate}
+
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 将 $1.45°$ 化为度、分、秒。
+
+\textbf{解：}
+$1.45° = 1° + 0.45°$
+
+$0.45° = 0.45 \times 60' = 27'$
+
+所以 $1.45° = 1°27'$ 。
+
+\textbf{例 2.} 将 $25°30'36''$ 化为度（用小数表示）。
+
+\textbf{解：}
+$36'' = \dfrac{36}{60}' = 0.6'$
+
+$30'36'' = 30.6' = \dfrac{30.6}{60}° = 0.51°$
+
+所以 $25°30'36'' = 25.51°$ 。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item $1$ 周角 $= 360°$ ， $1° = 60'$ ， $1' = 60''$ 。
+  \item 度、分、秒之间的换算是 $60$ 进制。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 将 $2.35°$ 化为度、分、秒。
+  \item 将 $45°18'$ 化为度（用小数表示）。
+\end{enumerate}
+
+
+\end{practice}
+
+
+
+\section*{角的分类}
+
+
+\begin{explore}
+
+
+生活中的角形形色色：书本的角是"方方正正"的直角，时钟指针在不同时刻形成大小不一的角。根据角的大小，我们可以把角分成几类。
+
+\end{explore}
+
+\begin{understand}
+
+
+按照角的度数大小，角可以分为以下几类：
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+角的类型 & 范围 & 说明 \\
+\midrule
+锐角 & $0° < \alpha < 90°$ & 比直角小 \\
+直角 & $\alpha = 90°$ & 方方正正的角 \\
+钝角 & $90° < \alpha < 180°$ & 比直角大，比平角小 \\
+平角 & $\alpha = 180°$ & 两条边在同一直线上，方向相反 \\
+周角 & $\alpha = 360°$ & 完整转一圈 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+% TODO-TikZ: 各类角的示意图 (was: ../assets/03-geometry/angle-types.svg)
+
+
+直角在图形中用一个小正方形标记来表示。
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 时钟在 $3$ 点整时，时针与分针所成的角是什么角？ $4$ 点整呢？
+
+\textbf{解：}
+$3$ 点整：分针指向 $12$ ，时针指向 $3$ 。时针走过了 $\dfrac{3}{12}$ 个圆周，即 $\dfrac{3}{12} \times 360° = 90°$ 。所以所成的角是\textbf{直角}。
+
+$4$ 点整：时针走过了 $\dfrac{4}{12} \times 360° = 120°$ 。因为 $90° < 120° < 180°$ ，所以所成的角是\textbf{钝角}。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 角按大小分为锐角、直角、钝角、平角、周角。
+  \item 直角 $= 90°$ ，平角 $= 180°$ ，周角 $= 360°$ 。
+  \item 直角用小正方形标记。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 时钟在 $6$ 点整时，时针和分针形成什么角？在 $2$ 点整呢？
+  \item 一个角是 $135°$ ，它属于哪类角？
+\end{enumerate}
+
+
+\end{practice}
+
+
+
+\section*{互补与互余}
+
+
+\begin{explore}
+
+
+一块长方形木板从一个顶点处锯开，分成了两个角。如果锯出来的一个角是 $35°$ ，另一个角是多少？它们之间有什么关系？
+
+长方形的角是 $90°$ ，所以另一个角是 $90° - 35° = 55°$ 。这两个角之和恰好等于 $90°$ 。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{互余}：如果两个角的和等于 $90°$ ，则这两个角\textbf{互为余角}（互余）。
+
+\[
+\angle \alpha + \angle \beta = 90° \implies \angle \alpha \text{ 与 } \angle \beta \text{ 互余}
+\]
+
+
+\textbf{互补}：如果两个角的和等于 $180°$ ，则这两个角\textbf{互为补角}（互补）。
+
+\[
+\angle \alpha + \angle \beta = 180° \implies \angle \alpha \text{ 与 } \angle \beta \text{ 互补}
+\]
+
+
+重要性质：
+\begin{itemize}
+  \item \textbf{同一个角的余角相等}：如果 $\angle 1$ 和 $\angle 2$ 都是 $\angle 3$ 的余角，则 $\angle 1 = \angle 2$ 。
+  \item \textbf{同一个角的补角相等}：如果 $\angle 1$ 和 $\angle 2$ 都是 $\angle 3$ 的补角，则 $\angle 1 = \angle 2$ 。
+\end{itemize}
+
+
+\end{understand}
+
+\begin{quote}
+互余和互补是两个角之间的关系，不要求这两个角有公共顶点或相邻。
+\end{quote}
+
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 一个角的余角是 $52°$ ，求这个角及其补角。
+
+\textbf{解：}
+设这个角为 $\angle \alpha$ 。
+
+因为 $\angle \alpha$ 与 $52°$ 互余，所以 $\angle \alpha + 52° = 90°$ ，解得 $\angle \alpha = 38°$ 。
+
+$\angle \alpha$ 的补角为 $180° - 38° = 142°$ 。
+
+\textbf{例 2.} 一个角的补角是它的余角的 $3$ 倍，求这个角。
+
+\textbf{解：}
+设这个角为 $\angle \alpha$ 。
+
+余角为 $90° - \alpha$ ，补角为 $180° - \alpha$ 。
+
+由题意： $180° - \alpha = 3(90° - \alpha)$
+
+$180° - \alpha = 270° - 3\alpha$
+
+$2\alpha = 90°$
+
+$\alpha = 45°$
+
+\textbf{例 3.} 已知 $\angle 1$ 与 $\angle 2$ 互补，且 $\angle 1 = 5\angle 2$ ，求 $\angle 1$ 和 $\angle 2$ 。
+
+\textbf{解：}
+因为 $\angle 1 + \angle 2 = 180°$ ，且 $\angle 1 = 5\angle 2$ ，
+
+所以 $5\angle 2 + \angle 2 = 180°$ ，即 $6\angle 2 = 180°$ 。
+
+解得 $\angle 2 = 30°$ ， $\angle 1 = 150°$ 。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 互余：两角之和 $= 90°$ ；互补：两角之和 $= 180°$ 。
+  \item 同角（或等角）的余角相等，同角（或等角）的补角相等。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 一个角是 $67°$ ，它的余角和补角分别是多少？
+  \item 一个角的补角比它的余角大多少？（对任意角成立吗？）
+  \item 已知 $\angle A$ 与 $\angle B$ 互余， $\angle A = 2\angle B + 12°$ ，求 $\angle A$ 和 $\angle B$ 。
+\end{enumerate}
+
+
+\end{practice}
+
+
+
+\section*{对顶角}
+
+
+\begin{explore}
+
+
+两条直线相交，会形成四个角。用量角器量一量——你发现了什么？对面的两个角总是相等的！
+
+\end{explore}
+
+\begin{understand}
+
+
+两条直线相交，形成两对\textbf{对顶角}。对顶角是指：两个角的顶点相同，且每个角的两条边分别是另一个角的两条边的反向延长线。
+
+% TODO-TikZ: 对顶角示意图 (was: ../assets/03-geometry/vertical-angles.svg)
+
+
+如图，直线 $AB$ 和直线 $CD$ 相交于点 $O$ ，则 $\angle 1$ 和 $\angle 3$ 是对顶角， $\angle 2$ 和 $\angle 4$ 是对顶角。
+
+\textbf{对顶角相等}。
+
+推理过程：
+因为 $\angle 1$ 与 $\angle 2$ 互补（它们组成一个平角），所以 $\angle 1 = 180° - \angle 2$ 。
+又因为 $\angle 3$ 与 $\angle 2$ 互补，所以 $\angle 3 = 180° - \angle 2$ 。
+因此 $\angle 1 = \angle 3$ 。
+
+同理可得 $\angle 2 = \angle 4$ 。
+
+注意：相邻的两个角互补（ $\angle 1 + \angle 2 = 180°$ ），而不是相等。
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 两条直线相交，其中一个角是 $55°$ ，求其他三个角的度数。
+
+\textbf{解：}
+设四个角依次为 $\angle 1 = 55°$ ， $\angle 2$ ， $\angle 3$ ， $\angle 4$ （按顺时针排列）。
+
+$\angle 2 = 180° - 55° = 125°$ （ $\angle 1$ 与 $\angle 2$ 互补）
+
+$\angle 3 = \angle 1 = 55°$ （对顶角相等）
+
+$\angle 4 = \angle 2 = 125°$ （对顶角相等）
+
+\textbf{例 2.} 两条直线相交，其中一对对顶角的和为 $100°$ ，求四个角的度数。
+
+\textbf{解：}
+设这对对顶角各为 $\alpha$ ，则 $2\alpha = 100°$ ， $\alpha = 50°$ 。
+
+另一对对顶角各为 $180° - 50° = 130°$ 。
+
+所以四个角分别为 $50°$ 、 $130°$ 、 $50°$ 、 $130°$ 。
+
+\textbf{例 3.} 如图，三条直线两两相交于同一点 $O$ ， $\angle 1 = 40°$ ， $\angle 2 = 90°$ ，求 $\angle 3$ 的度数。
+
+% TODO-TikZ: 三线共点示意图 (was: ../assets/03-geometry/three-lines-intersect.svg)
+
+
+\textbf{解：}
+因为 $\angle 1$ 、 $\angle 2$ 、 $\angle 3$ 在一条直线的同侧，组成一个平角，
+
+所以 $\angle 1 + \angle 2 + \angle 3 = 180°$ 。
+
+$40° + 90° + \angle 3 = 180°$
+
+$\angle 3 = 50°$
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 两条直线相交形成两对对顶角。
+  \item 对顶角相等。
+  \item 相邻角互补。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 两条直线相交，其中一个角是 $72°$ ，求其他三个角。
+  \item 两条直线相交，已知两个相邻角的差是 $40°$ ，求四个角的度数。
+  \item 三条直线交于一点，其中一个角是 $46°$ ，与它相邻的一个角是 $72°$ ，求其余各角。
+\end{enumerate}
+
+
+\end{practice}
+
+
+
+\begin{answer}
+
+
+\begin{enumerate}
+  \item $2.35° = 2°21'$ （ $0.35° = 0.35 \times 60' = 21'$ ）。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item $45°18' = 45° + \dfrac{18}{60}° = 45.3°$ 。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item $6$ 点整：时针和分针形成平角（ $180°$ ）。 $2$ 点整： $\dfrac{2}{12} \times 360° = 60°$ ，是锐角。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item $135°$ ，因为 $90° < 135° < 180°$ ，属于钝角。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item 余角： $90° - 67° = 23°$ ；补角： $180° - 67° = 113°$ 。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item 设角为 $\alpha$ ，补角为 $180° - \alpha$ ，余角为 $90° - \alpha$ 。差 $= (180° - \alpha) - (90° - \alpha) = 90°$ 。对任意角（有余角的前提下，即 $\alpha < 90°$ ），补角总比余角大 $90°$ 。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item 由互余： $\angle A + \angle B = 90°$ 。由 $\angle A = 2\angle B + 12°$ ，代入得 $2\angle B + 12° + \angle B = 90°$ ， $3\angle B = 78°$ ， $\angle B = 26°$ ， $\angle A = 64°$ 。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item 其他三个角分别为 $108°$ 、 $72°$ 、 $108°$ 。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item 设较小角为 $\alpha$ ，则相邻角为 $\alpha + 40°$ 。因为互补： $\alpha + (\alpha + 40°) = 180°$ ， $\alpha = 70°$ 。四个角为 $70°$ 、 $110°$ 、 $70°$ 、 $110°$ 。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item 设六个角按顺时针为 $\angle 1 = 46°$ ， $\angle 2 = 72°$ ， $\angle 3$ ， $\angle 4$ ， $\angle 5$ ， $\angle 6$ 。
+\end{enumerate}
+
+    $\angle 3 = 180° - 46° - 72° = 62°$ （三个角组成平角）。
+    由对顶角： $\angle 4 = \angle 1 = 46°$ ， $\angle 5 = \angle 2 = 72°$ ， $\angle 6 = \angle 3 = 62°$ 。
+
+\end{answer}

@@ -1,1 +1,625 @@
-% stub
+\chapter{§2.4 因式分解}
+\label{sec:2.4}
+
+
+\prerequisite{§2.3 代数式与整式}
+
+\gradelevel{8 年级}
+
+
+\section*{因式分解的概念}
+
+
+\begin{explore}
+
+
+在 §2.3 中我们学过整式的乘法，比如 $3x(x + 2) = 3x^2 + 6x$ 。现在反过来问：如果已知 $3x^2 + 6x$ ，能不能把它"还原"成 $3x(x + 2)$ 的形式？这个"逆向操作"就是\textbf{因式分解}——把一个多项式写成几个整式乘积的形式。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{因式分解}（分解因式）：把一个多项式化为几个整式的乘积的变形，叫做因式分解。
+
+\[
+3x^2 + 6x = 3x(x + 2) \quad (\text{因式分解})
+\]
+
+
+对比：
+
+\[
+3x(x + 2) = 3x^2 + 6x \quad (\text{展开})
+\]
+
+
+因式分解与展开是\textbf{互逆的运算}，就像加法与减法、乘法与除法一样。
+
+\textbf{为什么因式分解重要？} 因式分解是解方程、化简分式、证明等式的基本工具。掌握了因式分解，等于掌握了代数化简的"万能钥匙"。
+
+\textbf{因式分解的一般步骤}：
+
+\begin{enumerate}
+  \item 先看有没有\textbf{公因式}可以提取。
+  \item 再看能否用\textbf{公式法}（平方差、完全平方）。
+  \item 最后尝试\textbf{十字相乘法}等其他方法。
+  \item 分解到每个因式都不能再分解为止。
+\end{enumerate}
+
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 判断下列变形是否为因式分解：
+
+(1) $x^2 - 4 = (x+2)(x-2)$
+
+(2) $x(x-1) = x^2 - x$
+
+(3) $x^2 + 2x + 1 = x(x+2) + 1$
+
+\textbf{解：}
+
+(1) 是因式分解。左边是多项式，右边是乘积形式。
+
+(2) 不是因式分解，这是展开（左边是乘积，右边是多项式）。
+
+(3) 不是因式分解。右边不是纯粹的乘积形式（有加号连接的 $+1$ ）。
+
+\textbf{例 2.} 下列多项式中，哪些可以直接看出因式分解的结果？
+
+(1) $5a + 5b$ 　　(2) $x^2 - 9$
+
+\textbf{解：}
+
+(1) $5a + 5b = 5(a + b)$ （提取公因式 $5$ ）。
+
+(2) $x^2 - 9 = x^2 - 3^2 = (x+3)(x-3)$ （平方差公式）。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 因式分解是展开的逆运算：多项式 → 乘积。
+  \item 因式分解的结果必须是乘积形式，且每个因式不能再分解。
+  \item 因式分解是代数中非常核心的技能。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 判断 $2x^2 - 8 = 2(x+2)(x-2)$ 是否为因式分解。
+  \item 判断 $a^2 + a = a \cdot a + a$ 是否为因式分解。
+  \item $6m - 12$ 的因式分解结果是什么？
+  \item 因式分解与展开是什么关系？
+  \item 因式分解的结果应满足什么条件？
+\end{enumerate}
+
+
+\end{practice}
+
+\section*{提公因式法}
+
+
+\begin{explore}
+
+
+超市做促销，苹果每斤 $a$ 元、香蕉每斤 $b$ 元，小明买了 $3$ 斤苹果和 $3$ 斤香蕉，总价为 $3a + 3b$ 。显然可以写成 $3(a + b)$ ——公因数 $3$ 被提了出来。对于多项式中的"公因式"，道理完全一样。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{公因式}：多项式各项都含有的公共因式。
+
+提公因式的步骤：
+
+\begin{enumerate}
+  \item 找出各项系数的\textbf{最大公因数}。
+  \item 找出各项都含有的\textbf{相同字母}，取指数最小的。
+  \item 将公因式提到括号外，括号内为原式除以公因式的结果。
+\end{enumerate}
+
+
+\[
+ma + mb + mc = m(a + b + c)
+\]
+
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 因式分解 $6a^2b + 9ab^2$ 。
+
+\textbf{解：}
+
+\begin{itemize}
+  \item 系数的最大公因数： $\gcd(6, 9) = 3$ 。
+  \item 公共字母： $a$ （最低指数 $1$ ）， $b$ （最低指数 $1$ ）。
+  \item 公因式为 $3ab$ 。
+\end{itemize}
+
+
+\[
+6a^2b + 9ab^2 = 3ab(2a + 3b)
+\]
+
+
+\textbf{例 2.} 因式分解 $-4x^3 + 8x^2 - 12x$ 。
+
+\textbf{解：}
+
+\begin{itemize}
+  \item 系数的最大公因数： $4$ 。第一项为负，习惯上提取 $-4x$ 。
+  \item 公共字母： $x$ （最低指数 $1$ ）。
+\end{itemize}
+
+
+\[
+-4x^3 + 8x^2 - 12x = -4x(x^2 - 2x + 3)
+\]
+
+
+验证： $-4x(x^2 - 2x + 3) = -4x^3 + 8x^2 - 12x$ ✓
+
+\textbf{例 3.} 因式分解 $2a(x - y) + 3b(x - y)$ 。
+
+\textbf{解：} $(x - y)$ 是公因式。
+
+\[
+2a(x - y) + 3b(x - y) = (x - y)(2a + 3b)
+\]
+
+
+\textbf{例 4.} 因式分解 $x^2(a - b) - y^2(a - b)$ 。
+
+\textbf{解：} 先提公因式 $(a - b)$ ，再对 $x^2 - y^2$ 用平方差公式。
+
+\[
+\begin{aligned}
+x^2(a - b) - y^2(a - b) &= (a - b)(x^2 - y^2) \\
+&= (a - b)(x + y)(x - y)
+\end{aligned}
+\]
+
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 提公因式法是因式分解的第一步，永远先看有没有公因式。
+  \item 公因式 = 系数的最大公因数 $\times$ 公共字母的最低次幂。
+  \item 整个表达式也可以作为公因式被提取（如含 $(x-y)$ 的情况）。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 因式分解 $12x + 18y$ 。
+  \item 因式分解 $5a^2b - 10ab^2$ 。
+  \item 因式分解 $-3x^2y + 6xy - 9xy^2$ 。
+  \item 因式分解 $m(a + b) - n(a + b)$ 。
+  \item 因式分解 $a^3 - a^2 + a$ 。
+  \item 因式分解 $2x(x - 3) + 5(3 - x)$ 。（提示： $3 - x = -(x - 3)$ ）
+\end{enumerate}
+
+
+\end{practice}
+
+\section*{公式法}
+
+
+\begin{explore}
+
+
+我们在 §2.3 中学过两个乘法公式：平方差公式和完全平方公式。既然因式分解是展开的逆运算，那么把公式"反过来用"就可以分解特定形式的多项式。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{平方差公式（逆用）}：
+
+\[
+a^2 - b^2 = (a + b)(a - b)
+\]
+
+
+特征识别：两项相减，每一项都是完全平方。
+
+\textbf{完全平方公式（逆用）}：
+
+\[
+a^2 + 2ab + b^2 = (a + b)^2
+\]
+
+
+\[
+a^2 - 2ab + b^2 = (a - b)^2
+\]
+
+
+特征识别：三项式，首尾两项是完全平方，中间项是首尾两项平方根之积的 $2$ 倍。
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 因式分解 $25x^2 - 16$ 。
+
+\textbf{解：} 识别为平方差： $25x^2 = (5x)^2$ ， $16 = 4^2$ 。
+
+\[
+25x^2 - 16 = (5x)^2 - 4^2 = (5x + 4)(5x - 4)
+\]
+
+
+\textbf{例 2.} 因式分解 $x^2 + 6x + 9$ 。
+
+\textbf{解：} 识别为完全平方： $x^2 = x^2$ ， $9 = 3^2$ ， $6x = 2 \cdot x \cdot 3$ 。
+
+\[
+x^2 + 6x + 9 = (x + 3)^2
+\]
+
+
+\textbf{例 3.} 因式分解 $4a^2 - 12ab + 9b^2$ 。
+
+\textbf{解：} $4a^2 = (2a)^2$ ， $9b^2 = (3b)^2$ ， $12ab = 2 \cdot 2a \cdot 3b$ 。
+
+\[
+4a^2 - 12ab + 9b^2 = (2a - 3b)^2
+\]
+
+
+\textbf{例 4.} 因式分解 $3x^2 - 12$ 。
+
+\textbf{解：} 先提公因式，再用公式法。
+
+\[
+3x^2 - 12 = 3(x^2 - 4) = 3(x + 2)(x - 2)
+\]
+
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 平方差公式用于" $A^2 - B^2$ "型两项式。
+  \item 完全平方公式用于" $A^2 \pm 2AB + B^2$ "型三项式。
+  \item 先提公因式，再用公式法，不要遗漏步骤。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 因式分解 $x^2 - 49$ 。
+  \item 因式分解 $9m^2 - 4n^2$ 。
+  \item 因式分解 $a^2 - 10a + 25$ 。
+  \item 因式分解 $x^2 + 14x + 49$ 。
+  \item 因式分解 $2x^2 - 18$ 。
+  \item 因式分解 $-a^2 + 6a - 9$ 。（提示：先提取 $-1$ ）
+  \item 因式分解 $16x^2 - 24xy + 9y^2$ 。
+\end{enumerate}
+
+
+\end{practice}
+
+\section*{十字相乘法}
+
+
+\begin{explore}
+
+
+并非所有二次三项式都是完全平方。比如 $x^2 + 5x + 6$ ，它的首尾两项的平方根之积是 $x \cdot \sqrt{6}$ ，而 $2 \cdot x \cdot \sqrt{6} \neq 5x$ ，所以它不是完全平方形式。那么 $x^2 + 5x + 6$ 能不能分解？答案是可以的，方法叫做\textbf{十字相乘法}。
+
+\end{explore}
+
+\begin{understand}
+
+
+对于 $x^2 + bx + c$ 形式的二次三项式，如果能找到两个数 $p, q$ 使得：
+
+\[
+p + q = b, \quad p \times q = c
+\]
+
+
+那么：
+
+\[
+x^2 + bx + c = (x + p)(x + q)
+\]
+
+
+\textbf{十字相乘法的名称来源}：把 $p, q$ 排成十字形来验证。
+
+\[
+\begin{array}{cc}
+x & p \\
+x & q
+\end{array}
+\quad \Rightarrow \quad xq + xp = (p+q)x = bx \quad \checkmark
+\]
+
+
+对于更一般的 $ax^2 + bx + c$ （ $a \neq 1$ ），需要找 $a_1, a_2, c_1, c_2$ 使得 $a_1 a_2 = a$ ， $c_1 c_2 = c$ ， $a_1 c_2 + a_2 c_1 = b$ 。
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 因式分解 $x^2 + 5x + 6$ 。
+
+\textbf{解：} 找两个数，和为 $5$ ，积为 $6$ 。
+
+$2 + 3 = 5$ ， $2 \times 3 = 6$ 。
+
+\[
+x^2 + 5x + 6 = (x + 2)(x + 3)
+\]
+
+
+\textbf{例 2.} 因式分解 $x^2 - 7x + 12$ 。
+
+\textbf{解：} 找两个数，和为 $-7$ ，积为 $12$ 。
+
+$(-3) + (-4) = -7$ ， $(-3) \times (-4) = 12$ 。
+
+\[
+x^2 - 7x + 12 = (x - 3)(x - 4)
+\]
+
+
+\textbf{例 3.} 因式分解 $x^2 + 2x - 15$ 。
+
+\textbf{解：} 找两个数，和为 $2$ ，积为 $-15$ 。
+
+$5 + (-3) = 2$ ， $5 \times (-3) = -15$ 。
+
+\[
+x^2 + 2x - 15 = (x + 5)(x - 3)
+\]
+
+
+\textbf{例 4.} 因式分解 $2x^2 + 7x + 3$ 。
+
+\textbf{解：} 首项系数不为 $1$ ，需要分解 $2 = 2 \times 1$ ， $3 = 1 \times 3$ 。
+
+尝试： $2 \times 3 + 1 \times 1 = 7$ ✓
+
+\[
+2x^2 + 7x + 3 = (2x + 1)(x + 3)
+\]
+
+
+验证： $(2x + 1)(x + 3) = 2x^2 + 6x + x + 3 = 2x^2 + 7x + 3$ ✓
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item $x^2 + bx + c$ 型：找两个数之和为 $b$ 、之积为 $c$ 。
+  \item 首项系数非 $1$ 时，需要同时分解首项系数和常数项，并交叉检验。
+  \item 找不到整数解时，该多项式在整数范围内不能用十字相乘法分解。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 因式分解 $x^2 + 7x + 10$ 。
+  \item 因式分解 $x^2 - 9x + 20$ 。
+  \item 因式分解 $x^2 - 3x - 18$ 。
+  \item 因式分解 $x^2 + x - 12$ 。
+  \item 因式分解 $3x^2 + 10x + 3$ 。
+  \item 因式分解 $2x^2 - 5x - 3$ 。
+\end{enumerate}
+
+
+\end{practice}
+
+\section*{综合运用}
+
+
+\begin{explore}
+
+
+实际的因式分解题目常常需要\textbf{多种方法结合使用}。比如 $2x^3 - 8x$ ，先提公因式 $2x$ ，得到 $2x(x^2 - 4)$ ，再对 $x^2 - 4$ 用平方差公式，得到 $2x(x+2)(x-2)$ 。遇到复杂的题目，关键是\textbf{按顺序思考}：提公因式 → 公式法 → 十字相乘法。
+
+\end{explore}
+
+\begin{understand}
+
+
+因式分解的\textbf{标准流程}：
+
+\begin{enumerate}
+  \item \textbf{第一步}：看是否有公因式，有则先提取。
+  \item \textbf{第二步}：看剩余部分的项数。
+\end{enumerate}
+
+   - 两项：考虑平方差公式。
+   - 三项：考虑完全平方公式或十字相乘法。
+\begin{enumerate}
+  \item \textbf{第三步}：检查每个因式是否还能继续分解。
+\end{enumerate}
+
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 因式分解 $3a^2 - 12b^2$ 。
+
+\textbf{解：}
+
+\[
+\begin{aligned}
+3a^2 - 12b^2 &= 3(a^2 - 4b^2) \quad (\text{提公因式}) \\
+&= 3(a + 2b)(a - 2b) \quad (\text{平方差公式})
+\end{aligned}
+\]
+
+
+\textbf{例 2.} 因式分解 $x^3 - 2x^2 - 3x$ 。
+
+\textbf{解：}
+
+\[
+\begin{aligned}
+x^3 - 2x^2 - 3x &= x(x^2 - 2x - 3) \quad (\text{提公因式}) \\
+&= x(x - 3)(x + 1) \quad (\text{十字相乘法：} -3 + 1 = -2,\; (-3) \times 1 = -3)
+\end{aligned}
+\]
+
+
+\textbf{例 3.} 因式分解 $2x^2y - 12xy + 18y$ 。
+
+\textbf{解：}
+
+\[
+\begin{aligned}
+2x^2y - 12xy + 18y &= 2y(x^2 - 6x + 9) \quad (\text{提公因式 } 2y) \\
+&= 2y(x - 3)^2 \quad (\text{完全平方公式})
+\end{aligned}
+\]
+
+
+\textbf{例 4.} 因式分解 $(a + b)^2 - 4(a + b) + 4$ 。
+
+\textbf{解：} 将 $(a + b)$ 看作整体，设 $t = a + b$ ，则原式 $= t^2 - 4t + 4 = (t - 2)^2$ 。
+
+\[
+(a + b)^2 - 4(a + b) + 4 = (a + b - 2)^2
+\]
+
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 因式分解的顺序：提公因式 → 公式法 → 十字相乘法。
+  \item 复杂表达式可以将整体看作一个变量来简化。
+  \item 分解完毕后要检查：每个因式是否还能继续分解。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 因式分解 $5x^2 - 45$ 。
+  \item 因式分解 $a^3b - 4ab$ 。
+  \item 因式分解 $3x^2 + 6x - 24$ 。
+  \item 因式分解 $-2a^2 + 4a - 2$ 。
+  \item 因式分解 $(x + 1)^2 - 9$ 。
+  \item 因式分解 $4x^2y - 8xy + 4y$ 。
+\end{enumerate}
+
+
+\end{practice}
+
+
+
+\begin{answer}
+
+
+\textbf{因式分解的概念 练一练}
+
+\begin{enumerate}
+  \item 是因式分解。 $2x^2 - 8 = 2(x^2 - 4) = 2(x+2)(x-2)$ ，从多项式变为了乘积形式。
+  \item 不是因式分解。 $a \cdot a + a$ 不是纯粹的乘积形式。正确的因式分解为 $a^2 + a = a(a + 1)$ 。
+  \item $6m - 12 = 6(m - 2)$ 。
+  \item 因式分解与展开互为逆运算。展开是将乘积变为多项式，因式分解是将多项式变为乘积。
+  \item 结果必须是整式乘积的形式，且每个因式不能再继续分解。
+\end{enumerate}
+
+
+\textbf{提公因式法 练一练}
+
+\begin{enumerate}
+  \item $12x + 18y = 6(2x + 3y)$ 。
+  \item $5a^2b - 10ab^2 = 5ab(a - 2b)$ 。
+  \item $-3x^2y + 6xy - 9xy^2 = -3xy(x - 2 + 3y)$ 。
+  \item $m(a + b) - n(a + b) = (a + b)(m - n)$ 。
+  \item $a^3 - a^2 + a = a(a^2 - a + 1)$ 。
+  \item $2x(x - 3) + 5(3 - x) = 2x(x - 3) - 5(x - 3) = (x - 3)(2x - 5)$ 。
+\end{enumerate}
+
+
+\textbf{公式法 练一练}
+
+\begin{enumerate}
+  \item $x^2 - 49 = (x + 7)(x - 7)$ 。
+  \item $9m^2 - 4n^2 = (3m + 2n)(3m - 2n)$ 。
+  \item $a^2 - 10a + 25 = (a - 5)^2$ 。
+  \item $x^2 + 14x + 49 = (x + 7)^2$ 。
+  \item $2x^2 - 18 = 2(x^2 - 9) = 2(x + 3)(x - 3)$ 。
+  \item $-a^2 + 6a - 9 = -(a^2 - 6a + 9) = -(a - 3)^2$ 。
+  \item $16x^2 - 24xy + 9y^2 = (4x - 3y)^2$ 。
+\end{enumerate}
+
+
+\textbf{十字相乘法 练一练}
+
+\begin{enumerate}
+  \item $x^2 + 7x + 10 = (x + 2)(x + 5)$ 。（ $2 + 5 = 7$ ， $2 \times 5 = 10$ ）
+  \item $x^2 - 9x + 20 = (x - 4)(x - 5)$ 。（ $-4 + (-5) = -9$ ， $(-4)(-5) = 20$ ）
+  \item $x^2 - 3x - 18 = (x - 6)(x + 3)$ 。（ $-6 + 3 = -3$ ， $(-6) \times 3 = -18$ ）
+  \item $x^2 + x - 12 = (x + 4)(x - 3)$ 。（ $4 + (-3) = 1$ ， $4 \times (-3) = -12$ ）
+  \item $3x^2 + 10x + 3 = (3x + 1)(x + 3)$ 。（交叉： $3 \times 3 + 1 \times 1 = 10$ ）
+  \item $2x^2 - 5x - 3 = (2x + 1)(x - 3)$ 。（交叉： $2 \times (-3) + 1 \times 1 = -5$ ）
+\end{enumerate}
+
+
+\textbf{综合运用 练一练}
+
+\begin{enumerate}
+  \item $5x^2 - 45 = 5(x^2 - 9) = 5(x + 3)(x - 3)$ 。
+  \item $a^3b - 4ab = ab(a^2 - 4) = ab(a + 2)(a - 2)$ 。
+  \item $3x^2 + 6x - 24 = 3(x^2 + 2x - 8) = 3(x + 4)(x - 2)$ 。（ $4 + (-2) = 2$ ， $4 \times (-2) = -8$ ）
+  \item $-2a^2 + 4a - 2 = -2(a^2 - 2a + 1) = -2(a - 1)^2$ 。
+  \item $(x + 1)^2 - 9 = [(x + 1) + 3][(x + 1) - 3] = (x + 4)(x - 2)$ 。
+  \item $4x^2y - 8xy + 4y = 4y(x^2 - 2x + 1) = 4y(x - 1)^2$ 。
+\end{enumerate}
+
+
+\end{answer}

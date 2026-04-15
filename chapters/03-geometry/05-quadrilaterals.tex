@@ -1,1 +1,679 @@
-% stub
+\chapter{§3.5 四边形}
+\label{sec:3.5}
+
+
+\prerequisite{§3.3, §3.4}
+
+\gradelevel{7-8 年级}
+
+
+\section*{多边形的内角和}
+
+
+\begin{explore}
+
+
+我们已经知道三角形的内角和是 $180°$ 。四边形的内角和是多少？五边形呢？六边形呢？有没有一个通用的规律？
+
+试着从四边形的一个顶点画一条对角线——四边形被分成了两个三角形。每个三角形内角和 $180°$ ，两个就是 $360°$ 。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{ $n$ 边形的内角和公式}：
+
+从 $n$ 边形的一个顶点出发，可以画出 $(n - 3)$ 条对角线，将多边形分成 $(n - 2)$ 个三角形。
+
+\[
+\text{ $n$ 边形的内角和} = (n - 2) \times 180°
+\]
+
+
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+多边形 & 边数 $n$ & 三角形个数 & 内角和 \\
+\midrule
+三角形 & 3 & 1 & $180°$ \\
+四边形 & 4 & 2 & $360°$ \\
+五边形 & 5 & 3 & $540°$ \\
+六边形 & 6 & 4 & $720°$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+\textbf{正多边形}：如果一个多边形的各边都相等、各角都相等，则称为正多边形。正 $n$ 边形的每个内角为：
+
+\[
+\frac{(n - 2) \times 180°}{n}
+\]
+
+
+\textbf{多边形的外角和}：任意凸多边形的外角和（每个顶点取一个外角）都等于 $360°$ 。
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 求正六边形的每个内角的度数。
+
+\textbf{解：}
+正六边形内角和 $= (6 - 2) \times 180° = 720°$ 。
+
+每个内角 $= \dfrac{720°}{6} = 120°$ 。
+
+\textbf{例 2.} 一个多边形的内角和为 $1440°$ ，它是几边形？
+
+\textbf{解：}
+$(n - 2) \times 180° = 1440°$
+
+$n - 2 = 8$
+
+$n = 10$
+
+它是十边形。
+
+\textbf{例 3.} 一个正多边形的每个外角为 $40°$ ，求这个正多边形的边数。
+
+\textbf{解：}
+外角和 $= 360°$ 。每个外角 $= 40°$ 。
+
+边数 $n = \dfrac{360°}{40°} = 9$ 。
+
+这是正九边形。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item $n$ 边形内角和 $= (n-2) \times 180°$ 。
+  \item 任意凸多边形外角和 $= 360°$ 。
+  \item 正 $n$ 边形每个内角 $= \dfrac{(n-2) \times 180°}{n}$ ，每个外角 $= \dfrac{360°}{n}$ 。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 求正十二边形的每个内角。
+  \item 一个多边形的内角和是 $1080°$ ，它是几边形？
+  \item 一个正多边形的每个内角是 $144°$ ，求边数。
+\end{enumerate}
+
+
+\end{practice}
+
+
+
+\section*{平行四边形的性质与判定}
+
+
+\begin{explore}
+
+
+推拉门、升降机的交叉支架、可折叠的晾衣架——这些日常物品都运用了平行四边形的原理。平行四边形到底有什么独特的性质？
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{平行四边形}：两组对边分别平行的四边形叫做平行四边形。平行四边形 $ABCD$ 记作 $\square ABCD$ 。
+
+% TODO-TikZ: 平行四边形 (was: ../assets/03-geometry/parallelogram.svg)
+
+
+\textbf{平行四边形的性质}：
+
+\begin{enumerate}
+  \item \textbf{对边平行}： $AB \parallel CD$ ， $AD \parallel BC$ 。
+  \item \textbf{对边相等}： $AB = CD$ ， $AD = BC$ 。
+  \item \textbf{对角相等}： $\angle A = \angle C$ ， $\angle B = \angle D$ 。
+  \item \textbf{邻角互补}： $\angle A + \angle B = 180°$ 。
+  \item \textbf{对角线互相平分}：对角线 $AC$ 和 $BD$ 的交点 $O$ 是两条对角线的中点，即 $OA = OC$ ， $OB = OD$ 。
+\end{enumerate}
+
+
+\textbf{平行四边形的判定}（满足以下任一条件的四边形是平行四边形）：
+
+\begin{enumerate}
+  \item 两组对边分别平行。（定义）
+  \item 两组对边分别相等。
+  \item 一组对边平行且相等。
+  \item 两组对角分别相等。
+  \item 对角线互相平分。
+\end{enumerate}
+
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} $\square ABCD$ 中， $\angle A = 70°$ ，求 $\angle B$ 、 $\angle C$ 、 $\angle D$ 。
+
+\textbf{解：}
+$\angle B = 180° - \angle A = 180° - 70° = 110°$ （邻角互补）。
+
+$\angle C = \angle A = 70°$ （对角相等）。
+
+$\angle D = \angle B = 110°$ （对角相等）。
+
+\textbf{例 2.} $\square ABCD$ 中，对角线 $AC$ 与 $BD$ 交于点 $O$ ， $AC = 16$ cm， $BD = 12$ cm。求 $OA$ 、 $OB$ 的长。
+
+\textbf{解：}
+因为平行四边形的对角线互相平分，
+
+$OA = \dfrac{1}{2}AC = \dfrac{1}{2} \times 16 = 8$ cm。
+
+$OB = \dfrac{1}{2}BD = \dfrac{1}{2} \times 12 = 6$ cm。
+
+\textbf{例 3.} 四边形 $ABCD$ 中， $AB \parallel CD$ ， $AB = CD$ 。证明 $ABCD$ 是平行四边形。
+
+\textbf{证明：}
+连接 $AC$ 。
+
+在 $\triangle ABC$ 和 $\triangle CDA$ 中：
+
+$AB = CD$ （已知）， $AC = CA$ （公共边）， $\angle BAC = \angle DCA$ （ $AB \parallel CD$ ，内错角相等）。
+
+所以 $\triangle ABC \cong \triangle CDA$ （SAS）。
+
+所以 $\angle BCA = \angle DAC$ 。
+
+因为 $\angle BCA = \angle DAC$ ，这是截线 $AC$ 所截的内错角，
+
+所以 $AD \parallel BC$ 。
+
+因为 $AB \parallel CD$ （已知）， $AD \parallel BC$ （已证），
+
+所以 $ABCD$ 是平行四边形（两组对边分别平行）。
+
+\textbf{例 4.} 四边形 $ABCD$ 中，对角线 $AC$ 与 $BD$ 交于点 $O$ ， $OA = OC$ ， $OB = OD$ 。证明 $ABCD$ 是平行四边形。
+
+\textbf{证明：}
+在 $\triangle AOB$ 和 $\triangle COD$ 中：
+
+$OA = OC$ （已知）， $OB = OD$ （已知）， $\angle AOB = \angle COD$ （对顶角相等）。
+
+所以 $\triangle AOB \cong \triangle COD$ （SAS）。
+
+所以 $AB = CD$ ， $\angle OAB = \angle OCD$ 。
+
+因为 $\angle OAB = \angle OCD$ ，这是内错角，所以 $AB \parallel CD$ 。
+
+因为 $AB \parallel CD$ 且 $AB = CD$ （一组对边平行且相等），
+
+所以 $ABCD$ 是平行四边形。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 平行四边形：对边平行且相等，对角相等，对角线互相平分。
+  \item 判定方法有五种，其中"一组对边平行且相等"最为常用。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item $\square ABCD$ 中， $AB = 8$ cm， $BC = 5$ cm，求周长。
+  \item $\square ABCD$ 中， $\angle A - \angle B = 40°$ ，求四个角。
+  \item 四边形 $ABCD$ 中， $AB = CD = 5$ cm， $AD = BC = 3$ cm。这是平行四边形吗？说明理由。
+\end{enumerate}
+
+
+\end{practice}
+
+
+
+\section*{矩形、菱形、正方形}
+
+
+\begin{explore}
+
+
+教室的门、窗户是矩形；菱形窗花有着对称的美感；而棋盘上的小方格则是正方形。它们都是特殊的平行四边形。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{矩形}：有一个角是直角的平行四边形叫做矩形（长方形）。
+
+矩形的性质（在平行四边形性质的基础上增加）：
+\begin{itemize}
+  \item 四个角都是直角。
+  \item 对角线相等（ $AC = BD$ ）。
+\end{itemize}
+
+
+矩形的判定：
+\begin{itemize}
+  \item 有一个角是直角的平行四边形。
+  \item 三个角都是直角的四边形。
+  \item 对角线相等的平行四边形。
+\end{itemize}
+
+
+\textbf{菱形}：有一组邻边相等的平行四边形叫做菱形。
+
+菱形的性质（在平行四边形性质的基础上增加）：
+\begin{itemize}
+  \item 四条边都相等。
+  \item 对角线互相垂直（ $AC \perp BD$ ）。
+  \item 每条对角线平分一组对角。
+\end{itemize}
+
+
+菱形的判定：
+\begin{itemize}
+  \item 有一组邻边相等的平行四边形。
+  \item 四条边都相等的四边形。
+  \item 对角线互相垂直的平行四边形。
+\end{itemize}
+
+
+\textbf{正方形}：有一个角是直角且有一组邻边相等的平行四边形叫做正方形。
+
+正方形同时具有矩形和菱形的所有性质：
+\begin{itemize}
+  \item 四个角都是直角。
+  \item 四条边都相等。
+  \item 对角线相等且互相垂直平分。
+  \item 每条对角线平分一组对角。
+\end{itemize}
+
+
+\end{understand}
+
+\begin{quote}
+正方形 $=$ 矩形 $\cap$ 菱形。
+\end{quote}
+
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 矩形 $ABCD$ 中，对角线 $AC = 10$ cm， $\angle ACB = 30°$ 。求 $AB$ 和 $BC$ 的长。
+
+\textbf{解：}
+因为 $ABCD$ 是矩形，所以 $\angle B = 90°$ ， $AC = BD = 10$ cm。
+
+在直角 $\triangle ABC$ 中， $\angle ACB = 30°$ ， $\angle B = 90°$ 。
+
+$AB = AC \times \sin 30° = 10 \times \dfrac{1}{2} = 5$ cm（ $30°$ 角对边等于斜边一半）。
+
+$BC = \sqrt{AC^2 - AB^2} = \sqrt{100 - 25} = \sqrt{75} = 5\sqrt{3}$ cm。
+
+\textbf{例 2.} 菱形 $ABCD$ 中， $AB = 10$ cm， $\angle A = 60°$ 。求两条对角线的长。
+
+\textbf{解：}
+因为菱形对角线互相垂直平分，设 $AC$ 与 $BD$ 交于 $O$ 。
+
+因为菱形对角线平分对角， $\angle OAB = \dfrac{60°}{2} = 30°$ 。
+
+在直角 $\triangle AOB$ 中， $AB = 10$ ， $\angle OAB = 30°$ ， $\angle AOB = 90°$ 。
+
+$OB = AB \times \sin 30° = 10 \times \dfrac{1}{2} = 5$ cm。
+
+$OA = AB \times \cos 30° = 10 \times \dfrac{\sqrt{3}}{2} = 5\sqrt{3}$ cm。
+
+$BD = 2 \times OB = 10$ cm， $AC = 2 \times OA = 10\sqrt{3}$ cm。
+
+\textbf{例 3.} $\square ABCD$ 中，对角线 $AC = BD$ 。证明 $ABCD$ 是矩形。
+
+\textbf{证明：}
+因为 $ABCD$ 是平行四边形，所以 $AB = CD$ ， $AD = BC$ 。
+
+对角线交于 $O$ ， $OA = OC$ ， $OB = OD$ 。
+
+又因为 $AC = BD$ （已知），所以 $OA = OB$ 。
+
+在 $\triangle ABD$ 和 $\triangle BAC$ 中：
+
+$AD = BC$ （平行四边形对边相等）， $BD = AC$ （已知）， $AB = BA$ （公共边）。
+
+所以 $\triangle ABD \cong \triangle BAC$ （SSS）。
+
+所以 $\angle A = \angle B$ 。
+
+因为 $\angle A + \angle B = 180°$ （平行四边形邻角互补），且 $\angle A = \angle B$ ，
+
+所以 $\angle A = \angle B = 90°$ 。
+
+因此 $ABCD$ 是矩形。
+
+\textbf{例 4.} 菱形的面积公式：菱形面积 $= \dfrac{1}{2} \times d_1 \times d_2$ ，其中 $d_1$ 、 $d_2$ 是两条对角线的长。
+
+说明原因：菱形的对角线互相垂直，将菱形分成四个直角三角形。每个三角形的两直角边分别为 $\dfrac{d_1}{2}$ 和 $\dfrac{d_2}{2}$ 。
+
+$S = 4 \times \dfrac{1}{2} \times \dfrac{d_1}{2} \times \dfrac{d_2}{2} = \dfrac{1}{2}d_1 d_2$
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 矩形：四角直角，对角线相等。
+  \item 菱形：四边相等，对角线互相垂直，面积 $= \dfrac{1}{2}d_1 d_2$ 。
+  \item 正方形 $=$ 矩形 $+$ 菱形，兼具两者所有性质。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 矩形 $ABCD$ 中， $AB = 3$ cm， $BC = 4$ cm，求对角线 $AC$ 的长。
+  \item 菱形 $ABCD$ 中，对角线 $AC = 16$ cm， $BD = 12$ cm，求菱形的边长和面积。
+  \item 正方形 $ABCD$ 的对角线长为 $10$ cm，求边长和面积。
+\end{enumerate}
+
+
+\end{practice}
+
+
+
+\section*{梯形}
+
+
+\begin{explore}
+
+
+水坝的横截面、拱桥的侧面——很多建筑结构呈梯形形状。梯形只有一组对边平行，比平行四边形少了一个"平行"条件，却多了许多有趣的性质。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{梯形}：只有一组对边平行的四边形叫做梯形。平行的两条边叫做\textbf{上底}和\textbf{下底}（短的为上底，长的为下底），不平行的两条边叫做\textbf{腰}。
+
+% TODO-TikZ: 梯形 (was: ../assets/03-geometry/trapezoid.svg)
+
+
+\textbf{等腰梯形}：两腰相等的梯形叫做等腰梯形。
+
+等腰梯形的性质：
+\begin{enumerate}
+  \item 同一底上的两个底角相等。
+  \item 对角线相等。
+\end{enumerate}
+
+
+等腰梯形的判定：
+\begin{itemize}
+  \item 同一底上两个角相等的梯形是等腰梯形。
+\end{itemize}
+
+
+\textbf{梯形的面积}：
+
+\[
+S = \frac{1}{2}(a + b) \times h
+\]
+
+
+其中 $a$ 、 $b$ 分别为上底和下底的长， $h$ 为高。
+
+\textbf{梯形的中位线}：连接梯形两腰中点的线段叫做梯形的中位线。
+
+\[
+\text{中位线} = \frac{1}{2}(a + b)
+\]
+
+
+梯形中位线平行于两底，且等于两底之和的一半。
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 等腰梯形 $ABCD$ 中， $AD \parallel BC$ ， $AD = 4$ cm， $BC = 10$ cm，腰长 $AB = CD = 5$ cm。求梯形的高和面积。
+
+\textbf{解：}
+过 $A$ 、 $D$ 分别作 $BC$ 的垂线，垂足分别为 $E$ 、 $F$ 。
+
+% TODO-TikZ: 等腰梯形求高 (was: ../assets/03-geometry/trapezoid-height.svg)
+
+
+因为 $AEFD$ 是矩形（ $AE \perp BC$ ， $DF \perp BC$ ， $AD \parallel BC$ ），所以 $EF = AD = 4$ cm。
+
+由对称性， $BE = \dfrac{BC - EF}{2} = \dfrac{10 - 4}{2} = 3$ cm。
+
+在直角 $\triangle ABE$ 中， $AE = \sqrt{AB^2 - BE^2} = \sqrt{25 - 9} = 4$ cm。
+
+面积 $= \dfrac{1}{2}(4 + 10) \times 4 = 28$ cm $^2$ 。
+
+\textbf{例 2.} 梯形 $ABCD$ 中， $AD \parallel BC$ ， $E$ 、 $F$ 分别是 $AB$ 、 $CD$ 的中点， $AD = 6$ cm， $BC = 14$ cm。求中位线 $EF$ 的长。
+
+\textbf{解：}
+由梯形中位线公式：
+
+$EF = \dfrac{1}{2}(AD + BC) = \dfrac{1}{2}(6 + 14) = 10$ cm。
+
+\textbf{例 3.} 等腰梯形 $ABCD$ 中， $AD \parallel BC$ ， $\angle B = 60°$ ， $BC = 12$ cm， $AB = 4$ cm。求 $AD$ 的长。
+
+\textbf{解：}
+过 $A$ 作 $AE \perp BC$ ，垂足为 $E$ 。
+
+在直角 $\triangle ABE$ 中， $\angle B = 60°$ ， $AB = 4$ 。
+
+$BE = AB \cos 60° = 4 \times \dfrac{1}{2} = 2$ cm。
+
+由对称性： $CF = BE = 2$ （等腰梯形底角相等）。
+
+$AD = EF = BC - BE - CF = 12 - 2 - 2 = 8$ cm。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 梯形有且只有一组对边平行。
+  \item 等腰梯形：两腰相等，同底上两角相等，对角线相等。
+  \item 梯形面积 $= \dfrac{1}{2}(a + b)h$ 。
+  \item 梯形中位线 $= \dfrac{1}{2}(a + b)$ ，平行于两底。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 梯形的上底 $= 6$ cm，下底 $= 10$ cm，高 $= 8$ cm，求面积。
+  \item 等腰梯形的对角线长为 $13$ cm，上底 $= 5$ cm，下底 $= 11$ cm。求梯形的高。
+  \item 等腰梯形的两底角都是 $45°$ ，上底 $= 6$ cm，下底 $= 10$ cm。求腰长和面积。
+\end{enumerate}
+
+
+\end{practice}
+
+
+
+\section*{四边形之间的关系}
+
+
+\begin{explore}
+
+
+平行四边形、矩形、菱形、正方形——这些图形之间到底是什么关系？我们可以用一张"家族图谱"来展示。
+
+\end{explore}
+
+\begin{understand}
+
+
+% TODO-TikZ: 四边形家族关系 (was: ../assets/03-geometry/quadrilateral-family.svg)
+
+
+四边形的家族层级：
+
+```
+            四边形
+           /      \
+       梯形     平行四边形
+       |        /       \
+    等腰梯形  矩形      菱形
+                \       /
+                正方形
+```
+
+\begin{itemize}
+  \item \textbf{平行四边形} $\xrightarrow{+\text{一个直角}}$ \textbf{矩形}
+  \item \textbf{平行四边形} $\xrightarrow{+\text{邻边相等}}$ \textbf{菱形}
+  \item \textbf{矩形} $\xrightarrow{+\text{邻边相等}}$ \textbf{正方形}
+  \item \textbf{菱形} $\xrightarrow{+\text{一个直角}}$ \textbf{正方形}
+\end{itemize}
+
+
+也就是说：
+\begin{itemize}
+  \item 正方形一定是矩形，但矩形不一定是正方形。
+  \item 正方形一定是菱形，但菱形不一定是正方形。
+  \item 矩形、菱形都一定是平行四边形，但反过来不一定。
+\end{itemize}
+
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 判断下列说法是否正确，并说明理由：
+(a) 对角线相等的四边形是矩形。
+(b) 对角线互相垂直的平行四边形是菱形。
+(c) 对角线相等且互相垂直的平行四边形是正方形。
+
+\textbf{解：}
+(a) 错误。等腰梯形的对角线也相等，但不是矩形。正确说法：对角线相等的\textbf{平行四边形}是矩形。
+
+(b) 正确。对角线互相垂直的平行四边形是菱形。
+
+(c) 正确。对角线相等说明它是矩形，对角线互相垂直说明它是菱形，两者兼具即为正方形。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 四边形形成层级关系：平行四边形→矩形/菱形→正方形。
+  \item 判定时要注意前提条件：许多判定需要"已经是平行四边形"这个前提。
+  \item 正方形兼具矩形和菱形的所有性质。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 一个四边形四条边都相等，它一定是正方形吗？一定是菱形吗？
+  \item 已知 $\square ABCD$ 的对角线 $AC \perp BD$ ，且 $AC = BD$ 。它是什么特殊四边形？说明理由。
+\end{enumerate}
+
+
+\end{practice}
+
+
+
+\begin{answer}
+
+
+\begin{enumerate}
+  \item 正十二边形内角和 $= (12 - 2) \times 180° = 1800°$ 。每个内角 $= \dfrac{1800°}{12} = 150°$ 。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item $(n - 2) \times 180° = 1080°$ ， $n - 2 = 6$ ， $n = 8$ 。是八边形。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item 每个内角 $= 144°$ ，每个外角 $= 180° - 144° = 36°$ 。 $n = \dfrac{360°}{36°} = 10$ 。是正十边形。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item 平行四边形对边相等，周长 $= 2(AB + BC) = 2(8 + 5) = 26$ cm。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item $\angle A + \angle B = 180°$ （邻角互补）， $\angle A - \angle B = 40°$ 。解方程组： $\angle A = 110°$ ， $\angle B = 70°$ 。 $\angle C = \angle A = 110°$ ， $\angle D = \angle B = 70°$ 。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item 是平行四边形。因为 $AB = CD$ ， $AD = BC$ ，两组对边分别相等，所以 $ABCD$ 是平行四边形。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item 矩形中 $\angle B = 90°$ ， $AC = \sqrt{AB^2 + BC^2} = \sqrt{9 + 16} = 5$ cm。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item 对角线互相平分， $OA = 8$ ， $OB = 6$ 。在直角 $\triangle AOB$ 中， $AB = \sqrt{8^2 + 6^2} = \sqrt{100} = 10$ cm。面积 $= \dfrac{1}{2} \times 16 \times 12 = 96$ cm $^2$ 。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item 设边长为 $a$ ，则对角线 $= a\sqrt{2} = 10$ ， $a = \dfrac{10}{\sqrt{2}} = 5\sqrt{2}$ cm。面积 $= a^2 = 50$ cm $^2$ 。或用对角线：面积 $= \dfrac{1}{2} \times 10 \times 10 = 50$ cm $^2$ 。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item 面积 $= \dfrac{1}{2}(6 + 10) \times 8 = 64$ cm $^2$ 。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item 过上底端点作下底的垂线，利用等腰梯形对称性， $BE = \dfrac{11 - 5}{2} = 3$ 。在直角 $\triangle ABE$ 中， $AE$ 为高。但需要先求腰长。因对角线 $= 13$ ，设高为 $h$ 。利用对角线公式或坐标法：设 $B$ 在原点， $BC$ 沿 $x$ 轴。 $B(0,0)$ ， $C(11,0)$ ， $A(3,h)$ ， $D(8,h)$ 。 $AC = \sqrt{(11-3)^2 + h^2} = \sqrt{64 + h^2} = 13$ ， $h^2 = 105$ ， $h = \sqrt{105} \approx 10.25$ cm。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item 由对称性， $BE = \dfrac{10-6}{2} = 2$ cm。因为 $\angle B = 45°$ ，所以高 $= BE = 2$ cm（在直角 $\triangle ABE$ 中， $\angle B = 45°$ ， $\angle AEB = 90°$ ， $AE = BE = 2$ ）。腰长 $= \dfrac{2}{\sin 45°} = 2\sqrt{2}$ cm。面积 $= \dfrac{1}{2}(6+10) \times 2 = 16$ cm $^2$ 。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item 四条边都相等一定是菱形，但不一定是正方形（还需要有一个角是直角）。
+\end{enumerate}
+
+
+\begin{enumerate}
+  \item 因为 $ABCD$ 是平行四边形且 $AC = BD$ ，所以 $ABCD$ 是矩形。又因为 $AC \perp BD$ ，所以 $ABCD$ 是菱形。既是矩形又是菱形，所以 $ABCD$ 是正方形。
+\end{enumerate}
+
+
+\end{answer}

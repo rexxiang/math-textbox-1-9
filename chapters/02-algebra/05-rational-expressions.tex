@@ -1,1 +1,533 @@
-% stub
+\chapter{§2.5 分式}
+\label{sec:2.5}
+
+
+\prerequisite{§2.4 因式分解, §1.5 分数}
+
+\gradelevel{8 年级}
+
+
+\section*{分式的概念}
+
+
+\begin{explore}
+
+
+一段公路全长 $s$ 千米，一辆汽车的速度为 $v$ 千米/时，行驶全程需要 $\frac{s}{v}$ 小时。这个表达式中，分母 $v$ 含有字母。如果 $v = 0$ ，表达式就没有意义了——因为速度不可能为 $0$ 。像这样分母含有字母的代数式就是\textbf{分式}。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{分式}：形如 $\frac{A}{B}$ （ $A$ 、 $B$ 为整式， $B$ 中含有字母）的代数式叫做分式。
+
+\begin{itemize}
+  \item $A$ 叫做分式的\textbf{分子}， $B$ 叫做分式的\textbf{分母}。
+  \item 分式\textbf{有意义}的条件： $B \neq 0$ 。
+  \item 分式的值\textbf{为零}的条件： $A = 0$ 且 $B \neq 0$ 。
+\end{itemize}
+
+
+\textbf{分式与分数的关系}：分式是分数的推广。分数的分子分母是具体的数，分式的分子分母是含有字母的整式。分数的运算法则同样适用于分式。
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 下列代数式中哪些是分式？
+
+(1) $\frac{x+1}{3}$ 　(2) $\frac{5}{x-2}$ 　(3) $\frac{a}{b+1}$ 　(4) $\frac{3}{7}$
+
+\textbf{解：}
+
+(1) 分母为常数 $3$ ，不含字母，不是分式（是整式）。
+
+(2) 分母 $x - 2$ 含字母，是分式。
+
+(3) 分母 $b + 1$ 含字母，是分式。
+
+(4) 分子分母都是常数，是分数，不是分式。
+
+\textbf{例 2.} 求分式 $\frac{x+3}{x^2-1}$ 有意义的条件。
+
+\textbf{解：} 分母 $x^2 - 1 \neq 0$ ，即 $(x+1)(x-1) \neq 0$ ，所以 $x \neq 1$ 且 $x \neq -1$ 。
+
+\textbf{例 3.} 当 $x$ 为何值时，分式 $\frac{x-2}{x+5}$ 的值为 $0$ ？
+
+\textbf{解：} 分式值为零的条件：分子为零且分母不为零。
+
+\begin{itemize}
+  \item 分子 $x - 2 = 0$ ，得 $x = 2$ 。
+  \item 验证分母： $2 + 5 = 7 \neq 0$ ✓
+\end{itemize}
+
+
+所以 $x = 2$ 时分式的值为 $0$ 。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 分式的分母必须含有字母。
+  \item 分式有意义的前提是分母不等于零。
+  \item 分式值为零要求分子为零且分母不为零，两个条件缺一不可。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 判断 $\frac{2}{a}$ 是不是分式。
+  \item 分式 $\frac{3}{x-4}$ 有意义的条件是什么？
+  \item 分式 $\frac{a}{a^2 - 9}$ 有意义的条件是什么？
+  \item 当 $x$ 为何值时， $\frac{x^2 - 4}{x + 1}$ 的值为 $0$ ？
+  \item 当 $a$ 为何值时， $\frac{a + 3}{a - 3}$ 没有意义？
+\end{enumerate}
+
+
+\end{practice}
+
+\section*{分式的基本性质}
+
+
+\begin{explore}
+
+
+分数 $\frac{2}{3}$ 和 $\frac{4}{6}$ 是相等的——因为分子分母同时乘以 $2$ 。分式也有类似的性质。利用这些性质，我们可以对分式进行\textbf{约分}和\textbf{通分}，为后续的加减运算做准备。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{分式的基本性质}：分式的分子与分母同时乘以（或除以）一个不等于零的整式，分式的值不变。
+
+\[
+\frac{A}{B} = \frac{A \cdot C}{B \cdot C} = \frac{A \div D}{B \div D} \quad (C \neq 0,\; D \neq 0)
+\]
+
+
+\textbf{约分}：把分式的分子与分母的公因式约去。
+
+\[
+\frac{6x^2y}{9xy^2} = \frac{6x^2y \div 3xy}{9xy^2 \div 3xy} = \frac{2x}{3y}
+\]
+
+
+\textbf{通分}：把几个异分母的分式化为同分母的分式。
+
+通分的关键是找\textbf{最简公分母}：各分母所有因式的最高次幂的积。
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 约分： $\frac{x^2 - 4}{x^2 + 4x + 4}$ 。
+
+\textbf{解：} 先分解分子和分母。
+
+\[
+\frac{x^2 - 4}{x^2 + 4x + 4} = \frac{(x+2)(x-2)}{(x+2)^2} = \frac{x - 2}{x + 2}
+\]
+
+
+\textbf{例 2.} 约分： $\frac{a^2 - ab}{a^2 - b^2}$ 。
+
+\textbf{解：}
+
+\[
+\frac{a^2 - ab}{a^2 - b^2} = \frac{a(a - b)}{(a+b)(a-b)} = \frac{a}{a + b}
+\]
+
+
+\textbf{例 3.} 通分： $\frac{1}{x}$ 和 $\frac{2}{x^2}$ 。
+
+\textbf{解：} 最简公分母为 $x^2$ 。
+
+\[
+\frac{1}{x} = \frac{x}{x^2}, \quad \frac{2}{x^2} = \frac{2}{x^2}
+\]
+
+
+\textbf{例 4.} 通分： $\frac{3}{x+1}$ 和 $\frac{2}{x-1}$ 。
+
+\textbf{解：} 最简公分母为 $(x+1)(x-1)$ 。
+
+\[
+\frac{3}{x+1} = \frac{3(x-1)}{(x+1)(x-1)}, \quad \frac{2}{x-1} = \frac{2(x+1)}{(x+1)(x-1)}
+\]
+
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 约分的前提是分子分母先做因式分解。
+  \item 通分的关键是找最简公分母。
+  \item 约分和通分是分式加减的基础操作。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 约分： $\frac{4a^2b}{6ab^2}$ 。
+  \item 约分： $\frac{x^2 - 9}{x + 3}$ 。
+  \item 约分： $\frac{m^2 - 2m + 1}{m^2 - 1}$ 。
+  \item 通分： $\frac{1}{a}$ 和 $\frac{1}{a^2}$ 。
+  \item 通分： $\frac{2}{x-2}$ 和 $\frac{1}{x+3}$ 。
+  \item 约分： $\frac{6x^2 + 12x}{3x}$ 。
+\end{enumerate}
+
+
+\end{practice}
+
+\section*{分式的加减乘除运算}
+
+
+\begin{explore}
+
+
+工厂里，甲车间 $a$ 小时完成一批零件，乙车间 $b$ 小时完成同样的一批零件。两个车间合作，每小时完成整批零件的 $\frac{1}{a} + \frac{1}{b}$ ，这是一个分式加法。如何计算这个结果？
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{同分母分式加减}：分母不变，分子相加减。
+
+\[
+\frac{A}{C} \pm \frac{B}{C} = \frac{A \pm B}{C}
+\]
+
+
+\textbf{异分母分式加减}：先通分，再按同分母加减。
+
+\[
+\frac{A}{B} + \frac{C}{D} = \frac{AD + BC}{BD}
+\]
+
+
+\textbf{分式的乘法}：分子乘分子，分母乘分母。
+
+\[
+\frac{A}{B} \times \frac{C}{D} = \frac{AC}{BD}
+\]
+
+
+\textbf{分式的除法}：除以一个分式等于乘以它的倒数。
+
+\[
+\frac{A}{B} \div \frac{C}{D} = \frac{A}{B} \times \frac{D}{C} = \frac{AD}{BC}
+\]
+
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 计算 $\frac{3}{x} + \frac{5}{x}$ 。
+
+\textbf{解：} 同分母，分子直接相加。
+
+\[
+\frac{3}{x} + \frac{5}{x} = \frac{3 + 5}{x} = \frac{8}{x}
+\]
+
+
+\textbf{例 2.} 计算 $\frac{1}{a} + \frac{1}{b}$ 。
+
+\textbf{解：} 异分母，通分。最简公分母为 $ab$ 。
+
+\[
+\frac{1}{a} + \frac{1}{b} = \frac{b}{ab} + \frac{a}{ab} = \frac{a + b}{ab}
+\]
+
+
+\textbf{例 3.} 计算 $\frac{x}{x+2} - \frac{2}{x+2}$ 。
+
+\textbf{解：} 同分母，分子相减。
+
+\[
+\frac{x}{x+2} - \frac{2}{x+2} = \frac{x - 2}{x + 2}
+\]
+
+
+\textbf{例 4.} 计算 $\frac{x^2 - 1}{x} \cdot \frac{x^2}{x + 1}$ 。
+
+\textbf{解：} 先分解因式，再约分。
+
+\[
+\frac{x^2 - 1}{x} \cdot \frac{x^2}{x + 1} = \frac{(x+1)(x-1)}{x} \cdot \frac{x^2}{x+1} = \frac{(x-1) \cdot x^2}{x} = x(x - 1) = x^2 - x
+\]
+
+
+\textbf{例 5.} 计算 $\frac{a^2}{a+b} \div \frac{a}{a^2 - b^2}$ 。
+
+\textbf{解：} 除法变乘法。
+
+\[
+\frac{a^2}{a+b} \div \frac{a}{a^2 - b^2} = \frac{a^2}{a+b} \times \frac{a^2 - b^2}{a} = \frac{a^2}{a+b} \times \frac{(a+b)(a-b)}{a} = a(a - b)
+\]
+
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 同分母直接加减分子；异分母先通分。
+  \item 乘法：分子乘分子、分母乘分母，运算前先因式分解约分更简便。
+  \item 除法转化为乘以倒数。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 计算 $\frac{2}{m} + \frac{3}{m}$ 。
+  \item 计算 $\frac{1}{x} - \frac{1}{x+1}$ 。
+  \item 计算 $\frac{a}{a-b} + \frac{b}{b-a}$ 。（提示： $b - a = -(a - b)$ ）
+  \item 计算 $\frac{2x}{3} \cdot \frac{9}{4x^2}$ 。
+  \item 计算 $\frac{x^2 - 4}{x} \div \frac{x - 2}{x^2}$ 。
+  \item 计算 $\frac{1}{x-1} + \frac{1}{x+1} - \frac{2x}{x^2-1}$ 。
+\end{enumerate}
+
+
+\end{practice}
+
+\section*{分式方程及其应用}
+
+
+\begin{explore}
+
+
+两个水管同时向水池注水。粗管单独注满需要 $x$ 小时，细管单独注满需要 $(x+6)$ 小时。两管同时注水， $4$ 小时注满。列方程： $\frac{4}{x} + \frac{4}{x + 6} = 1$ 。这个方程的分母含有未知数，叫做\textbf{分式方程}。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{分式方程}：分母中含有未知数的方程。
+
+\textbf{解分式方程的基本方法}：
+
+\begin{enumerate}
+  \item 找出各分母的\textbf{最简公分母}。
+  \item 方程两边同时乘以最简公分母，将分式方程\textbf{转化为整式方程}。
+  \item 解整式方程。
+  \item \textbf{验根}：将解代入原方程的分母，检验分母是否为零。使分母为零的解是\textbf{增根}，必须舍去。
+\end{enumerate}
+
+
+\textbf{为什么要验根？} 在两边同乘公分母的过程中，可能引入了使原方程无意义的解。验根是为了排除这种情况。
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 解方程 $\frac{3}{x} = \frac{2}{x-1}$ 。
+
+\textbf{解：}
+
+最简公分母为 $x(x - 1)$ 。方程两边同乘 $x(x-1)$ ：
+
+\[
+3(x - 1) = 2x
+\]
+
+
+\[
+3x - 3 = 2x
+\]
+
+
+\[
+x = 3
+\]
+
+
+验根： $x = 3$ 时，分母 $x = 3 \neq 0$ ， $x - 1 = 2 \neq 0$ 。✓
+
+所以 $x = 3$ 。
+
+\textbf{例 2.} 解方程 $\frac{1}{x-2} + \frac{3}{x} = 1$ 。
+
+\textbf{解：}
+
+最简公分母为 $x(x-2)$ 。两边同乘 $x(x-2)$ ：
+
+\[
+x + 3(x - 2) = x(x - 2)
+\]
+
+
+\[
+x + 3x - 6 = x^2 - 2x
+\]
+
+
+\[
+4x - 6 = x^2 - 2x
+\]
+
+
+\[
+x^2 - 6x + 6 = 0
+\]
+
+
+用求根公式： $x = \frac{6 \pm \sqrt{36 - 24}}{2} = \frac{6 \pm \sqrt{12}}{2} = 3 \pm \sqrt{3}$ 。
+
+验根： $x = 3 + \sqrt{3} \neq 0, 2$ ； $x = 3 - \sqrt{3} \neq 0, 2$ 。✓
+
+所以 $x = 3 + \sqrt{3}$ 或 $x = 3 - \sqrt{3}$ 。
+
+\textbf{例 3.} 解方程 $\frac{x}{x-1} - \frac{1}{x-1} = 1$ 。
+
+\textbf{解：}
+
+\[
+\frac{x - 1}{x - 1} = 1
+\]
+
+
+即 $1 = 1$ ，等式恒成立。
+
+但是要注意 $x - 1 \neq 0$ ，即 $x \neq 1$ 。
+
+所以原方程的解为 $x \neq 1$ 的一切实数。
+
+等一下——让我们重新审视。原方程合并为 $\frac{x-1}{x-1} = 1$ ，当 $x \neq 1$ 时恒成立。这看起来像是恒等式，但其实原方程的解是所有使分母不为零的 $x$ ，即 $x \neq 1$ 。
+
+\textbf{例 4.} （应用题）甲做 $120$ 个零件所用的时间与乙做 $100$ 个零件所用的时间相同。已知甲每小时比乙多做 $4$ 个，求甲、乙每小时各做多少个零件。
+
+\textbf{解：} 设乙每小时做 $x$ 个零件，则甲每小时做 $(x + 4)$ 个。
+
+\[
+\frac{120}{x + 4} = \frac{100}{x}
+\]
+
+
+两边交叉相乘： $120x = 100(x + 4)$ 。
+
+\[
+120x = 100x + 400
+\]
+
+
+\[
+20x = 400
+\]
+
+
+\[
+x = 20
+\]
+
+
+验根： $x = 20 \neq 0$ ， $x + 4 = 24 \neq 0$ 。✓
+
+乙每小时做 $20$ 个，甲每小时做 $24$ 个。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 分式方程通过乘以最简公分母转化为整式方程。
+  \item 解完必须验根——使分母为零的解要舍去。
+  \item 应用题中要检验解是否符合实际意义。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 解方程 $\frac{5}{x} = \frac{3}{x - 2}$ 。
+  \item 解方程 $\frac{2}{x + 1} - \frac{1}{x - 1} = 0$ 。
+  \item 解方程 $\frac{x}{x - 3} = \frac{3}{x - 3} + 2$ 。（注意验根）
+  \item 解方程 $\frac{1}{x} + \frac{1}{x + 2} = \frac{5}{4}$ 。
+  \item A、B 两地相距 $120$ 千米，一辆汽车从 A 到 B 的速度比从 B 返回 A 的速度快 $20$ 千米/时，返回比去时多用 $1$ 小时。求去时的速度。
+\end{enumerate}
+
+
+\end{practice}
+
+
+
+\begin{answer}
+
+
+\textbf{分式的概念 练一练}
+
+\begin{enumerate}
+  \item 是。分母 $a$ 含有字母。
+  \item $x - 4 \neq 0$ ，即 $x \neq 4$ 。
+  \item $a^2 - 9 \neq 0$ ，即 $(a+3)(a-3) \neq 0$ ，所以 $a \neq 3$ 且 $a \neq -3$ 。
+  \item 分子 $x^2 - 4 = (x+2)(x-2) = 0$ ，得 $x = 2$ 或 $x = -2$ 。验证分母： $x = 2$ 时分母 $3 \neq 0$ ✓； $x = -2$ 时分母 $-1 \neq 0$ ✓。所以 $x = 2$ 或 $x = -2$ 。
+  \item $a - 3 = 0$ ，即 $a = 3$ 时分式没有意义。
+\end{enumerate}
+
+
+\textbf{分式的基本性质 练一练}
+
+\begin{enumerate}
+  \item $\frac{4a^2b}{6ab^2} = \frac{2a}{3b}$ 。
+  \item $\frac{x^2 - 9}{x + 3} = \frac{(x+3)(x-3)}{x+3} = x - 3$ 。
+  \item $\frac{m^2 - 2m + 1}{m^2 - 1} = \frac{(m-1)^2}{(m+1)(m-1)} = \frac{m-1}{m+1}$ 。
+  \item 最简公分母为 $a^2$ 。 $\frac{1}{a} = \frac{a}{a^2}$ ， $\frac{1}{a^2}$ 不变。
+  \item 最简公分母为 $(x-2)(x+3)$ 。 $\frac{2}{x-2} = \frac{2(x+3)}{(x-2)(x+3)}$ ， $\frac{1}{x+3} = \frac{x-2}{(x-2)(x+3)}$ 。
+  \item $\frac{6x^2 + 12x}{3x} = \frac{6x(x + 2)}{3x} = 2(x + 2) = 2x + 4$ 。
+\end{enumerate}
+
+
+\textbf{分式的加减乘除运算 练一练}
+
+\begin{enumerate}
+  \item $\frac{2}{m} + \frac{3}{m} = \frac{5}{m}$ 。
+  \item $\frac{1}{x} - \frac{1}{x+1} = \frac{x + 1 - x}{x(x+1)} = \frac{1}{x(x+1)}$ 。
+  \item $\frac{a}{a-b} + \frac{b}{b-a} = \frac{a}{a-b} - \frac{b}{a-b} = \frac{a-b}{a-b} = 1$ （ $a \neq b$ ）。
+  \item $\frac{2x}{3} \cdot \frac{9}{4x^2} = \frac{18x}{12x^2} = \frac{3}{2x}$ 。
+  \item $\frac{x^2 - 4}{x} \div \frac{x - 2}{x^2} = \frac{(x+2)(x-2)}{x} \cdot \frac{x^2}{x-2} = x(x + 2) = x^2 + 2x$ 。
+  \item $\frac{1}{x-1} + \frac{1}{x+1} - \frac{2x}{x^2-1} = \frac{x+1+x-1-2x}{(x-1)(x+1)} = \frac{0}{x^2-1} = 0$ 。
+\end{enumerate}
+
+
+\textbf{分式方程及其应用 练一练}
+
+\begin{enumerate}
+  \item $\frac{5}{x} = \frac{3}{x-2}$ 。交叉相乘： $5(x-2) = 3x$ ， $5x - 10 = 3x$ ， $2x = 10$ ， $x = 5$ 。验根：分母 $5 \neq 0$ ， $3 \neq 0$ 。✓ 解为 $x = 5$ 。
+  \item $\frac{2}{x+1} - \frac{1}{x-1} = 0$ ，即 $\frac{2}{x+1} = \frac{1}{x-1}$ 。交叉相乘： $2(x-1) = x+1$ ， $2x - 2 = x + 1$ ， $x = 3$ 。验根通过。解为 $x = 3$ 。
+  \item 两边乘 $(x-3)$ ： $x = 3 + 2(x-3)$ ， $x = 3 + 2x - 6$ ， $x = 2x - 3$ ， $x = 3$ 。验根： $x = 3$ 时分母 $x - 3 = 0$ ， $x = 3$ 是增根。原方程无解。
+  \item 两边乘 $4x(x+2)$ ： $4(x+2) + 4x = 5x(x+2)$ ， $8x + 8 = 5x^2 + 10x$ ， $5x^2 + 2x - 8 = 0$ ， $(5x - 8)(x + 1) = 0$ 不成立，用公式法： $x = \frac{-2 \pm \sqrt{4 + 160}}{10} = \frac{-2 \pm \sqrt{164}}{10}$ 。化简： $\sqrt{164} = 2\sqrt{41}$ ， $x = \frac{-1 \pm \sqrt{41}}{5}$ 。验根：两个解均不使分母为零。解为 $x = \frac{-1 + \sqrt{41}}{5}$ 或 $x = \frac{-1 - \sqrt{41}}{5}$ 。
+  \item 设去时速度为 $v$ 千米/时，返回速度为 $(v - 20)$ 千米/时。 $\frac{120}{v - 20} - \frac{120}{v} = 1$ 。两边乘 $v(v-20)$ ： $120v - 120(v - 20) = v(v - 20)$ ， $2400 = v^2 - 20v$ ， $v^2 - 20v - 2400 = 0$ ， $(v - 60)(v + 40) = 0$ ， $v = 60$ 或 $v = -40$ （舍去）。去时速度为 $60$ 千米/时。
+\end{enumerate}
+
+
+\end{answer}

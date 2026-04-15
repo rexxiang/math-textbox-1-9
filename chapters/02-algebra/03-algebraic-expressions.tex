@@ -1,1 +1,688 @@
-% stub
+\chapter{§2.3 代数式与整式}
+\label{sec:2.3}
+
+
+\prerequisite{§2.1 有理数, §1.3 运算律}
+
+\gradelevel{7 年级}
+
+
+\section*{用字母表示数}
+
+
+\begin{explore}
+
+
+小卖部里，一瓶矿泉水 $2$ 元。买 $3$ 瓶要 $2 \times 3 = 6$ 元，买 $5$ 瓶要 $2 \times 5 = 10$ 元。如果买 $n$ 瓶呢？总价就是 $2 \times n = 2n$ 元。这里 $n$ 可以代表任何正整数。用一个字母就概括了无穷多种情况——这就是"用字母表示数"的力量。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{用字母表示数}是从算术到代数的核心跨越。字母可以代表：
+
+\begin{itemize}
+  \item 一个\textbf{未知数}（如方程中的 $x$ ）。
+  \item 一个\textbf{变化的量}（如函数中的自变量）。
+  \item 一个\textbf{任意的数}（如运算律 $a + b = b + a$ 中的 $a, b$ ）。
+\end{itemize}
+
+
+\textbf{书写约定}：
+
+\begin{itemize}
+  \item 数与字母相乘时省略乘号： $2 \times n$ 写成 $2n$ 。
+  \item 数写在字母前面：写 $3a$ ，不写 $a3$ 。
+  \item $1$ 乘以字母省略 $1$ ： $1 \times x$ 写成 $x$ 。
+  \item 除法用分数形式： $a \div b$ 写成 $\frac{a}{b}$ 。
+\end{itemize}
+
+
+\textbf{为什么用字母？} 字母使我们能够写出一般化的规律。比如正方形面积公式 $S = a^2$ 一个式子就概括了所有正方形的面积计算方法。
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 用代数式表示下列数量关系：
+
+(1) 一本书 $p$ 元，买 $5$ 本需要多少元？
+
+(2) 小明今年 $a$ 岁，小红比他大 $3$ 岁，小红今年多少岁？
+
+(3) 一个长方形的长比宽多 $4$ 厘米，宽为 $w$ 厘米，面积是多少？
+
+\textbf{解：}
+
+(1) $5p$ 元。
+
+(2) $(a + 3)$ 岁。
+
+(3) 长为 $(w + 4)$ 厘米，面积为 $w(w + 4)$ 平方厘米。
+
+\textbf{例 2.} 运算律 $a(b + c) = ab + ac$ 中，若 $a = -2$ ， $b = 3$ ， $c = 5$ ，验证等式成立。
+
+\textbf{解：}
+
+\begin{itemize}
+  \item 左边： $(-2)(3 + 5) = (-2) \times 8 = -16$ 。
+  \item 右边： $(-2) \times 3 + (-2) \times 5 = -6 + (-10) = -16$ 。
+  \item 左边 $=$ 右边，验证成立。
+\end{itemize}
+
+
+\textbf{例 3.} 某商品原价 $a$ 元，打八折后售价是多少？
+
+\textbf{解：} 打八折即为原价的 $80\%$ ，即 $0.8a$ 元。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 用字母表示数，是代数最基本的思想。
+  \item 代数式让我们能用简洁的符号描述一般规律。
+  \item 注意书写规范：省略乘号、数在字母前、除法写分数。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 一个三角形的底为 $a$ ，高为 $h$ ，用代数式表示其面积。
+  \item 小明有 $m$ 元，买了 $3$ 支笔，每支 $n$ 元，还剩多少元？
+  \item 一个数 $x$ 的 $2$ 倍加上 $5$ 的结果是多少？用代数式表示。
+  \item 某班有 $n$ 名男生，女生比男生少 $5$ 人，全班共多少人？
+  \item 如果 $a = -3$ ，求 $2a^2 - a + 1$ 的值。
+\end{enumerate}
+
+
+\end{practice}
+
+\section*{单项式与多项式}
+
+
+\begin{explore}
+
+
+在前面的例子中， $2n$ 、 $5p$ 、 $0.8a$ 这些式子只有一"项"；而 $w(w + 4) = w^2 + 4w$ 展开后有两项。代数式的"项数"是整理和化简的基础。我们需要给这些式子命名和分类。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{单项式}：由数与字母的乘积组成的代数式（包括单独的数或单独的字母）。
+
+\begin{itemize}
+  \item 例如： $3x$ ， $-5a^2b$ ， $7$ ， $x$ 。
+  \item 单项式的\textbf{系数}：数字因数。如 $-5a^2b$ 的系数是 $-5$ 。
+  \item 单项式的\textbf{次数}：所有字母指数之和。如 $-5a^2b$ 中 $a$ 的指数为 $2$ ， $b$ 的指数为 $1$ ，次数为 $2 + 1 = 3$ 。
+\end{itemize}
+
+
+\textbf{多项式}：几个单项式的和。
+
+\begin{itemize}
+  \item 例如： $3x^2 + 2x - 5$ 是由三个单项式 $3x^2$ 、 $2x$ 、 $-5$ 组成的多项式。
+  \item 每个单项式叫做多项式的一个\textbf{项}。不含字母的项叫做\textbf{常数项}。
+  \item 多项式的\textbf{次数}：各项中次数最高的那个项的次数。如 $3x^2 + 2x - 5$ 的次数为 $2$ 。
+\end{itemize}
+
+
+\textbf{整式} = 单项式 + 多项式。
+
+\textbf{同类项}：所含字母相同且各字母的指数也分别相同的项。如 $3x^2y$ 和 $-7x^2y$ 是同类项。
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 指出下列各式的系数和次数：
+
+(1) $-6xy^2$ 　　(2) $\frac{m}{3}$ 　　(3) $-a^3$
+
+\textbf{解：}
+
+(1) 系数为 $-6$ ，次数为 $1 + 2 = 3$ 。
+
+(2) $\frac{m}{3} = \frac{1}{3}m$ ，系数为 $\frac{1}{3}$ ，次数为 $1$ 。
+
+(3) $-a^3 = (-1)a^3$ ，系数为 $-1$ ，次数为 $3$ 。
+
+\textbf{例 2.} $3x^3 - 2x^2 + 5x - 1$ 有多少项？各项是什么？次数是多少？
+
+\textbf{解：} 有 $4$ 项： $3x^3$ （三次项）、 $-2x^2$ （二次项）、 $5x$ （一次项）、 $-1$ （常数项）。多项式次数为 $3$ 。
+
+\textbf{例 3.} 下列哪些是同类项？ $3a^2b$ ， $-a^2b$ ， $5ab^2$ ， $\frac{1}{2}a^2b$ 。
+
+\textbf{解：} $3a^2b$ 、 $-a^2b$ 、 $\frac{1}{2}a^2b$ 是同类项（字母 $a$ 的指数都是 $2$ ，字母 $b$ 的指数都是 $1$ ）。 $5ab^2$ 不是它们的同类项（ $a$ 的指数是 $1$ ， $b$ 的指数是 $2$ ）。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 单项式由数和字母的乘积组成，多项式由多个单项式相加组成。
+  \item 系数是单项式中的数字因数，注意符号和隐含的 $1$ 或 $\frac{1}{3}$ 等。
+  \item 同类项的判定只看字母和指数，不看系数。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 写出 $4x^3y^2$ 的系数和次数。
+  \item $2a^2 - 3ab + b^2 - 7$ 有几项？次数是多少？常数项是什么？
+  \item 判断： $2xy$ 和 $-3yx$ 是不是同类项？
+  \item 判断： $5a^2b$ 和 $5ab^2$ 是不是同类项？
+  \item 写出一个三次单项式，使其系数为 $-2$ 。
+\end{enumerate}
+
+
+\end{practice}
+
+\section*{整式的加减运算}
+
+
+\begin{explore}
+
+
+体育课上要统计两个班的长跑总用时。甲班 $n$ 名同学的平均用时为 $(3n + 5)$ 分钟，乙班 $n$ 名同学的平均用时为 $(2n - 1)$ 分钟。两个班总平均用时之差是 $(3n + 5) - (2n - 1)$ 。如何化简这个式子？
+
+\end{explore}
+
+\begin{understand}
+
+
+整式的加减本质上是\textbf{合并同类项}：
+
+\textbf{合并同类项法则}：同类项的系数相加，字母和指数不变。
+
+\[
+3x^2 + 5x^2 = (3 + 5)x^2 = 8x^2
+\]
+
+
+\textbf{整式相加}：去括号后合并同类项。
+
+\textbf{整式相减}：减号变为加号，括号内各项变号，再合并。
+
+\[
+(3x + 2) - (x - 5) = 3x + 2 - x + 5 = 2x + 7
+\]
+
+
+\textbf{为什么减号后括号内各项变号？} 因为减去一个数等于加上它的相反数： $-(x - 5) = (-1)(x - 5) = -x + 5$ 。
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 化简 $(4a^2 - 3a + 1) + (2a^2 + 5a - 6)$ 。
+
+\textbf{解：} 去括号，合并同类项。
+
+\[
+\begin{aligned}
+&(4a^2 - 3a + 1) + (2a^2 + 5a - 6) \\
+= &\; 4a^2 - 3a + 1 + 2a^2 + 5a - 6 \\
+= &\; (4 + 2)a^2 + (-3 + 5)a + (1 - 6) \\
+= &\; 6a^2 + 2a - 5
+\end{aligned}
+\]
+
+
+\textbf{例 2.} 化简 $(5x^2 - 2xy + 3) - (3x^2 + xy - 4)$ 。
+
+\textbf{解：} 减号后括号内各项变号。
+
+\[
+\begin{aligned}
+&(5x^2 - 2xy + 3) - (3x^2 + xy - 4) \\
+= &\; 5x^2 - 2xy + 3 - 3x^2 - xy + 4 \\
+= &\; 2x^2 - 3xy + 7
+\end{aligned}
+\]
+
+
+\textbf{例 3.} 已知 $A = 3x^2 - 2x + 1$ ， $B = x^2 + 4x - 3$ ，求 $2A - B$ 。
+
+\textbf{解：}
+
+\[
+\begin{aligned}
+2A - B &= 2(3x^2 - 2x + 1) - (x^2 + 4x - 3) \\
+&= 6x^2 - 4x + 2 - x^2 - 4x + 3 \\
+&= 5x^2 - 8x + 5
+\end{aligned}
+\]
+
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 整式加减的核心操作是合并同类项。
+  \item 去括号时注意：加号后括号直接去掉，减号后括号内各项变号。
+  \item 计算时按次数从高到低排列，不容易漏项。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 合并同类项： $7m - 3m + m$ 。
+  \item 化简 $(2x^2 + 3x - 1) + (x^2 - 5x + 4)$ 。
+  \item 化简 $(4a - 2b + 3) - (a + 3b - 5)$ 。
+  \item 已知 $P = 2x^2 + x - 3$ ， $Q = x^2 - 2x + 1$ ，求 $P + 2Q$ 。
+  \item 化简 $3(a^2 - 2a) - 2(a^2 - 3a + 1)$ 。
+  \item 若 $A + B = 5x^2 + 3x - 2$ ， $A = 3x^2 - x + 4$ ，求 $B$ 。
+\end{enumerate}
+
+
+\end{practice}
+
+\section*{整式的乘法}
+
+
+\begin{explore}
+
+
+一块长方形菜地的长为 $(2a + 3)$ 米，宽为 $a$ 米，面积是多少？根据面积公式： $S = a \times (2a + 3)$ 。这就需要"单项式乘以多项式"的运算。当长和宽都是多项式时，例如 $(a + 2)(a + 3)$ ，又该怎么算？
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{单项式 $\times$ 单项式}：系数相乘，同底数幂指数相加。
+
+\[
+3a^2 \cdot 2a^3 = 6a^5
+\]
+
+
+\textbf{单项式 $\times$ 多项式}：用分配律，单项式分别乘以多项式的每一项。
+
+\[
+a(2a + 3) = 2a^2 + 3a
+\]
+
+
+\textbf{多项式 $\times$ 多项式}：用分配律，将一个多项式的每一项分别乘以另一个多项式的每一项，再合并同类项。
+
+\[
+(a + 2)(a + 3) = a \cdot a + a \cdot 3 + 2 \cdot a + 2 \cdot 3 = a^2 + 5a + 6
+\]
+
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 计算 $(-3x^2y) \cdot (4xy^3)$ 。
+
+\textbf{解：} 系数相乘： $(-3) \times 4 = -12$ ； $x$ 的指数： $2 + 1 = 3$ ； $y$ 的指数： $1 + 3 = 4$ 。
+
+\[
+(-3x^2y) \cdot (4xy^3) = -12x^3y^4
+\]
+
+
+\textbf{例 2.} 计算 $-2x(3x^2 - 4x + 1)$ 。
+
+\textbf{解：} 利用分配律。
+
+\[
+\begin{aligned}
+-2x(3x^2 - 4x + 1) &= (-2x) \cdot 3x^2 + (-2x) \cdot (-4x) + (-2x) \cdot 1 \\
+&= -6x^3 + 8x^2 - 2x
+\end{aligned}
+\]
+
+
+\textbf{例 3.} 计算 $(2x + 1)(3x - 2)$ 。
+
+\textbf{解：}
+
+\[
+\begin{aligned}
+(2x + 1)(3x - 2) &= 2x \cdot 3x + 2x \cdot (-2) + 1 \cdot 3x + 1 \cdot (-2) \\
+&= 6x^2 - 4x + 3x - 2 \\
+&= 6x^2 - x - 2
+\end{aligned}
+\]
+
+
+\textbf{例 4.} 计算 $(x + 2y)(x^2 - xy + y^2)$ 。
+
+\textbf{解：}
+
+\[
+\begin{aligned}
+&(x + 2y)(x^2 - xy + y^2) \\
+= &\; x \cdot x^2 + x \cdot (-xy) + x \cdot y^2 + 2y \cdot x^2 + 2y \cdot (-xy) + 2y \cdot y^2 \\
+= &\; x^3 - x^2y + xy^2 + 2x^2y - 2xy^2 + 2y^3 \\
+= &\; x^3 + x^2y - xy^2 + 2y^3
+\end{aligned}
+\]
+
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 单项式相乘：系数乘系数，同底数幂的指数相加。
+  \item 多项式相乘的核心是分配律：每项对每项。
+  \item 乘法后别忘了合并同类项。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 计算 $(2a^3)(5a^2)$ 。
+  \item 计算 $-3m(2m^2 - m + 4)$ 。
+  \item 计算 $(x + 5)(x - 3)$ 。
+  \item 计算 $(2a - b)(a + 3b)$ 。
+  \item 计算 $(x + 1)(x^2 - x + 1)$ 。
+  \item 一块梯形花坛的上底为 $a$ 米，下底为 $(a + 4)$ 米，高为 $2a$ 米，求面积。
+\end{enumerate}
+
+
+\end{practice}
+
+\section*{乘法公式}
+
+
+\begin{explore}
+
+
+在做多项式乘法时，有些形式出现得特别频繁，比如 $(a + b)(a - b)$ 和 $(a + b)^2$ 。如果每次都用分配律展开，不仅麻烦，还容易出错。能不能总结出直接的公式？
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{平方差公式}：
+
+\[
+(a + b)(a - b) = a^2 - b^2
+\]
+
+
+推导： $(a + b)(a - b) = a^2 - ab + ab - b^2 = a^2 - b^2$ 。
+
+\textbf{完全平方公式}：
+
+\[
+(a + b)^2 = a^2 + 2ab + b^2
+\]
+
+
+\[
+(a - b)^2 = a^2 - 2ab + b^2
+\]
+
+
+推导： $(a + b)^2 = (a + b)(a + b) = a^2 + ab + ab + b^2 = a^2 + 2ab + b^2$ 。
+
+\textbf{为什么要记住这些公式？} 这些公式不仅让计算更快，更重要的是，它们在因式分解（§2.4）、方程求解（§2.8）中都会反复使用。
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 用平方差公式计算 $(3x + 2)(3x - 2)$ 。
+
+\textbf{解：} 这里 $a = 3x$ ， $b = 2$ 。
+
+\[
+(3x + 2)(3x - 2) = (3x)^2 - 2^2 = 9x^2 - 4
+\]
+
+
+\textbf{例 2.} 用完全平方公式展开 $(2a + 3b)^2$ 。
+
+\textbf{解：} 这里 $a = 2a$ ， $b = 3b$ 。
+
+\[
+(2a + 3b)^2 = (2a)^2 + 2 \cdot 2a \cdot 3b + (3b)^2 = 4a^2 + 12ab + 9b^2
+\]
+
+
+\textbf{例 3.} 计算 $(x - 4)^2$ 。
+
+\textbf{解：}
+
+\[
+(x - 4)^2 = x^2 - 2 \cdot x \cdot 4 + 4^2 = x^2 - 8x + 16
+\]
+
+
+\textbf{例 4.} 用简便方法计算 $101 \times 99$ 。
+
+\textbf{解：} $101 \times 99 = (100 + 1)(100 - 1) = 100^2 - 1^2 = 10000 - 1 = 9999$ 。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 平方差公式： $(a+b)(a-b) = a^2 - b^2$ ，两项之和乘以两项之差。
+  \item 完全平方公式： $(a \pm b)^2 = a^2 \pm 2ab + b^2$ ，不要漏掉中间的 $2ab$ 项。
+  \item 这些公式可以用于简便计算，也是因式分解的基础。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 用平方差公式计算 $(5x + 1)(5x - 1)$ 。
+  \item 展开 $(a + 7)^2$ 。
+  \item 展开 $(3m - 2n)^2$ 。
+  \item 用简便方法计算 $52 \times 48$ 。
+  \item 计算 $(x + 3)^2 - (x - 3)^2$ 。
+  \item 判断对错： $(a + b)^2 = a^2 + b^2$ 。
+\end{enumerate}
+
+
+\end{practice}
+
+\section*{整式的除法}
+
+
+\begin{explore}
+
+
+一块长方形的面积为 $6x^3 + 4x^2$ 平方米，宽为 $2x$ 米，长是多少？这需要计算 $(6x^3 + 4x^2) \div 2x$ 。整式的除法是乘法的逆运算。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{单项式 $\div$ 单项式}：系数相除，同底数幂指数相减。
+
+\[
+6x^3 \div 2x = 3x^2
+\]
+
+
+\textbf{多项式 $\div$ 单项式}：多项式的每一项分别除以单项式。
+
+\[
+(6x^3 + 4x^2) \div 2x = 3x^2 + 2x
+\]
+
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 计算 $12a^4b^3 \div (-3a^2b)$ 。
+
+\textbf{解：} 系数： $12 \div (-3) = -4$ ； $a$ 的指数： $4 - 2 = 2$ ； $b$ 的指数： $3 - 1 = 2$ 。
+
+\[
+12a^4b^3 \div (-3a^2b) = -4a^2b^2
+\]
+
+
+\textbf{例 2.} 计算 $(8x^3 - 6x^2 + 2x) \div 2x$ 。
+
+\textbf{解：} 每项分别除以 $2x$ 。
+
+\[
+\begin{aligned}
+(8x^3 - 6x^2 + 2x) \div 2x &= \frac{8x^3}{2x} - \frac{6x^2}{2x} + \frac{2x}{2x} \\
+&= 4x^2 - 3x + 1
+\end{aligned}
+\]
+
+
+\textbf{例 3.} 计算 $(15a^3b^2 - 10a^2b + 5ab) \div 5ab$ 。
+
+\textbf{解：}
+
+\[
+\begin{aligned}
+(15a^3b^2 - 10a^2b + 5ab) \div 5ab &= 3a^2b - 2a + 1
+\end{aligned}
+\]
+
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 整式除法是乘法的逆运算。
+  \item 多项式除以单项式：每一项分别除。
+  \item 除法时注意符号和指数的计算。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 计算 $(-18x^5) \div (6x^2)$ 。
+  \item 计算 $(9a^2b - 6ab^2) \div 3ab$ 。
+  \item 计算 $(4x^4 - 8x^3 + 12x^2) \div (-4x^2)$ 。
+  \item 一个长方形的面积为 $(10m^2n - 15mn^2)$ 平方厘米，宽为 $5mn$ 厘米，求长。
+  \item 计算 $(x^3 - 2x^2 + x) \div x$ 。
+\end{enumerate}
+
+
+\end{practice}
+
+
+
+\begin{answer}
+
+
+\textbf{用字母表示数 练一练}
+
+\begin{enumerate}
+  \item $S = \frac{1}{2}ah$ 。
+  \item $m - 3n$ 元。
+  \item $2x + 5$ 。
+  \item 女生 $(n - 5)$ 人，全班 $n + (n - 5) = 2n - 5$ 人。
+  \item $2(-3)^2 - (-3) + 1 = 2 \times 9 + 3 + 1 = 22$ 。
+\end{enumerate}
+
+
+\textbf{单项式与多项式 练一练}
+
+\begin{enumerate}
+  \item 系数为 $4$ ，次数为 $3 + 2 = 5$ 。
+  \item $4$ 项，次数为 $2$ ，常数项为 $-7$ 。
+  \item 是。 $2xy$ 和 $-3yx$ 含有相同的字母 $x, y$ 且指数相同（都是 $1$ ）。
+  \item 不是。 $5a^2b$ 中 $a$ 的指数为 $2$ 、 $b$ 的指数为 $1$ ； $5ab^2$ 中 $a$ 的指数为 $1$ 、 $b$ 的指数为 $2$ 。
+  \item 答案不唯一，例如 $-2x^3$ 或 $-2a^2b$ 。
+\end{enumerate}
+
+
+\textbf{整式的加减运算 练一练}
+
+\begin{enumerate}
+  \item $7m - 3m + m = 5m$ 。
+  \item $(2x^2 + 3x - 1) + (x^2 - 5x + 4) = 3x^2 - 2x + 3$ 。
+  \item $(4a - 2b + 3) - (a + 3b - 5) = 3a - 5b + 8$ 。
+  \item $P + 2Q = (2x^2 + x - 3) + 2(x^2 - 2x + 1) = 2x^2 + x - 3 + 2x^2 - 4x + 2 = 4x^2 - 3x - 1$ 。
+  \item $3(a^2 - 2a) - 2(a^2 - 3a + 1) = 3a^2 - 6a - 2a^2 + 6a - 2 = a^2 - 2$ 。
+  \item $B = (5x^2 + 3x - 2) - (3x^2 - x + 4) = 2x^2 + 4x - 6$ 。
+\end{enumerate}
+
+
+\textbf{整式的乘法 练一练}
+
+\begin{enumerate}
+  \item $(2a^3)(5a^2) = 10a^5$ 。
+  \item $-3m(2m^2 - m + 4) = -6m^3 + 3m^2 - 12m$ 。
+  \item $(x + 5)(x - 3) = x^2 + 2x - 15$ 。
+  \item $(2a - b)(a + 3b) = 2a^2 + 6ab - ab - 3b^2 = 2a^2 + 5ab - 3b^2$ 。
+  \item $(x + 1)(x^2 - x + 1) = x^3 - x^2 + x + x^2 - x + 1 = x^3 + 1$ 。
+  \item $S = \frac{1}{2}(a + a + 4) \times 2a = \frac{1}{2}(2a + 4) \times 2a = (a + 2) \times 2a = 2a^2 + 4a$ （平方米）。
+\end{enumerate}
+
+
+\textbf{乘法公式 练一练}
+
+\begin{enumerate}
+  \item $(5x + 1)(5x - 1) = 25x^2 - 1$ 。
+  \item $(a + 7)^2 = a^2 + 14a + 49$ 。
+  \item $(3m - 2n)^2 = 9m^2 - 12mn + 4n^2$ 。
+  \item $52 \times 48 = (50 + 2)(50 - 2) = 2500 - 4 = 2496$ 。
+  \item $(x + 3)^2 - (x - 3)^2 = (x^2 + 6x + 9) - (x^2 - 6x + 9) = 12x$ 。
+  \item 错。 $(a + b)^2 = a^2 + 2ab + b^2$ ，不能漏掉 $2ab$ 。
+\end{enumerate}
+
+
+\textbf{整式的除法 练一练}
+
+\begin{enumerate}
+  \item $(-18x^5) \div (6x^2) = -3x^3$ 。
+  \item $(9a^2b - 6ab^2) \div 3ab = 3a - 2b$ 。
+  \item $(4x^4 - 8x^3 + 12x^2) \div (-4x^2) = -x^2 + 2x - 3$ 。
+  \item $(10m^2n - 15mn^2) \div 5mn = 2m - 3n$ ，长为 $(2m - 3n)$ 厘米。
+  \item $(x^3 - 2x^2 + x) \div x = x^2 - 2x + 1$ 。
+\end{enumerate}
+
+
+\end{answer}
