@@ -1,0 +1,60 @@
+% preamble/packages.tex — All \usepackage declarations
+
+% Page layout
+\ifdefined\HCode\else
+  \usepackage[b5paper, margin=2.5cm, headheight=14pt]{geometry}
+\fi
+
+% Math (unicode-math must be loaded before fonts)
+\usepackage{amsmath, amssymb, amsthm}
+\ifdefined\HCode\else
+  \usepackage{unicode-math}
+\fi
+
+% CJK and math fonts (loaded after geometry and unicode-math)
+% In HTML mode fonts are handled by the browser — skip xeCJK font setup
+\ifdefined\HCode\else
+  \input{preamble/fonts}
+\fi
+
+% Colors
+\usepackage{xcolor}
+
+% tcolorbox for 5-step colored environments
+\usepackage[most, breakable, theorems]{tcolorbox}
+
+% TikZ graphics
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\input{preamble/tikz-styles}
+
+% Icons for environment titles
+% In HTML mode fontawesome5 htf files are broken — use text fallbacks instead
+\ifdefined\HCode
+  \newcommand{\faSearch}{\textbf{[>]}}
+  \newcommand{\faLightbulb}[1][]{\textbf{[?]}}
+  \newcommand{\faBookOpen}{\textbf{[ex]}}
+  \newcommand{\faStar}{\textbf{[*]}}
+  \newcommand{\faPen}{\textbf{[p]}}
+  \newcommand{\faKey}{\textbf{[A]}}
+\else
+  \usepackage{fontawesome5}
+\fi
+
+% Lists
+\usepackage{enumitem}
+\setlist[enumerate]{label=\arabic*.}
+
+% Tables
+\usepackage{booktabs}
+
+% PDF hyperlinks and cross-references
+\usepackage[hidelinks, unicode]{hyperref}
+\usepackage{cleveref}
+
+% Caption support (for \captionof inside tcolorbox)
+\usepackage{caption}
+
+% Custom environments
+\input{preamble/environments}

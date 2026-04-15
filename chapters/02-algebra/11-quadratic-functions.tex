@@ -1,0 +1,690 @@
+\chapter{§2.11 二次函数}
+\label{sec:2.11}
+
+
+\prerequisite{§2.8 一元二次方程, §2.10 一次函数}
+
+\gradelevel{9 年级}
+
+
+\section*{二次函数的概念}
+
+
+\begin{explore}
+
+
+从高处以初速度 $v_0$ 向上抛出一个小球，经过 $t$ 秒后球的高度为 $h = -\frac{1}{2}g t^2 + v_0 t + h_0$ （ $g$ 为重力加速度， $h_0$ 为初始高度）。球的高度 $h$ 随时间 $t$ 变化，这里 $t$ 的最高次数是 $2$ ——这就是一个\textbf{二次函数}关系。球先上升后下降，轨迹像一条弧线——这条弧线就是\textbf{抛物线}。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{二次函数}：形如
+
+\[
+y = ax^2 + bx + c \quad (a \neq 0)
+\]
+
+
+的函数叫做二次函数。
+
+\begin{itemize}
+  \item $a$ 是\textbf{二次项系数}， $b$ 是\textbf{一次项系数}， $c$ 是\textbf{常数项}。
+  \item 当 $b = 0, c = 0$ 时， $y = ax^2$ 是最简单的二次函数。
+  \item 二次函数的定义域是全体实数。
+\end{itemize}
+
+
+\textbf{为什么 $a \neq 0$ ？} 若 $a = 0$ ，退化为一次函数（或常数函数），不是二次函数。
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 判断下列函数中哪些是二次函数：
+
+(1) $y = 3x^2 + 1$ 　(2) $y = x^3 - x^2$ 　(3) $y = (x+1)^2 - x^2$ 　(4) $y = -x^2$
+
+\textbf{解：}
+
+(1) 是二次函数， $a = 3$ ， $b = 0$ ， $c = 1$ 。
+
+(2) 不是，最高次数为 $3$ 。
+
+(3) 展开： $y = x^2 + 2x + 1 - x^2 = 2x + 1$ ，实为一次函数，不是二次函数。
+
+(4) 是二次函数， $a = -1$ ， $b = 0$ ， $c = 0$ 。
+
+\textbf{例 2.} 正方形的边长为 $x$ ，面积 $S$ 与 $x$ 的关系是 $S = x^2$ 。这是二次函数吗？定义域是什么？
+
+\textbf{解：} 是二次函数。由于边长为正，定义域为 $x > 0$ 。
+
+\textbf{例 3.} 若 $(m - 2)x^{m^2 - 2} + 3x - 1$ 是关于 $x$ 的二次函数，求 $m$ 。
+
+\textbf{解：} 要求最高次数为 $2$ ： $m^2 - 2 = 2$ ， $m = \pm 2$ 。又要求 $m - 2 \neq 0$ ，所以 $m \neq 2$ ，即 $m = -2$ 。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 二次函数的标志：未知数的最高次数为 $2$ ，且二次项系数 $a \neq 0$ 。
+  \item 判断时要先化简展开，再看最高次数。
+  \item 定义域在数学上是全体实数，但实际问题中可能有限制。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 判断 $y = 2x^2 - x + 3$ 是否为二次函数，若是指出 $a, b, c$ 。
+  \item 判断 $y = (2x-1)^2 - 4x^2$ 是否为二次函数。
+  \item 若 $y = (a-1)x^2 + 2x - 3$ 是二次函数， $a$ 满足什么条件？
+  \item 圆的面积 $S = \pi r^2$ 是关于 $r$ 的二次函数吗？
+  \item 写出一个开口向下的二次函数。
+\end{enumerate}
+
+
+\end{practice}
+
+\section*{二次函数的图象}
+
+
+\begin{explore}
+
+
+让我们从最简单的二次函数 $y = x^2$ 开始。列表画图： $x$ 取 $-3, -2, -1, 0, 1, 2, 3$ ， $y$ 分别为 $9, 4, 1, 0, 1, 4, 9$ 。连接这些点，得到一条光滑的 U 形曲线——这就是\textbf{抛物线}。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{抛物线的基本特征}（以 $y = ax^2 + bx + c$ 为例）：
+
+\textbf{开口方向}：
+
+\begin{itemize}
+  \item $a > 0$ ：开口\textbf{向上}（U 形），有最低点。
+  \item $a < 0$ ：开口\textbf{向下}（倒 U 形），有最高点。
+\end{itemize}
+
+
+\textbf{顶点}：抛物线的最高或最低点。坐标为：
+
+\[
+\text{顶点} = \left(-\frac{b}{2a}, \; c - \frac{b^2}{4a}\right)
+\]
+
+
+\textbf{对称轴}：过顶点的垂直线，方程为 $x = -\frac{b}{2a}$ 。
+
+\textbf{ $\lvert a \rvert$ 的影响}： $\lvert a \rvert$ 越大，抛物线越"窄"（开口越小）； $\lvert a \rvert$ 越小，抛物线越"宽"（开口越大）。
+
+\textbf{ $c$ 的意义}： $c$ 是抛物线与 $y$ 轴的交点的纵坐标（令 $x = 0$ 即得 $y = c$ ）。
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 画出 $y = x^2$ 的图象，指出其顶点、对称轴和开口方向。
+
+\textbf{解：}
+
+列表：
+
+\begin{center}
+\begin{tabular}{llllllll}
+\toprule
+$x$ & $-3$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ \\
+\midrule
+$y$ & $9$ & $4$ & $1$ & $0$ & $1$ & $4$ & $9$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+描点连线得开口向上的抛物线。
+
+\begin{itemize}
+  \item 顶点： $(0, 0)$ 。
+  \item 对称轴： $x = 0$ （即 $y$ 轴）。
+  \item 开口方向：向上（ $a = 1 > 0$ ）。
+\end{itemize}
+
+
+\textbf{例 2.} 比较 $y = 2x^2$ 、 $y = x^2$ 、 $y = \frac{1}{2}x^2$ 的图象。
+
+\textbf{解：} 三条抛物线都开口向上，顶点都在原点。
+
+\begin{itemize}
+  \item $y = 2x^2$ ：最"窄"（ $\lvert a \rvert = 2$ 最大）。
+  \item $y = x^2$ ：中等。
+  \item $y = \frac{1}{2}x^2$ ：最"宽"（ $\lvert a \rvert = \frac{1}{2}$ 最小）。
+\end{itemize}
+
+
+\textbf{例 3.} 求 $y = x^2 - 4x + 3$ 的顶点坐标和对称轴。
+
+\textbf{解：} $a = 1$ ， $b = -4$ ， $c = 3$ 。
+
+对称轴： $x = -\frac{-4}{2 \times 1} = 2$ 。
+
+顶点纵坐标： $y = 2^2 - 4 \times 2 + 3 = 4 - 8 + 3 = -1$ 。
+
+顶点为 $(2, -1)$ ，对称轴为 $x = 2$ 。
+
+\textbf{例 4.} 求 $y = -2x^2 + 8x - 5$ 的开口方向、顶点和对称轴。
+
+\textbf{解：}
+
+\begin{itemize}
+  \item $a = -2 < 0$ ：开口向下。
+  \item 对称轴： $x = -\frac{8}{2 \times (-2)} = 2$ 。
+  \item 顶点纵坐标： $y = -2(4) + 8(2) - 5 = -8 + 16 - 5 = 3$ 。
+  \item 顶点 $(2, 3)$ ，对称轴 $x = 2$ 。
+\end{itemize}
+
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item $a > 0$ 开口向上（有最小值）， $a < 0$ 开口向下（有最大值）。
+  \item 顶点坐标： $\left(-\frac{b}{2a}, c - \frac{b^2}{4a}\right)$ 。
+  \item 对称轴： $x = -\frac{b}{2a}$ 。
+  \item $\lvert a \rvert$ 决定开口大小。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item $y = -3x^2$ 的开口方向和顶点是什么？
+  \item 比较 $y = x^2$ 和 $y = -x^2$ 的图象有何异同？
+  \item 求 $y = x^2 + 2x - 3$ 的顶点坐标和对称轴。
+  \item 求 $y = -x^2 + 6x - 8$ 的顶点和开口方向。
+  \item $y = 2x^2 - 4x + 1$ 的图象与 $y$ 轴的交点是什么？
+  \item 不画图判断 $y = \frac{1}{3}x^2$ 和 $y = 3x^2$ 哪个图象更宽。
+\end{enumerate}
+
+
+\end{practice}
+
+\section*{顶点式}
+
+
+\begin{explore}
+
+
+对于 $y = x^2 - 4x + 3$ ，我们已经知道顶点是 $(2, -1)$ 。如果用配方法改写这个式子： $y = (x - 2)^2 - 1$ ，顶点坐标 $(2, -1)$ 就直接"写"在了式子里！这种形式叫做\textbf{顶点式}，是分析抛物线最方便的形式。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{顶点式}：
+
+\[
+y = a(x - h)^2 + k
+\]
+
+
+其中 $(h, k)$ 就是抛物线的\textbf{顶点}， $x = h$ 是对称轴。
+
+\textbf{一般形式 → 顶点式}（配方法）：
+
+\[
+\begin{aligned}
+y &= ax^2 + bx + c \\
+&= a\left(x^2 + \frac{b}{a}x\right) + c \\
+&= a\left(x + \frac{b}{2a}\right)^2 + c - \frac{b^2}{4a}
+\end{aligned}
+\]
+
+
+所以 $h = -\frac{b}{2a}$ ， $k = c - \frac{b^2}{4a}$ 。
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 将 $y = x^2 - 6x + 11$ 化为顶点式。
+
+\textbf{解：}
+
+\[
+\begin{aligned}
+y &= x^2 - 6x + 11 \\
+&= (x^2 - 6x + 9) + 2 \\
+&= (x - 3)^2 + 2
+\end{aligned}
+\]
+
+
+顶点 $(3, 2)$ ，对称轴 $x = 3$ 。
+
+\textbf{例 2.} 将 $y = 2x^2 + 4x - 1$ 化为顶点式。
+
+\textbf{解：}
+
+\[
+\begin{aligned}
+y &= 2(x^2 + 2x) - 1 \\
+&= 2(x^2 + 2x + 1 - 1) - 1 \\
+&= 2(x + 1)^2 - 2 - 1 \\
+&= 2(x + 1)^2 - 3
+\end{aligned}
+\]
+
+
+顶点 $(-1, -3)$ ，对称轴 $x = -1$ 。
+
+\textbf{例 3.} 已知抛物线的顶点为 $(1, -2)$ ，且经过点 $(3, 6)$ ，求二次函数的解析式。
+
+\textbf{解：} 设 $y = a(x - 1)^2 - 2$ 。代入 $(3, 6)$ ：
+
+\[
+6 = a(3 - 1)^2 - 2 = 4a - 2
+\]
+
+
+\[
+4a = 8, \quad a = 2
+\]
+
+
+$y = 2(x - 1)^2 - 2$ 。
+
+展开得一般形式： $y = 2x^2 - 4x$ 。
+
+\textbf{例 4.} 抛物线 $y = -\frac{1}{2}(x + 3)^2 + 4$ 的顶点是什么？开口方向？
+
+\textbf{解：} 顶点 $(-3, 4)$ ， $a = -\frac{1}{2} < 0$ ，开口向下。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 顶点式 $y = a(x-h)^2 + k$ 可以直接读出顶点 $(h, k)$ 。
+  \item 一般形式化为顶点式用配方法。
+  \item 已知顶点和一个点可以确定二次函数。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 将 $y = x^2 + 4x + 7$ 化为顶点式。
+  \item 将 $y = -x^2 + 2x + 3$ 化为顶点式。
+  \item 将 $y = 3x^2 - 12x + 5$ 化为顶点式。
+  \item 已知抛物线顶点 $(2, 5)$ ，经过原点 $(0, 0)$ ，求解析式。
+  \item 抛物线 $y = 2(x - 4)^2 - 3$ 的顶点和对称轴是什么？
+\end{enumerate}
+
+
+\end{practice}
+
+\section*{二次函数与一元二次方程的关系}
+
+
+\begin{explore}
+
+
+一元二次方程 $x^2 - 4x + 3 = 0$ 的解是 $x = 1$ 和 $x = 3$ 。在二次函数 $y = x^2 - 4x + 3$ 的图象上，这两个值正好是抛物线与 $x$ 轴的两个交点的横坐标！方程的解和函数图象之间存在深刻的联系。
+
+\end{explore}
+
+\begin{understand}
+
+
+\textbf{二次函数 $y = ax^2 + bx + c$ 的图象与 $x$ 轴的交点}：
+
+令 $y = 0$ ，得 $ax^2 + bx + c = 0$ 。这就是对应的一元二次方程。
+
+\begin{itemize}
+  \item $\Delta > 0$ ：抛物线与 $x$ 轴有\textbf{两个}交点 $(x_1, 0)$ 和 $(x_2, 0)$ 。
+  \item $\Delta = 0$ ：抛物线与 $x$ 轴有\textbf{一个}交点（顶点在 $x$ 轴上）。
+  \item $\Delta < 0$ ：抛物线与 $x$ 轴\textbf{没有}交点。
+\end{itemize}
+
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 求 $y = x^2 - 2x - 3$ 与 $x$ 轴的交点。
+
+\textbf{解：} 令 $y = 0$ ： $x^2 - 2x - 3 = 0$ ， $(x - 3)(x + 1) = 0$ ， $x = 3$ 或 $x = -1$ 。
+
+与 $x$ 轴的交点为 $(-1, 0)$ 和 $(3, 0)$ 。
+
+\textbf{例 2.} 判断 $y = x^2 + 2x + 5$ 的图象与 $x$ 轴是否相交。
+
+\textbf{解：} $\Delta = 4 - 20 = -16 < 0$ 。抛物线与 $x$ 轴没有交点。
+
+又因为 $a = 1 > 0$ ，抛物线开口向上，整个图象在 $x$ 轴上方。
+
+\textbf{例 3.} 若 $y = x^2 - mx + m - 1$ 的图象与 $x$ 轴有且只有一个交点，求 $m$ 。
+
+\textbf{解：} $\Delta = 0$ ： $m^2 - 4(m - 1) = 0$ ， $m^2 - 4m + 4 = 0$ ， $(m - 2)^2 = 0$ ， $m = 2$ 。
+
+\textbf{例 4.} 利用图象解不等式 $x^2 - 4x + 3 > 0$ 。
+
+\textbf{解：} $y = x^2 - 4x + 3$ 与 $x$ 轴交于 $(1, 0)$ 和 $(3, 0)$ ，开口向上。
+
+$y > 0$ （图象在 $x$ 轴上方）对应 $x < 1$ 或 $x > 3$ 。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 方程 $ax^2 + bx + c = 0$ 的根就是抛物线 $y = ax^2 + bx + c$ 与 $x$ 轴交点的横坐标。
+  \item $\Delta$ 决定交点个数： $\Delta > 0$ 两个， $\Delta = 0$ 一个， $\Delta < 0$ 零个。
+  \item 可以利用抛物线图象直观判断二次不等式的解集。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 求 $y = x^2 + x - 6$ 与 $x$ 轴的交点。
+  \item 判断 $y = 2x^2 - 4x + 2$ 与 $x$ 轴的交点个数。
+  \item 若 $y = x^2 + bx + 4$ 与 $x$ 轴只有一个交点，求 $b$ 。
+  \item 求 $y = -x^2 + 4$ 与 $x$ 轴的交点。
+  \item 利用图象判断 $x^2 - 2x - 3 \leq 0$ 的解集。
+\end{enumerate}
+
+
+\end{practice}
+
+\section*{二次函数的最值}
+
+
+\begin{explore}
+
+
+一块长 $20$ 米的围栏，要围成一个一面靠墙的长方形花圃（三面用围栏）。设与墙平行的一面长 $x$ 米，则花圃面积 $S = x \cdot \frac{20 - x}{2} = -\frac{1}{2}x^2 + 10x$ 。面积能达到最大吗？最大是多少？
+
+\end{explore}
+
+\begin{understand}
+
+
+二次函数 $y = a(x - h)^2 + k$ 的最值：
+
+\begin{itemize}
+  \item $a > 0$ ：抛物线开口向上，顶点是\textbf{最低点}。 $y$ 的最小值为 $k$ ，当 $x = h$ 时取到。
+  \item $a < 0$ ：抛物线开口向下，顶点是\textbf{最高点}。 $y$ 的最大值为 $k$ ，当 $x = h$ 时取到。
+\end{itemize}
+
+
+如果自变量有取值范围限制，最值可能不在顶点处取到，需要结合定义域分析。
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 求 $y = 2(x - 3)^2 + 1$ 的最值。
+
+\textbf{解：} $a = 2 > 0$ ，开口向上，顶点 $(3, 1)$ 是最低点。
+
+$y$ 的最小值为 $1$ ，当 $x = 3$ 时取到。没有最大值。
+
+\textbf{例 2.} 求 $y = -x^2 + 4x - 1$ 的最大值。
+
+\textbf{解：} 配方： $y = -(x^2 - 4x) - 1 = -(x^2 - 4x + 4) + 4 - 1 = -(x - 2)^2 + 3$ 。
+
+$a = -1 < 0$ ，顶点 $(2, 3)$ 是最高点。 $y$ 的最大值为 $3$ ，当 $x = 2$ 时取到。
+
+\textbf{例 3.} 围栏问题： $S = -\frac{1}{2}x^2 + 10x$ （ $0 < x < 20$ ），求面积的最大值。
+
+\textbf{解：} 配方： $S = -\frac{1}{2}(x^2 - 20x) = -\frac{1}{2}(x - 10)^2 + 50$ 。
+
+当 $x = 10$ 时， $S$ 取最大值 $50$ 。
+
+此时另外两面各长 $\frac{20 - 10}{2} = 5$ 米。
+
+答：当与墙平行的一面长 $10$ 米时，面积最大为 $50$ 平方米。
+
+\textbf{例 4.} 在定义域 $0 \leq x \leq 4$ 上，求 $y = x^2 - 6x + 5$ 的最大值和最小值。
+
+\textbf{解：} 配方： $y = (x - 3)^2 - 4$ 。
+
+顶点 $(3, -4)$ 在定义域内，所以最小值为 $-4$ （当 $x = 3$ ）。
+
+比较端点值： $x = 0$ 时 $y = 5$ ， $x = 4$ 时 $y = 16 - 24 + 5 = -3$ 。
+
+最大值为 $5$ （当 $x = 0$ ）。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item $a > 0$ 时有最小值， $a < 0$ 时有最大值，都在顶点处取到。
+  \item 定义域有限制时，还需检查端点处的函数值。
+  \item 最值问题是二次函数在实际应用中最常见的题型。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 求 $y = 3(x + 1)^2 - 5$ 的最值。
+  \item 求 $y = -2x^2 + 8x$ 的最大值。
+  \item 求 $y = x^2 - 2x + 3$ 在 $-1 \leq x \leq 3$ 上的最大值和最小值。
+  \item 把 $24$ 分成两个非负数之和，使这两个数的乘积最大，求这两个数。
+  \item 一枚石子从地面以 $20$ 米/秒的速度竖直上抛， $t$ 秒后高度 $h = 20t - 5t^2$ 。求石子到达的最大高度和所需时间。
+\end{enumerate}
+
+
+\end{practice}
+
+\section*{二次函数的应用}
+
+
+\begin{explore}
+
+
+一座拱桥的拱形可以近似看作抛物线。如果桥面宽 $20$ 米，拱顶到桥面的最大高度为 $4$ 米，我们可以建立坐标系，用二次函数来描述拱形。通过函数关系，可以计算桥面以下任意位置的高度——这就是二次函数在工程中的应用。
+
+\end{explore}
+
+\begin{understand}
+
+
+二次函数应用题的一般步骤：
+
+\begin{enumerate}
+  \item \textbf{建立坐标系}：选择合适的坐标原点（常选顶点或对称点）。
+  \item \textbf{确定函数关系}：利用已知条件列方程求解 $a, b, c$ （或用顶点式）。
+  \item \textbf{利用函数解决问题}：求最值、求特定点的函数值等。
+  \item \textbf{检验答案}：验证是否符合实际。
+\end{enumerate}
+
+
+\end{understand}
+
+\begin{workedexamples}
+
+
+\textbf{例 1.} 拱桥问题。桥面宽 $20$ 米，拱顶到桥面最大高度 $4$ 米。以拱顶为原点建立坐标系（ $x$ 轴水平， $y$ 轴向下为正）。求拱形的二次函数表达式。
+
+\textbf{解：} 以拱顶为原点，向下为 $y$ 正方向。拱形两端在 $(\pm 10, 4)$ （桥面边缘低于拱顶 $4$ 米）。
+
+设 $y = ax^2$ （顶点在原点，对称）。代入 $(10, 4)$ ： $4 = 100a$ ， $a = \frac{1}{25}$ 。
+
+\[
+y = \frac{1}{25}x^2
+\]
+
+
+或者以拱顶为原点、 $y$ 轴向上为正： $y = -\frac{1}{25}x^2 + 4$ （拱形最高点在 $(0, 4)$ ，桥面在 $y = 0$ ）。
+
+\textbf{例 2.} 某果园有 $30$ 棵苹果树，平均每棵产量 $200$ 千克。如果再种新树，每多种一棵树，由于密度增加，每棵树平均减产 $5$ 千克。种多少棵树时总产量最大？
+
+\textbf{解：} 设多种 $x$ 棵，总产量 $W$ （千克）。
+
+每棵产量： $(200 - 5x)$ 千克；总棵数： $(30 + x)$ 。
+
+\[
+W = (30 + x)(200 - 5x) = -5x^2 + 50x + 6000
+\]
+
+
+配方： $W = -5(x^2 - 10x) + 6000 = -5(x - 5)^2 + 125 + 6000 = -5(x - 5)^2 + 6125$
+
+当 $x = 5$ 时， $W$ 取最大值 $6125$ 千克。
+
+又需 $200 - 5x > 0$ ，即 $x < 40$ ， $x = 5$ 满足条件。
+
+答：再种 $5$ 棵（共 $35$ 棵）时，总产量最大为 $6125$ 千克。
+
+\textbf{例 3.} 某商品的销售利润 $P$ （元）与销售单价 $x$ （元）的关系为：
+
+\[
+P = -10x^2 + 900x - 18000 \quad (40 \leq x \leq 60)
+\]
+
+
+求利润最大时的单价。
+
+\textbf{解：} $P = -10(x^2 - 90x) - 18000 = -10(x - 45)^2 + 20250 - 18000 = -10(x - 45)^2 + 2250$ 。
+
+顶点 $x = 45$ ，在 $[40, 60]$ 内。当 $x = 45$ 时， $P$ 取最大值 $2250$ 元。
+
+答：单价定为 $45$ 元时，利润最大为 $2250$ 元。
+
+\end{workedexamples}
+
+\begin{keytakeaway}
+
+
+\begin{itemize}
+  \item 建立坐标系时，选择合适的原点可简化运算。
+  \item 实际问题中注意自变量的取值范围。
+  \item 最值问题配方后直接读出。
+  \item 解题后检验：最优解是否在合理范围内。
+\end{itemize}
+
+
+\end{keytakeaway}
+
+\begin{practice}
+
+
+\begin{enumerate}
+  \item 一根弹射物的飞行路径为 $y = -\frac{1}{20}x^2 + 2x$ （ $x, y$ 单位为米），求最大高度和此时的水平距离。
+  \item 某工厂生产一种产品，日产量为 $x$ 件时，每件成本为 $(20 - 0.1x)$ 元（ $0 < x < 200$ ），每件售价 $25$ 元。日产量为多少时利润最大？
+  \item 一个长方形的周长为 $40$ 厘米，求面积的最大值。
+  \item 将一条长 $12$ 米的绳子弯成长方形，使得面积最大，求此时的长和宽。
+  \item 某跳水运动员跳板距水面 $3$ 米，起跳后的高度 $h = -4.9t^2 + 5.8t + 3$ （ $h$ 为距水面高度， $t$ 为时间），求运动员到达的最大高度。
+\end{enumerate}
+
+
+\end{practice}
+
+
+
+\begin{answer}
+
+
+\textbf{二次函数的概念 练一练}
+
+\begin{enumerate}
+  \item 是二次函数， $a = 2$ ， $b = -1$ ， $c = 3$ 。
+  \item $(2x-1)^2 - 4x^2 = 4x^2 - 4x + 1 - 4x^2 = -4x + 1$ ，是一次函数，不是二次函数。
+  \item $a - 1 \neq 0$ ，即 $a \neq 1$ 。
+  \item 是。 $a = \pi \neq 0$ ， $b = 0$ ， $c = 0$ 。
+  \item 例如 $y = -x^2$ 或 $y = -2x^2 + 3$ 。
+\end{enumerate}
+
+
+\textbf{二次函数的图象 练一练}
+
+\begin{enumerate}
+  \item 开口向下（ $a = -3 < 0$ ），顶点 $(0, 0)$ 。
+  \item 相同点：顶点都在原点，形状对称。不同点： $y = x^2$ 开口向上， $y = -x^2$ 开口向下（关于 $x$ 轴对称）。
+  \item 对称轴 $x = -\frac{2}{2} = -1$ ， $y = (-1)^2 + 2(-1) - 3 = -4$ 。顶点 $(-1, -4)$ 。
+  \item 对称轴 $x = -\frac{6}{-2} = 3$ ， $y = -9 + 18 - 8 = 1$ 。顶点 $(3, 1)$ ，开口向下。
+  \item 令 $x = 0$ ： $y = 1$ 。交点为 $(0, 1)$ 。
+  \item $\lvert \frac{1}{3} \rvert < \lvert 3 \rvert$ ，所以 $y = \frac{1}{3}x^2$ 更宽。
+\end{enumerate}
+
+
+\textbf{顶点式 练一练}
+
+\begin{enumerate}
+  \item $y = (x + 2)^2 + 3$ 。顶点 $(-2, 3)$ 。
+  \item $y = -(x^2 - 2x) + 3 = -(x-1)^2 + 4$ 。顶点 $(1, 4)$ 。
+  \item $y = 3(x^2 - 4x) + 5 = 3(x-2)^2 - 12 + 5 = 3(x-2)^2 - 7$ 。顶点 $(2, -7)$ 。
+  \item 设 $y = a(x-2)^2 + 5$ 。代入 $(0, 0)$ ： $0 = 4a + 5$ ， $a = -\frac{5}{4}$ 。 $y = -\frac{5}{4}(x-2)^2 + 5$ 。
+  \item 顶点 $(4, -3)$ ，对称轴 $x = 4$ 。
+\end{enumerate}
+
+
+\textbf{二次函数与一元二次方程的关系 练一练}
+
+\begin{enumerate}
+  \item $x^2 + x - 6 = 0$ ， $(x+3)(x-2) = 0$ ，交点 $(-3, 0)$ 和 $(2, 0)$ 。
+  \item $\Delta = 16 - 16 = 0$ ，一个交点（抛物线与 $x$ 轴相切）。
+  \item $\Delta = b^2 - 16 = 0$ ， $b = \pm 4$ 。
+  \item $-x^2 + 4 = 0$ ， $x^2 = 4$ ， $x = \pm 2$ 。交点 $(-2, 0)$ 和 $(2, 0)$ 。
+  \item $y = x^2 - 2x - 3 = (x-3)(x+1)$ ，交点 $(-1, 0)$ 和 $(3, 0)$ 。 $a > 0$ 开口向上， $y \leq 0$ 对应 $-1 \leq x \leq 3$ 。
+\end{enumerate}
+
+
+\textbf{二次函数的最值 练一练}
+
+\begin{enumerate}
+  \item $a = 3 > 0$ ，最小值为 $-5$ ，当 $x = -1$ 时取到。
+  \item $y = -2(x^2 - 4x) = -2(x-2)^2 + 8$ 。最大值为 $8$ ，当 $x = 2$ 时取到。
+  \item $y = (x-1)^2 + 2$ 。顶点 $(1, 2)$ 在 $[-1, 3]$ 内，最小值 $2$ 。端点： $x = -1$ 时 $y = 6$ ， $x = 3$ 时 $y = 6$ 。最大值 $6$ 。
+  \item 设两数为 $x$ 和 $24 - x$ ，乘积 $P = x(24-x) = -x^2 + 24x = -(x-12)^2 + 144$ 。 $x = 12$ 时最大，两数都是 $12$ 。
+  \item $h = -5(t^2 - 4t) = -5(t-2)^2 + 20$ 。当 $t = 2$ 秒时，最大高度 $20$ 米。
+\end{enumerate}
+
+
+\textbf{二次函数的应用 练一练}
+
+\begin{enumerate}
+  \item $y = -\frac{1}{20}(x^2 - 40x) = -\frac{1}{20}(x - 20)^2 + 20$ 。 $x = 20$ 时，最大高度 $20$ 米。
+  \item 日利润 $L = x \cdot [25 - (20 - 0.1x)] = x(5 + 0.1x) = 0.1x^2 + 5x$ 。这是开口向上的抛物线，在 $(0, 200)$ 上单调递增。 $x = 200$ 时利润最大，但 $x = 200$ 时成本为 $0$ ，不合理。需要 $x < 200$ ，取 $x = 199$ 时利润 $= 0.1 \times 199^2 + 5 \times 199 = 3960.1 + 995 = 4955.1$ 。实际上日产量越多利润越多（在此模型下），最多产 $199$ 件。
+  \item 设长 $x$ ，宽 $(20 - x)$ 。 $S = x(20 - x) = -(x - 10)^2 + 100$ 。 $x = 10$ 时面积最大 $100$ 平方厘米（即正方形）。
+  \item 周长 $12$ ，设长 $x$ ，宽 $\frac{12 - 2x}{2} = 6 - x$ 。 $S = x(6 - x) = -(x - 3)^2 + 9$ 。 $x = 3$ 时面积最大 $9$ 平方米，此时长 $= $ 宽 $= 3$ 米（正方形）。
+  \item $h = -4.9(t^2 - \frac{5.8}{4.9}t) + 3 = -4.9\left(t - \frac{29}{49}\right)^2 + 3 + 4.9 \times \frac{841}{2401}$ 。 $\frac{29}{49} \approx 0.592$ 。 $h_{\max} = 3 + \frac{4.9 \times 841}{2401} = 3 + \frac{4120.9}{2401} \approx 3 + 1.716 = 4.716$ 。最大高度约 $4.72$ 米。
+\end{enumerate}
+
+
+\end{answer}
