@@ -1,13 +1,42 @@
 #let textbook(body) = {
-  set page(paper: "iso-b5", margin: (x: 18mm, y: 18mm))
-  set text(
-    font: ("Libertinus Serif"),
-    size: 10.5pt,
+  set page(
+    paper: "iso-b5",
+    margin: (x: 18mm, y: 18mm),
+    header: context {
+      let elems = query(heading.where(level: 1).before(here()))
+      if elems.len() > 0 {
+        let current = elems.last()
+        let num = counter(heading).at(current.location()).first()
+        emph[第 #num 章 #h(0.3em) #current.body]
+        line(length: 100%, stroke: 0.4pt)
+      }
+    },
+    footer: context {
+      align(right, counter(page).display())
+    },
   )
+  set text(
+    font: "Noto Sans CJK SC",
+    size: 10pt,
+    lang: "zh",
+    region: "cn",
+  )
+  show math.equation: set text(font: "New Computer Modern Math")
   set heading(numbering: "1.1")
-  set par(justify: true)
+  set par(justify: true, leading: 0.85em, spacing: 1.5em)
+  // 一级标题前强制分页
+  show heading.where(level: 1): it => {
+    pagebreak(weak: true)
+    block(above: 0em, below: 1.5em, it)
+  }
+  // 二三级标题：前 2em 后 1em
+  show heading.where(level: 2): set block(above: 2em, below: 1em)
+  show heading.where(level: 3): set block(above: 2em, below: 1em)
   body
 }
+
+#let secref(id) = link(label("sec-" + id.replace(".", "-")), [§#id])
+#let secrange(from, to) = [#secref(from)--#secref(to)]
 
 #let lesson-box(title, fill, stroke, body) = {
   box(

@@ -1,5 +1,5 @@
 ---
-name: typst-syntax-toolchain
+name: typst
 description: Use when tasks involve Typst syntax, math typesetting, geometry or chart drawing in Typst, and Typst build toolchains (CLI, Make, Docker, CI). This skill focuses on Typst-first authoring and operations, not LaTeX-to-Typst migration rules.
 ---
 

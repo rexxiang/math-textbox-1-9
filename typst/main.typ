@@ -5,8 +5,6 @@
 
 #align(center)[
   #text(size: 24pt, weight: "bold")[数学自学教材（1-9 年级）]
-  #v(0.6em)
-  #text(size: 12pt)[Typst 骨架版本]
 ]
 
 #pagebreak()

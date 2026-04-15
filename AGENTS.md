@@ -5,63 +5,66 @@
 面向中国 1-9 年级学生的中文数学自学教材。内容覆盖中国课标（小学一年级至初中三年级），教学风格借鉴美国教材：探索先于讲解、概念驱动、螺旋式深化、真实情境连接。
 
 **输出格式**：
-- `make pdf` → XeLaTeX → `output/math-textbook.pdf`（主要发布格式）
-- `make html` → make4ht → HTML5 → `docs/html/` → GitHub Pages
+- `make pdf` → Typst → `output/math-textbook.pdf`（主要发布格式）
 
 ## 文件结构
 
-- `main.tex` — 入口文件，`\include` 所有章节
-- `preamble/` — 包导入、字体、tcolorbox 环境、TikZ 样式
-- `chapters/` — 所有章节 `.tex` 文件（按模块子目录）
-  - `chapters/00-introduction/` — 导读（4 个文件）
-  - `chapters/01-numbers/` — 数与运算（10 个文件）
-  - `chapters/02-algebra/` — 代数（13 个文件）
-  - `chapters/03-geometry/` — 几何（12 个文件，TikZ 内联）
-  - `chapters/04-statistics/` — 统计与概率（8 个文件）
-- `scripts/` — 辅助脚本（md2tex.py 迁移脚本）
+- `typst/main.typ` — 入口文件，`#include` 所有章节
+- `typst/lib/theme.typ` — 页面布局、字体、lesson-box 样式
+- `typst/lib/diagram-packages.typ` — 图形包导入（cetz、fletcher 等）
+- `typst/chapters/` — 所有章节 `.typ` 文件（按模块子目录）
+  - `typst/chapters/00-introduction/` — 导读（4 个文件）
+  - `typst/chapters/01-numbers/` — 数与运算（9 个文件）
+  - `typst/chapters/02-algebra/` — 代数（13 个文件）
+  - `typst/chapters/03-geometry/` — 几何（11 个文件）
+  - `typst/chapters/04-statistics/` — 统计与概率（8 个文件）
+- `typst/smoke/` — 构建烟雾测试（package-lock.typ）
+- `scripts/` — 辅助脚本
 - `output/` — 构建产物（git ignored）
-- `build/` — make4ht HTML 中间文件（git ignored）
-- `docs/` — GitHub Pages 内容（git ignored，由 CI 发布）
 
 ## 知识点五步结构
 
 每个 §X.Y 知识点按固定顺序：
 
-| 结构 | LaTeX 环境 | 颜色 |
+| 结构 | Typst 函数 | 颜色 |
 |------|-----------|------|
-| 引入情境 | `\begin{explore}` | 橙色 |
-| 概念建立 | `\begin{understand}` | 蓝色 |
-| 典型例题 | `\begin{workedexamples}` | 灰色 |
-| 关键总结 | `\begin{keytakeaway}` | 绿色 |
-| 练一练 | `\begin{practice}` | 紫色 |
-| 参考答案 | `\begin{answer}` | 浅灰 |
+| 引入情境 | `#explore[...]` | 橙色 |
+| 概念建立 | `#understand[...]` | 蓝色 |
+| 典型例题 | `#workedexamples[...]` | 灰色 |
+| 关键总结 | `#keytakeaway[...]` | 绿色 |
+| 练一练 | `#practice[...]` | 紫色 |
+| 参考答案 | `#answer[...]` | 浅灰 |
 
-## LaTeX 规范
+## Typst 规范
 
-- 行内公式：`$...$`；行间公式：`\[ ... \]`（不用 `$$..$$`）
-- 对齐方程：`\begin{aligned} ... \end{aligned}` 嵌套在 `\[ \]` 中
-- 不等号：`\geq` / `\leq`（不用 `\geqslant`）
-- 绝对值：`\lvert a \rvert`（不用 `|a|`）
-- 整除/条件：`\mid`
-- 中文文本：`\text{...}`（在数学模式中）
-- 章节标签：`\label{sec:X.Y}` 紧跟 `\chapter{}`
-- 图形标签：`\label{fig:描述性名称}`
-- 交叉引用：`§X.Y` 字面文本（面向读者）
-- **不使用** Unicode 特殊字符（✓ → `$\checkmark$`，₁ → `$_1$`）
+- 行内公式：`$...$`（无空格）；显示公式：`$ ... $`（两端有空格触发 display 模式）
+- 对齐方程：在 `$ ... $` 内使用 `&` 对齐
+- 不等号：`>=` / `<=`
+- 绝对值：`abs(a)` 或 `|a|`
+- 整除/条件：`|`
+- 中文文本：直接书写，无需特殊处理
+- 章节标题：`= 章标题` / `== §X.Y 节标题 <sec-X-Y>`（标题末尾带 label）
+- 交叉引用：正文中使用 `#secref("X.Y")` 生成可点击链接；范围引用用 `#secrange("X.Y", "A.B")`
+- 图形：使用 cetz 包（`@preview/cetz:0.4.2`），版本锁定在 `lib/diagram-packages.typ`
+- Universe 包必须使用固定版本号
 
-## TikZ 图形规范
+## 图形规范
 
-- 所有图形**内联在章节 `.tex` 文件**中，不创建独立图形文件
-- 始终使用**角度坐标**（`(130:3)` 等）而非手算直角坐标
-- 用 `\coordinate (Name) at (...)` 命名关键点
-- 弧线端点：用 `arc[start angle=X, end angle=Y, radius=R]`
-- tcolorbox 内不使用 `\begin{figure}[htbp]`，改用 `\begin{center}` + `\captionof{figure}{...}`（需要 `caption` 包）
-- tcolorbox 外的独立图形可用 `\begin{figure}[htbp]`
+- 所有图形**内联在章节 `.typ` 文件**中，不创建独立图形文件
+- 使用 cetz 包绘制几何图形，版本锁定
+- 用命名坐标标注关键点
+- 图形说明用 `#figure` + `caption`
 
-## 辅助命令
+## 辅助函数
 
-- `\prerequisite{§A.B, §C.D}` — 前置知识框
-- `\gradelevel{X 年级}` — 适用年级框
+- `#explore[...]` — 引入情境框
+- `#understand[...]` — 概念建立框
+- `#workedexamples[...]` — 典型例题框
+- `#keytakeaway[...]` — 关键总结框
+- `#practice[...]` — 练一练框
+- `#answer[...]` — 参考答案框
+- `#secref("X.Y")` — 可点击的 §X.Y 章节引用链接
+- `#secrange("X.Y", "A.B")` — 章节范围引用（如 §X.Y–§A.B）
 
 ## 年级密度规则
 
@@ -79,7 +82,6 @@
 
 ```bash
 make pdf    # 生成 PDF（output/math-textbook.pdf）
-make html   # 生成 HTML5（docs/html/）
-make check  # 检查交叉引用一致性
+make check  # 检查 Typst 工具链和包锁定
 make clean  # 清理构建产物
 ```

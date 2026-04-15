@@ -1,25 +1,21 @@
-# Typst Scaffold (Preparation Stage)
+# Typst 数学自学教材
 
-This directory is the Typst-native project scaffold for the math textbook.
+面向中国 1-9 年级学生的中文数学自学教材，使用 Typst 排版。
 
-## Current stage
+## 目录结构
 
-- Includes all 47 chapter placeholders mirrored from `main.tex` include order.
-- Provides a reusable style module in `lib/theme.typ`.
-- Adds optional diagram dependency lock file in `lib/diagram-packages.typ`.
-- Does not convert LaTeX chapter content yet.
+- `main.typ` — 入口文件
+- `lib/theme.typ` — 页面布局、字体、lesson-box 样式
+- `lib/diagram-packages.typ` — 图形包导入
+- `chapters/` — 章节内容（5 个模块，45+ 个文件）
+- `smoke/` — 构建烟雾测试
 
-## Build commands
+## 构建
 
-- PDF scaffold build:
-  - `make typst-pdf`
-- Toolchain + package lock checks:
-  - `make typst-check`
+```bash
+make pdf    # 生成 PDF → output/math-textbook.pdf
+make check  # 工具链验证 + 包锁定检查
+make clean  # 清理构建产物
+```
 
-Output files are written to `output/`.
-
-## Regenerate scaffold
-
-If chapter include order changes in `main.tex`, regenerate:
-
-`python3 scripts/bootstrap_typst_scaffold.py`
+构建需要 Docker，使用 `Dockerfile` 构建包含 CJK 字体的 Typst 镜像。
