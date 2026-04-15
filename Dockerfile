@@ -7,10 +7,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     texlive-fonts-recommended \
     texlive-science \
     texlive-latex-extra \
+    texlive-extra-utils \
+    texlive-fonts-extra \
     fonts-noto-cjk \
     fonts-noto-cjk-extra \
     lmodern \
-    librsvg2-bin \
+    tex4ht \
+    dvisvgm \
+    python3 \
     make \
     && rm -rf /var/lib/apt/lists/*
 
