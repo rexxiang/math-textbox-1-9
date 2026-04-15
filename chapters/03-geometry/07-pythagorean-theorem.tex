@@ -54,7 +54,38 @@ a^2 + b^2 = c^2
 \]
 
 
-% TODO-TikZ: 勾股定理示意图 (was: ../assets/03-geometry/pythagorean-theorem.svg)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}, scale=0.85]
+  % Right triangle: C at origin, A at (4,0), B at (0,3)
+  \coordinate (C) at (0,0);
+  \coordinate (A) at (4,0);
+  \coordinate (B) at (0,3);
+  \draw[main line] (A)--(B)--(C)--cycle;
+  \node[below right] at (A) {$A$};
+  \node[above left]  at (B) {$B$};
+  \node[below left]  at (C) {$C$};
+  % Right angle mark at C
+  \draw (0.3,0)--(0.3,0.3)--(0,0.3);
+  % Side labels
+  \node[below] at (2,0) {$a = 4$};
+  \node[left]  at (0,1.5) {$b = 3$};
+  \node[above right, rotate={atan2(3,4)}] at (2,1.5) {$c = 5$};
+  % Square on leg a (below)
+  \draw[aux line] (0,-4)--(4,-4)--(4,0);
+  \draw[aux line] (0,0)--(0,-4);
+  \node at (2,-2) {$a^2 = 16$};
+  % Square on leg b (left)
+  \draw[aux line] (-3,0)--(-3,3)--(0,3);
+  \draw[aux line] (0,0)--(-3,0);
+  \node at (-1.5,1.5) {$b^2 = 9$};
+  % Label for hypotenuse square
+  \node[right=0.3cm] at (4,1.5) {$c^2 = a^2 + b^2$};
+  \node[right=0.3cm] at (4,0.8) {$= 16 + 9 = 25$};
+\end{tikzpicture}
+\caption{勾股定理：直角三角形中 $a^2 + b^2 = c^2$（本例：$3^2+4^2=5^2$）}
+\label{fig:pythagorean-theorem}
+\end{figure}
 
 
 这个定理在中国古代被称为"勾股定理"——直角三角形的短直角边叫"勾"，长直角边叫"股"，斜边叫"弦"。《周髀算经》中记载："勾三股四弦五"，说的就是 $3^2 + 4^2 = 5^2$ 。
@@ -97,7 +128,32 @@ a^2 + b^2 = c^2
 
 用四个完全相同的直角三角形（直角边为 $a$ 、 $b$ ，斜边为 $c$ ）拼成一个大正方形。
 
-% TODO-TikZ: 赵爽弦图 (was: ../assets/03-geometry/zhao-shuang-proof.svg)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}, scale=0.85]
+  % Outer square, side c = 5
+  \def\c{5} \def\a{3} \def\b{4}
+  % Outer square corners
+  \draw[main line] (0,0)--(\c,0)--(\c,\c)--(0,\c)--cycle;
+  % Four inner points dividing each side into a and b
+  \coordinate (P1) at (\a,0);
+  \coordinate (P2) at (\c,\a);
+  \coordinate (P3) at (\b,\c);
+  \coordinate (P4) at (0,\b);
+  % Inner tilted square (c×c tilted)
+  \draw[main line, draw=blue!70!black] (P1)--(P2)--(P3)--(P4)--cycle;
+  \fill[blue!10] (P1)--(P2)--(P3)--(P4)--cycle;
+  % Labels on outer square sides
+  \node[below] at (\a/2,0) {$a$};
+  \node[below] at ({(\a+\c)/2},0) {$b$};
+  \node[blue!70!black] at (\c/2+0.1,\c/2) {$c^2$};
+  % Labels on two triangles
+  \node[font=\scriptsize] at (0.6,0.8) {$\frac{1}{2}ab$};
+  \node[font=\scriptsize] at (\c-0.5,\c/2) {$\frac{1}{2}ab$};
+\end{tikzpicture}
+\caption{赵爽弦图证明：大正方形面积 $= c^2 + 4 \times \frac{1}{2}ab$，同时 $= (a+b)^2$，整理得 $c^2 = a^2+b^2$}
+\label{fig:zhao-shuang-proof}
+\end{figure}
 
 
 将四个直角三角形排列如下：大正方形的外边长为 $c$ ，内部留出一个小正方形，边长为 $\lvert b - a \rvert$ 。

@@ -22,7 +22,26 @@
 
 \textbf{圆的定义}：平面上到一个定点的距离等于定长的所有点组成的图形叫做\textbf{圆}。这个定点叫做\textbf{圆心}（记作 $O$ ），定长叫做\textbf{半径}（记作 $r$ ）。以 $O$ 为圆心、 $r$ 为半径的圆记作 $\odot O$ 。
 
-% TODO-TikZ: 圆的基本元素 (was: ../assets/03-geometry/circle-elements.svg)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}]
+  \def\R{2}
+  \coordinate (O) at (0,0);
+  \draw[main line] (O) circle (\R);
+  \fill (O) circle (2pt) node[below left] {$O$};
+  % Radius OA
+  \draw[main line] (O) -- (50:\R) node[above right] {$A$};
+  \node at (25:1.1) {$r$};
+  % Diameter BC
+  \draw[main line] (200:\R) node[below left] {$B$} -- (20:\R) node[right] {$C$};
+  \node[below] at (0,-0.35) {直径 $BC = 2r$};
+  % Chord DE
+  \draw[main line] (115:\R) node[above left] {$D$} -- (330:\R) node[below right] {$E$};
+  \node[font=\scriptsize] at (-1.2,0.2) {弦 $DE$};
+\end{tikzpicture}
+\caption{圆的基本元素：圆心 $O$，半径 $r$，直径，弦，弧}
+\label{fig:circle-elements}
+\end{figure}
 
 
 基本术语：
@@ -94,7 +113,29 @@
 
 反过来：平分弦（非直径）的直径垂直于该弦。
 
-% TODO-TikZ: 垂径定理 (was: ../assets/03-geometry/perpendicular-chord.svg)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}]
+  \def\R{1.8}
+  \coordinate (O) at (0,0);
+  \draw[main line] (O) circle (\R);
+  \fill (O) circle (2pt) node[right] {$O$};
+  % Chord AB (horizontal, symmetric about y-axis)
+  \coordinate (A) at ({-sqrt(\R*\R-1)},1);
+  \coordinate (B) at ({sqrt(\R*\R-1)},1);
+  \draw[main line] (A) node[above left] {$A$} -- (B) node[above right] {$B$};
+  % Midpoint M of AB
+  \coordinate (M) at (0,1);
+  \fill (M) circle (2pt) node[below right] {$M$};
+  % Perpendicular from O to chord
+  \draw[aux line] (O) -- (M);
+  % Right angle mark at M
+  \draw (0.22,1)--(0.22,1.22)--(0,1.22);
+  \node[right, font=\scriptsize] at (0.1,0.5) {$OM \perp AB$};
+\end{tikzpicture}
+\caption{垂径定理：$OM \perp AB \Rightarrow AM = MB$（过圆心的垂线平分弦）}
+\label{fig:perpendicular-chord}
+\end{figure}
 
 
 设 $\odot O$ 中，直径 $AB \perp$ 弦 $CD$ 于点 $M$ ，则 $CM = MD$ ， $\overset{\frown}{BC} = \overset{\frown}{BD}$ （小弧）， $\overset{\frown}{AC} = \overset{\frown}{AD}$ （大弧）。
@@ -184,7 +225,35 @@ $CD$ 离圆心更近。一般地，在同圆中，弦越长离圆心越近。
 
 \textbf{圆周角}：顶点在圆上，且两边都与圆相交的角叫做圆周角。
 
-% TODO-TikZ: 圆心角与圆周角 (was: ../assets/03-geometry/central-inscribed-angle.svg)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}]
+  \def\R{2}
+  \coordinate (O) at (0,0);
+  \draw[main line] (O) circle (\R);
+  \fill (O) circle (2pt) node[below] {$O$};
+  \coordinate (A) at (200:\R);
+  \coordinate (B) at (340:\R);
+  \coordinate (P) at (100:\R);
+  \fill (A) circle (2pt) node[below left] {$A$};
+  \fill (B) circle (2pt) node[below right] {$B$};
+  \fill (P) circle (2pt) node[above] {$P$};
+  % Central angle AOB (red)
+  \draw[main line, draw=red!70!black] (O)--(A);
+  \draw[main line, draw=red!70!black] (O)--(B);
+  \draw[angle arc, draw=red!70!black, thick]
+    (200:0.65) arc[start angle=200, end angle=340, radius=0.65];
+  \node[red!70!black] at (270:0.95) {$2\alpha$（圆心角）};
+  % Inscribed angle APB (blue)
+  \draw[main line, draw=blue!70!black] (P)--(A);
+  \draw[main line, draw=blue!70!black] (P)--(B);
+  \draw[angle arc, draw=blue!70!black, thick]
+    ($(P)+(215:0.5)$) arc[start angle=215, end angle=285, radius=0.5];
+  \node[blue!70!black] at ($(P)+(250:0.9)$) {$\alpha$（圆周角）};
+\end{tikzpicture}
+\caption{圆心角是圆周角的 2 倍：$\angle AOB = 2\,\angle APB$（同弧 $\widehat{AB}$ 上）}
+\label{fig:central-inscribed-angle}
+\end{figure}
 
 
 \textbf{圆周角定理}：同弧（或等弧）上的圆周角等于该弧所对的圆心角的一半。
@@ -375,7 +444,36 @@ $S = \dfrac{1}{2}lr = \dfrac{1}{2} \times 3\pi \times 6 = 9\pi \approx 28.27$ cm
 \end{center}
 
 
-% TODO-TikZ: 直线与圆的位置关系 (was: ../assets/03-geometry/line-circle-positions.svg)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}, scale=0.9]
+  % Circle 1: line outside
+  \begin{scope}[xshift=0cm]
+    \draw[main line] (0,0) circle (1);
+    \fill (0,0) circle (1.5pt);
+    \draw[{Stealth[length=4pt]}-{Stealth[length=4pt]}, thick] (-1.5,1.4) -- (1.5,1.4);
+    \node[below] at (0,-1.3) {相离（$d > r$）};
+  \end{scope}
+  % Circle 2: tangent
+  \begin{scope}[xshift=4cm]
+    \draw[main line] (0,0) circle (1);
+    \fill (0,0) circle (1.5pt);
+    \draw[{Stealth[length=4pt]}-{Stealth[length=4pt]}, thick] (-1.5,1) -- (1.5,1);
+    \fill (0,1) circle (2pt) node[above right, font=\scriptsize] {切点};
+    \draw[aux line] (0,0)--(0,1);
+    \node[below] at (0,-1.3) {相切（$d = r$）};
+  \end{scope}
+  % Circle 3: secant
+  \begin{scope}[xshift=8cm]
+    \draw[main line] (0,0) circle (1);
+    \fill (0,0) circle (1.5pt);
+    \draw[{Stealth[length=4pt]}-{Stealth[length=4pt]}, thick] (-1.5,0.5) -- (1.5,0.5);
+    \node[below] at (0,-1.3) {相交（$d < r$）};
+  \end{scope}
+\end{tikzpicture}
+\caption{直线与圆的位置关系（$d$ 为圆心到直线的距离）}
+\label{fig:line-circle-positions}
+\end{figure}
 
 
 \textbf{切线的性质}：
@@ -489,7 +587,45 @@ $= \dfrac{1}{2}r(AB + BC + AC) = \dfrac{1}{2}rp$
 \end{center}
 
 
-% TODO-TikZ: 圆与圆的位置关系 (was: ../assets/03-geometry/circle-circle-positions.svg)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}, scale=0.8]
+  % 1. External (两圆外离)
+  \begin{scope}[xshift=0cm]
+    \draw[main line] (-0.7,0) circle (0.7);
+    \draw[main line] (0.7,0) circle (0.7);
+    \node[below] at (0,-0.9) {\scriptsize 外离};
+  \end{scope}
+  % 2. External tangent (外切)
+  \begin{scope}[xshift=3cm]
+    \draw[main line] (-0.7,0) circle (0.7);
+    \draw[main line] (0.7,0) circle (0.7);
+    \fill (0,0) circle (2pt);
+    \node[below] at (0,-0.9) {\scriptsize 外切};
+  \end{scope}
+  % 3. Intersecting (相交)
+  \begin{scope}[xshift=6cm]
+    \draw[main line] (-0.4,0) circle (0.9);
+    \draw[main line] (0.4,0) circle (0.9);
+    \node[below] at (0,-1.1) {\scriptsize 相交};
+  \end{scope}
+  % 4. Internal tangent (内切)
+  \begin{scope}[xshift=9.3cm]
+    \draw[main line] (0,0) circle (1);
+    \draw[main line] (0.4,0) circle (0.6);
+    \fill (1,0) circle (2pt);
+    \node[below] at (0,-1.2) {\scriptsize 内切};
+  \end{scope}
+  % 5. Internal (内含)
+  \begin{scope}[xshift=12.3cm]
+    \draw[main line] (0,0) circle (1);
+    \draw[main line] (0.3,0) circle (0.5);
+    \node[below] at (0,-1.2) {\scriptsize 内含};
+  \end{scope}
+\end{tikzpicture}
+\caption{两圆的五种位置关系}
+\label{fig:circle-circle-positions}
+\end{figure}
 
 
 \end{understand}
