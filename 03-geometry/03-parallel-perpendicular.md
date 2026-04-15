@@ -11,13 +11,13 @@
 
 ### 概念建立（Build Understanding）
 
-在同一平面内，**不相交**的两条直线叫做**平行线**。直线 $a$ 与直线 $b$ 平行，记作 $a \parallel b$。
+在同一平面内，**不相交**的两条直线叫做**平行线**。直线 $a$ 与直线 $b$ 平行，记作 $a \parallel b$ 。
 
 ![平行线与相交线](../assets/03-geometry/parallel-lines.svg)
 
 平行公理：经过直线外一点，有且只有一条直线与已知直线平行。
 
-由此推论：如果两条直线都与第三条直线平行，那么这两条直线也互相平行。即：若 $a \parallel b$，$b \parallel c$，则 $a \parallel c$。
+由此推论：如果两条直线都与第三条直线平行，那么这两条直线也互相平行。即：若 $a \parallel b$ ， $b \parallel c$ ，则 $a \parallel c$ 。
 
 ### 关键总结（Key Takeaways）
 
@@ -39,7 +39,7 @@
 
 ![截线与两条直线形成的角](../assets/03-geometry/transversal-angles.svg)
 
-设截线 $l$ 分别交直线 $a$、$b$ 于点 $A$、$B$。标记八个角后，我们可以识别三类特殊的角对：
+设截线 $l$ 分别交直线 $a$ 、 $b$ 于点 $A$ 、 $B$ 。标记八个角后，我们可以识别三类特殊的角对：
 
 | 角对类型 | 位置特征 | 示例 |
 |----------|----------|------|
@@ -57,34 +57,34 @@
 
 ### 典型例题（Worked Examples）
 
-**例 1.** 如图，直线 $l$ 截直线 $a$、$b$，$\angle 1 = \angle 2$。试说明 $a \parallel b$。
+**例 1.** 如图，直线 $l$ 截直线 $a$ 、 $b$ ， $\angle 1 = \angle 2$ 。试说明 $a \parallel b$ 。
 
 **解：**
-因为 $\angle 1 = \angle 2$（已知），
+因为 $\angle 1 = \angle 2$ （已知），
 
 又因为 $\angle 1$ 与 $\angle 2$ 是同位角，
 
-所以 $a \parallel b$（同位角相等，两直线平行）。
+所以 $a \parallel b$ （同位角相等，两直线平行）。
 
-**例 2.** 如图，$\angle BAC = 70°$，$\angle ACD = 110°$，判断 $AB$ 与 $CD$ 的位置关系并说明理由。
+**例 2.** 如图， $\angle BAC = 70°$ ， $\angle ACD = 110°$ ，判断 $AB$ 与 $CD$ 的位置关系并说明理由。
 
 ![例2示意图](../assets/03-geometry/parallel-judge-ex2.svg)
 
 **解：**
-因为 $\angle BAC + \angle ACD = 70° + 110° = 180°$，
+因为 $\angle BAC + \angle ACD = 70° + 110° = 180°$ ，
 
 又因为 $\angle BAC$ 与 $\angle ACD$ 是截线 $AC$ 所截的同旁内角，
 
-所以 $AB \parallel CD$（同旁内角互补，两直线平行）。
+所以 $AB \parallel CD$ （同旁内角互补，两直线平行）。
 
-**例 3.** 如图，$\angle 1 = 45°$，$\angle 2 = 45°$，判断直线 $a$ 与直线 $b$ 的位置关系并说明理由。
+**例 3.** 如图， $\angle 1 = 45°$ ， $\angle 2 = 45°$ ，判断直线 $a$ 与直线 $b$ 的位置关系并说明理由。
 
 **解：**
-因为 $\angle 1 = \angle 2 = 45°$（已知），
+因为 $\angle 1 = \angle 2 = 45°$ （已知），
 
 又因为 $\angle 1$ 与 $\angle 2$ 是内错角，
 
-所以 $a \parallel b$（内错角相等，两直线平行）。
+所以 $a \parallel b$ （内错角相等，两直线平行）。
 
 ### 关键总结（Key Takeaways）
 
@@ -93,8 +93,8 @@
 
 ### 练一练（Practice）
 
-1. 如图，直线 $l$ 截直线 $a$、$b$，$\angle 1 = 120°$，$\angle 2 = 60°$。直线 $a$ 与 $b$ 平行吗？说明理由。
-2. 如图，$\angle A = 50°$，$\angle C = 50°$，$\angle A$ 与 $\angle C$ 是截线 $AC$ 所截的内错角。$AB$ 与 $CD$ 平行吗？说明理由。
+1. 如图，直线 $l$ 截直线 $a$ 、 $b$ ， $\angle 1 = 120°$ ， $\angle 2 = 60°$ 。直线 $a$ 与 $b$ 平行吗？说明理由。
+2. 如图， $\angle A = 50°$ ， $\angle C = 50°$ ， $\angle A$ 与 $\angle C$ 是截线 $AC$ 所截的内错角。 $AB$ 与 $CD$ 平行吗？说明理由。
 
 ---
 
@@ -120,54 +120,54 @@
 
 ### 典型例题（Worked Examples）
 
-**例 1.** 如图，$a \parallel b$，截线 $l$ 与直线 $a$ 交于点 $A$，与直线 $b$ 交于点 $B$。$\angle 1 = 65°$，求 $\angle 2$ 和 $\angle 3$。
+**例 1.** 如图， $a \parallel b$ ，截线 $l$ 与直线 $a$ 交于点 $A$ ，与直线 $b$ 交于点 $B$ 。 $\angle 1 = 65°$ ，求 $\angle 2$ 和 $\angle 3$ 。
 
 ![平行线性质例1](../assets/03-geometry/parallel-property-ex1.svg)
 
 **解：**
-因为 $a \parallel b$（已知），
+因为 $a \parallel b$ （已知），
 
-所以 $\angle 2 = \angle 1 = 65°$（两直线平行，同位角相等）。
+所以 $\angle 2 = \angle 1 = 65°$ （两直线平行，同位角相等）。
 
-因为 $a \parallel b$（已知），
+因为 $a \parallel b$ （已知），
 
-所以 $\angle 1 + \angle 3 = 180°$（两直线平行，同旁内角互补）。
+所以 $\angle 1 + \angle 3 = 180°$ （两直线平行，同旁内角互补）。
 
-所以 $\angle 3 = 180° - 65° = 115°$。
+所以 $\angle 3 = 180° - 65° = 115°$ 。
 
-**例 2.** 如图，$AB \parallel CD$，$\angle ABE = 50°$，$\angle DCE = 30°$。求 $\angle BEC$。
+**例 2.** 如图， $AB \parallel CD$ ， $\angle ABE = 50°$ ， $\angle DCE = 30°$ 。求 $\angle BEC$ 。
 
 ![平行线性质例2](../assets/03-geometry/parallel-property-ex2.svg)
 
 **解：**
-过点 $E$ 作 $EF \parallel AB$。
+过点 $E$ 作 $EF \parallel AB$ 。
 
-因为 $AB \parallel CD$（已知），$EF \parallel AB$（作法），
+因为 $AB \parallel CD$ （已知）， $EF \parallel AB$ （作法），
 
-所以 $EF \parallel CD$（平行的传递性）。
+所以 $EF \parallel CD$ （平行的传递性）。
 
-因为 $EF \parallel AB$，
+因为 $EF \parallel AB$ ，
 
-所以 $\angle BEF = \angle ABE = 50°$（两直线平行，内错角相等）。
+所以 $\angle BEF = \angle ABE = 50°$ （两直线平行，内错角相等）。
 
-因为 $EF \parallel CD$，
+因为 $EF \parallel CD$ ，
 
-所以 $\angle CEF = \angle DCE = 30°$（两直线平行，内错角相等）。
+所以 $\angle CEF = \angle DCE = 30°$ （两直线平行，内错角相等）。
 
-所以 $\angle BEC = \angle BEF + \angle CEF = 50° + 30° = 80°$。
+所以 $\angle BEC = \angle BEF + \angle CEF = 50° + 30° = 80°$ 。
 
-**例 3.** 如图，$AB \parallel CD$，$\angle A = 40°$，$\angle C = 30°$，求 $\angle AEC$。
+**例 3.** 如图， $AB \parallel CD$ ， $\angle A = 40°$ ， $\angle C = 30°$ ，求 $\angle AEC$ 。
 
 ![平行线性质例3](../assets/03-geometry/parallel-property-ex3.svg)
 
 **解：**
-过点 $E$ 作 $EF \parallel AB$，则 $EF \parallel CD$。
+过点 $E$ 作 $EF \parallel AB$ ，则 $EF \parallel CD$ 。
 
-因为 $EF \parallel AB$，所以 $\angle AEF = \angle A = 40°$（内错角相等）。
+因为 $EF \parallel AB$ ，所以 $\angle AEF = \angle A = 40°$ （内错角相等）。
 
-因为 $EF \parallel CD$，所以 $\angle CEF = \angle C = 30°$（内错角相等）。
+因为 $EF \parallel CD$ ，所以 $\angle CEF = \angle C = 30°$ （内错角相等）。
 
-所以 $\angle AEC = \angle AEF + \angle CEF = 40° + 30° = 70°$。
+所以 $\angle AEC = \angle AEF + \angle CEF = 40° + 30° = 70°$ 。
 
 ### 关键总结（Key Takeaways）
 
@@ -176,9 +176,9 @@
 
 ### 练一练（Practice）
 
-3. $a \parallel b$，截线 $l$ 截出的 $\angle 1 = 72°$，求 $\angle 1$ 的内错角和同旁内角。
-4. 如图，$AB \parallel CD$，$\angle B = 65°$，$\angle D = 40°$。求 $\angle BED$。
-5. 如图，$AB \parallel CD$，$BE$ 平分 $\angle ABC$，$\angle BCD = 70°$，求 $\angle BEC$。
+3. $a \parallel b$ ，截线 $l$ 截出的 $\angle 1 = 72°$ ，求 $\angle 1$ 的内错角和同旁内角。
+4. 如图， $AB \parallel CD$ ， $\angle B = 65°$ ， $\angle D = 40°$ 。求 $\angle BED$ 。
+5. 如图， $AB \parallel CD$ ， $BE$ 平分 $\angle ABC$ ， $\angle BCD = 70°$ ，求 $\angle BEC$ 。
 
 ---
 
@@ -186,13 +186,13 @@
 
 ### 引入情境（Explore）
 
-建筑工人用铅垂线来检查墙壁是否竖直——铅垂线是竖直向下的，而地面是水平的，它们之间的夹角恰好是 $90°$。当两条直线的夹角是 $90°$ 时，我们说它们**垂直**。
+建筑工人用铅垂线来检查墙壁是否竖直——铅垂线是竖直向下的，而地面是水平的，它们之间的夹角恰好是 $90°$ 。当两条直线的夹角是 $90°$ 时，我们说它们**垂直**。
 
 ### 概念建立（Build Understanding）
 
-当两条直线相交所成的角为 $90°$（即直角）时，这两条直线**互相垂直**。其中一条直线叫做另一条直线的**垂线**，交点叫做**垂足**。
+当两条直线相交所成的角为 $90°$ （即直角）时，这两条直线**互相垂直**。其中一条直线叫做另一条直线的**垂线**，交点叫做**垂足**。
 
-直线 $a$ 与直线 $b$ 垂直，记作 $a \perp b$。
+直线 $a$ 与直线 $b$ 垂直，记作 $a \perp b$ 。
 
 ![垂直示意图](../assets/03-geometry/perpendicular.svg)
 
@@ -207,15 +207,15 @@
 **例 1.** 两条直线相交，如果其中一个角是直角，那么其他三个角分别是多少？
 
 **解：**
-设 $\angle 1 = 90°$。
+设 $\angle 1 = 90°$ 。
 
-$\angle 2 = 180° - 90° = 90°$（邻补角）。
+$\angle 2 = 180° - 90° = 90°$ （邻补角）。
 
-$\angle 3 = \angle 1 = 90°$（对顶角）。
+$\angle 3 = \angle 1 = 90°$ （对顶角）。
 
-$\angle 4 = \angle 2 = 90°$（对顶角）。
+$\angle 4 = \angle 2 = 90°$ （对顶角）。
 
-所以四个角都是 $90°$。这就是说：**两条直线垂直时，所形成的四个角都是直角。**
+所以四个角都是 $90°$ 。这就是说：**两条直线垂直时，所形成的四个角都是直角。**
 
 ### 关键总结（Key Takeaways）
 
@@ -233,13 +233,13 @@ $\angle 4 = \angle 2 = 90°$（对顶角）。
 
 ### 概念建立（Build Understanding）
 
-从直线外一点 $P$ 向直线 $l$ 引一条垂线，垂足为 $H$。再从 $P$ 向 $l$ 上的其他任意点 $A$ 连线段。
+从直线外一点 $P$ 向直线 $l$ 引一条垂线，垂足为 $H$ 。再从 $P$ 向 $l$ 上的其他任意点 $A$ 连线段。
 
 ![垂线段最短示意图](../assets/03-geometry/perpendicular-shortest.svg)
 
 结论：**从直线外一点到这条直线上各点的连线中，垂线段最短。**
 
-即 $PH < PA$（对于 $l$ 上任意不同于 $H$ 的点 $A$）。
+即 $PH < PA$ （对于 $l$ 上任意不同于 $H$ 的点 $A$ ）。
 
 **点到直线的距离**：从直线外一点到这条直线的垂线段的长度，叫做**点到直线的距离**。
 
@@ -249,24 +249,24 @@ $\angle 4 = \angle 2 = 90°$（对顶角）。
 
 ### 典型例题（Worked Examples）
 
-**例 1.** 如图，$P$ 是直线 $l$ 外一点，$PA$、$PB$、$PC$ 是从 $P$ 到 $l$ 上不同点的三条线段。其中 $PA \perp l$，$PA = 3$ cm，$PB = 4$ cm，$PC = 5$ cm。点 $P$ 到直线 $l$ 的距离是多少？
+**例 1.** 如图， $P$ 是直线 $l$ 外一点， $PA$ 、 $PB$ 、 $PC$ 是从 $P$ 到 $l$ 上不同点的三条线段。其中 $PA \perp l$ ， $PA = 3$ cm， $PB = 4$ cm， $PC = 5$ cm。点 $P$ 到直线 $l$ 的距离是多少？
 
 **解：**
-因为 $PA \perp l$，所以 $PA$ 是从 $P$ 到 $l$ 的垂线段。
+因为 $PA \perp l$ ，所以 $PA$ 是从 $P$ 到 $l$ 的垂线段。
 
 点 $P$ 到直线 $l$ 的距离就是垂线段 $PA$ 的长度，即 $3$ cm。
 
-**例 2.** 如图，$a \parallel b$，点 $P$ 在直线 $a$ 上，$PH \perp b$，垂足为 $H$，$PH = 5$ cm。在直线 $a$ 上另取一点 $Q$，$QK \perp b$，垂足为 $K$。$QK$ 一定也是 $5$ cm 吗？
+**例 2.** 如图， $a \parallel b$ ，点 $P$ 在直线 $a$ 上， $PH \perp b$ ，垂足为 $H$ ， $PH = 5$ cm。在直线 $a$ 上另取一点 $Q$ ， $QK \perp b$ ，垂足为 $K$ 。 $QK$ 一定也是 $5$ cm 吗？
 
 **解：**
-是的。因为 $a \parallel b$，两平行线之间的距离处处相等。无论在 $a$ 上取哪一点作 $b$ 的垂线段，其长度都相同。
+是的。因为 $a \parallel b$ ，两平行线之间的距离处处相等。无论在 $a$ 上取哪一点作 $b$ 的垂线段，其长度都相同。
 
 这就是**平行线之间的距离**：两条平行线间的公垂线段的长度叫做两条平行线之间的距离。
 
-**例 3.** $\triangle ABC$ 中，$AB = 5$ cm，$AC = 4$ cm，$BC = 6$ cm。从 $A$ 到 $BC$ 的距离指的是什么？
+**例 3.** $\triangle ABC$ 中， $AB = 5$ cm， $AC = 4$ cm， $BC = 6$ cm。从 $A$ 到 $BC$ 的距离指的是什么？
 
 **解：**
-从点 $A$ 向直线 $BC$ 作垂线，垂足为 $D$，则线段 $AD$ 的长度就是点 $A$ 到直线 $BC$ 的距离。$AD$ 也叫做 $\triangle ABC$ 中 $BC$ 边上的**高**。
+从点 $A$ 向直线 $BC$ 作垂线，垂足为 $D$ ，则线段 $AD$ 的长度就是点 $A$ 到直线 $BC$ 的距离。 $AD$ 也叫做 $\triangle ABC$ 中 $BC$ 边上的**高**。
 
 ### 关键总结（Key Takeaways）
 
@@ -277,26 +277,26 @@ $\angle 4 = \angle 2 = 90°$（对顶角）。
 
 ### 练一练（Practice）
 
-6. 点 $P$ 到直线 $l$ 的距离为 $4$ cm。在直线 $l$ 上取一点 $A$，使得 $PA = 5$ cm。这样的点 $A$ 有几个？
-7. 两条平行线之间的距离为 $8$ cm。在一条平行线上取一点 $P$，在另一条上取一点 $Q$。$PQ$ 的最小值是多少？
-8. 如图，$\angle AOB = 30°$，$P$ 是 $\angle AOB$ 内部一点，$P$ 到 $OA$ 的距离是 $3$ cm。求 $OP$ 的长。
+6. 点 $P$ 到直线 $l$ 的距离为 $4$ cm。在直线 $l$ 上取一点 $A$ ，使得 $PA = 5$ cm。这样的点 $A$ 有几个？
+7. 两条平行线之间的距离为 $8$ cm。在一条平行线上取一点 $P$ ，在另一条上取一点 $Q$ 。 $PQ$ 的最小值是多少？
+8. 如图， $\angle AOB = 30°$ ， $P$ 是 $\angle AOB$ 内部一点， $P$ 到 $OA$ 的距离是 $3$ cm。求 $OP$ 的长。
 
 ---
 
 ## 参考答案
 
-1. $\angle 1 + \angle 2 = 120° + 60° = 180°$。因为 $\angle 1$ 与 $\angle 2$ 是同旁内角且互补，所以 $a \parallel b$。
+1. $\angle 1 + \angle 2 = 120° + 60° = 180°$ 。因为 $\angle 1$ 与 $\angle 2$ 是同旁内角且互补，所以 $a \parallel b$ 。
 
-2. 因为 $\angle A = \angle C = 50°$，且 $\angle A$ 与 $\angle C$ 是内错角，内错角相等，所以 $AB \parallel CD$。
+2. 因为 $\angle A = \angle C = 50°$ ，且 $\angle A$ 与 $\angle C$ 是内错角，内错角相等，所以 $AB \parallel CD$ 。
 
-3. 内错角 $= 72°$（内错角相等）。同旁内角 $= 180° - 72° = 108°$（同旁内角互补）。
+3. 内错角 $= 72°$ （内错角相等）。同旁内角 $= 180° - 72° = 108°$ （同旁内角互补）。
 
-4. 过点 $E$ 作 $EF \parallel AB$，则 $EF \parallel CD$。$\angle BEF = \angle B = 65°$（内错角），$\angle DEF = \angle D = 40°$（内错角）。$\angle BED = \angle BEF + \angle DEF = 65° + 40° = 105°$。
+4. 过点 $E$ 作 $EF \parallel AB$ ，则 $EF \parallel CD$ 。 $\angle BEF = \angle B = 65°$ （内错角）， $\angle DEF = \angle D = 40°$ （内错角）。 $\angle BED = \angle BEF + \angle DEF = 65° + 40° = 105°$ 。
 
-5. 因为 $AB \parallel CD$，所以 $\angle ABC + \angle BCD = 180°$（同旁内角互补），$\angle ABC = 180° - 70° = 110°$。因为 $BE$ 平分 $\angle ABC$，所以 $\angle ABE = 55°$。过 $E$ 作 $EF \parallel AB$，则 $EF \parallel CD$，$\angle BEF = \angle ABE = 55°$（内错角），$\angle CEF = \angle DCE = 70°$（内错角）。$\angle BEC = \angle BEF + \angle CEF = 55° + 70° = 125°$。
+5. 因为 $AB \parallel CD$ ，所以 $\angle ABC + \angle BCD = 180°$ （同旁内角互补）， $\angle ABC = 180° - 70° = 110°$ 。因为 $BE$ 平分 $\angle ABC$ ，所以 $\angle ABE = 55°$ 。过 $E$ 作 $EF \parallel AB$ ，则 $EF \parallel CD$ ， $\angle BEF = \angle ABE = 55°$ （内错角）， $\angle CEF = \angle DCE = 70°$ （内错角）。 $\angle BEC = \angle BEF + \angle CEF = 55° + 70° = 125°$ 。
 
-6. 设垂足为 $H$，$PH = 4$ cm。在直线 $l$ 上，满足 $PA = 5$ cm 的点 $A$ 满足 $HA = \sqrt{PA^2 - PH^2} = \sqrt{25 - 16} = 3$ cm（由勾股定理，此处可直观理解为以 $P$ 为圆心、$5$ 为半径的圆与直线 $l$ 的交点）。$H$ 两侧各有一个，所以共 $2$ 个。
+6. 设垂足为 $H$ ， $PH = 4$ cm。在直线 $l$ 上，满足 $PA = 5$ cm 的点 $A$ 满足 $HA = \sqrt{PA^2 - PH^2} = \sqrt{25 - 16} = 3$ cm（由勾股定理，此处可直观理解为以 $P$ 为圆心、 $5$ 为半径的圆与直线 $l$ 的交点）。 $H$ 两侧各有一个，所以共 $2$ 个。
 
 7. $PQ$ 的最小值就是两平行线之间的距离，即 $PQ_{\min} = 8$ cm（此时 $PQ \perp$ 两平行线）。
 
-8. 设 $P$ 到 $OA$ 的垂足为 $H$，则 $PH = 3$ cm，$\angle POH = 30°$（或更小，但这里 $PH \perp OA$）。在直角 $\triangle OPH$ 中，$\sin 30° = \dfrac{PH}{OP}$，即 $\dfrac{1}{2} = \dfrac{3}{OP}$，$OP = 6$ cm。（此题用到了直角三角形中角与边的关系，详见 §3.10。在当前阶段可记住：$30°$ 角的对边等于斜边的一半，所以 $PH = \dfrac{1}{2} OP$，$OP = 2 \times 3 = 6$ cm。）
+8. 设 $P$ 到 $OA$ 的垂足为 $H$ ，则 $PH = 3$ cm， $\angle POH = 30°$ （或更小，但这里 $PH \perp OA$ ）。在直角 $\triangle OPH$ 中， $\sin 30° = \dfrac{PH}{OP}$ ，即 $\dfrac{1}{2} = \dfrac{3}{OP}$ ， $OP = 6$ cm。（此题用到了直角三角形中角与边的关系，详见 §3.10。在当前阶段可记住： $30°$ 角的对边等于斜边的一半，所以 $PH = \dfrac{1}{2} OP$ ， $OP = 2 \times 3 = 6$ cm。）

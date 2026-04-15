@@ -45,29 +45,29 @@
 **例 1.** 在坐标平面上，点 $A(3, 2)$ 关于 $x$ 轴的对称点 $A'$ 的坐标是什么？关于 $y$ 轴呢？
 
 **解：**
-关于 $x$ 轴对称：$x$ 坐标不变，$y$ 坐标变为相反数。$A' = (3, -2)$。
+关于 $x$ 轴对称： $x$ 坐标不变， $y$ 坐标变为相反数。 $A' = (3, -2)$ 。
 
-关于 $y$ 轴对称：$y$ 坐标不变，$x$ 坐标变为相反数。$A' = (-3, 2)$。
+关于 $y$ 轴对称： $y$ 坐标不变， $x$ 坐标变为相反数。 $A' = (-3, 2)$ 。
 
-**例 2.** 等腰三角形 $ABC$ 中，$AB = AC$，$BC = 8$ cm，面积为 $24$ cm$^2$。利用对称性求 $AB$ 的长。
+**例 2.** 等腰三角形 $ABC$ 中， $AB = AC$ ， $BC = 8$ cm，面积为 $24$ cm $^2$ 。利用对称性求 $AB$ 的长。
 
 **解：**
-由对称性，底边上的高 $AD$ 是对称轴，$D$ 是 $BC$ 中点，$BD = 4$ cm。
+由对称性，底边上的高 $AD$ 是对称轴， $D$ 是 $BC$ 中点， $BD = 4$ cm。
 
-面积 $= \dfrac{1}{2} \times BC \times AD = \dfrac{1}{2} \times 8 \times AD = 24$，$AD = 6$ cm。
+面积 $= \dfrac{1}{2} \times BC \times AD = \dfrac{1}{2} \times 8 \times AD = 24$ ， $AD = 6$ cm。
 
 $AB = \sqrt{AD^2 + BD^2} = \sqrt{36 + 16} = \sqrt{52} = 2\sqrt{13}$ cm。
 
-**例 3.** 如图，在河边 $l$ 的同侧有两个村庄 $A$、$B$。要在河边建一个水泵站 $P$，使 $PA + PB$ 最短。$P$ 应建在哪里？
+**例 3.** 如图，在河边 $l$ 的同侧有两个村庄 $A$ 、 $B$ 。要在河边建一个水泵站 $P$ ，使 $PA + PB$ 最短。 $P$ 应建在哪里？
 
 ![最短路径问题](../assets/03-geometry/shortest-path-river.svg)
 
 **解：**
-作 $A$ 关于河边 $l$ 的对称点 $A'$。连接 $A'B$，与 $l$ 的交点即为所求的点 $P$。
+作 $A$ 关于河边 $l$ 的对称点 $A'$ 。连接 $A'B$ ，与 $l$ 的交点即为所求的点 $P$ 。
 
-此时 $PA + PB = A'P + PB = A'B$（因为 $PA = A'P$），为最短路径。
+此时 $PA + PB = A'P + PB = A'B$ （因为 $PA = A'P$ ），为最短路径。
 
-理由：对于 $l$ 上任意其他点 $Q$，$QA + QB = QA' + QB \geq A'B = PA + PB$（三角不等式）。
+理由：对于 $l$ 上任意其他点 $Q$ ， $QA + QB = QA' + QB \geq A'B = PA + PB$ （三角不等式）。
 
 ### 关键总结（Key Takeaways）
 
@@ -77,9 +77,9 @@ $AB = \sqrt{AD^2 + BD^2} = \sqrt{36 + 16} = \sqrt{52} = 2\sqrt{13}$ cm。
 
 ### 练一练（Practice）
 
-1. 写出点 $P(-2, 5)$ 关于 $x$ 轴、$y$ 轴、原点的对称点坐标。
+1. 写出点 $P(-2, 5)$ 关于 $x$ 轴、 $y$ 轴、原点的对称点坐标。
 2. 一个等边三角形有几条对称轴？画出它们。
-3. 河岸同侧有 $A(1, 3)$、$B(5, 7)$ 两点，河岸沿 $x$ 轴。在 $x$ 轴上找点 $P$ 使 $PA + PB$ 最短，求 $P$ 点坐标。
+3. 河岸同侧有 $A(1, 3)$ 、 $B(5, 7)$ 两点，河岸沿 $x$ 轴。在 $x$ 轴上找点 $P$ 使 $PA + PB$ 最短，求 $P$ 点坐标。
 
 ---
 
@@ -115,18 +115,18 @@ $AB = \sqrt{AD^2 + BD^2} = \sqrt{36 + 16} = \sqrt{52} = 2\sqrt{13}$ cm。
 **例 1.** 点 $A(2, 3)$ 关于原点的对称点 $A'$ 的坐标是什么？
 
 **解：**
-关于原点对称：$x$、$y$ 坐标都变为相反数。$A' = (-2, -3)$。
+关于原点对称： $x$ 、 $y$ 坐标都变为相反数。 $A' = (-2, -3)$ 。
 
 **例 2.** 点 $A(1, 4)$ 关于点 $C(3, 2)$ 的对称点 $A'$ 的坐标是什么？
 
 **解：**
 $C$ 是 $AA'$ 的中点，所以：
 
-$\dfrac{1 + x}{2} = 3$，$x = 5$。
+$\dfrac{1 + x}{2} = 3$ ， $x = 5$ 。
 
-$\dfrac{4 + y}{2} = 2$，$y = 0$。
+$\dfrac{4 + y}{2} = 2$ ， $y = 0$ 。
 
-$A' = (5, 0)$。
+$A' = (5, 0)$ 。
 
 **例 3.** 判断以下图形哪些是中心对称图形：(a) 等腰三角形 (b) 平行四边形 (c) 正五边形 (d) 圆。
 
@@ -136,8 +136,8 @@ $A' = (5, 0)$。
 ### 关键总结（Key Takeaways）
 
 - 中心对称 $=$ 旋转 $180°$ 后重合。
-- 关于原点对称：$(x, y) \to (-x, -y)$。
-- 关于点 $C(a, b)$ 对称：$(x, y) \to (2a - x, 2b - y)$。
+- 关于原点对称： $(x, y) \to (-x, -y)$ 。
+- 关于点 $C(a, b)$ 对称： $(x, y) \to (2a - x, 2b - y)$ 。
 
 ### 练一练（Practice）
 
@@ -170,7 +170,7 @@ $$(x, y) \to (x + a, y + b)$$
 
 ### 典型例题（Worked Examples）
 
-**例 1.** 将 $\triangle ABC$ 沿 $x$ 轴正方向平移 $3$ 个单位。$A(1, 2)$、$B(4, 5)$、$C(2, 6)$ 的新坐标各是多少？
+**例 1.** 将 $\triangle ABC$ 沿 $x$ 轴正方向平移 $3$ 个单位。 $A(1, 2)$ 、 $B(4, 5)$ 、 $C(2, 6)$ 的新坐标各是多少？
 
 **解：**
 $A' = (1 + 3, 2) = (4, 2)$
@@ -179,32 +179,32 @@ $B' = (4 + 3, 5) = (7, 5)$
 
 $C' = (2 + 3, 6) = (5, 6)$
 
-**例 2.** 点 $P(-1, 3)$ 经过平移后到达 $P'(2, 1)$。求平移的方向和距离。
+**例 2.** 点 $P(-1, 3)$ 经过平移后到达 $P'(2, 1)$ 。求平移的方向和距离。
 
 **解：**
-水平方向移动：$2 - (-1) = 3$（向右 $3$ 个单位）。
+水平方向移动： $2 - (-1) = 3$ （向右 $3$ 个单位）。
 
-竖直方向移动：$1 - 3 = -2$（向下 $2$ 个单位）。
+竖直方向移动： $1 - 3 = -2$ （向下 $2$ 个单位）。
 
-平移距离（即 $PP'$ 的长度）$= \sqrt{3^2 + 2^2} = \sqrt{13}$。
+平移距离（即 $PP'$ 的长度） $= \sqrt{3^2 + 2^2} = \sqrt{13}$ 。
 
 **例 3.** 在方格纸上，将 $\square ABCD$ 先向右平移 $4$ 格，再向上平移 $2$ 格。这等价于一次怎样的平移？
 
 **解：**
 两次平移可以合成一次：向右 $4$ 格同时向上 $2$ 格。
 
-即 $(x, y) \to (x + 4, y + 2)$。
+即 $(x, y) \to (x + 4, y + 2)$ 。
 
 ### 关键总结（Key Takeaways）
 
 - 平移不改变形状、大小和方向。
-- 坐标变换：$(x, y) \to (x + a, y + b)$。
+- 坐标变换： $(x, y) \to (x + a, y + b)$ 。
 - 多次平移可以合成一次平移。
 
 ### 练一练（Practice）
 
 6. 将点 $A(2, -3)$ 先向左平移 $5$ 个单位，再向上平移 $4$ 个单位，求终点坐标。
-7. $\triangle ABC$ 的三个顶点为 $A(0, 0)$、$B(4, 0)$、$C(2, 3)$。将三角形向右平移 $2$ 个单位、向下平移 $1$ 个单位，写出新的顶点坐标。
+7. $\triangle ABC$ 的三个顶点为 $A(0, 0)$ 、 $B(4, 0)$ 、 $C(2, 3)$ 。将三角形向右平移 $2$ 个单位、向下平移 $1$ 个单位，写出新的顶点坐标。
 
 ---
 
@@ -228,28 +228,28 @@ $C' = (2 + 3, 6) = (5, 6)$
 
 旋转的三要素：**旋转中心、旋转方向、旋转角度**。
 
-> 中心对称是旋转的特殊情况——旋转角为 $180°$。
+> 中心对称是旋转的特殊情况——旋转角为 $180°$ 。
 
 ### 典型例题（Worked Examples）
 
-**例 1.** 如图，$\triangle ABC$ 绕点 $A$ 顺时针旋转 $60°$ 得到 $\triangle ADE$。已知 $AB = 4$ cm，$\angle BAC = 50°$。求 $AD$ 的长和 $\angle BAD$。
+**例 1.** 如图， $\triangle ABC$ 绕点 $A$ 顺时针旋转 $60°$ 得到 $\triangle ADE$ 。已知 $AB = 4$ cm， $\angle BAC = 50°$ 。求 $AD$ 的长和 $\angle BAD$ 。
 
 **解：**
-因为旋转不改变大小，$AD = AB = 4$ cm（$B$ 的对应点是 $D$）。
+因为旋转不改变大小， $AD = AB = 4$ cm（ $B$ 的对应点是 $D$ ）。
 
-$\angle BAD = 60°$（旋转角）。
+$\angle BAD = 60°$ （旋转角）。
 
-**例 2.** 等边 $\triangle ABC$ 的中心为 $O$。将 $\triangle ABC$ 绕 $O$ 旋转 $120°$ 后与自身重合。解释原因。
+**例 2.** 等边 $\triangle ABC$ 的中心为 $O$ 。将 $\triangle ABC$ 绕 $O$ 旋转 $120°$ 后与自身重合。解释原因。
 
 **解：**
-等边三角形绕中心旋转 $120°$ 后，每个顶点恰好到达相邻顶点的位置（因为三个顶点将圆周三等分，每份 $120°$）。所以旋转 $120°$ 后与自身重合。
+等边三角形绕中心旋转 $120°$ 后，每个顶点恰好到达相邻顶点的位置（因为三个顶点将圆周三等分，每份 $120°$ ）。所以旋转 $120°$ 后与自身重合。
 
 **例 3.** 正方形 $ABCD$ 绕中心 $O$ 旋转多少度后与自身重合？
 
 **解：**
-正方形的四个顶点将外接圆四等分，每份 $90°$。
+正方形的四个顶点将外接圆四等分，每份 $90°$ 。
 
-旋转 $90°$、$180°$、$270°$、$360°$ 后都与自身重合。最小旋转角为 $90°$。
+旋转 $90°$ 、 $180°$ 、 $270°$ 、 $360°$ 后都与自身重合。最小旋转角为 $90°$ 。
 
 ### 关键总结（Key Takeaways）
 
@@ -260,7 +260,7 @@ $\angle BAD = 60°$（旋转角）。
 ### 练一练（Practice）
 
 8. 正六边形绕中心旋转多少度后与自身重合？列出所有小于 $360°$ 的旋转角。
-9. 将线段 $AB$ 绕点 $A$ 逆时针旋转 $90°$ 得到 $AC$。若 $AB = 5$ cm，求 $\angle BAC$ 和 $BC$ 的长。
+9. 将线段 $AB$ 绕点 $A$ 逆时针旋转 $90°$ 得到 $AC$ 。若 $AB = 5$ cm，求 $\angle BAC$ 和 $BC$ 的长。
 
 ---
 
@@ -289,121 +289,121 @@ $\angle BAD = 60°$（旋转角）。
 
 ### 典型例题（Worked Examples）
 
-**例 1.** 如图，正方形 $ABCD$ 中，$E$ 是 $BC$ 上一点，$F$ 是 $CD$ 上一点，$AE = AF$。证明 $BE + DF = EF$。
+**例 1.** 如图，正方形 $ABCD$ 中， $E$ 是 $BC$ 上一点， $F$ 是 $CD$ 上一点， $AE = AF$ 。证明 $BE + DF = EF$ 。
 
 ![正方形变换综合](../assets/03-geometry/transformation-comprehensive.svg)
 
 **证明：**
-将 $\triangle ABE$ 绕 $A$ 顺时针旋转 $90°$，$B$ 移到 $D$，$E$ 移到 $E'$（在 $CD$ 所在直线上）。
+将 $\triangle ABE$ 绕 $A$ 顺时针旋转 $90°$ ， $B$ 移到 $D$ ， $E$ 移到 $E'$ （在 $CD$ 所在直线上）。
 
-因为旋转保持距离和角度，$AE' = AE = AF$，$\angle DAE' = \angle BAE$。
+因为旋转保持距离和角度， $AE' = AE = AF$ ， $\angle DAE' = \angle BAE$ 。
 
-$\angle EAF = \angle EAB + \angle BAD + \angle DAF = \angle EAB + 90°$。
+$\angle EAF = \angle EAB + \angle BAD + \angle DAF = \angle EAB + 90°$ 。
 
-$\angle E'AF = \angle E'AD + \angle DAF = \angle EAB + \angle DAF$。
+$\angle E'AF = \angle E'AD + \angle DAF = \angle EAB + \angle DAF$ 。
 
-由于 $\angle BAD = 90°$，$\angle EAF = \angle EAB + 90° = \angle E'AD + 90°$。
+由于 $\angle BAD = 90°$ ， $\angle EAF = \angle EAB + 90° = \angle E'AD + 90°$ 。
 
-而 $\angle E'AF = \angle E'AD + \angle DAF$，且 $\angle EAF = \angle EAB + \angle BAF = \angle EAB + 90° + ... $
+而 $\angle E'AF = \angle E'AD + \angle DAF$ ，且 $\angle EAF = \angle EAB + \angle BAF = \angle EAB + 90° + ... $
 
 实际上更简洁的推理如下：
 
-旋转 $90°$ 后 $\triangle ABE \cong \triangle ADE'$，所以 $DE' = BE$，$AE' = AE$。
+旋转 $90°$ 后 $\triangle ABE \cong \triangle ADE'$ ，所以 $DE' = BE$ ， $AE' = AE$ 。
 
-因为 $AE = AF$ 且 $AE' = AE$，所以 $AE' = AF$。
+因为 $AE = AF$ 且 $AE' = AE$ ，所以 $AE' = AF$ 。
 
-$\angle E'AF = \angle E'AD + \angle DAF = \angle EAB + \angle DAF$。
+$\angle E'AF = \angle E'AD + \angle DAF = \angle EAB + \angle DAF$ 。
 
-$\angle EAF = 90° - \angle EAB - \angle DAF + \angle EAB + \angle DAF$... 
+$\angle EAF = 90° - \angle EAB - \angle DAF + \angle EAB + \angle DAF$ ... 
 
 让我们用另一种方法重新证明。
 
-因为正方形 $ABCD$，$\angle B = \angle D = 90°$。
+因为正方形 $ABCD$ ， $\angle B = \angle D = 90°$ 。
 
-在 $\triangle ABE$ 和旋转后的 $\triangle ADE'$ 中，$E'$ 在 $DC$ 的延长线上，使得 $DE' = BE$。
+在 $\triangle ABE$ 和旋转后的 $\triangle ADE'$ 中， $E'$ 在 $DC$ 的延长线上，使得 $DE' = BE$ 。
 
-由旋转，$\angle E'AE = 90°$，$AE' = AE = AF$，且 $\angle EAF = \angle EAB + \angle BAF$。
+由旋转， $\angle E'AE = 90°$ ， $AE' = AE = AF$ ，且 $\angle EAF = \angle EAB + \angle BAF$ 。
 
-而 $\angle E'AF = \angle E'AE - \angle FAE = 90° - \angle FAE$。
+而 $\angle E'AF = \angle E'AE - \angle FAE = 90° - \angle FAE$ 。
 
-因为 $AE' = AF$，$\triangle AE'F$ 是等腰三角形。$E'F = E'D + DF = BE + DF$。
+因为 $AE' = AF$ ， $\triangle AE'F$ 是等腰三角形。 $E'F = E'D + DF = BE + DF$ 。
 
 且 $EF = $ ... 此题证明路线复杂，换一个更直接的综合例题。
 
-**例 1.（替换）** 如图，在 $\triangle ABC$ 中，将 $\triangle ABD$ 沿 $AB$ 所在直线翻折（$D$ 为 $BC$ 上一点），得到 $\triangle ABD'$。若 $\angle A = 80°$，$\angle ABD = 60°$，求 $\angle D'BC$。
+**例 1.（替换）** 如图，在 $\triangle ABC$ 中，将 $\triangle ABD$ 沿 $AB$ 所在直线翻折（ $D$ 为 $BC$ 上一点），得到 $\triangle ABD'$ 。若 $\angle A = 80°$ ， $\angle ABD = 60°$ ，求 $\angle D'BC$ 。
 
 **解：**
-因为翻折是轴对称变换，$\angle ABD' = \angle ABD = 60°$。
+因为翻折是轴对称变换， $\angle ABD' = \angle ABD = 60°$ 。
 
-$\angle ABC = \angle ABD + \angle DBC$，且 $\angle DBC = 180° - 80° - 60° = 40°$（三角形内角和不对，这里不适用）。
+$\angle ABC = \angle ABD + \angle DBC$ ，且 $\angle DBC = 180° - 80° - 60° = 40°$ （三角形内角和不对，这里不适用）。
 
-$\angle ABC$ 需要先求出。在 $\triangle ABC$ 中已知 $\angle A = 80°$，但不知道 $\angle ABC$。需补充条件。
+$\angle ABC$ 需要先求出。在 $\triangle ABC$ 中已知 $\angle A = 80°$ ，但不知道 $\angle ABC$ 。需补充条件。
 
-**例 1.（最终版）** 在 $\triangle ABC$ 中，$\angle BAC = 36°$，$AB = AC$。$D$ 是 $BC$ 上一点，$BD = AB$。将 $\triangle ABD$ 绕 $B$ 旋转到 $\triangle ABD$ 自身来分析（此例较复杂，采用更简洁的综合题）。
+**例 1.（最终版）** 在 $\triangle ABC$ 中， $\angle BAC = 36°$ ， $AB = AC$ 。 $D$ 是 $BC$ 上一点， $BD = AB$ 。将 $\triangle ABD$ 绕 $B$ 旋转到 $\triangle ABD$ 自身来分析（此例较复杂，采用更简洁的综合题）。
 
-**例 1.** 如图，将 $\triangle ABC$ 沿 $BC$ 方向平移距离 $BC$，得到 $\triangle DEF$（$B \to D = C$，$C \to E$，$A \to F$）。连接 $AF$。证明四边形 $ADFA$ ... 
+**例 1.** 如图，将 $\triangle ABC$ 沿 $BC$ 方向平移距离 $BC$ ，得到 $\triangle DEF$ （ $B \to D = C$ ， $C \to E$ ， $A \to F$ ）。连接 $AF$ 。证明四边形 $ADFA$ ... 
 
 让我们使用一个经典且简洁的综合例题：
 
-**例 1.** 如图，$\triangle ABC$ 中，$P$ 是 $BC$ 边上一点。将 $\triangle ABP$ 绕 $P$ 旋转 $180°$ 得到 $\triangle A'B'P$。证明 $AA'B'C$ 是平行四边形。
+**例 1.** 如图， $\triangle ABC$ 中， $P$ 是 $BC$ 边上一点。将 $\triangle ABP$ 绕 $P$ 旋转 $180°$ 得到 $\triangle A'B'P$ 。证明 $AA'B'C$ 是平行四边形。
 
 **证明：**
-因为旋转 $180°$ 即中心对称（对称中心为 $P$），
+因为旋转 $180°$ 即中心对称（对称中心为 $P$ ），
 
-所以 $A'$ 与 $A$ 关于 $P$ 对称，$B'$ 与 $B$ 关于 $P$ 对称。
+所以 $A'$ 与 $A$ 关于 $P$ 对称， $B'$ 与 $B$ 关于 $P$ 对称。
 
-因为 $B$ 和 $B'$ 关于 $P$ 对称，且 $P$ 在 $BC$ 上，所以 $B' = C'$... 不对，$P$ 不一定是 $BC$ 中点。
+因为 $B$ 和 $B'$ 关于 $P$ 对称，且 $P$ 在 $BC$ 上，所以 $B' = C'$ ... 不对， $P$ 不一定是 $BC$ 中点。
 
-让我简化：$P$ 是 $BC$ 的**中点**。旋转 $180°$ 后 $B \to B' = C$（因为 $P$ 是 $BC$ 中点），$A \to A'$。
+让我简化： $P$ 是 $BC$ 的**中点**。旋转 $180°$ 后 $B \to B' = C$ （因为 $P$ 是 $BC$ 中点）， $A \to A'$ 。
 
-此时 $PA = PA'$，$PB = PC$，所以 $A'$ 是 $A$ 关于 $P$ 的对称点。
+此时 $PA = PA'$ ， $PB = PC$ ，所以 $A'$ 是 $A$ 关于 $P$ 的对称点。
 
 四边形 $ACA'B$ ... 这仍然纠缠。让我选用清晰的教材例题。
 
-**例 1.** 将 $\triangle ABC$ 绕顶点 $C$ 旋转 $60°$，得到 $\triangle A'B'C$。若 $\triangle ABC$ 是等边三角形，$BC = 4$ cm，求 $BB'$ 的长。
+**例 1.** 将 $\triangle ABC$ 绕顶点 $C$ 旋转 $60°$ ，得到 $\triangle A'B'C$ 。若 $\triangle ABC$ 是等边三角形， $BC = 4$ cm，求 $BB'$ 的长。
 
 **解：**
-因为绕 $C$ 旋转 $60°$，$CB' = CB = 4$ cm，$\angle BCB' = 60°$。
+因为绕 $C$ 旋转 $60°$ ， $CB' = CB = 4$ cm， $\angle BCB' = 60°$ 。
 
-$\triangle BCB'$ 是等腰三角形，$CB = CB' = 4$，$\angle BCB' = 60°$。
+$\triangle BCB'$ 是等腰三角形， $CB = CB' = 4$ ， $\angle BCB' = 60°$ 。
 
-因为两腰相等且夹角 $60°$，所以 $\triangle BCB'$ 是等边三角形。
+因为两腰相等且夹角 $60°$ ，所以 $\triangle BCB'$ 是等边三角形。
 
 $BB' = CB = 4$ cm。
 
-**例 2.** 格点（方格纸上的格子交点）$A(0,0)$、$B(4,0)$、$C(4,3)$ 构成 $\triangle ABC$。
+**例 2.** 格点（方格纸上的格子交点） $A(0,0)$ 、 $B(4,0)$ 、 $C(4,3)$ 构成 $\triangle ABC$ 。
 (a) 将 $\triangle ABC$ 关于 $y$ 轴对称，写出对称后各顶点坐标。
 (b) 将 (a) 的结果再向上平移 $2$ 个单位，写出最终各顶点坐标。
 
 **解：**
-(a) 关于 $y$ 轴对称：$x$ 坐标取反。
-$A_1 = (0, 0)$，$B_1 = (-4, 0)$，$C_1 = (-4, 3)$。
+(a) 关于 $y$ 轴对称： $x$ 坐标取反。
+$A_1 = (0, 0)$ ， $B_1 = (-4, 0)$ ， $C_1 = (-4, 3)$ 。
 
-(b) 向上平移 $2$ 个单位：$y$ 坐标加 $2$。
-$A_2 = (0, 2)$，$B_2 = (-4, 2)$，$C_2 = (-4, 5)$。
+(b) 向上平移 $2$ 个单位： $y$ 坐标加 $2$ 。
+$A_2 = (0, 2)$ ， $B_2 = (-4, 2)$ ， $C_2 = (-4, 5)$ 。
 
-**例 3.** 长方形 $ABCD$ 中，$AB = 6$，$BC = 4$。将 $\triangle BCD$ 沿 $BD$ 翻折，$C$ 移到 $C'$。判断 $C'$ 是否在长方形内部，并求 $AC'$ 的长。
+**例 3.** 长方形 $ABCD$ 中， $AB = 6$ ， $BC = 4$ 。将 $\triangle BCD$ 沿 $BD$ 翻折， $C$ 移到 $C'$ 。判断 $C'$ 是否在长方形内部，并求 $AC'$ 的长。
 
 **解：**
-翻折后 $BC' = BC = 4$，$DC' = DC = 6$，$BD = \sqrt{AB^2 + BC^2} ... $ 不对，$BD = \sqrt{6^2 + 4^2} = \sqrt{52} = 2\sqrt{13}$。
+翻折后 $BC' = BC = 4$ ， $DC' = DC = 6$ ， $BD = \sqrt{AB^2 + BC^2} ... $ 不对， $BD = \sqrt{6^2 + 4^2} = \sqrt{52} = 2\sqrt{13}$ 。
 
-在翻折后的 $\triangle BC'D$ 中，$BC' = 4$，$DC' = 6$，$BD = 2\sqrt{13}$。
+在翻折后的 $\triangle BC'D$ 中， $BC' = 4$ ， $DC' = 6$ ， $BD = 2\sqrt{13}$ 。
 
 $C'$ 是否在长方形内部取决于具体位置。此题计算较复杂，简化为坐标法。
 
-设 $A(0,0)$，$B(6,0)$，$C(6,4)$，$D(0,4)$。翻折 $\triangle BCD$ 沿 $BD$。
+设 $A(0,0)$ ， $B(6,0)$ ， $C(6,4)$ ， $D(0,4)$ 。翻折 $\triangle BCD$ 沿 $BD$ 。
 
-$BD$ 中点 $M = (3, 2)$。$C$ 关于 $BD$ 的对称点 $C'$：
+$BD$ 中点 $M = (3, 2)$ 。 $C$ 关于 $BD$ 的对称点 $C'$ ：
 
-$BD$ 方向向量 $(6-0, 0-4) = (6, -4)$，单位方向 $\left(\dfrac{3}{\sqrt{13}}, \dfrac{-2}{\sqrt{13}}\right)$。
+$BD$ 方向向量 $(6-0, 0-4) = (6, -4)$ ，单位方向 $\left(\dfrac{3}{\sqrt{13}}, \dfrac{-2}{\sqrt{13}}\right)$ 。
 
-$\vec{MC} = (6-3, 4-2) = (3, 2)$。$MC$ 在 $BD$ 方向投影 $= \dfrac{3 \times 3 + 2 \times (-2)}{\sqrt{13}} = \dfrac{5}{\sqrt{13}}$。
+$\vec{MC} = (6-3, 4-2) = (3, 2)$ 。 $MC$ 在 $BD$ 方向投影 $= \dfrac{3 \times 3 + 2 \times (-2)}{\sqrt{13}} = \dfrac{5}{\sqrt{13}}$ 。
 
-$MC$ 的垂直分量 $= \vec{MC} - \text{投影} = (3, 2) - \dfrac{5}{\sqrt{13}} \cdot \left(\dfrac{3}{\sqrt{13}}, \dfrac{-2}{\sqrt{13}}\right) = (3,2) - \left(\dfrac{15}{13}, \dfrac{-10}{13}\right) = \left(\dfrac{24}{13}, \dfrac{36}{13}\right)$。
+$MC$ 的垂直分量 $= \vec{MC} - \text{投影} = (3, 2) - \dfrac{5}{\sqrt{13}} \cdot \left(\dfrac{3}{\sqrt{13}}, \dfrac{-2}{\sqrt{13}}\right) = (3,2) - \left(\dfrac{15}{13}, \dfrac{-10}{13}\right) = \left(\dfrac{24}{13}, \dfrac{36}{13}\right)$ 。
 
-$C' = M - \text{垂直分量} = \left(3 - \dfrac{24}{13}, 2 - \dfrac{36}{13}\right) = \left(\dfrac{15}{13}, \dfrac{-10}{13}\right)$。
+$C' = M - \text{垂直分量} = \left(3 - \dfrac{24}{13}, 2 - \dfrac{36}{13}\right) = \left(\dfrac{15}{13}, \dfrac{-10}{13}\right)$ 。
 
-$AC' = \sqrt{\left(\dfrac{15}{13}\right)^2 + \left(\dfrac{-10}{13}\right)^2} = \sqrt{\dfrac{225 + 100}{169}} = \sqrt{\dfrac{325}{169}} = \dfrac{5\sqrt{13}}{13}$。
+$AC' = \sqrt{\left(\dfrac{15}{13}\right)^2 + \left(\dfrac{-10}{13}\right)^2} = \sqrt{\dfrac{225 + 100}{169}} = \sqrt{\dfrac{325}{169}} = \dfrac{5\sqrt{13}}{13}$ 。
 
 这个例题的计算过于复杂，不适合此阶段。替换为更简洁的例题：
 
@@ -420,32 +420,32 @@ $AC' = \sqrt{\left(\dfrac{15}{13}\right)^2 + \left(\dfrac{-10}{13}\right)^2} = \
 
 ### 练一练（Practice）
 
-10. 将等边 $\triangle ABC$（$BC = 6$ cm）绕顶点 $B$ 逆时针旋转 $60°$ 得到 $\triangle DBE$。求 $AD$ 的长。
-11. 格点 $A(1, 1)$、$B(3, 1)$、$C(3, 4)$。先将 $\triangle ABC$ 关于 $x$ 轴对称，再将结果向右平移 $4$ 个单位。写出最终三个顶点坐标。
+10. 将等边 $\triangle ABC$ （ $BC = 6$ cm）绕顶点 $B$ 逆时针旋转 $60°$ 得到 $\triangle DBE$ 。求 $AD$ 的长。
+11. 格点 $A(1, 1)$ 、 $B(3, 1)$ 、 $C(3, 4)$ 。先将 $\triangle ABC$ 关于 $x$ 轴对称，再将结果向右平移 $4$ 个单位。写出最终三个顶点坐标。
 
 ---
 
 ## 参考答案
 
-1. 关于 $x$ 轴：$(-2, -5)$；关于 $y$ 轴：$(2, 5)$；关于原点：$(2, -5)$。
+1. 关于 $x$ 轴： $(-2, -5)$ ；关于 $y$ 轴： $(2, 5)$ ；关于原点： $(2, -5)$ 。
 
 2. 等边三角形有 $3$ 条对称轴，每条是从一个顶点到对边中点的连线（即高、中线、角平分线重合的那条线段所在直线）。
 
-3. $A$ 关于 $x$ 轴的对称点 $A'(1, -3)$。$A'B$ 的直线方程：斜率 $= \dfrac{7-(-3)}{5-1} = \dfrac{10}{4} = \dfrac{5}{2}$。直线 $y + 3 = \dfrac{5}{2}(x - 1)$，令 $y = 0$：$3 = \dfrac{5}{2}(x-1)$，$x - 1 = \dfrac{6}{5}$，$x = \dfrac{11}{5}$。$P = \left(\dfrac{11}{5}, 0\right)$。
+3. $A$ 关于 $x$ 轴的对称点 $A'(1, -3)$ 。 $A'B$ 的直线方程：斜率 $= \dfrac{7-(-3)}{5-1} = \dfrac{10}{4} = \dfrac{5}{2}$ 。直线 $y + 3 = \dfrac{5}{2}(x - 1)$ ，令 $y = 0$ ： $3 = \dfrac{5}{2}(x-1)$ ， $x - 1 = \dfrac{6}{5}$ ， $x = \dfrac{11}{5}$ 。 $P = \left(\dfrac{11}{5}, 0\right)$ 。
 
-4. 设对称点为 $(x, y)$。$\dfrac{3+x}{2} = 1$，$x = -1$。$\dfrac{-1+y}{2} = 2$，$y = 5$。对称点为 $(-1, 5)$。
+4. 设对称点为 $(x, y)$ 。 $\dfrac{3+x}{2} = 1$ ， $x = -1$ 。 $\dfrac{-1+y}{2} = 2$ ， $y = 5$ 。对称点为 $(-1, 5)$ 。
 
 5. 既是轴对称又是中心对称的有：(a) 矩形、(c) 菱形、(e) 圆。
    等腰三角形只是轴对称，不是中心对称。正五边形只是轴对称，不是中心对称。
 
-6. $(2 - 5, -3 + 4) = (-3, 1)$。
+6. $(2 - 5, -3 + 4) = (-3, 1)$ 。
 
-7. $A'(0 + 2, 0 - 1) = (2, -1)$，$B'(4 + 2, 0 - 1) = (6, -1)$，$C'(2 + 2, 3 - 1) = (4, 2)$。
+7. $A'(0 + 2, 0 - 1) = (2, -1)$ ， $B'(4 + 2, 0 - 1) = (6, -1)$ ， $C'(2 + 2, 3 - 1) = (4, 2)$ 。
 
-8. 正六边形最小旋转角 $= \dfrac{360°}{6} = 60°$。所有旋转角：$60°, 120°, 180°, 240°, 300°$。
+8. 正六边形最小旋转角 $= \dfrac{360°}{6} = 60°$ 。所有旋转角： $60°, 120°, 180°, 240°, 300°$ 。
 
-9. $\angle BAC = 90°$（旋转角），$BC = \sqrt{AB^2 + AC^2} = \sqrt{25 + 25} = 5\sqrt{2}$ cm。
+9. $\angle BAC = 90°$ （旋转角）， $BC = \sqrt{AB^2 + AC^2} = \sqrt{25 + 25} = 5\sqrt{2}$ cm。
 
-10. 旋转后 $BA = BD = 6$，$\angle ABD = 60°$，所以 $\triangle ABD$ 是等边三角形。$AD = 6$ cm。
+10. 旋转后 $BA = BD = 6$ ， $\angle ABD = 60°$ ，所以 $\triangle ABD$ 是等边三角形。 $AD = 6$ cm。
 
-11. 关于 $x$ 轴对称：$A_1(1, -1)$，$B_1(3, -1)$，$C_1(3, -4)$。向右平移 $4$：$A_2(5, -1)$，$B_2(7, -1)$，$C_2(7, -4)$。
+11. 关于 $x$ 轴对称： $A_1(1, -1)$ ， $B_1(3, -1)$ ， $C_1(3, -4)$ 。向右平移 $4$ ： $A_2(5, -1)$ ， $B_2(7, -1)$ ， $C_2(7, -4)$ 。
