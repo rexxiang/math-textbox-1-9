@@ -1,0 +1,4 @@
+interface:
+  display_name: "Typst Syntax Toolchain"
+  short_description: "Typst syntax, math, graphics, and build pipeline guidance"
+  default_prompt: "Use this skill to implement Typst-native syntax/layout/math/graphics changes and configure reproducible Typst CLI/Make/Docker/CI workflows."

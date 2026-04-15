@@ -1,7 +1,11 @@
 IMAGE := math-textbook-builder
 DOCKER_RUN := docker run --rm -v "$$(pwd):/book" $(IMAGE)
+TYPST_VERSION := 0.14.2
+TYPST_IMAGE := ghcr.io/typst/typst:$(TYPST_VERSION)
+TYPST_DOCKER_RUN := docker run --rm -v "$$(pwd):/book" $(TYPST_IMAGE)
 
-.PHONY: all pdf html clean check _docker-image _pdf _html _all
+.PHONY: all pdf html clean check typst-pdf typst-check \
+	_docker-image _pdf _html _all _typst-pdf _typst-check
 
 # ── Host targets (invoke via Docker) ────────────────────────────────
 
@@ -13,6 +17,12 @@ pdf: _docker-image
 
 html: _docker-image
 	$(DOCKER_RUN) make _html
+
+typst-pdf:
+	$(MAKE) _typst-pdf
+
+typst-check:
+	$(MAKE) _typst-check
 
 clean:
 	rm -rf output/* build/* docs/html/*
@@ -52,3 +62,13 @@ _html:
 	make4ht -x -c main.cfg -f html5 -d build main.tex "svg,mathml"
 	cp -r build/. docs/html/
 	rm -f *.4ct *.4tc *.idv *.lg *.xref main.html main.css main.tmp main*.svg
+
+_typst-pdf:
+	mkdir -p output
+	$(TYPST_DOCKER_RUN) compile --root /book /book/typst/main.typ /book/output/math-textbook-typst.pdf
+
+_typst-check:
+	$(TYPST_DOCKER_RUN) --version
+	mkdir -p output
+	$(TYPST_DOCKER_RUN) compile --root /book /book/typst/main.typ /book/output/math-textbook-typst-check.pdf
+	$(TYPST_DOCKER_RUN) compile --root /book /book/typst/smoke/package-lock.typ /book/output/typst-package-lock-check.pdf

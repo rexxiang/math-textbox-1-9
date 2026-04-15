@@ -34,3 +34,25 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/html
           publish_branch: gh-pages
+
+  typst-prep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify Typst toolchain and package lock
+        run: |
+          mkdir -p output
+          docker run --rm -v "$(pwd):/book" ghcr.io/typst/typst:0.14.2 --version
+          docker run --rm -v "$(pwd):/book" ghcr.io/typst/typst:0.14.2 \
+            compile --root /book /book/typst/main.typ /book/output/math-textbook-typst-check.pdf
+          docker run --rm -v "$(pwd):/book" ghcr.io/typst/typst:0.14.2 \
+            compile --root /book /book/typst/smoke/package-lock.typ /book/output/typst-package-lock-check.pdf
+
+      - name: Upload Typst prep artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: typst-prep-pdf
+          path: |
+            output/math-textbook-typst-check.pdf
+            output/typst-package-lock-check.pdf

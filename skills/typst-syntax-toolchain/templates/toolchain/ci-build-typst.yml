@@ -1,0 +1,22 @@
+name: Build Typst PDF
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  typst-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Typst PDF
+        run: |
+          mkdir -p output
+          docker run --rm -v "$(pwd):/book" ghcr.io/typst/typst:0.14.2 \
+            compile /book/main.typ /book/output/book.pdf
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: typst-pdf
+          path: output/book.pdf
