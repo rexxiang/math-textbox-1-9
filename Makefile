@@ -15,7 +15,11 @@ html: _docker-image
 	$(DOCKER_RUN) make _html
 
 clean:
-	rm -rf output/* build/* *.aux *.log *.toc *.out *.bbl *.bcf *.run.xml
+	rm -rf output/* build/* docs/html/*
+	rm -f *.aux *.log *.toc *.out *.bbl *.bcf *.run.xml
+	rm -f *.4ct *.4tc *.idv *.lg *.xref *.xdv
+	rm -f main.html main.css main.tmp main*.svg
+	find chapters/ -name '*.aux' -delete
 
 check:
 	@echo "=== 检查 LaTeX 交叉引用一致性 ==="
@@ -47,3 +51,4 @@ _html:
 	mkdir -p build docs/html
 	make4ht -x -c main.cfg -f html5 -d build main.tex "svg,mathml"
 	cp -r build/. docs/html/
+	rm -f *.4ct *.4tc *.idv *.lg *.xref main.html main.css main.tmp main*.svg
