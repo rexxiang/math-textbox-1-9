@@ -129,7 +129,36 @@ $n = 10$
 
 \textbf{平行四边形}：两组对边分别平行的四边形叫做平行四边形。平行四边形 $ABCD$ 记作 $\square ABCD$ 。
 
-% TODO-TikZ: 平行四边形 (was: ../assets/03-geometry/parallelogram.svg)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3.5,0);
+  \coordinate (C) at (4.2,2);
+  \coordinate (D) at (0.7,2);
+  \draw[main line] (A)--(B)--(C)--(D)--cycle;
+  \node[below left]  at (A) {$A$};
+  \node[below right] at (B) {$B$};
+  \node[above right] at (C) {$C$};
+  \node[above left]  at (D) {$D$};
+  % Diagonals
+  \draw[aux line] (A)--(C);
+  \draw[aux line] (B)--(D);
+  % Midpoint (intersection of diagonals)
+  \coordinate (O) at ($(A)!0.5!(C)$);
+  \fill (O) circle (2pt) node[above right, font=\scriptsize] {$O$};
+  % Parallel tick marks on AB || DC
+  \draw ($(A)!0.5!(B)$)++(90:0.1)--++(0,-0.2);
+  \draw ($(A)!0.5!(B)$)++(90:0.1)++(0.18,0)--++(0,-0.2);
+  \draw ($(D)!0.5!(C)$)++(90:0.1)--++(0,-0.2);
+  \draw ($(D)!0.5!(C)$)++(90:0.1)++(0.18,0)--++(0,-0.2);
+  % Single tick on AD || BC
+  \draw ($(A)!0.5!(D)$)++(0:0.12)--++(-0.24,0);
+  \draw ($(B)!0.5!(C)$)++(0:0.12)--++(-0.24,0);
+\end{tikzpicture}
+\caption{平行四边形 $ABCD$：对角线 $AC$ 和 $BD$ 互相平分于点 $O$}
+\label{fig:parallelogram}
+\end{figure}
 
 
 \textbf{平行四边形的性质}：
@@ -409,7 +438,27 @@ $S = 4 \times \dfrac{1}{2} \times \dfrac{d_1}{2} \times \dfrac{d_2}{2} = \dfrac{
 
 \textbf{梯形}：只有一组对边平行的四边形叫做梯形。平行的两条边叫做\textbf{上底}和\textbf{下底}（短的为上底，长的为下底），不平行的两条边叫做\textbf{腰}。
 
-% TODO-TikZ: 梯形 (was: ../assets/03-geometry/trapezoid.svg)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (4.5,0);
+  \coordinate (C) at (3.5,2);
+  \coordinate (D) at (0.8,2);
+  \draw[main line] (A)--(B)--(C)--(D)--cycle;
+  \node[below left]  at (A) {$A$};
+  \node[below right] at (B) {$B$};
+  \node[above right] at (C) {$C$};
+  \node[above left]  at (D) {$D$};
+  % Parallel marks on AB and DC
+  \draw ($(A)!0.5!(B)$)++(90:0.1)--++(0,-0.2);
+  \draw ($(D)!0.5!(C)$)++(90:0.1)--++(0,-0.2);
+  \node[below] at ($(A)!0.5!(B)$) {$AB$（下底）};
+  \node[above] at ($(D)!0.5!(C)$) {$DC$（上底）};
+\end{tikzpicture}
+\caption{梯形：$AB \parallel DC$，$AB$ 为下底，$DC$ 为上底，$AD$、$BC$ 为两腰}
+\label{fig:trapezoid}
+\end{figure}
 
 
 \textbf{等腰梯形}：两腰相等的梯形叫做等腰梯形。
@@ -455,7 +504,33 @@ S = \frac{1}{2}(a + b) \times h
 \textbf{解：}
 过 $A$ 、 $D$ 分别作 $BC$ 的垂线，垂足分别为 $E$ 、 $F$ 。
 
-% TODO-TikZ: 等腰梯形求高 (was: ../assets/03-geometry/trapezoid-height.svg)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[every node/.style={font=\small}]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (4.5,0);
+  \coordinate (C) at (3.5,2);
+  \coordinate (D) at (0.8,2);
+  \draw[main line] (A)--(B)--(C)--(D)--cycle;
+  \node[below left]  at (A) {$A$};
+  \node[below right] at (B) {$B$};
+  \node[above right] at (C) {$C$};
+  \node[above left]  at (D) {$D$};
+  % Height from D to AB
+  \coordinate (H) at (0.8,0);
+  \draw[aux line] (D)--(H);
+  \draw (1.02,0)--(1.02,0.22)--(0.8,0.22);
+  \fill (H) circle (2pt) node[below] {$H$};
+  % Height arrow
+  \draw[<->, >=Stealth, thin] (-0.35,0) -- (-0.35,2) node[midway,left] {$h$};
+  % Upper base label
+  \draw[<->, >=Stealth, thin] (0.8,2.4) -- (3.5,2.4) node[midway,above] {$b$（上底）};
+  % Lower base label
+  \draw[<->, >=Stealth, thin] (0,-0.4) -- (4.5,-0.4) node[midway,below] {$a$（下底）};
+\end{tikzpicture}
+\caption{梯形面积 $S = \dfrac{(a+b) \cdot h}{2}$，$h$ 为两底之间的距离（高）}
+\label{fig:trapezoid-height}
+\end{figure}
 
 
 因为 $AEFD$ 是矩形（ $AE \perp BC$ ， $DF \perp BC$ ， $AD \parallel BC$ ），所以 $EF = AD = 4$ cm。
@@ -528,7 +603,26 @@ $AD = EF = BC - BE - CF = 12 - 2 - 2 = 8$ cm。
 \begin{understand}
 
 
-% TODO-TikZ: 四边形家族关系 (was: ../assets/03-geometry/quadrilateral-family.svg)
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  every node/.style={draw, rounded corners, align=center, font=\small,
+                     minimum width=2.4cm, minimum height=0.7cm, fill=white},
+  level 1/.style={sibling distance=4cm, level distance=1.5cm},
+  edge from parent/.style={draw, -{Stealth[length=5pt]}},
+]
+  \node {四边形} [grow=down]
+    child { node {平行四边形\\$AB\parallel DC,\ AD\parallel BC$}
+      child { node {矩形\\（四角直角）} }
+      child { node {菱形\\（四边相等）}
+        child { node {正方形} }
+      }
+    }
+    child { node {梯形\\（一组平行）} };
+\end{tikzpicture}
+\caption{四边形家族关系（从上到下为特殊化关系）}
+\label{fig:quadrilateral-family}
+\end{figure}
 
 
 四边形的家族层级：
