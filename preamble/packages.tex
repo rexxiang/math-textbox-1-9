@@ -1,0 +1,39 @@
+% preamble/packages.tex — All \usepackage declarations
+
+% Page layout
+\usepackage[b5paper, margin=2.5cm, headheight=14pt]{geometry}
+
+% CJK and math fonts (loaded after geometry)
+\input{preamble/fonts}
+
+% Math
+\usepackage{amsmath, amssymb, amsthm}
+
+% Colors
+\usepackage{xcolor}
+
+% tcolorbox for 5-step colored environments
+\usepackage[most, breakable, theorems]{tcolorbox}
+
+% TikZ graphics
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\input{preamble/tikz-styles}
+
+% Icons for environment titles
+\usepackage{fontawesome5}
+
+% Lists
+\usepackage{enumitem}
+\setlist[enumerate]{label=\arabic*.}
+
+% Tables
+\usepackage{booktabs}
+
+% PDF hyperlinks and cross-references
+\usepackage[hidelinks, unicode]{hyperref}
+\usepackage{cleveref}
+
+% Custom environments
+\input{preamble/environments}
