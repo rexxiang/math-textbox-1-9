@@ -1,0 +1,93 @@
+% preamble/environments.tex — 5-step tcolorbox environments and theorem definitions
+
+%% ── 1. 引入情境（Explore）── orange ──────────────────────────────
+\newtcolorbox{explore}{
+  enhanced, breakable,
+  colback=orange!8, colframe=orange!55,
+  leftrule=4pt, sharp corners,
+  title={\faSearch\enskip 引入情境},
+  fonttitle=\bfseries\sffamily,
+  before upper={\parindent=1em},
+}
+
+%% ── 2. 概念建立（Build Understanding）── blue ────────────────────
+\newtcolorbox{understand}{
+  enhanced, breakable,
+  colback=blue!5, colframe=blue!40,
+  title={\faLightbulb[regular]\enskip 概念建立},
+  fonttitle=\bfseries\sffamily,
+  before upper={\parindent=1em},
+}
+
+%% ── 3. 典型例题（Worked Examples）── gray, numbered ──────────────
+% Container box for a group of worked examples
+\newtcolorbox{workedexamples}{
+  enhanced, breakable,
+  colback=gray!4, colframe=gray!40,
+  title={\faBookOpen\enskip 典型例题},
+  fonttitle=\bfseries\sffamily,
+  before upper={\parindent=1em},
+}
+
+% Individual numbered example (use inside workedexamples or standalone)
+\newtcbtheorem[number within=chapter]{workedexample}{例}
+{
+  colback=gray!4, colframe=gray!40,
+  fonttitle=\bfseries,
+  separator sign none,
+  description delimiters parentheses,
+}{ex}
+
+%% ── 4. 关键总结（Key Takeaways）── green ─────────────────────────
+\newtcolorbox{keytakeaway}{
+  enhanced, breakable,
+  colback=green!6, colframe=green!45,
+  title={\faStar\enskip 关键总结},
+  fonttitle=\bfseries\sffamily,
+  before upper={\parindent=1em},
+}
+
+%% ── 5. 练一练（Practice）── violet ───────────────────────────────
+\newtcolorbox{practice}{
+  enhanced, breakable,
+  colback=violet!5, colframe=violet!40,
+  leftrule=4pt, sharp corners,
+  title={\faPencilAlt\enskip 练一练},
+  fonttitle=\bfseries\sffamily,
+  before upper={\parindent=1em},
+}
+
+%% ── 参考答案（Answer Key）── light gray ──────────────────────────
+\newtcolorbox{answer}{
+  enhanced, breakable,
+  colback=gray!3, colframe=gray!25,
+  leftrule=2pt, sharp corners,
+  title={\faKey\enskip 参考答案},
+  fonttitle=\bfseries\sffamily\small,
+}
+
+%% ── Auxiliary commands ────────────────────────────────────────────
+% 前置知识（inline, yellow tint）
+\newcommand{\prerequisite}[1]{%
+  \begin{tcolorbox}[
+    size=small, colback=yellow!10, colframe=yellow!55,
+    leftrule=2pt, sharp corners, boxsep=2pt,
+  ]
+  \small\textbf{前置知识：} #1
+  \end{tcolorbox}}
+
+% 适用年级（inline, teal tint）
+\newcommand{\gradelevel}[1]{%
+  \begin{tcolorbox}[
+    size=small, colback=teal!7, colframe=teal!40,
+    leftrule=2pt, sharp corners, boxsep=2pt,
+  ]
+  \small\textbf{适用年级：} #1
+  \end{tcolorbox}}
+
+%% ── Theorem-style environments (amsthm) ──────────────────────────
+\newtheorem{theorem}{定理}[chapter]
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{property}[theorem]{性质}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{lemma}[theorem]{引理}
