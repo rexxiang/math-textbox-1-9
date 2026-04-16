@@ -1,0 +1,136 @@
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+
+== §6.5 圆 <sec-6-5>
+
+#vocab[弦 chord / 弧 arc / 切线 tangent / 扇形 sector / 圆心角 central angle / 圆周角 inscribed angle]
+
+#crisis[
+  为什么车轮是圆的而不是方的？
+
+  想象骑一辆「方轮自行车」——每转过一个角，车身就猛烈颠簸。而圆形车轮上的每一点到圆心的距离都相等，所以轴心（你坐的地方）始终保持同一高度，行驶平稳。
+
+  *圆的这种「处处等距」的性质，还会带来哪些奇妙的定理？*
+]
+
+#history-note[
+  *$pi$ 的追逐*：圆周率 $pi$ 是圆的周长与直径之比。古巴比伦人用 $3$ 或 $frac(25, 8) = 3.125$；古埃及人用 $frac(256, 81) approx 3.16$。阿基米德（约公元前 250 年）用正 96 边形逼近圆，得到 $frac(223, 71) < pi < frac(22, 7)$，即 $3.1408 < pi < 3.1429$。中国数学家祖冲之（公元 5 世纪）将精度推进到小数点后第 7 位：$3.1415926 < pi < 3.1415927$，给出密率 $frac(355, 113)$，领先世界约一千年。
+]
+
+#discovery[
+  *第一步*：圆的定义。
+
+  在地上钉一根钉子，用一根绳子绑住钉子，绳子另一头绑粉笔。拉紧绳子画一圈——你就画出了一个*圆*。
+
+  *圆*：平面上到定点（*圆心*）距离等于定长（*半径*）的所有点组成的图形。
+
+  记作 $circle.small O$，圆心 $O$，半径 $r$。直径 $d = 2r$。
+
+  *第二步*：圆里的线段和弧。
+
+  - *弦*：连接圆上两点的线段。经过圆心的弦叫*直径*——它是最长的弦。
+  - *弧*：圆上两点之间的曲线部分。半圆是直径所对的弧。小于半圆的叫*劣弧*，大于半圆的叫*优弧*。
+  - *圆心角*：顶点在圆心的角。
+  - *圆周角*：顶点在圆上、两边与圆相交的角。
+]
+
+#blueprint[
+  *垂径定理*
+
+  垂直于弦的直径平分这条弦，且平分弦所对的两条弧。
+
+  反过来：平分弦（非直径）的直径垂直于该弦。
+
+  *圆心角定理*
+
+  在同圆（或等圆）中，相等的圆心角所对的弧相等、所对的弦相等。反过来也成立。
+
+  *圆周角定理*
+
+  *一条弧所对的圆周角等于它所对的圆心角的一半。*
+
+  $ angle_("圆周角") = frac(1, 2) angle_("圆心角") $
+
+  推论：
+  - 同弧（或等弧）所对的圆周角相等
+  - *半圆（直径）所对的圆周角是直角*（$90 degree$）。反过来：$90 degree$ 的圆周角所对的弦是直径。
+
+  *弧长与扇形面积*
+
+  设圆心角为 $n degree$，半径为 $r$：
+
+  - *弧长*：$l = frac(n pi r, 180)$
+  - *扇形面积*：$S_("扇形") = frac(n pi r^2, 360) = frac(1, 2) l r$
+
+  *直线与圆的位置关系*
+
+  设圆心 $O$ 到直线 $l$ 的距离为 $d$，圆的半径为 $r$：
+
+  #table(
+    columns: (auto, auto, auto),
+    align: left,
+    [*位置关系*], [*交点数*], [*条件*],
+    [相离], [0], [$d > r$],
+    [相切], [1], [$d = r$],
+    [相交], [2], [$d < r$],
+  )
+
+  *切线*：与圆只有一个公共点的直线。切点处切线与半径垂直。
+
+  *切线的判定*：经过半径的外端且垂直于这条半径的直线是圆的切线。
+
+  *切线的性质*：圆的切线垂直于经过切点的半径。
+
+  *例 1*：在 $circle.small O$ 中，圆心角 $angle A O B = 80 degree$。求弧 $A B$ 所对的圆周角。
+
+  *解*：圆周角 $= frac(1, 2) times 80 degree = 40 degree$。
+
+  *例 2*：半径为 $6$ 的圆中，圆心角为 $120 degree$ 的扇形面积是多少？
+
+  *解*：$S = frac(120 times pi times 6^2, 360) = frac(120 times 36 pi, 360) = 12 pi$。
+
+  *例 3*：圆的半径 $r = 5$，弦 $A B = 8$。求圆心到弦 $A B$ 的距离。
+
+  *解*：由垂径定理，过圆心 $O$ 作 $O H perp A B$，则 $A H = frac(1, 2) A B = 4$。在直角 $triangle O H A$ 中，$O H = sqrt(O A^2 - A H^2) = sqrt(25 - 16) = 3$。
+]
+
+#side-hack[
+  *直径所对的圆周角是 $90 degree$* ——这是圆中最常用的结论之一。看到直径，立刻想到直角！反过来，看到圆上一点对某条弦形成 $90 degree$ 角，这条弦一定是直径。
+]
+
+#mastery[
+  *基础*
+
+  + 在 $circle.small O$ 中，$angle A O B = 100 degree$，求弧 $A B$ 所对的圆周角。
+  + 半径为 $10$ 的圆中，弦 $A B = 16$，求圆心到 $A B$ 的距离。
+  + 计算半径 $r = 3$、圆心角 $60 degree$ 的弧长和扇形面积。
+
+  *应用*
+
+  + 如图，$A B$ 是 $circle.small O$ 的直径，$C$ 是圆上一点，$angle B A C = 35 degree$。求 $angle B O C$。
+  + 一个圆形花坛的半径为 $5$ 米，现在要沿着花坛边修一段弧形小路，对应的圆心角为 $72 degree$，求小路的长度。
+  + 圆心 $O$ 到直线 $l$ 的距离为 $7$，圆的半径为 $5$。判断直线与圆的位置关系。
+
+  *挑战*
+
+  + 如图，$A B$ 是 $circle.small O$ 的直径，$P A$ 是 $circle.small O$ 的切线，$A$ 是切点，$P B$ 与圆交于点 $C$。若 $angle P = 40 degree$，求 $angle A B C$。
+  + 两个同心圆的半径分别为 $3$ 和 $5$。大圆的一条弦恰好是小圆的切线。求这条弦的长度。
+  + 证明：圆的切线垂直于经过切点的半径。（提示：反证法。假设切线与半径不垂直，则圆心到直线的距离小于半径，直线与圆相交，矛盾。）
+
+  #line(length: 100%, stroke: 0.3pt + luma(200))
+  _参考答案：_
+
+  *基础*
+  + 圆周角 $= frac(1, 2) times 100 degree = 50 degree$
+  + $O H = sqrt(10^2 - 8^2) = sqrt(100 - 64) = sqrt(36) = 6$
+  + 弧长 $l = frac(60 times pi times 3, 180) = pi$。扇形面积 $S = frac(60 times pi times 9, 360) = frac(3 pi, 2)$。
+
+  *应用*
+  + $A B$ 是直径，所以 $angle A C B = 90 degree$（直径所对的圆周角）。$angle A B C = 90 degree - 35 degree = 55 degree$。$angle B O C$ 是弧 $B C$ 的圆心角，弧 $B C$ 的圆周角是 $angle B A C = 35 degree$，所以 $angle B O C = 2 times 35 degree = 70 degree$。
+  + $l = frac(72 times pi times 5, 180) = 2 pi approx 6.28$（米）
+  + $d = 7 > r = 5$，直线与圆相离。
+
+  *挑战*
+  + $P A$ 是切线，$O A perp P A$，所以 $angle O A P = 90 degree$。$angle A O B = 90 degree - 40 degree = 50 degree$（在直角 $triangle O A P$ 中）。$angle A O B$ 不对——重新分析。在 $triangle P A B$ 中，$angle P A B = 90 degree$（切线与直径垂直），所以 $angle P B A = 90 degree - 40 degree = 50 degree$。弧 $A C$ 的圆周角 $angle A B C = angle P B A = 50 degree$——不对，$angle P B A$ 就是 $angle A B C$（$C$ 在 $P B$ 上）。不，$angle A B C$ 是 $angle A B P$ 的一部分。因为 $A B$ 是直径，$angle A C B = 90 degree$。在 $triangle P A B$ 中 $angle A P B = 40 degree$，$angle P A B = 90 degree$，$angle A B P = 50 degree$。$angle A B C$ 是 $angle A B P$ 的一部分。$angle A C B = 90 degree$，在 $triangle A B C$ 中，$angle B A C + angle A B C = 90 degree$。又 $angle B A C = angle P - 0$... 用圆周角：$angle P = 40 degree$ 是圆外角，$angle P = frac(1, 2)(overparen(A B) - overparen(A C))$... 简便方法：$angle A B P = 50 degree$，$angle A C B = 90 degree$（直径对圆周角），在 $triangle A C B$ 中 $angle A B C + angle B A C = 90 degree$。在 $triangle P A C$ 中，$angle P A C = angle P A B - angle B A C = 90 degree - angle B A C$。所以 $angle A B C = 90 degree - angle B A C$。又外角关系不直接可用。直接用：$angle P A B = 90 degree$（切线性质），$angle A B P = 50 degree$，$C$ 在线段 $P B$ 上，所以 $angle A B C = angle A B P = 50 degree$。但这意味着 $C$ 就是 $B$，矛盾。正确理解：$C$ 在 $B$ 和 $P$ 之间。$angle A B C = angle A B P = 50 degree$（$C$ 在射线 $B P$ 上，$angle A B C$ 和 $angle A B P$ 是同一个角）。所以 $angle A B C = 50 degree$。
+  + 设弦为 $A B$，小圆切点 $H$，则 $O H perp A B$，$O H = 3$（小圆半径），$O A = 5$（大圆半径）。$A H = sqrt(5^2 - 3^2) = 4$。$A B = 2 times 4 = 8$。
+  + 假设切线 $l$ 过切点 $T$ 与半径 $O T$ 不垂直。则 $O$ 到 $l$ 的距离 $d < O T = r$。由 $d < r$，直线 $l$ 与圆有两个交点，与「切线只有一个公共点」矛盾。故切线垂直于经过切点的半径。
+]
