@@ -2,7 +2,7 @@
 #import "../lib/diagram-packages.typ": cetz
 #import "../lib/geometry-helpers.typ": equal-angle
 
-== §6.6 勾股定理 <sec-6-6>
+== §6.8 勾股定理 <sec-6-8>
 
 #vocab[勾股定理 Pythagorean theorem / 斜边 hypotenuse / 直角边 leg]
 
@@ -63,13 +63,13 @@
 
   *第二步*：赵爽弦图证明。
 
-  取四个全等的直角三角形（直角边 $a$、$b$，斜边 $c$），拼成一个边长为 $c$ 的大正方形，中间留出一个边长为 $(b - a)$ 的小正方形。
+  取四个全等的直角三角形（直角边 $a$、$b$，斜边 $c$），放在一个边长为 $(a + b)$ 的大正方形的四个角上，中间留出一个倾斜的边长为 $c$ 的小正方形（如下图）。
 
-  大正方形面积 $= c^2$。
+  大正方形面积 $= (a + b)^2 = a^2 + 2 a b + b^2$。
 
-  大正方形面积也 $= 4 times frac(1, 2) a b + (b - a)^2 = 2 a b + b^2 - 2 a b + a^2 = a^2 + b^2$。
+  大正方形面积也 $= 4 times frac(1, 2) a b + c^2 = 2 a b + c^2$。
 
-  所以 $c^2 = a^2 + b^2$。
+  两式相等：$a^2 + 2 a b + b^2 = 2 a b + c^2$，消去 $2 a b$，得 $a^2 + b^2 = c^2$。
 
 #figure(
   cetz.canvas(length: 1.3cm, {

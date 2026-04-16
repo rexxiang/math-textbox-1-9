@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
 #import "../lib/diagram-packages.typ": cetz
 
-== §7.4 锐角三角函数 <sec-7-4>
+== §7.5 锐角三角函数 <sec-7-5>
 
 #vocab[正弦 sine / 余弦 cosine / 正切 tangent / 仰角 angle of elevation / 俯角 angle of depression]
 
@@ -57,7 +57,7 @@
 
   画几个大小不同但角度相同的直角三角形（例如都有一个 $30 degree$ 角）。你会发现：虽然边长不同，但「对边/斜边」的比值*总是相同*的！
 
-  这就是因为这些三角形*相似*（#secref("6.3")）。
+  这就是因为这些三角形*相似*（#secref("6.5")）。
 
   *第三步*：定义三个比值。
 
@@ -102,7 +102,7 @@
 
   === 解直角三角形
 
-  在直角三角形中，已知两个元素（至少一个是边），就能求出所有其他元素。
+  在直角三角形中，除直角外，再已知两个元素（其中至少一个是边），就能求出其余所有未知元素。
 
   #figure(
     cetz.canvas(length: 2cm, {
@@ -199,4 +199,29 @@
   *挑战*
   + （本题需构造辅助线，设山高 $C D = h$，利用 $B$ 点坐标和两次仰角列方程组求解。过程较长，答案为 $h = 100(sqrt(3) + 1)$ 米，约 $273$ 米。）
   + 设 $B C = a$，$A C = b$，$A B = c$。$sin alpha = frac(a, c)$，$cos alpha = frac(b, c)$。$sin^2 alpha + cos^2 alpha = frac(a^2, c^2) + frac(b^2, c^2) = frac(a^2 + b^2, c^2) = frac(c^2, c^2) = 1$（由勾股定理 $a^2 + b^2 = c^2$）。
+]
+
+=== 三角形面积的三角函数形式
+
+#blueprint[
+  在 $triangle A B C$ 中，已知两边 $a$、$b$ 和它们的夹角 $C$。如何求面积？
+
+  从 $A$ 向 $B C$ 作高 $h$，则 $h = b sin C$。代入三角形面积公式：
+  $ S = frac(1, 2) a h = frac(1, 2) a b sin C $
+
+  类似地：$S = frac(1, 2) b c sin A = frac(1, 2) a c sin B$。
+
+  *意义*：只要知道两边和夹角，不需要先求高就能直接算面积。
+]
+
+#mastery[
+  + 在 $triangle A B C$ 中，$a = 6$，$b = 10$，$angle C = 30 degree$。求面积。
+
+  + 在 $triangle A B C$ 中，$b = 8$，$c = 5$，$angle A = 60 degree$。求面积。
+
+  #line(length: 100%, stroke: 0.3pt + luma(200))
+  _参考答案：_
+
+  + $S = frac(1, 2) times 6 times 10 times sin 30 degree = frac(1, 2) times 6 times 10 times frac(1, 2) = 15$。
+  + $S = frac(1, 2) times 8 times 5 times sin 60 degree = frac(1, 2) times 8 times 5 times frac(sqrt(3), 2) = 10 sqrt(3)$。
 ]

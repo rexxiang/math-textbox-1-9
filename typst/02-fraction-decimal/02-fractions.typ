@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
 
 == §2.2 分数 <sec-2-2>
 
@@ -40,6 +40,10 @@
 
 #side-hack[
   异分母加减口诀——*先通分、再加减、最后约*。运算前先约分能让数字更小，算起来更轻松。
+]
+
+#side-hack[
+  *运算律对分数同样成立！* 在 #secref("1.6") 中学到的交换律、结合律、分配律，对分数运算完全适用。例如：$frac(1, 3) + frac(1, 2) = frac(1, 2) + frac(1, 3)$（交换律），$frac(1, 4) times (frac(2, 3) + frac(1, 3)) = frac(1, 4) times frac(2, 3) + frac(1, 4) times frac(1, 3)$（分配律）。善用这些运算律，可以让分数计算更简便。
 ]
 
 #mastery[

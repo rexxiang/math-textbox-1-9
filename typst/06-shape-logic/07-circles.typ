@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
 #import "../lib/diagram-packages.typ": cetz
 
-== §6.5 圆 <sec-6-5>
+== §6.7 圆 <sec-6-7>
 
 #vocab[弦 chord / 弧 arc / 切线 tangent / 扇形 sector / 圆心角 central angle / 圆周角 inscribed angle]
 
@@ -213,7 +213,59 @@
   + $d = 7 > r = 5$，直线与圆相离。
 
   *挑战*
-  + $P A$ 是切线，$O A perp P A$，所以 $angle O A P = 90 degree$。$angle A O B = 90 degree - 40 degree = 50 degree$（在直角 $triangle O A P$ 中）。$angle A O B$ 不对——重新分析。在 $triangle P A B$ 中，$angle P A B = 90 degree$（切线与直径垂直），所以 $angle P B A = 90 degree - 40 degree = 50 degree$。弧 $A C$ 的圆周角 $angle A B C = angle P B A = 50 degree$——不对，$angle P B A$ 就是 $angle A B C$（$C$ 在 $P B$ 上）。不，$angle A B C$ 是 $angle A B P$ 的一部分。因为 $A B$ 是直径，$angle A C B = 90 degree$。在 $triangle P A B$ 中 $angle A P B = 40 degree$，$angle P A B = 90 degree$，$angle A B P = 50 degree$。$angle A B C$ 是 $angle A B P$ 的一部分。$angle A C B = 90 degree$，在 $triangle A B C$ 中，$angle B A C + angle A B C = 90 degree$。又 $angle B A C = angle P - 0$... 用圆周角：$angle P = 40 degree$ 是圆外角，$angle P = frac(1, 2)(overparen(A B) - overparen(A C))$... 简便方法：$angle A B P = 50 degree$，$angle A C B = 90 degree$（直径对圆周角），在 $triangle A C B$ 中 $angle A B C + angle B A C = 90 degree$。在 $triangle P A C$ 中，$angle P A C = angle P A B - angle B A C = 90 degree - angle B A C$。所以 $angle A B C = 90 degree - angle B A C$。又外角关系不直接可用。直接用：$angle P A B = 90 degree$（切线性质），$angle A B P = 50 degree$，$C$ 在线段 $P B$ 上，所以 $angle A B C = angle A B P = 50 degree$。但这意味着 $C$ 就是 $B$，矛盾。正确理解：$C$ 在 $B$ 和 $P$ 之间。$angle A B C = angle A B P = 50 degree$（$C$ 在射线 $B P$ 上，$angle A B C$ 和 $angle A B P$ 是同一个角）。所以 $angle A B C = 50 degree$。
+  + $P A$ 是切线，$A B$ 是直径，所以 $angle P A B = 90 degree$（切线 $perp$ 经过切点的半径）。在 $triangle P A B$ 中，$angle A B P = 180 degree - 90 degree - 40 degree = 50 degree$。因为 $C$ 在线段 $P B$ 上（$P B$ 与圆的另一个交点），$angle A B C$ 与 $angle A B P$ 是同一个角。所以 $angle A B C = 50 degree$。
   + 设弦为 $A B$，小圆切点 $H$，则 $O H perp A B$，$O H = 3$（小圆半径），$O A = 5$（大圆半径）。$A H = sqrt(5^2 - 3^2) = 4$。$A B = 2 times 4 = 8$。
   + 假设切线 $l$ 过切点 $T$ 与半径 $O T$ 不垂直。则 $O$ 到 $l$ 的距离 $d < O T = r$。由 $d < r$，直线 $l$ 与圆有两个交点，与「切线只有一个公共点」矛盾。故切线垂直于经过切点的半径。
+]
+
+=== 正多边形与圆
+
+#blueprint[
+  正 $n$ 边形可以内接于一个圆。此时每条边对应的圆心角为 $frac(360 degree, n)$。
+
+  - 正三角形内接于圆（即圆是正三角形的*外接圆*）：边长 $a$，外接圆半径 $R = frac(a sqrt(3), 3)$
+  - 正六边形内接于圆：边长 = 外接圆半径 $R$（因为 $frac(360 degree, 6) = 60 degree$，每个三角形都是等边三角形）
+  - 当 $n$ 越来越大，正多边形越来越接近圆。这也解释了为什么圆面积 $= pi r^2$：正多边形面积 $approx frac(1, 2) times$ 周长 $times$ 边心距，极限就是 $frac(1, 2) times 2 pi r times r = pi r^2$。
+]
+
+=== 圆与圆的位置关系
+
+#blueprint[
+  两个*不重合*的圆，其位置关系由*圆心距* $d$ 与*两圆半径* $R$、$r$（$R >= r$）决定：
+
+  #table(
+    columns: (1fr, 1fr, 1fr),
+    align: left,
+    [*位置关系*], [*条件*], [*公切线条数*],
+    [外离], [$d > R + r$], [4 条],
+    [外切], [$d = R + r$], [3 条],
+    [相交], [$R - r < d < R + r$], [2 条],
+    [内切], [$d = R - r > 0$（即 $R > r$）], [1 条],
+    [内含（含同心）], [$0 <= d < R - r$（即 $R > r$）], [0 条],
+  )
+
+  特别地，$d = 0$ 且 $R != r$ 时两圆*同心*（内含的极端情况）；$d = 0$ 且 $R = r$ 时两圆*重合*，不属于上述五种位置关系。
+]
+
+=== 拓展：圆幂定理
+
+#mastery[
+  *圆幂*是一个统一三个经典定理的优美概念。
+
+  设圆 $O$ 的半径为 $r$，点 $P$ 到圆心的距离为 $d$。定义*圆幂*为 $d^2 - r^2$。
+
+  *定理 1（相交弦定理）*：两弦 $A B$ 和 $C D$ 交于圆内一点 $P$，则
+  $ P A dot P B = P C dot P D $
+
+  *定理 2（割线定理）*：从圆外一点 $P$ 引两条割线，分别交圆于 $A, B$ 和 $C, D$，则
+  $ P A dot P B = P C dot P D $
+
+  *定理 3（切割线定理）*：从圆外一点 $P$ 引切线切于 $T$，割线交圆于 $A, B$，则
+  $ P T^2 = P A dot P B $
+
+  这三个定理的本质相同：对于圆上经过（或延长经过）点 $P$ 的任意一条线，截得两段的乘积（含符号）都等于点 $P$ 的*圆幂* $d^2 - r^2$。
+
+  *例*：圆内两弦 $A B$ 和 $C D$ 交于点 $P$，$P A = 3$，$P B = 8$，$P C = 4$。求 $P D$。
+
+  解：$P A dot P B = P C dot P D$，$3 times 8 = 4 times P D$，$P D = 6$。
 ]

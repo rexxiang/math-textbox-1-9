@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
 #import "../lib/diagram-packages.typ": cetz
 
-== §6.4 四边形 <sec-6-4>
+== §6.6 四边形 <sec-6-6>
 
 #vocab[平行四边形 parallelogram / 矩形 rectangle / 菱形 rhombus / 正方形 square / 梯形 trapezoid]
 
@@ -18,7 +18,7 @@
 #discovery[
   *第一步*：多边形的内角和。
 
-  三角形内角和是 $180 degree$（#secref("6.3")）。四边形呢？画一条对角线，把四边形分成两个三角形，内角和就是 $2 times 180 degree = 360 degree$。
+  三角形内角和是 $180 degree$（#secref("6.5")）。四边形呢？画一条对角线，把四边形分成两个三角形，内角和就是 $2 times 180 degree = 360 degree$。
 
   以此类推，$n$ 边形可以从一个顶点出发画对角线，分成 $(n - 2)$ 个三角形：
 
@@ -185,7 +185,7 @@
 
   *例 2*：菱形 $A B C D$ 的对角线长分别为 $6$ 和 $8$，求菱形面积和边长。
 
-  *解*：$S = frac(1, 2) times 6 times 8 = 24$。对角线互相垂直平分，半对角线为 $3$ 和 $4$，由勾股定理（#secref("6.6")），边长 $= sqrt(3^2 + 4^2) = 5$。
+  *解*：$S = frac(1, 2) times 6 times 8 = 24$。对角线互相垂直平分，半对角线为 $3$ 和 $4$，由勾股定理（#secref("6.8")），边长 $= sqrt(3^2 + 4^2) = 5$。
 ]
 
 #mastery[
@@ -225,6 +225,6 @@
 
   *挑战*
   + 在矩形 $A B C D$ 中，$triangle A B C$ 和 $triangle D C B$ 中：$A B = D C$（对边相等），$B C = B C$（公共边），$angle A B C = angle D C B = 90 degree$。由 SAS，$triangle A B C tilde.eq triangle D C B$，所以 $A C = D B$。
-  + 在平行四边形 $A B C D$ 中，$A D = B C$，$A E = frac(1, 2) A D$，$B F = frac(1, 2) B C = frac(1, 2) A D = A E$。$A D parallel B C$ 且 $A E = B F$，所以 $E D = A D - A E = B C - B F = F C$。又 $E D parallel F C$（都在 $A D$ 和 $B C$ 上），所以 $B E F D$ 是平行四边形，故 $B E = D F$。
+  + 在平行四边形 $A B C D$ 中，$A D = B C$ 且 $A D parallel B C$。$E$、$F$ 分别是 $A D$、$B C$ 的中点，所以 $E D = frac(1, 2) A D = frac(1, 2) B C = B F$。又 $E D parallel B F$（$E D$ 在 $A D$ 上，$B F$ 在 $B C$ 上，而 $A D parallel B C$）。一组对边平行且相等，故四边形 $B F D E$ 是平行四边形，因此 $B E = D F$（平行四边形对边相等）。
   + 每个内角 $144 degree$，$(n-2) times 180 degree = 144 degree times n$，$180 n - 360 = 144 n$，$36 n = 360$，$n = 10$。（正十边形）
 ]

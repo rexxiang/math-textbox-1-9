@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
 #import "../lib/diagram-packages.typ": cetz
 
-== §6.1 角 <sec-6-1>
+== §6.3 角 <sec-6-3>
 
 #vocab[角 angle / 锐角 acute angle / 直角 right angle / 钝角 obtuse angle / 平角 straight angle / 周角 full angle / 互余 complementary / 互补 supplementary]
 

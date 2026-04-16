@@ -64,24 +64,28 @@
 #include "05-equation-machine/06-quadratic-equations.typ"
 #include "05-equation-machine/07-inequalities.typ"
 
-// 第 6 章：形的逻辑（初中 7-9 年级）
+// 第 6 章：形的逻辑（小学 3-6 年级基础 + 初中 7-9 年级）
 = 形的逻辑
 #include "06-shape-logic/00-overview.typ"
-#include "06-shape-logic/01-angles.typ"
-#include "06-shape-logic/02-parallel-perpendicular.typ"
-#include "06-shape-logic/03-triangles.typ"
-#include "06-shape-logic/04-quadrilaterals.typ"
-#include "06-shape-logic/05-circles.typ"
-#include "06-shape-logic/06-pythagorean-theorem.typ"
-#include "06-shape-logic/07-transformations.typ"
+#include "06-shape-logic/01-basic-shapes.typ"
+#include "06-shape-logic/02-area-volume.typ"
+#include "06-shape-logic/03-angles.typ"
+#include "06-shape-logic/04-parallel-perpendicular.typ"
+#include "06-shape-logic/05-triangles.typ"
+#include "06-shape-logic/06-quadrilaterals.typ"
+#include "06-shape-logic/07-circles.typ"
+#include "06-shape-logic/08-pythagorean-theorem.typ"
+#include "06-shape-logic/09-transformations.typ"
+#include "06-shape-logic/10-projections.typ"
 
 // 第 7 章：函数——变化的望远镜（初中 8-9 年级）
 = 函数\u{2014}\u{2014}变化的望远镜
 #include "07-function-lens/00-overview.typ"
 #include "07-function-lens/01-linear-functions.typ"
-#include "07-function-lens/02-quadratic-functions.typ"
-#include "07-function-lens/03-coordinate-geometry.typ"
-#include "07-function-lens/04-trigonometric-functions.typ"
+#include "07-function-lens/02-inverse-proportion.typ"
+#include "07-function-lens/03-quadratic-functions.typ"
+#include "07-function-lens/04-coordinate-geometry.typ"
+#include "07-function-lens/05-trigonometric-functions.typ"
 
 // 第 8 章：数据侦探（初中 7-9 年级）
 = 数据侦探

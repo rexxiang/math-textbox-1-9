@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
 
 == §3.2 比与比例 <sec-3-2>
 
@@ -65,6 +65,8 @@
   *反比例*：$y = frac(k, x)$（$k$ 为常数，$k eq.not 0$）。$x$ 变大，$y$ 变小，$x y = k$ 恒定。
 
   例：100 千米的路，速度 $x$ 千米/时，时间 $y$ 小时——$x y = 100$。
+
+  反比例关系在日常生活中处处可见。在 #secref("7.2") 中，我们将用*函数*的视角深入研究反比例，画出它的图像（双曲线），揭示更多有趣的性质。
 
   === 按比例分配
 

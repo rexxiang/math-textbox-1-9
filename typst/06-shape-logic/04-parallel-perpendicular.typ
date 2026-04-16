@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
 #import "../lib/diagram-packages.typ": cetz
 
-== §6.2 平行与垂直 <sec-6-2>
+== §6.4 平行与垂直 <sec-6-4>
 
 #vocab[平行 parallel / 垂直 perpendicular / 同位角 corresponding angles / 内错角 alternate interior angles / 同旁内角 co-interior angles (same-side interior)]
 
@@ -52,14 +52,14 @@
     circle(P, radius: 0.04, fill: black, stroke: none)
     content(Q, $Q$, anchor: "south-east", padding: 4pt)
     content(P, $P$, anchor: "north-east", padding: 4pt)
-    // angle labels at Q: ∠1 below-right, ∠2 below-left
-    content((Q.at(0)+0.35, Q.at(1)-0.28), [$angle 1$])
+    // angle labels at Q: ∠1 above-right (exterior), ∠2 below-left (interior)
+    content((Q.at(0)+0.35, Q.at(1)+0.28), [$angle 1$])
     content((Q.at(0)-0.5, Q.at(1)-0.28), [$angle 2$])
-    // angle labels at P: ∠3 above-right, ∠4 above-left
+    // angle labels at P: ∠3 above-right (interior), ∠4 above-left (interior)
     content((P.at(0)+0.35, P.at(1)+0.28), [$angle 3$])
     content((P.at(0)-0.5, P.at(1)+0.28), [$angle 4$])
   }),
-  caption: [$angle 1$ 与 $angle 3$ 是同位角；$angle 2$ 与 $angle 3$ 是内错角；$angle 3$ 与 $angle 4$ 是同旁内角]
+  caption: [$angle 1$ 与 $angle 3$ 是同位角（截线同侧，位置相同）；$angle 2$ 与 $angle 3$ 是内错角（截线异侧，都在两线之间）；$angle 2$ 与 $angle 4$ 是同旁内角（截线同侧，都在两线之间）]
 )
 
   *第三步*：垂直。

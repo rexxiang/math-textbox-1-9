@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
 #import "../lib/diagram-packages.typ": cetz
 
-== §7.3 坐标几何 <sec-7-3>
+== §7.4 坐标几何 <sec-7-4>
 
 #vocab[坐标 coordinate / 距离公式 distance formula / 中点 midpoint / 象限 quadrant]
 

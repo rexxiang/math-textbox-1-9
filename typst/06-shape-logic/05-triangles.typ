@@ -2,7 +2,7 @@
 #import "../lib/diagram-packages.typ": cetz
 #import "../lib/geometry-helpers.typ": equal-angle
 
-== §6.3 三角形 <sec-6-3>
+== §6.5 三角形 <sec-6-5>
 
 #vocab[三角形 triangle / 全等 congruent / 相似 similar / 中位线 midsegment / 等腰三角形 isosceles triangle / 等边三角形 equilateral triangle]
 
@@ -25,7 +25,7 @@
 
   剪一个三角形纸片，把三个角撕下来，拼在一起。你会发现它们恰好拼成一条直线——也就是 $180 degree$！
 
-  这不是巧合。用 #secref("6.2") 学的平行线性质可以严格证明：过顶点 $A$ 作 $B C$ 的平行线，利用内错角相等，三个角恰好凑成一个平角。
+  这不是巧合。用 #secref("6.4") 学的平行线性质可以严格证明：过顶点 $A$ 作 $B C$ 的平行线，利用内错角相等，三个角恰好凑成一个平角。
 
 #figure(
   cetz.canvas(length: 2cm, {
@@ -217,6 +217,18 @@
 
   *挑战*
   + 由中位线定理，$D E = frac(1, 2) B C = 6$，且 $D E parallel B C$。
-  + 由勾股定理（#secref("6.6")），$B C = sqrt(3^2 + 4^2) = 5$。面积：$frac(1, 2) times 5 times A D = frac(1, 2) times 3 times 4 = 6$，所以 $A D = frac(12, 5) = 2.4$。
+  + 由勾股定理（#secref("6.8")），$B C = sqrt(3^2 + 4^2) = 5$。面积：$frac(1, 2) times 5 times A D = frac(1, 2) times 3 times 4 = 6$，所以 $A D = frac(12, 5) = 2.4$。
   + $angle A + angle B + angle C = 180 degree$，即 $2 angle B + angle B + 3 angle B = 180 degree$，$6 angle B = 180 degree$，$angle B = 30 degree$。所以 $angle A = 60 degree$，$angle B = 30 degree$，$angle C = 90 degree$。
+]
+
+=== 角平分线的性质
+
+#blueprint[
+  *性质定理*：角平分线上的点到角的两边距离相等。
+
+  *逆定理*：到角的两边距离相等的点在角平分线上。
+
+  *证明思路*：设 $P$ 是 $angle A O B$ 的平分线上一点，过 $P$ 分别向 $O A$、$O B$ 作垂线段 $P D$、$P E$。在 $triangle O D P$ 和 $triangle O E P$ 中：$angle D O P = angle E O P$（角平分线定义），$O P = O P$（公共边），$angle O D P = angle O E P = 90 degree$。由 AAS 全等，得 $P D = P E$。
+
+  *应用*：三角形三条角平分线交于一点，这个点叫*内心*（I），它到三条边的距离相等，是三角形内切圆的圆心。
 ]
