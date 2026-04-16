@@ -82,8 +82,8 @@
   + 面积比 $= (3/5)^2 = 9/25$，较大面积 $= 18 times 25/9 = 50$ cm²
   + 面积 $= frac(120, 360) pi r^2 = frac(1, 3) pi times 36 = 12pi$；弧长 $= frac(120, 360) times 2pi times 6 = 4pi$
   + 对角线 $= sqrt(8^2 + 5^2 + 3^2) = sqrt(98) = 7sqrt(2)$
-  + 在 $triangle A B C$ 和 $triangle B A D$ 中：$angle A = angle B$，$B C = A D$，$A B = B A$（公共边）→ AAS（两角一边）全等
-  + $A E = sqrt(4^2 + 2^2) = sqrt(20) = 2sqrt(5)$；$angle D A E$：$tan = frac(D E, A D) = frac(2, 4) = frac(1, 2)$（其中 $D E = B E = 2$，$A D = 4$）
+  + 在 $triangle A B C$ 和 $triangle B A D$ 中：$angle A = angle B$（已知），$angle C = angle D$（已知），$B C = A D$（已知）→ AAS（两角一对边）全等
+  + $A E = sqrt(4^2 + 2^2) = sqrt(20) = 2sqrt(5)$；$angle D A E = 90 degree - angle B A E$，$tan(angle B A E) = frac(B E, A B) = frac(2, 4) = frac(1, 2)$，故 $tan(angle D A E) = frac(A B, B E) = frac(4, 2) = 2$
   + 高 $= sqrt(a^2 - (a/2)^2) = sqrt(3a^2/4) = frac(sqrt(3), 2) a$
   + $A B = 4$，$A C = sqrt(4+12) = 4$，$B C = sqrt(4+12) = 4$，三边相等 ✓
 
