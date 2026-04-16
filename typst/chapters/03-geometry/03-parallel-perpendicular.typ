@@ -1,4 +1,5 @@
 #import "../../lib/theme.typ": *
+#import "../../lib/diagram-packages.typ": cetz
 
 == §3.3 平行与垂直 <sec-3-3>
 
@@ -26,18 +27,17 @@
 在同一平面内，不相交的两条直线叫做平行线。直线 a 与直线 b 平行，记作 a ∥ b。
 
 #figure(caption: [平行线 a ∥ b：同一平面内不相交的两条直线])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    a：水平直线
+  #cetz.canvas({
+    import cetz.draw: *
 
-    b：另一条水平直线
+    // Line a (top)
+    line((-3, 1), (3, 1), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    content((3.3, 1), anchor: "west", text(9pt)[$a$])
 
-    两线不相交，保持等距
-  ]
+    // Line b (bottom)
+    line((-3, -1), (3, -1), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    content((3.3, -1), anchor: "west", text(9pt)[$b$])
+  })
 ]
 
 平行公理：经过直线外一点，有且只有一条直线与已知直线平行。
@@ -67,20 +67,44 @@
 - 同旁内角：在截线同侧、在两条被截线之间。
 
 #figure(caption: [截线 l 与直线 a、b 相交形成 8 个角])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    截线 l 依次截得两个交点 A、B
+  #cetz.canvas({
+    import cetz.draw: *
+    import cetz.angle: angle
 
-    角 1 与 5：同位角
+    // Line a (top, y=1.5)
+    line((-3, 1.5), (3, 1.5), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    content((3.3, 1.5), anchor: "west", text(9pt)[$a$])
 
-    角 4 与 6：内错角
+    // Line b (bottom, y=-1.5)
+    line((-3, -1.5), (3, -1.5), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    content((3.3, -1.5), anchor: "west", text(9pt)[$b$])
 
-    角 3 与 5：同旁内角
-  ]
+    // Transversal l: cuts a at P=(0.75, 1.5) and b at Q=(-0.75, -1.5)
+    line((-1.5, -3), (1.5, 3), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    content((1.7, 3), anchor: "west", text(9pt)[$l$])
+
+    // Named intersection points and ray directions
+    let P = (0.75, 1.5)
+    let Q = (-0.75, -1.5)
+    let right-a = (3, 1.5)
+    let left-a = (-3, 1.5)
+    let right-b = (3, -1.5)
+    let left-b = (-3, -1.5)
+    let trans-up = (1.5, 3)
+    let trans-down = (-1.5, -3)
+
+    // 8 angles at top intersection P (CCW ordering for each sector)
+    angle(P, right-a, trans-up, label: text(7pt)[$1$], radius: 0.4, stroke: 0.5pt + blue)
+    angle(P, trans-up, left-a, label: text(7pt)[$2$], radius: 0.4, stroke: 0.5pt + blue)
+    angle(P, left-a, trans-down, label: text(7pt)[$3$], radius: 0.4, stroke: 0.5pt + blue)
+    angle(P, trans-down, right-a, label: text(7pt)[$4$], radius: 0.4, stroke: 0.5pt + blue)
+
+    // 8 angles at bottom intersection Q
+    angle(Q, right-b, trans-up, label: text(7pt)[$5$], radius: 0.4, stroke: 0.5pt + blue)
+    angle(Q, trans-up, left-b, label: text(7pt)[$6$], radius: 0.4, stroke: 0.5pt + blue)
+    angle(Q, left-b, trans-down, label: text(7pt)[$7$], radius: 0.4, stroke: 0.5pt + blue)
+    angle(Q, trans-down, right-b, label: text(7pt)[$8$], radius: 0.4, stroke: 0.5pt + blue)
+  })
 ]
 
 平行线的判定方法：
@@ -133,50 +157,118 @@
 - 例 3：AB ∥ CD，∠A = 40°，∠C = 30°，则 ∠AEC = 70°。
 
 #figure(caption: [a ∥ b，∠1 = 65°；同位角 ∠2 = 65°；同旁内角 ∠3 = 115°])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    已知 a ∥ b
+  #cetz.canvas({
+    import cetz.draw: *
+    import cetz.angle: angle
 
-    ∠2 与 ∠1 同位，所以相等
+    // Line a (top, y=1.5)
+    line((-3, 1.5), (3, 1.5), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    content((3.3, 1.5), anchor: "west", text(9pt)[$a$])
 
-    ∠3 与 ∠1 同旁内，所以互补
-  ]
+    // Line b (bottom, y=-1.5)
+    line((-3, -1.5), (3, -1.5), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    content((3.3, -1.5), anchor: "west", text(9pt)[$b$])
+
+    // Transversal
+    line((-1.5, -3), (1.5, 3), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    content((1.7, 3), anchor: "west", text(9pt)[$l$])
+
+    // Named points
+    let P = (0.75, 1.5)       // top intersection
+    let Q = (-0.75, -1.5)     // bottom intersection
+    let right-a = (3, 1.5)
+    let left-b = (-3, -1.5)
+    let right-b = (3, -1.5)
+    let trans-up = (1.5, 3)
+
+    // ∠1 = 65° at top intersection (between line-a-right and transversal-up)
+    angle(P, right-a, trans-up, label: text(7pt)[$angle 1$], radius: 0.5, stroke: 0.5pt + blue)
+    content((0.75 + 0.75, 1.5 + 0.3), text(8pt, fill: blue)[$65°$])
+
+    // ∠2 = 65° at bottom intersection (corresponding angle)
+    angle(Q, right-b, trans-up, label: text(7pt)[$angle 2$], radius: 0.5, stroke: 0.5pt + blue)
+    content((-0.75 + 0.75, -1.5 + 0.3), text(8pt, fill: blue)[$65°$])
+
+    // ∠3 = 115° at bottom (co-interior angle, between transversal-up and line-b-left)
+    angle(Q, trans-up, left-b, label: text(7pt)[$angle 3$], radius: 0.5, stroke: 0.5pt + blue)
+    content((-0.75 - 0.5, -1.5 + 0.6), text(8pt, fill: blue)[$115°$])
+  })
 ]
 
 #figure(caption: [AB ∥ CD，∠ABE = 50°，∠DCE = 30°，求 ∠BEC])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    过 E 作辅助平行线
+  #cetz.canvas({
+    import cetz.draw: *
 
-    两个内错角分别带来 50° 与 30°
+    // AB (top line, y=2)
+    line((-3, 2), (3, 2), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    content((-3.3, 2), anchor: "east", text(9pt)[$A$])
+    content((3.3, 2), anchor: "west", text(9pt)[$B$])
 
-    所以 ∠BEC = 80°
-  ]
+    // CD (bottom line, y=-2)
+    line((-3, -2), (3, -2), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    content((-3.3, -2), anchor: "east", text(9pt)[$C$])
+    content((3.3, -2), anchor: "west", text(9pt)[$D$])
+
+    // Point E between the lines
+    let ex = 0
+    let ey = 0
+    circle((ex, ey), radius: 0.05, fill: black, stroke: none)
+    content((ex + 0.25, ey), anchor: "west", text(9pt)[$E$])
+
+    // Line BE: from B(3,2) to E(0,0)
+    line((3, 2), (ex, ey), stroke: 0.7pt + black)
+    // Line CE: from C(-3,-2) to E(0,0)
+    line((-3, -2), (ex, ey), stroke: 0.7pt + black)
+
+    // Dashed auxiliary line through E parallel to AB and CD
+    line((-2.5, ey), (2.5, ey), stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+
+    // Angle labels
+    // ∠ABE = 50° at B
+    content((2.2, 1.75), text(8pt, fill: blue)[$50°$])
+    // ∠DCE = 30° at C
+    content((-2.2, -1.75), text(8pt, fill: blue)[$30°$])
+    // ∠BEC = 80° at E
+    content((ex - 0.7, ey + 0.5), text(8pt, fill: blue)[$80°$])
+  })
 ]
 
 #figure(caption: [AB ∥ CD，∠A = 40°，∠C = 30°，求 ∠AEC = 70°])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    过 E 作辅助平行线
+  #cetz.canvas({
+    import cetz.draw: *
 
-    ∠A 与对应角相等，得 40°
+    // AB (top line, y=2)
+    line((-3, 2), (3, 2), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    content((-3.3, 2), anchor: "east", text(9pt)[$A$])
+    content((3.3, 2), anchor: "west", text(9pt)[$B$])
 
-    ∠C 与对应角相等，得 30°
+    // CD (bottom line, y=-2)
+    line((-3, -2), (3, -2), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    content((-3.3, -2), anchor: "east", text(9pt)[$C$])
+    content((3.3, -2), anchor: "west", text(9pt)[$D$])
 
-    所以 ∠AEC = 70°
-  ]
+    // Point E between the lines (right side)
+    let ex = 1.5
+    let ey = 0
+    circle((ex, ey), radius: 0.05, fill: black, stroke: none)
+    content((ex + 0.25, ey), anchor: "west", text(9pt)[$E$])
+
+    // Line AE: from A(-3,2) to E
+    line((-3, 2), (ex, ey), stroke: 0.7pt + black)
+    // Line CE: from C(-3,-2) to E
+    line((-3, -2), (ex, ey), stroke: 0.7pt + black)
+
+    // Dashed auxiliary line through E parallel to AB and CD
+    line((-1.5, ey), (3, ey), stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+
+    // Angle labels
+    // ∠A = 40° at A
+    content((-2.1, 1.75), text(8pt, fill: blue)[$40°$])
+    // ∠C = 30° at C
+    content((-2.1, -1.75), text(8pt, fill: blue)[$30°$])
+    // ∠AEC = 70° at E
+    content((ex - 1, ey + 0.4), text(8pt, fill: blue)[$70°$])
+  })
 ]
 
 *关键总结*
@@ -203,16 +295,25 @@
 当两条直线相交所成的角为 90° 时，这两条直线互相垂直。其中一条直线叫做另一条直线的垂线，交点叫做垂足。直线 a 与直线 b 垂直，记作 a ⟂ b。
 
 #figure(caption: [a ⟂ b：直线 a 与直线 b 垂直，交点 O 为垂足])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    两条直线在 O 处成直角
+  #cetz.canvas({
+    import cetz.draw: *
 
-    a 垂直于 b
-  ]
+    // Line a (horizontal)
+    line((-2.5, 0), (2.5, 0), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    content((2.7, 0), anchor: "west", text(9pt)[$a$])
+
+    // Line b (vertical)
+    line((0, -2.5), (0, 2.5), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    content((0, 2.7), anchor: "south", text(9pt)[$b$])
+
+    // Right angle mark (small square at origin)
+    line((0.25, 0), (0.25, 0.25), stroke: 0.5pt + black)
+    line((0.25, 0.25), (0, 0.25), stroke: 0.5pt + black)
+
+    // Point O at intersection
+    circle((0, 0), radius: 0.05, fill: black, stroke: none)
+    content((0.2, -0.25), anchor: "north-west", text(9pt)[$O$])
+  })
 ]
 
 *关键总结*
@@ -233,16 +334,38 @@
 从直线外一点到这条直线的各条连线中，垂线段最短。结论可以写成：若 PH ⟂ l，且 A 在 l 上且 A ≠ H，则 PH < PA。点到直线的距离，就是从点到这条直线的垂线段长度。
 
 #figure(caption: [垂线段最短：PH ⟂ l，PH 是点 P 到直线 l 的距离])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    从 P 到直线 l 的垂线段是 PH
+  #cetz.canvas({
+    import cetz.draw: *
 
-    对任意其他连线 PA，都有 PH < PA
-  ]
+    // Line l (horizontal)
+    line((-2, 0), (4, 0), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    content((4.3, 0), anchor: "west", text(9pt)[$l$])
+
+    // Point P above the line
+    circle((2, 2.5), radius: 0.05, fill: black, stroke: none)
+    content((2, 2.7), anchor: "south", text(9pt)[$P$])
+
+    // Foot H on line l (directly below P)
+    circle((2, 0), radius: 0.05, fill: black, stroke: none)
+    content((2, -0.25), anchor: "north", text(9pt)[$H$])
+
+    // Perpendicular line PH (solid)
+    line((2, 2.5), (2, 0), stroke: 0.7pt + black)
+
+    // Right angle mark at H
+    line((2.25, 0), (2.25, 0.25), stroke: 0.5pt + black)
+    line((2.25, 0.25), (2, 0.25), stroke: 0.5pt + black)
+
+    // Point A on line l (to the left)
+    circle((-0.5, 0), radius: 0.05, fill: black, stroke: none)
+    content((-0.5, -0.25), anchor: "north", text(9pt)[$A$])
+
+    // Dashed line PA
+    line((2, 2.5), (-0.5, 0), stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+
+    // Label PH < PA
+    content((3.2, 1.25), text(8pt)[$P H < P A$])
+  })
 ]
 
 两条平行线之间的距离处处相等。三角形中，顶点到对边的垂线段就是高。

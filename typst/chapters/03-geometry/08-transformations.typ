@@ -1,4 +1,5 @@
 #import "../../lib/theme.typ": *
+#import "../../lib/diagram-packages.typ": cetz, fletcher
 
 == §3.8 图形变换 <sec-3-8>
 
@@ -23,17 +24,38 @@
 如果把一个图形沿一条直线折叠后，直线两侧的部分能够完全重合，则这个图形是*轴对称图形*，这条直线叫做*对称轴*。
 
 #figure(caption: [轴对称：对应点到对称轴的距离相等])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    *关键关系*
-    - 对应点连线被对称轴垂直平分
-    - 对应线段相等，对应角相等
-    - 典型应用：最短路径
-  ]
+  #cetz.canvas({
+    import cetz.draw: *
+
+    // Axis of symmetry (vertical dashed line at x=0)
+    line((0, -0.5), (0, 3), stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+    content((0.15, 3.2), anchor: "south-west", padding: 0.1, text(8pt)[对称轴])
+
+    // Left triangle
+    let L1 = (-3, 0)
+    let L2 = (-1, 0)
+    let L3 = (-2, 2)
+    line(L1, L2, L3, close: true, stroke: 0.7pt + black, fill: rgb("#E8F1FF"))
+
+    // Right triangle (mirror image)
+    let R1 = (3, 0)
+    let R2 = (1, 0)
+    let R3 = (2, 2)
+    line(R1, R2, R3, close: true, stroke: 0.7pt + black, fill: rgb("#E8F1FF"))
+
+    // Dashed lines connecting corresponding vertices
+    line(L1, R1, stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+    line(L2, R2, stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+    line(L3, R3, stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+
+    // Vertex labels
+    content((-3.2, -0.15), anchor: "north-east", padding: 0.1, text(9pt)[$A$])
+    content((-0.8, -0.15), anchor: "north-west", padding: 0.1, text(9pt)[$B$])
+    content((-2, 2.2), anchor: "south", padding: 0.1, text(9pt)[$C$])
+    content((3.2, -0.15), anchor: "north-west", padding: 0.1, text(9pt)[$A'$])
+    content((0.8, -0.15), anchor: "north-east", padding: 0.1, text(9pt)[$B'$])
+    content((2, 2.2), anchor: "south", padding: 0.1, text(9pt)[$C'$])
+  })
 ]
 
 轴对称的性质：
@@ -80,17 +102,38 @@
 如果把一个图形绕着某一个点旋转 $180°$ 后，与原图形重合，则这个图形是*中心对称图形*，这个点叫做*对称中心*。
 
 #figure(caption: [中心对称：对应点连线经过对称中心])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    *关键关系*
-    - 对应点的连线都经过对称中心
-    - 对应点关于对称中心互为中点
-    - 对应线段平行且相等
-  ]
+  #cetz.canvas({
+    import cetz.draw: *
+
+    // Original triangle (upper-left)
+    let A = (-2, 1)
+    let B = (-3, 2)
+    let C = (-1, 2.5)
+    line(A, B, C, close: true, stroke: 0.7pt + black, fill: rgb("#E8F1FF"))
+
+    // 180-degree rotated image (lower-right)
+    let A2 = (2, -1)
+    let B2 = (3, -2)
+    let C2 = (1, -2.5)
+    line(A2, B2, C2, close: true, stroke: 0.7pt + black, fill: rgb("#FFF3E0"))
+
+    // Center of symmetry O
+    circle((0, 0), radius: 0.06, fill: black, stroke: none)
+    content((0.2, 0.2), anchor: "south-west", padding: 0.1, text(9pt)[$O$])
+
+    // Dashed lines through O connecting corresponding vertices
+    line(A, A2, stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+    line(B, B2, stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+    line(C, C2, stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+
+    // Vertex labels
+    content((-2.15, 0.75), anchor: "north-east", padding: 0.1, text(9pt)[$A$])
+    content((-3.2, 2.1), anchor: "east", padding: 0.1, text(9pt)[$B$])
+    content((-0.8, 2.7), anchor: "south", padding: 0.1, text(9pt)[$C$])
+    content((2.15, -0.75), anchor: "south-west", padding: 0.1, text(9pt)[$A'$])
+    content((3.2, -2.1), anchor: "west", padding: 0.1, text(9pt)[$B'$])
+    content((0.8, -2.7), anchor: "north", padding: 0.1, text(9pt)[$C'$])
+  })
 ]
 
 常见中心对称图形：平行四边形、矩形、菱形、正方形、圆、正偶数边形。
@@ -131,17 +174,37 @@
 将一个图形沿某个方向移动一定的距离，这种变换叫做*平移*。
 
 #figure(caption: [平移变换：对应点按同一向量移动])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    *关键关系*
-    - 对应点连线平行且相等
-    - 对应线段平行且相等
-    - 对应角相等
-  ]
+  #cetz.canvas({
+    import cetz.draw: *
+
+    // Original triangle
+    let A = (0, 0)
+    let B = (2, 0)
+    let C = (1, 1.5)
+    line(A, B, C, close: true, stroke: 0.7pt + black, fill: rgb("#E8F1FF"))
+
+    // Translated triangle (shifted by (3, 1))
+    let A2 = (3, 1)
+    let B2 = (5, 1)
+    let C2 = (4, 2.5)
+    line(A2, B2, C2, close: true, stroke: 0.7pt + black, fill: rgb("#FFF3E0"))
+
+    // Arrows from original to translated vertices
+    line(A, A2, stroke: 0.5pt + black, mark: (end: ">", fill: black))
+    line(B, B2, stroke: 0.5pt + black, mark: (end: ">", fill: black))
+    line(C, C2, stroke: 0.5pt + black, mark: (end: ">", fill: black))
+
+    // Vertex labels
+    content((-0.15, -0.25), anchor: "north-east", padding: 0.1, text(9pt)[$A$])
+    content((2.15, -0.25), anchor: "north-west", padding: 0.1, text(9pt)[$B$])
+    content((1, 1.75), anchor: "south", padding: 0.1, text(9pt)[$C$])
+    content((2.85, 0.75), anchor: "north-east", padding: 0.1, text(9pt)[$A'$])
+    content((5.15, 0.75), anchor: "north-west", padding: 0.1, text(9pt)[$B'$])
+    content((4, 2.75), anchor: "south", padding: 0.1, text(9pt)[$C'$])
+
+    // Translation vector label
+    content((1.8, 0.85), anchor: "south", padding: 0.1, text(8pt)[平移向量])
+  })
 ]
 
 在坐标平面中，将图形向右平移 $a$ 个单位、向上平移 $b$ 个单位，则每个点的坐标变化为
@@ -186,17 +249,41 @@ $(x, y) → (x + a, y + b)$
 将一个图形绕一个定点（*旋转中心*）转过一定的*旋转角*，这种变换叫做*旋转*。
 
 #figure(caption: [旋转变换：绕中心旋转后形状不变])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    *关键关系*
-    - 旋转不改变形状和大小
-    - 对应点到旋转中心的距离相等
-    - 对应点与旋转中心的连线所成角等于旋转角
-  ]
+  #cetz.canvas({
+    import cetz.draw: *
+
+    // Center of rotation O
+    circle((0, 0), radius: 0.06, fill: black, stroke: none)
+    content((-0.25, -0.25), anchor: "north-east", padding: 0.1, text(9pt)[$O$])
+
+    // Original triangle (light blue fill)
+    let A = (2, 0)
+    let B = (3, 0)
+    let C = (2.5, 1)
+    line(A, B, C, close: true, stroke: 0.7pt + black, fill: rgb("#E8F1FF"))
+
+    // Rotated triangle by 60 degrees counterclockwise (light orange fill)
+    // Rotation: x' = x cos60 - y sin60, y' = x sin60 + y cos60
+    // cos60 = 0.5, sin60 = 0.866
+    let A2 = (1, 1.732)           // (2*0.5 - 0*0.866, 2*0.866 + 0*0.5)
+    let B2 = (1.5, 2.598)         // (3*0.5 - 0*0.866, 3*0.866 + 0*0.5)
+    let C2 = (0.384, 2.366)       // (2.5*0.5 - 1*0.866, 2.5*0.866 + 1*0.5)
+    line(A2, B2, C2, close: true, stroke: 0.7pt + black, fill: rgb("#FFF3E0"))
+
+    // Curved arrow showing rotation from OA to OA'
+    arc((0, 0), start: 0deg, stop: 60deg, radius: 1.6, stroke: 0.5pt + blue, mark: (end: ">", fill: blue))
+
+    // Rotation angle label
+    content((1.3, 0.65), anchor: "south-west", padding: 0.1, text(8pt)[$60°$])
+
+    // Vertex labels
+    content((2, -0.25), anchor: "north", padding: 0.1, text(9pt)[$A$])
+    content((3.15, -0.25), anchor: "north-west", padding: 0.1, text(9pt)[$B$])
+    content((2.5, 1.2), anchor: "south", padding: 0.1, text(9pt)[$C$])
+    content((0.8, 1.6), anchor: "east", padding: 0.1, text(9pt)[$A'$])
+    content((1.65, 2.75), anchor: "south-west", padding: 0.1, text(9pt)[$B'$])
+    content((0.15, 2.55), anchor: "east", padding: 0.1, text(9pt)[$C'$])
+  })
 ]
 
 旋转的三要素：*旋转中心*、*旋转方向*、*旋转角度*。

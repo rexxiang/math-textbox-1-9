@@ -1,4 +1,6 @@
 #import "../../lib/theme.typ": *
+#import "../../lib/diagram-packages.typ": cetz, fletcher
+#import "../../lib/geometry-helpers.typ": equal-angle
 
 == §3.4 三角形 <sec-3-4>
 
@@ -38,18 +40,42 @@
 △ABC 的三个内角之和等于 180°。一个常用证明是：过顶点 A 作直线 DE ∥ BC，则内错角相等，三角形三个角与平角关系可得 ∠A + ∠B + ∠C = 180°。
 
 #figure(caption: [三角形内角和定理证明：过 A 作 BC 的平行线])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    过 A 作 DE ∥ BC
+  #cetz.canvas({
+    import cetz.draw: *
+    import cetz.angle: angle
 
-    ∠DAB = ∠B，∠EAC = ∠C
+    let B = (0, 0)
+    let C = (5, 0)
+    let A = (2, 3)
+    let D = (-0.8, 3)
+    let E = (4.5, 3)
 
-    所以 ∠A + ∠B + ∠C = 180°
-  ]
+    // Triangle sides
+    line(B, C, stroke: 0.7pt + black)
+    line(C, A, stroke: 0.7pt + black)
+    line(A, B, stroke: 0.7pt + black)
+
+    // Dashed parallel line DE through A
+    line(D, E, stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+
+    // ∠B at vertex B (red) — with alternate interior angle ∠1 at A
+    angle(B, C, A, label: text(7pt, fill: red)[$∠B$], radius: 0.5, stroke: 0.5pt + red)
+    angle(A, D, B, label: text(7pt, fill: red)[$∠1$], radius: 0.5, stroke: 0.5pt + red)
+
+    // ∠C at vertex C (blue) — with alternate interior angle ∠2 at A
+    angle(C, B, A, label: text(7pt, fill: blue)[$∠C$], radius: 0.5, stroke: 0.5pt + blue)
+    angle(A, C, E, label: text(7pt, fill: blue)[$∠2$], radius: 0.5, stroke: 0.5pt + blue)
+
+    // ∠A at vertex A (green, interior angle of triangle)
+    angle(A, B, C, radius: 0.5, stroke: 0.5pt + green, direction: "cw")
+
+    // Labels
+    content(B, anchor: "north-east", padding: 0.15, text(9pt)[$B$])
+    content(C, anchor: "north-west", padding: 0.15, text(9pt)[$C$])
+    content(A, anchor: "south", padding: 0.15, text(9pt)[$A$])
+    content(D, anchor: "south-east", padding: 0.15, text(9pt)[$D$])
+    content(E, anchor: "south-west", padding: 0.15, text(9pt)[$E$])
+  })
 ]
 
 *典型例题*
@@ -122,18 +148,39 @@
 SSA 不能判定全等。
 
 #figure(caption: [SSA 反例：相同的两边和非夹角无法唯一确定三角形])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    同样的 AB、同样的角 A
+  #cetz.canvas({
+    import cetz.draw: *
+    import cetz.angle: angle
 
-    但 C 的位置可以有两个
+    let A = (0, 0)
+    let B = (3, 0)
+    let C1 = (3.8, 2.2)
+    let C2 = (1.2, 2.2)
+    let ray-end = (5, 2.89)
 
-    所以 SSA 无效
-  ]
+    // Shared side AB
+    line(A, B, stroke: 0.7pt + black)
+
+    // Angle arc at A
+    angle(A, B, ray-end, label: text(7pt)[$∠A$], radius: 0.5, stroke: 0.5pt + blue)
+
+    // Ray from A showing the angle direction
+    line(A, ray-end, stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+
+    // Triangle 1: A-B-C1 (acute)
+    line(B, C1, stroke: 0.7pt + black)
+    line(A, C1, stroke: 0.7pt + black)
+
+    // Triangle 2: A-B-C2 (obtuse) — dashed to distinguish
+    line(B, C2, stroke: (paint: blue, thickness: 0.7pt, dash: "dash-dotted"))
+    line(A, C2, stroke: (paint: blue, thickness: 0.7pt, dash: "dash-dotted"))
+
+    // Labels
+    content(A, anchor: "north-east", padding: 0.15, text(9pt)[$A$])
+    content(B, anchor: "north-west", padding: 0.15, text(9pt)[$B$])
+    content(C1, anchor: "south-west", padding: 0.15, text(9pt)[$C_1$])
+    content(C2, anchor: "south-east", padding: 0.15, text(9pt)[$C_2$])
+  })
 ]
 
 *典型例题*
@@ -143,19 +190,107 @@ SSA 不能判定全等。
 - 例 3：直角 △ACB 和直角 △ADB 中，若 AB 为公共斜边且 AC = AD，则两三角形全等（HL）。
 
 #figure(caption: [SAS：AB = DE，∠A = ∠D，AC = DF])[
-  #box(inset: 8pt, fill: luma(248), stroke: (paint: luma(200), thickness: 0.6pt), radius: 3pt)[
-    两边和夹角对应相等
+  #cetz.canvas({
+    import cetz.draw: *
+    import cetz.angle: angle
 
-    可以判定两三角形全等
-  ]
+    // Left triangle △ABC
+    let A = (0, 0)
+    let B = (3, 0)
+    let C = (0.8, 2.2)
+
+    line(A, B, stroke: 0.7pt + black)
+    line(B, C, stroke: 0.7pt + black)
+    line(C, A, stroke: 0.7pt + black)
+
+    // Tick mark on AB (single tick)
+    line((1.4, -0.12), (1.6, 0.12), stroke: 0.6pt + black)
+
+    // Tick mark on AC (double tick)
+    line((0.35, 0.98), (0.47, 1.22), stroke: 0.6pt + black)
+    line((0.3, 1.08), (0.42, 1.32), stroke: 0.6pt + black)
+
+    // Angle arc at A
+    angle(A, B, C, stroke: 0.5pt + blue, radius: 0.45)
+
+    content(A, anchor: "north-east", padding: 0.15, text(9pt)[$A$])
+    content(B, anchor: "north-west", padding: 0.15, text(9pt)[$B$])
+    content(C, anchor: "south", padding: 0.15, text(9pt)[$C$])
+
+    // Right triangle △DEF (offset by 5)
+    let D = (5, 0)
+    let E = (8, 0)
+    let F = (5.8, 2.2)
+
+    line(D, E, stroke: 0.7pt + black)
+    line(E, F, stroke: 0.7pt + black)
+    line(F, D, stroke: 0.7pt + black)
+
+    // Tick mark on DE (single tick)
+    line((6.4, -0.12), (6.6, 0.12), stroke: 0.6pt + black)
+
+    // Tick mark on DF (double tick)
+    line((5.35, 0.98), (5.47, 1.22), stroke: 0.6pt + black)
+    line((5.3, 1.08), (5.42, 1.32), stroke: 0.6pt + black)
+
+    // Angle arc at D
+    angle(D, E, F, stroke: 0.5pt + blue, radius: 0.45)
+
+    content(D, anchor: "north-east", padding: 0.15, text(9pt)[$D$])
+    content(E, anchor: "north-west", padding: 0.15, text(9pt)[$E$])
+    content(F, anchor: "south", padding: 0.15, text(9pt)[$F$])
+  })
 ]
 
 #figure(caption: [AAS：∠A = ∠D，∠B = ∠E，BC = EF])[
-  #box(inset: 8pt, fill: luma(248), stroke: (paint: luma(200), thickness: 0.6pt), radius: 3pt)[
-    两个角与一条对应边
+  #cetz.canvas({
+    import cetz.draw: *
+    import cetz.angle: angle
 
-    可以判定两三角形全等
-  ]
+    // Left triangle △ABC
+    let A = (0, 2.2)
+    let B = (0, 0)
+    let C = (2.8, 0)
+
+    line(A, B, stroke: 0.7pt + black)
+    line(B, C, stroke: 0.7pt + black)
+    line(C, A, stroke: 0.7pt + black)
+
+    // Single arc at A
+    angle(A, C, B, stroke: 0.5pt + blue, radius: 0.5, direction: "near")
+
+    // Double arc at B
+    equal-angle(B, C, A, n: 2, stroke: 0.5pt + red, radius: 0.45, gap: 0.07)
+
+    // Tick mark on BC
+    line((1.3, -0.12), (1.5, 0.12), stroke: 0.6pt + black)
+
+    content(A, anchor: "south", padding: 0.15, text(9pt)[$A$])
+    content(B, anchor: "north-east", padding: 0.15, text(9pt)[$B$])
+    content(C, anchor: "north-west", padding: 0.15, text(9pt)[$C$])
+
+    // Right triangle △DEF (offset by 5)
+    let D = (5, 2.2)
+    let E = (5, 0)
+    let F = (7.8, 0)
+
+    line(D, E, stroke: 0.7pt + black)
+    line(E, F, stroke: 0.7pt + black)
+    line(F, D, stroke: 0.7pt + black)
+
+    // Single arc at D
+    angle(D, F, E, stroke: 0.5pt + blue, radius: 0.5, direction: "near")
+
+    // Double arc at E
+    equal-angle(E, F, D, n: 2, stroke: 0.5pt + red, radius: 0.45, gap: 0.07)
+
+    // Tick mark on EF
+    line((6.3, -0.12), (6.5, 0.12), stroke: 0.6pt + black)
+
+    content(D, anchor: "south", padding: 0.15, text(9pt)[$D$])
+    content(E, anchor: "north-east", padding: 0.15, text(9pt)[$E$])
+    content(F, anchor: "north-west", padding: 0.15, text(9pt)[$F$])
+  })
 ]
 
 *关键总结*
@@ -184,16 +319,39 @@ SSA 不能判定全等。
 等腰三角形：有两条边相等的三角形。相等的两边叫做腰，第三边叫做底边，两腰所夹的角叫做顶角，底边上的两个角叫做底角。
 
 #figure(caption: [等腰三角形：AB = AC，底角 ∠B = ∠C])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    腰 AB 与 AC 相等
+  #cetz.canvas({
+    import cetz.draw: *
 
-    底角 ∠B 与 ∠C 相等
-  ]
+    let B = (0, 0)
+    let C = (4, 0)
+    let A = (2, 3)
+
+    // Triangle sides
+    line(A, B, stroke: 0.7pt + black)
+    line(B, C, stroke: 0.7pt + black)
+    line(C, A, stroke: 0.7pt + black)
+
+    // Tick marks on AB (single tick) — midpoint of AB
+    let ab-mx = 1.0
+    let ab-my = 1.5
+    // Perpendicular to AB direction
+    line((ab-mx + 0.1, ab-my - 0.08), (ab-mx - 0.1, ab-my + 0.08), stroke: 0.6pt + black)
+
+    // Tick marks on AC (single tick) — midpoint of AC
+    let ac-mx = 3.0
+    let ac-my = 1.5
+    line((ac-mx + 0.1, ac-my + 0.08), (ac-mx - 0.1, ac-my - 0.08), stroke: 0.6pt + black)
+
+    // Equal angle arcs at B and C
+    import cetz.angle: angle
+    angle(B, C, A, stroke: 0.5pt + blue, radius: 0.5)
+    angle(C, A, B, stroke: 0.5pt + blue, radius: 0.5, direction: "near")
+
+    // Labels
+    content(B, anchor: "north-east", padding: 0.15, text(9pt)[$B$])
+    content(C, anchor: "north-west", padding: 0.15, text(9pt)[$C$])
+    content(A, anchor: "south", padding: 0.15, text(9pt)[$A$])
+  })
 ]
 
 等腰三角形的性质：等边对等角，且顶角平分线、底边中线、底边上的高三线合一。
@@ -210,16 +368,50 @@ SSA 不能判定全等。
 - 例 4：等边三角形每个角都是 60°。
 
 #figure(caption: [等腰三角形中，顶角的角平分线、底边中线、底边上的高三线合一])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    顶角平分线 = 底边中线 = 底边上的高
+  #cetz.canvas({
+    import cetz.draw: *
 
-    这三条线重合
-  ]
+    let B = (0, 0)
+    let C = (4, 0)
+    let A = (2, 3.5)
+    let D = (2, 0)  // midpoint of BC
+
+    // Triangle sides
+    line(A, B, stroke: 0.7pt + black)
+    line(B, C, stroke: 0.7pt + black)
+    line(C, A, stroke: 0.7pt + black)
+
+    // Line from A to D (the "three in one" line)
+    line(A, D, stroke: 0.7pt + red)
+
+    import cetz.angle: angle, right-angle
+
+    // Right angle mark at D
+    right-angle(D, C, A, stroke: 0.5pt + black, radius: 0.3)
+
+    // Tick marks on BD and DC showing D is midpoint
+    line((0.9, -0.12), (1.1, 0.12), stroke: 0.6pt + black)
+    line((2.9, -0.12), (3.1, 0.12), stroke: 0.6pt + black)
+
+    // Tick marks on AB and AC (equal legs)
+    line((0.9, 1.63), (1.1, 1.87), stroke: 0.6pt + black)
+    line((2.9, 1.87), (3.1, 1.63), stroke: 0.6pt + black)
+
+    // Equal angle arcs at A (bisected angle)
+    angle(A, B, D, stroke: 0.5pt + blue, radius: 0.45, direction: "near")
+    angle(A, D, C, stroke: 0.5pt + blue, radius: 0.45, direction: "near")
+
+    // Labels
+    content(B, anchor: "north-east", padding: 0.15, text(9pt)[$B$])
+    content(C, anchor: "north-west", padding: 0.15, text(9pt)[$C$])
+    content(A, anchor: "south", padding: 0.15, text(9pt)[$A$])
+    content(D, anchor: "north", padding: 0.15, text(9pt)[$D$])
+
+    // Annotation
+    content((4.5, 1.75), anchor: "west", text(7pt, fill: red)[角平分线])
+    content((4.5, 1.25), anchor: "west", text(7pt, fill: red)[中线])
+    content((4.5, 0.75), anchor: "west", text(7pt, fill: red)[高])
+  })
 ]
 
 *关键总结*
@@ -261,18 +453,49 @@ SSA 不能判定全等。
 - 面积比等于相似比的平方
 
 #figure(caption: [相似三角形 △ABC ∼ △DEF，相似比 2:1])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    形状相同，大小缩放
+  #cetz.canvas({
+    import cetz.draw: *
+    import cetz.angle: angle
 
-    对应边成比例
+    // Large triangle △ABC
+    let A = (0, 0)
+    let B = (4, 0)
+    let C = (1, 3)
 
-    对应角相等
-  ]
+    line(A, B, stroke: 0.7pt + black)
+    line(B, C, stroke: 0.7pt + black)
+    line(C, A, stroke: 0.7pt + black)
+
+    // Angle arcs on △ABC
+    angle(A, B, C, stroke: 0.5pt + blue, radius: 0.45)
+    angle(B, C, A, stroke: 0.5pt + red, radius: 0.5, direction: "near")
+    angle(C, B, A, stroke: 0.5pt + green, radius: 0.42, direction: "near")
+
+    content(A, anchor: "north-east", padding: 0.15, text(9pt)[$A$])
+    content(B, anchor: "north-west", padding: 0.15, text(9pt)[$B$])
+    content(C, anchor: "south", padding: 0.15, text(9pt)[$C$])
+
+    // Small triangle △DEF (half size, offset to the right)
+    let D = (6, 0)
+    let E = (8, 0)
+    let F = (6.5, 1.5)
+
+    line(D, E, stroke: 0.7pt + black)
+    line(E, F, stroke: 0.7pt + black)
+    line(F, D, stroke: 0.7pt + black)
+
+    // Matching angle arcs on △DEF
+    angle(D, E, F, stroke: 0.5pt + blue, radius: 0.35)
+    angle(E, F, D, stroke: 0.5pt + red, radius: 0.4, direction: "near")
+    angle(F, E, D, stroke: 0.5pt + green, radius: 0.32, direction: "near")
+
+    content(D, anchor: "north-east", padding: 0.15, text(9pt)[$D$])
+    content(E, anchor: "north-west", padding: 0.15, text(9pt)[$E$])
+    content(F, anchor: "south", padding: 0.15, text(9pt)[$F$])
+
+    // Ratio label between the two triangles
+    content((5, 1.2), text(10pt, weight: "bold")[$2 : 1$])
+  })
 ]
 
 *典型例题*
@@ -306,18 +529,62 @@ SSA 不能判定全等。
 连接三角形两边中点的线段叫做三角形的中位线。三角形中位线定理：三角形的中位线平行于第三边，且等于第三边的一半。
 
 #figure(caption: [三角形中位线定理：M、N 分别是 AB、AC 中点，则 MN ∥ BC 且 MN = 1/2 BC])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    M、N 是中点
+  #cetz.canvas({
+    import cetz.draw: *
 
-    MN ∥ BC
+    let A = (0, 3)
+    let B = (0, 0)
+    let C = (5, 0)
+    let M = (0, 1.5)     // midpoint of AB
+    let N = (2.5, 1.5)   // midpoint of AC
 
-    MN = 1/2 BC
-  ]
+    // Triangle sides
+    line(A, B, stroke: 0.7pt + black)
+    line(B, C, stroke: 0.7pt + black)
+    line(C, A, stroke: 0.7pt + black)
+
+    // Midsegment MN
+    line(M, N, stroke: 0.7pt + red)
+
+    // Dashed parallel indicators (small arrows)
+    // Arrow marks on MN and BC to show parallel
+    line((-0.3, 1.5), (-0.3, 0), stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+
+    // Tick marks on AM and MB (M is midpoint of AB)
+    line((-0.12, 2.35), (0.12, 2.15), stroke: 0.6pt + black)
+    line((-0.12, 0.85), (0.12, 0.65), stroke: 0.6pt + black)
+
+    // Tick marks on AN and NC (N is midpoint of AC)
+    // Midpoint of AN: (1.25, 2.25); midpoint of NC: (3.75, 0.75)
+    let an-mx = 1.25
+    let an-my = 2.25
+    line((an-mx - 0.1, an-my + 0.06), (an-mx + 0.1, an-my - 0.06), stroke: 0.6pt + black)
+    line((an-mx - 0.06, an-my + 0.13), (an-mx + 0.14, an-my + 0.01), stroke: 0.6pt + black)
+
+    let nc-mx = 3.75
+    let nc-my = 0.75
+    line((nc-mx - 0.1, nc-my + 0.06), (nc-mx + 0.1, nc-my - 0.06), stroke: 0.6pt + black)
+    line((nc-mx - 0.06, nc-my + 0.13), (nc-mx + 0.14, nc-my + 0.01), stroke: 0.6pt + black)
+
+    // Parallel indicator: small arrow marks on MN and BC
+    // On MN at midpoint (1.25, 1.5)
+    line((1.1, 1.6), (1.3, 1.5), stroke: 0.5pt + red)
+    line((1.1, 1.4), (1.3, 1.5), stroke: 0.5pt + red)
+    // On BC at midpoint (2.5, 0)
+    line((2.35, 0.1), (2.55, 0), stroke: 0.5pt + red)
+    line((2.35, -0.1), (2.55, 0), stroke: 0.5pt + red)
+
+    // Filled points
+    circle(M, radius: 0.05, fill: black, stroke: none)
+    circle(N, radius: 0.05, fill: black, stroke: none)
+
+    // Labels
+    content(A, anchor: "east", padding: 0.15, text(9pt)[$A$])
+    content(B, anchor: "north-east", padding: 0.15, text(9pt)[$B$])
+    content(C, anchor: "north-west", padding: 0.15, text(9pt)[$C$])
+    content(M, anchor: "east", padding: 0.2, text(9pt)[$M$])
+    content(N, anchor: "south", padding: 0.15, text(9pt)[$N$])
+  })
 ]
 
 证明思路：延长 DE 到 F，使 EF = DE，连接 CF。由全等三角形可得相应角相等，再推出四边形是平行四边形，于是 DE ∥ BC 且 DE = 1/2 BC。

@@ -17,7 +17,7 @@
   )
   set text(
     font: "Noto Sans CJK SC",
-    size: 10pt,
+    size: 11pt,
     lang: "zh",
     region: "cn",
   )

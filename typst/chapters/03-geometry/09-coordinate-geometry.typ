@@ -1,4 +1,5 @@
 #import "../../lib/theme.typ": *
+#import "../../lib/diagram-packages.typ": cetz, fletcher
 
 == §3.9 坐标几何 <sec-3-9>
 
@@ -23,17 +24,54 @@
 在平面上画两条互相垂直且有公共原点的数轴，就构成了*平面直角坐标系*（笛卡尔坐标系）。
 
 #figure(caption: [直角坐标系：点 $P(x,y)$ 由横坐标和纵坐标唯一确定])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    *基本关系*
-    - $x$ 轴水平，向右为正
-    - $y$ 轴竖直，向上为正
-    - 原点为 $O$
-  ]
+  #cetz.canvas({
+    import cetz.draw: *
+
+    // Grid lines (light gray, thin)
+    for x in range(-3, 4) {
+      line((x, -2.5), (x, 3), stroke: (paint: luma(220), thickness: 0.3pt))
+    }
+    for y in range(-2, 4) {
+      line((-3.5, y), (3.5, y), stroke: (paint: luma(220), thickness: 0.3pt))
+    }
+
+    // x-axis with arrow
+    line((-3.5, 0), (3.5, 0), stroke: 0.7pt + black, mark: (end: ">", fill: black))
+    content((3.6, -0.15), anchor: "north-west", padding: 0.1, text(9pt)[$x$])
+
+    // y-axis with arrow
+    line((0, -2.5), (0, 3), stroke: 0.7pt + black, mark: (end: ">", fill: black))
+    content((0.15, 3.1), anchor: "south-west", padding: 0.1, text(9pt)[$y$])
+
+    // Origin label
+    content((-0.25, -0.25), anchor: "north-east", padding: 0.1, text(9pt)[$O$])
+
+    // Tick marks on x-axis
+    for x in (-3, -2, -1, 1, 2, 3) {
+      line((x, -0.1), (x, 0.1), stroke: 0.5pt + black)
+      content((x, -0.3), anchor: "north", padding: 0.05, text(7pt)[#str(x)])
+    }
+
+    // Tick marks on y-axis
+    for y in (-2, -1, 1, 2) {
+      line((-0.1, y), (0.1, y), stroke: 0.5pt + black)
+      content((-0.3, y), anchor: "east", padding: 0.05, text(7pt)[#str(y)])
+    }
+
+    // Quadrant labels
+    content((1.75, 1.75), text(9pt)[第一象限])
+    content((-1.75, 1.75), text(9pt)[第二象限])
+    content((-1.75, -1.5), text(9pt)[第三象限])
+    content((1.75, -1.5), text(9pt)[第四象限])
+
+    // Sample point P(2, 1.5)
+    circle((2, 1.5), radius: 0.06, fill: black, stroke: none)
+    content((2.15, 1.65), anchor: "south-west", padding: 0.1, text(9pt)[$P(2, 1.5)$])
+
+    // Dashed projections from P to axes
+    line((2, 1.5), (2, 0), stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+    line((2, 1.5), (0, 1.5), stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+  })
 ]
 
 坐标系把平面分成四个*象限*：
@@ -224,17 +262,45 @@ $"AB" = sqrt((x_2 - x_1)^2 + (y_2 - y_1)^2)$
 ]
 
 #figure(caption: [两点间距离公式本质上是勾股定理])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    *关键关系*
-    - 水平差：$| x_2 - x_1 |$
-    - 竖直差：$| y_2 - y_1 |$
-    - 斜边：$"AB"$
-  ]
+  #cetz.canvas({
+    import cetz.draw: *
+
+    // Light axes
+    line((-0.5, 0), (5.5, 0), stroke: (paint: luma(180), thickness: 0.4pt), mark: (end: ">", fill: luma(180)))
+    line((0, -0.5), (0, 4), stroke: (paint: luma(180), thickness: 0.4pt), mark: (end: ">", fill: luma(180)))
+    content((5.6, -0.15), anchor: "north-west", padding: 0.1, text(8pt)[$x$])
+    content((0.15, 4.1), anchor: "south-west", padding: 0.1, text(8pt)[$y$])
+
+    // Points A and B
+    let A = (1, 1)
+    let B = (4, 3)
+    let C = (4, 1)  // right angle corner
+
+    // Dashed horizontal line from A to C
+    line(A, C, stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+    // Dashed vertical line from C to B
+    line(C, B, stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+
+    // Hypotenuse AB (solid)
+    line(A, B, stroke: 0.7pt + black)
+
+    // Right angle mark at C
+    line((3.7, 1), (3.7, 1.3), stroke: 0.5pt + black)
+    line((3.7, 1.3), (4, 1.3), stroke: 0.5pt + black)
+
+    // Points
+    circle(A, radius: 0.06, fill: black, stroke: none)
+    circle(B, radius: 0.06, fill: black, stroke: none)
+
+    // Point labels
+    content((0.7, 1.15), anchor: "south-east", padding: 0.1, text(9pt)[$A(1,1)$])
+    content((4.15, 3.15), anchor: "south-west", padding: 0.1, text(9pt)[$B(4,3)$])
+
+    // Side labels
+    content((2.5, 0.7), anchor: "north", padding: 0.1, text(9pt)[$|x_2 - x_1|$])
+    content((4.35, 2), anchor: "west", padding: 0.1, text(9pt)[$|y_2 - y_1|$])
+    content((2.2, 2.35), anchor: "south-east", padding: 0.1, text(9pt)[$d(A,B)$])
+  })
 ]
 
 特例：原点 $O(0,0)$ 到点 $P(x,y)$ 的距离为 $"OP" = sqrt(x^2 + y^2)$。

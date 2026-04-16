@@ -1,4 +1,5 @@
 #import "../../lib/theme.typ": *
+#import "../../lib/diagram-packages.typ": cetz, fletcher
 
 == §3.6 圆 <sec-3-6>
 
@@ -23,17 +24,50 @@
 *圆的定义*：平面上到一个定点的距离等于定长的所有点组成的图形叫做*圆*。这个定点叫做*圆心*（记作 $O$），定长叫做*半径*（记作 $r$）。以 $O$ 为圆心、$r$ 为半径的圆记作 $⊙ O$。
 
 #figure(caption: [圆的基本元素：圆心 $O$，半径 $r$，直径，弦，弧])[
-  #table(
-    columns: 2,
-    inset: 6pt,
-    align: (left, left),
-    [*元素*], [*关系*],
-    [圆心 $O$], [到圆上各点的距离都相等],
-    [半径 $r$], [OA = r],
-    [直径], [经过圆心的弦，d = 2r],
-    [弦], [连接圆上任意两点的线段],
-    [弧], [圆上两点之间的部分],
-  )
+  #cetz.canvas({
+    import cetz.draw: *
+
+    let O = (0, 0)
+    let r = 2
+
+    // Circle
+    circle(O, radius: r, stroke: 0.7pt + black)
+
+    // Center point O
+    circle(O, radius: 0.05, fill: black, stroke: none)
+    content(O, anchor: "north-east", padding: 0.15, text(9pt)[$O$])
+
+    // Radius OA
+    let A = (1.732, 1.0)  // 30 degrees
+    line(O, A, stroke: 0.7pt + blue)
+    circle(A, radius: 0.05, fill: black, stroke: none)
+    content(A, anchor: "south-west", padding: 0.15, text(9pt)[$A$])
+    content((0.7, 0.7), anchor: "south", text(7pt, fill: blue)[半径 $r$])
+
+    // Diameter (horizontal)
+    let Dl = (-2, 0)
+    let Dr = (2, 0)
+    line(Dl, Dr, stroke: 0.7pt + red)
+    circle(Dl, radius: 0.05, fill: black, stroke: none)
+    circle(Dr, radius: 0.05, fill: black, stroke: none)
+    content(Dl, anchor: "east", padding: 0.2, text(9pt)[$B$])
+    content(Dr, anchor: "west", padding: 0.2, text(9pt)[$C$])
+    content((0, -0.35), text(7pt, fill: red)[直径])
+
+    // Chord PQ (not through center)
+    let P = (-1.414, 1.414)  // 135 degrees
+    let Q = (1.414, 1.414)   // 45 degrees
+    line(P, Q, stroke: 0.7pt + green)
+    circle(P, radius: 0.05, fill: black, stroke: none)
+    circle(Q, radius: 0.05, fill: black, stroke: none)
+    content(P, anchor: "south-east", padding: 0.15, text(9pt)[$P$])
+    content(Q, anchor: "south-west", padding: 0.15, text(9pt)[$Q$])
+    content((0, 1.65), text(7pt, fill: green)[弦])
+
+    // Arc highlight between P and A (minor arc on the right)
+    arc((0, 0), start: 30deg, stop: 45deg, radius: r, stroke: 2pt + orange)
+    content((2.2, 1.5), anchor: "west", text(7pt, fill: orange)[弧])
+  })
 ]
 
 *圆的对称性*：
@@ -63,18 +97,57 @@
 反过来：平分弦（非直径）的直径垂直于该弦。
 
 #figure(caption: [垂径定理：OM 垂直于 AB，且 AM = MB])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    *关键关系*
-    - O 为圆心，OM 垂直于 AB
-    - OA = OB = r
-    - AM = MB
-    - 小弧 "BC" = BD，大弧 "AC" = AD
-  ]
+  #cetz.canvas({
+    import cetz.draw: *
+
+    let O = (0, 0)
+    let r = 2
+
+    // Circle
+    circle(O, radius: r, stroke: 0.7pt + black)
+
+    // Center O
+    circle(O, radius: 0.05, fill: black, stroke: none)
+
+    // Chord AB horizontal at y = -1
+    // Points on circle at y = -1: x = +/- sqrt(4 - 1) = +/- sqrt(3)
+    let ax = -1.732
+    let bx = 1.732
+    let A = (ax, -1)
+    let B = (bx, -1)
+    let M = (0, -1)
+
+    // Chord AB
+    line(A, B, stroke: 0.7pt + black)
+
+    // Perpendicular from O to M
+    line(O, M, stroke: 0.7pt + blue)
+
+    // Dashed lines OA and OB (radii)
+    line(O, A, stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+    line(O, B, stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+
+    // Right angle mark at M
+    line((0, -0.7), (0.3, -0.7), stroke: 0.5pt + black)
+    line((0.3, -0.7), (0.3, -1), stroke: 0.5pt + black)
+
+    // Tick marks showing AM = MB
+    // AM midpoint: (-0.866, -1)
+    line((-0.95, -1.12), (-0.78, -0.88), stroke: 0.6pt + black)
+    // MB midpoint: (0.866, -1)
+    line((0.78, -1.12), (0.95, -0.88), stroke: 0.6pt + black)
+
+    // Filled points
+    circle(A, radius: 0.05, fill: black, stroke: none)
+    circle(B, radius: 0.05, fill: black, stroke: none)
+    circle(M, radius: 0.05, fill: black, stroke: none)
+
+    // Labels
+    content(O, anchor: "south-west", padding: 0.15, text(9pt)[$O$])
+    content(A, anchor: "north-east", padding: 0.15, text(9pt)[$A$])
+    content(B, anchor: "north-west", padding: 0.15, text(9pt)[$B$])
+    content(M, anchor: "north-west", padding: 0.15, text(9pt)[$M$])
+  })
 ]
 
 设 $⊙ O$ 中，直径 AB 垂直于弦 CD 于点 M，则 CM = MD。
@@ -119,17 +192,52 @@
 *圆周角*：顶点在圆上，且两边都与圆相交的角叫做圆周角。
 
 #figure(caption: [圆心角是圆周角的 2 倍：$∠ "AOB" = 2 ∠ "APB"$])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    *关键关系*
-    - 圆心角：$2alpha$
-    - 同弧上的圆周角：$alpha$
-    - 同弧上，圆周角等于圆心角的一半
-  ]
+  #cetz.canvas({
+    import cetz.draw: *
+
+    let O = (0, 0)
+    let r = 2
+
+    // Circle
+    circle(O, radius: r, stroke: 0.7pt + black)
+
+    // Points A and B on the circle (lower part)
+    let A = (-1.732, -1.0)   // 210 degrees
+    let B = (1.732, -1.0)    // 330 degrees
+
+    // Point P on the major arc (top of circle)
+    let P = (0, 2)           // 90 degrees
+
+    // Central angle: OA and OB
+    line(O, A, stroke: 0.7pt + red)
+    line(O, B, stroke: 0.7pt + red)
+
+    // Inscribed angle: PA and PB
+    line(P, A, stroke: 0.7pt + blue)
+    line(P, B, stroke: 0.7pt + blue)
+
+    import cetz.angle: angle
+
+    // Central angle arc (∠AOB = 2α)
+    angle(O, A, B, label: text(7pt, fill: red)[$2 alpha$], radius: 0.5, stroke: 0.5pt + red, direction: "near")
+
+    // Inscribed angle arc (∠APB = α)
+    angle(P, A, B, label: text(7pt, fill: blue)[$alpha$], radius: 0.45, stroke: 0.5pt + blue, direction: "near")
+
+    // Center point
+    circle(O, radius: 0.05, fill: black, stroke: none)
+
+    // Filled points
+    circle(A, radius: 0.05, fill: black, stroke: none)
+    circle(B, radius: 0.05, fill: black, stroke: none)
+    circle(P, radius: 0.05, fill: black, stroke: none)
+
+    // Labels
+    content(O, anchor: "south-east", padding: 0.2, text(9pt)[$O$])
+    content(A, anchor: "east", padding: 0.15, text(9pt)[$A$])
+    content(B, anchor: "west", padding: 0.15, text(9pt)[$B$])
+    content(P, anchor: "south", padding: 0.15, text(9pt)[$P$])
+  })
 ]
 
 *圆周角定理*：同弧（或等弧）上的圆周角等于该弧所对的圆心角的一半，即圆周角 $= (1)/(2) ×$ 圆心角。
@@ -179,15 +287,11 @@
 #understand[
 *弧长公式*：圆心角为 $n°$ 的弧长为
 
-#align(center)[
-$l = (n pi r)/(180)$
-]
+$ l = (n pi r) / (180) $
 
 *扇形面积公式*：圆心角为 $n°$ 的扇形面积为
 
-#align(center)[
-$S = (n pi r^2)/(360)$
-]
+$ S = (n pi r^2) / (360) $
 
 也可写成 $S = (1)/(2) l r$。
 ]

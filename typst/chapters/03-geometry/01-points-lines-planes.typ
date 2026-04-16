@@ -1,4 +1,5 @@
 #import "../../lib/theme.typ": *
+#import "../../lib/diagram-packages.typ": cetz
 
 == §3.1 点、线、面 <sec-3-1>
 
@@ -43,18 +44,32 @@
 线段是连接两个点之间的最短路径，它有两个端点，有确定的长度。射线是从一个端点出发、向一个方向无限延伸的部分。直线是向两个方向无限延伸的线，没有端点，没有长度。
 
 #figure(caption: [线段、射线与直线的比较])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    *线段 AB*：A —— B，两个端点，有限长
+  #cetz.canvas({
+    import cetz.draw: *
 
-    *射线 CD*：C ——→，一个端点，向一侧无限延伸
+    // Row 1: 线段 AB (y=2)
+    content((-1.2, 2), anchor: "east", text(9pt)[线段])
+    line((0, 2), (4, 2), stroke: 0.7pt + black)
+    circle((0, 2), radius: 0.05, fill: black, stroke: none)
+    circle((4, 2), radius: 0.05, fill: black, stroke: none)
+    content((-0.15, 2), anchor: "east", padding: 0.15, text(9pt)[$A$])
+    content((4.15, 2), anchor: "west", padding: 0.15, text(9pt)[$B$])
 
-    *直线 EF*：←—— E —— F ——→，没有端点，双向无限延伸
-  ]
+    // Row 2: 射线 CD (y=1)
+    content((-1.2, 1), anchor: "east", text(9pt)[射线])
+    line((0, 1), (4, 1), stroke: 0.7pt + black, mark: (end: ">", fill: black))
+    circle((0, 1), radius: 0.05, fill: black, stroke: none)
+    content((-0.15, 1), anchor: "east", padding: 0.15, text(9pt)[$C$])
+    content((4.15, 1), anchor: "west", padding: 0.15, text(9pt)[$D$])
+
+    // Row 3: 直线 EF (y=0)
+    content((-1.2, 0), anchor: "east", text(9pt)[直线])
+    line((-0.5, 0), (4.5, 0), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    circle((0, 0), radius: 0.05, fill: black, stroke: none)
+    circle((4, 0), radius: 0.05, fill: black, stroke: none)
+    content((-0.15, 0), anchor: "east", padding: 0.15, text(9pt)[$E$])
+    content((4.15, 0), anchor: "west", padding: 0.15, text(9pt)[$F$])
+  })
 ]
 
 线段 AB（或 BA）表示以 A、B 为端点的线段。射线 AB 表示从 A 出发经过 B 方向延伸的射线，射线 AB 与射线 BA 不同。直线 AB（或 BA）表示经过 A、B 两点的直线，两者相同。
@@ -118,16 +133,26 @@
 如果点 M 在线段 AB 上，且 AM = MB，则 M 是线段 AB 的中点。此时 AM = MB = 1/2 AB，也可以写成 AB = 2AM = 2MB。
 
 #figure(caption: [中点 M：AM = MB = 1/2 AB])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    A —— M —— B
+  #cetz.canvas({
+    import cetz.draw: *
 
-    AM = MB
-  ]
+    // Line segment A to B
+    line((0, 0), (4, 0), stroke: 0.7pt + black)
+
+    // Points A, M, B
+    circle((0, 0), radius: 0.05, fill: black, stroke: none)
+    circle((2, 0), radius: 0.05, fill: black, stroke: none)
+    circle((4, 0), radius: 0.05, fill: black, stroke: none)
+
+    // Labels above points
+    content((0, 0), anchor: "south", padding: 0.15, text(9pt)[$A$])
+    content((2, 0), anchor: "south", padding: 0.15, text(9pt)[$M$])
+    content((4, 0), anchor: "south", padding: 0.15, text(9pt)[$B$])
+
+    // Tick marks for equal segments (small perpendicular lines)
+    line((1, -0.15), (1, 0.15), stroke: 0.5pt + black)
+    line((3, -0.15), (3, 0.15), stroke: 0.5pt + black)
+  })
 ]
 
 *典型例题*

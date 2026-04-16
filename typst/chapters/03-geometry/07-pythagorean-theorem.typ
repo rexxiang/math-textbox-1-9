@@ -1,4 +1,5 @@
 #import "../../lib/theme.typ": *
+#import "../../lib/diagram-packages.typ": cetz, fletcher
 
 == §3.7 勾股定理 <sec-3-7>
 
@@ -29,17 +30,53 @@ $a^2 + b^2 = c^2$
 ]
 
 #figure(caption: [勾股定理：直角三角形中 $a^2 + b^2 = c^2$])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    *示例关系*
-    - 两条直角边：$a = 4$，$b = 3$
-    - 斜边：$c = 5$
-    - $a^2 = 16$，$b^2 = 9$，$c^2 = 25$
-  ]
+  #cetz.canvas({
+    import cetz.draw: *
+
+    // Right triangle: C at origin, A above, B to the right
+    let C = (0, 0)
+    let A = (0, 3)
+    let B = (4, 0)
+
+    // Triangle
+    line(C, A, stroke: 0.7pt + black)
+    line(C, B, stroke: 0.7pt + black)
+    line(A, B, stroke: 0.7pt + black)
+
+    // Right angle mark at C
+    line((0, 0.3), (0.3, 0.3), stroke: 0.5pt + black)
+    line((0.3, 0.3), (0.3, 0), stroke: 0.5pt + black)
+
+    // Square on side a (vertical, left side: C to A)
+    let sq-a = ((-3, 0), (-3, 3), (0, 3), (0, 0))
+    line((-3, 0), (-3, 3), (0, 3), close: false, stroke: 0.7pt + black, fill: rgb("#E8F1FF"))
+    line((-3, 0), (0, 0), stroke: 0.7pt + black)
+
+    // Square on side b (horizontal, bottom: C to B)
+    line((0, 0), (4, 0), (4, -4), (0, -4), close: true, stroke: 0.7pt + black, fill: rgb("#E9F8EF"))
+
+    // Square on side c (hypotenuse: A to B)
+    // Direction perpendicular to AB, outward
+    // AB vector = (4, -3), perp outward = (3, 4) normalised * 5 = (3, 4)
+    let A2 = (3, 7)   // A + (3,4)
+    let B2 = (7, 4)   // B + (3,4)
+    line(A, A2, B2, B, close: true, stroke: 0.7pt + black, fill: rgb("#FFF3E0"))
+
+    // Labels for vertices
+    content((0, 3.25), anchor: "south", padding: 0.1, text(9pt)[$A$])
+    content((4.25, -0.1), anchor: "west", padding: 0.1, text(9pt)[$B$])
+    content((-0.25, -0.25), anchor: "north-east", padding: 0.1, text(9pt)[$C$])
+
+    // Labels for sides
+    content((-0.35, 1.5), anchor: "east", padding: 0.1, text(9pt)[$a=3$])
+    content((2, -0.35), anchor: "north", padding: 0.1, text(9pt)[$b=4$])
+    content((2.4, 1.85), anchor: "south-west", padding: 0.1, text(9pt)[$c=5$])
+
+    // Area labels inside squares
+    content((-1.5, 1.5), text(9pt)[$a^2=9$])
+    content((2, -2), text(9pt)[$b^2=16$])
+    content((5, 5.5), text(9pt)[$c^2=25$])
+  })
 ]
 
 这个定理在中国古代被称为“勾股定理”——直角三角形的短直角边叫“勾”，长直角边叫“股”，斜边叫“弦”。“勾三股四弦五”就是 $3^2 + 4^2 = 5^2$。
@@ -61,17 +98,55 @@ $a^2 + b^2 = c^2$
 *证明（赵爽弦图法）*：用四个完全相同的直角三角形（直角边为 $a$、$b$，斜边为 $c$）拼成一个大正方形。
 
 #figure(caption: [赵爽弦图证明：面积相等推出 $c^2 = a^2 + b^2$])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    *核心想法*
-    - 大正方形面积可写成 $(a+b)^2$
-    - 也可写成 $c^2 + 4 × (1)/(2) a b$
-    - 两式相等后整理得 $a^2 + b^2 = c^2$
-  ]
+  #cetz.canvas({
+    import cetz.draw: *
+
+    // Zhao Shuang diagram: outer square of side (a+b)=7, with a=3, b=4
+    // Outer square corners
+    let s = 5  // scale: use side length 5 for cleaner layout
+    let a = 2.14  // proportional a (3/7 * 5)
+    let b = 2.86  // proportional b (4/7 * 5)
+
+    // Outer square
+    let O1 = (0, 0)
+    let O2 = (s, 0)
+    let O3 = (s, s)
+    let O4 = (0, s)
+    line(O1, O2, O3, O4, close: true, stroke: 0.7pt + black)
+
+    // Inner tilted square vertices (the four points where triangles meet)
+    // Bottom-left triangle: legs along bottom (b) and left side (a)
+    let P1 = (b, 0)       // bottom edge, b from left
+    let P2 = (s, a)       // right edge, a from bottom
+    let P3 = (s - b, s)   // top edge, b from right = s-b from left
+    let P4 = (0, s - a)   // left edge, a from top = s-a from bottom
+
+    // Four triangles (filled)
+    // Bottom triangle
+    line(O1, P1, P4, close: true, stroke: 0.7pt + black, fill: rgb("#FFF3E0"))
+    // Right triangle
+    line(O2, P2, P1, close: true, stroke: 0.7pt + black, fill: rgb("#FFF3E0"))
+    // Top triangle
+    line(O3, P3, P2, close: true, stroke: 0.7pt + black, fill: rgb("#FFF3E0"))
+    // Left triangle
+    line(O4, P4, P3, close: true, stroke: 0.7pt + black, fill: rgb("#FFF3E0"))
+
+    // Inner square (filled on top)
+    line(P1, P2, P3, P4, close: true, stroke: 0.7pt + black, fill: rgb("#E8F1FF"))
+
+    // Labels
+    // Side labels on outer square
+    content((b / 2, -0.3), anchor: "north", padding: 0.1, text(9pt)[$b$])
+    content((b + (s - b) / 2, -0.3), anchor: "north", padding: 0.1, text(9pt)[$a$])
+    content((-0.3, (s - a) / 2), anchor: "east", padding: 0.1, text(9pt)[$b$])
+    content((-0.3, s - a / 2), anchor: "east", padding: 0.1, text(9pt)[$a$])
+
+    // Inner square label
+    content((s / 2, s / 2), text(10pt)[$c^2$])
+
+    // Hypotenuse label
+    content((b / 2 + 0.15, (s - a) / 2 + 0.15), anchor: "south-east", padding: 0.1, text(9pt)[$c$])
+  })
 ]
 
 将四个直角三角形排列后，大正方形的面积既等于 $c^2 + 4 × (1)/(2) a b$，也等于 $(a+b)^2$。整理即可得到 $a^2 + b^2 = c^2$。

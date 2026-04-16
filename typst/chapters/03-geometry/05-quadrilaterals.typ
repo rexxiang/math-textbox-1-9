@@ -1,4 +1,6 @@
 #import "../../lib/theme.typ": *
+#import "../../lib/diagram-packages.typ": cetz, fletcher
+#import fletcher: node, edge
 
 == §3.5 四边形 <sec-3-5>
 
@@ -70,18 +72,68 @@ n 边形的内角和公式是 $(n - 2) * 180°$。正 n 边形的每个内角是
 - 对角线互相平分
 
 #figure(caption: [平行四边形 ABCD：对角线 AC 和 BD 互相平分于点 O])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    对边平行且相等
+  #cetz.canvas({
+    import cetz.draw: *
 
-    对角线互相平分
+    let A = (0, 0)
+    let B = (4, 0)
+    let C = (5, 2.5)
+    let D = (1, 2.5)
+    let O = (2.5, 1.25)
 
-    对角相等、邻角互补
-  ]
+    // Sides
+    line(A, B, stroke: 0.7pt + black)
+    line(B, C, stroke: 0.7pt + black)
+    line(C, D, stroke: 0.7pt + black)
+    line(D, A, stroke: 0.7pt + black)
+
+    // Diagonals
+    line(A, C, stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+    line(B, D, stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+
+    // Arrow marks on AB and DC (parallel pair 1)
+    line((1.9, -0.1), (2.1, 0.1), stroke: 0.5pt + black)
+    line((1.9, 0.1), (2.1, -0.1), stroke: 0.5pt + black)
+    // Not cross — use arrow chevron for parallel
+    // AB: midpoint (2, 0)
+    line((1.85, 0.1), (2.05, 0), stroke: 0.5pt + blue)
+    line((1.85, -0.1), (2.05, 0), stroke: 0.5pt + blue)
+    // DC: midpoint (3, 2.5)
+    line((2.85, 2.6), (3.05, 2.5), stroke: 0.5pt + blue)
+    line((2.85, 2.4), (3.05, 2.5), stroke: 0.5pt + blue)
+
+    // Arrow marks on AD and BC (parallel pair 2)
+    // AD: midpoint (0.5, 1.25)
+    line((0.4, 1.35), (0.55, 1.22), stroke: 0.5pt + red)
+    line((0.6, 1.35), (0.55, 1.22), stroke: 0.5pt + red)
+    // BC: midpoint (4.5, 1.25)
+    line((4.4, 1.35), (4.55, 1.22), stroke: 0.5pt + red)
+    line((4.6, 1.35), (4.55, 1.22), stroke: 0.5pt + red)
+
+    // Tick marks showing OA=OC (single tick on each half-diagonal)
+    // OA midpoint: (1.25, 0.625)
+    line((1.15, 0.55), (1.35, 0.7), stroke: 0.6pt + black)
+    // OC midpoint: (3.75, 1.875)
+    line((3.65, 1.8), (3.85, 1.95), stroke: 0.6pt + black)
+
+    // Tick marks showing OB=OD (double tick on each half-diagonal)
+    // OB midpoint: (3.25, 0.625)
+    line((3.1, 0.72), (3.25, 0.53), stroke: 0.6pt + black)
+    line((3.2, 0.72), (3.35, 0.53), stroke: 0.6pt + black)
+    // OD midpoint: (1.75, 1.875)
+    line((1.6, 1.97), (1.75, 1.78), stroke: 0.6pt + black)
+    line((1.7, 1.97), (1.85, 1.78), stroke: 0.6pt + black)
+
+    // Filled point at O
+    circle(O, radius: 0.05, fill: black, stroke: none)
+
+    // Labels
+    content(A, anchor: "north-east", padding: 0.15, text(9pt)[$A$])
+    content(B, anchor: "north-west", padding: 0.15, text(9pt)[$B$])
+    content(C, anchor: "south-west", padding: 0.15, text(9pt)[$C$])
+    content(D, anchor: "south-east", padding: 0.15, text(9pt)[$D$])
+    content(O, anchor: "south-west", padding: 0.15, text(9pt)[$O$])
+  })
 ]
 
 *典型例题*
@@ -154,27 +206,77 @@ n 边形的内角和公式是 $(n - 2) * 180°$。正 n 边形的每个内角是
 梯形中位线：连接梯形两腰中点的线段叫做梯形中位线，且它平行于两底，长度等于两底之和的一半。
 
 #figure(caption: [梯形：AB ∥ DC，AB 为下底，DC 为上底，AD、BC 为两腰])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    上底与下底平行
+  #cetz.canvas({
+    import cetz.draw: *
 
-    两腰不平行
-  ]
+    let A = (0, 0)
+    let B = (5, 0)
+    let D = (1, 2.5)
+    let C = (3.5, 2.5)
+
+    // Sides
+    line(A, B, stroke: 0.7pt + black)
+    line(B, C, stroke: 0.7pt + black)
+    line(C, D, stroke: 0.7pt + black)
+    line(D, A, stroke: 0.7pt + black)
+
+    // Parallel marks on AB and DC
+    // AB midpoint (2.5, 0)
+    line((2.35, 0.1), (2.55, 0), stroke: 0.5pt + blue)
+    line((2.35, -0.1), (2.55, 0), stroke: 0.5pt + blue)
+    // DC midpoint (2.25, 2.5)
+    line((2.1, 2.6), (2.3, 2.5), stroke: 0.5pt + blue)
+    line((2.1, 2.4), (2.3, 2.5), stroke: 0.5pt + blue)
+
+    // Labels for vertices
+    content(A, anchor: "north-east", padding: 0.15, text(9pt)[$A$])
+    content(B, anchor: "north-west", padding: 0.15, text(9pt)[$B$])
+    content(C, anchor: "south-west", padding: 0.15, text(9pt)[$C$])
+    content(D, anchor: "south-east", padding: 0.15, text(9pt)[$D$])
+
+    // Labels for sides
+    content((2.5, -0.4), text(8pt)[下底])
+    content((2.25, 2.9), text(8pt)[上底])
+    content((-0.2, 1.25), anchor: "east", text(8pt)[腰])
+    content((4.55, 1.25), anchor: "west", text(8pt)[腰])
+  })
 ]
 
 #figure(caption: [梯形面积 S = 1/2(a + b)h，h 为高])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    面积 = 上底与下底之和的一半 × 高
-  ]
+  #cetz.canvas({
+    import cetz.draw: *
+
+    let A = (0, 0)
+    let B = (5, 0)
+    let D = (1, 2.5)
+    let C = (3.5, 2.5)
+
+    // Sides
+    line(A, B, stroke: 0.7pt + black)
+    line(B, C, stroke: 0.7pt + black)
+    line(C, D, stroke: 0.7pt + black)
+    line(D, A, stroke: 0.7pt + black)
+
+    // Height: vertical dashed line from D to AB
+    line(D, (1, 0), stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+
+    // Right angle mark at foot of height
+    line((1, 0.3), (1.3, 0.3), stroke: 0.5pt + black)
+    line((1.3, 0.3), (1.3, 0), stroke: 0.5pt + black)
+
+    // Label a (top base DC)
+    content((2.25, 2.8), text(9pt, weight: "bold")[$a$])
+    // Label b (bottom base AB)
+    content((2.5, -0.35), text(9pt, weight: "bold")[$b$])
+    // Label h (height)
+    content((0.65, 1.25), text(9pt, weight: "bold")[$h$])
+
+    // Vertex labels
+    content(A, anchor: "north-east", padding: 0.15, text(9pt)[$A$])
+    content(B, anchor: "north-west", padding: 0.15, text(9pt)[$B$])
+    content(C, anchor: "south-west", padding: 0.15, text(9pt)[$C$])
+    content(D, anchor: "south-east", padding: 0.15, text(9pt)[$D$])
+  })
 ]
 
 *典型例题*
@@ -221,20 +323,24 @@ n 边形的内角和公式是 $(n - 2) * 180°$。正 n 边形的每个内角是
 - 菱形 + 一个直角 = 正方形
 
 #figure(caption: [四边形家族关系])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    四边形
-      ├─ 平行四边形
-      │   ├─ 矩形
-      │   └─ 菱形
-      └─ 梯形
-
-    正方形兼具矩形与菱形的性质
-  ]
+  #fletcher.diagram(
+    spacing: (10mm, 12mm),
+    node-stroke: 0.5pt,
+    node((0, 0), [四边形]),
+    node((0, 1), [平行四边形]),
+    node((-1, 2), [矩形]),
+    node((1, 2), [菱形]),
+    node((0, 3), [正方形]),
+    node((2, 1), [梯形]),
+    node((2, 2), [等腰梯形]),
+    edge((0,0), (0,1), "->"),
+    edge((0,0), (2,1), "->"),
+    edge((0,1), (-1,2), "->"),
+    edge((0,1), (1,2), "->"),
+    edge((-1,2), (0,3), "->"),
+    edge((1,2), (0,3), "->"),
+    edge((2,1), (2,2), "->"),
+  )
 ]
 
 *典型例题*

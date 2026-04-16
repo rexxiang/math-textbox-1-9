@@ -55,6 +55,14 @@
 - 用命名坐标标注关键点
 - 图形说明用 `#figure` + `caption`
 
+### 角标记规范
+
+- 角标记**必须**使用 `cetz.angle.angle(origin, a, b, ...)` — 禁止手动 `arc()` + 硬编码偏移
+- 直角标记**必须**使用 `cetz.angle.right-angle(origin, a, b, ...)` — 禁止手动 `line()` 对
+- 等角标记（双弧/三弧）使用 `equal-angle()` 辅助函数（定义在 `lib/geometry-helpers.typ`）
+- 导入方式：`import cetz.angle: angle, right-angle`（在 canvas 块内）
+- `direction` 参数：`"near"`（默认选较小角）、`"ccw"`/`"cw"`（显式控制扫过方向）
+
 ## 辅助函数
 
 - `#explore[...]` — 引入情境框
@@ -65,6 +73,7 @@
 - `#answer[...]` — 参考答案框
 - `#secref("X.Y")` — 可点击的 §X.Y 章节引用链接
 - `#secrange("X.Y", "A.B")` — 章节范围引用（如 §X.Y–§A.B）
+- `equal-angle(origin, a, b, n: 2, gap: 0.07, ...)` — 等角标记（双弧/三弧），定义在 `lib/geometry-helpers.typ`
 
 ## 年级密度规则
 

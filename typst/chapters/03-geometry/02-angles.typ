@@ -1,4 +1,5 @@
 #import "../../lib/theme.typ": *
+#import "../../lib/diagram-packages.typ": cetz
 
 == §3.2 角 <sec-3-2>
 
@@ -26,16 +27,26 @@
 角是从同一个点出发的两条射线所组成的图形。公共端点叫做顶点，两条射线叫做角的两条边。
 
 #figure(caption: [角 ∠AOB：顶点 O，两边分别是射线 OA 和射线 OB])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    顶点 O
+  #cetz.canvas({
+    import cetz.draw: *
 
-    边 OA 与边 OB 构成一个角
-  ]
+    // Ray OA along x-axis
+    line((0, 0), (3, 0), stroke: 0.7pt + black, mark: (end: ">", fill: black))
+    // Ray OB at 50 degrees
+    line((0, 0), (calc.cos(50deg) * 3, calc.sin(50deg) * 3), stroke: 0.7pt + black, mark: (end: ">", fill: black))
+
+    // Angle arc from OA to OB
+    import cetz.angle: angle
+    angle((0, 0), (3, 0), (calc.cos(50deg) * 3, calc.sin(50deg) * 3), radius: 0.6, stroke: 0.5pt + blue)
+
+    // Vertex O
+    circle((0, 0), radius: 0.05, fill: black, stroke: none)
+
+    // Labels
+    content((0, 0), anchor: "north-east", padding: 0.15, text(9pt)[$O$])
+    content((3.15, 0), anchor: "west", padding: 0.15, text(9pt)[$A$])
+    content((calc.cos(50deg) * 3 + 0.1, calc.sin(50deg) * 3 + 0.1), anchor: "south-west", padding: 0.15, text(9pt)[$B$])
+  })
 ]
 
 角的表示方法有三种：
@@ -106,20 +117,50 @@
 - 周角：α = 360°
 
 #figure(caption: [角的分类：锐角、直角、钝角与平角])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    锐角：40°
+  #cetz.canvas({
+    import cetz.draw: *
+    import cetz.angle: angle, right-angle
 
-    直角：90°
+    let ray-len = 2
 
-    钝角：130°
+    // --- Acute angle (40°) at x=0 ---
+    let a0 = (0, 0)
+    let a0-r = (ray-len, 0)
+    let a0-u = (calc.cos(40deg) * ray-len, calc.sin(40deg) * ray-len)
+    line(a0, a0-r, stroke: 0.7pt + black, mark: (end: ">", fill: black))
+    line(a0, a0-u, stroke: 0.7pt + black, mark: (end: ">", fill: black))
+    angle(a0, a0-r, a0-u, label: text(7pt)[$40°$], radius: 0.5, stroke: 0.5pt + blue, label-radius: 170%)
+    content((0, -0.5), text(9pt)[锐角])
 
-    平角：180°
-  ]
+    // --- Right angle (90°) at x=3.5 ---
+    let r0 = (3.5, 0)
+    let r0-r = (3.5 + ray-len, 0)
+    let r0-u = (3.5, ray-len)
+    line(r0, r0-r, stroke: 0.7pt + black, mark: (end: ">", fill: black))
+    line(r0, r0-u, stroke: 0.7pt + black, mark: (end: ">", fill: black))
+    right-angle(r0, r0-r, r0-u, stroke: 0.5pt + black, radius: 0.25)
+    content((3.5 + 0.55, 0.55), text(7pt)[$90°$])
+    content((3.5, -0.5), text(9pt)[直角])
+
+    // --- Obtuse angle (130°) at x=7 ---
+    let o0 = (7, 0)
+    let o0-r = (7 + ray-len, 0)
+    let o0-u = (7 + calc.cos(130deg) * ray-len, calc.sin(130deg) * ray-len)
+    line(o0, o0-r, stroke: 0.7pt + black, mark: (end: ">", fill: black))
+    line(o0, o0-u, stroke: 0.7pt + black, mark: (end: ">", fill: black))
+    angle(o0, o0-r, o0-u, label: text(7pt)[$130°$], radius: 0.5, stroke: 0.5pt + blue, label-radius: 170%)
+    content((7, -0.5), text(9pt)[钝角])
+
+    // --- Straight angle (180°) at x=10.5 ---
+    let s0 = (10.5, 0)
+    let s0-r = (10.5 + ray-len, 0)
+    let s0-l = (10.5 - ray-len, 0)
+    line(s0-l, s0-r, stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    circle(s0, radius: 0.05, fill: black, stroke: none)
+    angle(s0, s0-r, s0-l, radius: 0.4, stroke: 0.5pt + blue)
+    content((10.5, 0.65), text(7pt)[$180°$])
+    content((10.5, -0.5), text(9pt)[平角])
+  })
 ]
 
 直角在图形中用一个小正方形标记来表示。
@@ -191,18 +232,36 @@
 两条直线相交，形成两对对顶角。对顶角相等。相邻的两个角互补。
 
 #figure(caption: [对顶角：∠1 = ∠3，∠2 = ∠4])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    两条直线相交于 O
+  #cetz.canvas({
+    import cetz.draw: *
 
-    ∠1 与 ∠3 是对顶角
+    // Line 1: from lower-left to upper-right
+    line((-2.5, -1.5), (2.5, 1.5), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+    // Line 2: from upper-left to lower-right
+    line((-2.5, 1.5), (2.5, -1.5), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
 
-    ∠2 与 ∠4 是对顶角
-  ]
+    // Center point O
+    circle((0, 0), radius: 0.05, fill: black, stroke: none)
+    content((0.2, -0.3), anchor: "north-west", text(9pt)[$O$])
+
+    import cetz.angle: angle
+
+    // Named ray endpoints
+    let line1-r = (2.5, 1.5)   // line 1 upper-right
+    let line1-l = (-2.5, -1.5) // line 1 lower-left
+    let line2-r = (2.5, -1.5)  // line 2 lower-right
+    let line2-l = (-2.5, 1.5)  // line 2 upper-left
+    let O = (0, 0)
+
+    // ∠1 (top): between line1-right and line2-left
+    angle(O, line1-r, line2-l, label: text(7pt)[$angle 1$], radius: 0.5, stroke: 0.5pt + blue, label-radius: 150%)
+    // ∠2 (left): between line2-left and line1-left
+    angle(O, line2-l, line1-l, label: text(7pt)[$angle 2$], radius: 0.5, stroke: 0.5pt + blue, label-radius: 150%)
+    // ∠3 (bottom): between line1-left and line2-right
+    angle(O, line1-l, line2-r, label: text(7pt)[$angle 3$], radius: 0.5, stroke: 0.5pt + blue, label-radius: 150%)
+    // ∠4 (right): between line2-right and line1-right
+    angle(O, line2-r, line1-r, label: text(7pt)[$angle 4$], radius: 0.5, stroke: 0.5pt + blue, label-radius: 150%)
+  })
 ]
 
 推理过程可以这样理解：
@@ -219,16 +278,37 @@
 - 例 2：两条直线相交，其中一对对顶角的和为 100°，则四个角分别为 50°、130°、50°、130°。
 
 #figure(caption: [三线共点：∠1 + ∠2 + ∠3 = 180°])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    三条直线共点 O
+  #cetz.canvas({
+    import cetz.draw: *
 
-    在同一条直线同侧的三个角和为 180°
-  ]
+    // Horizontal line (extends left and right from O)
+    line((-3, 0), (3, 0), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black))
+
+    // Ray at 60° from O
+    line((0, 0), (calc.cos(60deg) * 3, calc.sin(60deg) * 3), stroke: 0.7pt + black, mark: (end: ">", fill: black))
+
+    // Ray at 130° from O
+    line((0, 0), (calc.cos(130deg) * 3, calc.sin(130deg) * 3), stroke: 0.7pt + black, mark: (end: ">", fill: black))
+
+    // Center point O
+    circle((0, 0), radius: 0.05, fill: black, stroke: none)
+    content((0.15, -0.3), anchor: "north-west", text(9pt)[$O$])
+
+    import cetz.angle: angle
+
+    // Named ray endpoints
+    let ray-0 = (3, 0)                                         // 0° ray (right)
+    let ray-60 = (calc.cos(60deg) * 3, calc.sin(60deg) * 3)    // 60° ray
+    let ray-130 = (calc.cos(130deg) * 3, calc.sin(130deg) * 3) // 130° ray
+    let ray-180 = (-3, 0)                                       // 180° ray (left)
+
+    // ∠1: from 0° ray to 60° ray
+    angle((0, 0), ray-0, ray-60, label: text(7pt)[$angle 1$], radius: 0.6, stroke: 0.5pt + blue, label-radius: 150%)
+    // ∠2: from 60° ray to 130° ray
+    angle((0, 0), ray-60, ray-130, label: text(7pt)[$angle 2$], radius: 0.6, stroke: 0.5pt + blue, label-radius: 150%)
+    // ∠3: from 130° ray to 180° ray
+    angle((0, 0), ray-130, ray-180, label: text(7pt)[$angle 3$], radius: 0.6, stroke: 0.5pt + blue, label-radius: 150%)
+  })
 ]
 
 - 例 3：三条直线两两相交于同一点 O，已知 ∠1 = 40°，∠2 = 90°，则 ∠3 = 50°。

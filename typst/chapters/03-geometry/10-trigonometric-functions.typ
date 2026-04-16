@@ -1,4 +1,5 @@
 #import "../../lib/theme.typ": *
+#import "../../lib/diagram-packages.typ": cetz, fletcher
 
 == §3.10 锐角三角函数 <sec-3-10>
 
@@ -23,17 +24,37 @@
 在直角三角形中，设一个锐角为 $∠ "A"$，则：
 
 #figure(caption: [锐角三角函数定义：$sin$、$cos$、$tan$])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    *对应关系*
-    - $sin A = "对边"/"斜边"$
-    - $cos A = "邻边"/"斜边"$
-    - $tan A = "对边"/"邻边"$
-  ]
+  #cetz.canvas({
+    import cetz.draw: *
+
+    // Right triangle: A at origin, C at (4,0), B at (4,2.5)
+    let A = (0, 0)
+    let C = (4, 0)
+    let B = (4, 2.5)
+
+    // Triangle sides
+    line(A, C, stroke: 0.7pt + black)
+    line(C, B, stroke: 0.7pt + black)
+    line(A, B, stroke: 0.7pt + black)
+
+    import cetz.angle: angle, right-angle
+
+    // Right angle mark at C
+    right-angle(C, A, B, stroke: 0.5pt + black, radius: 0.3)
+
+    // Angle arc at A
+    angle(A, C, B, label: text(9pt)[$A$], radius: 0.6, stroke: 0.5pt + blue, label-radius: 130%)
+
+    // Vertex labels
+    content((-0.25, -0.15), anchor: "north-east", padding: 0.1, text(9pt)[$A$])
+    content((4.2, -0.15), anchor: "north-west", padding: 0.1, text(9pt)[$C$])
+    content((4.2, 2.6), anchor: "south-west", padding: 0.1, text(9pt)[$B$])
+
+    // Side labels
+    content((2, -0.35), anchor: "north", padding: 0.1, text(9pt)[邻边])
+    content((4.45, 1.25), anchor: "west", padding: 0.1, text(9pt)[对边])
+    content((1.7, 1.55), anchor: "south-east", padding: 0.1, text(9pt)[斜边])
+  })
 ]
 
 其中：
@@ -84,18 +105,62 @@ $sin 45° = (sqrt(2))/(2),   cos 45° = (sqrt(2))/(2),   tan 45° = 1$
 *$30°$ 和 $60°$ 角*：将一个等边三角形沿高对折，得到含 $30°$ 和 $60°$ 角的直角三角形。设等边三角形边长为 $2$，则短直角边 $= 1$，长直角边 $= sqrt(3)$，斜边 $= 2$。
 
 #figure(caption: [特殊角三角函数的精确值])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    *30°*：$sin = (1)/(2)$，$cos = (sqrt(3))/(2)$，$tan = (sqrt(3))/(3)$
+  #cetz.canvas({
+    import cetz.draw: *
 
-    *45°*：$sin = (sqrt(2))/(2)$，$cos = (sqrt(2))/(2)$，$tan = 1$
+    // === Left: 30-60-90 triangle ===
+    // Right angle at bottom-right, sides: 1 (short), sqrt(3) (long), 2 (hypotenuse)
+    // Scale up for visibility
+    let scale = 1.5
+    let L-A = (0, 0)                      // bottom-left (60 degree angle)
+    let L-B = (calc.sqrt(3) * scale, 0)   // bottom-right (right angle)
+    let L-C = (calc.sqrt(3) * scale, 1 * scale)  // top-right (30 degree angle)
 
-    *60°*：$sin = (sqrt(3))/(2)$，$cos = (1)/(2)$，$tan = sqrt(3)$
-  ]
+    line(L-A, L-B, stroke: 0.7pt + black)
+    line(L-B, L-C, stroke: 0.7pt + black)
+    line(L-A, L-C, stroke: 0.7pt + black)
+
+    import cetz.angle: angle, right-angle
+
+    // Right angle mark at bottom-right
+    right-angle(L-B, L-A, L-C, stroke: 0.5pt + black, radius: 0.3)
+
+    // Angle labels
+    // 60 degree at bottom-left
+    angle(L-A, L-B, L-C, label: text(8pt)[$60°$], radius: 0.5, stroke: 0.5pt + blue, label-radius: 130%)
+    // 30 degree at top-right
+    angle(L-C, L-A, L-B, label: text(8pt)[$30°$], radius: 0.4, stroke: 0.5pt + blue, label-radius: 130%, direction: "near")
+
+    // Side labels
+    let rb = calc.sqrt(3) * scale
+    content((rb / 2, -0.3), anchor: "north", padding: 0.1, text(9pt)[$sqrt(3)$])
+    content((rb + 0.35, scale / 2), anchor: "west", padding: 0.1, text(9pt)[$1$])
+    content((rb / 2 - 0.3, scale / 2 + 0.3), anchor: "south-east", padding: 0.1, text(9pt)[$2$])
+
+    // === Right: 45-45-90 triangle ===
+    let offset = 4.5
+    let R-A = (offset, 0)                     // bottom-left (45 degree)
+    let R-B = (offset + 1.5, 0)               // bottom-right (right angle)
+    let R-C = (offset + 1.5, 1.5)             // top-right (45 degree)
+
+    line(R-A, R-B, stroke: 0.7pt + black)
+    line(R-B, R-C, stroke: 0.7pt + black)
+    line(R-A, R-C, stroke: 0.7pt + black)
+
+    // Right angle mark at bottom-right
+    right-angle(R-B, R-A, R-C, stroke: 0.5pt + black, radius: 0.3)
+
+    // Angle labels
+    // 45 degree at bottom-left
+    angle(R-A, R-B, R-C, label: text(8pt)[$45°$], radius: 0.45, stroke: 0.5pt + blue, label-radius: 130%)
+    // 45 degree at top-right
+    angle(R-C, R-A, R-B, label: text(8pt)[$45°$], radius: 0.4, stroke: 0.5pt + blue, label-radius: 130%, direction: "near")
+
+    // Side labels
+    content((offset + 0.75, -0.3), anchor: "north", padding: 0.1, text(9pt)[$1$])
+    content((offset + 1.5 + 0.3, 0.75), anchor: "west", padding: 0.1, text(9pt)[$1$])
+    content((offset + 0.5, 1.05), anchor: "south-east", padding: 0.1, text(9pt)[$sqrt(2)$])
+  })
 ]
 
 #table(
@@ -252,17 +317,43 @@ $sin^2 A + cos^2 A = 1$
 - 从水平线向下看某个目标的角度叫做*俯角*。
 
 #figure(caption: [仰角与俯角：从水平视线向上和向下量起])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    *测量关系*
-    - 仰角：水平线向上
-    - 俯角：水平线向下
-    - 常常转化为直角三角形
-  ]
+  #cetz.canvas({
+    import cetz.draw: *
+
+    // Observer point E (left, mid-height)
+    let E = (0, 0)
+    circle(E, radius: 0.06, fill: black, stroke: none)
+    content((-0.3, 0), anchor: "east", padding: 0.1, text(9pt)[$E$])
+
+    // Horizontal dashed line (line of sight)
+    line((-0.5, 0), (5, 0), stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+    content((5.1, 0), anchor: "west", padding: 0.1, text(8pt)[水平视线])
+
+    // Object above: F (upper right)
+    let F = (4, 2.5)
+    circle(F, radius: 0.06, fill: black, stroke: none)
+    content((4.15, 2.65), anchor: "south-west", padding: 0.1, text(9pt)[$F$])
+
+    // Object below: G (lower right)
+    let G = (4, -2)
+    circle(G, radius: 0.06, fill: black, stroke: none)
+    content((4.15, -2.15), anchor: "north-west", padding: 0.1, text(9pt)[$G$])
+
+    // Line EF (elevation)
+    line(E, F, stroke: 0.7pt + black)
+
+    // Line EG (depression)
+    line(E, G, stroke: 0.7pt + black)
+
+    import cetz.angle: angle
+    let horiz-right = (5, 0)
+
+    // Angle alpha (elevation angle) above horizontal
+    angle(E, horiz-right, F, label: text(9pt)[仰角 $alpha$], radius: 1.2, stroke: 0.5pt + blue, label-radius: 120%)
+
+    // Angle beta (depression angle) below horizontal
+    angle(E, G, horiz-right, label: text(9pt)[俯角 $beta$], radius: 1.2, stroke: 0.5pt + blue, label-radius: 120%)
+  })
 ]
 
 *坡度*：坡面的铅直高度与水平距离的比叫做坡度（也叫坡比）。

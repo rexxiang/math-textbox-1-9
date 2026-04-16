@@ -1,4 +1,6 @@
 #import "../../lib/theme.typ": *
+#import "../../lib/diagram-packages.typ": cetz, fletcher
+#import fletcher: node, edge
 
 == 模块三总结：几何
 
@@ -97,24 +99,37 @@ $φ = (1 + sqrt(5))/(2) ≈ 1.618$
 === 全景图
 
 #figure(caption: [几何模块的知识链])[
-  #box(
-    inset: 8pt,
-    fill: luma(248),
-    stroke: (paint: luma(200), thickness: 0.6pt),
-    radius: 3pt,
-  )[
-    *模块结构*
-    - #secref("3.1") 点线面
-    - #secref("3.2") 角
-    - #secref("3.3") 平行与垂直
-    - #secref("3.4") 三角形
-    - #secref("3.5") 四边形
-    - #secref("3.6") 圆
-    - #secref("3.7") 勾股定理
-    - #secref("3.8") 图形变换
-    - #secref("3.9") 坐标几何
-    - #secref("3.10") 三角函数
-  ]
+  #fletcher.diagram(
+    spacing: (8mm, 10mm),
+    node-stroke: 0.5pt,
+    // Foundation layer
+    node((0, 0), [§3.1 点线面]),
+    node((1, 0), [§3.2 角]),
+    node((2, 0), [§3.3 平行垂直]),
+    // Shape layer
+    node((0, 1), [§3.4 三角形]),
+    node((1, 1), [§3.5 四边形]),
+    node((2, 1), [§3.6 圆]),
+    // Application layer
+    node((0, 2), [§3.7 勾股定理]),
+    node((1, 2), [§3.8 变换]),
+    node((2, 2), [§3.9 坐标几何]),
+    node((1, 3), [§3.10 三角函数]),
+    // Edges showing dependencies
+    edge((0,0), (1,0), "->"),
+    edge((1,0), (2,0), "->"),
+    edge((0,0), (0,1), "->"),
+    edge((1,0), (0,1), "->"),
+    edge((2,0), (0,1), "->"),
+    edge((0,1), (1,1), "->"),
+    edge((0,1), (2,1), "->"),
+    edge((0,1), (0,2), "->"),
+    edge((2,0), (1,2), "->"),
+    edge((0,1), (2,2), "->"),
+    edge((0,2), (2,2), "->"),
+    edge((0,1), (1,3), "->"),
+    edge((2,2), (1,3), "->"),
+  )
 ]
 
 每一章都建立在前面章节的基础上，同时又为后续的学习做好准备。回顾这条知识链，你会发现几何的发展脉络清晰而自然：从最朴素的“点线面”概念出发，经过图形性质的探索，最终用代数工具将几何问题“数值化”。
