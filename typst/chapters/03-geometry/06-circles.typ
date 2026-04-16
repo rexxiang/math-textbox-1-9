@@ -1,0 +1,396 @@
+#import "../../lib/theme.typ": *
+#import "../../lib/diagram-packages.typ": cetz, fletcher
+
+== §3.6 圆 <sec-3-6>
+
+#box(
+  inset: 10pt,
+  fill: luma(245),
+  stroke: (paint: luma(180), thickness: 0.6pt),
+  radius: 3pt,
+)[
+  *前置知识：* #secref("1.8"), #secref("3.4")
+
+  *适用年级：* 9 年级
+]
+
+=== 圆的基本概念
+
+#explore[
+往平静的水面丢一块石头，荡开的水波是一圈圈同心圆。把一根绳子的一端固定，另一端绑上一支笔旋转一圈，画出的就是一个圆。所有这些“圆”有一个共同特征：每一点到某个中心的距离都相等。
+]
+
+#understand[
+*圆的定义*：平面上到一个定点的距离等于定长的所有点组成的图形叫做*圆*。这个定点叫做*圆心*（记作 $O$），定长叫做*半径*（记作 $r$）。以 $O$ 为圆心、$r$ 为半径的圆记作 $⊙ O$。
+
+#figure(caption: [圆的基本元素：圆心 $O$，半径 $r$，直径，弦，弧])[
+  #cetz.canvas({
+    import cetz.draw: *
+
+    let O = (0, 0)
+    let r = 2
+
+    // Circle
+    circle(O, radius: r, stroke: 0.7pt + black)
+
+    // Center point O
+    circle(O, radius: 0.05, fill: black, stroke: none)
+    content(O, anchor: "north-east", padding: 0.15, text(9pt)[$O$])
+
+    // Radius OA
+    let A = (1.732, 1.0)  // 30 degrees
+    line(O, A, stroke: 0.7pt + blue)
+    circle(A, radius: 0.05, fill: black, stroke: none)
+    content(A, anchor: "south-west", padding: 0.15, text(9pt)[$A$])
+    content((0.7, 0.7), anchor: "south", text(7pt, fill: blue)[半径 $r$])
+
+    // Diameter (horizontal)
+    let Dl = (-2, 0)
+    let Dr = (2, 0)
+    line(Dl, Dr, stroke: 0.7pt + red)
+    circle(Dl, radius: 0.05, fill: black, stroke: none)
+    circle(Dr, radius: 0.05, fill: black, stroke: none)
+    content(Dl, anchor: "east", padding: 0.2, text(9pt)[$B$])
+    content(Dr, anchor: "west", padding: 0.2, text(9pt)[$C$])
+    content((0, -0.35), text(7pt, fill: red)[直径])
+
+    // Chord PQ (not through center)
+    let P = (-1.414, 1.414)  // 135 degrees
+    let Q = (1.414, 1.414)   // 45 degrees
+    line(P, Q, stroke: 0.7pt + green)
+    circle(P, radius: 0.05, fill: black, stroke: none)
+    circle(Q, radius: 0.05, fill: black, stroke: none)
+    content(P, anchor: "south-east", padding: 0.15, text(9pt)[$P$])
+    content(Q, anchor: "south-west", padding: 0.15, text(9pt)[$Q$])
+    content((0, 1.65), text(7pt, fill: green)[弦])
+
+    // Arc highlight between P and A (minor arc on the right)
+    arc((0, 0), start: 30deg, stop: 45deg, radius: r, stroke: 2pt + orange)
+    content((2.2, 1.5), anchor: "west", text(7pt, fill: orange)[弧])
+  })
+]
+
+*圆的对称性*：
+- 圆是*轴对称图形*：任意一条直径所在的直线都是对称轴。
+- 圆是*中心对称图形*：圆心是对称中心。
+]
+
+#keytakeaway[
+- 圆心决定位置，半径决定大小。
+- 直径是最长的弦，$d = 2r$。
+- 圆既是轴对称图形又是中心对称图形。
+]
+
+#practice[
+1. 一个圆的半径是 $5$ cm，它的直径是多少？通过圆心能画多少条对称轴？
+]
+
+=== 垂径定理
+
+#explore[
+把一个圆形纸片沿直径对折，折痕上的直径恰好将每条弦（垂直于直径的弦）平分。这背后的规律就是垂径定理。
+]
+
+#understand[
+*垂径定理*：垂直于弦的直径平分该弦，并且平分弦所对的两条弧。
+
+反过来：平分弦（非直径）的直径垂直于该弦。
+
+#figure(caption: [垂径定理：OM 垂直于 AB，且 AM = MB])[
+  #cetz.canvas({
+    import cetz.draw: *
+
+    let O = (0, 0)
+    let r = 2
+
+    // Circle
+    circle(O, radius: r, stroke: 0.7pt + black)
+
+    // Center O
+    circle(O, radius: 0.05, fill: black, stroke: none)
+
+    // Chord AB horizontal at y = -1
+    // Points on circle at y = -1: x = +/- sqrt(4 - 1) = +/- sqrt(3)
+    let ax = -1.732
+    let bx = 1.732
+    let A = (ax, -1)
+    let B = (bx, -1)
+    let M = (0, -1)
+
+    // Chord AB
+    line(A, B, stroke: 0.7pt + black)
+
+    // Perpendicular from O to M
+    line(O, M, stroke: 0.7pt + blue)
+
+    // Dashed lines OA and OB (radii)
+    line(O, A, stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+    line(O, B, stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+
+    // Right angle mark at M
+    line((0, -0.7), (0.3, -0.7), stroke: 0.5pt + black)
+    line((0.3, -0.7), (0.3, -1), stroke: 0.5pt + black)
+
+    // Tick marks showing AM = MB
+    // AM midpoint: (-0.866, -1)
+    line((-0.95, -1.12), (-0.78, -0.88), stroke: 0.6pt + black)
+    // MB midpoint: (0.866, -1)
+    line((0.78, -1.12), (0.95, -0.88), stroke: 0.6pt + black)
+
+    // Filled points
+    circle(A, radius: 0.05, fill: black, stroke: none)
+    circle(B, radius: 0.05, fill: black, stroke: none)
+    circle(M, radius: 0.05, fill: black, stroke: none)
+
+    // Labels
+    content(O, anchor: "south-west", padding: 0.15, text(9pt)[$O$])
+    content(A, anchor: "north-east", padding: 0.15, text(9pt)[$A$])
+    content(B, anchor: "north-west", padding: 0.15, text(9pt)[$B$])
+    content(M, anchor: "north-west", padding: 0.15, text(9pt)[$M$])
+  })
+]
+
+设 $⊙ O$ 中，直径 AB 垂直于弦 CD 于点 M，则 CM = MD。
+
+*证明*：连接 O C、O D。因为 OC = OD = r，OM 为公共边，且两边都与直径垂直，所以 CM = MD。
+]
+
+#workedexamples[
+*例 1.* 圆的半径为 5 cm，弦 AB 长 8 cm。求圆心到弦 AB 的距离。
+
+*解：* 圆心到弦 AB 的距离为 3 cm。
+
+*例 2.* 圆的直径为 26 cm，圆心到弦 AB 的距离为 5 cm。求弦长。
+
+*解：* 弦长为 24 cm。
+
+*例 3.* 在 $⊙ O$ 中，弦 AB 长 12 cm，弦 CD 长 16 cm，半径为 10 cm。哪条弦离圆心更近？
+
+*解：* CD 离圆心更近。
+]
+
+#keytakeaway[
+- 垂径定理：垂直于弦的直径平分弦和弦所对的弧。
+- 圆心到弦的距离 $d = sqrt(r^2 - (l / 2)^2)$，其中 $l$ 为弦长。
+- 同圆中，弦越长，离圆心越近。
+]
+
+#practice[
+1. 圆的半径 $r = 10$ cm，弦 $"AB" = 16$ cm，求圆心到弦 $"AB"$ 的距离。
+2. 圆的半径 $r = 13$ cm，圆心到弦 $"AB"$ 的距离为 $12$ cm，求弦长。
+]
+
+=== 圆心角与圆周角
+
+#explore[
+站在一个圆形操场的中心看两根立柱，你看到的角度和站在操场边缘看同样两根立柱的角度不一样。中心看到的角更大，边缘看到的角更小，而且有一个简洁的数量关系。
+]
+
+#understand[
+*圆心角*：顶点在圆心的角叫做圆心角。圆心角的度数等于它所对弧的度数。
+
+*圆周角*：顶点在圆上，且两边都与圆相交的角叫做圆周角。
+
+#figure(caption: [圆心角是圆周角的 2 倍：$∠ "AOB" = 2 ∠ "APB"$])[
+  #cetz.canvas({
+    import cetz.draw: *
+
+    let O = (0, 0)
+    let r = 2
+
+    // Circle
+    circle(O, radius: r, stroke: 0.7pt + black)
+
+    // Points A and B on the circle (lower part)
+    let A = (-1.732, -1.0)   // 210 degrees
+    let B = (1.732, -1.0)    // 330 degrees
+
+    // Point P on the major arc (top of circle)
+    let P = (0, 2)           // 90 degrees
+
+    // Central angle: OA and OB
+    line(O, A, stroke: 0.7pt + red)
+    line(O, B, stroke: 0.7pt + red)
+
+    // Inscribed angle: PA and PB
+    line(P, A, stroke: 0.7pt + blue)
+    line(P, B, stroke: 0.7pt + blue)
+
+    import cetz.angle: angle
+
+    // Central angle arc (∠AOB = 2α)
+    angle(O, A, B, label: text(7pt, fill: red)[$2 alpha$], radius: 0.5, stroke: 0.5pt + red, direction: "near")
+
+    // Inscribed angle arc (∠APB = α)
+    angle(P, A, B, label: text(7pt, fill: blue)[$alpha$], radius: 0.45, stroke: 0.5pt + blue, direction: "near")
+
+    // Center point
+    circle(O, radius: 0.05, fill: black, stroke: none)
+
+    // Filled points
+    circle(A, radius: 0.05, fill: black, stroke: none)
+    circle(B, radius: 0.05, fill: black, stroke: none)
+    circle(P, radius: 0.05, fill: black, stroke: none)
+
+    // Labels
+    content(O, anchor: "south-east", padding: 0.2, text(9pt)[$O$])
+    content(A, anchor: "east", padding: 0.15, text(9pt)[$A$])
+    content(B, anchor: "west", padding: 0.15, text(9pt)[$B$])
+    content(P, anchor: "south", padding: 0.15, text(9pt)[$P$])
+  })
+]
+
+*圆周角定理*：同弧（或等弧）上的圆周角等于该弧所对的圆心角的一半，即圆周角 $= (1)/(2) ×$ 圆心角。
+
+推论：
+- 同弧上的圆周角相等。
+- 半圆（或直径）所对的圆周角是直角。反过来，$90°$ 的圆周角所对的弦是直径。
+- 在同圆中，如果两个圆周角相等，那么它们所对的弧也相等。
+]
+
+#workedexamples[
+*例 1.* $⊙ O$ 中，圆心角 $∠ "AOB" = 80°$。$C$ 是弧 $"AB"$ 上的一点。求 $∠ "ACB"$。
+
+*解：* $∠ "ACB" = (1)/(2) ∠ "AOB" = 40°$。
+
+*例 2.* $"AB"$ 是 $⊙ O$ 的直径，$C$ 是圆上一点。求 $∠ "ACB"$。
+
+*解：* $∠ "ACB" = (1)/(2) × 180° = 90°$。
+
+*例 3.* 如图，$"AB"$ 是 $⊙ O$ 的直径，$∠ "BAC" = 35°$。求 $∠ "ABC"$。
+
+*解：* 因为 $"AB"$ 是直径，所以 $∠ "ACB" = 90°$，故 $∠ "ABC" = 180° - 90° - 35° = 55°$。
+
+*例 4.* $⊙ O$ 中，$∠ "ACB" = 50°$，求 $∠ "ADB"$。
+
+*解：* 同弧上的圆周角相等，所以 $∠ "ADB" = 50°$。
+]
+
+#keytakeaway[
+- 圆周角等于同弧圆心角的一半。
+- 同弧上的圆周角相等。
+- 直径所对的圆周角是直角。
+]
+
+#practice[
+1. $⊙ O$ 中，圆心角 $∠ "AOB" = 120°$，求优弧 $"AB"$ 上的点 $C$ 所对应的 $∠ "ACB"$。
+2. $⊙ O$ 中，$∠ "ACB" = 25°$，求圆心角 $∠ "AOB"$。
+3. $"AB"$ 是 $⊙ O$ 的直径，$∠ "ABD" = 58°$，$D$ 在圆上。求 $∠ "ADB"$ 和 $∠ "DAB"$。
+]
+
+=== 弧长与扇形面积
+
+#explore[
+披萨被切成若干等份，每一份的边缘（弧）有多长？每一份的面积是多少？这就涉及弧长和扇形面积的计算。
+]
+
+#understand[
+*弧长公式*：圆心角为 $n°$ 的弧长为
+
+$ l = (n pi r) / (180) $
+
+*扇形面积公式*：圆心角为 $n°$ 的扇形面积为
+
+$ S = (n pi r^2) / (360) $
+
+也可写成 $S = (1)/(2) l r$。
+]
+
+#workedexamples[
+*例 1.* 半径 $r = 6$ cm、圆心角 $60°$ 的弧长和扇形面积。
+
+*解：* 弧长 $l = 2pi$ cm，扇形面积 $S = 6pi$ cm^2。
+
+*例 2.* 一扇形的弧长为 $4pi$ cm，半径为 $6$ cm。求圆心角。
+
+*解：* 由 $4pi = (n pi × 6)/(180)$，得 $n = 120°$。
+
+*例 3.* 一段弧长为 $3pi$ cm，圆心角为 $90°$。求半径和扇形面积。
+
+*解：* $r = 6$ cm，$S = 9pi$ cm^2。
+]
+
+#keytakeaway[
+- 弧长 $l = (n pi r)/(180)$。
+- 扇形面积 $S = (n pi r^2)/(360) = (1)/(2) l r$。
+- 圆心角越大，弧越长，扇形面积越大。
+]
+
+#practice[
+1. 半径 $r = 10$ cm，圆心角 $n = 72°$。求弧长和扇形面积。
+2. 扇形的弧长为 $5pi$ cm，圆心角为 $150°$，求半径和面积。
+]
+
+=== 直线与圆的位置关系
+
+#explore[
+看日出时，太阳从海平面一点点升起。直线与圆的位置关系也可以分成相离、相切、相交三种情况。
+]
+
+#understand[
+设圆的半径为 $r$，圆心到直线的距离为 $d$。
+
+#table(
+  columns: 3,
+  inset: 6pt,
+  align: (left, left, left),
+  [*位置关系*], [*条件*], [*交点个数*],
+  [相离], [$d > r$], [0],
+  [相切], [$d = r$], [1],
+  [相交], [$d < r$], [2],
+)
+
+*切线的性质*：
+- 圆的切线垂直于经过切点的半径。
+- 从圆外一点可以引两条切线，这两条切线长相等。
+
+*切线的判定*：经过半径外端且垂直于该半径的直线是圆的切线。
+]
+
+#workedexamples[
+*例 1.* 圆的半径 $r = 5$ cm，圆心到直线 $l$ 的距离 $d = 3$ cm。判断直线 $l$ 与圆的位置关系，并求弦长。
+
+*解：* 因为 $d < r$，所以相交。弦长为 $8$ cm。
+
+*例 2.* 从圆外一点 $P$ 引切线 $"PA"$、$"PB"$，$"OP" = 10$ cm，$r = 6$ cm。求切线长 $"PA"$。
+
+*解：* $"PA" = sqrt(10^2 - 6^2) = 8$ cm。
+
+*例 3.* 三角形内切圆圆心为 $I$，半径为 $r$。若三角形周长为 $p$、面积为 $S$，则有 $S = (1)/(2) p r$。
+
+*解：* 因为 $S = (1)/(2) a r + (1)/(2) b r + (1)/(2) c r = (1)/(2) (a+b+c) r = (1)/(2) p r$。
+]
+
+#keytakeaway[
+- $d > r$ 相离，$d = r$ 相切，$d < r$ 相交。
+- 切线垂直于切点处的半径。
+- 切线长定理：外点引圆的两条切线长相等。
+]
+
+#practice[
+1. 圆的半径 $r = 8$ cm，圆心到直线的距离 $d = 8$ cm。判断位置关系。
+2. 从圆外一点引圆的两条切线，已知圆心到外点距离为 $8$ cm、半径为 $4$ cm，求切线长。
+3. $△ "ABC"$ 的三边长为 $13$、$14$、$15$，求内切圆半径。
+4. 两个圆的半径分别为 $6$ cm 和 $2$ cm，圆心距为 $4$ cm。判断两圆的位置关系。
+5. 圆的半径为 $6$ cm，另一圆半径为 $2$ cm，要使两圆外离，圆心距至少多大？
+]
+
+=== 参考答案
+
+#answer[
+1. 直径 $= 10$ cm；通过圆心能画无数条对称轴。
+2. $"OM" = 6$ cm。
+3. $"AB" = 10$ cm。
+4. $60°$。
+5. $50°$。
+6. $50°$。
+7. $4pi$ cm，$20pi$ cm^2。
+8. $r = 6$ cm，面积 $= 15pi$ cm^2。
+9. 相切。
+10. 切线长为 $4sqrt(3)$ cm。
+11. $r = 4$ cm。
+12. 内切。
+13. $3 < d < 13$。
+14. 边长 $= 4sqrt(3)$ cm，面积 $= 12sqrt(3)$ cm^2。
+15. 每个内角 $= 135°$，外接圆半径 $R ≈ 1.307a$。
+]

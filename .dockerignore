@@ -1,5 +1,6 @@
 .git/
 output/
+build/
+docs/
 *.pdf
-*.epub
 .claude/
