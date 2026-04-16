@@ -89,14 +89,14 @@
     block[
       *对于角 $A$*：
 
-      对边 $= BC = a$，邻边 $= AC = b$
+      对边 $= B C = a$，邻边 $= A C = b$
 
       $sin A = a/c$，$cos A = b/c$
     ],
     block[
       *对于角 $B$*：
 
-      对边 $= AC = b$，邻边 $= BC = a$
+      对边 $= A C = b$，邻边 $= B C = a$
 
       $sin B = b/c$，$cos B = a/c$
     ]

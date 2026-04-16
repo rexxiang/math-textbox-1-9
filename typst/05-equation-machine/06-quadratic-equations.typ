@@ -178,9 +178,9 @@
 
   *② 判别式 $Delta < 0$ 时强行开根*
 
-  $Delta = b^2 - 4ac < 0$ → 此方程*没有实数解*，不能写出 $sqrt(Delta)$。
+  $Delta = b^2 - 4 a c < 0$ → 此方程*没有实数解*，不能写出 $sqrt(Delta)$。
 
-  ❌ 错误：$\Delta = -4$，$x = frac(-b plus.minus sqrt(-4), 2a)$（不合法）
+  ❌ 错误：$Delta = -4$，$x = frac(-b plus.minus sqrt(-4), 2 a)$（不合法）
 
   ✓ 正确：$Delta < 0$，无实数根，解题到此为止。
 

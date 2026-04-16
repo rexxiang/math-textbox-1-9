@@ -63,13 +63,13 @@
 
   + 一个长方体，长 $8$、宽 $5$、高 $3$，求对角线长。
 
-  + 证明：若 $angle A = angle B$，$angle C = angle D$，且 $BC = AD$，则 $triangle ABC cong triangle BAD$。
+  + 证明：若 $angle A = angle B$，$angle C = angle D$，且 $B C = A D$，则 $triangle A B C tilde.eq triangle B A D$。
 
-  + *进阶*：如图，正方形 $ABCD$ 边长为 $4$，$E$ 是 $BC$ 的中点，求 $AE$ 的长，以及 $tan(angle DAE)$ 的值。
+  + *进阶*：如图，正方形 $A B C D$ 边长为 $4$，$E$ 是 $B C$ 的中点，求 $A E$ 的长，以及 $tan(angle D A E)$ 的值。
 
   + *进阶（螺旋）*：正三角形边长为 $a$，用 #secref("4.4") 的平方根知识，求高的精确值。（答：$frac(sqrt(3), 2) a$）
 
-  + *进阶*：用坐标法（#secref("7.4")）验证：若 $A(0,0)$，$B(4,0)$，$C(2,2sqrt(3))$，则 $triangle ABC$ 是正三角形。
+  + *进阶*：用坐标法（#secref("7.4")）验证：若 $A(0,0)$，$B(4,0)$，$C(2, 2sqrt(3))$，则 $triangle A B C$ 是正三角形。
 
   #line(length: 100%, stroke: 0.3pt + luma(200))
   _参考答案：_
@@ -82,10 +82,10 @@
   + 面积比 $= (3/5)^2 = 9/25$，较大面积 $= 18 times 25/9 = 50$ cm²
   + 面积 $= frac(120, 360) pi r^2 = frac(1, 3) pi times 36 = 12pi$；弧长 $= frac(120, 360) times 2pi times 6 = 4pi$
   + 对角线 $= sqrt(8^2 + 5^2 + 3^2) = sqrt(98) = 7sqrt(2)$
-  + 在 $triangle ABC$ 和 $triangle BAD$ 中：$angle A = angle B$，$BC = AD$，$AB = BA$（公共边）→ AAS（两角一夹边）全等
-  + $AE = sqrt(4^2 + 2^2) = sqrt(20) = 2sqrt(5)$；$angle DAE$：$tan = frac(DE, AD) = frac(2, 4) = frac(1, 2)$（其中 $DE = BE = 2$，$AD = 4$）
+  + 在 $triangle A B C$ 和 $triangle B A D$ 中：$angle A = angle B$，$B C = A D$，$A B = B A$（公共边）→ AAS（两角一边）全等
+  + $A E = sqrt(4^2 + 2^2) = sqrt(20) = 2sqrt(5)$；$angle D A E$：$tan = frac(D E, A D) = frac(2, 4) = frac(1, 2)$（其中 $D E = B E = 2$，$A D = 4$）
   + 高 $= sqrt(a^2 - (a/2)^2) = sqrt(3a^2/4) = frac(sqrt(3), 2) a$
-  + $AB = 4$，$AC = sqrt(4+12) = 4$，$BC = sqrt(4+12) = 4$，三边相等 ✓
+  + $A B = 4$，$A C = sqrt(4+12) = 4$，$B C = sqrt(4+12) = 4$，三边相等 ✓
 
   *螺旋复习*
 
