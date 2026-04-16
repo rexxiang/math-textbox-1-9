@@ -40,7 +40,7 @@
       - $sin A = frac("对边", "斜边") = frac(a, c)$
       - $cos A = frac("邻边", "斜边") = frac(b, c)$
       - $tan A = frac("对边", "邻边") = frac(a, b)$
-      - 特殊角：$sin 30 degree = cos 60 degree = frac{1}{2}$，$sin 45 degree = frac(sqrt(2), 2)$
+      - 特殊角：$sin 30 degree = cos 60 degree = frac(1, 2)$，$sin 45 degree = frac(sqrt(2), 2)$
     ],
   )
 ]
@@ -83,21 +83,21 @@
 
   + 对称轴 $x = -frac(4, 2 times (-2)) = 1$；最大值 $y = -2(1)^2 + 4(1) + 1 = 3$，在 $x = 1$ 处取得。
 
-  + 令 $y=0$：$x = frac{1}{3}$，$x$ 轴交点 $(frac{1}{3}, 0)$；令 $x=0$：$y=-1$，$y$ 轴交点 $(0, -1)$。
+  + 令 $y=0$：$x = frac(1, 3)$，$x$ 轴交点 $(frac(1, 3), 0)$；令 $x=0$：$y=-1$，$y$ 轴交点 $(0, -1)$。
 
-  + $|AB| = sqrt{(3-(-1))^2 + (-4-2)^2} = sqrt{16+36} = sqrt{52} = 2sqrt{13}$；中点 $M = (1, -1)$。
+  + $|AB| = sqrt((3-(-1))^2 + (-4-2)^2) = sqrt(16+36) = sqrt(52) = 2sqrt(13)$；中点 $M = (1, -1)$。
 
-  + $a = c sin A = 10 times frac{1}{2} = 5$；$b = c cos A = 10 times frac{sqrt{3}}{2} = 5sqrt{3}$。
+  + $a = c sin A = 10 times frac(1, 2) = 5$；$b = c cos A = 10 times frac(sqrt(3), 2) = 5sqrt(3)$。
 
   + $x^2 + 2x - 3 = 0$，$(x+3)(x-1) = 0$，$x = -3$ 或 $x = 1$。交点：$(-3, 0)$ 和 $(1, 0)$。
 
   + 联立：$2x+1 = -x+4$，$3x = 3$，$x=1$，$y=3$。交点 $(1, 3)$。
 
-  + $k = 3 times (-2) = -6$；$x = -1$ 时，$y = frac{-6}{-1} = 6$。
+  + $k = 3 times (-2) = -6$；$x = -1$ 时，$y = frac(-6, -1) = 6$。
 
   + 代入三点：$c=1$；$a+b+1=0$；$a-b+1=4$。由后两式：$2a+2=4$，$a=1$；$b=-2$。$y = x^2 - 2x + 1$。
 
-  + $AB = 6$，$AC = sqrt{9+27} = 6$，$BC = sqrt{9+27} = 6$，三边相等，是等边三角形。$angle ABC = 60 degree$，$sin 60 degree = frac{sqrt{3}}{2}$。
+  + $AB = 6$，$AC = sqrt(9+27) = 6$，$BC = sqrt(9+27) = 6$，三边相等，是等边三角形。$angle ABC = 60 degree$，$sin 60 degree = frac(sqrt(3), 2)$。
 
   *螺旋复习*
 
