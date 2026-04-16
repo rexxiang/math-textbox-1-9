@@ -1,0 +1,57 @@
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+
+== §1.4 乘法与除法 <sec-1-4>
+
+#vocab[乘法 multiplication / 除法 division / 余数 remainder]
+
+#crisis[
+  学校联欢会要摆桌子，每桌坐 6 个人，一共 5 桌。需要准备多少把椅子？
+
+  $6 + 6 + 6 + 6 + 6 = ?$
+
+  一个一个加太慢了！*有没有更快的方法？*
+]
+
+#history-note[
+  九九乘法表是中国两千多年前的伟大发明。在湖南出土的里耶秦简上，就刻有完整的乘法表，比世界上其他文明早了几百年。
+]
+
+#discovery[
+  *乘法的诞生*：$6 + 6 + 6 + 6 + 6$ 就是「5 个 6」，写作 $6 times 5 = 30$。
+
+  乘法就是*重复加法的快捷方式*。
+
+  *除法的诞生*：30 颗糖平均分给 5 个人，每人几颗？
+
+  $30 div 5 = 6$。除法就是*平均分*。
+
+  如果 32 颗糖分给 5 个人呢？$32 div 5 = 6 dots.h dots.h 2$，每人 6 颗，还*余* 2 颗。
+]
+
+#blueprint[
+  - *乘法*：$a times b$ 表示 $b$ 个 $a$ 相加（或 $a$ 个 $b$ 相加）
+  - *除法*：$a div b = c dots.h dots.h r$，其中 $a = b times c + r$，$0 <= r < b$
+  - 乘法和除法是*互逆运算*
+  - 任何数乘 $0$ 都等于 $0$；$0$ 不能做除数
+]
+
+#side-hack[
+  乘法口诀表要熟记！特别是 $7 times 8 = 56$、$6 times 9 = 54$、$8 times 9 = 72$ 这几个最容易忘的。
+]
+
+#mastery[
+  *基础*
+
+  + $23 times 4$；$156 div 12$
+  + $100 div 7 = ?$ 商是多少？余数是多少？
+
+  *应用*
+
+  + 学校买了 8 箱矿泉水，每箱 24 瓶，每瓶 2 元。一共花了多少钱？
+
+  #line(length: 100%, stroke: 0.3pt + luma(200))
+  _参考答案：_
+  + $23 times 4 = 92$；$156 div 12 = 13$
+  + $100 div 7 = 14 dots.h dots.h 2$（商 14，余 2）
+  + $8 times 24 times 2 = 384$（元）
+]
