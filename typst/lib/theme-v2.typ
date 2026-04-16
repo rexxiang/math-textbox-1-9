@@ -1,10 +1,10 @@
-// V2 主题：四段发明链 + 侧边栏注释系统
-// 页面布局：ISO B5，右边距留出 margin notes 区域
+// V2 主题：四段发明链 + 平铺内联注记
+// 页面布局：ISO B5，正常边距（x: 18mm, y: 18mm）
 
 #let textbook-v2(body) = {
   set page(
     paper: "iso-b5",
-    margin: (left: 10mm, right: 50mm, top: 18mm, bottom: 18mm),
+    margin: (x: 18mm, y: 18mm),
     header: context {
       let elems = query(heading.where(level: 1).before(here()))
       if elems.len() > 0 {
@@ -43,64 +43,76 @@
 #let secref(id) = link(label("sec-" + id.replace(".", "-")), [§#id])
 #let secrange(from, to) = [#secref(from)--#secref(to)]
 
-// ── 四段发明链函数 ──────────────────────────────────────────────
+// ── 四段发明链函数（对话框式：边框 + 标题栏浅色背景，正文白底）────
 
-#let invention-box(title, fill, stroke-color, body) = {
+#let invention-box(title, border-color, head-bg, head-fg, body) = {
   block(
     width: 100%,
-    inset: 10pt,
-    outset: 4pt,
     radius: 4pt,
-    fill: fill,
-    stroke: (paint: stroke-color, thickness: 0.8pt),
+    clip: true,
+    stroke: (paint: border-color, thickness: 1pt),
+    inset: 0pt,
+    above: 0.8em,
+    below: 0.8em,
   )[
-    #text(weight: "bold", fill: stroke-color)[#title]
-    #v(0.4em)
-    #body
+    #grid(
+      columns: (1fr,),
+      row-gutter: 0pt,
+      block(
+        width: 100%,
+        fill: head-bg,
+        inset: (x: 10pt, y: 5pt),
+      )[#text(weight: "bold", fill: head-fg, size: 10pt)[#title]],
+      block(
+        width: 100%,
+        fill: white,
+        inset: (x: 10pt, y: 9pt),
+      )[#body],
+    )
   ]
 }
 
 #let crisis(body) = invention-box(
   [现代困境],
-  rgb("#FFEBEE"), rgb("#C62828"),
+  rgb("#C62828"), rgb("#FFCDD2"), rgb("#B71C1C"),
   body,
 )
 
 #let discovery(body) = invention-box(
   [探索发现],
-  rgb("#FFF3E0"), rgb("#EF6C00"),
+  rgb("#EF6C00"), rgb("#FFE0B2"), rgb("#E65100"),
   body,
 )
 
 #let blueprint(body) = invention-box(
   [工具蓝图],
-  rgb("#E3F2FD"), rgb("#1565C0"),
+  rgb("#1565C0"), rgb("#BBDEFB"), rgb("#0D47A1"),
   body,
 )
 
 #let mastery(body) = invention-box(
   [工具磨砺],
-  rgb("#E8F5E9"), rgb("#2E7D32"),
+  rgb("#2E7D32"), rgb("#C8E6C9"), rgb("#1B5E20"),
   body,
 )
 
-// ── 侧边栏函数（margin notes）──────────────────────────────────
+// ── 注记函数（引用条式：彩色左边框 + 标签行，无底色，无 emoji）────
 
-#let margin-note(icon, body) = {
-  place(
-    right,
-    dx: 14mm,
-    block(
-      width: 36mm,
-      inset: 6pt,
-      radius: 3pt,
-      fill: luma(248),
-      stroke: 0.3pt + luma(200),
-      text(size: 9pt)[#icon #body],
-    ),
-  )
+#let side-note(label-text, border-color, label-color, body) = {
+  block(
+    width: 100%,
+    above: 4pt,
+    below: 8pt,
+    stroke: (left: (thickness: 3pt, paint: border-color)),
+    inset: (left: 10pt, right: 0pt, top: 4pt, bottom: 4pt),
+    fill: none,
+  )[
+    #text(size: 9pt, weight: "bold", fill: label-color)[#label-text]
+    #linebreak()
+    #text(size: 9.5pt, fill: luma(80))[#body]
+  ]
 }
 
-#let history-note(body) = margin-note([📜], body)
-#let side-hack(body) = margin-note([🧠], body)
-#let vocab(body) = margin-note([🔤], body)
+#let history-note(body) = side-note([历史注脚], rgb("#FFA726"), rgb("#E65100"), body)
+#let side-hack(body)    = side-note([认知捷径], rgb("#66BB6A"), rgb("#2E7D32"), body)
+#let vocab(body)        = side-note([术语],     rgb("#78909C"), rgb("#546E7A"), body)
