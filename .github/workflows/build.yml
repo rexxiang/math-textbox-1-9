@@ -6,11 +6,16 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Build Typst Docker image
         run: docker build -t math-textbook-typst .
@@ -32,3 +37,28 @@ jobs:
           mkdir -p output
           docker run --rm -v "$(pwd):/book" math-textbook-typst \
             compile --root /book /book/typst/smoke/package-lock.typ /book/output/typst-package-lock-check.pdf
+
+      - name: Determine next version
+        id: version
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          LATEST=$(git tag -l 'v0.*' | sort -t. -k2 -n | tail -1)
+          if [ -z "$LATEST" ]; then
+            NEXT="v0.1"
+          else
+            MINOR=$(echo "$LATEST" | sed 's/v0\.//')
+            NEXT="v0.$((MINOR + 1))"
+          fi
+          echo "version=$NEXT" >> "$GITHUB_OUTPUT"
+          echo "Next version: $NEXT"
+
+      - name: Create GitHub Release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.version }}
+          name: ${{ steps.version.outputs.version }}
+          body: "Math textbook PDF build from commit ${{ github.sha }}"
+          files: output/math-textbook.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
