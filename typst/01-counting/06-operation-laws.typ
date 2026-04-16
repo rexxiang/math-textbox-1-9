@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
 == §1.6 运算律 <sec-1-6>
 
@@ -34,6 +34,13 @@
   交换一下顺序，瞬间简单了！
 ]
 
+#tryit[
+  *先自己试试*：用凑整法快速计算 $25 times 37 times 4$。
+
+  提示：$25 times 4$ 是一个整百数。想想能不能先改变计算顺序。
+  写下你的思路，再往下对照运算律。
+]
+
 #blueprint[
   五条运算律：
 
@@ -49,6 +56,16 @@
   )
 
   分配律是最强大的工具——它把乘法「分配」给括号里的每一项。
+]
+
+#pitfall[
+  *高频错误*
+
+  ❌ 分配律展开时漏乘第二项：$a times (b + c) = a times b + c$（把 $a$ 只乘了 $b$，忘了乘 $c$）
+  → ✓ 分配律要分配给括号内的*每一项*：$a times (b + c) = a times b + a times c$
+
+  ❌ 把分配律用于乘法的括号：$(a times b) + c$ 误以为可以展开成 $a + b + c$
+  → ✓ 分配律是乘法对加减法的分配，不能对纯乘法的括号使用
 ]
 
 #mastery[

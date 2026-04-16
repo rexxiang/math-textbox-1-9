@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
 == §5.5 二元一次方程组 <sec-5-5>
 
@@ -53,6 +53,12 @@
   $ y = 12 $
 
   两种方法殊途同归！
+]
+
+#tryit[
+  试一试鸡兔问题：笼子里有鸡和兔，共 35 个头，94 只脚。
+
+  试着自己建立方程组并用代入法或加减法求解，然后核对 discovery 里的过程。
 ]
 
 #blueprint[
@@ -141,6 +147,22 @@
   减去第一个方程：$x = 400$，$y = 200$。
 
   答：取甲 400 g，乙 200 g。
+]
+
+#pitfall[
+  *用加减法消元时最容易出的两个错误：*
+
+  *① 乘以系数时，括号里每一项都要乘，不能漏！*
+
+  $cases(3x + 2y = 16, 5x - 2y = 8)$ 想消掉 $x$，第一式乘 5：
+
+  ❌ $15x + 2y = 80$（第二项 $2y$ 忘乘 5 了）
+
+  ✓ $15x + 10y = 80$（$3x$ 和 $2y$ 都要乘 5）
+
+  *② 解完一个未知数，回代时代错方程*
+
+  习惯：解出一个未知数后，回代到*比较简单*的那个原方程中，不要代到你变形后的方程里。
 ]
 
 #side-hack[

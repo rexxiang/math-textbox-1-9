@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
 == §8.1 数据的波动程度 <sec-8-1>
 
@@ -48,6 +48,19 @@
   $ S_"乙"^2 = frac(1^2 + 0^2 + 0^2 + (-1)^2 + 0^2, 5) = frac(1 + 0 + 0 + 1 + 0, 5) = frac(2, 5) = 0.4 $
 
   $S_"乙"^2 < S_"甲"^2$，所以乙的成绩更稳定。这个量就是*方差*！
+]
+
+#tryit[
+  先自己计算，再看蓝图中的例题：
+
+  数据组：$\{6, 7, 8, 9, 10\}$
+
+  + 先求平均数 $overline(x)$
+  + 再算每个数据与平均数的差：$(6 - overline(x))$，$(7 - overline(x))$，……
+  + 把每个差*平方*
+  + 求所有平方的平均值，即方差 $S^2$
+
+  计算完后对照下面例题验证。
 ]
 
 #side-hack[
@@ -104,6 +117,17 @@
   解：
   - 每个数据加 $c$：新平均数 $= overline(x) + c$，每个差 $(x_i + c) - (overline(x) + c) = x_i - overline(x)$ 不变，方差仍为 $S^2$。
   - 每个数据乘 $k$：新平均数 $= k overline(x)$，每个差 $k x_i - k overline(x) = k(x_i - overline(x))$，方差变为 $k^2 S^2$。
+]
+
+#pitfall[
+  *陷阱 1*：方差公式是「先求差，再平方，再平均」——顺序不能颠倒。不能「先平均再平方」（那等于 $(overline(x))^2$，是另一回事）。
+
+  #grid(columns: (1fr, 1fr), gutter: 8pt,
+    block[*正确*：\ $S^2 = frac(1,n) sum (x_i - overline(x))^2$\ （差先平方，所有平方再平均）],
+    block[*错误*：\ 把各数据加起来平均后再平方\ （这只是平均数的平方 $overline(x)^2$，不是方差）]
+  )
+
+  *陷阱 2*：方差*越大*表示数据越*分散*（波动越大），方差越小表示数据越集中（越稳定）。不要搞反方向！
 ]
 
 #mastery[

@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
 == §1.4 乘法与除法 <sec-1-4>
 
@@ -28,6 +28,13 @@
   如果 32 颗糖分给 5 个人呢？$32 div 5 = 6 dots.h dots.h 2$，每人 6 颗，还*余* 2 颗。
 ]
 
+#tryit[
+  *先自己估一估、算一算*：计算 $156 div 12$。
+
+  先估一下商大概是多少（$12 times 10 = 120$，$12 times 20 = 240$，所以商在 $10$ 到 $20$ 之间）。
+  再用竖式算出准确答案，并验证余数的大小。
+]
+
 #blueprint[
   - *乘法*：$a times b$ 表示 $b$ 个 $a$ 相加（或 $a$ 个 $b$ 相加）
   - *除法*：$a div b = c dots.h dots.h r$，其中 $a = b times c + r$，$0 <= r < b$
@@ -37,6 +44,16 @@
 
 #side-hack[
   乘法口诀表要熟记！特别是 $7 times 8 = 56$、$6 times 9 = 54$、$8 times 9 = 72$ 这几个最容易忘的。
+]
+
+#pitfall[
+  *高频错误*
+
+  ❌ 余数大于或等于除数：算 $100 div 7$，写成商 $13$ 余 $9$（因为 $7 times 13 = 91$，$100 - 91 = 9$，但 $9 > 7$！）
+  → ✓ 余数必须小于除数：$7 times 14 = 98$，$100 - 98 = 2$，所以商 $14$ 余 $2$（$2 < 7$ ✓）
+
+  ❌ 验算时只检查商，忘记加上余数：$7 times 14 = 98 eq.not 100$，以为算错了
+  → ✓ 验算公式是 $"除数" times "商" + "余数" = "被除数"$：$7 times 14 + 2 = 100$ ✓
 ]
 
 #mastery[

@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
 == §3.2 比与比例 <sec-3-2>
 
@@ -30,6 +30,17 @@
   $ frac(750, "糖") = 3 quad arrow.r quad "糖" = frac(750, 3) = 250 "克" $
 
   核心发现：只要保持比值不变，配方就是「等比放大」的。两个比值相等的等式，就叫*比例*。
+]
+
+#tryit[
+  在看例题前，先自己试一试：
+
+  把 100 元按 $3 : 2$ 分成两份。
+
+  + 总份数是多少？
+  + 第一份应分多少元？第二份呢？
+
+  写下计算过程，再往下看。
 ]
 
 #blueprint[
@@ -79,6 +90,48 @@
   $ "比例尺" = frac("图上距离", "实际距离") $
 
   比例尺 $1 : 50000$ 表示图上 1 厘米代表实际 500 米。
+]
+
+#pitfall[
+  *最常见的两类错误：*
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    block[
+      *❌ 错误：随意交换比的前后项*
+
+      速度 $:$ 时间 $= 3 : 2$
+
+      $therefore$ 时间 $:$ 速度 $= 3 : 2$
+    ],
+    block[
+      *✓ 正确：比的前后顺序不能随意交换*
+
+      速度 $:$ 时间 $= 3 : 2$
+
+      $therefore$ 时间 $:$ 速度 $= 2 : 3$
+    ],
+  )
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    block[
+      *❌ 错误：把比值当成比*
+
+      $3 : 2$ 的比值是 $1.5$，
+
+      所以 $3 : 2$ 和 $1.5$ 是一样的
+    ],
+    block[
+      *✓ 正确：比是两数关系，比值是一个数*
+
+      $3 : 2$ 是一种比例关系，
+
+      $1.5$ 只是它的比值，两者含义不同
+    ],
+  )
 ]
 
 #mastery[

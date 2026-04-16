@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
 == §5.6 一元二次方程 <sec-5-6>
 
@@ -42,6 +42,14 @@
   $x - 1 = plus.minus 2$，所以 $x = 3$ 或 $x = -1$。
 
   可如果方程不是完全平方的形式呢？比如 $x^2 + 6 x + 5 = 0$，能不能*凑成*完全平方？
+]
+
+#tryit[
+  不看下面的内容，先试着解方程 $x^2 - 5 x + 6 = 0$。
+
+  提示：能不能把左边写成两个括号相乘的形式？思考哪两个数，相乘等于 6，相加等于 $-5$。
+
+  然后向下翻，看因式分解法（例 6）验证你的做法。
 ]
 
 #blueprint[
@@ -156,6 +164,29 @@
   由韦达定理：$x_1 + x_2 = 5$，$x_1 x_2 = 3$
 
   $ x_1^2 + x_2^2 = (x_1 + x_2)^2 - 2 x_1 x_2 = 25 - 6 = 19 $
+]
+
+#pitfall[
+  *三个经典陷阱*，二次方程最容易栽：
+
+  *① 韦达定理符号写反*
+
+  #grid(columns: (1fr, 1fr), gutter: 8pt,
+    block[❌ $x^2 - 5x + 3 = 0$ \ $x_1 + x_2 = 5$（对）\ $x_1 x_2 = 3$（对）\ $x_1 + x_2 = frac(b, a) = frac(-5, 1) = -5$（❌ 忘了负号！）],
+    block[✓ 记忆口诀：\ 和 $= -frac(b, a)$（有负号）\ 积 $= frac(c, a)$（无负号）\ 例：$a=1, b=-5, c=3$ 时\ 和 $= -(-5)/1 = 5$ ✓]
+  )
+
+  *② 判别式 $Delta < 0$ 时强行开根*
+
+  $Delta = b^2 - 4ac < 0$ → 此方程*没有实数解*，不能写出 $sqrt(Delta)$。
+
+  ❌ 错误：$\Delta = -4$，$x = frac(-b plus.minus sqrt(-4), 2a)$（不合法）
+
+  ✓ 正确：$Delta < 0$，无实数根，解题到此为止。
+
+  *③ 配方时「补几」写错*
+
+  配方关键：一次项系数的一半，再*平方*。$x^2 + 6x$，补 $(6/2)^2 = 9$，不是 $6^2 = 36$。
 ]
 
 #side-hack[

@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
 == §2.2 分数 <sec-2-2>
 
@@ -20,6 +20,13 @@
   2 张披萨各取 $1/3$，合起来就是 $2/3$。所以 $2 div 3 = 2/3$。
 
   分数 $a/b$ 的含义：把整体分成 $b$ *等*份，取其中 $a$ 份。同时它也表示除法 $a div b$。
+]
+
+#tryit[
+  *先自己算一算*：计算 $1/4 + 2/3$。
+
+  两个分数的分母不同，直接把分子相加行不行？想想应该怎么做。
+  写下你的步骤，再往下对照。
 ]
 
 #blueprint[
@@ -44,6 +51,16 @@
 
 #side-hack[
   *运算律对分数同样成立！* 在 #secref("1.6") 中学到的交换律、结合律、分配律，对分数运算完全适用。例如：$frac(1, 3) + frac(1, 2) = frac(1, 2) + frac(1, 3)$（交换律），$frac(1, 4) times (frac(2, 3) + frac(1, 3)) = frac(1, 4) times frac(2, 3) + frac(1, 4) times frac(1, 3)$（分配律）。善用这些运算律，可以让分数计算更简便。
+]
+
+#pitfall[
+  *高频错误*
+
+  ❌ 异分母相加时，分母也直接相加：$1/4 + 1/4 = 2/8$（分子加分子、分母加分母）
+  → ✓ 分母相同才能直接加分子：$1/4 + 1/4 = 2/4 = 1/2$；分母不同须先通分
+
+  ❌ 约分时只约了分子，分母忘了同步约：把 $6/35$ 的分子 $6$ 约成 $3$，写成 $3/35$
+  → ✓ 约分要分子分母同除以最大公因数：$6/35$ 中 $gcd(6, 35) = 1$，已是最简，不能约
 ]
 
 #mastery[

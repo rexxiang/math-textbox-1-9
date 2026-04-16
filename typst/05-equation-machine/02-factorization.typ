@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
 == §5.2 因式分解 <sec-5-2>
 
@@ -44,6 +44,14 @@
   + *三十字*：最后尝试十字相乘法
 
   按这个顺序来，绝大多数因式分解都能搞定！
+]
+
+#tryit[
+  先试一试：把 $x^2 + 5x + 6$ 分解因式。
+
+  思路：找两个数，它们的*乘积等于 6*，*和等于 5*。想想哪对整数符合条件？
+
+  写出答案后，对照 blueprint 里的例 7 验证。
 ]
 
 #blueprint[
@@ -125,6 +133,26 @@
 
   $ -3 a^2 + 6 a b - 3 b^2 &= -3(a^2 - 2 a b + b^2) \
                             &= -3(a - b)^2 $
+]
+
+#pitfall[
+  *两个最坑的因式分解错误：*
+
+  *① 完全平方公式用错——把 $a^2 + b^2$ 当成 $(a+b)^2$*
+
+  ❌ $x^2 + 9 = (x+3)^2$（不对！完全平方展开是 $x^2 + 6x + 9$，中间有 $2ab$ 项）
+
+  ✓ $x^2 + 9$ *在实数范围内不能因式分解*。
+
+  记住完全平方公式：$(a+b)^2 = a^2 + \mathbf{2ab} + b^2$，中间那一项不能少。
+
+  *② 分解不彻底——提公因式后停手，没继续分解*
+
+  ❌ $3x^2 - 27 = 3(x^2 - 9)$（停在这里）
+
+  ✓ $3x^2 - 27 = 3(x^2 - 9) = 3(x+3)(x-3)$（继续用平方差分解）
+
+  口诀：*分解到每个括号里面不能再分为止！*
 ]
 
 #mastery[

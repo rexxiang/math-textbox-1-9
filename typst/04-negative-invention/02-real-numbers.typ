@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
 == §4.2 实数 <sec-4-2>
 
@@ -39,6 +39,18 @@
   这种数叫做*无理数*。
 ]
 
+#tryit[
+  在看例题前，先自己判断一判断：
+
+  下面三个数，哪些是有理数，哪些是无理数？
+
+  + $sqrt(2)$
+  + $sqrt(4)$
+  + $pi$
+
+  写下你的理由，再往下看。
+]
+
 #blueprint[
   *平方根与算术平方根*
   - $a$ 的平方根：$plus.minus sqrt(a)$（$a >= 0$）
@@ -60,6 +72,46 @@
   *实数与数轴*：有理数和无理数一起，恰好*填满*了整个数轴。数轴上的每一个点都对应一个实数，每一个实数都对应数轴上的一个点。
 
   实数的运算律（加法交换律、结合律，乘法交换律、结合律、分配律）对所有实数都成立。
+]
+
+#pitfall[
+  *最常见的两类错误：*
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    block[
+      *❌ 错误：把 $sqrt(4)$ 当成无理数*
+
+      $sqrt(4)$ 带根号，所以是无理数
+    ],
+    block[
+      *✓ 正确：$sqrt(4) = 2$，是整数（有理数）*
+
+      判断方法：能否开得尽？
+
+      $sqrt(4) = 2$ ✓ 有理数
+
+      $sqrt(2) = 1.41421...$ ✗ 无理数
+    ],
+  )
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    block[
+      *❌ 错误：把近似值当成等于*
+
+      $sqrt(2) = 1.4$
+    ],
+    block[
+      *✓ 正确：$sqrt(2) approx 1.4$ 只是近似*
+
+      $sqrt(2)$ 是无限不循环小数，
+
+      $1.4$ 只是它的近似值，两者不相等
+    ],
+  )
 ]
 
 #side-hack[

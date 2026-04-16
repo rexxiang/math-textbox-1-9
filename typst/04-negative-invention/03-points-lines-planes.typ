@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
 == §4.3 点、线、面 <sec-4-3>
 
@@ -32,6 +32,17 @@
   *两点之间，线段最短。*
 ]
 
+#tryit[
+  在看例题前，先自己思考一思考：
+
+  平面上两条直线，一共有几种位置关系？
+
+  + 每种情况各有几个交点？
+  + 你能用一句话描述每种情况吗？
+
+  写下你的答案，再往下看。
+]
+
 #blueprint[
   *基本概念*
 
@@ -53,6 +64,48 @@
   *线段长度的表示*：线段 $A B$ 的长度记作 $A B$ 或 $overline(A B)$。
 
   *面的初步概念*：桌面、黑板面、水面……都是面的一部分。面可以是平的（平面），也可以是弯曲的。本书主要研究平面。
+]
+
+#pitfall[
+  *最常见的两类错误：*
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    block[
+      *❌ 错误：混淆平行与相交*
+
+      两条直线没有交点，
+
+      所以它们一定平行
+    ],
+    block[
+      *✓ 正确：在平面内，无交点才是平行；在空间中还有异面直线*
+
+      平面内两直线：相交（1 个交点）
+
+      或平行（0 个交点，且同向延伸不会相遇）
+    ],
+  )
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    block[
+      *❌ 错误：任意三点都确定一个平面*
+
+      平面上有三个点 A、B、C，
+
+      所以这三点确定唯一一个平面
+    ],
+    block[
+      *✓ 正确：三点不共线才能确定唯一平面*
+
+      若 A、B、C 三点共线（在同一条直线上），
+
+      则经过这三点的平面有无数个
+    ],
+  )
 ]
 
 #mastery[

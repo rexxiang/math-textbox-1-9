@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
 == §7.1 一次函数 <sec-7-1>
 
@@ -44,6 +44,14 @@
 
 #side-hack[
   记住斜率 $k$ 的含义：*$k$ 正上坡，$k$ 负下坡*。$k$ 的绝对值越大，坡越陡。$k = 0$ 时就是一条水平线。
+]
+
+#tryit[
+  不翻书，先试一试：一次函数图象过点 $(0, -2)$ 和 $(3, 4)$，求 $k$ 和 $b$。
+
+  提示：把两个点的坐标代入 $y = kx + b$，建立方程组，联立求解。
+
+  然后对照 blueprint 里的例题 2 核验你的过程。
 ]
 
 #blueprint[
@@ -107,6 +115,25 @@
   *例题 3*：某手机套餐：月租 $30$ 元，通话每分钟 $0.2$ 元。写出月话费 $y$（元）与通话时间 $x$（分钟）的函数关系式，并求通话 $200$ 分钟时的话费。
 
   解：$y = 0.2 x + 30$。当 $x = 200$ 时，$y = 0.2 times 200 + 30 = 70$（元）。
+]
+
+#pitfall[
+  *一次函数两个高频混淆点：*
+
+  *① $k$ 和 $b$ 影响的东西不一样，别搞混*
+
+  $y = kx + b$：
+  - $k$ 决定直线的*倾斜方向和陡峭程度*（斜率）
+  - $b$ 决定直线与 $y$ 轴的*交点高度*（纵截距）
+
+  ❌ 常见错误：把纵截距 $b$ 和横截距 $-b/k$ 搞混。「图象过 $(0, 3)$」说的是*纵*截距 $b = 3$，不是 $x = 3$。
+
+  *② $k < 0$ 时，$y$ 随 $x$ 增大而减小，不是增大！*
+
+  #grid(columns: (1fr, 1fr), gutter: 8pt,
+    block[❌ $y = -2x + 5$ \ $k = -2$，$y$ 随 $x$ 增大而增大（错）],
+    block[✓ $y = -2x + 5$ \ $k = -2 < 0$，$y$ 随 $x$ 增大而*减小*（下坡）]
+  )
 ]
 
 #mastery[

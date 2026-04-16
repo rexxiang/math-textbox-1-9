@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
 == §4.4 幂的运算 <sec-4-4>
 
@@ -62,6 +62,15 @@
   所以：$a^(-n) = frac(1, a^n)$（$a != 0$）
 ]
 
+#tryit[
+  在看例题前，先自己化简一化简：
+
+  + $a^3 times a^4 = ?$
+  + $(a^3)^4 = ?$
+
+  根据幂的定义，一步步展开来算，不要直接套公式。写下过程，再往下看。
+]
+
 #blueprint[
   *幂的运算法则*（$a != 0$，$m, n$ 为整数）
 
@@ -94,6 +103,44 @@
   *解*：$(1/3)^0 = 1$（零次幂）；$2^(-3) = frac(1, 8)$；$(-2)^2 = 4$。
 
   所以原式 $= 1 + frac(1, 8) - 4 = -frac(23, 8)$。
+]
+
+#pitfall[
+  *最常见的两类错误：*
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    block[
+      *❌ 错误：底数不同也把指数相加*
+
+      $a^3 times b^4 = (a b)^(3+4) = (a b)^7$
+    ],
+    block[
+      *✓ 正确：同底数幂相乘才能指数相加*
+
+      $a^m times a^n = a^(m+n)$（底数必须相同）
+
+      $a^3 times b^4$ 底数不同，不能合并
+    ],
+  )
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    block[
+      *❌ 错误：幂的乘方把指数相加*
+
+      $(a^3)^4 = a^(3+4) = a^7$
+    ],
+    block[
+      *✓ 正确：幂的乘方是指数相乘*
+
+      $(a^m)^n = a^(m times n)$
+
+      $(a^3)^4 = a^(3 times 4) = a^12$
+    ],
+  )
 ]
 
 #side-hack[

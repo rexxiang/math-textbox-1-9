@@ -28,6 +28,7 @@
 #include "01-counting/04-multiplication-division.typ"
 #include "01-counting/05-mixed-operations.typ"
 #include "01-counting/06-operation-laws.typ"
+#include "01-counting/07-review.typ"
 
 // 第 2 章：分与合（小学 3-6 年级）
 = 分与合
@@ -36,6 +37,7 @@
 #include "02-fraction-decimal/02-fractions.typ"
 #include "02-fraction-decimal/03-decimals.typ"
 #include "02-fraction-decimal/04-conversions.typ"
+#include "02-fraction-decimal/05-review.typ"
 
 // 第 3 章：比例世界（小学 5-7 年级）
 = 比例世界
@@ -44,6 +46,7 @@
 #include "03-ratio-world/02-ratios-proportions.typ"
 #include "03-ratio-world/03-data-collection.typ"
 #include "03-ratio-world/04-central-tendency.typ"
+#include "03-ratio-world/05-review.typ"
 
 // 第 4 章：负数的发明（初中 7-8 年级）
 = 负数的发明
@@ -52,6 +55,7 @@
 #include "04-negative-invention/04-power-operations.typ"
 #include "04-negative-invention/02-real-numbers.typ"
 #include "04-negative-invention/03-points-lines-planes.typ"
+#include "04-negative-invention/05-review.typ"
 
 // 第 5 章：方程——未知数猎手（初中 7-9 年级）
 = 方程\u{2014}\u{2014}未知数猎手
@@ -63,6 +67,7 @@
 #include "05-equation-machine/05-systems-of-equations.typ"
 #include "05-equation-machine/06-quadratic-equations.typ"
 #include "05-equation-machine/07-inequalities.typ"
+#include "05-equation-machine/08-review.typ"
 
 // 第 6 章：形的逻辑（小学 3-6 年级基础 + 初中 7-9 年级）
 = 形的逻辑
@@ -77,6 +82,7 @@
 #include "06-shape-logic/08-pythagorean-theorem.typ"
 #include "06-shape-logic/09-transformations.typ"
 #include "06-shape-logic/10-projections.typ"
+#include "06-shape-logic/11-review.typ"
 
 // 第 7 章：函数——变化的望远镜（初中 8-9 年级）
 = 函数\u{2014}\u{2014}变化的望远镜
@@ -86,6 +92,7 @@
 #include "07-function-lens/03-quadratic-functions.typ"
 #include "07-function-lens/04-coordinate-geometry.typ"
 #include "07-function-lens/05-trigonometric-functions.typ"
+#include "07-function-lens/06-review.typ"
 
 // 第 8 章：数据侦探（初中 7-9 年级）
 = 数据侦探
@@ -94,6 +101,7 @@
 #include "08-data-detective/02-frequency-distribution.typ"
 #include "08-data-detective/03-probability.typ"
 #include "08-data-detective/04-sampling-estimation.typ"
+#include "08-data-detective/05-review.typ"
 
 // 第 9 章：终章
 = 终章

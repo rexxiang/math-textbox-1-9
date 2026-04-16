@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
 == §7.4 坐标几何 <sec-7-4>
@@ -87,6 +87,26 @@
   - 由勾股定理：$A B = sqrt(4^2 + 3^2) = sqrt(16 + 9) = sqrt(25) = 5$
 
   直线距离是 $5$ 百米 $= 500$ 米！
+]
+
+#tryit[
+  先试一试：求点 $A(-2, 3)$ 和 $B(4, -1)$ 之间的距离，以及它们的中点坐标。
+
+  思路：距离公式是勾股定理的坐标版本，先算横差、竖差，再开根。
+]
+
+#pitfall[
+  *距离公式里的减法顺序不影响结果，但平方不能少！*
+
+  ❌ $AB = sqrt{(4-(-2)) + (-1-3)} = sqrt{6 + (-4)}$（忘了平方！）
+
+  ✓ $AB = sqrt{(4-(-2))^2 + (-1-3)^2} = sqrt{36 + 16} = sqrt{52}$
+
+  另外，*中点公式是坐标的平均值*，不是差值：
+
+  ❌ 中点 $= (frac{4-(-2)}{2}, frac{-1-3}{2}) = (3, -2)$（用了差）
+
+  ✓ 中点 $= (frac{-2+4}{2}, frac{3+(-1)}{2}) = (1, 1)$（用和除以2）
 ]
 
 #blueprint[

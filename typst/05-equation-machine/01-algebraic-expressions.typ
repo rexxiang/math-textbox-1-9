@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
 == §5.1 代数式与整式 <sec-5-1>
 
@@ -58,6 +58,12 @@
 
 #side-hack[
   合并同类项的口诀——*字母指数不变，系数相加减*。就像收拾房间：3 个苹果加 5 个苹果等于 8 个苹果，$3 x$ 加 $5 x$ 等于 $8 x$，但 $3 x$ 和 $5 y$ 不能合并——苹果和橘子不是一类！
+]
+
+#tryit[
+  拿起笔，先自己化简：$(5 a^2 b - 3 a b) - (2 a^2 b + a b - 4)$
+
+  注意：减号后面有括号！写出每一步，然后在 blueprint 例 2 里对照。
 ]
 
 #blueprint[
@@ -131,6 +137,24 @@
   *多项式除以单项式*：每一项分别除。
 
   $ (6 x^3 - 9 x^2 + 3 x) div 3 x = 2 x^2 - 3 x + 1 $
+]
+
+#pitfall[
+  *两个高频错误，每节课都有人中招：*
+
+  *① 减号后的括号，里面每一项都要变号，不只是第一项！*
+
+  $(5a^2b - 3ab) - (2a^2b + ab - 4)$
+
+  ❌ 错误：$= 5a^2b - 3ab - 2a^2b + ab - 4$（漏掉了 $ab$ 的变号）
+
+  实际上 $ab$ 是正的，变号后应为 $-ab$：
+
+  ✓ 正确：$= 5a^2b - 3ab - 2a^2b - ab + 4$
+
+  *② $a^2b$ 和 $ab^2$ 不是同类项，别合并！*
+
+  虽然都含有 $a$ 和 $b$，但次数分布不同：$a^2b$ 是 $a$ 的 2 次、$b$ 的 1 次；$ab^2$ 是 $a$ 的 1 次、$b$ 的 2 次。就像苹果饼干和苹果汁，都含苹果，但不是同一种东西。
 ]
 
 #mastery[

@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
 == §5.7 不等式 <sec-5-7>
 
@@ -45,6 +45,14 @@
   *乘负变号*口诀——「负号一来，箭头反转」。
 
   这是不等式中*最容易犯的错误*。每次乘以或除以负数，都停下来问自己：「我变号了吗？」
+]
+
+#tryit[
+  不翻书，自己试一试：解不等式 $-2 x + 1 >= 5$。
+
+  提示：移项之后，你需要除以一个负数——记得处理不等号方向！
+
+  写出每一步，再往下看 blueprint 里的例子对照。
 ]
 
 #blueprint[
@@ -148,6 +156,31 @@
   综合：$10 <= x <= 15$
 
   答：宽在 $10$ cm 到 $15$ cm 之间（含端点）。
+]
+
+#pitfall[
+  *乘除负数，不等号必须反转！*
+
+  #grid(columns: (1fr, 1fr), gutter: 8pt,
+    block[
+      ❌ *错误*
+
+      $-3 x >= -90$
+
+      $x >= 30$（忘记变号）
+    ],
+    block[
+      ✓ *正确*
+
+      $-3 x >= -90$
+
+      除以 $-3$（负数！）：
+
+      $x <= 30$（不等号反转）
+    ]
+  )
+
+  *等式和不等式的关键区别*：等式两边乘除任何非零数，等号不变；不等式两边乘除*负数*时，不等号*必须反转*。正数则不变。
 ]
 
 #mastery[

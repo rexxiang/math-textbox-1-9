@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
 == §6.2 面积与体积 <sec-6-2>
@@ -52,6 +52,17 @@
   $ S_"圆" = pi r^2 $
 ]
 
+#tryit[
+  先不看公式，自己算一算：
+
+  一个圆柱，底面半径 $r = 3$ cm，高 $h = 5$ cm。
+
+  + 底面积是多少（用 $pi$ 表示）？
+  + 圆柱的体积是多少（用 $pi$ 表示，再用 $pi approx 3.14$ 算近似值）？
+
+  算完后，再对照下面的公式检查自己的思路是否正确。
+]
+
 #history-note[
   *九章算术·方田*：中国最早的数学经典《九章算术》（约公元 1 世纪）的第一章「方田」，就系统地给出了长方形、三角形、梯形、圆等的面积公式，比欧洲同类成果早了约一千年。
 ]
@@ -102,6 +113,14 @@
     [体积], [$"cm"^3$, $"dm"^3$ (= 1 L), $"m"^3$], [相邻 $times 1000$],
     [质量], [g, kg, t], [相邻 $times 1000$],
   )
+]
+
+#pitfall[
+  *陷阱 1*：$pi approx 3.14$ 只是近似值，精确计算时要写 $pi$，不要随意替换。
+
+  *陷阱 2*：圆的面积是 $pi r^2$，不是 $pi d^2$。$r$ 是半径，$d = 2r$ 是直径，两者不要混淆。
+
+  *陷阱 3*：圆柱侧面积 $= 2 pi r h$（把侧面展开是一个长方形，长 $= 2 pi r$，宽 $= h$），而不是 $pi r^2 h$（那是体积公式）。
 ]
 
 #mastery[

@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
 == §6.7 圆 <sec-6-7>
@@ -79,6 +79,17 @@
     }),
     caption: [圆的基本元素：圆心 $O$，半径 $r$（蓝），弦 $A B$（红），直径 $C D$（绿），圆心角（紫），圆周角（橙）]
   )
+]
+
+#tryit[
+  先自己算一算，再看蓝图中的公式：
+
+  一个圆的半径 $r = 5$，求：
+
+  + 圆的面积（用 $pi$ 表示，再取 $pi approx 3.14$ 求近似值）
+  + 圆的周长（用 $pi$ 表示，再取 $pi approx 3.14$ 求近似值）
+
+  注意：面积和周长的公式容易搞混，先凭记忆写，写完再核对。
 ]
 
 #blueprint[
@@ -174,6 +185,14 @@
   *例 3*：圆的半径 $r = 5$，弦 $A B = 8$。求圆心到弦 $A B$ 的距离。
 
   *解*：由垂径定理，过圆心 $O$ 作 $O H perp A B$，则 $A H = frac(1, 2) A B = 4$。在直角 $triangle O H A$ 中，$O H = sqrt(O A^2 - A H^2) = sqrt(25 - 16) = 3$。
+]
+
+#pitfall[
+  *陷阱 1*：圆的周长公式是 $C = 2 pi r$（或 $pi d$），面积公式是 $S = pi r^2$。两者容易混淆——面积有「$r^2$」，周长只有「$r$」。
+
+  *陷阱 2*：$\pi$ 是无理数，$3.14$ 只是近似值。精确计算结果要写 $\pi$（如 $25\pi$），只有题目要求「取 $\pi \approx 3.14$」时才代入近似值。
+
+  *陷阱 3*：弧长 $\ne$ 弦长。弧长是圆上两点之间的曲线长度，弦长是连接两点的直线长度，弧长 $>$ 弦长（弯路比直路长）。
 ]
 
 #side-hack[

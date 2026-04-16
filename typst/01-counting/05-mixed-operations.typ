@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
 == §1.5 混合运算 <sec-1-5>
 
@@ -31,6 +31,13 @@
   如果想先算加法呢？用括号！$(3 + 5) times 3 = 24$
 ]
 
+#tryit[
+  *先自己算一算*：$3 + 4 times 2 - 1 = ?$
+
+  不要从左到右直接算，想一想哪个运算应该先做。
+  写下你的计算步骤，再往下对照。
+]
+
 #blueprint[
   运算顺序规则：
   + *括号最优先*：先算小括号 $()$，再算中括号 $[]$
@@ -38,6 +45,16 @@
   + *同级从左到右*
 
   例：$2 + 3 times 4 - 6 div 2 = 2 + 12 - 3 = 11$
+]
+
+#pitfall[
+  *高频错误*
+
+  ❌ 从左往右依次算，不管运算符优先级：$3 + 4 times 2$ 算成 $(3 + 4) times 2 = 14$
+  → ✓ 乘除优先于加减：先算 $4 times 2 = 8$，再算 $3 + 8 = 11$
+
+  ❌ 有括号时，忘记先算括号里面：$(80 - 56) div [2 times (9 - 5)]$ 中先算了外层
+  → ✓ 从最内层括号开始：先算 $(9 - 5) = 4$，再算 $[2 times 4] = 8$，最后算 $(80 - 56) div 8 = 3$
 ]
 
 #mastery[

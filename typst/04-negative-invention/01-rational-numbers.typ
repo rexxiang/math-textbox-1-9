@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
 == §4.1 有理数 <sec-4-1>
 
@@ -44,6 +44,17 @@
   负负得正的直觉——「欠你的钱被免掉了」= 你赚了。$-(-5) = +5$。
 ]
 
+#tryit[
+  在看例题前，先自己算一算：
+
+  计算 $(-3) + 5 - (-2)$。
+
+  + 先把减法转化为加法，写出等价表达式。
+  + 再按有理数加法法则一步步计算出结果。
+
+  写下你的过程，再往下看。
+]
+
 #blueprint[
   *有理数的分类*
 
@@ -81,6 +92,44 @@
   #side-hack[
     *运算律继续成立！* 在 #secref("1.6") 中学到的五大运算律（加法交换律、加法结合律、乘法交换律、乘法结合律、分配律），对有理数——包括负数——全部成立。例如 $(-3) + 5 = 5 + (-3)$，$(-2) times (3 + (-7)) = (-2) times 3 + (-2) times (-7)$。这意味着你在自然数中学到的所有运算技巧，在有理数中依然好用。
   ]
+]
+
+#pitfall[
+  *最常见的两类错误：*
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    block[
+      *❌ 错误：两个负号相消后仍为负*
+
+      $-(-3) = -3$
+    ],
+    block[
+      *✓ 正确：负负得正*
+
+      $-(-3) = +3$
+
+      「去掉欠款」= 你赚了
+    ],
+  )
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    block[
+      *❌ 错误：绝对值取负值*
+
+      $abs(-5) = -5$
+    ],
+    block[
+      *✓ 正确：绝对值表示距离，永远非负*
+
+      $abs(-5) = 5$
+
+      $abs(0) = 0$，$abs(3) = 3$
+    ],
+  )
 ]
 
 #mastery[

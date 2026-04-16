@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
 == §2.1 因数与倍数 <sec-2-1>
 
@@ -26,6 +26,13 @@
   再观察：有些数只能写成 $1 times$ 自己（如 $2, 3, 5, 7$），它们叫*质数*；能继续拆的（如 $4 = 2 times 2$）叫*合数*。
 ]
 
+#tryit[
+  *先自己试试*：用质因数分解法求 $gcd(36, 48)$。
+
+  先把 $36$ 和 $48$ 各自分解成质因数的乘积，再找出两者共同的质因数，取较小的幂次相乘。
+  写下你的过程，再往下对照。
+]
+
 #blueprint[
   - 若 $a = b times c$（$b, c$ 为正整数），则 $b, c$ 是 $a$ 的*因数*，$a$ 是 $b, c$ 的*倍数*
   - *质数*：大于 1 且只有 $1$ 和自身两个因数的数
@@ -41,6 +48,16 @@
 
 #side-hack[
   快速求 GCD 的"辗转相除法"：$gcd(24, 18)$——$24 div 18 = 1 dots.h dots.h 6$，$18 div 6 = 3 dots.h dots.h 0$，余数为 0 时除数 $6$ 就是答案。
+]
+
+#pitfall[
+  *高频错误*
+
+  ❌ 求最大公因数（GCD）时取了最小公倍数的做法——把所有质因数的*较大*幂次相乘：$36 = 2^2 times 3^2$，$48 = 2^4 times 3$，误算 $gcd = 2^4 times 3^2 = 144$
+  → ✓ GCD 取公共质因数的*较小*幂次：$gcd = 2^2 times 3 = 12$
+
+  ❌ 求最小公倍数（LCM）时取了最大公因数的做法——只取公共部分：误算 $"lcm"(36, 48) = 12$
+  → ✓ LCM 取所有质因数的*较大*幂次：$"lcm" = 2^4 times 3^2 = 144$
 ]
 
 #mastery[

@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
 == §6.9 图形变换 <sec-6-9>
@@ -37,6 +37,17 @@
   *第四步*：旋转——绕点转动。
 
   把一个图形绕一个定点（旋转中心）转动一定角度。每个点到旋转中心的距离不变，对应点与旋转中心连线的夹角等于旋转角。
+]
+
+#tryit[
+  先自己算一算，再看蓝图中的坐标变换规则：
+
+  点 $P(3, 2)$ 关于 $x$ 轴做轴对称变换，得到点 $P'$。
+
+  + $P'$ 的坐标是什么？（$x$ 坐标变不变？$y$ 坐标怎么变？）
+  + 再把 $P'$ 关于 $y$ 轴对称，得到 $P''$，坐标是什么？
+
+  凭直觉先猜，再对照下面的规则表。
 ]
 
 #blueprint[
@@ -209,6 +220,19 @@
   *例 3*：等边三角形有几条对称轴？是中心对称图形吗？
 
   *解*：$3$ 条对称轴（每条顶点到对边中点的连线）。不是中心对称图形（绕中心旋转 $180 degree$ 后不能与自身重合，但绕中心旋转 $120 degree$ 可以）。
+]
+
+#pitfall[
+  *陷阱 1*：平移*不改变*图形的形状和大小，也不改变方向（不翻转）。平移后图形与原图形*全等*，对应线段平行且相等。
+
+  *陷阱 2*：旋转和反射（轴对称）的区别——
+
+  #grid(columns: (1fr, 1fr), gutter: 8pt,
+    block[*旋转*：图形绕一个点转动，方向感保持（顺/逆时针），不产生镜像],
+    block[*反射（轴对称）*：图形关于一条直线翻转，产生镜像，字母 R 和它的对称图像是镜像关系]
+  )
+
+  *陷阱 3*：中心对称是旋转 $180 degree$ 的特例，不要与一般旋转混淆。
 ]
 
 #mastery[

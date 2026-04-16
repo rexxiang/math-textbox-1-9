@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
 == §6.1 认识图形与周长 <sec-6-1>
@@ -48,6 +48,15 @@
   *圆*：到中心（圆心）距离相等的所有点组成的封闭曲线。从圆心到圆上的距离叫*半径* $r$，穿过圆心的最长弦叫*直径* $d = 2r$。
 ]
 
+#tryit[
+  拿出纸和笔，画一个正方形和一个长方形（长不等于宽），在图旁边写出两者的异同：
+
+  + 它们有哪些相同之处？（角度、平行边……）
+  + 正方形和长方形的最关键区别是什么？
+
+  先自己想一想，再继续阅读。
+]
+
 #blueprint[
   *周长*是封闭图形一圈的总长度。
 
@@ -65,6 +74,12 @@
   #side-hack[
     $pi$ 是一个无限不循环小数。计算时通常取 $pi approx 3.14$，或者用分数近似 $pi approx 22/7$。精确计算直接用 $pi$ 表示结果即可。
   ]
+]
+
+#pitfall[
+  *陷阱 1*：正方形是特殊的长方形——它满足长方形的全部条件（四个直角、对边相等），只是额外还满足「四边相等」。所以「正方形」$subset$「长方形」，不要把它们看作完全独立的两类图形。
+
+  *陷阱 2*：菱形（四边相等的平行四边形）不一定是正方形——菱形的角不一定是直角。只有当菱形有一个直角时，它才是正方形。
 ]
 
 #history-note[

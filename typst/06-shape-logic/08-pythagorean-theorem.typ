@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 #import "../lib/geometry-helpers.typ": equal-angle
 
@@ -113,6 +113,15 @@
   这就是装修师傅检查直角的原理：$3^2 + 4^2 = 9 + 16 = 25 = 5^2$。
 ]
 
+#tryit[
+  先自己动手，再看蓝图：
+
+  + 验证 $3$、$4$、$5$ 是勾股数：计算 $3^2 + 4^2$，看是否等于 $5^2$。
+  + 一个直角三角形，两条直角边分别是 $5$ 和 $12$，求斜边的长度。（提示：$c = sqrt(a^2 + b^2)$）
+
+  试着不查公式先算，完成后对照下面的蓝图。
+]
+
 #side-hack[
   *常见勾股数*（背下来能大幅提速）：
 
@@ -167,6 +176,17 @@
   *例 4*：一个长方体的长、宽、高分别为 $3, 4, 12$，求体对角线长。
 
   *解*：$d = sqrt(3^2 + 4^2 + 12^2) = sqrt(9 + 16 + 144) = sqrt(169) = 13$。
+]
+
+#pitfall[
+  *陷阱 1*：公式 $a^2 + b^2 = c^2$ 中，$c$ 必须是*斜边*（最长边），$a$ 和 $b$ 是两条直角边。不能把斜边放到等号左边，否则计算结果错误。
+
+  #grid(columns: (1fr, 1fr), gutter: 8pt,
+    block[*正确*：\ 直角边 $a = 3$，$b = 4$，\ 斜边 $c = sqrt(3^2 + 4^2) = 5$],
+    block[*错误*：\ 把 $c = 4$ 代入 $3^2 + 4^2 = ?$ 当作斜边，\ 得到 $9 + 16 = 25$，误以为任意边都可以是「斜边」]
+  )
+
+  *陷阱 2*：逆定理的条件是「$a^2 + b^2 = c^2$（$c$ 最大）才是直角三角形」。只有最大边对应的平方和才能说明是直角，不能用任意两边来判断。
 ]
 
 #mastery[

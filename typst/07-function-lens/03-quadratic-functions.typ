@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
 == §7.3 二次函数 <sec-7-3>
 
@@ -54,6 +54,14 @@
   - *$a$ 定开口*——$a > 0$ 开口向上，$a < 0$ 开口向下
   - *$h$ 定左右*——顶点在 $x = h$（注意括号里是 $x - h$，符号相反！）
   - *$k$ 定上下*——顶点在 $y = k$
+]
+
+#tryit[
+  先试一试：把 $y = x^2 - 6x + 10$ 化成顶点式。
+
+  步骤提示：把 $x^2 - 6x$ 部分看成配方目标，需要加减 $(6/2)^2 = 9$，同时保持等式不变。
+
+  写出顶点坐标和对称轴，再对照 blueprint 例题 1 的步骤检查。
 ]
 
 #blueprint[
@@ -118,6 +126,29 @@
   配方：
   $ y = -2(x - 30)^2 + 200 $
   因为 $a = -2 < 0$，当 $x = 30$ 时 $y$ 取最大值 $200$（元）。即售价 $30$ 元时日利润最大，为 $200$ 元。
+]
+
+#pitfall[
+  *顶点式最高频的错误：$h$ 的符号读反了！*
+
+  $y = a(x - h)^2 + k$，顶点是 $(h, k)$。
+
+  但括号里是 $x - h$，注意*负号*：
+
+  #grid(columns: (1fr, 1fr), gutter: 8pt,
+    block[
+      ❌ $y = 2(x + 1)^2 - 5$
+
+      看到 $x + 1$，错误地读成顶点 $x = 1$
+    ],
+    block[
+      ✓ $y = 2(x + 1)^2 - 5 = 2(x - (-1))^2 - 5$
+
+      $h = -1$，顶点在 $x = -1$（往左不是右！）
+    ]
+  )
+
+  *口诀：括号里是「$x -$什么」，就在「那个什么」处。加了个数，顶点往左跑。*
 ]
 
 #mastery[

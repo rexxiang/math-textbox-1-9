@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
 == §7.5 锐角三角函数 <sec-7-5>
@@ -72,6 +72,37 @@
   - SOH: Sine = Opposite / Hypotenuse（正弦 = 对边/斜边）
   - CAH: Cosine = Adjacent / Hypotenuse（余弦 = 邻边/斜边）
   - TOA: Tangent = Opposite / Adjacent（正切 = 对边/邻边）
+]
+
+#tryit[
+  在直角三角形中，$angle C = 90 degree$，$a = 3$，$c = 5$。先不查书，用 SOH-CAH-TOA 口诀，写出 $sin A$、$cos A$、$tan A$ 的值。
+
+  提示：先用勾股定理求出邻边 $b$，然后对号入座。
+]
+
+#pitfall[
+  *三角函数最容易搞混的：对边和邻边是相对于哪个角而言的！*
+
+  同一个三角形，对角 $A$ 和对角 $B$ 的「对边」是不同的边。
+
+  #grid(columns: (1fr, 1fr), gutter: 8pt,
+    block[
+      *对于角 $A$*：
+
+      对边 $= BC = a$，邻边 $= AC = b$
+
+      $sin A = a/c$，$\cos A = b/c$
+    ],
+    block[
+      *对于角 $B$*：
+
+      对边 $= AC = b$，邻边 $= BC = a$
+
+      $sin B = b/c$，$\cos B = a/c$
+    ]
+  )
+
+  *互余关系*：$sin A = cos B$（因为 $A + B = 90 degree$），所以 $sin A = cos(90 degree - A)$。
 ]
 
 #blueprint[

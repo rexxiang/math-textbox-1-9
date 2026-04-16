@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
 == §1.1 自然数与零 <sec-1-1>
 
@@ -30,11 +30,29 @@
   还有一个特别的情况：盘子空了，一颗糖都没有。怎么表示「没有」呢？——我们需要 *0*。
 ]
 
+#tryit[
+  *先自己想一想*：下面哪些数是自然数？
+
+  $0$，$-1$，$2.5$，$100$，$-7$，$3$
+
+  在心里判断好，再往下看解释。
+]
+
 #blueprint[
   - *自然数* 就是 $0, 1, 2, 3, 4, dots.h$，用来表示「多少个」
   - *$0$* 表示「一个都没有」，它也是自然数
   - 自然数可以从小到大排列，永远数不完
   - 比较大小：$3 < 5$（3 比 5 小），$7 > 2$（7 比 2 大）
+]
+
+#pitfall[
+  *高频错误*
+
+  ❌ 以为自然数不包含 0，把 0 排除在外
+  → ✓ 自然数包含 0：$0, 1, 2, 3, dots.h$（0 表示"一个都没有"，同样是自然数）
+
+  ❌ 把 $-1$ 当成自然数（"负数也是整数，整数不就是自然数吗？"）
+  → ✓ 负数不是自然数，自然数只有 $0$ 和正整数，没有负数
 ]
 
 #mastery[

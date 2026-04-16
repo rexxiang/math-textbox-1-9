@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
 == §6.10 投影与三视图 <sec-6-10>
@@ -28,6 +28,14 @@
   *关键发现*：从不同方向做正投影，得到的轮廓不同。一个方向往往不够——需要多个方向组合，才能完整描述物体。
 
   *试一试*：拿一个圆柱形水杯。从正前方看是什么形状？从正上方看呢？从右侧看呢？
+]
+
+#tryit[
+  拿出纸笔，凭直觉画一画：
+
+  一个正方体（如骰子），从正前方看、从正上方往下看、从左侧看，分别会是什么形状？
+
+  先把三个形状画出来，再翻到下面的表格对照——你画对了吗？
 ]
 
 #blueprint[
@@ -102,6 +110,20 @@
   *例 1*：一个底面为正方形的四棱锥（金字塔形），主视图和左视图都是等腰三角形，俯视图是正方形加两条对角线（从顶点到四个底角的投影）。
 
   *例 2*：一个圆柱上面叠一个小圆锥（像铅笔尖）。主视图是下方矩形 + 上方三角形；俯视图是两个同心圆；左视图与主视图相同。
+]
+
+#pitfall[
+  *陷阱 1*：三视图的三个方向容易搞混——
+
+  #grid(columns: (1fr, 1fr, 1fr), gutter: 8pt,
+    block[*主视图*：\ 从正*前方*看],
+    block[*俯视图*：\ 从正*上方*往下看],
+    block[*左视图*：\ 从*左侧*看]
+  )
+
+  「正视图」和「主视图」是同一个东西；「侧视图」通常指左视图。
+
+  *陷阱 2*：三视图中被遮挡的棱要用*虚线*，可见轮廓用实线。画图时不要把虚实线搞混——漏画虚线会让人误以为那条棱不存在。
 ]
 
 #mastery[

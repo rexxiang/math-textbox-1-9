@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
 == §5.4 一元一次方程 <sec-5-4>
 
@@ -56,6 +56,14 @@
   脱衣服：$23 arrow.r - 5 arrow.r div 2 arrow.r x = 9$
 
   最后穿的最先脱（先算最外层的运算）。
+]
+
+#tryit[
+  先别看下面的步骤，自己试试：解方程 $2(x - 3) = 5 x + 3$。
+
+  提示：先展开左边的括号，然后移项，再合并同类项。
+
+  写下每一步之后，对照 blueprint 里的例 2 检查。
 ]
 
 #blueprint[
@@ -142,6 +150,25 @@
   $ t = 2 $
 
   答：2 小时后相遇。
+]
+
+#pitfall[
+  *两个最高频错误*，每次都有学生在这里翻车：
+
+  *① 移项时忘了变号*
+
+  #grid(columns: (1fr, 1fr), gutter: 8pt,
+    block[❌ $3 x - 7 = 2 x + 5$ \ $3 x - 2 x = 5 - 7$（移项没变号）\ $x = -2$ ✗],
+    block[✓ $3 x - 7 = 2 x + 5$ \ $3 x - 2 x = 5 + 7$（$-7$ 移到右边变 $+7$）\ $x = 12$ ✓]
+  )
+
+  *② 含分数方程去分母后漏乘*
+
+  $frac(x - 1, 2) - frac(x + 3, 6) = 1$，两边乘 6：
+
+  ❌ 错误：$3(x - 1) - (x + 3) = 1$（右边的 1 忘乘 6）
+
+  ✓ 正确：$3(x - 1) - (x + 3) = 6$（每一项都要乘 6）
 ]
 
 #mastery[

@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
 == §5.3 分式 <sec-5-3>
 
@@ -26,6 +26,14 @@
   关键限制：*分母不能为零*。$frac(1, x)$ 要求 $x != 0$；$frac(x + 1, x - 2)$ 要求 $x != 2$。
 
   *分式与分数的类比*：分式之于整式，就像分数之于整数。分数的运算规则，几乎可以原封不动地搬到分式上来！
+]
+
+#tryit[
+  先试一试：计算 $frac(2, x - 1) - frac(1, x + 1)$
+
+  思路：这两个分式的分母不同，你需要找到最简公分母（想想 $x-1$ 和 $x+1$ 的最简公倍式是什么），然后通分再相减。
+
+  写出过程，再对照 blueprint 里的例 5 检验。
 ]
 
 #blueprint[
@@ -121,6 +129,20 @@
   验根：$x = 3$ 时，$x + 2 = 5 != 0$，$x - 2 = 1 != 0$。✓
 
   答：$x = 3$。
+]
+
+#pitfall[
+  *分式方程最大的坑——解出来忘记验根！*
+
+  ❌ 解方程 $frac(2, x - 1) = frac(x + 1, x - 1) + 1$ 得 $x = 1$，直接写「$x = 1$」作为答案。
+
+  ✓ 代入分母检验：$x = 1$ 时 $x - 1 = 0$，分母为零，原式无意义！
+
+  这个 $x = 1$ 是*增根*——去分母时人为引入的假解，*必须舍去*。
+
+  结论：原方程*无解*。
+
+  *每道分式方程最后一步：把解代入所有分母，检查是否出现分母为零。*
 ]
 
 #side-hack[

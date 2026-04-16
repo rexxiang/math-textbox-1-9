@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
 == §3.1 百分数 <sec-3-1>
 
@@ -41,6 +41,17 @@
   涨再跌不等于原价！100 元涨 $10%$ 变 110 元，再跌 $10%$ 变 $110 times 0.9 = 99$ 元——少了 1 元。反复涨跌会慢慢「磨损」本金。
 ]
 
+#tryit[
+  在看例题前，先自己试一试：
+
+  某商品原价 300 元，商家打八折出售。
+
+  + 八折对应的百分数是多少？
+  + 打折后的实际售价是多少元？
+
+  动笔算一算，写下你的过程，再往下看。
+]
+
 #blueprint[
   === 百分数的意义
 
@@ -74,6 +85,46 @@
 
   *增长率*：去年产量 200 吨，今年 230 吨。
   $ "增长率" = frac(230 - 200, 200) = frac(30, 200) = 15% $
+]
+
+#pitfall[
+  *最常见的两类错误：*
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    block[
+      *❌ 错误：把折扣当成折扣率*
+
+      八折 $= 8%$
+
+      实付 $= 300 times 8% = 24$ 元
+    ],
+    block[
+      *✓ 正确：折扣要换算成百分数*
+
+      八折 $= 80%$
+
+      实付 $= 300 times 80% = 240$ 元
+    ],
+  )
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    block[
+      *❌ 错误：认为涨再跌能回原价*
+
+      涨 $10%$ 再跌 $10%$ $= $ 原价
+    ],
+    block[
+      *✓ 正确：涨再跌损失 1%*
+
+      $100 times 1.1 times 0.9 = 99$
+
+      比原价少了 $1%$！
+    ],
+  )
 ]
 
 #mastery[

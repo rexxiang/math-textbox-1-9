@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
 == §6.3 角 <sec-6-3>
@@ -45,6 +45,17 @@
   *第三步*：用量角器量角。
 
   将量角器的中心对准角的顶点，$0 degree$ 刻度线对齐角的一条边，读出另一条边指向的刻度，就是角的度数。
+]
+
+#tryit[
+  先自己算一算，再看下面的概念总结：
+
+  已知 $angle A = 37 degree$，求：
+
+  + $angle A$ 的余角（即与 $angle A$ 互余的角）是多少度？
+  + $angle A$ 的补角（即与 $angle A$ 互补的角）是多少度？
+
+  提示：互余的两角之和为 $90 degree$，互补的两角之和为 $180 degree$。
 ]
 
 #blueprint[
@@ -145,6 +156,12 @@
   *例*：$35 degree 42' + 27 degree 33' = 62 degree 75' = 63 degree 15'$
 
   *例*：$90 degree - 56 degree 28' = 89 degree 60' - 56 degree 28' = 33 degree 32'$
+]
+
+#pitfall[
+  *陷阱 1*：互余与互补搞混——互余两角之和是 $90 degree$，互补两角之和是 $180 degree$。记忆法：「余」→「九十」，「补」→「一百八」。
+
+  *陷阱 2*：「对顶角相等」只适用于*两条直线相交*形成的对顶角，不能推广到任意图形中的「对角」。例如，平行四边形的对角不是对顶角，它们相等是另一个原因（平行线性质），不要混用「对顶角相等」来解释。
 ]
 
 #side-hack[

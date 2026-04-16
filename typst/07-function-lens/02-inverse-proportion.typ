@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz, cetz-plot
 
 == §7.2 反比例函数 <sec-7-2>
@@ -58,6 +58,22 @@
     circle((2, 3), radius: 0.06, fill: blue)
     content((2.3, 3.3), text(7pt)[$(x, y)$])
   }))
+]
+
+#tryit[
+  先试一试：已知反比例函数图象经过点 $(3, 4)$，求 $k$ 的值并写出函数解析式。
+
+  思路：把点的坐标代入 $y = k/x$，直接计算 $k = x times y$。
+]
+
+#pitfall[
+  *反比例函数最容易混淆的一点：$k > 0$ 时，图象在一、三象限，但 $y$ 随 $x$ 增大而减小！*
+
+  这和正比例函数 $y = kx$（$k > 0$）恰好相反——别以为「$k$ 正」就是递增。
+
+  ❌ 错误想法：$y = 6/x$，$k = 6 > 0$，所以 $y$ 随 $x$ 增大而增大。
+
+  ✓ 正确：$x$ 增大，分母增大，所以 $y$ 反而*减小*。
 ]
 
 #blueprint[

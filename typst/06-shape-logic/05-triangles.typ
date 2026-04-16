@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 #import "../lib/geometry-helpers.typ": equal-angle
 
@@ -64,6 +64,17 @@
   如果两个三角形的形状、大小完全相同（可以重合），我们说它们*全等*，记作 $triangle A B C tilde.eq triangle D E F$。
 
   但我们不需要逐一检查 6 个元素（3 边 3 角）。只需要满足以下任意一组条件即可：
+]
+
+#tryit[
+  不看下面的定理，先用内角和来验算：
+
+  在 $triangle A B C$ 中，$angle A = 50 degree$，$angle B = 70 degree$。
+
+  + 求 $angle C$（利用三角形内角和等于 $180 degree$）。
+  + 这是什么类型的三角形（锐角 / 直角 / 钝角）？
+
+  算完后再继续阅读，对照「工具蓝图」中的内角和定理。
 ]
 
 #side-hack[
@@ -181,6 +192,19 @@
   *例 3*：证明：等腰三角形底边上的中线垂直于底边。
 
   *证明*：设等腰 $triangle A B C$ 中 $A B = A C$，$M$ 是 $B C$ 的中点。在 $triangle A B M$ 和 $triangle A C M$ 中：$A B = A C$，$B M = C M$，$A M = A M$（公共边），所以 $triangle A B M tilde.eq triangle A C M$（SSS）。因此 $angle A M B = angle A M C$。又 $angle A M B + angle A M C = 180 degree$，所以 $angle A M B = 90 degree$，即 $A M perp B C$。
+]
+
+#pitfall[
+  *陷阱：SSA 不能判定全等*
+
+  已知两边和一个*非夹角*（边-边-角），三角形形状并*不唯一确定*——可能存在两个不同的三角形满足同样的条件（歧义情形）。
+
+  #grid(columns: (1fr, 1fr), gutter: 8pt,
+    block[*正确的全等判定（角必须是夹角）*：\ SAS（两边夹角）、ASA、AAS、SSS、HL],
+    block[*错误用法*：\ SSA ✗——「两边一非夹角」无法判定全等，切勿使用！]
+  )
+
+  唯一例外：直角三角形的 HL（斜边 + 一条直角边）。
 ]
 
 #mastery[

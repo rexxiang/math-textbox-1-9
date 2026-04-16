@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
 == §6.4 平行与垂直 <sec-6-4>
@@ -65,6 +65,16 @@
   *第三步*：垂直。
 
   两条直线相交成 $90 degree$（直角）时，称它们*互相垂直*。记作 $a perp b$，读作「$a$ 垂直于 $b$」。交点叫做*垂足*。
+]
+
+#tryit[
+  如图，两条平行线 $a \parallel b$，被截线 $l$ 所截，交点分别为 $P$（在 $a$ 上）和 $Q$（在 $b$ 上），形成 8 个角。
+
+  先自己在草稿纸上画出图形，标出以下角对（答案在下面的蓝图中）：
+
+  + 找出一对同位角，并说明它们在截线的哪一侧
+  + 找出一对内错角，并说明它们在截线的哪一侧
+  + 找出一对同旁内角，判断它们的关系（相等还是互补？）
 ]
 
 #side-hack[
@@ -137,6 +147,12 @@
   *例 3*：如图，$a parallel b$，$angle 1 = 50 degree$，求 $angle 2$（$angle 1$ 与 $angle 2$ 是同旁内角）。
 
   *解*：因为 $a parallel b$，所以 $angle 1 + angle 2 = 180 degree$（两直线平行，同旁内角互补）。因此 $angle 2 = 180 degree - 50 degree = 130 degree$。
+]
+
+#pitfall[
+  *陷阱 1*：同位角相等、内错角也相等——但同旁内角*互补*（和为 $180 degree$），不是相等！这三组角的关系容易搞混。
+
+  *陷阱 2*：平行线的角关系是「平行 $arrow.r$ 角相等/互补」（性质），反过来「角相等/互补 $arrow.r$ 平行」（判定）——两个方向的推理都要掌握，但做题时要先搞清楚题目是给了哪个条件（平行还是角），再决定用性质还是判定。
 ]
 
 #mastery[

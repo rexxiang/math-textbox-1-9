@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
 == §6.6 四边形 <sec-6-6>
@@ -57,6 +57,18 @@
   *第三步*：动手验证。
 
   用四根木条和图钉做一个平行四边形框架，推一推——它会变形！当你推成直角时，它变成了矩形；当四根木条一样长时，它是菱形；既是直角又四边等长时，就是正方形。
+]
+
+#tryit[
+  先自己算一算，再对照下面的蓝图：
+
+  平行四边形 $A B C D$ 中，$angle A = 70 degree$。
+
+  + $angle B$ 等于多少度？（$A$ 和 $B$ 是邻角）
+  + $angle C$ 等于多少度？（$A$ 和 $C$ 是对角）
+  + $angle D$ 等于多少度？
+
+  提示：平行四边形有什么角的特性？先想想，再往下看。
 ]
 
 #blueprint[
@@ -186,6 +198,17 @@
   *例 2*：菱形 $A B C D$ 的对角线长分别为 $6$ 和 $8$，求菱形面积和边长。
 
   *解*：$S = frac(1, 2) times 6 times 8 = 24$。对角线互相垂直平分，半对角线为 $3$ 和 $4$，由勾股定理（#secref("6.8")），边长 $= sqrt(3^2 + 4^2) = 5$。
+]
+
+#pitfall[
+  *陷阱 1*：平行四边形的规律是——对角相等，邻角互补（和为 $180 degree$）。不要误以为四个角都相等！
+
+  #grid(columns: (1fr, 1fr), gutter: 8pt,
+    block[*正确*：\ $angle A = angle C$，$angle B = angle D$（对角相等）\ $angle A + angle B = 180 degree$（邻角互补）],
+    block[*错误*：\ $angle A = angle B = angle C = angle D$（这只在矩形时成立，矩形每角 $90 degree$）]
+  )
+
+  *陷阱 2*：菱形四边相等，但角不一定是 $90 degree$。只有当菱形的角也是 $90 degree$ 时，它才是正方形。
 ]
 
 #mastery[
