@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../../lib/diagram-packages.typ": cetz
 
 == §6.2 平行与垂直 <sec-6-2>
 
@@ -28,6 +29,38 @@
   - *同位角*：在截线同侧，一个在 $a$ 上方一个在 $b$ 上方（位置相同）
   - *内错角*：在截线两侧，都在 $a$、$b$ 之间（交错分布）
   - *同旁内角*：在截线同侧，都在 $a$、$b$ 之间
+
+#figure(
+  cetz.canvas(length: 2cm, {
+    import cetz.draw: *
+    // Line a (upper parallel line)
+    line((-0.3, 2.2), (4.5, 2.2), stroke: 0.7pt)
+    content((4.5, 2.2), $a$, anchor: "west", padding: 3pt)
+    // Line b (lower parallel line)
+    line((-0.3, 0), (4.5, 0), stroke: 0.7pt)
+    content((4.5, 0), $b$, anchor: "west", padding: 3pt)
+    // Transversal l: from lower-left to upper-right
+    line((0.5, -0.5), (3.8, 2.8), stroke: 0.7pt)
+    content((3.8, 2.8), $l$, anchor: "south-west", padding: 2pt)
+    // Q = intersection with y=2.2, P = intersection with y=0
+    // Transversal: direction (3.3, 3.3), from (0.5,-0.5)
+    // y=2.2: t=2.7/3.3=0.818 -> x=0.5+2.7=3.2  => Q=(3.2, 2.2)
+    // y=0:   t=0.5/3.3=0.152 -> x=0.5+0.5=1.0  => P=(1.0, 0)
+    let Q = (3.2, 2.2)
+    let P = (1.0, 0)
+    circle(Q, radius: 0.04, fill: black, stroke: none)
+    circle(P, radius: 0.04, fill: black, stroke: none)
+    content(Q, $Q$, anchor: "south-east", padding: 4pt)
+    content(P, $P$, anchor: "north-east", padding: 4pt)
+    // angle labels at Q: ∠1 below-right, ∠2 below-left
+    content((Q.at(0)+0.35, Q.at(1)-0.28), [$angle 1$])
+    content((Q.at(0)-0.5, Q.at(1)-0.28), [$angle 2$])
+    // angle labels at P: ∠3 above-right, ∠4 above-left
+    content((P.at(0)+0.35, P.at(1)+0.28), [$angle 3$])
+    content((P.at(0)-0.5, P.at(1)+0.28), [$angle 4$])
+  }),
+  caption: [$angle 1$ 与 $angle 3$ 是同位角；$angle 2$ 与 $angle 3$ 是内错角；$angle 3$ 与 $angle 4$ 是同旁内角]
+)
 
   *第三步*：垂直。
 
@@ -75,6 +108,20 @@
 
   从直线外一点 $P$ 向直线 $l$ 作垂线，垂足为 $H$，则线段 $P H$ 的长度叫做*点 $P$ 到直线 $l$ 的距离*。
 
+#align(center, cetz.canvas(length: 2cm, {
+  import cetz.draw: *
+  import cetz.angle: right-angle
+  line((-1.5, 0), (3, 0), stroke: 0.7pt)
+  content((3, 0), $l$, anchor: "west", padding: 2pt)
+  let P = (0.8, 1.5)
+  let H = (0.8, 0)
+  line(P, H, stroke: 0.7pt)
+  right-angle(H, P, (2, 0), stroke: 0.5pt)
+  content(P, $P$, anchor: "south-east", padding: 3pt)
+  content(H, $H$, anchor: "north-west", padding: 3pt)
+  content((0.8, 0.75), text(8pt, fill: blue)[$P H$], anchor: "east", padding: 6pt)
+}))
+
   *平行线之间的距离*
 
   两条平行线之间的距离处处相等（在任意位置作垂线段，长度都相同）。
@@ -111,6 +158,36 @@
   *挑战*
 
   + 如图，$A B parallel C D$，点 $E$ 在 $A B$、$C D$ 之间（不在这两条直线上），$angle A B E = 40 degree$，$angle D C E = 30 degree$。求 $angle B E C$。（提示：过 $E$ 作 $A B$ 的平行线。）
+
+#align(center, cetz.canvas(length: 2cm, {
+  import cetz.draw: *
+  import cetz.angle: angle
+  // Line AB (upper)
+  line((0, 2), (4.5, 2), stroke: 0.7pt)
+  content((0, 2), $A$, anchor: "east", padding: 2pt)
+  content((4.5, 2), $B$, anchor: "west", padding: 2pt)
+  // Line CD (lower)
+  line((0, 0), (4.5, 0), stroke: 0.7pt)
+  content((0, 0), $C$, anchor: "east", padding: 2pt)
+  content((4.5, 0), $D$, anchor: "west", padding: 2pt)
+  // Point E between the lines
+  let E = (2.0, 1.0)
+  let B = (4.5, 2)
+  let C = (0, 0)
+  circle(E, radius: 0.04, fill: black, stroke: none)
+  content(E, $E$, anchor: "north-west", padding: 3pt)
+  // Lines BE and CE
+  line(B, E, stroke: 0.7pt)
+  line(C, E, stroke: 0.7pt)
+  // EF: horizontal dashed line through E (parallel to AB and CD)
+  line((0.3, 1.0), (4.2, 1.0), stroke: (paint: blue, thickness: 0.6pt, dash: "dashed"))
+  content((4.2, 1.0), $F$, anchor: "west", padding: 2pt)
+  // angle ∠ABE at B
+  angle(B, (0, 2), E, label: text(7pt)[$40degree$], radius: 0.55, stroke: 0.5pt + red, direction: "near")
+  // angle ∠DCE at C
+  angle(C, E, (4.5, 0), label: text(7pt)[$30degree$], radius: 0.55, stroke: 0.5pt + orange, direction: "near")
+}))
+
   + 用平行线性质证明：三角形内角和为 $180 degree$。（提示：过一个顶点作对边的平行线。）
 
   #line(length: 100%, stroke: 0.3pt + luma(200))

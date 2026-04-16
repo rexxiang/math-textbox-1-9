@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../../lib/diagram-packages.typ": cetz
 
 == §7.3 坐标几何 <sec-7-3>
 
@@ -26,6 +27,43 @@
   - 第二象限：$x < 0, y > 0$
   - 第三象限：$x < 0, y < 0$
   - 第四象限：$x > 0, y < 0$
+
+  #figure(
+    cetz.canvas(length: 1.8cm, {
+      import cetz.draw: *
+      import cetz.angle: right-angle
+      // Axes
+      line((-0.5, 0), (4.5, 0), stroke: 0.7pt, mark: (end: ">", size: 0.15))
+      line((0, -0.5), (0, 3), stroke: 0.7pt, mark: (end: ">", size: 0.15))
+      content((4.5, 0), $x$, anchor: "west", padding: 3pt)
+      content((0, 3), $y$, anchor: "south", padding: 3pt)
+      content((0, 0), $O$, anchor: "north-east", padding: 3pt)
+      // Quadrant labels
+      content((2.5, 1.8), text(8pt, fill: luma(120))[第一象限])
+      // Points A(3,1) and B(7,4) scaled to fit canvas
+      // Scale: 1 unit = 0.5cm on canvas, so A→(1.5, 0.5), B→(3.5, 2)
+      let sc = 0.5
+      let A = (3*sc, 1*sc)   // (1.5, 0.5)
+      let B = (7*sc, 4*sc)   // (3.5, 2.0)
+      circle(A, radius: 0.05, fill: black, stroke: none)
+      circle(B, radius: 0.05, fill: black, stroke: none)
+      content(A, text(8pt)[$A(3,1)$], anchor: "north", padding: 4pt)
+      content(B, text(8pt)[$B(7,4)$], anchor: "south-west", padding: 3pt)
+      // Right triangle for distance
+      let C = (B.at(0), A.at(1))  // corner point
+      line(A, C, stroke: (paint: blue, thickness: 0.5pt, dash: "dashed"))
+      line(C, B, stroke: (paint: blue, thickness: 0.5pt, dash: "dashed"))
+      right-angle(C, A, B, stroke: 0.4pt)
+      // Dimension labels
+      content(((A.at(0)+C.at(0))/2, C.at(1)-0.2), text(8pt, fill: blue)[$4$])
+      content((C.at(0)+0.2, (C.at(1)+B.at(1))/2), text(8pt, fill: blue)[$3$])
+      // AB hypotenuse label
+      content(((A.at(0)+B.at(0))/2 - 0.3, (A.at(1)+B.at(1))/2),
+              text(8pt, fill: red)[$A B = 5$])
+      line(A, B, stroke: (paint: red, thickness: 0.6pt))
+    }),
+    caption: [坐标系中 $A(3,1)$、$B(7,4)$：水平差 $= 4$，竖直差 $= 3$，$A B = sqrt(4^2 + 3^2) = 5$]
+  )
 
   *第二步*：用坐标表示平移。
 
@@ -89,6 +127,30 @@
   $ M = (frac(x_1 + x_2, 2), frac(y_1 + y_2, 2)) $
 
   直觉：中点的坐标就是两端点坐标的*平均值*。
+
+  #align(center, cetz.canvas(length: 1.8cm, {
+    import cetz.draw: *
+    // Axes
+    line((-0.3, 0), (4, 0), stroke: 0.6pt, mark: (end: ">", size: 0.12))
+    line((0, -0.3), (0, 2.5), stroke: 0.6pt, mark: (end: ">", size: 0.12))
+    content((4, 0), $x$, anchor: "west", padding: 2pt)
+    content((0, 2.5), $y$, anchor: "south", padding: 2pt)
+    // Points
+    let A = (0.5, 0.5)
+    let B = (3.5, 2.0)
+    let M = ((A.at(0)+B.at(0))/2, (A.at(1)+B.at(1))/2)
+    line(A, B, stroke: 0.7pt)
+    circle(A, radius: 0.07, fill: black, stroke: none)
+    circle(B, radius: 0.07, fill: black, stroke: none)
+    circle(M, radius: 0.07, fill: red, stroke: none)
+    content(A, text(8pt)[$A(x_1, y_1)$], anchor: "north-east", padding: 3pt)
+    content(B, text(8pt)[$B(x_2, y_2)$], anchor: "south-west", padding: 3pt)
+    content(M, text(8pt, fill: red)[$M$], anchor: "south", padding: 5pt)
+    // Dotted projections to axes
+    line(A, (A.at(0), 0), stroke: (paint: luma(180), thickness: 0.4pt, dash: "dotted"))
+    line(B, (B.at(0), 0), stroke: (paint: luma(180), thickness: 0.4pt, dash: "dotted"))
+    line(M, (M.at(0), 0), stroke: (paint: red, thickness: 0.4pt, dash: "dotted"))
+  }))
 
   *例题 1*：求 $A(-2, 3)$ 和 $B(4, -1)$ 之间的距离。
 

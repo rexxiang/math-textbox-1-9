@@ -50,6 +50,7 @@
 = 负数的发明
 #include "04-negative-invention/00-overview.typ"
 #include "04-negative-invention/01-rational-numbers.typ"
+#include "04-negative-invention/04-power-operations.typ"
 #include "04-negative-invention/02-real-numbers.typ"
 #include "04-negative-invention/03-points-lines-planes.typ"
 

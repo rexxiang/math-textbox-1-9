@@ -1,3 +1,5 @@
+.vscode/
+
 # Build output
 output/
 build/
@@ -17,3 +19,5 @@ docs/
 # Python
 __pycache__/
 *.pyc
+
+.superpowers/

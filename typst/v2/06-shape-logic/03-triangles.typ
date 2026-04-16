@@ -1,4 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
+#import "../../lib/diagram-packages.typ": cetz
+#import "../../lib/geometry-helpers.typ": equal-angle
 
 == §6.3 三角形 <sec-6-3>
 
@@ -24,6 +26,38 @@
   剪一个三角形纸片，把三个角撕下来，拼在一起。你会发现它们恰好拼成一条直线——也就是 $180 degree$！
 
   这不是巧合。用 #secref("6.2") 学的平行线性质可以严格证明：过顶点 $A$ 作 $B C$ 的平行线，利用内错角相等，三个角恰好凑成一个平角。
+
+#figure(
+  cetz.canvas(length: 2cm, {
+    import cetz.draw: *
+    import cetz.angle: angle
+    let A = (1.5, 2.5)
+    let B = (0, 0)
+    let C = (4, 0)
+    let D = (-0.5, 2.5)
+    let E = (4.5, 2.5)
+    // Triangle
+    line(A, B, stroke: 0.7pt)
+    line(A, C, stroke: 0.7pt)
+    line(B, C, stroke: 0.7pt)
+    // Parallel line through A (dashed)
+    line(D, E, stroke: (paint: blue, thickness: 0.6pt, dash: "dashed"))
+    content(D, $D$, anchor: "east", padding: 2pt)
+    content(E, $E$, anchor: "west", padding: 2pt)
+    // Angle marks at B and C
+    angle(B, C, A, label: $angle B$, radius: 0.5, stroke: 0.5pt + red, direction: "near")
+    angle(C, A, B, label: $angle C$, radius: 0.5, stroke: 0.5pt + orange, direction: "near")
+    // Angle marks at A: three angles that make up 180°
+    angle(A, D, B, radius: 0.4, stroke: 0.5pt + red, direction: "near")
+    angle(A, B, C, label: $angle A$, radius: 0.6, stroke: 0.5pt + blue, direction: "near")
+    angle(A, C, E, radius: 0.4, stroke: 0.5pt + orange, direction: "near")
+    // Vertex labels
+    content(A, $A$, anchor: "south", padding: 4pt)
+    content(B, $B$, anchor: "north-east", padding: 3pt)
+    content(C, $C$, anchor: "north-west", padding: 3pt)
+  }),
+  caption: [过 $A$ 作 $D E parallel B C$：$angle D A B = angle B$（内错角），$angle E A C = angle C$（内错角），故 $angle A + angle B + angle C = 180degree$]
+)
 
   *第三步*：什么时候两个三角形「完全一样」？
 
@@ -103,6 +137,38 @@
   *中位线平行于第三边，且等于第三边的一半。*
 
   即若 $M$、$N$ 分别是 $A B$、$A C$ 的中点，则 $M N parallel B C$ 且 $M N = frac(1, 2) B C$。
+
+#figure(
+  cetz.canvas(length: 2.2cm, {
+    import cetz.draw: *
+    let A = (2, 3)
+    let B = (0, 0)
+    let C = (4.5, 0)
+    let M = ((A.at(0)+B.at(0))/2, (A.at(1)+B.at(1))/2)
+    let N = ((A.at(0)+C.at(0))/2, (A.at(1)+C.at(1))/2)
+    // Triangle sides
+    line(A, B, stroke: 0.7pt)
+    line(A, C, stroke: 0.7pt)
+    line(B, C, stroke: 0.7pt)
+    // Midline MN (red)
+    line(M, N, stroke: (paint: red, thickness: 0.8pt))
+    // Midpoint markers (small filled circles)
+    circle(M, radius: 0.06, fill: red, stroke: none)
+    circle(N, radius: 0.06, fill: red, stroke: none)
+    // Labels
+    content(A, $A$, anchor: "south", padding: 4pt)
+    content(B, $B$, anchor: "north-east", padding: 3pt)
+    content(C, $C$, anchor: "north-west", padding: 3pt)
+    content(M, $M$, anchor: "east", padding: 5pt)
+    content(N, $N$, anchor: "west", padding: 5pt)
+    // Label BC
+    content(((B.at(0)+C.at(0))/2, -0.3), $B C$)
+    // Label MN with equation
+    content(((M.at(0)+N.at(0))/2, (M.at(1)+N.at(1))/2 + 0.3),
+            text(8pt, fill: red)[$M N = frac(1,2) B C$])
+  }),
+  caption: [$M$、$N$ 分别为 $A B$、$A C$ 中点，$M N parallel B C$，$M N = frac(1, 2) B C$]
+)
 
   *例 1*：在 $triangle A B C$ 中，$angle A = 50 degree$，$angle B = 70 degree$，求 $angle C$。
 

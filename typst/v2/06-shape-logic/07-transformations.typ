@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../../lib/diagram-packages.typ": cetz
 
 == §6.7 图形变换 <sec-6-7>
 
@@ -45,6 +46,38 @@
   - 对称轴是每对对应点连线的*垂直平分线*。
   - 对应线段相等，对应角相等。
 
+  #figure(
+    cetz.canvas(length: 1.8cm, {
+      import cetz.draw: *
+      import cetz.angle: right-angle
+      // Symmetry axis l (vertical at x=2.5)
+      line((2.5, -0.3), (2.5, 3.3), stroke: (paint: blue, thickness: 0.8pt))
+      content((2.5, 3.3), $l$, anchor: "south", padding: 3pt)
+      // Original triangle ABC (left side)
+      let A = (0.3, 2.5)
+      let B = (0.5, 0.2)
+      let C = (1.8, 0.8)
+      line(A, B, C, A, stroke: 0.7pt)
+      content(A, $A$, anchor: "east", padding: 3pt)
+      content(B, $B$, anchor: "east", padding: 3pt)
+      content(C, $C$, anchor: "north-east", padding: 3pt)
+      // Reflected triangle A'B'C' (right side): reflect x-coords across x=2.5
+      let Ap = (4.7, 2.5)  // 2.5 + (2.5 - 0.3) = 4.7
+      let Bp = (4.5, 0.2)  // 2.5 + (2.5 - 0.5) = 4.5
+      let Cp = (3.2, 0.8)  // 2.5 + (2.5 - 1.8) = 3.2
+      line(Ap, Bp, Cp, Ap, stroke: (paint: red, thickness: 0.7pt))
+      content(Ap, $A'$, anchor: "west", padding: 3pt)
+      content(Bp, $B'$, anchor: "west", padding: 3pt)
+      content(Cp, $C'$, anchor: "north-west", padding: 3pt)
+      // Dashed line connecting A and A' (with right-angle mark at axis)
+      line(A, Ap, stroke: (paint: luma(150), thickness: 0.5pt, dash: "dashed"))
+      let M = (2.5, 2.5)  // midpoint of AA' on the axis
+      right-angle(M, A, (2.5, 2.0), stroke: 0.4pt)
+      circle(M, radius: 0.04, fill: black, stroke: none)
+    }),
+    caption: [轴对称：$triangle A'B'C'$ 是 $triangle A B C$ 关于 $l$ 的轴对称图形]
+  )
+
   常见轴对称图形：
   - 等腰三角形（1 条对称轴）
   - 等边三角形（3 条对称轴）
@@ -71,6 +104,34 @@
   - 图形的形状和大小不变
   - 对应线段平行且相等
 
+  #figure(
+    cetz.canvas(length: 1.8cm, {
+      import cetz.draw: *
+      let shift = 2.8  // translation amount
+      // Original triangle
+      let A = (0, 2)
+      let B = (0.5, 0)
+      let C = (2, 0.5)
+      line(A, B, C, A, stroke: 0.7pt)
+      content(A, $A$, anchor: "east", padding: 3pt)
+      content(B, $B$, anchor: "north-east", padding: 3pt)
+      content(C, $C$, anchor: "north", padding: 3pt)
+      // Translated triangle
+      let Ap = (A.at(0)+shift, A.at(1))
+      let Bp = (B.at(0)+shift, B.at(1))
+      let Cp = (C.at(0)+shift, C.at(1))
+      line(Ap, Bp, Cp, Ap, stroke: (paint: red, thickness: 0.7pt))
+      content(Ap, $A'$, anchor: "west", padding: 3pt)
+      content(Bp, $B'$, anchor: "north-west", padding: 3pt)
+      content(Cp, $C'$, anchor: "north", padding: 3pt)
+      // Translation arrows
+      let arrow_style = (paint: blue, thickness: 0.5pt)
+      line(A, Ap, stroke: arrow_style, mark: (end: ">", size: 0.2))
+      line(B, Bp, stroke: arrow_style, mark: (end: ">", size: 0.2))
+    }),
+    caption: [平移：$triangle A'B'C'$ 由 $triangle A B C$ 向右平移所得]
+  )
+
   *旋转*
 
   将图形绕一个定点转动一定角度。
@@ -79,6 +140,40 @@
   - 每个点到旋转中心的距离不变
   - 任意一对对应点与旋转中心的连线所成的角都等于旋转角
   - 图形的形状和大小不变
+
+  #figure(
+    cetz.canvas(length: 2cm, {
+      import cetz.draw: *
+      import cetz.angle: angle
+      let O = (0, 0)  // rotation center
+      // Original triangle (to the right of O)
+      let A = (1.5, 0)
+      let B = (2.5, 0)
+      let C = (2.5, 1)
+      line(A, B, C, A, stroke: 0.7pt)
+      content(A, $A$, anchor: "north", padding: 3pt)
+      content(B, $B$, anchor: "north-west", padding: 3pt)
+      content(C, $C$, anchor: "west", padding: 3pt)
+      // Rotated triangle (90° counterclockwise): (x,y) → (-y,x)
+      let Ap = (0, 1.5)
+      let Bp = (0, 2.5)
+      let Cp = (-1, 2.5)
+      line(Ap, Bp, Cp, Ap, stroke: (paint: red, thickness: 0.7pt))
+      content(Ap, $A'$, anchor: "east", padding: 3pt)
+      content(Bp, $B'$, anchor: "south-east", padding: 3pt)
+      content(Cp, $C'$, anchor: "south", padding: 3pt)
+      // Rotation center
+      circle(O, radius: 0.06, fill: black, stroke: none)
+      content(O, $O$, anchor: "north-east", padding: 4pt)
+      // Dashed lines from O to A and O to A'
+      line(O, A, stroke: (paint: luma(150), thickness: 0.4pt, dash: "dashed"))
+      line(O, Ap, stroke: (paint: luma(150), thickness: 0.4pt, dash: "dashed"))
+      // Rotation arc at O from A to A' (90°)
+      angle(O, A, Ap, label: text(8pt)[$90degree$], radius: 0.9,
+            stroke: 0.5pt + blue, direction: "ccw")
+    }),
+    caption: [旋转：$triangle A'B'C'$ 由 $triangle A B C$ 绕 $O$ 逆时针旋转 $90degree$ 所得]
+  )
 
   *三种变换的共同点*：变换前后图形*全等*——形状和大小都不改变。
 

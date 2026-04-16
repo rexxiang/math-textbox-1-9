@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 == §6.4 四边形 <sec-6-4>
 
@@ -20,6 +21,26 @@
   三角形内角和是 $180 degree$（#secref("6.3")）。四边形呢？画一条对角线，把四边形分成两个三角形，内角和就是 $2 times 180 degree = 360 degree$。
 
   以此类推，$n$ 边形可以从一个顶点出发画对角线，分成 $(n - 2)$ 个三角形：
+
+  #align(center, cetz.canvas(length: 2cm, {
+    import cetz.draw: *
+    let A = (0, 2.2)
+    let B = (2.8, 2.8)
+    let C = (3.5, 0)
+    let D = (0.3, -0.2)
+    // Quadrilateral
+    line(A, B, C, D, A, stroke: 0.7pt)
+    // Diagonal AC (blue dashed)
+    line(A, C, stroke: (paint: blue, thickness: 0.6pt, dash: "dashed"))
+    // Vertex labels
+    content(A, $A$, anchor: "east", padding: 3pt)
+    content(B, $B$, anchor: "south-west", padding: 3pt)
+    content(C, $C$, anchor: "west", padding: 3pt)
+    content(D, $D$, anchor: "north-east", padding: 3pt)
+    // Triangle labels
+    content((1.5, 1.8), text(9pt, fill: blue)[①])
+    content((1.8, 0.5), text(9pt, fill: blue)[②])
+  }))
 
   $ "内角和" = (n - 2) times 180 degree $
 
@@ -51,6 +72,31 @@
   - 对边平行且相等：$A B parallel D C$，$A D parallel B C$；$A B = D C$，$A D = B C$
   - 对角相等：$angle A = angle C$，$angle B = angle D$
   - 对角线互相平分
+
+  #figure(
+    cetz.canvas(length: 1.8cm, {
+      import cetz.draw: *
+      let A = (0, 0)
+      let B = (3.5, 0)
+      let C = (4.2, 2)
+      let D = (0.7, 2)
+      let O = ((A.at(0)+C.at(0))/2, (A.at(1)+C.at(1))/2)
+      // Parallelogram sides
+      line(A, B, C, D, A, stroke: 0.7pt)
+      // Diagonals
+      line(A, C, stroke: (paint: blue, thickness: 0.5pt, dash: "dashed"))
+      line(B, D, stroke: (paint: red, thickness: 0.5pt, dash: "dashed"))
+      // Center point
+      circle(O, radius: 0.06, fill: black, stroke: none)
+      // Labels
+      content(A, $A$, anchor: "north-east", padding: 3pt)
+      content(B, $B$, anchor: "north-west", padding: 3pt)
+      content(C, $C$, anchor: "south-west", padding: 3pt)
+      content(D, $D$, anchor: "south-east", padding: 3pt)
+      content(O, $O$, anchor: "south-west", padding: 4pt)
+    }),
+    caption: [平行四边形对角线互相平分：$O A = O C$，$O B = O D$]
+  )
 
   *判定*（满足任意一条即可）：
   + 两组对边分别平行
@@ -97,6 +143,34 @@
   - 平行的两边叫*上底*和*下底*，不平行的两边叫*腰*
   - *等腰梯形*：两腰相等。性质：两底角相等，对角线相等
   - *面积*：$S = frac(1, 2)(a + b) times h$（$a$、$b$ 为上下底，$h$ 为高）
+
+  #figure(
+    cetz.canvas(length: 1.8cm, {
+      import cetz.draw: *
+      import cetz.angle: right-angle
+      // Trapezoid: D(left-bottom), C(right-bottom), B(right-top), A(left-top)
+      let D = (0, 0)
+      let C = (4.5, 0)
+      let B = (3.8, 2)
+      let A = (1.2, 2)
+      let H = (1.2, 0)  // foot of perpendicular from A to DC
+      line(A, B, C, D, A, stroke: 0.7pt)
+      // Height line (dashed gray)
+      line(A, H, stroke: (paint: luma(150), thickness: 0.5pt, dash: "dashed"))
+      right-angle(H, A, D, stroke: 0.4pt)
+      // Labels
+      content(A, $A$, anchor: "south-east", padding: 3pt)
+      content(B, $B$, anchor: "south-west", padding: 3pt)
+      content(C, $C$, anchor: "north-west", padding: 3pt)
+      content(D, $D$, anchor: "north-east", padding: 3pt)
+      content(H, $H$, anchor: "north", padding: 4pt)
+      // Dimension labels
+      content(((A.at(0)+B.at(0))/2, A.at(1)+0.3), $a$)
+      content(((D.at(0)+C.at(0))/2, D.at(1)-0.3), $b$)
+      content((H.at(0)-0.35, (A.at(1)+H.at(1))/2), $h$)
+    }),
+    caption: [梯形：上底 $a$，下底 $b$，高 $h$，面积 $S = frac((a+b) h, 2)$]
+  )
 
   *特殊四边形的包含关系*
 

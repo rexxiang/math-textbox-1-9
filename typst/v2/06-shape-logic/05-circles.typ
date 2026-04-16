@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../../lib/diagram-packages.typ": cetz
 
 == §6.5 圆 <sec-6-5>
 
@@ -31,6 +32,53 @@
   - *弧*：圆上两点之间的曲线部分。半圆是直径所对的弧。小于半圆的叫*劣弧*，大于半圆的叫*优弧*。
   - *圆心角*：顶点在圆心的角。
   - *圆周角*：顶点在圆上、两边与圆相交的角。
+
+  #figure(
+    cetz.canvas(length: 2.5cm, {
+      import cetz.draw: *
+      import cetz.angle: angle
+      let O = (0, 0)
+      let r = 1.8
+      // Circle
+      circle(O, radius: r, stroke: 0.7pt)
+      // Center
+      circle(O, radius: 0.04, fill: black, stroke: none)
+      content(O, $O$, anchor: "north-east", padding: 3pt)
+      // Point A at 0° (rightmost)
+      let A = (r, 0)
+      // Point B at about 110°
+      let B = (r * calc.cos(110deg), r * calc.sin(110deg))
+      // Radius OA (blue)
+      line(O, A, stroke: (paint: blue, thickness: 0.7pt))
+      content(((O.at(0)+A.at(0))/2, -0.22), text(8pt, fill: blue)[$r$])
+      // Chord AB (red)
+      line(A, B, stroke: (paint: red, thickness: 0.7pt))
+      content(((A.at(0)+B.at(0))/2 + 0.1, (A.at(1)+B.at(1))/2 + 0.2),
+              text(8pt, fill: red)[弦 $A B$])
+      // Diameter CD (green): C at 80°, D at 260°
+      let C_pt = (r * calc.cos(80deg), r * calc.sin(80deg))
+      let D_pt = (r * calc.cos(260deg), r * calc.sin(260deg))
+      line(C_pt, D_pt, stroke: (paint: green, thickness: 0.7pt))
+      // Central angle ∠AOB (purple)
+      angle(O, A, B, label: text(7pt, fill: purple)[圆心角], radius: 0.5,
+            stroke: 0.5pt + purple, direction: "near", label-radius: 160%)
+      line(O, B, stroke: (paint: purple, thickness: 0.5pt))
+      // Inscribed angle ∠EAB (orange): inscribed angle at E on arc AB (other side)
+      // E at about 320° (lower arc, opposite side from B)
+      let E = (r * calc.cos(320deg), r * calc.sin(320deg))
+      line(E, A, stroke: (paint: orange, thickness: 0.5pt, dash: "dashed"))
+      line(E, B, stroke: (paint: orange, thickness: 0.5pt, dash: "dashed"))
+      angle(E, A, B, label: text(7pt, fill: orange)[圆周角], radius: 0.45,
+            stroke: 0.5pt + orange, direction: "near", label-radius: 160%)
+      // Labels
+      content(A, $A$, anchor: "west", padding: 4pt)
+      content(B, $B$, anchor: "south-east", padding: 3pt)
+      content(C_pt, $C$, anchor: "south-east", padding: 3pt)
+      content(D_pt, $D$, anchor: "north-west", padding: 3pt)
+      content(E, $E$, anchor: "north-west", padding: 3pt)
+    }),
+    caption: [圆的基本元素：圆心 $O$，半径 $r$（蓝），弦 $A B$（红），直径 $C D$（绿），圆心角（紫），圆周角（橙）]
+  )
 ]
 
 #blueprint[
@@ -72,6 +120,41 @@
     [相离], [0], [$d > r$],
     [相切], [1], [$d = r$],
     [相交], [2], [$d < r$],
+  )
+
+  #figure(
+    cetz.canvas(length: 1.6cm, {
+      import cetz.draw: *
+      import cetz.angle: right-angle
+      let r = 0.7
+      // Left: 相离 (d > r), centered at x=1
+      {
+        let O = (1, 0)
+        circle(O, radius: r, stroke: 0.7pt)
+        line((0, -1.3), (2, -1.3), stroke: 0.7pt)
+        content((1, -1.7), text(8pt)[相离 ($d > r$)])
+        line(O, (1, -1.3), stroke: (paint: luma(150), thickness: 0.5pt, dash: "dashed"))
+        content((1.2, -0.65), text(7pt, fill: luma(100))[$d$])
+      }
+      // Middle: 相切 (d = r), centered at x=4
+      {
+        let O = (4, 0)
+        circle(O, radius: r, stroke: 0.7pt)
+        let T = (4, -r)
+        line((2.7, -r), (5.3, -r), stroke: 0.7pt)
+        circle(T, radius: 0.04, fill: black, stroke: none)
+        right-angle(T, O, (5.3, -r), stroke: 0.4pt)
+        content((4, -1.7), text(8pt)[相切 ($d = r$)])
+      }
+      // Right: 相交 (d < r), centered at x=7
+      {
+        let O = (7, 0)
+        circle(O, radius: r, stroke: 0.7pt)
+        line((5.8, -0.4), (8.2, -0.4), stroke: 0.7pt)
+        content((7, -1.7), text(8pt)[相交 ($d < r$)])
+      }
+    }),
+    caption: [直线与圆的三种位置关系]
   )
 
   *切线*：与圆只有一个公共点的直线。切点处切线与半径垂直。

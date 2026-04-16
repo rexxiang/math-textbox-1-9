@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../../lib/diagram-packages.typ": cetz
 
 == §6.1 角 <sec-6-1>
 
@@ -20,6 +21,20 @@
   找一根吸管，把它从中间折弯。折弯后形成两条「边」（射线）和一个折弯处（顶点）。改变折弯的程度，角就变大或变小。
 
   *角* = 从同一个点出发的两条射线组成的图形。这个点叫*顶点*，两条射线叫做角的*两边*。
+
+  #align(center, cetz.canvas(length: 2cm, {
+    import cetz.draw: *
+    import cetz.angle: angle
+    let O = (0, 0)
+    let A = (2, 0)
+    let B = (1.2, 1.7)
+    line(O, A, stroke: 0.7pt)
+    line(O, B, stroke: 0.7pt)
+    angle(O, A, B, label: $angle A O B$, radius: 0.55, stroke: 0.5pt + blue, direction: "near")
+    content(O, $O$, anchor: "north-east", padding: 3pt)
+    content(A, $A$, anchor: "west", padding: 3pt)
+    content(B, $B$, anchor: "south-west", padding: 3pt)
+  }))
 
   *第二步*：怎么度量？
 
@@ -52,6 +67,42 @@
     [周角], [$alpha = 360 degree$（旋转一整圈）],
   )
 
+  #figure(
+    cetz.canvas(length: 1.7cm, {
+      import cetz.draw: *
+      import cetz.angle: angle, right-angle
+      // 锐角 at x≈0
+      {
+        let O = (0, 0); let A = (1.4, 0); let B = (0.9, 1.1)
+        line(O, A, stroke: 0.7pt); line(O, B, stroke: 0.7pt)
+        angle(O, A, B, radius: 0.45, stroke: 0.5pt + blue, direction: "near")
+        content((0.7, -0.35), text(8pt)[锐角])
+      }
+      // 直角 at x≈3
+      {
+        let O = (3, 0); let A = (4.4, 0); let B = (3, 1.4)
+        line(O, A, stroke: 0.7pt); line(O, B, stroke: 0.7pt)
+        right-angle(O, A, B, stroke: 0.5pt)
+        content((3.7, -0.35), text(8pt)[直角])
+      }
+      // 钝角 at x≈6.5
+      {
+        let O = (6.5, 0); let A = (7.9, 0); let B = (5.3, 1.1)
+        line(O, A, stroke: 0.7pt); line(O, B, stroke: 0.7pt)
+        angle(O, A, B, radius: 0.45, stroke: 0.5pt + orange, direction: "near")
+        content((6.5, -0.35), text(8pt)[钝角])
+      }
+      // 平角 at x≈10: a straight line with O in the middle
+      {
+        line((9.5, 0), (12, 0), stroke: 0.7pt)
+        circle((10.75, 0), radius: 0.04, fill: black, stroke: none)
+        content((10.75, 0), $O$, anchor: "north", padding: 4pt)
+        content((10.75, -0.35), text(8pt)[平角 $180degree$])
+      }
+    }),
+    caption: [角的基本类型]
+  )
+
   *互余与互补*
 
   - *互余*（complementary）：两个角的和等于 $90 degree$。若 $angle A + angle B = 90 degree$，则 $angle A$ 与 $angle B$ 互余。
@@ -64,6 +115,18 @@
   *对顶角*
 
   两条直线相交，形成 4 个角。其中不相邻的两个角叫*对顶角*。
+
+  #align(center, cetz.canvas(length: 2cm, {
+    import cetz.draw: *
+    line((-2, -1.3), (2, 1.3), stroke: 0.7pt)
+    line((-2, 1.3), (2, -1.3), stroke: 0.7pt)
+    content((0.6, 0.2), [$angle 1$])
+    content((-0.6, 0.2), [$angle 2$])
+    content((-0.6, -0.2), [$angle 3$])
+    content((0.6, -0.2), [$angle 4$])
+    content((2, 1.3), $m$, anchor: "south-west", padding: 2pt)
+    content((2, -1.3), $n$, anchor: "north-west", padding: 2pt)
+  }))
 
   *对顶角相等。*
 

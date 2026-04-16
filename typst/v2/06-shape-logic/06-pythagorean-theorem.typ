@@ -1,4 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab
+#import "../../lib/diagram-packages.typ": cetz
+#import "../../lib/geometry-helpers.typ": equal-angle
 
 == §6.6 勾股定理 <sec-6-6>
 
@@ -25,6 +27,40 @@
 
   再试 $a = 5, b = 12, c = 13$：$25 + 144 = 169$。又对了！
 
+#figure(
+  cetz.canvas(length: 1.2cm, {
+    import cetz.draw: *
+    import cetz.angle: right-angle
+    // Right triangle: right angle at A=(0,0), B=(4,0), C=(0,3)
+    let A = (0, 0)
+    let B = (4, 0)
+    let C = (0, 3)
+    line(A, B, stroke: 0.9pt)
+    line(B, C, stroke: 0.9pt)
+    line(C, A, stroke: 0.9pt)
+    right-angle(A, B, C, stroke: 0.5pt)
+    // Labels on triangle sides
+    content((2, -0.3), text(9pt)[$b = 4$])
+    content((-0.5, 1.5), text(9pt)[$a = 3$])
+    content((2.4, 1.8), text(9pt)[$c = 5$])
+    // Square on AB (downward, area 16)
+    rect((0,-4),(4,0), fill: rgb("#E3F2FD"), stroke: 0.6pt)
+    content((2, -2), text(10pt, fill: blue)[$4^2=16$])
+    // Square on AC (leftward, area 9)
+    rect((-3,0),(0,3), fill: rgb("#E8F5E9"), stroke: 0.6pt)
+    content((-1.5, 1.5), text(10pt, fill: green)[$3^2=9$])
+    // Square on BC (hypotenuse, area 25)
+    // BC direction: from B(4,0) to C(0,3), vector (-4,3), length=5
+    // perpendicular outward direction: (3/5, 4/5)
+    // square vertices: B, C, C+(3,4), B+(3,4) = (4,0),(0,3),(3,7),(7,4)
+    merge-path({
+      line((4,0),(0,3),(3,7),(7,4))
+    }, close: true, fill: rgb("#FFF3E0"), stroke: 0.6pt)
+    content((3.5, 3.5), text(10pt, fill: orange)[$5^2=25$])
+  }),
+  caption: [$a^2 + b^2 = c^2$：$3^2 + 4^2 = 9 + 16 = 25 = 5^2$]
+)
+
   *第二步*：赵爽弦图证明。
 
   取四个全等的直角三角形（直角边 $a$、$b$，斜边 $c$），拼成一个边长为 $c$ 的大正方形，中间留出一个边长为 $(b - a)$ 的小正方形。
@@ -34,6 +70,41 @@
   大正方形面积也 $= 4 times frac(1, 2) a b + (b - a)^2 = 2 a b + b^2 - 2 a b + a^2 = a^2 + b^2$。
 
   所以 $c^2 = a^2 + b^2$。
+
+#figure(
+  cetz.canvas(length: 1.3cm, {
+    import cetz.draw: *
+    import cetz.angle: right-angle
+    let sc = 0.65
+    let a = 3.0 * sc  // 1.95
+    let b = 4.0 * sc  // 2.60
+    let s = 7.0 * sc  // 4.55
+    // Outer square boundary
+    rect((0,0),(s,s), stroke: 0.7pt)
+    // Inner tilted square (blue) — drawn first so triangles appear on top
+    merge-path({
+      line((b,0),(s,b),(a,s),(0,a))
+    }, close: true, fill: rgb("#BBDEFB"), stroke: 0.6pt + blue)
+    content((s/2, s/2), text(10pt, fill: blue)[$c^2$])
+    // Four right triangles (red)
+    merge-path({line((0,0),(b,0),(0,a))}, close: true, fill: rgb("#FFCDD2"), stroke: 0.6pt)
+    merge-path({line((s,0),(b,0),(s,b))}, close: true, fill: rgb("#FFCDD2"), stroke: 0.6pt)
+    merge-path({line((s,s),(a,s),(s,b))}, close: true, fill: rgb("#FFCDD2"), stroke: 0.6pt)
+    merge-path({line((0,s),(a,s),(0,b))}, close: true, fill: rgb("#FFCDD2"), stroke: 0.6pt)
+    // Right angle marks
+    right-angle((0,0),(b,0),(0,a), stroke: 0.4pt)
+    right-angle((s,0),(b,0),(s,b), stroke: 0.4pt)
+    right-angle((s,s),(a,s),(s,b), stroke: 0.4pt)
+    right-angle((0,s),(a,s),(0,b), stroke: 0.4pt)
+    // Side labels
+    content((b/2, -0.25), text(8pt)[$b$])
+    content((-0.3, a/2), text(8pt)[$a$])
+    content((s+0.15, b/2), text(8pt)[$b$])
+    // Label one triangle
+    content((b/3, a/2.5), text(7pt, fill: red)[$frac(a b, 2)$])
+  }),
+  caption: [赵爽弦图：$(a+b)^2 = 4 times frac(a b, 2) + c^2$，故 $c^2 = a^2 + b^2$]
+)
 
   *第三步*：逆定理。
 

@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 == §7.4 锐角三角函数 <sec-7-4>
 
@@ -23,6 +24,34 @@
   - $A$ 的*对边* $a$（$A$ 对面的边，即 $B C$）
   - $A$ 的*邻边* $b$（$A$ 旁边的直角边，即 $A C$）
   - *斜边* $c$（最长的边，即 $A B$）
+
+  #figure(
+    cetz.canvas(length: 2.2cm, {
+      import cetz.draw: *
+      import cetz.angle: angle, right-angle
+      let A = (0, 2.5)
+      let B = (2.5, 0)
+      let C = (0, 0)
+      // Triangle sides
+      line(A, B, stroke: (paint: green, thickness: 0.8pt))  // hypotenuse c (AB)
+      line(A, C, stroke: (paint: blue, thickness: 0.8pt))   // adjacent b (AC)
+      line(B, C, stroke: (paint: red, thickness: 0.8pt))    // opposite a (BC)
+      // Right angle at C
+      right-angle(C, A, B, stroke: 0.5pt)
+      // Angle mark at A
+      angle(A, C, B, label: $angle A$, radius: 0.5, stroke: 0.5pt, direction: "near")
+      // Vertex labels
+      content(A, $A$, anchor: "east", padding: 4pt)
+      content(B, $B$, anchor: "north-west", padding: 4pt)
+      content(C, $C$, anchor: "north-east", padding: 4pt)
+      // Side labels
+      content(((B.at(0)+C.at(0))/2, -0.28), text(9pt, fill: red)[对边 $a$])
+      content((-0.5, (A.at(1)+C.at(1))/2), text(9pt, fill: blue)[邻边 $b$])
+      content(((A.at(0)+B.at(0))/2 + 0.35, (A.at(1)+B.at(1))/2 + 0.2),
+              text(9pt, fill: green)[斜边 $c$])
+    }),
+    caption: [直角三角形 $A B C$（$angle C = 90 degree$）：对边 $a = B C$，邻边 $b = A C$，斜边 $c = A B$]
+  )
 
   *第二步*：计算比值。
 
@@ -74,6 +103,39 @@
   === 解直角三角形
 
   在直角三角形中，已知两个元素（至少一个是边），就能求出所有其他元素。
+
+  #figure(
+    cetz.canvas(length: 2cm, {
+      import cetz.draw: *
+      import cetz.angle: angle, right-angle
+      // Ground line
+      line((0, 0), (5, 0), stroke: 0.7pt)
+      // Mountain peak
+      let peak = (4.5, 2.5)
+      let foot = (4.5, 0)   // foot of mountain (on ground)
+      let observer = (0.5, 0)  // observer position
+      // Mountain outline (vertical line = height h)
+      line(foot, peak, stroke: 0.7pt)
+      right-angle(foot, observer, peak, stroke: 0.4pt)
+      // Line of sight from observer to peak
+      line(observer, peak, stroke: (paint: red, thickness: 0.7pt))
+      // Horizontal from observer (dotted)
+      line(observer, (4.5, 0), stroke: (paint: luma(180), thickness: 0.5pt, dash: "dotted"))
+      // Elevation angle mark at observer
+      angle(observer, foot, peak, label: text(8pt)[$35degree$],
+            radius: 0.7, stroke: 0.5pt + blue, direction: "near")
+      // Height label
+      content((peak.at(0)+0.3, (foot.at(1)+peak.at(1))/2), text(9pt)[$h$])
+      // Horizontal distance label
+      content(((observer.at(0)+foot.at(0))/2, -0.3), text(9pt)[$200 "m"$])
+      // Labels
+      circle(observer, radius: 0.06, fill: black, stroke: none)
+      circle(peak, radius: 0.06, fill: black, stroke: none)
+      content(observer, text(8pt)[观测者], anchor: "north", padding: 5pt)
+      content(peak, text(8pt)[山顶], anchor: "south-west", padding: 3pt)
+    }),
+    caption: [仰角 $35degree$，水平距离 $200$ 米，$h = 200 tan 35degree approx 140$ 米]
+  )
 
   *解题步骤*：
   + 标出已知元素和要求的元素
