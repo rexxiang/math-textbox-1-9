@@ -2,7 +2,7 @@
 
 ## 项目概述
 
-面向中国 1-9 年级学生的中文数学自学教材。内容覆盖中国课标（小学一年级至初中三年级），教学风格借鉴美国教材：探索先于讲解、概念驱动、螺旋式深化、真实情境连接。
+面向中国 1-9 年级学生的中文数学自学教材。内容覆盖中国课标（小学一年级至初中三年级），教学风格对标美国 AoPS / Beast Academy 精品自学教材：探索先于讲解、概念驱动、螺旋式深化、真实情境连接、系统化常见陷阱、主动尝试机制。
 
 **输出格式**：
 - `make pdf` → Typst → `output/math-textbook.pdf`（主要发布格式）
@@ -10,38 +10,60 @@
 ## 文件结构
 
 - `typst/main.typ` — 入口文件，`#include` 所有章节
-- `typst/lib/theme.typ` — 页面布局、字体、lesson-box 样式
+- `typst/lib/theme-v2.typ` — 页面布局、字体、所有框函数样式
 - `typst/lib/diagram-packages.typ` — 图形包导入（cetz、fletcher 等）
-- `typst/chapters/` — 所有章节 `.typ` 文件（按模块子目录）
-  - `typst/chapters/00-introduction/` — 导读（4 个文件）
-  - `typst/chapters/01-numbers/` — 数与运算（9 个文件）
-  - `typst/chapters/02-algebra/` — 代数（13 个文件）
-  - `typst/chapters/03-geometry/` — 几何（11 个文件）
-  - `typst/chapters/04-statistics/` — 统计与概率（8 个文件）
+- `typst/lib/geometry-helpers.typ` — 几何辅助函数（等角标记等）
+- 章节目录（按 `XX-name/` 子目录）：
+  - `typst/00-gateway/` — 导读（4 个文件）
+  - `typst/01-counting/` — 数的萌芽（小学 1-4 年级，7 个文件含 07-review.typ）
+  - `typst/02-fraction-decimal/` — 分与合（小学 3-6 年级，6 个文件含 05-review.typ）
+  - `typst/03-ratio-world/` — 比例世界（小学 5-7 年级，6 个文件含 05-review.typ）
+  - `typst/04-negative-invention/` — 负数的发明（初中 7-8 年级，6 个文件含 05-review.typ）
+  - `typst/05-equation-machine/` — 方程（初中 7-9 年级，9 个文件含 08-review.typ）
+  - `typst/06-shape-logic/` — 形的逻辑（小学 3-9 年级，12 个文件含 11-review.typ）
+  - `typst/07-function-lens/` — 函数（初中 8-9 年级，7 个文件含 06-review.typ）
+  - `typst/08-data-detective/` — 数据侦探（初中 7-9 年级，6 个文件含 05-review.typ）
+  - `typst/09-capstone/` — 终章（2 个文件）
 - `typst/smoke/` — 构建烟雾测试（package-lock.typ）
 - `scripts/` — 辅助脚本
 - `output/` — 构建产物（git ignored）
 
-## 知识点五步结构
+## 教学框架：四段发明链 + 增强模块
 
-每个 §X.Y 知识点按固定顺序：
+每个 §X.Y 知识点按以下顺序组织：
 
-| 结构 | Typst 函数 | 颜色 |
-|------|-----------|------|
-| 引入情境 | `#explore[...]` | 橙色 |
-| 概念建立 | `#understand[...]` | 蓝色 |
-| 典型例题 | `#workedexamples[...]` | 灰色 |
-| 关键总结 | `#keytakeaway[...]` | 绿色 |
-| 练一练 | `#practice[...]` | 紫色 |
-| 参考答案 | `#answer[...]` | 浅灰 |
+| 结构 | Typst 函数 | 颜色 | 说明 |
+|------|-----------|------|------|
+| 现代困境 | `#crisis[...]` | 红色 | 以生活困境引出数学需求 |
+| 探索发现 | `#discovery[...]` | 橙色 | 引导学生重演人类发现过程 |
+| **试一试** | `#tryit[...]` | 蓝色虚线 | 例题前主动尝试（AoPS 核心机制） |
+| 工具蓝图 | `#blueprint[...]` | 蓝色 | 正式概念/公式/定理 |
+| **常见陷阱** | `#pitfall[...]` | 红黄警示 | ❌/✓ 对比展示高频错误 |
+| 工具磨砺 | `#mastery[...]` | 绿色 | 基础→应用→挑战三级练习 |
 
-## Typst 规范
+章节末尾：`XX-review.typ` 章末回顾（知识速查卡 + 混合自测题 + 螺旋复习）
+
+三类内联注记：
+- `#history-note[...]` — 历史背景
+- `#side-hack[...]` — 认知捷径
+- `#vocab[...]` — 术语
+- `#lab[...]` — 数学实验室（紫色，动手探究）
+
+## Typst 语法规范（重要）
 
 - 行内公式：`$...$`（无空格）；显示公式：`$ ... $`（两端有空格触发 display 模式）
 - 对齐方程：在 `$ ... $` 内使用 `&` 对齐
-- 不等号：`>=` / `<=`
-- 绝对值：`abs(a)` 或 `|a|`
-- 整除/条件：`|`
+- **分数**：`$frac(a, b)$`（括号加逗号）— **禁止** `frac{a}{b}`（LaTeX 写法）
+- **根号**：`$sqrt(a)$` — **禁止** `sqrt{a}`
+- **上划线**：`$overline(a)$` — **禁止** `overline{a}` 或 `\overline(a)`
+- **均值**：`$bar(x)$` — **禁止** `bar{x}`
+- **不等号**：`$a != b$`（不等于）、`$a >= b$`、`$a <= b$`
+- **数学函数**：`$sin(x)$`、`$cos(x)$`、`$tan(x)$` — **禁止** `\sin`、`\cos` 等反斜杠形式
+- **π**：`$pi$` — **禁止** `$\pi$`
+- **÷**：`$div$` — **禁止** `$\div$`
+- **粗体数学**：`$bold(a b)$` — **禁止** `$\mathbf{ab}$`
+- 绝对值：`$|a|$` 或 `$abs(a)$`
+- 上标分组：`$a^(m+n)$`（括号）或 `$a^{m+n}$`（花括号，Typst 数学模式支持）
 - 中文文本：直接书写，无需特殊处理
 - 章节标题：`= 章标题` / `== §X.Y 节标题 <sec-X-Y>`（标题末尾带 label）
 - 交叉引用：正文中使用 `#secref("X.Y")` 生成可点击链接；范围引用用 `#secrange("X.Y", "A.B")`
@@ -63,22 +85,34 @@
 - 导入方式：`import cetz.angle: angle, right-angle`（在 canvas 块内）
 - `direction` 参数：`"near"`（默认选较小角）、`"ccw"`/`"cw"`（显式控制扫过方向）
 
-## 辅助函数
+## 框函数速查
 
-- `#explore[...]` — 引入情境框
-- `#understand[...]` — 概念建立框
-- `#workedexamples[...]` — 典型例题框
-- `#keytakeaway[...]` — 关键总结框
-- `#practice[...]` — 练一练框
-- `#answer[...]` — 参考答案框
-- `#secref("X.Y")` — 可点击的 §X.Y 章节引用链接
-- `#secrange("X.Y", "A.B")` — 章节范围引用（如 §X.Y–§A.B）
-- `equal-angle(origin, a, b, n: 2, gap: 0.07, ...)` — 等角标记（双弧/三弧），定义在 `lib/geometry-helpers.typ`
+| 函数 | 用途 | 在节中的位置 |
+|------|------|------------|
+| `#crisis[...]` | 引入生活困境 | 节首 |
+| `#discovery[...]` | 引导探索过程 | crisis 之后 |
+| `#tryit[...]` | 学生主动尝试（先尝试再看解） | blueprint 之前 |
+| `#blueprint[...]` | 正式概念/公式 | discovery 之后 |
+| `#pitfall[...]` | ❌/✓ 对比的高频错误 | blueprint 之后 |
+| `#mastery[...]` | 三级练习题 | 节末 |
+| `#history-note[...]` | 历史文化注记 | 任意位置 |
+| `#side-hack[...]` | 认知捷径/记忆技巧 | 任意位置 |
+| `#vocab[...]` | 关键术语定义 | 节首附近 |
+| `#lab[...]` | 动手实验活动 | 任意位置 |
+| `#secref("X.Y")` | 可点击章节引用 | 正文任意位置 |
+| `#secrange("X.Y", "A.B")` | 章节范围引用 | 正文任意位置 |
+
+## 章末回顾文件（XX-review.typ）
+
+每章最后一个文件为章末回顾，包含三个模块：
+1. **知识速查卡**（`#blueprint`）：两栏极简公式总结
+2. **混合自测题**（`#mastery`）：10-12 题跨节综合，不标知识点出处
+3. **螺旋复习**：2-3 道题显式连接跨章节知识（使用 `#secref` 标注）
 
 ## 年级密度规则
 
 - 1-5 年级内容：精简（基础概念 + 核心例题）
-- 6-9 年级内容：详尽（完整五步结构 + 多例题 + 充分练习）
+- 6-9 年级内容：详尽（完整发明链 + 多例题 + 充分练习）
 
 ## 统计范围限制（按中国课标）
 

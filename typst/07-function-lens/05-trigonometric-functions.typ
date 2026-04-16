@@ -91,14 +91,14 @@
 
       对边 $= BC = a$，邻边 $= AC = b$
 
-      $sin A = a/c$，$\cos A = b/c$
+      $sin A = a/c$，$cos A = b/c$
     ],
     block[
       *对于角 $B$*：
 
       对边 $= AC = b$，邻边 $= BC = a$
 
-      $sin B = b/c$，$\cos B = a/c$
+      $sin B = b/c$，$cos B = a/c$
     ]
   )
 
