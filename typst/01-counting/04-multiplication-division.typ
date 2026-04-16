@@ -31,7 +31,7 @@
 #blueprint[
   - *乘法*：$a times b$ 表示 $b$ 个 $a$ 相加（或 $a$ 个 $b$ 相加）
   - *除法*：$a div b = c dots.h dots.h r$，其中 $a = b times c + r$，$0 <= r < b$
-  - 乘法和除法是*互逆运算*
+  - 在除尽时，乘法和除法是*互逆运算*：如果 $a times b = c$（$b != 0$），那么 $c div b = a$
   - 任何数乘 $0$ 都等于 $0$；$0$ 不能做除数
 ]
 
