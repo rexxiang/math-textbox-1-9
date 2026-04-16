@@ -201,9 +201,11 @@
   + 设 $B C = a$，$A C = b$，$A B = c$。$sin alpha = frac(a, c)$，$cos alpha = frac(b, c)$。$sin^2 alpha + cos^2 alpha = frac(a^2, c^2) + frac(b^2, c^2) = frac(a^2 + b^2, c^2) = frac(c^2, c^2) = 1$（由勾股定理 $a^2 + b^2 = c^2$）。
 ]
 
-=== 三角形面积的三角函数形式
+=== 课外一瞥：三角形面积的三角函数形式
 
-#blueprint[
+#side-hack[
+  *高中预告*：公式 $S = frac(1, 2) a b sin C$ 会在高中系统学习，这里只做认识，不作为本册要求。
+
   在 $triangle A B C$ 中，已知两边 $a$、$b$ 和它们的夹角 $C$。如何求面积？
 
   从 $A$ 向 $B C$ 作高 $h$，则 $h = b sin C$。代入三角形面积公式：
@@ -212,16 +214,4 @@
   类似地：$S = frac(1, 2) b c sin A = frac(1, 2) a c sin B$。
 
   *意义*：只要知道两边和夹角，不需要先求高就能直接算面积。
-]
-
-#mastery[
-  + 在 $triangle A B C$ 中，$a = 6$，$b = 10$，$angle C = 30 degree$。求面积。
-
-  + 在 $triangle A B C$ 中，$b = 8$，$c = 5$，$angle A = 60 degree$。求面积。
-
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
-
-  + $S = frac(1, 2) times 6 times 10 times sin 30 degree = frac(1, 2) times 6 times 10 times frac(1, 2) = 15$。
-  + $S = frac(1, 2) times 8 times 5 times sin 60 degree = frac(1, 2) times 8 times 5 times frac(sqrt(3), 2) = 10 sqrt(3)$。
 ]
