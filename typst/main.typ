@@ -112,3 +112,25 @@
 = 终章
 #include "09-capstone/invention-tree.typ"
 #include "09-capstone/whats-next.typ"
+
+// Future chapter order reference for reorganization cutover only:
+// = Arithmetic Foundation
+// #include "01-arithmetic-foundation/00-overview.typ"
+// = Fraction Ratio Foundation
+// #include "02-fraction-ratio-foundation/00-overview.typ"
+// = Geometry Foundation
+// #include "03-geometry-foundation/00-overview.typ"
+// = Number Line Algebra Bridge
+// #include "04-number-line-algebra-bridge/00-overview.typ"
+// = Foundation Gate
+// #include "05-foundation-gate/00-overview.typ"
+// = Algebra Deepening
+// #include "06-algebra-deepening/00-overview.typ"
+// = Geometry Deepening
+// #include "07-geometry-deepening/00-overview.typ"
+// = Function Models
+// #include "08-function-models/00-overview.typ"
+// = Data Statistics
+// #include "09-data-statistics/00-overview.typ"
+// = Capstone
+// #include "10-capstone/00-overview.typ"
