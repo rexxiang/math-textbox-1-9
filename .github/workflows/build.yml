@@ -50,6 +50,12 @@ jobs:
           docker run --rm -v "$(pwd):/book" math-textbook-typst \
             compile --root /book /book/typst/smoke/05-foundation-gate.typ /book/output/05-foundation-gate-smoke.pdf
 
+      - name: Verify algebra deepening smoke
+        run: |
+          mkdir -p output
+          docker run --rm -v "$(pwd):/book" math-textbook-typst \
+            compile --root /book /book/typst/smoke/06-algebra-deepening.typ /book/output/06-algebra-deepening-smoke.pdf
+
       - name: Determine next version
         id: version
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
