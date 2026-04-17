@@ -19,6 +19,7 @@ check: _docker-image
 	$(TYPST_DOCKER_RUN) compile --root /book /book/typst/smoke/06-algebra-deepening.typ /book/output/06-algebra-deepening-smoke.pdf
 	$(TYPST_DOCKER_RUN) compile --root /book /book/typst/smoke/07-geometry-deepening.typ /book/output/07-geometry-deepening-smoke.pdf
 	$(TYPST_DOCKER_RUN) compile --root /book /book/typst/smoke/08-function-models.typ /book/output/08-function-models-smoke.pdf
+	$(TYPST_DOCKER_RUN) compile --root /book /book/typst/smoke/09-data-statistics.typ /book/output/09-data-statistics-smoke.pdf
 
 clean:
 	rm -rf output/*

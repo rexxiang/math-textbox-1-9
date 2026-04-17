@@ -68,6 +68,12 @@ jobs:
           docker run --rm -v "$(pwd):/book" math-textbook-typst \
             compile --root /book /book/typst/smoke/08-function-models.typ /book/output/08-function-models-smoke.pdf
 
+      - name: Verify data statistics smoke
+        run: |
+          mkdir -p output
+          docker run --rm -v "$(pwd):/book" math-textbook-typst \
+            compile --root /book /book/typst/smoke/09-data-statistics.typ /book/output/09-data-statistics-smoke.pdf
+
       - name: Determine next version
         id: version
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
