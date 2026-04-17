@@ -115,21 +115,35 @@
 
 // Future macro-structure mapping reference only.
 // Documentary note: this is not an alternate include list and must not be
-// uncommented for cutover. The target chapter directories currently contain
-// placeholders only; migrate content before switching active includes.
+// uncommented for cutover. Target chapter directories are being populated
+// incrementally; some now contain real draft content, but active includes must
+// not switch until the relevant migration task is complete and reviewed.
 //
 // Planned target order and source mapping:
 // 1. 01-arithmetic-foundation <- current 01-counting
 // 2. 02-fraction-ratio-foundation <- current 02-fraction-decimal + ratio basics
-//    from 03-ratio-world
+//    from current 03-ratio-world:
+//    - move in: percentage meaning, fraction/decimal/percentage conversion,
+//      ratio and proportion basics, part-part vs part-whole interpretation, and
+//      basic proportional allocation
+//    - keep out for later chapters: 利率 / 增长率 application strands,
+//      正比例 / 反比例 as function-model preparation, and 比例尺 as geometry-scale
+//      content
 // 3. 03-geometry-foundation <- geometry foundations from current 06-shape-logic
+//    plus 比例尺 / spatial scale applications from current 03-ratio-world
 // 4. 04-number-line-algebra-bridge <- current 04-negative-invention
 // 5. 05-foundation-gate <- reserved checkpoint chapter before deepening tracks
 // 6. 06-algebra-deepening <- current 05-equation-machine
 // 7. 07-geometry-deepening <- remaining deepening content from current
 //    06-shape-logic
-// 8. 08-function-models <- current 07-function-lens
+// 8. 08-function-models <- current 07-function-lens, plus from current
+//    03-ratio-world:
+//    - 正比例 -> bridge into y = kx / direct proportion function treatment
+//    - 反比例 -> bridge into y = k/x / inverse proportion function treatment
+//    - 利率、增长率 -> percentage change / rate applications kept with later
+//      modeling contexts rather than the foundation chapter
 // 9. 09-data-statistics <- current 03-ratio-world data/statistics lessons
+//    (03-data-collection, 04-central-tendency, data portions of 05-review)
 //    plus current 08-data-detective
 // 10. 10-capstone <- current 09-capstone
 //     - 09-capstone/invention-tree.typ -> future 10-capstone/invention-tree.typ
