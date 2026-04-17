@@ -13,29 +13,21 @@
 - `typst/lib/theme-v2.typ` — 页面布局、字体、所有框函数样式
 - `typst/lib/diagram-packages.typ` — 图形包导入（cetz、fletcher 等）
 - `typst/lib/geometry-helpers.typ` — 几何辅助函数（等角标记等）
-- 当前仓库处于*分阶段重组*中：`typst/main.typ` 的现役 `#include` 仍以当前发布主线为准；重组目录用于逐章迁移、烟雾验证与约定落地，在切换任务完成前**不代表已并入主书流程**。
+- `typst/main.typ` 现役主书目录已切换到重组后的章节图谱；目前仍保留 `typst/01-counting/` 作为第 1 章，`typst/01-arithmetic-foundation/` 仅为占位目录，尚未并入主书。
 - 当前主书章节目录（按 `XX-name/` 子目录）：
   - `typst/00-gateway/` — 导读（4 个文件）
   - `typst/01-counting/` — 数的萌芽（小学 1-4 年级，7 个文件含 07-review.typ）
-  - `typst/02-fraction-decimal/` — 分与合（小学 3-6 年级，6 个文件含 05-review.typ）
-  - `typst/03-ratio-world/` — 比例世界（小学 5-7 年级，6 个文件含 05-review.typ）
-  - `typst/04-negative-invention/` — 负数的发明（初中 7-8 年级，4 个文件含 03-review.typ）
-  - `typst/05-equation-machine/` — 方程（初中 7-9 年级，9 个文件含 08-review.typ）
-  - `typst/06-shape-logic/` — 形的逻辑（小学 3-9 年级，15 个文件含 14-review.typ）
-  - `typst/07-function-lens/` — 函数（初中 8-9 年级，6 个文件含 05-review.typ）
-  - `typst/08-data-detective/` — 数据侦探（初中 7-9 年级，6 个文件含 05-review.typ）
-  - `typst/09-capstone/` — 终章（2 个文件）
-- 分阶段重组中的章节目录（尚未切换 `main.typ`，按迁移任务逐步接管）：
-  - `typst/01-arithmetic-foundation/`
-  - `typst/02-fraction-ratio-foundation/`
-  - `typst/03-geometry-foundation/`
-  - `typst/04-number-line-algebra-bridge/`
+  - `typst/02-fraction-ratio-foundation/` — 分数、比与百分数基础（小学 3-6 年级，7 个文件含 06-review.typ）
+  - `typst/03-geometry-foundation/` — 几何基础（小学 3-6 年级，7 个文件含 06-review.typ）
+  - `typst/04-number-line-algebra-bridge/` — 数轴与代数桥（初中 7-8 年级，6 个文件含 05-review.typ）
   - `typst/05-foundation-gate/` — 主干收束闸门（4 个文件：总览、基础总检、分支入口回看、回顾）
-  - `typst/06-algebra-deepening/`
-  - `typst/07-geometry-deepening/`
-  - `typst/08-function-models/`
-  - `typst/09-data-statistics/`
-  - `typst/10-capstone/`
+  - `typst/06-algebra-deepening/` — 代数深化（9 个文件含 08-review.typ）
+  - `typst/07-geometry-deepening/` — 几何深化（11 个文件含 10-review.typ）
+  - `typst/08-function-models/` — 函数模型（6 个文件含 05-review.typ）
+  - `typst/09-data-statistics/` — 数据统计（8 个文件含 07-review.typ）
+  - `typst/10-capstone/` — 终章综合（3 个文件）
+- 仍保留但未并入主书的占位目录：
+  - `typst/01-arithmetic-foundation/`
 - `typst/smoke/` — 构建烟雾测试（package-lock.typ）
 - `scripts/` — 辅助脚本
 - `output/` — 构建产物（git ignored）
