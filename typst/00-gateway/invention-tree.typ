@@ -1,9 +1,8 @@
-
 #import "@preview/cetz:0.4.2"
 
-== 发明树总览
+== 全书结构地图
 
-下面这棵「发明树」展示了全书知识点之间的依赖关系。每一条分支都是一条独立的发明链——你可以从树根开始，也可以选择任何一条你感兴趣的分支。
+下面这张图不是旧式的线性目录，而是一张*结构导航图*：它告诉你整本书怎样从共同主干走到闸门，再分成几条深化路线，最后在终章重新汇合。
 
 #v(0.5em)
 
@@ -11,8 +10,7 @@
   #cetz.canvas(length: 1cm, {
     import cetz.draw: *
 
-    // ─── helpers ──────────────────────────────────────
-    let node(pos, label, w: 2.8, h: 0.7, fill-color: white, stroke-color: luma(120)) = {
+    let node(pos, label, w: 2.7, h: 0.9, fill-color: white, stroke-color: luma(120)) = {
       rect(
         (pos.at(0) - w / 2, pos.at(1) - h / 2),
         (pos.at(0) + w / 2, pos.at(1) + h / 2),
@@ -20,95 +18,86 @@
         fill: fill-color,
         stroke: 0.6pt + stroke-color,
       )
-      content(pos, text(size: 8pt, label))
+      content(pos, text(size: 7.5pt, label))
     }
 
-    let arrow(from, to) = {
-      line(from, to, stroke: 0.5pt + luma(140), mark: (end: ">", fill: luma(140)))
+    let arrow(from, to, stroke-color: luma(140)) = {
+      line(from, to, stroke: 0.5pt + stroke-color, mark: (end: ">", fill: stroke-color))
     }
 
-    // ─── Colors ───────────────────────────────────────
-    let c-primary = rgb("#E3F2FD")   // blue — primary school
-    let c-middle  = rgb("#FFF3E0")   // orange — middle school
-    let c-cap     = rgb("#E8F5E9")   // green — capstone
-    let s-primary = rgb("#1565C0")
-    let s-middle  = rgb("#EF6C00")
-    let s-cap     = rgb("#2E7D32")
+    let c-root   = rgb("#FFF9C4")
+    let c-trunk  = rgb("#E3F2FD")
+    let c-gate   = rgb("#F3E5F5")
+    let c-branch = rgb("#E8F5E9")
+    let c-end    = rgb("#FFF3E0")
 
-    // ─── Layout ───────────────────────────────────────
-    // Row 0: root
+    let s-root   = rgb("#F57F17")
+    let s-trunk  = rgb("#1565C0")
+    let s-gate   = rgb("#7B1FA2")
+    let s-branch = rgb("#2E7D32")
+    let s-end    = rgb("#EF6C00")
+
     let root = (0, 0)
-    // Row 1: primary school (3 nodes, y = -1.6)
-    let ch1 = (-4, -1.8)
-    let ch2 = (0, -1.8)
-    let ch3 = (4, -1.8)
-    // Row 2: middle school (5 nodes, y = -3.6)
-    let ch4 = (-5.5, -3.8)
-    let ch5 = (-2.5, -3.8)
-    let ch6 = (0.5, -3.8)
-    let ch7 = (3.5, -3.8)
-    let ch8 = (6.5, -3.8)
-    // Row 3: capstone
-    let ch9 = (0, -5.6)
 
-    // ─── Root node ────────────────────────────────────
-    node(root, [*数学发明者手册*], w: 3.6, h: 0.8, fill-color: rgb("#F3E5F5"), stroke-color: rgb("#7B1FA2"))
+    let t1 = (-6, -2.1)
+    let t2 = (-2, -2.1)
+    let t3 = (2, -2.1)
+    let t4 = (6, -2.1)
 
-    // ─── Primary school row ───────────────────────────
-    node(ch1, [第 1 章 数的萌芽], fill-color: c-primary, stroke-color: s-primary)
-    node(ch2, [第 2 章 分与合], fill-color: c-primary, stroke-color: s-primary)
-    node(ch3, [第 3 章 比例世界], fill-color: c-primary, stroke-color: s-primary)
+    let gate = (0, -4.4)
 
-    // ─── Middle school row ────────────────────────────
-    node(ch4, [第 4 章 负数的发明], w: 3.2, fill-color: c-middle, stroke-color: s-middle)
-    node(ch5, [第 5 章 方程], fill-color: c-middle, stroke-color: s-middle)
-    node(ch6, [第 6 章 形的逻辑], fill-color: c-middle, stroke-color: s-middle)
-    node(ch7, [第 7 章 函数], fill-color: c-middle, stroke-color: s-middle)
-    node(ch8, [第 8 章 数据侦探], fill-color: c-middle, stroke-color: s-middle)
+    let b1 = (-6, -6.8)
+    let b2 = (-2, -6.8)
+    let b3 = (2, -6.8)
+    let b4 = (6, -6.8)
 
-    // ─── Capstone ─────────────────────────────────────
-    node(ch9, [第 9 章 终章], fill-color: c-cap, stroke-color: s-cap)
+    let end = (0, -9.1)
 
-    // ─── Arrows: root → primary ───────────────────────
-    arrow((0, -0.4), (ch1.at(0), -1.8 + 0.35))
-    arrow((0, -0.4), (ch2.at(0), -1.8 + 0.35))
-    arrow((0, -0.4), (ch3.at(0), -1.8 + 0.35))
+    node(root, [*数学发明者手册* \ 结构导航图], w: 3.8, h: 1.0, fill-color: c-root, stroke-color: s-root)
 
-    // ─── Arrows: primary chain ────────────────────────
-    arrow((ch1.at(0) + 1.4, ch1.at(1)), (ch2.at(0) - 1.4, ch2.at(1)))
-    arrow((ch2.at(0) + 1.4, ch2.at(1)), (ch3.at(0) - 1.4, ch3.at(1)))
+    node(t1, [*01 算术基础*], fill-color: c-trunk, stroke-color: s-trunk)
+    node(t2, [*02 分数比例基础*], w: 3.1, fill-color: c-trunk, stroke-color: s-trunk)
+    node(t3, [*03 几何基础*], fill-color: c-trunk, stroke-color: s-trunk)
+    node(t4, [*04 数轴与代数桥*], w: 3.1, fill-color: c-trunk, stroke-color: s-trunk)
 
-    // ─── Arrows: primary → middle school ──────────────
-    arrow((ch1.at(0), -1.8 - 0.35), (ch4.at(0), -3.8 + 0.35))
-    arrow((ch1.at(0), -1.8 - 0.35), (ch5.at(0), -3.8 + 0.35))
-    arrow((ch2.at(0), -1.8 - 0.35), (ch5.at(0), -3.8 + 0.35))
-    arrow((ch3.at(0), -1.8 - 0.35), (ch6.at(0), -3.8 + 0.35))
-    arrow((ch3.at(0), -1.8 - 0.35), (ch7.at(0), -3.8 + 0.35))
-    arrow((ch3.at(0), -1.8 - 0.35), (ch8.at(0), -3.8 + 0.35))
+    node(gate, [*05 基础总闸门* \ 主干收束 / readiness check], w: 3.8, h: 1.0, fill-color: c-gate, stroke-color: s-gate)
 
-    // ─── Arrows: middle school chain ──────────────────
-    arrow((ch4.at(0) + 1.6, ch4.at(1)), (ch5.at(0) - 1.4, ch5.at(1)))
-    arrow((ch5.at(0) + 1.4, ch5.at(1)), (ch6.at(0) - 1.4, ch6.at(1)))
-    arrow((ch6.at(0) + 1.4, ch6.at(1)), (ch7.at(0) - 1.4, ch7.at(1)))
-    arrow((ch7.at(0) + 1.4, ch7.at(1)), (ch8.at(0) - 1.4, ch8.at(1)))
+    node(b1, [*06 代数深化*], fill-color: c-branch, stroke-color: s-branch)
+    node(b2, [*07 几何深化*], fill-color: c-branch, stroke-color: s-branch)
+    node(b3, [*08 函数模型*], fill-color: c-branch, stroke-color: s-branch)
+    node(b4, [*09 数据统计*], fill-color: c-branch, stroke-color: s-branch)
 
-    // ─── Arrows: all → capstone ───────────────────────
-    arrow((ch6.at(0), -3.8 - 0.35), (ch9.at(0), -5.6 + 0.35))
+    node(end, [*10 终章* \ 把分支重新连回一张网], w: 3.6, h: 1.0, fill-color: c-end, stroke-color: s-end)
 
-    // ─── Labels ───────────────────────────────────────
-    content((-6.2, -1.8), text(size: 7pt, fill: s-primary)[*小学篇* \ 1-6 年级])
-    content((-7.8, -3.8), text(size: 7pt, fill: s-middle)[*初中发明链* \ 7-9 年级])
+    arrow((0, -0.5), (t1.at(0), -2.1 + 0.45), stroke-color: s-root)
+    arrow((t1.at(0) + 1.35, t1.at(1)), (t2.at(0) - 1.55, t2.at(1)), stroke-color: s-trunk)
+    arrow((t2.at(0) + 1.55, t2.at(1)), (t3.at(0) - 1.35, t3.at(1)), stroke-color: s-trunk)
+    arrow((t3.at(0) + 1.35, t3.at(1)), (t4.at(0) - 1.55, t4.at(1)), stroke-color: s-trunk)
+    arrow((t4.at(0), -2.1 - 0.45), (gate.at(0), -4.4 + 0.5), stroke-color: s-gate)
+
+    arrow((gate.at(0) - 1.5, -4.4 - 0.5), (b1.at(0), -6.8 + 0.45), stroke-color: s-branch)
+    arrow((gate.at(0) - 0.5, -4.4 - 0.5), (b2.at(0), -6.8 + 0.45), stroke-color: s-branch)
+    arrow((gate.at(0) + 0.5, -4.4 - 0.5), (b3.at(0), -6.8 + 0.45), stroke-color: s-branch)
+    arrow((gate.at(0) + 1.5, -4.4 - 0.5), (b4.at(0), -6.8 + 0.45), stroke-color: s-branch)
+
+    arrow((b1.at(0), -6.8 - 0.45), (end.at(0) - 1.4, -9.1 + 0.5), stroke-color: s-end)
+    arrow((b2.at(0), -6.8 - 0.45), (end.at(0) - 0.5, -9.1 + 0.5), stroke-color: s-end)
+    arrow((b3.at(0), -6.8 - 0.45), (end.at(0) + 0.5, -9.1 + 0.5), stroke-color: s-end)
+    arrow((b4.at(0), -6.8 - 0.45), (end.at(0) + 1.4, -9.1 + 0.5), stroke-color: s-end)
+
+    content((-8.2, -2.1), text(size: 7pt, fill: s-trunk, weight: "bold")[共同\ 主干])
+    content((-8.2, -4.4), text(size: 7pt, fill: s-gate, weight: "bold")[检查\ 闸门])
+    content((-8.2, -6.8), text(size: 7pt, fill: s-branch, weight: "bold")[深化\ 分支])
+    content((-8.2, -9.1), text(size: 7pt, fill: s-end, weight: "bold")[重新\ 汇合])
   })
 ]
 
-#v(0.5em)
+#v(0.6em)
 
 #block(inset: (left: 1em), stroke: (left: 2pt + rgb("#1565C0")))[
   #text(size: 9pt)[
-    #text(fill: rgb("#1565C0"), weight: "bold")[蓝色] = 小学篇（按年级渐进） #h(2em)
-    #text(fill: rgb("#EF6C00"), weight: "bold")[橙色] = 初中发明链（按工具诞生逻辑） #h(2em)
-    #text(fill: rgb("#2E7D32"), weight: "bold")[绿色] = 终章
+    *怎么看这张图？* 先沿主干从左到右，把共同语言装稳；到闸门时先做总检，不急着同时开很多分支；选定一条分支后，尽量连续推进，最后再在终章回头看全图。
   ]
 ]
 
-你现在不需要理解所有分支——随着阅读推进，这棵树会在你脑海中一点点长出来。在本书的最后一章，我们会重新画出完整的发明树，届时你会发现：原来这些知识点之间有着如此紧密的联系！
+你不需要一开始就理解整张图。现在只要知道：这本书不是把所有内容排成一条长走廊，而是先搭共同底盘，再按问题类型展开，最后重新会合。
