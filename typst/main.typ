@@ -14,8 +14,7 @@
 #outline(title: [目录])
 #pagebreak()
 
-#set page(header: main-page-header, footer: main-page-footer)
-#counter(page).update(1)
+#set heading(numbering: none)
 
 // 第 0 章：导读
 = 导读
@@ -23,6 +22,11 @@
 #include "00-gateway/how-to-use.typ"
 #include "00-gateway/symbols.typ"
 #include "00-gateway/invention-tree.typ"
+
+#counter(heading).update(0)
+#set heading(numbering: "1.1")
+#set page(header: main-page-header, footer: main-page-footer)
+#counter(page).update(1)
 
 // 第 1 章：数的萌芽（小学 1-4 年级）
 = 数的萌芽
