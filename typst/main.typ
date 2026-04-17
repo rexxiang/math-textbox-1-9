@@ -135,8 +135,10 @@
 // 5. 05-foundation-gate <- reserved checkpoint chapter before deepening tracks
 // 6. 06-algebra-deepening <- current 05-equation-machine
 // 7. 07-geometry-deepening <- remaining deepening content from current
-//    06-shape-logic
-// 8. 08-function-models <- current 07-function-lens, plus from current
+//    06-shape-logic, plus current 07-function-lens/04-trigonometric-functions.typ
+//    reframed as geometry measurement
+// 8. 08-function-models <- current 07-function-lens except trigonometric
+//    measurement, plus from current
 //    03-ratio-world:
 //    - 正比例 -> bridge into y = kx / direct proportion function treatment
 //    - 反比例 -> bridge into y = k/x / inverse proportion function treatment
