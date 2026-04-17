@@ -74,21 +74,21 @@
 ]
 
 #blueprint[
-  *平行线的角关系*
+  *看图时最常用的关系*
 
-  若 $a parallel b$，被直线 $l$ 所截：
+  已知 $a parallel b$，又被直线 $l$ 所截时：
 
-  + *同位角相等*
-  + *内错角相等*
-  + *同旁内角互补*（和为 $180 degree$）
+  + 位置相同的一对角（同位角）一样大
+  + 夹在两条平行线之间、分居截线两侧的一对角（内错角）一样大
+  + 夹在两条平行线之间、又在截线同侧的一对角（同旁内角）加起来是 $180 degree$
 
   *垂直*
 
-  - *定义*：两条直线相交所成的角为 $90 degree$ 时，称这两条直线互相*垂直*。记作 $a perp b$。
+  - 两条直线相交所成的角为 $90 degree$ 时，称这两条直线互相*垂直*。记作 $a perp b$
 
   *点到直线的距离*
 
-  从直线外一点 $P$ 向直线 $l$ 作垂线，垂足为 $H$，则线段 $P H$ 的长度叫做*点 $P$ 到直线 $l$ 的距离*。
+  从直线外一点 $P$ 向直线 $l$ 作垂线，垂足为 $H$，线段 $P H$ 的长度就是*点 $P$ 到直线 $l$ 的距离*。
 
 #align(center, cetz.canvas(length: 2cm, {
   import cetz.draw: *
@@ -104,19 +104,19 @@
   content((0.8, 0.75), text(8pt, fill: blue)[$P H$], anchor: "east", padding: 6pt)
 }))
 
-  *例 1*：如图，$a parallel b$，截线 $l$ 与 $a$ 交于点 $A$，与 $b$ 交于点 $B$。若 $angle 1 = 70 degree$，求 $angle 2$（$angle 1$ 与 $angle 2$ 是内错角）。
+  *看图例 1*：如图，$a parallel b$。若 $angle 1 = 70 degree$，求 $angle 2$（$angle 1$ 与 $angle 2$ 是内错角）。
 
-  *解*：因为 $a parallel b$（已知），所以 $angle 2 = angle 1 = 70 degree$（两直线平行，内错角相等）。
+  *解*：$angle 2 = 70 degree$。
 
-  *例 2*：如图，$a parallel b$，$angle 1 = 50 degree$，求 $angle 2$（$angle 1$ 与 $angle 2$ 是同旁内角）。
+  *看图例 2*：如图，$a parallel b$，$angle 1 = 50 degree$，求 $angle 2$（$angle 1$ 与 $angle 2$ 是同旁内角）。
 
-  *解*：因为 $a parallel b$，所以 $angle 1 + angle 2 = 180 degree$（两直线平行，同旁内角互补）。因此 $angle 2 = 180 degree - 50 degree = 130 degree$。
+  *解*：$angle 2 = 180 degree - 50 degree = 130 degree$。
 ]
 
 #pitfall[
   *陷阱 1*：同位角相等、内错角也相等——但同旁内角*互补*（和为 $180 degree$），不是相等！这三组角的关系容易搞混。
 
-  *陷阱 2*：判断角的关系时，先确认这两条直线是不是已经知道平行。只有在已知 $a parallel b$ 时，才能直接用同位角、内错角、同旁内角的关系。
+  *陷阱 2*：看角之前先看图里有没有明确告诉你两条直线平行。没有这个前提，就不能直接套用这三组角关系。
 ]
 
 #mastery[
@@ -132,7 +132,7 @@
 
   *应用*
 
-  + 如图，$a parallel b$，若一个同位角是 $125 degree$，对应的内错角和同旁内角分别是多少？
+  + 如图，$a parallel b$，若一个同位角是 $125 degree$，与它对应的内错角和同旁内角分别是多少？
   + 一根旗杆垂直于地面，阳光与地面成 $35 degree$ 角照射。求阳光与旗杆的夹角。
 
   #line(length: 100%, stroke: 0.3pt + luma(200))
