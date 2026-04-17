@@ -13,18 +13,29 @@
 - `typst/lib/theme-v2.typ` — 页面布局、字体、所有框函数样式
 - `typst/lib/diagram-packages.typ` — 图形包导入（cetz、fletcher 等）
 - `typst/lib/geometry-helpers.typ` — 几何辅助函数（等角标记等）
-- 章节目录（按 `XX-name/` 子目录）：
+- 当前仓库处于*分阶段重组*中：`typst/main.typ` 的现役 `#include` 仍以当前发布主线为准；重组目录用于逐章迁移、烟雾验证与约定落地，在切换任务完成前**不代表已并入主书流程**。
+- 当前主书章节目录（按 `XX-name/` 子目录）：
   - `typst/00-gateway/` — 导读（4 个文件）
   - `typst/01-counting/` — 数的萌芽（小学 1-4 年级，7 个文件含 07-review.typ）
   - `typst/02-fraction-decimal/` — 分与合（小学 3-6 年级，6 个文件含 05-review.typ）
   - `typst/03-ratio-world/` — 比例世界（小学 5-7 年级，6 个文件含 05-review.typ）
-- `typst/04-negative-invention/` — 负数的发明（初中 7-8 年级，4 个文件含 03-review.typ）
-- `typst/05-foundation-gate/` — 主干收束闸门（4 个文件：总览、基础总检、分支入口回看、回顾）
-- `typst/05-equation-machine/` — 方程（初中 7-9 年级，9 个文件含 08-review.typ）
+  - `typst/04-negative-invention/` — 负数的发明（初中 7-8 年级，4 个文件含 03-review.typ）
+  - `typst/05-equation-machine/` — 方程（初中 7-9 年级，9 个文件含 08-review.typ）
   - `typst/06-shape-logic/` — 形的逻辑（小学 3-9 年级，15 个文件含 14-review.typ）
   - `typst/07-function-lens/` — 函数（初中 8-9 年级，6 个文件含 05-review.typ）
   - `typst/08-data-detective/` — 数据侦探（初中 7-9 年级，6 个文件含 05-review.typ）
   - `typst/09-capstone/` — 终章（2 个文件）
+- 分阶段重组中的章节目录（尚未切换 `main.typ`，按迁移任务逐步接管）：
+  - `typst/01-arithmetic-foundation/`
+  - `typst/02-fraction-ratio-foundation/`
+  - `typst/03-geometry-foundation/`
+  - `typst/04-number-line-algebra-bridge/`
+  - `typst/05-foundation-gate/` — 主干收束闸门（4 个文件：总览、基础总检、分支入口回看、回顾）
+  - `typst/06-algebra-deepening/`
+  - `typst/07-geometry-deepening/`
+  - `typst/08-function-models/`
+  - `typst/09-data-statistics/`
+  - `typst/10-capstone/`
 - `typst/smoke/` — 构建烟雾测试（package-lock.typ）
 - `scripts/` — 辅助脚本
 - `output/` — 构建产物（git ignored）
@@ -124,8 +135,7 @@
 - `typst/05-foundation-gate/` 的职责是*收束共同主干*，不是继续扩展共同主干。
 - 它必须包含：对 `01-arithmetic-foundation`、`02-fraction-ratio-foundation`、`03-geometry-foundation`、`04-number-line-algebra-bridge` 的累计 readiness check；面向后续分支的短 recap；用 `#secref(...)` 回指主干小节的螺旋复习；清晰的分支地图与自检提示。
 - 它不得包含：伪装成复习的新主干内容、长推导、分支级操作流程、会和后续深化章节竞争位置的迷你课程。
-- 分支入口 recap 必须使用简短的 `#side-hack[...]` 块；目标是唤醒旧工具，不是提前讲新分支内容。
-- 任何“后续分支导览 / later branch overview”都放在 `#history-note[...]` 之后、`本章的主线是` 列表之前；若该章没有主线列表，则放在引言段落之后、第一组章节列表之前。
+- 分支入口 recap 必须*同时*满足两条：使用简短的 `#side-hack[...]` 块，且放在 `#history-note[...]` 之后、`本章的主线是` 列表之前；若该章没有主线列表，则放在引言段落之后、第一组章节列表之前。目标是唤醒旧工具，不是提前讲新分支内容。
 
 ## 年级密度规则
 

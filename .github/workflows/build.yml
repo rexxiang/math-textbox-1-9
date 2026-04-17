@@ -44,6 +44,12 @@ jobs:
           docker run --rm -v "$(pwd):/book" math-textbook-typst \
             compile --root /book /book/typst/smoke/04-number-line-algebra-bridge.typ /book/output/04-number-line-algebra-bridge-smoke.pdf
 
+      - name: Verify foundation gate smoke
+        run: |
+          mkdir -p output
+          docker run --rm -v "$(pwd):/book" math-textbook-typst \
+            compile --root /book /book/typst/smoke/05-foundation-gate.typ /book/output/05-foundation-gate-smoke.pdf
+
       - name: Determine next version
         id: version
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
