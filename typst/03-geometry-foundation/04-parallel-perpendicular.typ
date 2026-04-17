@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, side-hack, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
 == §3.4 平行与垂直 <sec-3-4>
@@ -9,10 +9,6 @@
   铁轨由两根钢轨组成，它们从起点到终点始终保持相同的间距。如果两根钢轨在某处交叉了会怎样？——火车会脱轨！
 
   *两条直线「永不相交」，该怎么精确描述？它们之间有什么特殊的角度关系？*
-]
-
-#history-note[
-  *欧几里得第五公设*：在《几何原本》的 5 条公设中，第五公设（平行公设）是最「复杂」的一条：「过直线外一点，有且仅有一条直线与已知直线平行。」两千年来无数数学家试图用前四条公设证明它，全都失败了。19 世纪，罗巴切夫斯基和黎曼分别发现：如果否定第五公设，可以建立全新的「非欧几何」——这彻底改变了人类对空间的理解，并为爱因斯坦的广义相对论提供了数学基础。
 ]
 
 #discovery[
@@ -42,22 +38,22 @@
     // Transversal l: from lower-left to upper-right
     line((0.5, -0.5), (3.8, 2.8), stroke: 0.7pt)
     content((3.8, 2.8), $l$, anchor: "south-west", padding: 2pt)
-    // Q = intersection with y=2.2, P = intersection with y=0
+    // P = intersection with y=2.2, Q = intersection with y=0
     // Transversal: direction (3.3, 3.3), from (0.5,-0.5)
-    // y=2.2: t=2.7/3.3=0.818 -> x=0.5+2.7=3.2  => Q=(3.2, 2.2)
-    // y=0:   t=0.5/3.3=0.152 -> x=0.5+0.5=1.0  => P=(1.0, 0)
-    let Q = (3.2, 2.2)
-    let P = (1.0, 0)
-    circle(Q, radius: 0.04, fill: black, stroke: none)
+    // y=2.2: t=2.7/3.3=0.818 -> x=0.5+2.7=3.2  => P=(3.2, 2.2)
+    // y=0:   t=0.5/3.3=0.152 -> x=0.5+0.5=1.0  => Q=(1.0, 0)
+    let P = (3.2, 2.2)
+    let Q = (1.0, 0)
     circle(P, radius: 0.04, fill: black, stroke: none)
-    content(Q, $Q$, anchor: "south-east", padding: 4pt)
-    content(P, $P$, anchor: "north-east", padding: 4pt)
-    // angle labels at Q: ∠1 above-right (exterior), ∠2 below-left (interior)
-    content((Q.at(0)+0.35, Q.at(1)+0.28), [$angle 1$])
-    content((Q.at(0)-0.5, Q.at(1)-0.28), [$angle 2$])
-    // angle labels at P: ∠3 above-right (interior), ∠4 above-left (interior)
-    content((P.at(0)+0.35, P.at(1)+0.28), [$angle 3$])
-    content((P.at(0)-0.5, P.at(1)+0.28), [$angle 4$])
+    circle(Q, radius: 0.04, fill: black, stroke: none)
+    content(P, $P$, anchor: "south-east", padding: 4pt)
+    content(Q, $Q$, anchor: "north-east", padding: 4pt)
+    // angle labels at P: ∠1 above-right (exterior), ∠2 below-left (interior)
+    content((P.at(0)+0.35, P.at(1)+0.28), [$angle 1$])
+    content((P.at(0)-0.5, P.at(1)-0.28), [$angle 2$])
+    // angle labels at Q: ∠3 above-right (interior), ∠4 above-left (interior)
+    content((Q.at(0)+0.35, Q.at(1)+0.28), [$angle 3$])
+    content((Q.at(0)-0.5, Q.at(1)+0.28), [$angle 4$])
   }),
   caption: [$angle 1$ 与 $angle 3$ 是同位角（截线同侧，位置相同）；$angle 2$ 与 $angle 3$ 是内错角（截线异侧，都在两线之间）；$angle 2$ 与 $angle 4$ 是同旁内角（截线同侧，都在两线之间）]
 )
@@ -83,7 +79,7 @@
   - *判定*是「怎么知道两条直线平行？」——从角的关系推出平行。
   - *性质*是「已知平行，能得到什么？」——从平行推出角的关系。
 
-  方向相反：判定是「角 $arrow.r$ 平行」，性质是「平行 $arrow.r$ 角」。做证明题时先想清楚你要用哪个方向！
+  方向相反：判定是「角 $arrow.r$ 平行」，性质是「平行 $arrow.r$ 角」。做题时先想清楚你要用哪个方向！
 ]
 
 #blueprint[
@@ -106,7 +102,6 @@
   *补充性质*：
 
   - 平行于同一条直线的两条直线互相平行（$a parallel b$，$b parallel c$ $arrow.r$ $a parallel c$）
-  - 过直线外一点，有且仅有一条直线与已知直线平行（平行公设）
 
   *垂直*
 
@@ -168,43 +163,9 @@
 
   *应用*
 
-  + 如图，$A B parallel C D$，$B E$ 平分 $angle A B C$，$angle C = 70 degree$。求 $angle A B E$。
+  + 如图，$a parallel b$，若 $angle 1 = 58 degree$，求 $angle 1$ 的同位角、内错角和同旁内角的度数。
+  + 判断：$angle 1 = 120 degree$，$angle 2 = 60 degree$，且它们是同旁内角。$a parallel b$ 吗？
   + 一根旗杆垂直于地面，阳光与地面成 $35 degree$ 角照射。求阳光与旗杆的夹角。
-
-  *挑战*
-
-  + 如图，$A B parallel C D$，点 $E$ 在 $A B$、$C D$ 之间（不在这两条直线上），$angle A B E = 40 degree$，$angle D C E = 30 degree$。求 $angle B E C$。（提示：过 $E$ 作 $A B$ 的平行线。）
-
-#align(center, cetz.canvas(length: 2cm, {
-  import cetz.draw: *
-  import cetz.angle: angle
-  // Line AB (upper)
-  line((0, 2), (4.5, 2), stroke: 0.7pt)
-  content((0, 2), $A$, anchor: "east", padding: 2pt)
-  content((4.5, 2), $B$, anchor: "west", padding: 2pt)
-  // Line CD (lower)
-  line((0, 0), (4.5, 0), stroke: 0.7pt)
-  content((0, 0), $C$, anchor: "east", padding: 2pt)
-  content((4.5, 0), $D$, anchor: "west", padding: 2pt)
-  // Point E between the lines
-  let E = (2.0, 1.0)
-  let B = (4.5, 2)
-  let C = (0, 0)
-  circle(E, radius: 0.04, fill: black, stroke: none)
-  content(E, $E$, anchor: "north-west", padding: 3pt)
-  // Lines BE and CE
-  line(B, E, stroke: 0.7pt)
-  line(C, E, stroke: 0.7pt)
-  // EF: horizontal dashed line through E (parallel to AB and CD)
-  line((0.3, 1.0), (4.2, 1.0), stroke: (paint: blue, thickness: 0.6pt, dash: "dashed"))
-  content((4.2, 1.0), $F$, anchor: "west", padding: 2pt)
-  // angle ∠ABE at B
-  angle(B, (0, 2), E, label: text(7pt)[$40degree$], radius: 0.55, stroke: 0.5pt + red, direction: "near")
-  // angle ∠DCE at C
-  angle(C, E, (4.5, 0), label: text(7pt)[$30degree$], radius: 0.55, stroke: 0.5pt + orange, direction: "near")
-}))
-
-  + 用平行线性质证明：三角形内角和为 $180 degree$。（提示：过一个顶点作对边的平行线。）
 
   #line(length: 100%, stroke: 0.3pt + luma(200))
   _参考答案：_
@@ -215,10 +176,7 @@
   + $angle 1 + angle 2 = 120 degree + 60 degree = 180 degree$，同旁内角互补，所以 $a parallel b$。
 
   *应用*
-  + $A B parallel C D$，所以 $angle A B C + angle C = 180 degree$（同旁内角互补），$angle A B C = 110 degree$。$B E$ 平分 $angle A B C$，所以 $angle A B E = 55 degree$。
+  + 同位角 $= 58 degree$，内错角 $= 58 degree$，同旁内角 $= 180 degree - 58 degree = 122 degree$。
+  + $angle 1 + angle 2 = 120 degree + 60 degree = 180 degree$，同旁内角互补，所以 $a parallel b$。
   + 旗杆垂直地面，阳光与地面成 $35 degree$ 角，所以阳光与旗杆的夹角 $= 90 degree - 35 degree = 55 degree$。
-
-  *挑战*
-  + 过 $E$ 作 $E F parallel A B$。因为 $A B parallel C D$，所以 $E F parallel C D$。$angle B E F = angle A B E = 40 degree$（内错角），$angle C E F = angle D C E = 30 degree$（内错角）。所以 $angle B E C = angle B E F + angle C E F = 40 degree + 30 degree = 70 degree$。
-  + 设 $triangle A B C$，过 $A$ 作 $D E parallel B C$。则 $angle D A B = angle B$（内错角），$angle E A C = angle C$（内错角）。而 $angle D A B + angle B A C + angle E A C = 180 degree$（平角），所以 $angle B + angle B A C + angle C = 180 degree$。
 ]
