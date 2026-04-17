@@ -1,4 +1,4 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, side-hack, vocab, tryit, pitfall
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
 == §3.4 平行与垂直 <sec-3-4>
@@ -73,25 +73,8 @@
   + 找出一对同旁内角，判断它们的关系（相等还是互补？）
 ]
 
-#side-hack[
-  *判定 vs 性质——别搞混！*
-
-  - *判定*是「怎么知道两条直线平行？」——从角的关系推出平行。
-  - *性质*是「已知平行，能得到什么？」——从平行推出角的关系。
-
-  方向相反：判定是「角 $arrow.r$ 平行」，性质是「平行 $arrow.r$ 角」。做题时先想清楚你要用哪个方向！
-]
-
 #blueprint[
-  *平行线的判定*（从角推出平行）
-
-  设直线 $l$ 分别与直线 $a$、$b$ 相交：
-
-  + *同位角相等 $arrow.r$ 两直线平行*
-  + *内错角相等 $arrow.r$ 两直线平行*
-  + *同旁内角互补 $arrow.r$ 两直线平行*
-
-  *平行线的性质*（从平行推出角）
+  *平行线的角关系*
 
   若 $a parallel b$，被直线 $l$ 所截：
 
@@ -99,15 +82,9 @@
   + *内错角相等*
   + *同旁内角互补*（和为 $180 degree$）
 
-  *补充性质*：
-
-  - 平行于同一条直线的两条直线互相平行（$a parallel b$，$b parallel c$ $arrow.r$ $a parallel c$）
-
   *垂直*
 
   - *定义*：两条直线相交所成的角为 $90 degree$ 时，称这两条直线互相*垂直*。记作 $a perp b$。
-  - 过一点有且仅有一条直线与已知直线垂直。
-  - *垂线段最短*：从直线外一点到直线上各点的连线中，垂线段最短。
 
   *点到直线的距离*
 
@@ -127,19 +104,11 @@
   content((0.8, 0.75), text(8pt, fill: blue)[$P H$], anchor: "east", padding: 6pt)
 }))
 
-  *平行线之间的距离*
-
-  两条平行线之间的距离处处相等（在任意位置作垂线段，长度都相同）。
-
   *例 1*：如图，$a parallel b$，截线 $l$ 与 $a$ 交于点 $A$，与 $b$ 交于点 $B$。若 $angle 1 = 70 degree$，求 $angle 2$（$angle 1$ 与 $angle 2$ 是内错角）。
 
   *解*：因为 $a parallel b$（已知），所以 $angle 2 = angle 1 = 70 degree$（两直线平行，内错角相等）。
 
-  *例 2*：如图，$angle 1 = 110 degree$，$angle 2 = 110 degree$（$angle 1$ 和 $angle 2$ 是同位角），能否判定 $a parallel b$？
-
-  *解*：因为 $angle 1 = angle 2$（同位角相等），所以 $a parallel b$（同位角相等，两直线平行）。
-
-  *例 3*：如图，$a parallel b$，$angle 1 = 50 degree$，求 $angle 2$（$angle 1$ 与 $angle 2$ 是同旁内角）。
+  *例 2*：如图，$a parallel b$，$angle 1 = 50 degree$，求 $angle 2$（$angle 1$ 与 $angle 2$ 是同旁内角）。
 
   *解*：因为 $a parallel b$，所以 $angle 1 + angle 2 = 180 degree$（两直线平行，同旁内角互补）。因此 $angle 2 = 180 degree - 50 degree = 130 degree$。
 ]
@@ -147,7 +116,7 @@
 #pitfall[
   *陷阱 1*：同位角相等、内错角也相等——但同旁内角*互补*（和为 $180 degree$），不是相等！这三组角的关系容易搞混。
 
-  *陷阱 2*：平行线的角关系是「平行 $arrow.r$ 角相等/互补」（性质），反过来「角相等/互补 $arrow.r$ 平行」（判定）——两个方向的推理都要掌握，但做题时要先搞清楚题目是给了哪个条件（平行还是角），再决定用性质还是判定。
+  *陷阱 2*：判断角的关系时，先确认这两条直线是不是已经知道平行。只有在已知 $a parallel b$ 时，才能直接用同位角、内错角、同旁内角的关系。
 ]
 
 #mastery[
@@ -158,13 +127,12 @@
     - (B) 在同一平面内，不相交的两条直线一定平行
     - (C) 两条平行线之间的距离可以不相等
     - (D) 过一点可以画无数条直线与已知直线平行
-  + 如图，$a parallel b$，截线 $l$ 与 $a$、$b$ 分别交于 $A$、$B$。若 $angle 1 = 58 degree$，求 $angle 1$ 的同位角、内错角和同旁内角。
-  + 判断：$angle 1 = 120 degree$，$angle 2 = 60 degree$，$angle 1$ 与 $angle 2$ 是同旁内角。$a parallel b$ 吗？
+  + 如图，交点上方的是 $P$，下方的是 $Q$。若 $angle 1 = 58 degree$，求与它对应的同位角、内错角和同旁内角的度数。
+  + 一条直线与另一条直线相交，如果其中一个角是 $90 degree$，其余三个角各是多少？
 
   *应用*
 
-  + 如图，$a parallel b$，若 $angle 1 = 58 degree$，求 $angle 1$ 的同位角、内错角和同旁内角的度数。
-  + 判断：$angle 1 = 120 degree$，$angle 2 = 60 degree$，且它们是同旁内角。$a parallel b$ 吗？
+  + 如图，$a parallel b$，若一个同位角是 $125 degree$，对应的内错角和同旁内角分别是多少？
   + 一根旗杆垂直于地面，阳光与地面成 $35 degree$ 角照射。求阳光与旗杆的夹角。
 
   #line(length: 100%, stroke: 0.3pt + luma(200))
@@ -172,11 +140,10 @@
 
   *基础*
   + (B)。(A) 错：空间中异面直线不相交也不平行；(C) 错：平行线间距处处相等；(D) 错：有且仅有一条。
-  + 同位角 $= 58 degree$，内错角 $= 58 degree$，同旁内角 $= 180 degree - 58 degree = 122 degree$
-  + $angle 1 + angle 2 = 120 degree + 60 degree = 180 degree$，同旁内角互补，所以 $a parallel b$。
+  + 同位角 $= 58 degree$，内错角 $= 58 degree$，同旁内角 $= 180 degree - 58 degree = 122 degree$。
+  + 其余三个角中，有两个是 $90 degree$，另一个也是 $90 degree$；四个角全是直角。
 
   *应用*
-  + 同位角 $= 58 degree$，内错角 $= 58 degree$，同旁内角 $= 180 degree - 58 degree = 122 degree$。
-  + $angle 1 + angle 2 = 120 degree + 60 degree = 180 degree$，同旁内角互补，所以 $a parallel b$。
+  + 内错角 $= 125 degree$；同旁内角 $= 180 degree - 125 degree = 55 degree$。
   + 旗杆垂直地面，阳光与地面成 $35 degree$ 角，所以阳光与旗杆的夹角 $= 90 degree - 35 degree = 55 degree$。
 ]
