@@ -28,7 +28,7 @@
   - `typst/10-capstone/` — 终章综合（3 个文件）
 - 仍保留但未并入主书的占位目录：
   - `typst/01-arithmetic-foundation/`
-- `typst/smoke/` — 构建烟雾测试（package-lock.typ）
+- `typst/smoke/` — 构建烟雾测试与包锁检查（`package-lock.typ`、`04-number-line-algebra-bridge.typ`、`05-foundation-gate.typ`、`06-algebra-deepening.typ`、`07-geometry-deepening.typ`、`08-function-models.typ`、`09-data-statistics.typ`、`10-capstone.typ`）
 - `scripts/` — 辅助脚本
 - `output/` — 构建产物（git ignored）
 
@@ -125,7 +125,7 @@
 ## 主干闸门与分支入口约定
 
 - `typst/05-foundation-gate/` 的职责是*收束共同主干*，不是继续扩展共同主干。
-- 它必须包含：对 `01-arithmetic-foundation`、`02-fraction-ratio-foundation`、`03-geometry-foundation`、`04-number-line-algebra-bridge` 的累计 readiness check；面向后续分支的短 recap；用 `#secref(...)` 回指主干小节的螺旋复习；清晰的分支地图与自检提示。
+- 它必须包含：对 `01-counting`、`02-fraction-ratio-foundation`、`03-geometry-foundation`、`04-number-line-algebra-bridge` 的累计 readiness check；面向后续分支的短 recap；用 `#secref(...)` 回指主干小节的螺旋复习；清晰的分支地图与自检提示。
 - 它不得包含：伪装成复习的新主干内容、长推导、分支级操作流程、会和后续深化章节竞争位置的迷你课程。
 - 分支入口 recap 必须*同时*满足两条：使用简短的 `#side-hack[...]` 块，且放在 `#history-note[...]` 之后、`本章的主线是` 列表之前；若该章没有主线列表，则放在引言段落之后、第一组章节列表之前。目标是唤醒旧工具，不是提前讲新分支内容。
 
@@ -145,6 +145,6 @@
 
 ```bash
 make pdf    # 生成 PDF（output/math-textbook.pdf）
-make check  # 检查 Typst 工具链和包锁定
+make check  # 检查 Typst 工具链，并编译主书 + package-lock smoke + 04-10 smoke 套件
 make clean  # 清理构建产物
 ```

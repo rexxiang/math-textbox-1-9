@@ -2,9 +2,7 @@
 
 == 全书结构地图
 
-下面这张图不是当前目录页的逐项翻版，而是一张*结构导航图*：你可以用它来理解整本书先怎样搭共同地基，再怎样做总检查，接着向不同专题深化，最后重新会合。
-
-如果你眼前看到的目录暂时还是现役的线性排布，把它当作纸面编排就好；这张图负责说明*阅读逻辑*，不是要求你逐字对照的即时目录。
+下面这张图不是目录页的逐项翻版，而是一张*结构导航图*：你可以用它来理解整本书先怎样搭共同主干，再怎样经过基础总闸门，接着向不同专题深化，最后在终章综合里重新会合。
 
 #v(0.5em)
 
@@ -55,21 +53,21 @@
 
     let end = (0, -9.1)
 
-    node(root, [*数学发明者手册* \ 阅读结构图], w: 3.8, h: 1.0, fill-color: c-root, stroke-color: s-root)
+    node(root, [*数学发明者手册* \ 全书结构图], w: 3.8, h: 1.0, fill-color: c-root, stroke-color: s-root)
 
-    node(t1, [*数与运算地基*], fill-color: c-trunk, stroke-color: s-trunk)
-    node(t2, [*分数与比例地基*], w: 3.1, fill-color: c-trunk, stroke-color: s-trunk)
-    node(t3, [*形与位置地基*], fill-color: c-trunk, stroke-color: s-trunk)
-    node(t4, [*数轴与关系桥*], w: 3.1, fill-color: c-trunk, stroke-color: s-trunk)
+    node(t1, [*数的萌芽*], fill-color: c-trunk, stroke-color: s-trunk)
+    node(t2, [*分数、比与百分数基础*], w: 3.5, fill-color: c-trunk, stroke-color: s-trunk)
+    node(t3, [*几何基础*], fill-color: c-trunk, stroke-color: s-trunk)
+    node(t4, [*数轴与代数桥*], w: 3.1, fill-color: c-trunk, stroke-color: s-trunk)
 
-    node(gate, [*基础总检查* \ 把旧工具重新连起来], w: 3.8, h: 1.0, fill-color: c-gate, stroke-color: s-gate)
+    node(gate, [*基础总闸门* \ 把共同主干重新连成网], w: 4.0, h: 1.0, fill-color: c-gate, stroke-color: s-gate)
 
     node(b1, [*代数深化*], fill-color: c-branch, stroke-color: s-branch)
     node(b2, [*几何深化*], fill-color: c-branch, stroke-color: s-branch)
-    node(b3, [*函数与变化模型*], w: 3.1, fill-color: c-branch, stroke-color: s-branch)
-    node(b4, [*数据与统计判断*], w: 3.1, fill-color: c-branch, stroke-color: s-branch)
+    node(b3, [*函数模型*], fill-color: c-branch, stroke-color: s-branch)
+    node(b4, [*数据统计*], fill-color: c-branch, stroke-color: s-branch)
 
-    node(end, [*终章会合* \ 把分支重新连回一张网], w: 3.6, h: 1.0, fill-color: c-end, stroke-color: s-end)
+    node(end, [*终章综合* \ 把分支重新连回一张网], w: 3.6, h: 1.0, fill-color: c-end, stroke-color: s-end)
 
     arrow((0, -0.5), (t1.at(0), -2.1 + 0.45), stroke-color: s-root)
     arrow((t1.at(0) + 1.35, t1.at(1)), (t2.at(0) - 1.55, t2.at(1)), stroke-color: s-trunk)
@@ -88,9 +86,9 @@
     arrow((b4.at(0), -6.8 - 0.45), (end.at(0) + 1.4, -9.1 + 0.5), stroke-color: s-end)
 
     content((-8.2, -2.1), text(size: 7pt, fill: s-trunk, weight: "bold")[共同\ 主干])
-    content((-8.2, -4.4), text(size: 7pt, fill: s-gate, weight: "bold")[检查\ 闸门])
+    content((-8.2, -4.4), text(size: 7pt, fill: s-gate, weight: "bold")[基础总\ 闸门])
     content((-8.2, -6.8), text(size: 7pt, fill: s-branch, weight: "bold")[深化\ 分支])
-    content((-8.2, -9.1), text(size: 7pt, fill: s-end, weight: "bold")[重新\ 汇合])
+    content((-8.2, -9.1), text(size: 7pt, fill: s-end, weight: "bold")[终章\ 综合])
   })
 ]
 
@@ -102,4 +100,4 @@
   ]
 ]
 
-你不需要一开始就理解整张图。现在只要知道：即使纸面目录暂时仍是线性的，你也可以按这张地图来安排阅读与回看。
+你不需要一开始就理解整张图。现在只要知道：目录已经按这张结构地图展开；阅读时，把它当成识别“我现在在哪一段、下一步该往哪里走”的导航图就够了。
