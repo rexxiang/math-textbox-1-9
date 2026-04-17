@@ -74,6 +74,12 @@ jobs:
           docker run --rm -v "$(pwd):/book" math-textbook-typst \
             compile --root /book /book/typst/smoke/09-data-statistics.typ /book/output/09-data-statistics-smoke.pdf
 
+      - name: Verify capstone smoke
+        run: |
+          mkdir -p output
+          docker run --rm -v "$(pwd):/book" math-textbook-typst \
+            compile --root /book /book/typst/smoke/10-capstone.typ /book/output/10-capstone-smoke.pdf
+
       - name: Determine next version
         id: version
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
