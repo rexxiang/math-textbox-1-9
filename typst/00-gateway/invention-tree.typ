@@ -2,7 +2,9 @@
 
 == 全书结构地图
 
-下面这张图不是旧式的线性目录，而是一张*结构导航图*：它告诉你整本书怎样从共同主干走到闸门，再分成几条深化路线，最后在终章重新汇合。
+下面这张图不是当前目录页的逐项翻版，而是一张*结构导航图*：你可以用它来理解整本书先怎样搭共同地基，再怎样做总检查，接着向不同专题深化，最后重新会合。
+
+如果你眼前看到的目录暂时还是现役的线性排布，把它当作纸面编排就好；这张图负责说明*阅读逻辑*，不是要求你逐字对照的即时目录。
 
 #v(0.5em)
 
@@ -53,21 +55,21 @@
 
     let end = (0, -9.1)
 
-    node(root, [*数学发明者手册* \ 结构导航图], w: 3.8, h: 1.0, fill-color: c-root, stroke-color: s-root)
+    node(root, [*数学发明者手册* \ 阅读结构图], w: 3.8, h: 1.0, fill-color: c-root, stroke-color: s-root)
 
-    node(t1, [*01 算术基础*], fill-color: c-trunk, stroke-color: s-trunk)
-    node(t2, [*02 分数比例基础*], w: 3.1, fill-color: c-trunk, stroke-color: s-trunk)
-    node(t3, [*03 几何基础*], fill-color: c-trunk, stroke-color: s-trunk)
-    node(t4, [*04 数轴与代数桥*], w: 3.1, fill-color: c-trunk, stroke-color: s-trunk)
+    node(t1, [*数与运算地基*], fill-color: c-trunk, stroke-color: s-trunk)
+    node(t2, [*分数与比例地基*], w: 3.1, fill-color: c-trunk, stroke-color: s-trunk)
+    node(t3, [*形与位置地基*], fill-color: c-trunk, stroke-color: s-trunk)
+    node(t4, [*数轴与关系桥*], w: 3.1, fill-color: c-trunk, stroke-color: s-trunk)
 
-    node(gate, [*05 基础总闸门* \ 主干收束 / readiness check], w: 3.8, h: 1.0, fill-color: c-gate, stroke-color: s-gate)
+    node(gate, [*基础总检查* \ 把旧工具重新连起来], w: 3.8, h: 1.0, fill-color: c-gate, stroke-color: s-gate)
 
-    node(b1, [*06 代数深化*], fill-color: c-branch, stroke-color: s-branch)
-    node(b2, [*07 几何深化*], fill-color: c-branch, stroke-color: s-branch)
-    node(b3, [*08 函数模型*], fill-color: c-branch, stroke-color: s-branch)
-    node(b4, [*09 数据统计*], fill-color: c-branch, stroke-color: s-branch)
+    node(b1, [*代数深化*], fill-color: c-branch, stroke-color: s-branch)
+    node(b2, [*几何深化*], fill-color: c-branch, stroke-color: s-branch)
+    node(b3, [*函数与变化模型*], w: 3.1, fill-color: c-branch, stroke-color: s-branch)
+    node(b4, [*数据与统计判断*], w: 3.1, fill-color: c-branch, stroke-color: s-branch)
 
-    node(end, [*10 终章* \ 把分支重新连回一张网], w: 3.6, h: 1.0, fill-color: c-end, stroke-color: s-end)
+    node(end, [*终章会合* \ 把分支重新连回一张网], w: 3.6, h: 1.0, fill-color: c-end, stroke-color: s-end)
 
     arrow((0, -0.5), (t1.at(0), -2.1 + 0.45), stroke-color: s-root)
     arrow((t1.at(0) + 1.35, t1.at(1)), (t2.at(0) - 1.55, t2.at(1)), stroke-color: s-trunk)
@@ -96,8 +98,8 @@
 
 #block(inset: (left: 1em), stroke: (left: 2pt + rgb("#1565C0")))[
   #text(size: 9pt)[
-    *怎么看这张图？* 先沿主干从左到右，把共同语言装稳；到闸门时先做总检，不急着同时开很多分支；选定一条分支后，尽量连续推进，最后再在终章回头看全图。
+    *怎么看这张图？* 先把基础读稳；觉得工具已经够多却连不起来时，先停下来做总回看；决定专题深入后，再把相关章节连续读成一条线，最后回头看全图。
   ]
 ]
 
-你不需要一开始就理解整张图。现在只要知道：这本书不是把所有内容排成一条长走廊，而是先搭共同底盘，再按问题类型展开，最后重新会合。
+你不需要一开始就理解整张图。现在只要知道：即使纸面目录暂时仍是线性的，你也可以按这张地图来安排阅读与回看。
