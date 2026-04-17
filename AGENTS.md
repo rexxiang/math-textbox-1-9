@@ -18,10 +18,10 @@
   - `typst/01-counting/` — 数的萌芽（小学 1-4 年级，7 个文件含 07-review.typ）
   - `typst/02-fraction-decimal/` — 分与合（小学 3-6 年级，6 个文件含 05-review.typ）
   - `typst/03-ratio-world/` — 比例世界（小学 5-7 年级，6 个文件含 05-review.typ）
-  - `typst/04-negative-invention/` — 负数的发明（初中 7-8 年级，6 个文件含 05-review.typ）
+  - `typst/04-negative-invention/` — 负数的发明（初中 7-8 年级，4 个文件含 03-review.typ）
   - `typst/05-equation-machine/` — 方程（初中 7-9 年级，9 个文件含 08-review.typ）
-  - `typst/06-shape-logic/` — 形的逻辑（小学 3-9 年级，12 个文件含 11-review.typ）
-  - `typst/07-function-lens/` — 函数（初中 8-9 年级，7 个文件含 06-review.typ）
+  - `typst/06-shape-logic/` — 形的逻辑（小学 3-9 年级，15 个文件含 14-review.typ）
+  - `typst/07-function-lens/` — 函数（初中 8-9 年级，6 个文件含 05-review.typ）
   - `typst/08-data-detective/` — 数据侦探（初中 7-9 年级，6 个文件含 05-review.typ）
   - `typst/09-capstone/` — 终章（2 个文件）
 - `typst/smoke/` — 构建烟雾测试（package-lock.typ）

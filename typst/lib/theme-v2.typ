@@ -5,18 +5,6 @@
   set page(
     paper: "iso-b5",
     margin: (x: 18mm, y: 18mm),
-    header: context {
-      let elems = query(heading.where(level: 1).before(here()))
-      if elems.len() > 0 {
-        let current = elems.last()
-        let num = counter(heading).at(current.location()).first()
-        emph[第 #num 章 #h(0.3em) #current.body]
-        line(length: 100%, stroke: 0.4pt)
-      }
-    },
-    footer: context {
-      align(right, counter(page).display())
-    },
   )
   set text(
     font: "Noto Sans CJK SC",
@@ -36,6 +24,36 @@
   show heading.where(level: 2): set block(above: 2em, below: 1em)
   show heading.where(level: 3): set block(above: 2em, below: 1em)
   body
+}
+
+#let main-page-header = context {
+  let chapter-headings = query(heading.where(level: 1).before(here()))
+  let current-page = counter(page).get().first()
+  let chapter-on-page = query(heading.where(level: 1)).filter(h => counter(page).at(h.location()).first() == current-page)
+
+  if chapter-headings.len() > 0 and chapter-on-page.len() == 0 {
+    let chapter = chapter-headings.last()
+    let chapter-num = counter(heading).at(chapter.location()).first()
+    let section-headings = query(heading.where(level: 2).before(here())).filter(h => counter(heading).at(h.location()).first() == chapter-num)
+
+    emph[
+      第 #chapter-num 章 #h(0.3em) #chapter.body
+      #if section-headings.len() > 0 [#h(0.5em)•#h(0.5em) #section-headings.last().body]
+    ]
+    line(length: 100%, stroke: 0.4pt)
+  }
+}
+
+#let main-page-footer = context {
+  align(right, counter(page).display())
+}
+
+#let use-frontmatter-page-style() = {
+  set page(header: none, footer: none)
+}
+
+#let use-main-page-style() = {
+  set page(header: main-page-header, footer: main-page-footer)
 }
 
 // ── 交叉引用（沿用 V1）──────────────────────────────────────────

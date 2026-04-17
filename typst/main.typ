@@ -2,6 +2,8 @@
 
 #show: textbook-v2
 
+#set page(header: none, footer: none)
+
 #align(center)[
   #text(size: 24pt, weight: "bold")[数学发明者手册]
   #v(0.5em)
@@ -11,6 +13,9 @@
 #pagebreak()
 #outline(title: [目录])
 #pagebreak()
+
+#set page(header: main-page-header, footer: main-page-footer)
+#counter(page).update(1)
 
 // 第 0 章：导读
 = 导读
@@ -52,10 +57,8 @@
 = 负数的发明
 #include "04-negative-invention/00-overview.typ"
 #include "04-negative-invention/01-rational-numbers.typ"
-#include "04-negative-invention/04-power-operations.typ"
 #include "04-negative-invention/02-real-numbers.typ"
-#include "04-negative-invention/03-points-lines-planes.typ"
-#include "04-negative-invention/05-review.typ"
+#include "04-negative-invention/03-review.typ"
 
 // 第 5 章：方程——未知数猎手（初中 7-9 年级）
 = 方程\u{2014}\u{2014}未知数猎手
@@ -76,13 +79,16 @@
 #include "06-shape-logic/02-area-volume.typ"
 #include "06-shape-logic/03-angles.typ"
 #include "06-shape-logic/04-parallel-perpendicular.typ"
-#include "06-shape-logic/05-triangles.typ"
-#include "06-shape-logic/06-quadrilaterals.typ"
-#include "06-shape-logic/07-circles.typ"
-#include "06-shape-logic/08-pythagorean-theorem.typ"
-#include "06-shape-logic/09-transformations.typ"
-#include "06-shape-logic/10-projections.typ"
-#include "06-shape-logic/11-review.typ"
+#include "06-shape-logic/05-congruent-triangles.typ"
+#include "06-shape-logic/06-similar-triangles.typ"
+#include "06-shape-logic/07-quadrilaterals.typ"
+#include "06-shape-logic/08-circles.typ"
+#include "06-shape-logic/09-pythagorean-theorem.typ"
+#include "06-shape-logic/10-transformations.typ"
+#include "06-shape-logic/11-projections.typ"
+#include "06-shape-logic/12-coordinate-geometry.typ"
+#include "06-shape-logic/13-circle-extensions.typ"
+#include "06-shape-logic/14-review.typ"
 
 // 第 7 章：函数——变化的望远镜（初中 8-9 年级）
 = 函数\u{2014}\u{2014}变化的望远镜
@@ -90,9 +96,8 @@
 #include "07-function-lens/01-linear-functions.typ"
 #include "07-function-lens/02-inverse-proportion.typ"
 #include "07-function-lens/03-quadratic-functions.typ"
-#include "07-function-lens/04-coordinate-geometry.typ"
-#include "07-function-lens/05-trigonometric-functions.typ"
-#include "07-function-lens/06-review.typ"
+#include "07-function-lens/04-trigonometric-functions.typ"
+#include "07-function-lens/05-review.typ"
 
 // 第 8 章：数据侦探（初中 7-9 年级）
 = 数据侦探

@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §7.5 锐角三角函数 <sec-7-5>
+== §7.4 锐角三角函数 <sec-7-4>
 
 #vocab[正弦 sine / 余弦 cosine / 正切 tangent / 仰角 angle of elevation / 俯角 angle of depression]
 
@@ -57,7 +57,7 @@
 
   画几个大小不同但角度相同的直角三角形（例如都有一个 $30 degree$ 角）。你会发现：虽然边长不同，但「对边/斜边」的比值*总是相同*的！
 
-  这就是因为这些三角形*相似*（#secref("6.5")）。
+  这就是因为这些三角形*相似*（#secref("6.6")）。
 
   *第三步*：定义三个比值。
 
@@ -131,6 +131,11 @@
   - $sin^2 A + cos^2 A = 1$（由勾股定理直接得出）
   - 互余关系：$sin A = cos(90 degree - A)$，$cos A = sin(90 degree - A)$
 
+  *当角度不是 $30 degree$、$45 degree$、$60 degree$ 这类特殊角时*，通常用计算器或函数表查近似值。例如：
+
+  - 用计算器可得 $tan 35 degree approx 0.7002$
+  - 用计算器可得 $tan 40 degree approx 0.839$
+
   === 解直角三角形
 
   在直角三角形中，除直角外，再已知两个元素（其中至少一个是边），就能求出其余所有未知元素。
@@ -175,7 +180,8 @@
 
   *例题 1*（回到测山高）：水平距离 $200$ 米，仰角 $35 degree$，求山高。
 
-  解：设山高为 $h$。$tan 35 degree = frac(h, 200)$，$h = 200 tan 35 degree approx 200 times 0.7002 approx 140$（米）。
+  解：设山高为 $h$。用计算器求得 $tan 35 degree approx 0.7002$。
+  所以 $tan 35 degree = frac(h, 200)$，$h = 200 tan 35 degree approx 200 times 0.7002 approx 140$（米）。
 
   *例题 2*：梯子长 $5$ 米，与地面成 $60 degree$ 角，梯子顶端离地面多高？底端离墙多远？
 
@@ -208,11 +214,11 @@
   *应用*
 
   + 一条公路的坡度为 $1 : 5$。从山脚到山顶的水平距离是 $500$ 米，求山的高度和公路的长度。
-  + 小明站在离一棵树 $15$ 米的地方，测得树顶的仰角为 $40 degree$。小明的眼睛离地面 $1.6$ 米。求树的高度。（$tan 40 degree approx 0.839$）
+  + 小明站在离一棵树 $15$ 米的地方，测得树顶的仰角为 $40 degree$。小明的眼睛离地面 $1.6$ 米。求树的高度。（用计算器可得 $tan 40 degree approx 0.839$）
 
   *挑战*
 
-  + 如图：从山脚 $A$ 测得山顶 $D$ 的仰角为 $30 degree$，沿斜坡前进 $200$ 米到达 $B$ 点后，测得仰角变为 $60 degree$。斜坡倾斜角为 $15 degree$。求山高 $C D$。（此题较难，提示：在 $triangle B D E$ 中用正弦定理或构造方程。）
+  + 在一条笔直的公路上，观测点 $A$ 与 $B$ 相距 $40$ 米，且 $B$ 比 $A$ 更靠近塔底 $C$。从 $A$ 看塔顶 $D$ 的仰角为 $30 degree$，从 $B$ 看塔顶 $D$ 的仰角为 $60 degree$。求塔高 $C D$ 和 $B C$ 的长度。
   + 在 $triangle A B C$ 中，$angle C = 90 degree$，$angle A = alpha$。证明：$sin^2 alpha + cos^2 alpha = 1$。
 
   #line(length: 100%, stroke: 0.3pt + luma(200))
@@ -228,7 +234,13 @@
   + 设树高为 $h$。$tan 40 degree = frac(h - 1.6, 15)$，$h - 1.6 = 15 times 0.839 = 12.585$，$h approx 14.2$（米）。
 
   *挑战*
-  + （本题需构造辅助线，设山高 $C D = h$，利用 $B$ 点坐标和两次仰角列方程组求解。过程较长，答案为 $h = 100(sqrt(3) + 1)$ 米，约 $273$ 米。）
+  + 设 $B C = x$ 米，塔高 $C D = h$ 米。
+    由 $tan 60 degree = frac(h, x)$，得 $h = x sqrt(3)$。
+    又由 $tan 30 degree = frac(h, x + 40) = frac(sqrt(3), 3)$，得 $h = frac(sqrt(3), 3)(x + 40)$。
+    两式相等：$x sqrt(3) = frac(sqrt(3), 3)(x + 40)$。
+    两边同乘 $sqrt(3)$，得 $3 x = x + 40$，所以 $x = 20$。
+    因而 $h = 20 sqrt(3)$。
+    所以 $B C = 20$ 米，$C D = 20 sqrt(3)$ 米。
   + 设 $B C = a$，$A C = b$，$A B = c$。$sin alpha = frac(a, c)$，$cos alpha = frac(b, c)$。$sin^2 alpha + cos^2 alpha = frac(a^2, c^2) + frac(b^2, c^2) = frac(a^2 + b^2, c^2) = frac(c^2, c^2) = 1$（由勾股定理 $a^2 + b^2 = c^2$）。
 ]
 

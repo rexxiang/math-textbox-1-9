@@ -2,7 +2,7 @@
 #import "../lib/diagram-packages.typ": cetz
 #import "../lib/geometry-helpers.typ": equal-angle
 
-== §6.8 勾股定理 <sec-6-8>
+== §6.9 勾股定理 <sec-6-9>
 
 #vocab[勾股定理 Pythagorean theorem / 斜边 hypotenuse / 直角边 leg]
 

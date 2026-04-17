@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §6.10 投影与三视图 <sec-6-10>
+== §6.11 投影与三视图 <sec-6-11>
 
 #vocab[投影 projection / 正投影 orthographic projection / 三视图 three views / 主视图 front view / 左视图 left (side) view / 俯视图 top view]
 

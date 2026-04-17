@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §6.6 四边形 <sec-6-6>
+== §6.7 四边形 <sec-6-7>
 
 #vocab[平行四边形 parallelogram / 矩形 rectangle / 菱形 rhombus / 正方形 square / 梯形 trapezoid]
 
@@ -197,7 +197,7 @@
 
   *例 2*：菱形 $A B C D$ 的对角线长分别为 $6$ 和 $8$，求菱形面积和边长。
 
-  *解*：$S = frac(1, 2) times 6 times 8 = 24$。对角线互相垂直平分，半对角线为 $3$ 和 $4$，由勾股定理（#secref("6.8")），边长 $= sqrt(3^2 + 4^2) = 5$。
+  *解*：$S = frac(1, 2) times 6 times 8 = 24$。对角线互相垂直平分，半对角线为 $3$ 和 $4$，由勾股定理（#secref("6.9")），边长 $= sqrt(3^2 + 4^2) = 5$。
 ]
 
 #pitfall[

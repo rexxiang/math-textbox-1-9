@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §6.9 图形变换 <sec-6-9>
+== §6.10 图形变换 <sec-6-10>
 
 #vocab[轴对称 reflection / 平移 translation / 旋转 rotation / 中心对称 point symmetry]
 
