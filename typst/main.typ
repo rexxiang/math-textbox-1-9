@@ -113,24 +113,24 @@
 #include "09-capstone/invention-tree.typ"
 #include "09-capstone/whats-next.typ"
 
-// Future chapter order reference for reorganization cutover only:
-// = Arithmetic Foundation
-// #include "01-arithmetic-foundation/00-overview.typ"
-// = Fraction Ratio Foundation
-// #include "02-fraction-ratio-foundation/00-overview.typ"
-// = Geometry Foundation
-// #include "03-geometry-foundation/00-overview.typ"
-// = Number Line Algebra Bridge
-// #include "04-number-line-algebra-bridge/00-overview.typ"
-// = Foundation Gate
-// #include "05-foundation-gate/00-overview.typ"
-// = Algebra Deepening
-// #include "06-algebra-deepening/00-overview.typ"
-// = Geometry Deepening
-// #include "07-geometry-deepening/00-overview.typ"
-// = Function Models
-// #include "08-function-models/00-overview.typ"
-// = Data Statistics
-// #include "09-data-statistics/00-overview.typ"
-// = Capstone
-// #include "10-capstone/00-overview.typ"
+// Future macro-structure mapping reference only.
+// Documentary note: this is not an alternate include list and must not be
+// uncommented for cutover. The target chapter directories currently contain
+// placeholders only; migrate content before switching active includes.
+//
+// Planned target order and source mapping:
+// 1. 01-arithmetic-foundation <- current 01-counting
+// 2. 02-fraction-ratio-foundation <- current 02-fraction-decimal + ratio basics
+//    from 03-ratio-world
+// 3. 03-geometry-foundation <- geometry foundations from current 06-shape-logic
+// 4. 04-number-line-algebra-bridge <- current 04-negative-invention
+// 5. 05-foundation-gate <- reserved checkpoint chapter before deepening tracks
+// 6. 06-algebra-deepening <- current 05-equation-machine
+// 7. 07-geometry-deepening <- remaining deepening content from current
+//    06-shape-logic
+// 8. 08-function-models <- current 07-function-lens
+// 9. 09-data-statistics <- current 03-ratio-world data/statistics lessons
+//    plus current 08-data-detective
+// 10. 10-capstone <- current 09-capstone
+//     - 09-capstone/invention-tree.typ -> future 10-capstone/invention-tree.typ
+//     - 09-capstone/whats-next.typ -> future 10-capstone/whats-next.typ
