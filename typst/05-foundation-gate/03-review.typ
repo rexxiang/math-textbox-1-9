@@ -1,6 +1,10 @@
-#import "../lib/theme-v2.typ": blueprint, mastery, secref
+#import "../lib/theme-v2.typ": blueprint, mastery, side-hack, secref
 
 == 第五章回顾：基础总闸门
+
+#side-hack[
+  先完成 #secref("5.1") 和 #secref("5.2")，再用这里的题做最后一次总确认。对答案时，不只看数字；如果仍然说不清为什么，就按前两节给出的回看路线补地基后再回来。
+]
 
 #blueprint[
   *知识速查卡*
