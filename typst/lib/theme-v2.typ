@@ -53,11 +53,11 @@
 }
 
 #let use-frontmatter-page-style() = {
-  set page(header: none, footer: none)
+  set page(numbering: "i", header: none, footer: frontmatter-page-footer)
 }
 
 #let use-main-page-style() = {
-  set page(header: main-page-header, footer: main-page-footer)
+  set page(numbering: "1", header: main-page-header, footer: main-page-footer)
 }
 
 // ── 交叉引用（沿用 V1）──────────────────────────────────────────

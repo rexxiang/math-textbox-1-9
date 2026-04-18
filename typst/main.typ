@@ -16,7 +16,7 @@
 
 #set heading(numbering: none)
 #counter(page).update(1)
-#set page(numbering: "i", header: none, footer: frontmatter-page-footer)
+#use-frontmatter-page-style()
 
 // 第 0 章：导读
 = 导读
@@ -27,7 +27,7 @@
 
 #counter(heading).update(0)
 #set heading(numbering: "1.1")
-#set page(numbering: "1", header: main-page-header, footer: main-page-footer)
+#use-main-page-style()
 #counter(page).update(1)
 
 // 第 1 章：数的萌芽（小学 1-4 年级）
