@@ -19,7 +19,6 @@
 - `08-function-models/` — 函数模型
 - `09-data-statistics/` — 数据统计
 - `10-capstone/` — 终章综合
-- `01-arithmetic-foundation/` — 预留占位目录（本次切换后仍未并入主书）
 - `smoke/` — 构建烟雾测试与包锁检查
 
 ## 构建

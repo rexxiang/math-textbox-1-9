@@ -41,9 +41,6 @@
 #include "01-counting/06-operation-laws.typ"
 #include "01-counting/07-review.typ"
 
-// Note: 01-arithmetic-foundation remains a placeholder stub and is intentionally
-// not part of the live include graph yet.
-
 // 第 2 章：分数、比与百分数基础（小学 3-6 年级）
 = 分数、比与百分数基础
 #include "02-fraction-ratio-foundation/00-overview.typ"
