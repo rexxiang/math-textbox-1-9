@@ -82,7 +82,7 @@
     node(b3, [*8 函数模型* \ 表格·公式·图象], fill-color: c-func, stroke-color: s-func)
     node(b4, [*9 数据统计* \ 整理、判断、估计], fill-color: c-data, stroke-color: s-data)
 
-    node(cap, [*10 终章综合* \ 树形视角与继续生长], w: 3.8, fill-color: c-cap, stroke-color: s-cap)
+    node(cap, [*10 重新会合* \ 树形视角与继续生长], w: 3.8, fill-color: c-cap, stroke-color: s-cap)
 
     arrow((0, -0.5), (0, -1.3), color: s-trunk)
     arrow((0, -2.3), (0, -3.1), color: s-trunk)
