@@ -389,6 +389,102 @@ For flowcharts/diagrams, use Fletcher (`@preview/fletcher:0.5.8`).
 - Watch mode:
   - `typst watch typst/main.typ output/math-textbook-typst.pdf`
 
+---
+
+## Project: 数学自学教材（1-9 年级）— Typst 项目规范
+
+> 以下规则仅适用于 `math-textbox-1-9` 仓库，在通用 Typst 规则之上叠加。冲突时以本节为准。
+
+### 构建命令（本项目）
+
+本项目使用 Docker 封装，优先使用 `make` 命令而非上方的原始 `typst compile` 命令：
+
+| 命令 | 作用 |
+|---|---|
+| `make pdf` | 生成 `output/math-textbook.pdf`（主要发布格式） |
+| `make check` | 标准校验：检查工具链 + 编译主书 + package-lock smoke + 章节 04-10 smoke |
+| `make clean` | 清理构建产物 |
+
+> ⚠️ 本项目输出路径为 `output/math-textbook.pdf`，**不是**上方 Quick Commands 所示的 `output/math-textbook-typst.pdf`。直接调用 `typst compile` 时须使用正确路径。
+
+**Smoke 测试说明**：`typst/smoke/` 含独立 smoke 入口，从第 4 章开始；第 1-3 章由主书编译覆盖。第 10 章 smoke 额外承担 00-10 全链路集成验证。
+
+### 锁定的包版本
+
+| 包 | 版本 | 导入路径 |
+|---|---|---|
+| cetz | 0.4.2 | `@preview/cetz:0.4.2` |
+
+版本声明在 `typst/lib/diagram-packages.typ`。所有 Universe 包**必须**使用固定版本号——禁止使用浮动版本。
+
+### 数学写法规范（项目专属规则）
+
+通用 Typst 语法（`frac`、`sqrt`、`overline`、`sin`、`pi` 等）见本文件上方的 Critical Gotchas 与 Layer 3 章节。  
+以下仅列本项目特有或高频踩坑的规则：
+
+| 模式 | 要求写法 | 禁止写法 |
+|---|---|---|
+| 正负号 | `$plus.minus$` | `$pm$`（非 Typst 内置符号） |
+| 全等 | `$tilde.eq$` | `$cong$`（与现有几何文件保持一致） |
+| 多字母变量 | 字母间加空格：`$k x + b$`、`$4 a c$` | `$kx+b$`、`$4ac$`（触发 "unknown variable" 错误） |
+| 数字+字母 | 可连写 `$2x$`，建议加空格增加可读性 | — |
+| 几何顶点/线段 | 字母间加空格：`$triangle A B C$`、`$A B = C D$` | `$triangleABC$` |
+| 数学模式中文 | 加引号：`$P("两奇") = ...$` | `$P(两奇)$` |
+
+### 章节标题与交叉引用
+
+```typst
+= 章标题
+== §X.Y 节标题 <sec-X-Y>
+```
+
+- 正文内引用：`#secref("X.Y")` 生成可点击链接
+- 范围引用：`#secrange("X.Y", "A.B")`
+
+### 框函数速查
+
+每个 §X.Y 知识点的六阶段发明链顺序及对应函数（详细排序规则见 `.agents/skills/math-textbook-authoring/SKILL.md`）：
+
+| 函数 | 阶段 / 用途 | 在节中的位置 |
+|---|---|---|
+| `#crisis[...]` | 历史困境 | 节首 |
+| `#discovery[...]` | 探索发现 | crisis 之后 |
+| `#tryit[...]` | 试一试（先尝试再看解） | blueprint 之前 |
+| `#blueprint[...]` | 工具蓝图（正式概念 / 公式） | discovery 之后 |
+| `#pitfall[...]` | 常见陷阱（❌ / ✓ 对比） | blueprint 之后 |
+| `#mastery[...]` | 工具磨砺（三级练习） | 节末 |
+
+### 内联注记函数
+
+四个注记函数均可在节内适当位置使用；`#side-hack` 在分支首章另有强制放置约束，详见 `.agents/skills/math-textbook-authoring/SKILL.md` §分支入口 Recap 约定（必须同时满足两条约束）。
+
+| 函数 | 说明 | 位置 |
+|---|---|---|
+| `#history-note[...]` | 历史文化背景 | 节内任意位置 |
+| `#side-hack[...]` | 认知捷径 / 记忆技巧 | 节内任意位置；分支首章另有强制约束↑ |
+| `#vocab[...]` | 关键术语定义 | 节首附近 |
+| `#lab[...]` | 动手数学实验（紫色） | 节内任意位置 |
+
+### 图形约定
+
+- 所有图形**内联**在章节 `.typ` 文件中，不创建独立图形文件
+- 图形必须使用 `#figure` + `caption`
+- 使用 CeTZ 绘制几何图形，用命名坐标标注关键点
+
+### CeTZ 角标记规范
+
+| 标记类型 | 必须使用 | 禁止替代 |
+|---|---|---|
+| 角弧 | `cetz.angle.angle(origin, a, b, ...)` | 手动 `arc()` + 硬编码偏移 |
+| 直角标记 | `cetz.angle.right-angle(origin, a, b, ...)` | 手动 `line()` 对 |
+| 等角（双弧 / 三弧） | `equal-angle()` from `lib/geometry-helpers.typ` | — |
+
+在 canvas 块内导入：`import cetz.angle: angle, right-angle`
+
+`direction` 参数：`"near"`（默认，选较小角）、`"ccw"` / `"cw"`（显式控制扫过方向）
+
+---
+
 ## Resources In This Skill
 
 - Official source index: `references/official-sources.md`
