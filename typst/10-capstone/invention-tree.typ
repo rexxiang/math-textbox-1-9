@@ -12,7 +12,7 @@
   inset: 6pt,
   stroke: 0.4pt,
   table.header([*层级*], [*章节位置*], [*这一层真正完成了什么*]),
-  [共同主干], [1--4], [把数、分割合并、比例、图形、坐标、数轴、字母和平衡观连成同一种基础语言。],
+  [共同主干], [1--4], [把数、分数、比与百分数、图形、坐标、数轴、字母和平衡观连成同一种基础语言。],
   [基础总闸门], [5], [在 #secref("5.1") 与 #secref("5.2") 里确认旧工具已经能混合调用，再决定进入哪一条深化路线。],
   [代数深化], [6], [把模板、化简、方程、方程组、二次关系和范围约束打磨成系统工具。],
   [几何深化], [7], [把读图直觉推进成证明、测量、变换与表达；三角比测量也并入这一支。],
@@ -72,7 +72,7 @@
     let cap = (0, -12.3)
 
     node(t1, [*1 共同主干* \ 数与运算的底座], fill-color: c-trunk, stroke-color: s-trunk)
-    node(t2, [*2 共同主干* \ 分数、比例、百分数], fill-color: c-trunk, stroke-color: s-trunk)
+    node(t2, [*2 共同主干* \ 分数、比与百分数], fill-color: c-trunk, stroke-color: s-trunk)
     node(t3, [*3 共同主干* \ 图形、角、坐标入口], fill-color: c-trunk, stroke-color: s-trunk)
     node(t4, [*4 共同主干* \ 数轴、字母、平衡], fill-color: c-trunk, stroke-color: s-trunk)
     node(gate, [*5 基础总闸门* \ 先连网，再分流], fill-color: c-gate, stroke-color: s-gate)
