@@ -2,7 +2,7 @@
 
 == 全书结构地图
 
-下面这张图不是目录页的逐项翻版，而是一张*结构导航图*：你可以用它来理解整本书先怎样搭共同地基，再怎样做一次总结，接着进入不同的专题深化，最后在终章重新会合。
+下面这张图不是把目录再抄一遍，而是一张*结构导航图*：你可以用它看清整本书先怎样搭共同地基，再怎样做一次总结，接着进入不同的专题深化，最后在终章重新会合。
 
 #v(0.5em)
 
@@ -60,14 +60,14 @@
     node(t3, [*几何基础*], fill-color: c-base, stroke-color: s-base)
     node(t4, [*数轴与代数桥*], w: 3.1, fill-color: c-base, stroke-color: s-base)
 
-    node(gate, [*基础总结* \ 把共同地基重新连成网], w: 4.0, h: 1.0, fill-color: c-summary, stroke-color: s-summary)
+    node(gate, [*总结* \ 把共同地基重新连成网], w: 4.0, h: 1.0, fill-color: c-summary, stroke-color: s-summary)
 
     node(b1, [*代数深化*], fill-color: c-deepen, stroke-color: s-deepen)
     node(b2, [*几何深化*], fill-color: c-deepen, stroke-color: s-deepen)
     node(b3, [*函数模型*], fill-color: c-deepen, stroke-color: s-deepen)
     node(b4, [*数据统计*], fill-color: c-deepen, stroke-color: s-deepen)
 
-    node(end, [*终章综合* \ 把专题深化重新连回一张网], w: 3.6, h: 1.0, fill-color: c-converge, stroke-color: s-converge)
+    node(end, [*终章综合* \ 把专题重新连回一张网], w: 3.6, h: 1.0, fill-color: c-converge, stroke-color: s-converge)
 
     arrow((0, -0.5), (t1.at(0), -2.1 + 0.45), stroke-color: s-root)
     arrow((t1.at(0) + 1.35, t1.at(1)), (t2.at(0) - 1.55, t2.at(1)), stroke-color: s-base)
@@ -86,7 +86,7 @@
     arrow((b4.at(0), -6.8 - 0.45), (end.at(0) + 1.4, -9.1 + 0.5), stroke-color: s-converge)
 
     content((-8.2, -2.1), text(size: 7pt, fill: s-base, weight: "bold")[共同\ 地基])
-    content((-8.2, -4.4), text(size: 7pt, fill: s-summary, weight: "bold")[基础\ 总结])
+    content((-8.2, -4.4), text(size: 7pt, fill: s-summary, weight: "bold")[总结])
     content((-8.2, -6.8), text(size: 7pt, fill: s-deepen, weight: "bold")[专题\ 深化])
     content((-8.2, -9.1), text(size: 7pt, fill: s-converge, weight: "bold")[重新\ 会合])
   })
@@ -96,8 +96,8 @@
 
 #block(inset: (left: 1em), stroke: (left: 2pt + rgb("#1565C0")))[
   #text(size: 9pt)[
-    *怎么看这张图？* 先把共同地基读稳；觉得工具已经够多却连不起来时，先停下来做总结；决定专题深入后，再把相关章节连续读成一条线，最后回头看全图，感受它们怎样重新会合。
+    *怎么看这张图？* 先把共同地基读稳；觉得工具已经够多却连不起来时，先停下来做一次总结；决定往某个专题深入后，再把相关章节连续读成一条线，最后回头看全图，感受它们怎样重新会合。
   ]
 ]
 
-你不需要一开始就理解整张图。现在只要知道：目录已经按这张结构地图展开；阅读时，把它当成识别“我现在在哪一段、下一步该往哪里走”的导航图就够了。
+你不需要一开始就看懂整张图。现在只要知道：目录已经按这张结构地图展开；阅读时，把它当成判断“我现在在哪一段、下一步该往哪里走”的导航图就够了。

@@ -2,7 +2,7 @@
 
 == §7.6 三角比与测量：把角度翻译成长度 <sec-7-6>
 
-#vocab[正弦 sine / 余弦 cosine / 正切 tangent / 仰角 angle of elevation / 俯角 angle of depression / 测量 measurement]
+#vocab[正弦 sine #text(fill: luma(150))[•] 余弦 cosine #text(fill: luma(150))[•] 正切 tangent #text(fill: luma(150))[•] 仰角 angle of elevation #text(fill: luma(150))[•] 俯角 angle of depression #text(fill: luma(150))[•] 测量 measurement]
 
 #crisis[
   你站在操场上，想知道旗杆、楼房、山坡到底有多高。你量不到那些竖直长度，却常常能量到一段水平距离，再测出一个仰角。
@@ -36,13 +36,13 @@
 ]
 
 #side-hack[
-  *SOH-CAH-TOA*：
+  *先认清是哪两条边，再选比值*：
 
   - $sin = frac("对边", "斜边")$
   - $cos = frac("邻边", "斜边")$
   - $tan = frac("对边", "邻边")$
 
-  这是*测量口诀*，不是函数口号。先认清“相对于哪个角”的对边和邻边，再代比值。
+  这是直角三角形里的*测量口诀*。先认清“相对于哪个角”的对边和邻边，再去选比值。
 ]
 
 #blueprint[
