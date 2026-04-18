@@ -1,8 +1,6 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, secref, tryit, pitfall
 
 == §8.1 一次函数：稳定变化的第一模型 <sec-8-1>
-
-#vocab[函数 function / 一次函数 linear function / 正比例函数 direct proportion function]
 
 #crisis[
   某共享自习室按使用时长收费：

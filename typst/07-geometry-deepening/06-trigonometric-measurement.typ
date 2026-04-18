@@ -1,8 +1,6 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, secref, tryit, pitfall
 
 == §7.6 三角比与测量：把角度翻译成长度 <sec-7-6>
-
-#vocab[正弦 sine #text(fill: luma(150))[•] 余弦 cosine #text(fill: luma(150))[•] 正切 tangent #text(fill: luma(150))[•] 仰角 angle of elevation #text(fill: luma(150))[•] 俯角 angle of depression #text(fill: luma(150))[•] 测量 measurement]
 
 #crisis[
   你站在操场上，想知道旗杆、楼房、山坡到底有多高。你量不到那些竖直长度，却常常能量到一段水平距离，再测出一个仰角。
@@ -31,18 +29,18 @@
 #tryit[
   在直角三角形中，设一个锐角为 $A$，对边长 $3$，斜边长 $5$。
 
-  + $sin A$ 是多少？
-  + 若先用 #secref("7.5") 求出邻边，再求 $cos A$ 和 $tan A$
+  + 把“对边和斜边的比”写出来。
+  + 若先用 #secref("7.5") 求出邻边，再把“邻边和斜边的比”“对边和邻边的比”写出来。
 ]
 
 #side-hack[
-  *先认清是哪两条边，再选比值*：
+  *先认清是哪两条边，再选合适的比*：
 
-  - $sin = frac("对边", "斜边")$
-  - $cos = frac("邻边", "斜边")$
-  - $tan = frac("对边", "邻边")$
+  - 想把高度和斜边连起来，就看“对边和斜边”
+  - 想把水平距离和斜边连起来，就看“邻边和斜边”
+  - 想把高度和水平距离连起来，就看“对边和邻边”
 
-  这是直角三角形里的*测量口诀*。先认清“相对于哪个角”的对边和邻边，再去选比值。
+  先认清“相对于哪个角”的对边和邻边，再去决定该用哪一种三角比。
 ]
 
 #blueprint[
@@ -60,31 +58,7 @@
 
   因为所有含有同一个锐角 $A$ 的直角三角形彼此相似，所以相应边的比值保持不变。这就是三角比能够拿来做测量的根本原因。
 
-  *三、特殊角的常用值*
-
-  - $sin 30 degree = frac(1, 2)$，$cos 30 degree = frac(sqrt(3), 2)$，$tan 30 degree = frac(sqrt(3), 3)$
-  - $sin 45 degree = frac(sqrt(2), 2)$，$cos 45 degree = frac(sqrt(2), 2)$，$tan 45 degree = 1$
-  - $sin 60 degree = frac(sqrt(3), 2)$，$cos 60 degree = frac(1, 2)$，$tan 60 degree = sqrt(3)$
-
-  *四、解直角三角形的常见路线*
-
-  - 已知斜边和锐角，求高或水平距离：常用 $sin$ 或 $cos$
-  - 已知水平距离和仰角，求高度：常用 $tan$
-  - 先用三角比求一边，再用 #secref("7.5") 补另一边
-
-  *五、仰角、俯角与坡度*
-
-  - *仰角*：视线在水平线*上方*形成的角
-  - *俯角*：视线在水平线*下方*形成的角
-  - *坡度*：$frac("升高", "水平距离") = tan alpha$
-
-  *六、测量不可达长度的基本步骤*
-
-  + 先画出直角三角形示意图
-  + 标出哪个角是仰角或俯角
-  + 找到已知边和未知边相对于该角的位置
-  + 选最直接的三角比列式
-  + 需要时再用勾股定理补边
+  *三、先看一次真正的测量*
 
   *例 1*：水平距离为 200 米，仰角为 $35 degree$。求山高。
 
@@ -97,6 +71,31 @@
   $ h approx 140 $
 
   即山高约 140 米。
+
+  这一步最关键的不是记题型，而是看清：已知的是*水平距离*，未知的是*高度*，所以直接选“对边 / 邻边”的那组比最省力。
+
+  *四、特殊角的常用值*
+
+  - $sin 30 degree = frac(1, 2)$，$cos 30 degree = frac(sqrt(3), 2)$，$tan 30 degree = frac(sqrt(3), 3)$
+  - $sin 45 degree = frac(sqrt(2), 2)$，$cos 45 degree = frac(sqrt(2), 2)$，$tan 45 degree = 1$
+  - $sin 60 degree = frac(sqrt(3), 2)$，$cos 60 degree = frac(1, 2)$，$tan 60 degree = sqrt(3)$
+
+  *五、仰角、俯角与坡度*
+
+  - *仰角*：视线在水平线*上方*形成的角
+  - *俯角*：视线在水平线*下方*形成的角
+  - *坡度*：$frac("升高", "水平距离") = tan alpha$
+
+  *六、测量题怎样选比值*
+
+  - 已知斜边和锐角，求高或水平距离：常用 $sin$ 或 $cos$
+  - 已知水平距离和仰角，求高度：常用 $tan$
+  - 先用三角比求一边，再用 #secref("7.5") 补另一边
+  - 先画出直角三角形示意图
+  - 标出哪个角是仰角或俯角
+  - 找到已知边和未知边相对于该角的位置
+  - 选最直接的三角比列式
+  - 需要时再用勾股定理补边
 
   *例 2*：梯子长 5 米，与地面成 $60 degree$ 角。求梯子顶端离地面高度。
 

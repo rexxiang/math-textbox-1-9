@@ -1,8 +1,6 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, secref, tryit, pitfall
 
 == §8.2 反比例函数：固定乘积的变化模型 <sec-8-2>
-
-#vocab[反比例函数 inverse proportion function / 双曲线 hyperbola / 渐近线 asymptote / 固定乘积 fixed product]
 
 #crisis[
   一块长方形菜地的面积固定为 $48$ 平方米。如果长是 $12$ 米，宽就是 $4$ 米；如果长改成 $8$ 米，宽就变成 $6$ 米。
@@ -83,7 +81,7 @@
 
   *三、图象怎样读？*
 
-  反比例函数的图象是一条双曲线。
+  反比例函数的图象由两支分开的曲线组成。
 
   - $k > 0$ 时，图象在第一、三象限
   - $k < 0$ 时，图象在第二、四象限
