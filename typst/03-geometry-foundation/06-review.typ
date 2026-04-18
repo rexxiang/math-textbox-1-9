@@ -16,7 +16,8 @@
       - 梯形面积：$S = frac(1, 2)(a+b) h$
     ],
     block[
-      *角与直线关系*（#secref("3.3"), #secref("3.4")）
+      *角的基本工具*（#secref("3.3"), #secref("3.4")）
+      - 小于 $90 degree$ 是锐角；等于 $90 degree$ 是直角；$90 degree$ 与 $180 degree$ 之间是钝角
       - 互余：$angle A + angle B = 90 degree$
       - 互补：$angle A + angle B = 180 degree$
       - 对顶角相等
@@ -53,7 +54,7 @@
   + 一个三角形底为 10 cm、高为 6 cm，求面积。
   + 一个圆的半径为 5 cm，求周长和面积（用 $pi$ 表示）。
   + 一个圆柱底面半径为 3 cm、高为 8 cm，求体积。
-  + 求 $37 degree$ 的余角和补角。
+  + 判断 $37 degree$ 和 $127 degree$ 的类型，并求 $37 degree$ 的余角和补角。
   + 两条直线相交，其中一个角为 $68 degree$，其对顶角和邻补角分别是多少？
   + 两条平行线被一条截线所截，同位角之一为 $125 degree$，对应的内错角和同旁内角分别是多少？
   + 一根旗杆垂直于地面，阳光与地面成 $35 degree$ 角照射。求阳光与旗杆的夹角。
@@ -68,7 +69,7 @@ _参考答案：_
 + 面积 $= frac(1, 2) times 10 times 6 = 30$ cm²。
 + 周长 $= 2 pi r = 10pi$ cm；面积 $= pi r^2 = 25pi$ cm²。
 + 体积 $= pi r^2 h = pi times 3^2 times 8 = 72pi$ cm³。
-+ 余角 $= 90 degree - 37 degree = 53 degree$；补角 $= 180 degree - 37 degree = 143 degree$。
++ $37 degree$ 是锐角，$127 degree$ 是钝角；$37 degree$ 的余角 $= 53 degree$，补角 $= 143 degree$。
 + 对顶角是 $68 degree$；邻补角是 $180 degree - 68 degree = 112 degree$。
 + 内错角 $= 125 degree$；同旁内角 $= 180 degree - 125 degree = 55 degree$。
 + 旗杆垂直地面，阳光与地面成 $35 degree$ 角，所以夹角 $= 90 degree - 35 degree = 55 degree$。

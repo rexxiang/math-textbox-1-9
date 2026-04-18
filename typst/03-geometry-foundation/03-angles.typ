@@ -36,34 +36,36 @@
     content(B, $B$, anchor: "south-west", padding: 3pt)
   }))
 
-  *第二步*：怎么度量？
+  *第二步*：角的大小到底在比什么？
 
-  想象一个转盘。指针从一条边出发，绕顶点旋转到另一条边，扫过的「旋转量」就是角的大小。圆周被分成 360 份，每份就是 $1 degree$（度）。更精细的度量：$1 degree = 60'$（分），$1' = 60''$（秒）。
+  角比的是*张开的程度*，不是边的长短。两条边就算画得更长，只要张开程度不变，角的大小就不变。
 
-  例如 $30 degree 15' 40''$ 读作「30 度 15 分 40 秒」。
+  我们常拿*直角*当第一把尺子：像门框拐角那样正好的角是直角；比直角小的是锐角；比直角大、但还没拉成一条直线的是钝角。
 
-  *第三步*：用量角器量角。
+  *第三步*：怎么记、怎么量？
 
-  将量角器的中心对准角的顶点，$0 degree$ 刻度线对齐角的一条边，读出另一条边指向的刻度，就是角的度数。
+  通常把角记作 $angle A O B$，顶点字母写在中间。更精确地度量时，用量角器：中心对准顶点，$0 degree$ 刻度线对齐一条边，再读另一条边指向的刻度。
+
+  当一条射线从起点转到垂直位置，是 $90 degree$；转成一条直线，是 $180 degree$；转一整圈，是 $360 degree$。
 ]
 
 #tryit[
-  先自己算一算，再看下面的概念总结：
+  先自己判断，再看下面的概念总结：
 
-  已知 $angle A = 37 degree$，求：
-
-  + $angle A$ 的余角（即与 $angle A$ 互余的角）是多少度？
-  + $angle A$ 的补角（即与 $angle A$ 互补的角）是多少度？
-
-  提示：互余的两角之和为 $90 degree$，互补的两角之和为 $180 degree$。
+  + $35 degree$、$90 degree$、$127 degree$、$180 degree$ 分别属于哪一类角？
+  + 一条直线上相邻两个角中，一个是 $37 degree$，另一个是多少度？
+  + $30 degree 15'$ 读作什么？
 ]
 
 #blueprint[
-  *角的表示方法*
+  *角的表示与度量*
 
   - 三个字母：$angle A O B$（$O$ 是顶点，写在中间）
   - 一个字母：$angle O$（当顶点处只有一个角时）
   - 数字编号：$angle 1$、$angle 2$
+  - 角的大小看*张开程度*，不看边画得多长。
+  - 角的常用单位是度：圆周平均分成 360 份，每份是 $1 degree$。
+  - 更精细时还会见到分、秒：$1 degree = 60'$，$1' = 60''$。本节先会认读这种记法，如 $30 degree 15'$。
 
   *角的分类*
 
@@ -82,48 +84,42 @@
     cetz.canvas(length: 1.7cm, {
       import cetz.draw: *
       import cetz.angle: angle, right-angle
-      // 锐角 at x≈0
       {
         let O = (0, 0); let A = (1.4, 0); let B = (0.9, 1.1)
         line(O, A, stroke: 0.7pt); line(O, B, stroke: 0.7pt)
         angle(O, A, B, radius: 0.45, stroke: 0.5pt + blue, direction: "near")
         content((0.7, -0.35), text(8pt)[锐角])
       }
-      // 直角 at x≈3
       {
         let O = (3, 0); let A = (4.4, 0); let B = (3, 1.4)
         line(O, A, stroke: 0.7pt); line(O, B, stroke: 0.7pt)
         right-angle(O, A, B, stroke: 0.5pt)
         content((3.7, -0.35), text(8pt)[直角])
       }
-      // 钝角 at x≈6.5
       {
         let O = (6.5, 0); let A = (7.9, 0); let B = (5.3, 1.1)
         line(O, A, stroke: 0.7pt); line(O, B, stroke: 0.7pt)
         angle(O, A, B, radius: 0.45, stroke: 0.5pt + orange, direction: "near")
         content((6.5, -0.35), text(8pt)[钝角])
       }
-      // 平角 at x≈10: a straight line with O in the middle
       {
         line((9.5, 0), (12, 0), stroke: 0.7pt)
         circle((10.75, 0), radius: 0.04, fill: black, stroke: none)
         content((10.75, 0), $O$, anchor: "north", padding: 4pt)
-        content((10.75, -0.35), text(8pt)[平角 $180degree$])
+        content((10.75, -0.35), text(8pt)[平角 $180 degree$])
       }
     }),
     caption: [角的基本类型]
   )
 
-  *互余与互补*
+  *从直角和平角得到的两种关系*
 
-  - *互余*（complementary）：两个角的和等于 $90 degree$。若 $angle A + angle B = 90 degree$，则 $angle A$ 与 $angle B$ 互余。
-  - *互补*（supplementary）：两个角的和等于 $180 degree$。若 $angle A + angle B = 180 degree$，则 $angle A$ 与 $angle B$ 互补。
+  - *互余*：两个角的和等于 $90 degree$。若 $angle A + angle B = 90 degree$，则 $angle A$ 与 $angle B$ 互余。
+  - *互补*：两个角的和等于 $180 degree$。若 $angle A + angle B = 180 degree$，则 $angle A$ 与 $angle B$ 互补。
+  - 做题时最常用：余角就是用 $90 degree$ 减原角，补角就是用 $180 degree$ 减原角。
+  - 例如 $37 degree$ 的余角是 $53 degree$，补角是 $143 degree$。
 
-  互余的性质：同角（或等角）的余角相等。即若 $angle A + angle C = 90 degree$ 且 $angle B + angle C = 90 degree$，则 $angle A = angle B$。
-
-  互补同理：同角（或等角）的补角相等。
-
-  *对顶角*
+  *两条直线相交时：对顶角*
 
   两条直线相交，形成 4 个角。其中不相邻的两个角叫*对顶角*。
 
@@ -139,48 +135,37 @@
     content((2, -1.3), $n$, anchor: "north-west", padding: 2pt)
   }))
 
-  *对顶角相等。*
-
-  证明：设两条直线相交，形成 $angle 1, angle 2, angle 3, angle 4$（按顺序排列）。
-
-  $angle 1 + angle 2 = 180 degree$（互补），$angle 2 + angle 3 = 180 degree$（互补）
-
-  所以 $angle 1 = angle 3$。同理 $angle 2 = angle 4$。
-
-  *度分秒换算*
-
-  - $1 degree = 60'$，$1' = 60''$
-  - 加法：分加分，度加度，满 60 进位
-  - 减法：不够减时借位（$1 degree = 60'$，$1' = 60''$）
-
-  *例*：$35 degree 42' + 27 degree 33' = 62 degree 75' = 63 degree 15'$
-
-  *例*：$90 degree - 56 degree 28' = 89 degree 60' - 56 degree 28' = 33 degree 32'$
+  因为 $angle 1 + angle 2 = 180 degree$，$angle 2 + angle 3 = 180 degree$，所以 $angle 1 = angle 3$。同理 $angle 2 = angle 4$。也就是说：*对顶角相等*。
 ]
 
 #pitfall[
-  *陷阱 1*：互余与互补搞混——互余两角之和是 $90 degree$，互补两角之和是 $180 degree$。记忆法：「余」→「九十」，「补」→「一百八」。
+  *陷阱 1*：角的大小看的是张开程度，不是边的长短。图上两条边画得更长，不代表角更大。
 
-  *陷阱 2*：「对顶角相等」只适用于*两条直线相交*形成的对顶角，不能推广到任意图形中的「对角」。例如，平行四边形的对角不是对顶角，它们相等是另一个原因（平行线性质），不要混用「对顶角相等」来解释。
+  *陷阱 2*：互余与互补搞混——互余两角之和是 $90 degree$，互补两角之和是 $180 degree$。记忆法：「余」想直角，「补」想平角。
+
+  *陷阱 3*：「对顶角相等」只适用于*两条直线相交*形成的对顶角，不能推广到任意图形中的「对角」。
 ]
 
 #side-hack[
-  *快速求余角和补角*：$angle A$ 的余角 $= 90 degree - angle A$，补角 $= 180 degree - angle A$。做题时直接用这两个公式，别绕弯路。
+  *先拿 $90 degree$ 和 $180 degree$ 当尺子*：小于 $90 degree$ 是锐角；等于 $90 degree$ 是直角；大于 $90 degree$ 但小于 $180 degree$ 是钝角；等于 $180 degree$ 是平角。
+
+  量角器上如果出现分、秒，只要先认得它们分别是比度更细的小单位就够了；复杂的度分秒运算留到以后需要精细测量时再练。
 ]
 
 #mastery[
   *基础*
 
+  + 在 $angle A O B$ 中，哪个字母表示顶点？这个角还可能在什么情况下记作 $angle O$？
   + 指出下列角的类型（锐角 / 直角 / 钝角 / 平角）：$35 degree$、$90 degree$、$127 degree$、$180 degree$、$89 degree$
-  + 求下列角的余角和补角（如果存在）：$37 degree$、$58 degree 30'$、$90 degree$
-  + 计算：$23 degree 45' 30'' + 47 degree 28' 45''$
-  + 计算：$180 degree - 73 degree 24' 18''$
+  + 把 $30 degree 15'$ 读出来，并说出这里的 $'$ 表示什么。
+  + 求下列角的余角和补角（如果存在）：$37 degree$、$58 degree$、$90 degree$
+  + 两条直线相交，其中一个角为 $65 degree$，求其余三个角。
 
   *应用*
 
   + 如果 $angle A$ 与 $angle B$ 互余，且 $angle A = 3 angle B$，求 $angle A$ 和 $angle B$。
-  + 两条直线相交，其中一个角为 $65 degree$，求其余三个角。
-  + 如果 $angle 1$ 的补角比 $angle 1$ 的余角大多少度？（对任意锐角 $angle 1$ 都成立吗？）
+  + 一条直线上有两个相邻角，且 $angle A = 2 angle B$，求这两个角的度数。
+  + 如果一个角的补角比它的余角大多少度？（对任意锐角都成立吗？）
 
   *挑战*
 
@@ -191,17 +176,18 @@
   _参考答案：_
 
   *基础*
+  + 顶点是中间的字母 $O$。当顶点处只有一个角、不容易混淆时，也可以记作 $angle O$。
   + $35 degree$——锐角；$90 degree$——直角；$127 degree$——钝角；$180 degree$——平角；$89 degree$——锐角
-  + $37 degree$：余角 $53 degree$，补角 $143 degree$；$58 degree 30'$：余角 $31 degree 30'$，补角 $121 degree 30'$；$90 degree$：没有余角（$90 degree + angle = 90 degree$ 无正角解），补角 $90 degree$
-  + $23 degree 45' 30'' + 47 degree 28' 45'' = 70 degree 73' 75'' = 70 degree 74' 15'' = 71 degree 14' 15''$
-  + $180 degree - 73 degree 24' 18'' = 179 degree 59' 60'' - 73 degree 24' 18'' = 106 degree 35' 42''$
+  + 读作“30 度 15 分”；这里的 $'$ 表示角度里的“分”，是比度更细的小单位。
+  + $37 degree$：余角 $53 degree$，补角 $143 degree$；$58 degree$：余角 $32 degree$，补角 $122 degree$；$90 degree$：没有余角（$90 degree + angle = 90 degree$ 无正角解），补角 $90 degree$
+  + 其余三个角分别是 $115 degree$、$65 degree$、$115 degree$（对顶角相等，邻补角互补）
 
   *应用*
   + $angle A + angle B = 90 degree$，$angle A = 3 angle B$，代入得 $3 angle B + angle B = 90 degree$，$4 angle B = 90 degree$，$angle B = 22.5 degree$，$angle A = 67.5 degree$
-  + $65 degree$、$115 degree$、$65 degree$、$115 degree$（对顶角相等，邻补角互补）
-  + $(180 degree - angle 1) - (90 degree - angle 1) = 90 degree$。是的，对任意锐角 $angle 1$ 都成立，差恒为 $90 degree$。
+  + $angle A + angle B = 180 degree$，$angle A = 2 angle B$，所以 $2 angle B + angle B = 180 degree$，$3 angle B = 180 degree$，$angle B = 60 degree$，$angle A = 120 degree$
+  + $(180 degree - angle 1) - (90 degree - angle 1) = 90 degree$。是的，对任意锐角都成立，差恒为 $90 degree$。
 
   *挑战*
   + $angle 3 = 180 degree - 40 degree - 55 degree = 85 degree$
-  + 3 点整时，分针指向 12，时针指向 3，夹角 $90 degree$。过 20 分钟：分针转 $20 times 6 degree = 120 degree$（从 12 开始），时针转 $20 times 0.5 degree = 10 degree$（从 3 即 $90 degree$ 位置开始），时针在 $90 degree + 10 degree = 100 degree$ 位置。夹角 $= 120 degree - 100 degree = 20 degree$。
+  + 3 点整时，分针指向 12，时针指向 3，夹角 $90 degree$。过 20 分钟：分针转 $20 times 6 degree = 120 degree$，时针转 $20 times 0.5 degree = 10 degree$，所以时针在 $90 degree + 10 degree = 100 degree$ 位置。夹角 $= 120 degree - 100 degree = 20 degree$。
 ]
