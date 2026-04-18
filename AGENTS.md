@@ -28,7 +28,7 @@
   - `typst/10-capstone/` — 终章综合（3 个文件）
 - 仍保留但未并入主书的占位目录：
   - `typst/01-arithmetic-foundation/`
-- `typst/smoke/` — 构建烟雾测试与包锁检查（`package-lock.typ`、`04-number-line-algebra-bridge.typ`、`05-foundation-gate.typ`、`06-algebra-deepening.typ`、`07-geometry-deepening.typ`、`08-function-models.typ`、`09-data-statistics.typ`、`10-capstone.typ`）
+- `typst/smoke/` — 构建烟雾测试与包锁检查（`package-lock.typ`、`04-number-line-algebra-bridge.typ`、`05-foundation-gate.typ`、`06-algebra-deepening.typ`、`07-geometry-deepening.typ`、`08-function-models.typ`、`09-data-statistics.typ`、`10-capstone.typ`）；独立 smoke 入口从第 4 章开始：第 1-3 章由 `typst/main.typ` 主书编译覆盖，第 10 章 smoke 额外承担 00-10 全链路集成验证
 - `scripts/` — 辅助脚本
 - `output/` — 构建产物（git ignored）
 
@@ -145,6 +145,6 @@
 
 ```bash
 make pdf    # 生成 PDF（output/math-textbook.pdf）
-make check  # 检查 Typst 工具链，并编译主书 + package-lock smoke + 04-10 smoke 套件
+make check  # 唯一标准校验命令：检查 Typst 工具链，并编译主书 + package-lock smoke + 04-10 smoke（01-03 由主书覆盖）
 make clean  # 清理构建产物
 ```

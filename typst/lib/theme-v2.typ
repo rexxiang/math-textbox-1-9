@@ -1,5 +1,5 @@
 // V2 主题：四段发明链 + 平铺内联注记
-// 页面布局：ISO B5，正常边距（x: 18mm, y: 18mm）
+// 页面布局：ISO B5，正文边距（x: 18mm, y: 18mm）
 
 #let textbook-v2(body) = {
   set page(

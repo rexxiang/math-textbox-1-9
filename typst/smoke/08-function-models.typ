@@ -4,6 +4,9 @@
 
 #set page(header: none, footer: none)
 
+// Gate and branch smoke files inline their prerequisite trunk chain so each
+// chapter can be compiled independently from the main book entrypoint.
+
 = 第八章烟雾测试：函数模型
 
 #include "../01-counting/05-mixed-operations.typ"

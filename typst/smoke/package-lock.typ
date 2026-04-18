@@ -5,6 +5,7 @@
 
 = Typst Package Lock Smoke Test
 
-This file validates that pinned optional diagram packages can be resolved.
+This file validates that pinned optional diagram packages can be resolved
+independently of the chapter smoke suite.
 
 #diagram-package-lock-note()

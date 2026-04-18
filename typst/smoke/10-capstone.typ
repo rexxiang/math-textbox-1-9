@@ -4,6 +4,9 @@
 
 #set page(header: none, footer: none)
 
+// Capstone smoke is the full-chain integration pass across the live 00-10
+// chapter layout after the targeted 04-09 standalone chapter smokes.
+
 = 第十章烟雾测试：终章
 
 #include "../01-counting/00-overview.typ"
