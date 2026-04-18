@@ -15,6 +15,7 @@
 #pagebreak()
 
 #set heading(numbering: none)
+#set page(header: none, footer: main-page-footer)
 
 // 第 0 章：导读
 = 导读
