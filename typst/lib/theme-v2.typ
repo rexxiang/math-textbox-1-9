@@ -48,6 +48,10 @@
   align(right, counter(page).display())
 }
 
+#let frontmatter-page-footer = context {
+  align(right, counter(page).display("i"))
+}
+
 #let use-frontmatter-page-style() = {
   set page(header: none, footer: none)
 }
