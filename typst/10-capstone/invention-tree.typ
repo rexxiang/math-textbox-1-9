@@ -12,8 +12,8 @@
   inset: 6pt,
   stroke: 0.4pt,
   table.header([*层级*], [*章节位置*], [*这一层真正完成了什么*]),
-  [共同主干], [1--4], [把数、分数、比与百分数、图形、坐标、数轴、字母和平衡观连成同一种基础语言。],
-  [基础总闸门], [5], [在 #secref("5.1") 与 #secref("5.2") 里确认旧工具已经能混合调用，再决定进入哪一条深化路线。],
+  [共同地基], [1--4], [把数、分数、比与百分数、图形、坐标、数轴、字母和平衡观连成同一种基础语言。],
+  [基础总结], [5], [在 #secref("5.1") 与 #secref("5.2") 里确认旧工具已经能混合调用，再决定进入哪一条深化路线。],
   [代数深化], [6], [把模板、化简、方程、方程组、二次关系和范围约束打磨成系统工具。],
   [几何深化], [7], [把读图直觉推进成证明、测量、变换与表达；三角比测量也并入这一支。],
   [函数模型], [8], [把表格、公式、图象、情境统一成变化模型，并比较不同模型的适用条件。],
@@ -71,11 +71,11 @@
     let b4 = (6.3, -9.8)
     let cap = (0, -12.3)
 
-    node(t1, [*1 共同主干* \ 数与运算的底座], fill-color: c-trunk, stroke-color: s-trunk)
-    node(t2, [*2 共同主干* \ 分数、比与百分数], fill-color: c-trunk, stroke-color: s-trunk)
-    node(t3, [*3 共同主干* \ 图形、角、坐标入口], fill-color: c-trunk, stroke-color: s-trunk)
-    node(t4, [*4 共同主干* \ 数轴、字母、平衡], fill-color: c-trunk, stroke-color: s-trunk)
-    node(gate, [*5 基础总闸门* \ 先连网，再分流], fill-color: c-gate, stroke-color: s-gate)
+    node(t1, [*1 共同地基* \ 数与运算的底座], fill-color: c-trunk, stroke-color: s-trunk)
+    node(t2, [*2 共同地基* \ 分数、比与百分数], fill-color: c-trunk, stroke-color: s-trunk)
+    node(t3, [*3 共同地基* \ 图形、角、坐标入口], fill-color: c-trunk, stroke-color: s-trunk)
+    node(t4, [*4 共同地基* \ 数轴、字母、平衡], fill-color: c-trunk, stroke-color: s-trunk)
+    node(gate, [*5 基础总结* \ 先连网，再分流], fill-color: c-gate, stroke-color: s-gate)
 
     node(b1, [*6 代数深化* \ 化简、方程、范围], fill-color: c-alg, stroke-color: s-alg)
     node(b2, [*7 几何深化* \ 证明、测量、变换], fill-color: c-geo, stroke-color: s-geo)
@@ -105,7 +105,7 @@
 
 #block(inset: (left: 1em), stroke: (left: 2pt + rgb("#F57F17")))[
   #text(size: 9pt)[
-    这张图故意把第五章画成“闸门”，而不是第五个继续往前排的普通节点：它的任务是把主干收束、检查、分流。第六到第九章也故意并排出现，因为它们是*同辈分支*，不是一条旧式单行道上的连续车站。
+    这张图故意把第五章画成一次“基础总结”，而不是第五个继续往前排的普通节点：它的任务是把共同地基收束、检查、分流。第六到第九章也故意并排出现，因为它们是*同辈分支*，不是一条旧式单行道上的连续车站。
   ]
 ]
 

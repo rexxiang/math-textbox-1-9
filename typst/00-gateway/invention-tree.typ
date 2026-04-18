@@ -86,7 +86,7 @@
     arrow((b4.at(0), -6.8 - 0.45), (end.at(0) + 1.4, -9.1 + 0.5), stroke-color: s-converge)
 
     content((-8.2, -2.1), text(size: 7pt, fill: s-base, weight: "bold")[共同\ 地基])
-    content((-8.2, -4.4), text(size: 7pt, fill: s-summary, weight: "bold")[总结])
+    content((-8.2, -4.4), text(size: 7pt, fill: s-summary, weight: "bold")[基础\ 总结])
     content((-8.2, -6.8), text(size: 7pt, fill: s-deepen, weight: "bold")[专题\ 深化])
     content((-8.2, -9.1), text(size: 7pt, fill: s-converge, weight: "bold")[重新\ 会合])
   })
