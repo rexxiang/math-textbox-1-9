@@ -2,6 +2,8 @@
 
 #show: textbook-v2
 
+#set page(header: none, footer: none)
+
 #align(center)[
   #text(size: 24pt, weight: "bold")[数学发明者手册]
   #v(0.5em)
@@ -12,12 +14,21 @@
 #outline(title: [目录])
 #pagebreak()
 
+#set heading(numbering: none)
+#counter(page).update(1)
+#set page(numbering: "i", header: none, footer: frontmatter-page-footer)
+
 // 第 0 章：导读
 = 导读
 #include "00-gateway/welcome.typ"
 #include "00-gateway/how-to-use.typ"
 #include "00-gateway/symbols.typ"
 #include "00-gateway/invention-tree.typ"
+
+#counter(heading).update(0)
+#set heading(numbering: "1.1")
+#set page(numbering: "1", header: main-page-header, footer: main-page-footer)
+#counter(page).update(1)
 
 // 第 1 章：数的萌芽（小学 1-4 年级）
 = 数的萌芽
@@ -28,74 +39,92 @@
 #include "01-counting/04-multiplication-division.typ"
 #include "01-counting/05-mixed-operations.typ"
 #include "01-counting/06-operation-laws.typ"
+#include "01-counting/07-review.typ"
 
-// 第 2 章：分与合（小学 3-6 年级）
-= 分与合
-#include "02-fraction-decimal/00-overview.typ"
-#include "02-fraction-decimal/01-factors-multiples.typ"
-#include "02-fraction-decimal/02-fractions.typ"
-#include "02-fraction-decimal/03-decimals.typ"
-#include "02-fraction-decimal/04-conversions.typ"
+// 第 2 章：分数、比与百分数基础（小学 3-6 年级）
+= 分数、比与百分数基础
+#include "02-fraction-ratio-foundation/00-overview.typ"
+#include "02-fraction-ratio-foundation/01-factors-multiples.typ"
+#include "02-fraction-ratio-foundation/02-fractions.typ"
+#include "02-fraction-ratio-foundation/03-decimals.typ"
+#include "02-fraction-ratio-foundation/04-ratios-percentages.typ"
+#include "02-fraction-ratio-foundation/05-conversions-and-comparisons.typ"
+#include "02-fraction-ratio-foundation/06-review.typ"
 
-// 第 3 章：比例世界（小学 5-7 年级）
-= 比例世界
-#include "03-ratio-world/00-overview.typ"
-#include "03-ratio-world/01-percentages.typ"
-#include "03-ratio-world/02-ratios-proportions.typ"
-#include "03-ratio-world/03-data-collection.typ"
-#include "03-ratio-world/04-central-tendency.typ"
+// 第 3 章：几何基础（小学 3-6 年级）
+= 几何基础
+#include "03-geometry-foundation/00-overview.typ"
+#include "03-geometry-foundation/01-basic-shapes.typ"
+#include "03-geometry-foundation/02-area-volume.typ"
+#include "03-geometry-foundation/03-angles.typ"
+#include "03-geometry-foundation/04-parallel-perpendicular.typ"
+#include "03-geometry-foundation/05-coordinate-entry.typ"
+#include "03-geometry-foundation/06-review.typ"
 
-// 第 4 章：负数的发明（初中 7-8 年级）
-= 负数的发明
-#include "04-negative-invention/00-overview.typ"
-#include "04-negative-invention/01-rational-numbers.typ"
-#include "04-negative-invention/04-power-operations.typ"
-#include "04-negative-invention/02-real-numbers.typ"
-#include "04-negative-invention/03-points-lines-planes.typ"
+// 第 4 章：数轴与代数桥（初中 7-8 年级）
+= 数轴与代数桥
+#include "04-number-line-algebra-bridge/00-overview.typ"
+#include "04-number-line-algebra-bridge/01-rational-numbers.typ"
+#include "04-number-line-algebra-bridge/02-real-numbers.typ"
+#include "04-number-line-algebra-bridge/03-variables-and-expressions.typ"
+#include "04-number-line-algebra-bridge/04-equation-intuition.typ"
+#include "04-number-line-algebra-bridge/05-review.typ"
 
-// 第 5 章：方程——未知数猎手（初中 7-9 年级）
-= 方程\u{2014}\u{2014}未知数猎手
-#include "05-equation-machine/00-overview.typ"
-#include "05-equation-machine/01-algebraic-expressions.typ"
-#include "05-equation-machine/02-factorization.typ"
-#include "05-equation-machine/03-rational-expressions.typ"
-#include "05-equation-machine/04-linear-equations.typ"
-#include "05-equation-machine/05-systems-of-equations.typ"
-#include "05-equation-machine/06-quadratic-equations.typ"
-#include "05-equation-machine/07-inequalities.typ"
+// 第 5 章：基础总闸门（初中 7-9 年级）
+= 基础总闸门
+#include "05-foundation-gate/00-overview.typ"
+#include "05-foundation-gate/01-foundation-check.typ"
+#include "05-foundation-gate/02-branch-entry-recaps.typ"
+#include "05-foundation-gate/03-review.typ"
 
-// 第 6 章：形的逻辑（小学 3-6 年级基础 + 初中 7-9 年级）
-= 形的逻辑
-#include "06-shape-logic/00-overview.typ"
-#include "06-shape-logic/01-basic-shapes.typ"
-#include "06-shape-logic/02-area-volume.typ"
-#include "06-shape-logic/03-angles.typ"
-#include "06-shape-logic/04-parallel-perpendicular.typ"
-#include "06-shape-logic/05-triangles.typ"
-#include "06-shape-logic/06-quadrilaterals.typ"
-#include "06-shape-logic/07-circles.typ"
-#include "06-shape-logic/08-pythagorean-theorem.typ"
-#include "06-shape-logic/09-transformations.typ"
-#include "06-shape-logic/10-projections.typ"
+// 第 6 章：代数深化（初中 7-9 年级）
+= 代数深化
+#include "06-algebra-deepening/00-overview.typ"
+#include "06-algebra-deepening/01-algebraic-expressions.typ"
+#include "06-algebra-deepening/02-factorization.typ"
+#include "06-algebra-deepening/03-rational-expressions.typ"
+#include "06-algebra-deepening/04-linear-equations.typ"
+#include "06-algebra-deepening/05-systems-of-equations.typ"
+#include "06-algebra-deepening/06-quadratic-equations.typ"
+#include "06-algebra-deepening/07-inequalities.typ"
+#include "06-algebra-deepening/08-review.typ"
 
-// 第 7 章：函数——变化的望远镜（初中 8-9 年级）
-= 函数\u{2014}\u{2014}变化的望远镜
-#include "07-function-lens/00-overview.typ"
-#include "07-function-lens/01-linear-functions.typ"
-#include "07-function-lens/02-inverse-proportion.typ"
-#include "07-function-lens/03-quadratic-functions.typ"
-#include "07-function-lens/04-coordinate-geometry.typ"
-#include "07-function-lens/05-trigonometric-functions.typ"
+// 第 7 章：几何深化（初中 7-9 年级）
+= 几何深化
+#include "07-geometry-deepening/00-overview.typ"
+#include "07-geometry-deepening/01-congruent-triangles.typ"
+#include "07-geometry-deepening/02-similar-triangles.typ"
+#include "07-geometry-deepening/03-quadrilaterals.typ"
+#include "07-geometry-deepening/04-circles.typ"
+#include "07-geometry-deepening/05-pythagorean-theorem.typ"
+#include "07-geometry-deepening/06-trigonometric-measurement.typ"
+#include "07-geometry-deepening/07-transformations.typ"
+#include "07-geometry-deepening/08-projections.typ"
+#include "07-geometry-deepening/09-circle-extensions.typ"
+#include "07-geometry-deepening/10-review.typ"
 
-// 第 8 章：数据侦探（初中 7-9 年级）
-= 数据侦探
-#include "08-data-detective/00-overview.typ"
-#include "08-data-detective/01-variability.typ"
-#include "08-data-detective/02-frequency-distribution.typ"
-#include "08-data-detective/03-probability.typ"
-#include "08-data-detective/04-sampling-estimation.typ"
+// 第 8 章：函数模型（初中 8-9 年级）
+= 函数模型
+#include "08-function-models/00-overview.typ"
+#include "08-function-models/01-linear-functions.typ"
+#include "08-function-models/02-inverse-proportion.typ"
+#include "08-function-models/03-quadratic-functions.typ"
+#include "08-function-models/04-rate-change-models.typ"
+#include "08-function-models/05-review.typ"
 
-// 第 9 章：终章
-= 终章
-#include "09-capstone/invention-tree.typ"
-#include "09-capstone/whats-next.typ"
+// 第 9 章：数据统计（初中 7-9 年级）
+= 数据统计
+#include "09-data-statistics/00-overview.typ"
+#include "09-data-statistics/01-data-collection.typ"
+#include "09-data-statistics/02-central-tendency.typ"
+#include "09-data-statistics/03-variability.typ"
+#include "09-data-statistics/04-frequency-distribution.typ"
+#include "09-data-statistics/05-probability.typ"
+#include "09-data-statistics/06-sampling-estimation.typ"
+#include "09-data-statistics/07-review.typ"
+
+// 第 10 章：终章综合
+= 终章综合
+#include "10-capstone/00-overview.typ"
+#include "10-capstone/invention-tree.typ"
+#include "10-capstone/whats-next.typ"
