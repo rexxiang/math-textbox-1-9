@@ -1,0 +1,62 @@
+plan_id: book-structure-polish-20260419-013427
+focus_area: six-stage-chapter-structure
+summary: >-
+  Audited 46 substantive knowledge-point chapters under typst/01-counting through
+  typst/09-data-statistics, excluding 00-overview and review files. 43 chapters
+  follow exactly one crisis → discovery → tryit → blueprint → pitfall → mastery
+  chain. All detected structural drift is concentrated in typst/06-algebra-deepening.
+structural_issues:
+  - id: duplicated-post-mastery-stage
+    severity: high
+    files:
+      - typst/06-algebra-deepening/02-factorization.typ
+      - typst/06-algebra-deepening/07-inequalities.typ
+    evidence: >-
+      typst/06-algebra-deepening/02-factorization.typ uses a full six-stage chain
+      through #mastery[ at line 158, then starts a second #mastery[ block at line 207
+      under "拓展：立方和与立方差公式"; typst/06-algebra-deepening/07-inequalities.typ
+      does the same with #mastery[ at lines 186 and 234 under "拓展：算术—几何均值不等式（AM-GM）".
+    violated_rules:
+      - Knowledge-point chapters must follow one ordered six-stage chain: crisis → discovery → tryit → blueprint → pitfall → mastery.
+      - The six stages must use distinct visual block functions instead of repeating a stage box after the chain is complete.
+    suggested_fix: >-
+      Keep one terminal mastery stage per chapter; fold the extension material into the
+      existing mastery block or convert it to a non-stage extension format.
+  - id: split-stage-boxes-inside-single-chain
+    severity: medium
+    files:
+      - typst/06-algebra-deepening/01-algebraic-expressions.typ
+    evidence: >-
+      typst/06-algebra-deepening/01-algebraic-expressions.typ starts the expected chain
+      at lines 7, 21, and 37, but then splits later stages into repeated boxes:
+      #blueprint[ at lines 43 and 116, #pitfall[ at lines 154 and 172, before the final
+      #mastery[ at line 198.
+    violated_rules:
+      - Knowledge-point chapters must follow one ordered six-stage chain: crisis → discovery → tryit → blueprint → pitfall → mastery.
+      - Each stage should occupy its own distinct stage slot, rather than being broken into repeated same-stage boxes.
+    suggested_fix: >-
+      Merge the repeated blueprint material into one blueprint stage and the repeated
+      pitfall material into one pitfall stage, or demote overflow content to non-stage notes.
+candidate_tasks:
+  - id: normalize-algebraic-expressions-stage-chain
+    title: Normalize §6.1 to one six-stage chain
+    description: >-
+      Rewrite typst/06-algebra-deepening/01-algebraic-expressions.typ so blueprint and
+      pitfall each appear once in the chapter-level invention chain.
+    dependencies: []
+  - id: reclassify-post-mastery-extensions
+    title: Remove second mastery boxes from algebra-deepening extensions
+    description: >-
+      Refactor the extension sections in typst/06-algebra-deepening/02-factorization.typ
+      and typst/06-algebra-deepening/07-inequalities.typ so each chapter ends with one
+      mastery stage and any extra enrichment content uses non-stage formatting.
+    dependencies: []
+  - id: verify-six-stage-chain-after-algebra-fixes
+    title: Re-audit all substantive chapters after fixes
+    description: >-
+      Re-run the chapter-structure audit across typst/01-counting through
+      typst/09-data-statistics to confirm every substantive chapter has exactly one
+      ordered six-stage chain.
+    dependencies:
+      - normalize-algebraic-expressions-stage-chain
+      - reclassify-post-mastery-extensions

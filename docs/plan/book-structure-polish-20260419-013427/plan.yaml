@@ -1,0 +1,551 @@
+plan_id: book-structure-polish-20260419-013427
+objective: orchestrate full-book structural review/fix and post-structure polishing under strict textbook conventions.
+worktree:
+  path: /Users/rexxiang/.copilot/worktrees/math-textbox-1-9-20260419-structure-polish
+  branch: orchestrator/book-structure-polish-20260419
+thresholds:
+  required_structure_passes: 7
+  required_polish_passes: 5
+  stop_polish_when_confidence_below: 0.5
+phase_status:
+  research: completed
+  planning: completed
+  structure: completed
+  polish: completed
+  merge: completed
+notes:
+  - AGENTS.md, typst/main.typ, and every research finding under docs/plan/book-structure-polish-20260419-013427/ are authoritative inputs for execution and conflict resolution.
+  - Structure work must complete at least five review+fix iterations, with passes 1-2 prioritizing whole-book spine and knowledge-tree blockers before local chapter cleanup.
+  - Structure passes 1-5 have executed, but pass 5 only closed the immediate 04.1 repair; systemic max-3-tool and blueprint-first blockers still remain in 04.2-04.4, 06.1, 07.2-07.4, and much of Chapters 08-09.
+  - Whole-book spine, branch spine, prerequisite order, six-stage chain integrity, and review-file structure are now stable; the remaining structure work is a focused tool-discipline freeze sweep rather than another backbone redesign.
+  - Polish work starts only after structure-stability validation passes and must preserve chapter order, branch boundaries, six-stage chains, review-file templates, and tool-budget decisions.
+  - After polish pass 5, the orchestrator should add more polish passes only while reviewer confidence that further high-value fixes remain is >= 0.5.
+  - Every review task must leave a trace file in docs/review/ and each fix task should address only the issues opened by its immediately preceding review unless the trace explicitly marks a safe non-overlapping split.
+tasks:
+  - id: structure-pass-1-review
+    title: Structure pass 1 review - whole-book spine and prerequisite blockers
+    phase: structure
+    kind: review
+    agent: gem-reviewer
+    status: completed
+    dependencies: []
+    outputs:
+      - docs/review/structure-pass-1.md
+    focus: Highest-severity spine and knowledge-tree failures
+    instructions: >-
+      Review the whole-book spine first, then confirm the five highest-severity blockers:
+      capstone summary node, 05.2 vs 06-08 prerequisite mismatch, signed coordinates before
+      negative numbers, circles before Pythagorean theorem, and the 06/08 quadratic
+      boundary. Write a ranked trace to docs/review/structure-pass-1.md with concrete file
+      targets and a recommended fix strategy for each blocker.
+
+  - id: structure-pass-1-fix
+    title: Structure pass 1 fix - stabilize global spine and prerequisites
+    phase: structure
+    kind: implement
+    agent: gem-implementer
+    status: completed
+    dependencies:
+      - structure-pass-1-review
+    outputs:
+      - typst/main.typ
+      - typst/03-geometry-foundation/05-coordinate-entry.typ
+      - typst/04-number-line-algebra-bridge/01-rational-numbers.typ
+      - typst/05-foundation-gate/02-branch-entry-recaps.typ
+      - typst/07-geometry-deepening/04-circles.typ
+      - typst/07-geometry-deepening/05-pythagorean-theorem.typ
+      - typst/08-function-models/00-overview.typ
+      - typst/08-function-models/03-quadratic-functions.typ
+      - typst/10-capstone/review.typ
+      - typst/10-capstone/whats-next.typ
+    focus: Remove hidden prerequisite breaks before local cleanup
+    instructions: >-
+      Execute only the structural fixes opened in structure pass 1, favoring the smallest
+      changes that restore the required book spine and prerequisite order. If a fix requires
+      choosing the quadratic boundary between Chapters 06 and 08, make that decision
+      explicit and align the touched files to the chosen boundary.
+
+  - id: structure-pass-2-review
+    title: Structure pass 2 review - branch contracts and boundary verification
+    phase: structure
+    kind: review
+    agent: gem-reviewer
+    status: completed
+    dependencies:
+      - structure-pass-1-fix
+    outputs:
+      - docs/review/structure-pass-2.md
+    focus: Confirm branch-entry and cross-branch dependency consistency
+    instructions: >-
+      Re-review the trunk-to-branch transition after pass 1, checking that 05.2 and 06-09
+      entry recaps now present one consistent readiness contract and that the chosen
+      quadratic boundary no longer creates hidden serial dependence between algebra and
+      function branches. Trace any remaining whole-book or branch-spine issues to
+      docs/review/structure-pass-2.md.
+
+  - id: structure-pass-2-fix
+    title: Structure pass 2 fix - close remaining branch-spine gaps
+    phase: structure
+    kind: implement
+    agent: gem-implementer
+    status: completed
+    dependencies:
+      - structure-pass-2-review
+    outputs:
+      - typst/05-foundation-gate/02-branch-entry-recaps.typ
+      - typst/06-algebra-deepening/00-overview.typ
+      - typst/06-algebra-deepening/06-quadratic-equations.typ
+      - typst/07-geometry-deepening/00-overview.typ
+      - typst/08-function-models/00-overview.typ
+      - typst/08-function-models/03-quadratic-functions.typ
+      - typst/10-capstone/00-overview.typ
+      - typst/10-capstone/invention-tree.typ
+    focus: Lock in a stable whole-book and branch contract
+    instructions: >-
+      Apply the pass 2 fixes needed to make the global gate, local branch entries, and
+      capstone narrative agree on one stable spine. Do not move on to local chapter
+      polishing; this pass is still structural and should only resolve remaining contract
+      or sequencing gaps.
+
+  - id: structure-pass-3-review
+    title: Structure pass 3 review - six-stage chain and review-file structure
+    phase: structure
+    kind: review
+    agent: gem-reviewer
+    status: completed
+    dependencies:
+      - structure-pass-2-fix
+    outputs:
+      - docs/review/structure-pass-3.md
+    focus: Concentrated local structure drift in Chapter 06 and Chapter 01 review
+    instructions: >-
+      Audit the known six-stage drift in 06.1, 06.2, and 06.7 plus the Chapter 1 review-file
+      template gap, then scan for any similarly severe local structural violations exposed
+      by the earlier spine fixes. Record exact violations and repair priorities in
+      docs/review/structure-pass-3.md.
+
+  - id: structure-pass-3-fix
+    title: Structure pass 3 fix - normalize six-stage and review templates
+    phase: structure
+    kind: implement
+    agent: gem-implementer
+    status: completed
+    dependencies:
+      - structure-pass-3-review
+    outputs:
+      - typst/01-counting/07-review.typ
+      - typst/06-algebra-deepening/01-algebraic-expressions.typ
+      - typst/06-algebra-deepening/02-factorization.typ
+      - typst/06-algebra-deepening/07-inequalities.typ
+    focus: Restore mandated local structure templates
+    instructions: >-
+      Repair the exact local structure violations from pass 3 so every affected chapter
+      returns to one ordered six-stage chain and the Chapter 1 review file returns to the
+      required four-part review template. Keep fixes local and structural rather than
+      stylistic.
+
+  - id: structure-pass-4-review
+    title: Structure pass 4 review - tool budget and blueprint discipline
+    phase: structure
+    kind: review
+    agent: gem-reviewer
+    status: completed
+    dependencies:
+      - structure-pass-3-fix
+    outputs:
+      - docs/review/structure-pass-4.md
+    focus: Systemic tool overload and pre-blueprint leakage
+    instructions: >-
+      Build on the research findings to review chapter-level tool budgets and blueprint-first
+      discipline across the highest-risk overloaded chapters, starting with 02.4, 04.1,
+      07.1, and 08.1 and expanding only as needed to catch systemic structural breaks.
+      Write the trace to docs/review/structure-pass-4.md with a prioritized ledger of
+      chapters that still violate the max-3-tool or blueprint-first rules.
+
+  - id: structure-pass-4-fix
+    title: Structure pass 4 fix - rescope invention chains to the tool rules
+    phase: structure
+    kind: implement
+    agent: gem-implementer
+    status: completed
+    dependencies:
+      - structure-pass-4-review
+    outputs:
+      - typst/02-fraction-ratio-foundation/04-ratios-percentages.typ
+      - typst/04-number-line-algebra-bridge/01-rational-numbers.typ
+      - typst/07-geometry-deepening/01-congruent-triangles.typ
+      - typst/08-function-models/01-linear-functions.typ
+    focus: Enforce max-3-tool and blueprint-first chapter discipline
+    instructions: >-
+      Use the pass 4 trace to split, rescope, or relabel invention chains so overloaded
+      chapters obey the three-tool cap and new tools first appear in blueprint. If the
+      trace identifies safe non-overlapping file groups beyond the four seed chapters,
+      process them in the same pass without changing the overall book structure.
+
+  - id: structure-pass-5-review
+    title: Structure pass 5 review - whole-book structural stabilization sweep
+    phase: structure
+    kind: review
+    agent: gem-reviewer
+    status: completed
+    dependencies:
+      - structure-pass-4-fix
+    outputs:
+      - docs/review/structure-pass-5.md
+    focus: Final structural sweep before locking the structure
+    instructions: >-
+      Re-audit the entire book against the non-negotiable structural rules: whole-book
+      spine, branch spine, knowledge tree, six-stage chapter chain, review-file four-part
+      structure, and tool-discipline rules. docs/review/structure-pass-5.md must clearly
+      separate blocking structural defects from nice-to-have polish so the next phase can
+      freeze the structure with confidence.
+
+  - id: structure-pass-5-fix
+    title: Structure pass 5 fix - close residual structural defects
+    phase: structure
+    kind: implement
+    agent: gem-implementer
+    status: completed
+    dependencies:
+      - structure-pass-5-review
+    outputs:
+      - typst/main.typ
+      - typst/**/*.typ
+    focus: Finish all remaining blocking structural fixes
+    instructions: >-
+      Fix only the remaining blocking structural issues from pass 5 and leave cosmetic
+      improvements for polish. This task should end with the structure frozen: no new
+      chapter-order, branch-boundary, review-template, or six-stage redesigns after it
+      completes.
+
+  - id: structure-pass-6-review
+    title: Structure pass 6 review - map remaining 04/06/07 tool-budget blockers
+    phase: structure
+    kind: review
+    agent: gem-reviewer
+    status: completed
+    dependencies:
+      - structure-pass-5-fix
+    outputs:
+      - docs/review/structure-pass-6.md
+    focus: Explicit remaining overloaded bridge, algebra, and geometry chapters
+    instructions: >-
+      Treat the book spine, branch spine, prerequisite order, six-stage chain integrity,
+      and review-file structure as already stable. Starting from the pass 5 trace, re-audit
+      04.2, 04.3, 04.4, 06.1, 07.2, 07.3, and 07.4 for max-3-tool compliance and
+      blueprint-first discipline, then group the blockers into one practical fix batch for
+      the next pass. docs/review/structure-pass-6.md must name the exact chapter-level
+      overloads, identify any unsafe cross-chapter redistribution risk, and keep polish-only
+      issues out of scope.
+
+  - id: structure-pass-6-fix
+    title: Structure pass 6 fix - normalize 04/06/07 invention chains
+    phase: structure
+    kind: implement
+    agent: gem-implementer
+    status: completed
+    dependencies:
+      - structure-pass-6-review
+    outputs:
+      - typst/04-number-line-algebra-bridge/02-real-numbers.typ
+      - typst/04-number-line-algebra-bridge/03-variables-and-expressions.typ
+      - typst/04-number-line-algebra-bridge/04-equation-intuition.typ
+      - typst/06-algebra-deepening/01-algebraic-expressions.typ
+      - typst/07-geometry-deepening/02-similar-triangles.typ
+      - typst/07-geometry-deepening/03-quadrilaterals.typ
+      - typst/07-geometry-deepening/04-circles.typ
+    focus: Clear the named remaining blockers in Chapters 04, 06, and 07
+    instructions: >-
+      Apply only the blocking repairs opened by structure pass 6. Reduce each touched
+      knowledge chapter to a compliant max-3-tool invention load, ensure newly named tools
+      first appear in blueprint, and preserve the now-stable whole-book and branch
+      scaffolding. Keep this pass grouped and practical: fix the explicit 04/06/07 blocker
+      set without reopening global sequencing or starting readability polish.
+
+  - id: structure-pass-7-review
+    title: Structure pass 7 review - Chapters 08-09 freeze sweep
+    phase: structure
+    kind: review
+    agent: gem-reviewer
+    status: completed
+    dependencies:
+      - structure-pass-6-fix
+    outputs:
+      - docs/review/structure-pass-7.md
+    focus: Final branch-wide audit of remaining function and statistics overload
+    instructions: >-
+      With Chapters 04, 06, and 07 normalized, run a final whole-branch structural audit
+      centered on Chapters 08 and 09, plus a regression check on the chapters touched in
+      pass 6. docs/review/structure-pass-7.md must map the remaining overloaded knowledge
+      chapters in 08-09, verify blueprint-first introduction order, and define one final
+      grouped repair scope that would make the structure freezeable if completed.
+
+  - id: structure-pass-7-fix
+    title: Structure pass 7 fix - clear final 08-09 tool-discipline blockers
+    phase: structure
+    kind: implement
+    agent: gem-implementer
+    status: completed
+    dependencies:
+      - structure-pass-7-review
+    outputs:
+      - typst/08-function-models/*.typ
+      - typst/09-data-statistics/*.typ
+    focus: Finish the whole-book max-3-tool and blueprint-first cleanup
+    instructions: >-
+      Execute the final grouped structural fixes from pass 7, concentrating on the
+      overloaded knowledge chapters across 08-function-models and 09-data-statistics.
+      Resolve any remaining chapter-level tool-budget or pre-blueprint naming blockers while
+      keeping the already-stable spine, prerequisite order, six-stage chains, and review
+      structure untouched. This task should end with polish still blocked but structure ready
+      for an explicit freeze validation.
+
+  - id: structure-pass-8-fix
+    title: Structure pass 8 fix - finalize capstone review template
+    phase: structure
+    kind: implement
+    agent: gem-implementer
+    status: completed
+    dependencies:
+      - structure-pass-7-fix
+    outputs:
+      - typst/10-capstone/review.typ
+    focus: Close the last review-template blocker before freeze validation
+    instructions: >-
+      Apply the minimal structural fix needed for typst/10-capstone/review.typ to satisfy
+      the required four-part review-file structure explicitly, especially the knowledge-card
+      labeling. Do not reopen any other structural decisions in this pass.
+
+  - id: structure-stability-validate
+    title: Validate structure freeze before polish
+    phase: structure
+    kind: validate
+    agent: gem-reviewer
+    status: completed
+    dependencies:
+      - structure-pass-8-fix
+    outputs:
+      - docs/review/structure-stability.md
+    focus: Confirm structure is stable enough to enter polish
+    instructions: >-
+      Validate that at least seven structure review traces exist and that no blocking
+      structural issues remain under the authoritative rules, especially the max-3-tool and
+      blueprint-first chapter discipline. Write docs/review/structure-stability.md as the
+      explicit gate into polish, confirming that the stable spine/order/template findings
+      held through passes 6-7 and listing only non-structural follow-up items that are safe
+      to defer.
+
+  - id: polish-pass-1-review
+    title: Polish pass 1 review - post-structure clarity sweep
+    phase: polish
+    kind: review
+    agent: gem-reviewer
+    status: completed
+    dependencies:
+      - structure-stability-validate
+    outputs:
+      - docs/review/polish-pass-1.md
+    focus: Clarity issues after structure freeze
+    instructions: >-
+      Review only for high-value polish that does not alter the frozen structure,
+      prioritizing awkward transitions, compressed explanations, and local rough edges
+      introduced by the structure fixes. Write all recommendations to
+      docs/review/polish-pass-1.md and explicitly flag any suggestion that would require
+      structural change as out of scope.
+
+  - id: polish-pass-1-fix
+    title: Polish pass 1 fix - smooth transitions and explanations
+    phase: polish
+    kind: implement
+    agent: gem-implementer
+    status: completed
+    dependencies:
+      - polish-pass-1-review
+    outputs:
+      - typst/**/*.typ
+    focus: Improve readability without structural change
+    instructions: >-
+      Apply the pass 1 polish fixes while preserving chapter order, stage order,
+      review-file structure, and the finalized branch boundaries. Favor local wording,
+      example framing, and transition improvements over any content reshuffle.
+
+  - id: polish-pass-2-review
+    title: Polish pass 2 review - examples and exercise wording
+    phase: polish
+    kind: review
+    agent: gem-reviewer
+    status: completed
+    dependencies:
+      - polish-pass-1-fix
+    outputs:
+      - docs/review/polish-pass-2.md
+    focus: Example quality and prompt clarity
+    instructions: >-
+      Review worked examples, try-it prompts, and review questions for clarity, pacing,
+      and textbook tone without reopening structure decisions. Capture the highest-value
+      polish items in docs/review/polish-pass-2.md.
+
+  - id: polish-pass-2-fix
+    title: Polish pass 2 fix - refine examples and prompts
+    phase: polish
+    kind: implement
+    agent: gem-implementer
+    status: completed
+    dependencies:
+      - polish-pass-2-review
+    outputs:
+      - typst/**/*.typ
+    focus: Sharpen examples, prompts, and answer wording
+    instructions: >-
+      Implement the pass 2 polish recommendations with local edits only. Do not add,
+      remove, or reorder structural blocks; keep all changes inside existing sections.
+
+  - id: polish-pass-3-review
+    title: Polish pass 3 review - terminology and cross-reference consistency
+    phase: polish
+    kind: review
+    agent: gem-reviewer
+    status: completed
+    dependencies:
+      - polish-pass-2-fix
+    outputs:
+      - docs/review/polish-pass-3.md
+    focus: Consistent naming and references across the book
+    instructions: >-
+      Review terminology, recap wording, and #secref or related cross-reference consistency
+      across chapters touched by earlier passes. Write only non-structural consistency
+      fixes to docs/review/polish-pass-3.md.
+
+  - id: polish-pass-3-fix
+    title: Polish pass 3 fix - align naming and references
+    phase: polish
+    kind: implement
+    agent: gem-implementer
+    status: completed
+    dependencies:
+      - polish-pass-3-review
+    outputs:
+      - typst/**/*.typ
+    focus: Unify wording and cross references
+    instructions: >-
+      Apply the pass 3 consistency fixes without changing the approved structure or
+      introducing new terminology drift. Keep edits minimal and book-wide coherence
+      focused.
+
+  - id: polish-pass-4-review
+    title: Polish pass 4 review - visual rhythm and recap usability
+    phase: polish
+    kind: review
+    agent: gem-reviewer
+    status: completed
+    dependencies:
+      - polish-pass-3-fix
+    outputs:
+      - docs/review/polish-pass-4.md
+    focus: Reading flow, box rhythm, and recap usability
+    instructions: >-
+      Review the book for local pacing issues inside existing boxes, uneven recap
+      usability, and answer or spiral-review phrasing that still feels rough after the
+      first three polish rounds. Record only structure-safe polish items in
+      docs/review/polish-pass-4.md.
+
+  - id: polish-pass-4-fix
+    title: Polish pass 4 fix - improve reading rhythm and recaps
+    phase: polish
+    kind: implement
+    agent: gem-implementer
+    status: completed
+    dependencies:
+      - polish-pass-4-review
+    outputs:
+      - typst/**/*.typ
+    focus: Refine flow within existing presentation blocks
+    instructions: >-
+      Implement the pass 4 polish items with local edits that improve readability and
+      recap usefulness while leaving all structural scaffolding untouched. If a suggestion
+      needs structure changes, skip it and document why in the task result.
+
+  - id: polish-pass-5-review
+    title: Polish pass 5 review - final mandatory polish sweep
+    phase: polish
+    kind: review
+    agent: gem-reviewer
+    status: completed
+    dependencies:
+      - polish-pass-4-fix
+    outputs:
+      - docs/review/polish-pass-5.md
+    focus: Final required polish review plus confidence estimate
+    instructions: >-
+      Run the fifth mandatory polish review, limited to non-structural high-value fixes,
+      and include a reviewer confidence score for whether additional polish passes would
+      still produce meaningful gains. docs/review/polish-pass-5.md must explicitly state
+      that extra polish passes should continue only while that confidence remains >= 0.5.
+
+  - id: polish-pass-5-fix
+    title: Polish pass 5 fix - apply final mandatory polish items
+    phase: polish
+    kind: implement
+    agent: gem-implementer
+    status: completed
+    dependencies:
+      - polish-pass-5-review
+    outputs:
+      - typst/**/*.typ
+    focus: Close the fifth required polish cycle
+    instructions: >-
+      Apply the accepted pass 5 polish fixes without changing structure. Leave any
+      potential extra-pass items for a future appended pass controlled by the >= 0.5
+      reviewer-confidence rule.
+
+  - id: polish-stability-validate
+    title: Validate polish completion and continuation rule
+    phase: polish
+    kind: validate
+    agent: gem-reviewer
+    status: completed
+    dependencies:
+      - polish-pass-5-fix
+    outputs:
+      - docs/review/polish-stability.md
+    focus: Confirm minimum polish rounds and freeze conditions
+    instructions: >-
+      Validate that at least five polish review traces exist, that no polish fix changed
+      the frozen structure, and that the pass 5 confidence rule is clearly recorded for
+      any extra rounds. Write docs/review/polish-stability.md as the gate into merge
+      readiness.
+
+  - id: merge-readiness-validate
+    title: Merge readiness validation - build and audit traces
+    phase: merge
+    kind: validate
+    agent: gem-devops
+    status: completed
+    dependencies:
+      - polish-stability-validate
+    outputs:
+      - docs/review/merge-readiness.md
+      - output/math-textbook.pdf
+    focus: Final repository validation before merge
+    instructions: >-
+      Run the authoritative validation flow in the worktree, confirm all required review
+      traces exist, and verify the book still builds after the structure and polish passes.
+      Document pass/fail results and any blocking release risks in
+      docs/review/merge-readiness.md.
+
+  - id: merge-handoff
+    title: Merge handoff - summarize results and remaining optional polish
+    phase: merge
+    kind: merge
+    agent: gem-documentation-writer
+    status: completed
+    dependencies:
+      - merge-readiness-validate
+    outputs:
+      - docs/review/merge-handoff.md
+    focus: Final orchestrator handoff
+    instructions: >-
+      Summarize what changed in structure and polish, list any residual low-priority
+      polish ideas, and restate whether extra polish passes remain justified under the >=
+      0.5 confidence rule. This handoff should be concise and directly usable for the
+      final merge decision.

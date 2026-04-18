@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": blueprint, mastery, secref
 
-== 第四章回顾：数轴与代数的桥
+== 第四章回顾：数轴与代数桥
 
 #blueprint[
   *知识速查卡*

@@ -1,0 +1,109 @@
+plan_id: book-structure-polish-20260419-013427
+focus_area: tool-discipline-and-review-structure
+summary: >-
+  Audited all 9 review files plus representative knowledge chapters in
+  typst/02-fraction-ratio-foundation, typst/04-number-line-algebra-bridge,
+  typst/07-geometry-deepening, and typst/08-function-models. Review-file
+  structure is mostly normalized except for the first chapter review, while tool
+  discipline shows plan-scale drift: representative chapters regularly bundle
+  4-5 named tools into one chapter and some advanced chapters name new tools in
+  discovery/side-hack before blueprint. A repo scan also found 36/46 substantive
+  knowledge chapters with more than 3 named vocab items and 29/46 with more than
+  3 blueprint subsections, so the issue is systemic rather than isolated.
+structural_issues:
+  - id: chapter-one-review-missing-required-parts
+    severity: high
+    files:
+      - typst/01-counting/07-review.typ
+    evidence: >-
+      typst/01-counting/07-review.typ has the knowledge card in #blueprint[ at
+      lines 5-40 and the mixed test in #mastery[ at lines 42-89, but it embeds
+      "_参考答案：_" inside the same mastery block at lines 69-83 and never adds a
+      standalone "*螺旋复习*" section or any #secref(...) cross-chapter links.
+    violated_rules:
+      - Each review file must have four parts: 知识速查卡 / 混合自测题 / 参考答案 / 螺旋复习.
+      - Spiral review must use #secref(...).
+      - Reference answers must be separated from the mixed self-test section.
+    suggested_fix: >-
+      Split Chapter 1 review into four explicit parts, move answers out of the
+      mastery block, and add a #secref-based spiral review section.
+  - id: systemic-chapter-tool-overload
+    severity: critical
+    files:
+      - typst/02-fraction-ratio-foundation/04-ratios-percentages.typ
+      - typst/04-number-line-algebra-bridge/01-rational-numbers.typ
+      - typst/07-geometry-deepening/01-congruent-triangles.typ
+      - typst/08-function-models/01-linear-functions.typ
+    evidence: >-
+      Representative chapters exceed the 3-tool cap inside one invention chain:
+      typst/02-fraction-ratio-foundation/04-ratios-percentages.typ declares 比 /
+      比值 / 比例 / 百分数 / 折扣 on line 5 and then splits blueprint into four
+      new tool groups at lines 53-101; typst/04-number-line-algebra-bridge/01-rational-numbers.typ
+      declares 数轴 / 负数 / 相反数 / 绝对值 / 有理数 on line 5 and spreads blueprint
+      across five sections at lines 75-134; typst/07-geometry-deepening/01-congruent-triangles.typ
+      and typst/08-function-models/01-linear-functions.typ likewise package 5 named
+      concepts each on line 5. Repository-wide sampling shows this is systemic:
+      36/46 substantive knowledge chapters have more than 3 named vocab items,
+      and 29/46 have more than 3 blueprint subsections.
+    violated_rules:
+      - Each knowledge-point chapter invents at most 3 tools.
+      - Blueprint should scope a chapter's formal invention load to a manageable set of tools.
+    suggested_fix: >-
+      Build a chapter-by-chapter tool ledger, then split or rescope overloaded
+      chapters so each knowledge chapter introduces no more than 3 genuinely new tools.
+  - id: pre-blueprint-tool-leakage
+    severity: high
+    files:
+      - typst/07-geometry-deepening/01-congruent-triangles.typ
+      - typst/08-function-models/01-linear-functions.typ
+    evidence: >-
+      typst/07-geometry-deepening/01-congruent-triangles.typ uses the new congruence
+      criteria in #side-hack[ lines 43-49 ("优先找 SSS、SAS、ASA、AAS、HL") before
+      #blueprint[ starts at line 51. typst/08-function-models/01-linear-functions.typ
+      names 正比例函数 in discovery at line 55 and tells students in #side-hack[
+      lines 68-73 to think "一次函数/正比例函数" before the formal #blueprint[
+      begins at line 75.
+    violated_rules:
+      - Every invented tool must be introduced in blueprint.
+      - Chapter content may only use tools invented in that chapter or earlier chapters.
+    suggested_fix: >-
+      Keep crisis/discovery/tryit/side-hack phenomenon-first and move first use of
+      new named criteria or model labels into blueprint.
+candidate_tasks:
+  - id: build-tool-ledger-and-budget
+    title: Build a chapter-by-chapter tool ledger
+    description: >-
+      Inventory which tools each knowledge chapter genuinely invents versus only
+      recalls, and mark every chapter currently exceeding the 3-tool budget.
+    dependencies: []
+  - id: split-or-rescope-overloaded-chapters
+    title: Split overloaded invention chains to the 3-tool cap
+    description: >-
+      Starting with representative overloaded chapters in 02.4, 04.1, 07.1, and
+      08.1, redistribute excess concepts into earlier chapters, later chapters,
+      or review-only recall so each chapter invents at most 3 new tools.
+    dependencies:
+      - build-tool-ledger-and-budget
+  - id: remove-pre-blueprint-tool-leakage
+    title: Remove pre-blueprint naming of new tools
+    description: >-
+      Rewrite discovery/tryit/side-hack content in chapters such as 07.1 and 08.1
+      so new criteria and model labels first appear in blueprint, not earlier.
+    dependencies:
+      - build-tool-ledger-and-budget
+  - id: normalize-chapter-one-review-structure
+    title: Normalize Chapter 1 review to the four-part template
+    description: >-
+      Refactor typst/01-counting/07-review.typ into 知识速查卡 / 混合自测题 / 参考答案 /
+      螺旋复习, with spiral prompts using #secref(...).
+    dependencies: []
+  - id: rerun-tool-discipline-and-review-audit
+    title: Re-audit tool discipline and review structure after fixes
+    description: >-
+      Recheck all review files and substantive knowledge chapters after the
+      structural fixes to confirm four-part review compliance and blueprint-first,
+      max-3-tool chapter discipline.
+    dependencies:
+      - split-or-rescope-overloaded-chapters
+      - remove-pre-blueprint-tool-leakage
+      - normalize-chapter-one-review-structure

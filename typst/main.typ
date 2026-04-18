@@ -70,8 +70,8 @@
 #include "04-number-line-algebra-bridge/04-equation-intuition.typ"
 #include "04-number-line-algebra-bridge/05-review.typ"
 
-// 第 5 章：基础总闸门（初中 7-9 年级）
-= 基础总闸门
+// 第 5 章：主干收束闸门（初中 7-9 年级）
+= 主干收束闸门
 #include "05-foundation-gate/00-overview.typ"
 #include "05-foundation-gate/01-foundation-check.typ"
 #include "05-foundation-gate/02-branch-entry-recaps.typ"
@@ -127,4 +127,5 @@
 = 终章综合
 #include "10-capstone/00-overview.typ"
 #include "10-capstone/invention-tree.typ"
+#include "10-capstone/review.typ"
 #include "10-capstone/whats-next.typ"
