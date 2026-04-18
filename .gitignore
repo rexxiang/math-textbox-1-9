@@ -5,9 +5,8 @@ output/
 build/
 
 # Generated docs
-docs/*
-!docs/review/
-!docs/review/**
+docs/review/
+docs/.superpowers/
 
 # macOS
 .DS_Store
