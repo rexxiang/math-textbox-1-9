@@ -17,7 +17,7 @@
 #include "../02-fraction-ratio-foundation/05-conversions-and-comparisons.typ"
 #include "../04-number-line-algebra-bridge/00-overview.typ"
 #include "../04-number-line-algebra-bridge/01-rational-numbers.typ"
-#include "../04-number-line-algebra-bridge/02-rational-operations.typ"
+#include "../04-number-line-algebra-bridge/01a-opposites-absolute-operations.typ"
 #include "../04-number-line-algebra-bridge/02-real-numbers.typ"
 #include "../04-number-line-algebra-bridge/03-variables-and-expressions.typ"
 #include "../04-number-line-algebra-bridge/04-equation-intuition.typ"

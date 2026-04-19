@@ -2,7 +2,7 @@
 
 == §2.6 互化与比较 <sec-2-6>
 
-#vocab[互化 conversion / 同一标准 common basis / 单位率 unit rate]
+#vocab[互化 conversion / 同一标准 common basis / 通分 common denominator]
 
 #crisis[
   三杯饮料分别标着：

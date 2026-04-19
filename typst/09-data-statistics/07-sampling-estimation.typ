@@ -2,7 +2,7 @@
 
 == §9.8 总体、样本与估计 <sec-9-8>
 
-#vocab[总体 population / 样本 sample / 抽样估计 sampling estimation]
+#vocab[总体 population / 样本 sample / 样本容量 sample size]
 
 #crisis[
   一家灯泡厂生产了 10000 只灯泡。要想知道这批灯泡寿命是否达标，最直接的办法似乎是全部点亮，等它们烧坏后逐个记录。

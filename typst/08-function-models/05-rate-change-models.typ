@@ -2,7 +2,7 @@
 
 == §8.5 利率与增长率：函数应用比较 <sec-8-5>
 
-#vocab[变化率 rate of change / 固定差模型 constant-difference model / 固定倍率模型 constant-ratio model]
+#vocab[固定增加模型 fixed-increment model / 固定倍率模型 fixed-multiplier model / 倍率 multiplier]
 
 #crisis[
   同样是“每年增长 $5%$”，下面两句话看起来很像，实际却对应不同模型：

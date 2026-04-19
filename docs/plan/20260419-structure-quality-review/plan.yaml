@@ -1,21 +1,16 @@
 plan_id: "20260419-structure-quality-review"
 objective: "Remediate the full-book structure and then the full-book quality while preserving the immutable 00-10 top-level spine defined in AGENTS.md."
-current_phase: "quality_stage_complete"
-worktree: "/Users/rexxiang/workspace/practice/math-textbox-1-9/.worktrees/structure-quality-20260419"
+current_phase: "structure_iteration_02_fix"
+worktree: "/Users/rexxiang/workspace/practice/math-textbox-1-9-structure-review-20260419"
 created_at: "2026-04-19T00:00:00Z"
 created_by: "copilot-cli"
-status: "done"
+status: "executing"
 research_confidence: "high"
 
 tldr: |
   Execute a two-stage whole-book remediation loop in this worktree only.
   Stage 1 removes structural violations without changing the overall 00-10 spine.
   Stage 2 performs top-tier quality review/fix under the stabilized structure, with at least five explicit iterations and continuation until reviewer confidence drops below 50%.
-
-completion_note: |
-  Quality iteration 07 was the second consecutive confirmatory zero-defect pass after iteration 06.
-  Because the current confidence-based continuation rule would otherwise force unbounded no-op pairs and the user was unavailable to redefine it,
-  the loop was closed after two consecutive confirmatory zero-defect passes with structure-freeze still held.
 
 open_questions:
   - "When quality iteration 05 completes, should the continuation gate use reviewer confidence in 'remaining meaningful defects to find' as the stopping metric? Default: yes."
@@ -184,7 +179,7 @@ tasks:
   - id: "task-010"
     title: "Structure iteration 02 fixes"
     description: "Apply transition and readiness fixes for 04-05-06-07, including second-level splits/reorders that reduce difficulty cliffs."
-    status: "done"
+    status: "in_progress"
     dependencies: ["task-009"]
     agent_hint: "gem-implementer"
     requires_review: true
@@ -198,7 +193,7 @@ tasks:
   - id: "task-011"
     title: "Structure iteration 03 review"
     description: "Review 06-09 for internal branch spine compliance, required branch-foundation summaries, and optional-side-hall placement."
-    status: "done"
+    status: "pending"
     dependencies: ["task-010"]
     agent_hint: "gem-reviewer"
     requires_review: false
@@ -212,7 +207,7 @@ tasks:
   - id: "task-012"
     title: "Structure iteration 03 fixes"
     description: "Apply branch-spine fixes inside 06-09 while preserving the global 00-10 order."
-    status: "done"
+    status: "pending"
     dependencies: ["task-011"]
     agent_hint: "gem-implementer"
     requires_review: true
@@ -226,7 +221,7 @@ tasks:
   - id: "task-013"
     title: "Structure iteration 04 review"
     description: "Review whole-book tool invention/use order, same-or-earlier-tool enforcement, and public-foundation boundary discipline after the larger reorders."
-    status: "done"
+    status: "pending"
     dependencies: ["task-012"]
     agent_hint: "gem-reviewer"
     requires_review: false
@@ -239,8 +234,8 @@ tasks:
 
   - id: "task-014"
     title: "Structure iteration 04 fixes"
-    description: "Apply tool-order and chapter-scope fixes required to enforce same-or-earlier-tool usage and honest max-3 compliance, splitting chapters when learner-visible sub-concepts exceed three."
-    status: "done"
+    description: "Apply tool-order and chapter-scope fixes required to enforce same-or-earlier-tool usage and max-3-tool compliance."
+    status: "pending"
     dependencies: ["task-013"]
     agent_hint: "gem-implementer"
     requires_review: true
@@ -248,14 +243,13 @@ tasks:
       - "docs/review/20260419-structure-quality-review/17-structure-iteration-04-resolution.md"
     acceptance_criteria:
       - "Every affected chapter now uses only same-chapter or earlier-invented tools/expressions."
-      - "No chapter reaches max-3 compliance by merging several learner-visible sub-concepts into one umbrella concept; such cases are split into separate chapter surfaces instead."
-      - "All remaining tool overload hotspots from the baseline are either fixed by real scope reduction/splitting or explicitly deferred with a rule-level justification."
+      - "All remaining tool overload hotspots from the baseline are either fixed or explicitly narrowed to future quality-stage wording cleanup."
       - "Resolution note includes a per-chapter status on tool-count compliance."
 
   - id: "task-015"
     title: "Structure iteration 05 review"
-    description: "Run a whole-book structural regression audit to verify that structural issues have been eliminated rather than shifted, including a retroactive audit of prior max-3 fixes under the no-umbrella-packaging rule."
-    status: "done"
+    description: "Run a whole-book structural regression audit to verify that structural issues have been eliminated rather than shifted."
+    status: "pending"
     dependencies: ["task-014"]
     agent_hint: "gem-reviewer"
     requires_review: false
@@ -263,154 +257,28 @@ tasks:
       - "docs/review/20260419-structure-quality-review/18-structure-iteration-05.md"
     acceptance_criteria:
       - "Artifact contains a whole-book pass/fail table for topology, branch summaries, tool order, difficulty cliffs, and foundation boundaries."
-      - "Artifact explicitly re-checks that prior max-3 fixes were not achieved by umbrella-concept packaging of multiple finer-grained concepts."
       - "Any remaining blockers are labeled with severity and exact follow-up action items."
       - "Artifact states whether structure stage can exit or must append task-100+ iterations."
 
   - id: "task-016"
-    title: "Structure iteration 05 fixes (superseded)"
-    description: "Superseded by the focused task-100+ extension iterations after task-015 found multiple independent overloaded chapters that need separate review/fix pairs."
-    status: "blocked"
+    title: "Structure iteration 05 fixes"
+    description: "Resolve the remaining structural blockers identified in the fifth structural review."
+    status: "pending"
     dependencies: ["task-015"]
     agent_hint: "gem-implementer"
     requires_review: true
     outputs:
       - "docs/review/20260419-structure-quality-review/19-structure-iteration-05-resolution.md"
     acceptance_criteria:
-      - "Do not execute this task unless the focused task-100+ extension path is explicitly abandoned."
-      - "Any structure-fix work after task-015 should now happen in the appended focused extension tasks."
-
-  - id: "task-100"
-    title: "Focused structural review for §6.1"
-    description: "Review how to split or narrow §6.1 so it no longer pre-uses local tools in discovery and no longer bundles polynomial simplification, multiplication formulas, and power rules into one chapter surface."
-    status: "done"
-    dependencies: ["task-015"]
-    agent_hint: "gem-reviewer"
-    requires_review: false
-    outputs:
-      - "docs/review/20260419-structure-quality-review/100-structure-task-100-6-1-review.md"
-    acceptance_criteria:
-      - "Artifact proposes a same-or-earlier-tool-safe split or narrowing for §6.1."
-      - "Artifact counts learner-visible concept families honestly and does not treat整式整理 / 乘法公式 / 幂法则 as one umbrella tool."
-      - "Artifact states required routing updates to 06 overview, main spine, summary, and review surfaces."
-
-  - id: "task-101"
-    title: "Focused structural fix for §6.1"
-    description: "Apply the accepted §6.1 split/narrowing so discovery uses only earlier tools and each resulting chapter stays within the honest max-3 cap."
-    status: "done"
-    dependencies: ["task-100"]
-    agent_hint: "gem-implementer"
-    requires_review: true
-    outputs:
-      - "docs/review/20260419-structure-quality-review/101-structure-task-101-6-1-resolution.md"
-    acceptance_criteria:
-      - "No discovery section pre-uses tools that are only invented later in its own blueprint."
-      - "Each resulting §6.x chapter stays within the honest max-3 limit."
-      - "Routing updates preserve the 06 branch spine and summary placement."
-
-  - id: "task-102"
-    title: "Focused structural review for §7.1"
-    description: "Review how to split or narrow §7.1 so congruence criteria are not hidden under one umbrella label and proof-entry scaffolding remains beginner-safe."
-    status: "done"
-    dependencies: ["task-015"]
-    agent_hint: "gem-reviewer"
-    requires_review: false
-    outputs:
-      - "docs/review/20260419-structure-quality-review/102-structure-task-102-7-1-review.md"
-    acceptance_criteria:
-      - "Artifact gives an honest concept count for congruence criteria and proof-entry tools."
-      - "Artifact proposes a split/narrowing that keeps Chapter 07 proof progression smooth."
-      - "Artifact states routing updates needed for overview, review, and summary surfaces."
-
-  - id: "task-103"
-    title: "Focused structural fix for §7.1"
-    description: "Apply the accepted §7.1 restructuring so the chapter no longer teaches five congruence criteria on one surface and keeps proof-entry load manageable."
-    status: "done"
-    dependencies: ["task-102"]
-    agent_hint: "gem-implementer"
-    requires_review: true
-    outputs:
-      - "docs/review/20260419-structure-quality-review/103-structure-task-103-7-1-resolution.md"
-    acceptance_criteria:
-      - "No single chapter surface hides several congruence criteria behind one umbrella label."
-      - "Proof-chain entry remains understandable for first-time geometry-proof learners."
-      - "Chapter 07 branch spine and the §7.5 summary-only role remain intact."
-
-  - id: "task-104"
-    title: "Focused structural review for §7.7"
-    description: "Review how to split or narrow §7.7 so trig ratios and angle/slope application families are no longer overloaded into one chapter surface."
-    status: "done"
-    dependencies: ["task-015"]
-    agent_hint: "gem-reviewer"
-    requires_review: false
-    outputs:
-      - "docs/review/20260419-structure-quality-review/104-structure-task-104-7-7-review.md"
-    acceptance_criteria:
-      - "Artifact counts sin / cos / tan and application families honestly under the no-umbrella rule."
-      - "Artifact proposes a split or scope reduction that preserves the measurement line of Chapter 07."
-      - "Artifact states downstream routing and review impacts."
-
-  - id: "task-105"
-    title: "Focused structural fix for §7.7"
-    description: "Apply the accepted §7.7 restructuring so trig ratios and measurement applications are distributed across honest chapter-sized learning steps."
-    status: "done"
-    dependencies: ["task-104"]
-    agent_hint: "gem-implementer"
-    requires_review: true
-    outputs:
-      - "docs/review/20260419-structure-quality-review/105-structure-task-105-7-7-resolution.md"
-    acceptance_criteria:
-      - "No resulting chapter surface exceeds the honest max-3 limit."
-      - "Trig measurement remains geometry-first and does not preview the later function-family treatment."
-      - "Chapter 07 sequencing remains smooth from §7.6 through later sections."
-
-  - id: "task-106"
-    title: "Focused structural review for §1.6"
-    description: "Review whether §1.6 must be narrowed or split so five named operation laws are not treated as one concept under the project-wide no-umbrella interpretation."
-    status: "done"
-    dependencies: ["task-015"]
-    agent_hint: "gem-reviewer"
-    requires_review: false
-    outputs:
-      - "docs/review/20260419-structure-quality-review/106-structure-task-106-1-6-review.md"
-    acceptance_criteria:
-      - "Artifact explicitly decides whether a rule-level exemption is justified or rejected."
-      - "If no exemption is justified, artifact proposes an honest split/narrowing path for §1.6."
-      - "Artifact checks downstream recap and branch-entry dependency impacts."
-
-  - id: "task-107"
-    title: "Focused structural fix for §1.6"
-    description: "Apply the accepted §1.6 decision: either record a rule-level exemption with justification or narrow/split the chapter so arithmetic laws are taught in honest chapter-sized steps."
-    status: "done"
-    dependencies: ["task-106"]
-    agent_hint: "gem-implementer"
-    requires_review: true
-    outputs:
-      - "docs/review/20260419-structure-quality-review/107-structure-task-107-1-6-resolution.md"
-    acceptance_criteria:
-      - "Project-wide max-3 interpretation is applied consistently to §1.6."
-      - "Any exemption is explicit, justified, and recorded at rule level; otherwise the chapter is structurally narrowed or split."
-      - "Downstream references continue to point to stable arithmetic-law prerequisites."
-
-  - id: "task-108"
-    title: "Whole-book structural regression after task-100+"
-    description: "Re-run a whole-book structural regression after the focused task-100+ fixes to confirm the overloaded chapters are truly closed and no new structure defects were introduced."
-    status: "done"
-    dependencies: ["task-101", "task-103", "task-105", "task-107"]
-    agent_hint: "gem-reviewer"
-    requires_review: false
-    outputs:
-      - "docs/review/20260419-structure-quality-review/108-structure-regression-after-task-100-plus.md"
-    acceptance_criteria:
-      - "Artifact re-checks topology, branch summaries, tool order, difficulty cliffs, foundation boundaries, and honest max-3 compliance."
-      - "Artifact explicitly confirms whether the task-100+ blockers are closed without re-opening prior fixes."
-      - "Artifact states whether structure stage can finally move to exit gate or must append more extension tasks."
+      - "No unresolved structural blockers remain if the stage is to exit."
+      - "If blockers remain, the resolution note clearly marks which must trigger task-100+ extension iterations."
+      - "No fix in this task changes the immutable top-level 00-10 structure."
 
   - id: "task-017"
     title: "Structure exit gate"
-    description: "Decide whether structural issues are eliminated and quality-stage work may begin after any required task-100+ extension work and the follow-up whole-book regression."
-    status: "done"
-    dependencies: ["task-108"]
+    description: "Decide whether structural issues are eliminated and quality-stage work may begin."
+    status: "pending"
+    dependencies: ["task-016"]
     agent_hint: "gem-reviewer"
     requires_review: false
     outputs:
@@ -423,7 +291,7 @@ tasks:
   - id: "task-018"
     title: "Build quality rubric and confidence model"
     description: "Create the stage-2 rubric, confidence scoring model, and defect taxonomy for top-tier quality review under the stabilized structure."
-    status: "done"
+    status: "pending"
     dependencies: ["task-017"]
     agent_hint: "gem-documentation-writer"
     requires_review: true
@@ -437,7 +305,7 @@ tasks:
   - id: "task-019"
     title: "Build glossary normalization queue"
     description: "Translate the glossary and abbreviation findings into a stage-2 backlog keyed to exact chapter responsibilities."
-    status: "done"
+    status: "pending"
     dependencies: ["task-017"]
     agent_hint: "gem-reviewer"
     requires_review: false
@@ -451,7 +319,7 @@ tasks:
   - id: "task-020"
     title: "Build summary and cross-reference quality queue"
     description: "Compile remaining review-chapter, branch-summary, branch-entry recap, and #secref/spiral-link quality issues after structure stabilization."
-    status: "done"
+    status: "pending"
     dependencies: ["task-017"]
     agent_hint: "gem-reviewer"
     requires_review: false
@@ -465,7 +333,7 @@ tasks:
   - id: "task-021"
     title: "Build boundary and dependency regression queue"
     description: "Compile remaining no-future-tool, difficulty-curve, and public-foundation boundary issues that now belong to quality refinement rather than structural surgery."
-    status: "done"
+    status: "pending"
     dependencies: ["task-017"]
     agent_hint: "gem-reviewer"
     requires_review: false
@@ -479,7 +347,7 @@ tasks:
   - id: "task-022"
     title: "Quality iteration 01 review"
     description: "Review glossary completeness and abbreviation compliance across the stabilized book."
-    status: "done"
+    status: "pending"
     dependencies: ["task-018", "task-019", "task-020", "task-021"]
     agent_hint: "gem-reviewer"
     requires_review: false
@@ -493,7 +361,7 @@ tasks:
   - id: "task-023"
     title: "Quality iteration 01 fixes"
     description: "Apply glossary and abbreviation fixes required by quality iteration 01."
-    status: "done"
+    status: "pending"
     dependencies: ["task-022"]
     agent_hint: "gem-implementer"
     requires_review: true
@@ -507,7 +375,7 @@ tasks:
   - id: "task-024"
     title: "Quality iteration 02 review"
     description: "Review same-or-earlier-tool usage in examples, discovery blocks, review chapters, and summary sections."
-    status: "done"
+    status: "pending"
     dependencies: ["task-023"]
     agent_hint: "gem-reviewer"
     requires_review: false
@@ -521,7 +389,7 @@ tasks:
   - id: "task-025"
     title: "Quality iteration 02 fixes"
     description: "Remove remaining future-tool leakage and dependency-order wording defects without changing the stabilized top-level structure."
-    status: "done"
+    status: "pending"
     dependencies: ["task-024"]
     agent_hint: "gem-implementer"
     requires_review: true
@@ -535,7 +403,7 @@ tasks:
   - id: "task-026"
     title: "Quality iteration 03 review"
     description: "Review branch-entry recaps, branch-foundation summaries, review chapters, and #secref-based spiral links for top-tier quality."
-    status: "done"
+    status: "pending"
     dependencies: ["task-025"]
     agent_hint: "gem-reviewer"
     requires_review: false
@@ -549,7 +417,7 @@ tasks:
   - id: "task-027"
     title: "Quality iteration 03 fixes"
     description: "Apply review-surface, recap, summary, and spiral-link fixes identified in quality iteration 03."
-    status: "done"
+    status: "pending"
     dependencies: ["task-026"]
     agent_hint: "gem-implementer"
     requires_review: true
@@ -563,7 +431,7 @@ tasks:
   - id: "task-028"
     title: "Quality iteration 04 review"
     description: "Review public-foundation boundary discipline, difficulty gradients, and side-window containment under the frozen 00-10 structure."
-    status: "done"
+    status: "pending"
     dependencies: ["task-027"]
     agent_hint: "gem-reviewer"
     requires_review: false
@@ -577,7 +445,7 @@ tasks:
   - id: "task-029"
     title: "Quality iteration 04 fixes"
     description: "Apply quality-stage pacing and boundary fixes, using only second-level reorder/split/merge where necessary."
-    status: "done"
+    status: "pending"
     dependencies: ["task-028"]
     agent_hint: "gem-implementer"
     requires_review: true
@@ -591,7 +459,7 @@ tasks:
   - id: "task-030"
     title: "Quality iteration 05 review"
     description: "Run a top-tier whole-book quality sweep after the first four quality-fix passes and score confidence in remaining defect discovery."
-    status: "done"
+    status: "pending"
     dependencies: ["task-029"]
     agent_hint: "gem-reviewer"
     requires_review: false
@@ -605,7 +473,7 @@ tasks:
   - id: "task-031"
     title: "Quality iteration 05 fixes"
     description: "Apply the highest-value remaining quality fixes identified in the fifth quality review."
-    status: "done"
+    status: "pending"
     dependencies: ["task-030"]
     agent_hint: "gem-implementer"
     requires_review: true
@@ -619,7 +487,7 @@ tasks:
   - id: "task-032"
     title: "Quality continuation gate"
     description: "Decide whether the project can complete or must append quality iteration 06+ review/fix pairs."
-    status: "done"
+    status: "pending"
     dependencies: ["task-031"]
     agent_hint: "gem-reviewer"
     requires_review: false
@@ -629,60 +497,3 @@ tasks:
       - "Marks project complete only if at least five quality iterations have run and reviewer confidence is below 50%."
       - "If confidence is 50% or higher, or if blocking quality defects remain, the artifact defines required task-200+ continuation pairs."
       - "Completion decision explicitly confirms glossary compliance, no future-tool usage, branch-spine summary health, and public-foundation boundary discipline."
-
-  - id: "task-200"
-    title: "Quality iteration 06 review"
-    description: "Run an independent regression review over glossary-owner hold, dependent-surface integrity, and answer/recovery quality after closure of the last named defect."
-    status: "done"
-    dependencies: ["task-032"]
-    agent_hint: "gem-reviewer"
-    requires_review: false
-    outputs:
-      - "docs/review/20260419-structure-quality-review/200-quality-iteration-06.md"
-    acceptance_criteria:
-      - "Re-audits the glossary owner surfaces repaired in iterations 01 and 05."
-      - "Re-audits the summary / review / capstone surfaces most likely to regress into owner burden or same-or-earlier-tool leakage."
-      - "Checks answer / spiral surfaces for self-study recoverability, missing owner terminology, vague backward pointers, and optional-content flattening."
-      - "Artifact records full confidence arithmetic and an explicit structure-freeze judgment."
-
-  - id: "task-201"
-    title: "Quality iteration 06 fixes"
-    description: "Apply the iteration-06 fixes, or record an explicit no-op resolution if the regression review finds no material defect."
-    status: "done"
-    dependencies: ["task-200"]
-    agent_hint: "gem-implementer"
-    requires_review: true
-    outputs:
-      - "docs/review/20260419-structure-quality-review/201-quality-iteration-06-resolution.md"
-    acceptance_criteria:
-      - "If iteration 06 finds material defects, patches only the cited surfaces and records a standard resolution map with verification targets."
-      - "If iteration 06 finds no material defect, still creates the resolution artifact with `Status: resolved (no manuscript change required)` and `Structure-freeze status: held`."
-      - "Carry-forward is explicitly recorded as none when the review is confirmatory."
-
-  - id: "task-202"
-    title: "Quality iteration 07 review"
-    description: "Run the next continuation review over the least recently stressed quality dimensions, prioritizing tone-fit, self-study recoverability, and answer-key quality."
-    status: "done"
-    dependencies: ["task-201"]
-    agent_hint: "gem-reviewer"
-    requires_review: false
-    outputs:
-      - "docs/review/20260419-structure-quality-review/202-quality-iteration-07.md"
-    acceptance_criteria:
-      - "Reviews tone-fit, self-study recoverability, and answer-key quality across representative whole-book surfaces."
-      - "Records whether previously confirmatory surfaces stay stable when the review lens moves to less recently stressed quality dimensions."
-      - "Includes full confidence arithmetic and explicit structure-freeze judgment."
-
-  - id: "task-203"
-    title: "Quality iteration 07 fixes"
-    description: "Apply the iteration-07 fixes, or record an explicit no-op closure if the continuation review finds no material defect."
-    status: "done"
-    dependencies: ["task-202"]
-    agent_hint: "gem-implementer"
-    requires_review: true
-    outputs:
-      - "docs/review/20260419-structure-quality-review/203-quality-iteration-07-resolution.md"
-    acceptance_criteria:
-      - "If iteration 07 finds material defects, patches only the cited surfaces and records a standard resolution map with verification targets."
-      - "If iteration 07 finds no material defect, still creates the resolution artifact with `Status: resolved (no manuscript change required)` and `Structure-freeze status: held`."
-      - "Carry-forward is explicitly recorded as none when the review is confirmatory."

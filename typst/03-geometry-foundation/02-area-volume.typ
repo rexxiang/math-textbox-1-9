@@ -3,7 +3,7 @@
 
 == §3.4 面积：先看铺了多少小方格 <sec-3-4>
 
-#vocab[面积 area / 单位面积 square unit / 割补与拼补 cut-and-paste reasoning]
+#vocab[面积 area / 体积 volume / 割补法 cut-and-rearrange]
 
 #crisis[
   学校要在操场上铺人造草坪。操场是一块平平的地面。工人说：「告诉我这块地占多大地方，我才知道要买多少草坪。」

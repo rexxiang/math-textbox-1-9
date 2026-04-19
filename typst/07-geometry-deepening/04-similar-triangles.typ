@@ -4,6 +4,8 @@
 
 #vocab[相似三角形 similar triangles / 相似比 similarity ratio / 相似判定 similarity criteria / 角角相似 Angle-Angle similarity (AA) / 边角边相似 Side-Angle-Side similarity (SAS) / 边边边相似 Side-Side-Side similarity (SSS)]
 
+#vocab[相似三角形 similar triangles / 相似比 scale factor / 缩放规律 scaling laws]
+
 #crisis[
   你想知道旗杆有多高，却既爬不上去，也不能把它放倒。你只能量出一根小木杆的高度、两根影子的长度，再借助太阳同一时刻形成的角度关系来推算。
 
@@ -47,13 +49,7 @@
 
   $ frac(D E, A B) = frac(E F, B C) = frac(F D, C A) = k $
 
-  *二、相似三角形的判定*
-
-  - *角角*（Angle-Angle, AA）：两组角分别相等
-  - *边角边*（Side-Angle-Side, SAS）：两组对应边成比例，且夹角相等
-  - *边边边*（Side-Side-Side, SSS）：三组对应边成比例
-
-  *三、放缩规律与测量*
+  *二、放缩规律与测量*
 
   - 对应角相等
   - 对应边成比例
@@ -68,7 +64,7 @@
   - $angle A E D = angle A C B$
   - $angle A$ 公共
 
-  所以 $triangle A D E tilde triangle A B C$（AA）。
+  所以 $triangle A D E tilde triangle A B C$（两组角相等）。
 
   中位线就是一个典型的半尺寸版本：
 

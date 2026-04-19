@@ -2,7 +2,7 @@
 
 == §6.6 一元一次方程 <sec-6-6>
 
-#vocab[方程 equation / 等式性质 equality properties / 解方程流程 solution procedure]
+#vocab[移项 transposition / 去分母 clearing denominators / 去括号 distribution]
 
 #crisis[
   在 #secref("4.5") 里，你已经能把 $x + 4 = 11$ 这类简单方程看成“左右一样多”的平衡。可一旦条件变复杂，光靠口算 undo 就不够稳了。
