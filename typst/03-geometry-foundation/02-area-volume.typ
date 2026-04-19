@@ -3,7 +3,7 @@
 
 == §3.2 面积与体积 <sec-3-2>
 
-#vocab[面积 area / 体积 volume / 平行四边形 parallelogram / 梯形 trapezoid]
+#vocab[面积 area / 体积 volume / 割补法 cut-and-rearrange]
 
 #crisis[
   学校要在操场上铺人造草坪。操场是一块不规则形状的地面。工人说：「告诉我面积，我才知道要买多少草坪。」

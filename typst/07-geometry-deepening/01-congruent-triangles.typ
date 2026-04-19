@@ -2,7 +2,7 @@
 
 == §7.1 全等三角形：刚性与证明的起点 <sec-7-1>
 
-#vocab[全等 congruent / 对应 corresponding / 证明 proof / 已知 given / 求证 prove]
+#vocab[全等 congruent / 对应 corresponding / 全等判定 congruence criteria（边边边 Side-Side-Side, SSS；边角边 Side-Angle-Side, SAS；角边角 Angle-Side-Angle, ASA；角角边 Angle-Angle-Side, AAS；斜边直角边 Hypotenuse-Leg, HL；边边角 Side-Side-Angle, SSA）]
 
 #crisis[
   造桥时，工程师最关心的不是“这个三角架看上去差不多”，而是“这两个支撑件是不是*一定一样*”。如果图纸上给出的几条边和几个角已经确定，整块三角框架还能不能再被“掰成另一种形状”？

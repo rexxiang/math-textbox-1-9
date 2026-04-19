@@ -3,6 +3,8 @@
 
 == §9.4 频率分布与直方图 <sec-9-4>
 
+#vocab[组距 class width / 频率分布表 frequency table / 频率分布直方图 histogram]
+
 #crisis[
   校医统计了全校 400 名学生的肺活量数据。表格里是一长串数字，老师却只想知道：
 

@@ -2,7 +2,7 @@
 
 == §2.3 小数 <sec-2-3>
 
-#vocab[小数 decimal / 小数点 decimal point / 有限小数 terminating decimal / 无限小数 repeating decimal]
+#vocab[小数 decimal / 位值 decimal place / 有限小数 terminating decimal]
 
 #crisis[
   体检量身高，你比 1 米高，但还不到 2 米。记录表上只能填整数吗？
@@ -33,7 +33,7 @@
 
 #blueprint[
   - 小数就是分母为 $10, 100, 1000, dots.h$ 的分数的另一种写法
-  - 小数点左边是整数部分，右边依次是*十分位、百分位、千分位……*
+  - 小数点左边是整数部分，右边依次是*十分位、百分位、千分位……*，这些位置体现了小数的*位值*
   - 比较大小：从高位到低位逐位比较（与整数类似）
   - 四则运算：
     - 加减法：*小数点对齐*，按位相加减

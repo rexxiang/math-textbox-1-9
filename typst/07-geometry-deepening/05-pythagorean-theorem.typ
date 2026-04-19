@@ -2,7 +2,7 @@
 
 == §7.5 勾股定理：把直角三角形变成长度机器 <sec-7-5>
 
-#vocab[勾股定理 Pythagorean theorem / 斜边 hypotenuse / 直角边 leg / 勾股数 Pythagorean triple]
+#vocab[勾股定理 Pythagorean theorem / 逆定理 converse of Pythagorean theorem / 勾股数 Pythagorean triple]
 
 #crisis[
   你要检查一个墙角是不是直角，或者想知道一架梯子顶端离地有多高。量不到的那条边，常常恰好藏在一个直角三角形里。

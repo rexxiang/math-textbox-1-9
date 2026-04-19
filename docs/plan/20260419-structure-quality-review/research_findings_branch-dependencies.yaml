@@ -1,0 +1,137 @@
+objective: >
+  Analyze advanced branch directories 06-10 for branch spine compliance and
+  cross-branch dependency safety, focusing on internal progression, missing
+  summaries/transitions, capstone boundary discipline, and reorder/split/merge
+  opportunities without changing the overall 00-10 spine.
+
+focus_area:
+  - 06-algebra-deepening
+  - 07-geometry-deepening
+  - 08-function-models
+  - 09-data-statistics
+  - 10-capstone
+
+inspected_files:
+  - path: typst/main.typ
+    purpose: authoritative include order for chapters 06-10
+  - path: typst/06-algebra-deepening/00-overview.typ
+    purpose: branch entry and internal sequence framing
+  - path: typst/06-algebra-deepening/08-review.typ
+    purpose: branch closing review structure
+  - path: typst/07-geometry-deepening/00-overview.typ
+    purpose: branch entry and topic sequencing
+  - path: typst/07-geometry-deepening/06-trigonometric-measurement.typ
+    purpose: dependency check for trigonometric measurement
+  - path: typst/07-geometry-deepening/08-projections.typ
+    purpose: dependency check for expression/spatial strand
+  - path: typst/07-geometry-deepening/09-circle-extensions.typ
+    purpose: optional side-hall placement check
+  - path: typst/07-geometry-deepening/10-review.typ
+    purpose: branch closing review structure
+  - path: typst/08-function-models/00-overview.typ
+    purpose: branch entry and stated branch boundary
+  - path: typst/08-function-models/03-quadratic-functions.typ
+    purpose: branch boundary with algebra quadratic content
+  - path: typst/08-function-models/04-rate-change-models.typ
+    purpose: rolling-growth / future-family boundary check
+  - path: typst/08-function-models/05-review.typ
+    purpose: branch closing review structure
+  - path: typst/09-data-statistics/00-overview.typ
+    purpose: branch entry and side-window probability framing
+  - path: typst/09-data-statistics/05-probability.typ
+    purpose: probability scope and dependency check
+  - path: typst/09-data-statistics/07-review.typ
+    purpose: branch closing review structure
+  - path: typst/10-capstone/00-overview.typ
+    purpose: capstone role definition
+  - path: typst/10-capstone/invention-tree.typ
+    purpose: all-book summary coverage check
+  - path: typst/10-capstone/review.typ
+    purpose: full-book review structure
+  - path: typst/10-capstone/whats-next.typ
+    purpose: outlook boundary check
+
+findings:
+  - severity: high
+    finding: >
+      Branches 06-09 do not currently realize the required internal branch spine
+      of "{branch}基础 → 基础总结 → {branch}进阶 → {branch}总结". Each branch has
+      an overview, a continuous run of numbered sections, and only one final review.
+    evidence:
+      - "typst/main.typ:80-90 lists 06.1-06.7 followed directly by 06-algebra-deepening/08-review.typ."
+      - "typst/main.typ:92-104 lists 07.1-07.9 followed directly by 07-geometry-deepening/10-review.typ."
+      - "typst/main.typ:106-113 lists 08.1-08.4 followed directly by 08-function-models/05-review.typ."
+      - "typst/main.typ:115-124 lists 09.1-09.6 followed directly by 09-data-statistics/07-review.typ."
+    proposed_actions:
+      - "06: split after 6.4; treat 6.1-6.4 as branch-foundation, insert a branch-foundation summary, then keep 6.5-6.7 as branch-advanced."
+      - "07: split after 7.4; treat 7.1-7.4 as proof/circle foundation, insert a branch-foundation summary, then keep 7.5-7.8 as advanced measurement/expression."
+      - "08: split after 8.2; treat linear + inverse-proportion models as foundation, insert a branch-foundation summary, then place 8.3-8.4 in advanced."
+      - "09: split after 9.4; treat collection/description/distribution as foundation, insert a branch-foundation summary, then place 9.5-9.6 in advanced uncertainty/inference."
+  - severity: medium
+    finding: >
+      Geometry branch optional side-hall content is inside the core spine before
+      the required branch summary. §7.9 is explicitly marked optional and non-core,
+      but the review comes after it.
+    evidence:
+      - "typst/07-geometry-deepening/00-overview.typ:33-35 places #secref('7.9') before '本章回顾：几何深化'."
+      - "typst/07-geometry-deepening/09-circle-extensions.typ:79-81 says this section is side-hall/optional and not a required core node."
+    proposed_actions:
+      - "Move 7.9 after 10-review as an appendix/选学附厅, or visually separate it from the core 7.1-7.8 spine."
+      - "If 7.9 remains before the review, mark the review as summarizing only the core spine and label 7.9 as out-of-spine optional reading."
+  - severity: high
+    finding: >
+      08-function-models leaks future-family material into the core branch spine.
+      §8.4 says it will not expand into a new formula family, but it still compresses
+      rolling growth into an explicit power-form expression, which overlaps with
+      capstone outlook territory.
+    evidence:
+      - "typst/08-function-models/00-overview.typ:9 says 8.4 should compare rhythms without expanding into a new formula family."
+      - "typst/08-function-models/04-rate-change-models.typ:107-115 writes the rolling model as y = 1000 times 1.05^t and contrasts it against linear form."
+      - "typst/10-capstone/whats-next.typ:23-25 says 8.4 only previews rolling growth rhythm, while exponentials/logs/sequences belong to later study."
+    proposed_actions:
+      - "Keep 8.4 core content at the recursive-rule level ('next = previous × multiplier') and model discrimination level ('fixed difference vs fixed multiplier')."
+      - "Move the explicit power-form compression and future-family bridge into 10-capstone/whats-next or a clearly marked preview note outside the core tool inventory."
+  - severity: medium
+    finding: >
+      09-data-statistics internally signals a structural break into uncertainty/inference,
+      but the branch has no explicit summary transition before that break.
+    evidence:
+      - "typst/09-data-statistics/00-overview.typ:7 says the route goes from organize/describe to a '随机性侧窗' and then to sample estimation."
+      - "typst/09-data-statistics/00-overview.typ:25 labels 9.5 as a side window, but typst/main.typ:117-124 keeps 9.5 as a normal in-line chapter before the only final review."
+    proposed_actions:
+      - "Insert a branch-foundation summary after 9.4, then begin an advanced uncertainty/inference block with 9.5-9.6."
+      - "Optionally label 9.5 visually as a side-window inside the advanced block rather than as an undifferentiated core continuation."
+  - severity: low
+    finding: >
+      Capstone is structurally close to compliant as 'all-book summary + outlook',
+      but its 'complete invention tree' does not fully cover all inspected branch nodes.
+    evidence:
+      - "typst/10-capstone/00-overview.typ:21 says the capstone will present a '完整发明树'."
+      - "typst/10-capstone/invention-tree.typ:114-117 summarizes algebra 6.1-6.7, geometry 7.1-7.8, functions 8.1-8.4, data 9.1-9.6."
+      - "The geometry optional node 7.9 is omitted from that summary."
+    proposed_actions:
+      - "Either explicitly annotate 7.9 as an appendix/optional node excluded from the main capstone tree, or add it as an optional leaf in the invention tree."
+      - "Keep capstone focused on summary + outlook; do not move new teaching content into 10."
+  - severity: low
+    finding: >
+      Cross-branch dependency safety is otherwise mostly clean: the inspected branches
+      primarily depend on earlier common-foundation tools or earlier sections inside
+      the same branch, and they avoid forward references into later parallel branches.
+    evidence:
+      - "06 branch references earlier foundations such as 1.6, 2.4, 4.3, 4.4 and internal 6.x links; no forward refs into 07-10 were found."
+      - "07.6 explicitly roots trigonometric measurement in 7.2 similarity and 7.5 right-triangle structure: typst/07-geometry-deepening/06-trigonometric-measurement.typ:22,93-98."
+      - "09.5 stays within equal-likelihood listing and complement ideas, without excluded combinatorics machinery: typst/09-data-statistics/05-probability.typ:75-105."
+    proposed_actions:
+      - "Preserve current no-forward-ref discipline when inserting mid-branch summaries."
+      - "Treat 8.4 as the main place requiring boundary cleanup."
+
+dependency_notes:
+  safe_dependencies:
+    - "06-algebra-deepening is internally chained and back-references common foundation only."
+    - "07-geometry-deepening builds safely from common geometry tools into similarity, then into trig measurement."
+    - "09-data-statistics probability content stays within allowed middle-school scope and does not rely on combinatorics formulas."
+    - "10-capstone mostly behaves as summary + outlook rather than as a new content branch."
+  caution_dependencies:
+    - "08.4 currently compresses rolling growth into an explicit power form, which functions like an early exponential-family bridge."
+    - "07.9 is structurally optional but positioned as if it were still on the core branch path."
+    - "Because 06-09 lack explicit mid-branch summaries, the intended 'branch-foundation to branch-advanced' handoff is currently implicit rather than enforced."

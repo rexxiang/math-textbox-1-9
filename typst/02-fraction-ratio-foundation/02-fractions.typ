@@ -2,7 +2,7 @@
 
 == §2.2 分数 <sec-2-2>
 
-#vocab[分数 fraction / 分子 numerator / 分母 denominator / 通分 common denominator / 约分 simplify]
+#vocab[分数 fraction / 通分 common denominator / 约分 simplify]
 
 #crisis[
   3 个好朋友平分 2 张披萨，每人吃多少？
@@ -30,7 +30,7 @@
 ]
 
 #blueprint[
-  - 分数 $a/b$：$b$ 是*分母*（分成几份），$a$ 是*分子*（取几份），$b eq.not 0$
+  - 分数 $a/b$：$b$ 是分母（分成几份），$a$ 是分子（取几份），$b eq.not 0$
   - *真分数*：$a < b$（如 $2/3$）；*假分数*：$a >= b$（如 $5/3$）；*带分数*：整数 + 真分数（如 $1 2/3$）
   - *基本性质*：分子分母同乘或同除以一个不为零的数，分数大小不变
     $ a/b = (a times k)/(b times k) quad (k eq.not 0) $

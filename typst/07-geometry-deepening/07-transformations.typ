@@ -2,7 +2,7 @@
 
 == §7.7 图形变换：移动、翻折与旋转中的不变量 <sec-7-7>
 
-#vocab[轴对称 reflection / 平移 translation / 旋转 rotation / 不变量 invariant]
+#vocab[轴对称 reflection / 平移 translation / 旋转 rotation]
 
 #crisis[
   地砖花纹会重复平移，剪纸靠轴对称展开，风车叶片围绕中心旋转，品牌图标又常利用中心对称来追求稳定感。

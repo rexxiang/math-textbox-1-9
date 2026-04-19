@@ -2,7 +2,7 @@
 
 == §6.5 二元一次方程组 <sec-6-5>
 
-#vocab[方程组 system of equations / 消元 elimination / 代入法 substitution method / 加减法 addition-subtraction method]
+#vocab[方程组 system of equations / 代入法 substitution method / 加减消元 addition-subtraction elimination]
 
 #crisis[
   *鸡兔同笼*：笼子里有鸡和兔，从上面数共 35 个头，从下面数共 94 只脚。鸡和兔各有多少只？

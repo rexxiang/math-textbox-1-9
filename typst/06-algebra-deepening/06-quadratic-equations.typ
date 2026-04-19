@@ -2,7 +2,7 @@
 
 == §6.6 一元二次方程 <sec-6-6>
 
-#vocab[一元二次方程 quadratic equation / 直接开平方法 square-root method / 配方法 completing the square / 求根公式 quadratic formula]
+#vocab[一元二次方程 quadratic equation / 配方法 completing the square / 求根公式 quadratic formula]
 
 #crisis[
   一块长方形花圃，长比宽多 1 米，面积是 7 平方米。

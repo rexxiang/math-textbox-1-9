@@ -1,0 +1,196 @@
+objective: analyze public foundation chapters 01-05 for scope control and prerequisite progression
+focus_area:
+  - 01-counting
+  - 02-fraction-ratio-foundation
+  - 03-geometry-foundation
+  - 04-number-line-algebra-bridge
+  - 05-foundation-gate
+inspected_files:
+  - typst/01-counting/00-overview.typ
+  - typst/01-counting/01-natural-numbers.typ
+  - typst/01-counting/02-place-value.typ
+  - typst/01-counting/03-addition-subtraction.typ
+  - typst/01-counting/04-multiplication-division.typ
+  - typst/01-counting/05-mixed-operations.typ
+  - typst/01-counting/06-operation-laws.typ
+  - typst/01-counting/07-review.typ
+  - typst/02-fraction-ratio-foundation/00-overview.typ
+  - typst/02-fraction-ratio-foundation/01-factors-multiples.typ
+  - typst/02-fraction-ratio-foundation/02-fractions.typ
+  - typst/02-fraction-ratio-foundation/03-decimals.typ
+  - typst/02-fraction-ratio-foundation/04-ratios-percentages.typ
+  - typst/02-fraction-ratio-foundation/05-conversions-and-comparisons.typ
+  - typst/02-fraction-ratio-foundation/06-review.typ
+  - typst/03-geometry-foundation/00-overview.typ
+  - typst/03-geometry-foundation/01-basic-shapes.typ
+  - typst/03-geometry-foundation/02-area-volume.typ
+  - typst/03-geometry-foundation/03-angles.typ
+  - typst/03-geometry-foundation/04-parallel-perpendicular.typ
+  - typst/03-geometry-foundation/05-coordinate-entry.typ
+  - typst/03-geometry-foundation/06-review.typ
+  - typst/04-number-line-algebra-bridge/00-overview.typ
+  - typst/04-number-line-algebra-bridge/01-rational-numbers.typ
+  - typst/04-number-line-algebra-bridge/02-real-numbers.typ
+  - typst/04-number-line-algebra-bridge/03-variables-and-expressions.typ
+  - typst/04-number-line-algebra-bridge/04-equation-intuition.typ
+  - typst/04-number-line-algebra-bridge/05-review.typ
+  - typst/05-foundation-gate/00-overview.typ
+  - typst/05-foundation-gate/01-foundation-check.typ
+  - typst/05-foundation-gate/02-branch-entry-recaps.typ
+  - typst/05-foundation-gate/03-review.typ
+findings:
+  - id: FND-01
+    severity: high
+    summary: 02.4 brings in variable-based proportion solving before the bridge chapter formally introduces letters and equations.
+    affected_paths:
+      - typst/02-fraction-ratio-foundation/04-ratios-percentages.typ
+      - typst/04-number-line-algebra-bridge/03-variables-and-expressions.typ
+      - typst/04-number-line-algebra-bridge/04-equation-intuition.typ
+      - typst/06-algebra-deepening/00-overview.typ
+      - typst/06-algebra-deepening/03-rational-expressions.typ
+    evidence:
+      - path: typst/02-fraction-ratio-foundation/04-ratios-percentages.typ:68-75
+        note: "在比例蓝图里直接给出 `a : b = c : d` 与 `ad = bc` 的代数形式。"
+      - path: typst/02-fraction-ratio-foundation/04-ratios-percentages.typ:128-145
+        note: "练习与答案包含 `frac(x, 6) = frac(5, 3) -> 3x = 30 -> x = 10`，已经在做字母方程求解。"
+      - path: typst/04-number-line-algebra-bridge/03-variables-and-expressions.typ:62-103
+        note: "第 4 章才正式定义“字母表示数”“代数式”和“方程”。"
+      - path: typst/06-algebra-deepening/00-overview.typ:5-7,21-24
+        note: "专题深化明确把字母操作、比例关系和方程流程当成后续代数工具链继续展开。"
+      - path: typst/06-algebra-deepening/03-rational-expressions.typ:184
+        note: "交叉相乘在 06 分式阶段再次作为系统方法出现。"
+    proposed_actions:
+      - 保留 02.4 的“部分/整体、比值、百分数、折扣、按比分配”。
+      - 将 `ad = bc` 形式化与“解比例”移出 02.4，至少延后到 04.4 之后。
+      - 若 02.4 必须保留比例，只保留生活化判断，不进入字母未知数求解。
+    candidate_relocations:
+      - from: typst/02-fraction-ratio-foundation/04-ratios-percentages.typ
+        to: typst/04-number-line-algebra-bridge/04-equation-intuition.typ
+        reason: 一步未知量和平衡观已经在这里建立。
+      - from: typst/02-fraction-ratio-foundation/04-ratios-percentages.typ
+        to: typst/06-algebra-deepening/03-rational-expressions.typ
+        reason: 交叉相乘与比例方程更贴近代数深化。
+
+  - id: FND-02
+    severity: high
+    summary: 05 章总体像总结闸门，但它在诊断题里提前使用“象限”这一未在 01-05 正式发明的坐标工具。
+    affected_paths:
+      - typst/03-geometry-foundation/05-coordinate-entry.typ
+      - typst/04-number-line-algebra-bridge/01-rational-numbers.typ
+      - typst/05-foundation-gate/01-foundation-check.typ
+      - typst/05-foundation-gate/03-review.typ
+      - typst/08-function-models/00-overview.typ
+      - typst/08-function-models/02-inverse-proportion.typ
+    evidence:
+      - path: typst/03-geometry-foundation/05-coordinate-entry.typ:81-87
+        note: "3.5 明说“这一节先练原点右上方的方格区域”，没有定义象限。"
+      - path: typst/04-number-line-algebra-bridge/01-rational-numbers.typ:193-216
+        note: "4.1 只把负号方向扩展到坐标平面，没有命名四个象限。"
+      - path: typst/05-foundation-gate/01-foundation-check.typ:136-143
+        note: "诊断题要求判断点 B 在“第几象限”。"
+      - path: typst/05-foundation-gate/03-review.typ:54-78
+        note: "回顾题和答案要求判断“第四象限”。"
+      - path: typst/08-function-models/00-overview.typ:7
+        note: "函数分支把“正负方向把坐标平面补全”当作进入后续模型的前置。"
+      - path: typst/08-function-models/02-inverse-proportion.typ:86-87
+        note: "象限判断在函数分支被正式系统使用。"
+    proposed_actions:
+      - 若 05 只做闸门，应把题面改回“右/左/上/下”与坐标正负判断，不要求象限术语。
+      - 若希望闸门检验四象限，则需先在 4.1 或 3.5 与 5.1 之间补一个极短过渡节，正式命名四个象限。
+    candidate_relocations:
+      - from: typst/05-foundation-gate/01-foundation-check.typ
+        to: typst/04-number-line-algebra-bridge/01-rational-numbers.typ
+        reason: 负方向进入坐标平面时顺手完成四象限命名最自然。
+      - from: typst/05-foundation-gate/03-review.typ
+        to: typst/08-function-models/01-linear-functions.typ
+        reason: 象限语言与坐标平面/图象阅读更同域。
+
+  - id: FND-03
+    severity: high
+    summary: 多个基础知识点章节明显超过“每章最多发明 3 个工具”的上限，其中 02.1 和 03.2 的过载最严重。
+    affected_paths:
+      - typst/01-counting/06-operation-laws.typ
+      - typst/02-fraction-ratio-foundation/01-factors-multiples.typ
+      - typst/02-fraction-ratio-foundation/02-fractions.typ
+      - typst/02-fraction-ratio-foundation/04-ratios-percentages.typ
+      - typst/03-geometry-foundation/02-area-volume.typ
+      - typst/03-geometry-foundation/03-angles.typ
+      - typst/04-number-line-algebra-bridge/01-rational-numbers.typ
+    evidence:
+      - path: typst/01-counting/06-operation-laws.typ:44-58
+        note: "单节蓝图直接发明五条运算律。"
+      - path: typst/02-fraction-ratio-foundation/01-factors-multiples.typ:36-50
+        note: "同节同时装入因数/倍数、质数/合数、倍数特征、GCD、LCM、质因数分解法。"
+      - path: typst/02-fraction-ratio-foundation/01-factors-multiples.typ:49-50
+        note: "侧栏再加“辗转相除法”，进一步抬高密度。"
+      - path: typst/02-fraction-ratio-foundation/02-fractions.typ:32-45
+        note: "分数定义、分类、基本性质、约分、通分、四则运算、倒数规则被并入一节。"
+      - path: typst/02-fraction-ratio-foundation/04-ratios-percentages.typ:53-101
+        note: "比、比值、比例、按比分配、百分数、折扣、部分/整体判断同节并行。"
+      - path: typst/03-geometry-foundation/02-area-volume.typ:70-108
+        note: "面积公式表与体积公式表一起给出，覆盖长方形、正方形、平行四边形、三角形、梯形、圆、长方体、正方体、圆柱。"
+      - path: typst/03-geometry-foundation/03-angles.typ:60-139
+        note: "角记法、度分秒、分类、互余、互补、对顶角在一节内成串出现。"
+      - path: typst/04-number-line-algebra-bridge/01-rational-numbers.typ:63-143
+        note: "负数、数轴、相反数、绝对值、有理数、带符号四则与运算律续用被压在同一节。"
+    proposed_actions:
+      - 优先拆分 02.1 为“因数/倍数/质数”与“公因数公倍数”两节。
+      - 优先拆分 03.2 为“平面面积链”与“立体体积/单位换算”两节。
+      - 将 01.6 的五条运算律拆为“交换结合”与“分配律入门”，避免首章尾部陡升。
+      - 将 03.3 保留角分类与量角，另起一节处理互余/互补/对顶角。
+    candidate_relocations:
+      - from: typst/02-fraction-ratio-foundation/01-factors-multiples.typ
+        to: typst/02-fraction-ratio-foundation/02-gcd-lcm.typ
+        reason: 公因数/公倍数是一条单独工具链。
+      - from: typst/03-geometry-foundation/02-area-volume.typ
+        to: typst/03-geometry-foundation/03-volume-and-units.typ
+        reason: 平面面积与立体体积的认知动作不同。
+      - from: typst/03-geometry-foundation/03-angles.typ
+        to: typst/03-geometry-foundation/04-angle-relations.typ
+        reason: 角关系可独立成一个过渡节，再接平行垂直。
+
+  - id: FND-04
+    severity: medium
+    summary: 04.2 的“实数入口”形成明显难度台阶；它从 signed rational arithmetic 直接跳到根号、无理数、实数分类。
+    affected_paths:
+      - typst/04-number-line-algebra-bridge/02-real-numbers.typ
+      - typst/04-number-line-algebra-bridge/00-overview.typ
+      - typst/06-algebra-deepening/06-quadratic-equations.typ
+    evidence:
+      - path: typst/04-number-line-algebra-bridge/00-overview.typ:30-33
+        note: "章节定位已提示这里只应是“补完整数轴的侧窗”。"
+      - path: typst/04-number-line-algebra-bridge/02-real-numbers.typ:24-54
+        note: "正文仍进入 `sqrt(2)`、`x^2 = 2`、`pi`、无理数与实数分类。"
+      - path: typst/04-number-line-algebra-bridge/02-real-numbers.typ:73-105
+        note: "蓝图包含平方根定义、无理数定义、实数总分类和近似值规则。"
+      - path: typst/06-algebra-deepening/06-quadratic-equations.typ:127,224,242
+        note: "更系统的根号/实数讨论实际上在代数深化里继续承担解释负判别式与平方关系。"
+    proposed_actions:
+      - 若坚持留在 04，应把目标收缩成“数轴不只装有理数”的直觉，不做完整分类操练。
+      - 若需要保留分类术语，建议在 04.1 与 04.2 之间插入一个更短的过渡页，先从平方面积或测量逼近进入。
+    candidate_relocations:
+      - from: typst/04-number-line-algebra-bridge/02-real-numbers.typ
+        to: typst/06-algebra-deepening/06-quadratic-equations.typ
+        reason: 根号、平方关系、实数范围在代数深化中有更自然的承接面。
+
+  - id: FND-05
+    severity: low
+    summary: 05 章整体上仍然符合“总结闸门”定位；主要内容是诊断、回看、分支地图，而不是新课程展开。
+    affected_paths:
+      - typst/05-foundation-gate/00-overview.typ
+      - typst/05-foundation-gate/01-foundation-check.typ
+      - typst/05-foundation-gate/02-branch-entry-recaps.typ
+      - typst/05-foundation-gate/03-review.typ
+    evidence:
+      - path: typst/05-foundation-gate/00-overview.typ:5-9,26-30
+        note: "总览明确声明“不是再收一件新工具”，主线是总检、入口回看和回顾。"
+      - path: typst/05-foundation-gate/01-foundation-check.typ:17-25,45-77
+        note: "5.1 以 readiness check 和回看路线为核心。"
+      - path: typst/05-foundation-gate/02-branch-entry-recaps.typ:29-65
+        note: "5.2 主要是四条分支的旧工具 checklist，没有展开分支课程。"
+      - path: typst/05-foundation-gate/03-review.typ:9-41
+        note: "5.3 仍是知识速查卡 + 混合自测 + 螺旋回看。"
+    proposed_actions:
+      - 保持 05 的“检查口”角色，不再向其中塞新的正式术语或方法。
+      - 将本次发现的象限问题修正后，05 可以继续作为合格的 foundation summary gate。
+    candidate_relocations: []
