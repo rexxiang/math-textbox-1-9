@@ -7,7 +7,7 @@
 
   #grid(columns: (1fr, 1fr), gutter: 12pt,
     block[
-      *图形、周长与积木*（#secref("3.1"), #secref("3.2"), #secref("3.3")）
+      *图形、周长与积木*（#secref("3.1"), #secref("3.1B"), #secref("3.1A")）
       - 三角形、四边形、圆是最常见的基本图形
       - 长方形周长：先长加宽，再乘 $2$
       - 正方形周长：边长乘 $4$
@@ -15,7 +15,7 @@
       - 不在同一直线上的三点确定一个平面
     ],
     block[
-      *角的基本工具*（#secref("3.6"), #secref("3.7"), #secref("3.8")）
+      *角的基本工具*（#secref("3.3A"), #secref("3.3B"), #secref("3.8")）
       - 小于 $90 degree$ 是锐角；等于 $90 degree$ 是直角；$90 degree$ 与 $180 degree$ 之间是钝角
       - 互余：两个角合起来是 $90 degree$
       - 互补：两个角合起来是 $180 degree$

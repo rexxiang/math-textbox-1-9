@@ -26,7 +26,7 @@
 
   #grid(columns: (1fr, 1fr), gutter: 12pt,
     block[
-      *图形与位置*（#secref("3.6"), #secref("3.9")）
+      *图形与位置*（#secref("3.3B"), #secref("3.9")）
       - 角说的是“张开多少”
       - 坐标写法是先横后纵
       - 图上的位置变化，也能写成数量关系

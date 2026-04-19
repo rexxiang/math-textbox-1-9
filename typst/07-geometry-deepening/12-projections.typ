@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §7.8 投影与三视图：先把框架搭稳 <sec-7-8>
+== §7.12 投影与三视图：先把框架搭稳 <sec-7-12>
 
 #vocab[投影 projection / 正投影 orthographic projection / 三视图 three views]
 
