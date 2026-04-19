@@ -1,6 +1,8 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, secref, tryit, pitfall
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, vocab, side-hack, secref, tryit, pitfall
 
 == §8.1 一次函数：稳定变化的第一模型 <sec-8-1>
+
+#vocab[函数 function / 正比例函数 direct proportional function / 一次函数 linear function]
 
 #crisis[
   某共享自习室按使用时长收费：
@@ -48,7 +50,7 @@
   - $frac(y, x)$ 始终等于 $8$
   - 图象会经过原点
 
-  也就是说，这两类变化都很稳定；只是一个有固定起点，一个从零开始。这正是从 #secref("2.4") 的比与百分数直觉走向函数模型时，最先要分清的两种现象。
+  也就是说，这两类变化都很稳定；只是一个有固定起点，一个从零开始。这正是从 #secref("2.5") 的比与百分数直觉走向函数模型时，最先要分清的两种现象。
 ]
 
 #tryit[

@@ -1,6 +1,8 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, secref, tryit, pitfall
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, vocab, side-hack, secref, tryit, pitfall
 
 == §8.2 反比例函数：固定乘积的变化模型 <sec-8-2>
+
+#vocab[反比例函数 inverse proportional function / 固定乘积 fixed product]
 
 #crisis[
   一块长方形菜地的面积固定为 $48$ 平方米。如果长是 $12$ 米，宽就是 $4$ 米；如果长改成 $8$ 米，宽就变成 $6$ 米。
@@ -38,7 +40,7 @@
 
   $ y = frac(48, x) $
 
-  这说明：当 $x$ 变成原来的 2 倍时，$y$ 会变成原来的一半；当 $x$ 变成原来的 3 倍时，$y$ 会变成原来的 $frac(1, 3)$。这正是 #secref("2.4") 里“反比”的函数版本：*不是商固定，而是积固定。*
+  这说明：当 $x$ 变成原来的 2 倍时，$y$ 会变成原来的一半；当 $x$ 变成原来的 3 倍时，$y$ 会变成原来的 $frac(1, 3)$。这正是 #secref("2.5") 里“反比”的函数版本：*不是商固定，而是积固定。*
 ]
 
 #tryit[

@@ -1,6 +1,8 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §4.4 左右一样多的关系 <sec-4-4>
+== §4.5 左右一样多的关系 <sec-4-5>
+
+#vocab[方程 equation / 解 solution]
 
 #crisis[
   桌上有一个不透明的小盒子，里面装着同样多的巧克力。盒子外面还放着 4 颗巧克力，一共数出来是 11 颗。

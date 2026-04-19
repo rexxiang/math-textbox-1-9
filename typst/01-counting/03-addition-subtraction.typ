@@ -2,7 +2,7 @@
 
 == §1.3 加法与减法 <sec-1-3>
 
-#vocab[加法 addition / 减法 subtraction / 进位 carry / 退位 borrow]
+#vocab[加法 addition / 减法 subtraction / 进退位 regrouping]
 
 #crisis[
   你的存钱罐里有 38 元，生日又收到 25 元。一共多少钱？

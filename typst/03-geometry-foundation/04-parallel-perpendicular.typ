@@ -1,9 +1,9 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §3.4 平行与垂直 <sec-3-4>
+== §3.8 平行与垂直 <sec-3-8>
 
-#vocab[平行 parallel / 垂直 perpendicular / 同位角 corresponding angles / 内错角 alternate interior angles / 同旁内角 co-interior angles (same-side interior)]
+#vocab[平行 parallel / 垂直 perpendicular / 截线角关系 transversal angle relations]
 
 #crisis[
   铁轨由两根钢轨组成，它们从起点到终点始终保持相同的间距。如果两根钢轨在某处交叉了会怎样？——火车会脱轨！

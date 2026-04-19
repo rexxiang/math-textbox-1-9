@@ -1,8 +1,8 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §2.3 小数 <sec-2-3>
+== §2.4 小数 <sec-2-4>
 
-#vocab[小数 decimal / 小数点 decimal point / 有限小数 terminating decimal / 无限小数 repeating decimal]
+#vocab[小数 decimal / 小数点 decimal point / 十进分数 decimal fractions]
 
 #crisis[
   体检量身高，你比 1 米高，但还不到 2 米。记录表上只能填整数吗？
@@ -32,7 +32,7 @@
 ]
 
 #blueprint[
-  - 小数就是分母为 $10, 100, 1000, dots.h$ 的分数的另一种写法
+  - 小数就是分母为 $10, 100, 1000, dots.h$ 的分数的另一种写法，也就是*十进分数*的简写
   - 小数点左边是整数部分，右边依次是*十分位、百分位、千分位……*
   - 比较大小：从高位到低位逐位比较（与整数类似）
   - 四则运算：
@@ -41,6 +41,7 @@
     - 除法：把除数变成整数（小数点右移），被除数同步右移，然后按整数除
   - 分数 $arrow.r$ 小数：分子除以分母
   - 小数 $arrow.r$ 分数：按位值写成分数，再约分（如 $0.75 = 75/100 = 3/4$）
+  - 有些小数会停下，有些会按同样节奏重复下去；这一节先把它们都看成十进分数写法的一部分
 ]
 
 #side-hack[

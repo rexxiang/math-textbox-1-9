@@ -1,9 +1,9 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §3.5 坐标入门：在方格纸上定位 <sec-3-5>
+== §3.9 坐标入门：在方格纸上定位 <sec-3-9>
 
-#vocab[坐标 coordinate / 原点 origin / 横轴 x-axis / 纵轴 y-axis / 有序数对 ordered pair]
+#vocab[坐标 coordinate / 原点 origin / 坐标轴 coordinate axes]
 
 #crisis[
   你拿到一张方格地图，想告诉同学“图书角在第几列、第几行”。如果只说“在左边一点、上面一点”，别人很容易找错。

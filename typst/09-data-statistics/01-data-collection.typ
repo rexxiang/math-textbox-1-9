@@ -2,6 +2,8 @@
 
 == §9.1 数据收集与整理 <sec-9-1>
 
+#vocab[频数 frequency count / 频率 frequency / 条形图 bar chart / 折线图 line graph / 扇形图 pie chart]
+
 #crisis[
   学校想决定下个月的社团节重点安排哪些活动。报名表已经收上来一大叠：有人写篮球，有人写合唱，有人写编程，还有人写了两个选项甚至空着不填。
 

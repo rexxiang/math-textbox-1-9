@@ -2,6 +2,8 @@
 
 == §9.3 数据的波动程度 <sec-9-3>
 
+#vocab[极差 range / 方差 variance]
+
 #crisis[
   两位同学各练习了 5 次投篮：
 
