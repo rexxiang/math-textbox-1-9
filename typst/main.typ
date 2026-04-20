@@ -96,6 +96,8 @@
 #include "06-algebra-deepening/03-power-notation.typ"
 #include "06-algebra-deepening/04-factorization.typ"
 #include "06-algebra-deepening/05-rational-expressions.typ"
+#include "06-algebra-deepening/05a-rational-operations.typ"
+#include "06-algebra-deepening/05b-rational-equations.typ"
 #include "06-algebra-deepening/06-linear-equations.typ"
 #include "06-algebra-deepening/07-foundation-summary.typ"
 #include "06-algebra-deepening/08-systems-of-equations.typ"
