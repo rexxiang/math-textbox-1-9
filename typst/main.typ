@@ -18,142 +18,136 @@
 #counter(page).update(1)
 #set page(numbering: "i", header: none, footer: frontmatter-page-footer)
 
-// 第 0 章：导读
+// 导读
 = 导读
-#include "00-gateway/welcome.typ"
-#include "00-gateway/how-to-use.typ"
-#include "00-gateway/symbols.typ"
-#include "00-gateway/invention-tree.typ"
+#include "gateway/welcome.typ"
+#include "gateway/how-to-use.typ"
+#include "gateway/symbols.typ"
+#include "gateway/invention-tree.typ"
 
 #counter(heading).update(0)
 #set heading(numbering: "1.1")
 #set page(numbering: "1", header: main-page-header, footer: main-page-footer)
 #counter(page).update(1)
 
-// 第 1 章：数的萌芽（小学 1-4 年级）
-= 数的萌芽
-#include "01-counting/00-overview.typ"
-#include "01-counting/01-natural-numbers.typ"
-#include "01-counting/02-place-value.typ"
-#include "01-counting/03-addition-subtraction.typ"
-#include "01-counting/04-multiplication-division.typ"
-#include "01-counting/05-mixed-operations.typ"
-#include "01-counting/06-operation-laws.typ"
-#include "01-counting/07-multiplication-laws.typ"
-#include "01-counting/08-review.typ"
+// a 域：数感（ℕ→ℤ→ℚ→ℝ + 四则 + 位值 + 比例）
+= 数感
+#include "a-number-sense/_overview-from-01-counting.typ"
+#include "a-number-sense/_overview-from-02-fraction-ratio-foundation.typ"
+#include "a-number-sense/_overview-from-04-number-line-algebra-bridge.typ"
+#include "a-number-sense/a01-natural-number.typ"
+#include "a-number-sense/a04-digit.typ"
+#include "a-number-sense/a07-addition.typ"
+#include "a-number-sense/a10-multiplication.typ"
+#include "a-number-sense/a13-order-of-operations.typ"
+#include "a-number-sense/a15-add-commutative.typ"
+#include "a-number-sense/a17-mul-commutative.typ"
+#include "a-number-sense/a20-factor-multiple.typ"
+#include "a-number-sense/a23-prime.typ"
+#include "a-number-sense/a25-prime-factorization.typ"
+#include "a-number-sense/a28-fraction-definition.typ"
+#include "a-number-sense/a31-mixed-number.typ"
+#include "a-number-sense/a34-simplify.typ"
+#include "a-number-sense/a38-fraction-add-sub.typ"
+#include "a-number-sense/a41-decimal.typ"
+#include "a-number-sense/a44-ratio.typ"
+#include "a-number-sense/a47-decimal-fraction-conversion.typ"
+#include "a-number-sense/a49-number-line.typ"
+#include "a-number-sense/a52-opposite-number.typ"
+#include "a-number-sense/a55-irrational-number.typ"
+#include "a-number-sense/_review-from-01-counting.typ"
+#include "a-number-sense/_review-from-02-fraction-ratio-foundation.typ"
+#include "a-number-sense/_review-from-04-number-line-algebra-bridge.typ"
 
-// 第 2 章：分数、比与百分数基础（小学 3-6 年级）
-= 分数、比与百分数基础
-#include "02-fraction-ratio-foundation/00-overview.typ"
-#include "02-fraction-ratio-foundation/01-factors-multiples.typ"
-#include "02-fraction-ratio-foundation/01a-primes-composites.typ"
-#include "02-fraction-ratio-foundation/01b-gcd-lcm.typ"
-#include "02-fraction-ratio-foundation/02-fractions-meaning.typ"
-#include "02-fraction-ratio-foundation/02a-mixed-fraction-property.typ"
-#include "02-fraction-ratio-foundation/02b-fraction-simplify-compare.typ"
-#include "02-fraction-ratio-foundation/02c-fraction-operations.typ"
-#include "02-fraction-ratio-foundation/03-decimals.typ"
-#include "02-fraction-ratio-foundation/04-ratios-percentages.typ"
-#include "02-fraction-ratio-foundation/05-conversions-and-comparisons.typ"
-#include "02-fraction-ratio-foundation/06-review.typ"
+// b 域：形状（点线面 + 周长面积体积 + 角平行 + 坐标入门）
+= 形状
+#include "b-shapes/_overview-from-03-geometry-foundation.typ"
+#include "b-shapes/b01-point.typ"
+#include "b-shapes/b04-ray.typ"
+#include "b-shapes/b07-triangle.typ"
+#include "b-shapes/b10-perimeter.typ"
+#include "b-shapes/b13-area.typ"
+#include "b-shapes/b17-volume.typ"
+#include "b-shapes/b20-angle.typ"
+#include "b-shapes/b23-acute-angle.typ"
+#include "b-shapes/b26-complementary.typ"
+#include "b-shapes/b29-parallel-lines.typ"
+#include "b-shapes/b32-co-interior-supplementary.typ"
+#include "b-shapes/b36-coordinate-system.typ"
+#include "b-shapes/_review-from-03-geometry-foundation.typ"
 
-// 第 3 章：几何基础（小学 3-6 年级）
-= 几何基础
-#include "03-geometry-foundation/00-overview.typ"
-#include "03-geometry-foundation/01-basic-shapes.typ"
-#include "03-geometry-foundation/01a-point-line-plane.typ"
-#include "03-geometry-foundation/01c-ray-plane.typ"
-#include "03-geometry-foundation/01b-perimeter.typ"
-#include "03-geometry-foundation/02-area-volume.typ"
-#include "03-geometry-foundation/03-volume.typ"
-#include "03-geometry-foundation/03-angles.typ"
-#include "03-geometry-foundation/03a-angle-types.typ"
-#include "03-geometry-foundation/03b-angle-relations.typ"
-#include "03-geometry-foundation/04-parallel-perpendicular.typ"
-#include "03-geometry-foundation/04a-parallel-angles-perp.typ"
-#include "03-geometry-foundation/05-coordinate-entry.typ"
-#include "03-geometry-foundation/06-review.typ"
-
-// 第 4 章：数轴与代数桥（初中 7-8 年级）
-= 数轴与代数桥
-#include "04-number-line-algebra-bridge/00-overview.typ"
-#include "04-number-line-algebra-bridge/01-rational-numbers.typ"
-#include "04-number-line-algebra-bridge/01a-opposites-absolute-operations.typ"
-#include "04-number-line-algebra-bridge/02-real-numbers.typ"
-#include "04-number-line-algebra-bridge/03-variables-and-expressions.typ"
-#include "04-number-line-algebra-bridge/04-equation-intuition.typ"
-#include "04-number-line-algebra-bridge/05-review.typ"
-
-// 第 5 章：主干收束闸门（初中 7-9 年级）
+// 基础总结闸门
 = 主干收束闸门
-#include "05-foundation-gate/00-overview.typ"
-#include "05-foundation-gate/01-foundation-check.typ"
-#include "05-foundation-gate/02-branch-entry-recaps.typ"
-#include "05-foundation-gate/03-review.typ"
+#include "foundation-gate/00-overview.typ"
+#include "foundation-gate/01-foundation-check.typ"
+#include "foundation-gate/02-branch-entry-recaps.typ"
+#include "foundation-gate/03-review.typ"
 
-// 第 6 章：代数深化（初中 7-9 年级）
-= 代数深化
-#include "06-algebra-deepening/00-overview.typ"
-#include "06-algebra-deepening/01-algebraic-expressions.typ"
-#include "06-algebra-deepening/02-polynomial-multiplication.typ"
-#include "06-algebra-deepening/03-power-notation.typ"
-#include "06-algebra-deepening/03a-power-rules.typ"
-#include "06-algebra-deepening/04-factorization.typ"
-#include "06-algebra-deepening/05-rational-expressions.typ"
-#include "06-algebra-deepening/05a-rational-operations.typ"
-#include "06-algebra-deepening/05b-rational-equations.typ"
-#include "06-algebra-deepening/06-linear-equations.typ"
-#include "06-algebra-deepening/07-foundation-summary.typ"
-#include "06-algebra-deepening/08-systems-of-equations.typ"
-#include "06-algebra-deepening/09-quadratic-equations.typ"
-#include "06-algebra-deepening/10-inequalities.typ"
-#include "06-algebra-deepening/11-review.typ"
+// c 域：符号（字母式 + 整式 + 幂 + 因式分解 + 方程/不等式/分式）
+= 符号
+#include "c-symbols/_overview-from-06-algebra-deepening.typ"
+#include "c-symbols/c01-variable.typ"
+#include "c-symbols/c04-equation.typ"
+#include "c-symbols/c07-polynomial.typ"
+#include "c-symbols/c12-polynomial-multiply.typ"
+#include "c-symbols/c15-power-notation.typ"
+#include "c-symbols/c18-zero-exponent.typ"
+#include "c-symbols/c21-factorization.typ"
+#include "c-symbols/c25-rational-expression.typ"
+#include "c-symbols/c28-common-denominator.typ"
+#include "c-symbols/c31-rational-equation.typ"
+#include "c-symbols/c34-linear-equation.typ"
+#include "c-symbols/_foundation-summary-from-06-algebra-deepening.typ"
+#include "c-symbols/c37-system-of-equations.typ"
+#include "c-symbols/c40-quadratic-equation.typ"
+#include "c-symbols/c45-inequality.typ"
+#include "c-symbols/_review-from-06-algebra-deepening.typ"
 
-// 第 7 章：几何深化（初中 7-9 年级）
-= 几何深化
-#include "07-geometry-deepening/00-overview.typ"
-#include "07-geometry-deepening/01-congruence-proof-entry.typ"
-#include "07-geometry-deepening/02-rigidity-criteria-i.typ"
-#include "07-geometry-deepening/03-rigidity-criteria-ii.typ"
-#include "07-geometry-deepening/04-similar-triangles.typ"
-#include "07-geometry-deepening/05-quadrilaterals.typ"
-#include "07-geometry-deepening/05a-special-quadrilaterals.typ"
-#include "07-geometry-deepening/06-circles.typ"
-#include "07-geometry-deepening/07-foundation-summary.typ"
-#include "07-geometry-deepening/08-pythagorean-theorem.typ"
-#include "07-geometry-deepening/09-trigonometric-ratios.typ"
-#include "07-geometry-deepening/10-angle-measurement-and-slope.typ"
-#include "07-geometry-deepening/11-transformations.typ"
-#include "07-geometry-deepening/12-projections.typ"
-#include "07-geometry-deepening/13-circle-extensions.typ"
-#include "07-geometry-deepening/14-review.typ"
+// d 域：几何证明（全等/相似/圆/勾股/三角比/变换/视图）
+= 几何证明
+#include "d-geometry-proof/_overview-from-07-geometry-deepening.typ"
+#include "d-geometry-proof/d01-congruence-definition.typ"
+#include "d-geometry-proof/d04-sss-criterion.typ"
+#include "d-geometry-proof/d07-asa-criterion.typ"
+#include "d-geometry-proof/d10-similar-triangles.typ"
+#include "d-geometry-proof/d14-quadrilateral-angle-sum.typ"
+#include "d-geometry-proof/d17-rectangle.typ"
+#include "d-geometry-proof/d20-radius-linking.typ"
+#include "d-geometry-proof/_foundation-summary-from-07-geometry-deepening.typ"
+#include "d-geometry-proof/d23-pythagorean-theorem.typ"
+#include "d-geometry-proof/d26-trigonometric-ratios.typ"
+#include "d-geometry-proof/d29-elevation-depression.typ"
+#include "d-geometry-proof/d32-rigid-transformations.typ"
+#include "d-geometry-proof/d35-orthographic-projection.typ"
+#include "d-geometry-proof/d37-regular-polygon-inscribed.typ"
+#include "d-geometry-proof/_review-from-07-geometry-deepening.typ"
 
-// 第 8 章：函数模型（初中 8-9 年级）
-= 函数模型
-#include "08-function-models/00-overview.typ"
-#include "08-function-models/01-linear-functions.typ"
-#include "08-function-models/02-inverse-proportion.typ"
-#include "08-function-models/03-foundation-summary.typ"
-#include "08-function-models/04-quadratic-functions.typ"
-#include "08-function-models/05-rate-change-models.typ"
-#include "08-function-models/06-review.typ"
+// e 域：函数（一次/反比例/二次 + 增长模型）
+= 函数
+#include "e-functions/_overview-from-08-function-models.typ"
+#include "e-functions/e01-function-concept.typ"
+#include "e-functions/e04-inverse-proportion.typ"
+#include "e-functions/_foundation-summary-from-08-function-models.typ"
+#include "e-functions/e05-quadratic-function.typ"
+#include "e-functions/e08-additive-growth.typ"
+#include "e-functions/_review-from-08-function-models.typ"
 
-// 第 9 章：数据统计（初中 7-9 年级）
-= 数据统计
-#include "09-data-statistics/00-overview.typ"
-#include "09-data-statistics/01-data-collection.typ"
-#include "09-data-statistics/02-central-tendency.typ"
-#include "09-data-statistics/03-variability.typ"
-#include "09-data-statistics/04-frequency-distribution.typ"
-#include "09-data-statistics/05-foundation-summary.typ"
-#include "09-data-statistics/06-probability.typ"
-#include "09-data-statistics/07-probability-experiments.typ"
-#include "09-data-statistics/08-sampling-estimation.typ"
-#include "09-data-statistics/09-review.typ"
+// f 域：数据（描述统计 + 频率分布 + 概率 + 抽样）
+= 数据
+#include "f-data/_overview-from-09-data-statistics.typ"
+#include "f-data/f01-frequency-count.typ"
+#include "f-data/f04-mean.typ"
+#include "f-data/f07-range.typ"
+#include "f-data/f09-frequency-distribution-table.typ"
+#include "f-data/_foundation-summary-from-09-data-statistics.typ"
+#include "f-data/f11-sample-space.typ"
+#include "f-data/f14-experimental-probability.typ"
+#include "f-data/f16-population-sample.typ"
+#include "f-data/_review-from-09-data-statistics.typ"
 
-// 第 10 章：终章综合
+// 终章综合
 = 终章综合
-#include "10-capstone/00-overview.typ"
-#include "10-capstone/invention-tree.typ"
-#include "10-capstone/review.typ"
-#include "10-capstone/whats-next.typ"
+#include "capstone/00-overview.typ"
+#include "capstone/invention-tree.typ"
+#include "capstone/review.typ"
+#include "capstone/whats-next.typ"

@@ -62,7 +62,26 @@
 
 // ── 交叉引用（沿用 V1）──────────────────────────────────────────
 
-#let secref(id) = link(label("sec-" + id.replace(".", "-")), [§#id])
+// id 形式:
+//   tool-id:  "a01-natural-number" → label("tool:a01-natural-number"),显示 §a01
+//   meta 节号: "5.1" → label("meta:...") 由调用方保证存在,显示 §5.1
+#let _meta-label = (
+  "5.1": "meta:foundation-check",
+  "5.2": "meta:branch-entry-recaps",
+  "6.7": "meta:c-foundation-summary",
+  "7.7": "meta:d-foundation-summary",
+  "8.3": "meta:e-foundation-summary",
+  "9.5": "meta:f-foundation-summary",
+)
+#let secref(id) = {
+  if id in _meta-label {
+    link(label(_meta-label.at(id)), [§#id])
+  } else {
+    // tool-id: 取第一段作为显示名
+    let short = id.split("-").at(0)
+    link(label("tool:" + id), [§#short])
+  }
+}
 #let secrange(from, to) = [#secref(from)--#secref(to)]
 
 // ── 四段发明链函数（对话框式：边框 + 标题栏浅色背景，正文白底）────
