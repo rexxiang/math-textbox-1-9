@@ -33,3 +33,21 @@ clean:
 
 _docker-image:
 	docker build -t $(TYPST_IMAGE) .
+
+# ── 知识图谱 DAG 验证 ────────────────────────────────────────────────────────
+
+PYTHON_IMAGE := python:3.12-alpine
+KG_MD        := docs/knowledge-graph/tool-dependencies.md
+DOCKER_RUN   := docker run --rm -v "$$(pwd):/book" -w /book $(PYTHON_IMAGE)
+
+.PHONY: kg-validate kg-topo
+
+## kg-validate: MD → YAML (stdout) | 验证 DAG（无环/无缺失引用/无通配符）
+kg-validate:
+	$(DOCKER_RUN) sh -c "python scripts/md_to_yaml.py $(KG_MD) | python scripts/validate_dag.py"
+
+## kg-topo: 输出拓扑序到文件（供章节重排参考）
+kg-topo:
+	$(DOCKER_RUN) sh -c "python scripts/md_to_yaml.py $(KG_MD) | python scripts/validate_dag.py" \
+		> docs/knowledge-graph/topo-order.txt
+	@echo "拓扑序写出到 docs/knowledge-graph/topo-order.txt"
