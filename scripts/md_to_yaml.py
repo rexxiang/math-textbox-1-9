@@ -71,15 +71,15 @@ def parse_prereq_cell(cell: str) -> tuple[list[str], list[str]]:
 
 def parse_md(md_path: Path) -> list[dict]:
     tools: list[dict] = []
-    current_domain: int | None = None
+    current_domain: str | None = None
 
     with md_path.open(encoding="utf-8") as f:
         for line in f:
             line = line.rstrip("\n")
 
-            m = re.match(r"^## 第\s*(\d+)\s*域", line)
+            m = re.match(r"^## ([a-f])-[a-z-]+ — ", line)
             if m:
-                current_domain = int(m.group(1))
+                current_domain = m.group(1)
                 continue
 
             if not line.startswith("|"):
@@ -155,7 +155,7 @@ def dump_yaml(tools: list[dict]) -> None:
         print(f"    name_zh: {yaml_str(tool['name_zh'])}")
         print(f"    definition_zh: {yaml_str(tool['definition_zh'])}")
         if tool["domain"] is not None:
-            print(f"    domain: {tool['domain']}")
+            print(f"    domain: {yaml_str(tool['domain'])}")
 
         def print_list(key: str, items: list[str]) -> None:
             if not items:
