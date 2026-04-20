@@ -1,4 +1,5 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
+#import "../lib/diagram-packages.typ": cetz
 
 == §7.6 圆里被锁定的线与角 <sec-7-6>
 
@@ -22,6 +23,36 @@
   *第二步：圆周上的角和圆心看到的角有稳定倍数关系。*
 
   同一段圆周部分，从圆周去看只张开一半。
+
+#figure(
+  cetz.canvas(length: 1.5cm, {
+    import cetz.draw: *
+    // Circle centered at O=(2,2) radius 1.8
+    let O = (2, 2)
+    circle(O, radius: 1.8, stroke: 0.7pt)
+    circle(O, radius: 0.05, fill: black, stroke: none)
+    content(O, $O$, anchor: "south-east", padding: 3pt)
+    // Points A, B on circle (bottom arc), C on top arc
+    let A = (0.55, 0.80)   // angle ~215deg
+    let B = (3.45, 0.80)   // angle ~325deg
+    let C = (2.0, 3.8)     // angle ~90deg
+    circle(A, radius: 0.05, fill: black, stroke: none)
+    circle(B, radius: 0.05, fill: black, stroke: none)
+    circle(C, radius: 0.05, fill: black, stroke: none)
+    content(A, $A$, anchor: "north-east", padding: 3pt)
+    content(B, $B$, anchor: "north-west", padding: 3pt)
+    content(C, $C$, anchor: "south", padding: 3pt)
+    // Central angle AOB
+    line(O, A, stroke: (paint: blue, thickness: 0.7pt))
+    line(O, B, stroke: (paint: blue, thickness: 0.7pt))
+    content((2.0, 1.7), text(8pt, fill: blue)[$angle A O B$])
+    // Inscribed angle ACB
+    line(C, A, stroke: (paint: eastern, thickness: 0.7pt))
+    line(C, B, stroke: (paint: eastern, thickness: 0.7pt))
+    content((2.0, 3.2), text(8pt, fill: eastern)[$angle A C B$])
+  }),
+  caption: [圆心角 $angle AOB$（蓝色）是圆周角 $angle ACB$（绿色）的两倍：它们对应同一段弧 $overparen(AB)$]
+)
 
   *第三步：圆心向那条线段作垂线，常常会把它平分。*
 
@@ -63,6 +94,40 @@
   若圆心向圆上一条线段作垂线，那么这条垂线会把那条线段平分；反过来，经过这条线段中点的半径也与它垂直。
 
   它背后的证明仍然没有换：左右两边会组成两个全等的直角三角形。
+
+#figure(
+  cetz.canvas(length: 1.4cm, {
+    import cetz.draw: *
+    // Circle centered at O
+    let O = (2, 2)
+    circle(O, radius: 1.6, stroke: 0.7pt)
+    circle(O, radius: 0.05, fill: black, stroke: none)
+    content(O, $O$, anchor: "south-east", padding: 3pt)
+    // Chord AB (horizontal)
+    let A = (0.55, 2)
+    let B = (3.45, 2)
+    line(A, B, stroke: 0.7pt)
+    circle(A, radius: 0.05, fill: black, stroke: none)
+    circle(B, radius: 0.05, fill: black, stroke: none)
+    content(A, $A$, anchor: "east", padding: 3pt)
+    content(B, $B$, anchor: "west", padding: 3pt)
+    // Midpoint H
+    let H = (2, 2)
+    circle(H, radius: 0.05, fill: black, stroke: none)
+    content(H, $H$, anchor: "north-east", padding: 3pt)
+    // Perpendicular from O to AB (vertical)
+    line(O, (2, 2), stroke: (paint: blue, thickness: 0.7pt))
+    // Right angle mark at H
+    line((2, 2.25), (2.25, 2.25), stroke: 0.5pt)
+    line((2.25, 2.25), (2.25, 2), stroke: 0.5pt)
+    // Line from O going through H to edge
+    line((2, 0.4), (2, 3.6), stroke: (paint: blue, thickness: 0.5pt, dash: "dashed"))
+    content((2.15, 1.2), text(8pt, fill: blue)[$O H bot A B$])
+    content((1.25, 2.3), text(7pt)[$A H$])
+    content((2.75, 2.3), text(7pt)[$H B$])
+  }),
+  caption: [垂径性质：过圆心作弦 $AB$ 的垂线，垂足 $H$ 是弦的中点，即 $AH = HB$]
+)
 
   *例 1*：一条圆周部分所对的中心角是 $80 degree$。求同一部分所对的圆周角。
 

@@ -1,4 +1,5 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
+#import "../lib/diagram-packages.typ": cetz
 
 == §7.9 三角比：让角度先变成稳定比例 <sec-7-9>
 
@@ -51,6 +52,34 @@
   若两个直角三角形都含有锐角 $A$，那么它们彼此相似（回看 #secref("7.4")）。所以相对于角 $A$ 的对应边会按同一个倍数一起变，边的比值就不会变。
 
   *二、三角比的定义*
+
+#figure(
+  cetz.canvas(length: 1.5cm, {
+    import cetz.draw: *
+    // Right triangle: angle A at origin, right angle at B
+    let A = (0, 0)
+    let B = (3, 0)
+    let C = (3, 2.2)
+    line(A, B, stroke: 0.8pt)
+    line(B, C, stroke: 0.8pt)
+    line(C, A, stroke: 0.8pt)
+    // right angle at B
+    line((2.75, 0), (2.75, 0.25), stroke: 0.5pt)
+    line((2.75, 0.25), (3, 0.25), stroke: 0.5pt)
+    // angle arc at A
+    cetz.draw.arc(A, start: 0deg, stop: 35deg, radius: 0.6, stroke: 0.5pt)
+    content((0.75, 0.25), text(8pt)[$A$])
+    // vertex labels
+    content(A, $A$, anchor: "north-east", padding: 3pt)
+    content(B, $B$, anchor: "north-west", padding: 3pt)
+    content(C, $C$, anchor: "south-west", padding: 3pt)
+    // side labels
+    content((1.5, -0.3), text(8pt, fill: blue)[邻边])   // AB = adjacent
+    content((3.3, 1.1), text(8pt, fill: eastern)[对边])  // BC = opposite
+    content((1.2, 1.3), text(8pt, fill: red)[斜边])      // AC = hypotenuse
+  }),
+  caption: [角 $A$ 的对边 $= BC$，邻边 $= AB$，斜边 $= AC$（斜边是直角三角形最长的边，在直角的对面）]
+)
 
   在直角三角形中，对于锐角 $A$：
 

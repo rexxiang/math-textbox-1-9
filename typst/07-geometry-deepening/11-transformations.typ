@@ -1,4 +1,5 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
+#import "../lib/diagram-packages.typ": cetz
 
 == §7.11 图形变换：移动、翻折与旋转中的不变量 <sec-7-11>
 
@@ -26,6 +27,61 @@
   *第三步：旋转和中心对称都围着点转。*
 
   旋转保持到中心的距离不变；中心对称其实就是旋转 $180 degree$ 的特例。
+
+#figure(
+  cetz.canvas(length: 0.9cm, {
+    import cetz.draw: *
+    // --- Left panel: Translation ---
+    // Original triangle
+    let A1 = (0, 0)
+    let B1 = (1.2, 0)
+    let C1 = (0.6, 1.2)
+    line(A1, B1, B1, C1, C1, A1, stroke: 0.6pt)
+    content((0.6, -0.3), text(6pt)[原])
+    // Translated triangle (shift right 2, up 1)
+    let A2 = (2, 1)
+    let B2 = (3.2, 1)
+    let C2 = (2.6, 2.2)
+    line(A2, B2, B2, C2, C2, A2, stroke: (paint: blue, thickness: 0.6pt))
+    content((2.6, 0.7), text(6pt, fill: blue)[平移])
+    // Arrow showing translation
+    line((0.9, 0.7), (1.8, 1.1), stroke: 0.4pt, mark: (end: ">", size: 0.1))
+
+    // --- Middle panel: Reflection ---
+    // Original triangle
+    let A3 = (5, 0)
+    let B3 = (6.2, 0)
+    let C3 = (5.6, 1.2)
+    line(A3, B3, B3, C3, C3, A3, stroke: 0.6pt)
+    // Axis of symmetry
+    line((7, -0.2), (7, 1.8), stroke: (paint: gray, thickness: 0.5pt, dash: "dashed"))
+    content((7, 2.0), text(6pt)[对称轴])
+    // Reflected triangle
+    let A4 = (9, 0)
+    let B4 = (7.8, 0)
+    let C4 = (8.4, 1.2)
+    line(A4, B4, B4, C4, C4, A4, stroke: (paint: eastern, thickness: 0.6pt))
+    content((8.4, 0.7), text(6pt, fill: eastern)[轴对称])
+
+    // --- Right panel: Rotation ---
+    let A5 = (11, 0)
+    let B5 = (12.2, 0)
+    let C5 = (11.6, 1.2)
+    line(A5, B5, B5, C5, C5, A5, stroke: 0.6pt)
+    // Center of rotation
+    circle((12.5, 0), radius: 0.07, fill: red, stroke: none)
+    content((12.5, -0.3), text(6pt, fill: red)[$P$])
+    // Rotated triangle (90 degrees CCW around P=(12.5,0))
+    let A6 = (12.5, 1.5)
+    let B6 = (12.5, 0.3)
+    let C6 = (11.3, 0.9)
+    line(A6, B6, B6, C6, C6, A6, stroke: (paint: red, thickness: 0.6pt))
+    content((11.6, 1.6), text(6pt, fill: red)[旋转])
+    // arc for rotation
+    cetz.draw.arc((12.5, 0), start: 90deg, stop: 180deg, radius: 1.5, stroke: (paint: gray, thickness: 0.4pt, dash: "dashed"))
+  }),
+  caption: [三种变换：平移（蓝，整体移动）、轴对称（绿，翻折）、旋转（红，绕点转动）；原图均为黑色三角形]
+)
 ]
 
 #tryit[

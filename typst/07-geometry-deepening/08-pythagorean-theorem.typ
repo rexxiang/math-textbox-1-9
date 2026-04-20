@@ -1,4 +1,5 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
+#import "../lib/diagram-packages.typ": cetz
 
 == §7.8 勾股定理：把直角三角形变成长度机器 <sec-7-8>
 
@@ -22,6 +23,43 @@
   *第二步：这不是巧合，而是可证明的。*
 
   不管你用赵爽弦图的拼图思路，还是后面熟悉的代数展开，本质都是把同一个大图形的面积用两种方式计算，再令它们相等。
+
+#figure(
+  cetz.canvas(length: 1.2cm, {
+    import cetz.draw: *
+    // Right triangle with legs a=3, b=4, hypotenuse c=5
+    let A = (0, 0)
+    let B = (3, 0)
+    let C = (0, 4)
+    line(A, B, stroke: 0.8pt)
+    line(B, C, stroke: 0.8pt)
+    line(C, A, stroke: 0.8pt)
+    // right angle mark at A
+    line((0.25, 0), (0.25, 0.25), stroke: 0.5pt)
+    line((0, 0.25), (0.25, 0.25), stroke: 0.5pt)
+    // labels for sides
+    content((1.5, -0.3), text(8pt)[$a$])
+    content((-0.3, 2.0), text(8pt)[$b$])
+    content((1.8, 2.2), text(8pt)[$c$])
+    // vertex labels
+    content(A, $A$, anchor: "north-east", padding: 3pt)
+    content(B, $B$, anchor: "north-west", padding: 3pt)
+    content(C, $C$, anchor: "south", padding: 3pt)
+    // square on side a (bottom)
+    line((0,-1.3),(3,-1.3), stroke: 0.6pt)
+    line((0,0),(0,-1.3), stroke: 0.6pt)
+    line((3,0),(3,-1.3), stroke: 0.6pt)
+    content((1.5,-0.65), text(7pt, fill: blue)[$a^2$])
+    // square on side b (left)
+    line((-1.3,0),(-1.3,4), stroke: 0.6pt)
+    line((0,0),(-1.3,0), stroke: 0.6pt)
+    line((0,4),(-1.3,4), stroke: 0.6pt)
+    content((-0.65,2.0), text(7pt, fill: blue)[$b^2$])
+    // label hypotenuse square (just text, not drawn to avoid complexity)
+    content((2.2, 2.8), text(7pt, fill: eastern)[$c^2$])
+  }),
+  caption: [勾股定理：直角三角形三边上作正方形，$a^2 + b^2 = c^2$（面积关系）]
+)
 
   *第三步：逆向也成立。*
 
