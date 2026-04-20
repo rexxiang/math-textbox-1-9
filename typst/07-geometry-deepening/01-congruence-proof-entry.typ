@@ -1,13 +1,15 @@
-#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
 == §7.1 全等与证明入口：先学会“完全重合”怎么说 <sec-7-1>
 
 #vocab[全等 congruent / 对应 correspondence / 证明链 proof chain / 两边和一个非夹角 Side-Side-Angle (SSA)]
 
 #crisis[
-  造桥时，工程师最担心的不是“这两块三角板看起来差不多”，而是“它们到底是不是同一个形状、同一个大小”。如果要把这种“看起来一样”写成真正可靠的几何语言，该从哪里起步？
+  造桥时，工程师最担心的不是”这两块三角板看起来差不多”，而是”它们到底是不是同一个形状、同一个大小”。如果要把这种”看起来一样”写成真正可靠的几何语言，该从哪里起步？
 
-  *什么时候两个三角形算“完全一样”？又怎样把一句几何结论写成一条清清楚楚的证明链？*
+  到 #secref(“3.6B”) 里，你见过对顶角和角的补余关系；到 #secref(“3.7”) 里，截线在平行线间产生的那些相等角；这些旧工具，正是证明两个三角形全等时最常调用的弹药。
+
+  *什么时候两个三角形算”完全一样”？又怎样把一句几何结论写成一条清清楚楚的证明链？*
 ]
 
 #history-note[
