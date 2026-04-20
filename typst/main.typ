@@ -49,6 +49,7 @@
 #include "02-fraction-ratio-foundation/01a-primes-composites.typ"
 #include "02-fraction-ratio-foundation/01b-gcd-lcm.typ"
 #include "02-fraction-ratio-foundation/02-fractions-meaning.typ"
+#include "02-fraction-ratio-foundation/02c-mixed-fraction-property.typ"
 #include "02-fraction-ratio-foundation/02a-fraction-simplify-compare.typ"
 #include "02-fraction-ratio-foundation/02b-fraction-operations.typ"
 #include "02-fraction-ratio-foundation/03-decimals.typ"
@@ -61,6 +62,7 @@
 #include "03-geometry-foundation/00-overview.typ"
 #include "03-geometry-foundation/01-basic-shapes.typ"
 #include "03-geometry-foundation/01a-point-line-plane.typ"
+#include "03-geometry-foundation/01c-ray-plane.typ"
 #include "03-geometry-foundation/01b-perimeter.typ"
 #include "03-geometry-foundation/02-area-volume.typ"
 #include "03-geometry-foundation/03-volume.typ"
@@ -68,6 +70,7 @@
 #include "03-geometry-foundation/03a-angle-types.typ"
 #include "03-geometry-foundation/03b-angle-relations.typ"
 #include "03-geometry-foundation/04-parallel-perpendicular.typ"
+#include "03-geometry-foundation/04a-parallel-angles-perp.typ"
 #include "03-geometry-foundation/05-coordinate-entry.typ"
 #include "03-geometry-foundation/06-review.typ"
 
