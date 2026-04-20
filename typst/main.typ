@@ -46,8 +46,11 @@
 = 分数、比与百分数基础
 #include "02-fraction-ratio-foundation/00-overview.typ"
 #include "02-fraction-ratio-foundation/01-factors-multiples.typ"
-#include "02-fraction-ratio-foundation/01a-primes-common-factors.typ"
-#include "02-fraction-ratio-foundation/02-fractions.typ"
+#include "02-fraction-ratio-foundation/01a-primes-composites.typ"
+#include "02-fraction-ratio-foundation/01b-gcd-lcm.typ"
+#include "02-fraction-ratio-foundation/02-fractions-meaning.typ"
+#include "02-fraction-ratio-foundation/02a-fraction-simplify-compare.typ"
+#include "02-fraction-ratio-foundation/02b-fraction-operations.typ"
 #include "02-fraction-ratio-foundation/03-decimals.typ"
 #include "02-fraction-ratio-foundation/04-ratios-percentages.typ"
 #include "02-fraction-ratio-foundation/05-conversions-and-comparisons.typ"
