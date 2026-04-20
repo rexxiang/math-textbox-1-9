@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §3.8 平行与垂直 <sec-3-8>
+== §3.7 平行与垂直 <sec-3-7>
 
 #vocab[平行 parallel / 垂直 perpendicular / 截线角关系 transversal angle relations]
 

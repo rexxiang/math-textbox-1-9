@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §3.3 角、直角与度量 <sec-3-3>
+== §3.6 角、直角与度量 <sec-3-6>
 
 #vocab[角 angle / 直角 right angle / 度 degree]
 

@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §3.1A 点、线与平面 <sec-3-1A>
+== §3.2 点、线与平面 <sec-3-2>
 
 #vocab[点 point / 线的三种样子 line objects / 平面 plane]
 

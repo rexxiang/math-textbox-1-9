@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §3.1B 周长与一圈长度 <sec-3-1B>
+== §3.3 周长与一圈长度 <sec-3-3>
 
 #vocab[周长 perimeter / 长方形周长 rectangle perimeter / 圆周长 circumference]
 

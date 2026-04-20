@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, side-hack, vocab, tryit, pitfall
 
-== §3.3A 锐角、钝角与平角 <sec-3-3A>
+== §3.6A 锐角、钝角与平角 <sec-3-6A>
 
 #vocab[锐角 acute angle / 钝角 obtuse angle / 平角 straight angle]
 
