@@ -97,6 +97,7 @@
 #include "06-algebra-deepening/01-algebraic-expressions.typ"
 #include "06-algebra-deepening/02-polynomial-multiplication.typ"
 #include "06-algebra-deepening/03-power-notation.typ"
+#include "06-algebra-deepening/03a-power-rules.typ"
 #include "06-algebra-deepening/04-factorization.typ"
 #include "06-algebra-deepening/05-rational-expressions.typ"
 #include "06-algebra-deepening/05a-rational-operations.typ"
