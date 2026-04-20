@@ -61,3 +61,41 @@
   [$S^2$], [方差], [表示一组数据离平均数有多分散],
   [$P(A)$], [事件 $A$ 的概率], [表示某件事发生的可能性大小],
 )
+
+=== 数论缩写
+
+#table(
+  columns: (auto, auto, 1fr),
+  inset: 8pt,
+  stroke: 0.4pt,
+  table.header([*缩写*], [*英文全称*], [*含义*]),
+  [GCD], [Greatest Common Divisor], [最大公因数——两个整数公有因数中最大的那个],
+  [LCM], [Least Common Multiple], [最小公倍数——两个整数公有倍数中最小的那个（0 除外）],
+)
+
+=== 三角函数
+
+#table(
+  columns: (auto, auto, 1fr),
+  inset: 8pt,
+  stroke: 0.4pt,
+  table.header([*缩写*], [*英文全称*], [*含义*]),
+  [sin], [Sine], [正弦——直角三角形中，某锐角的对边比斜边],
+  [cos], [Cosine], [余弦——直角三角形中，某锐角的邻边比斜边],
+  [tan], [Tangent], [正切——直角三角形中，某锐角的对边比邻边],
+)
+
+=== 几何判定条件
+
+#table(
+  columns: (auto, auto, 1fr),
+  inset: 8pt,
+  stroke: 0.4pt,
+  table.header([*缩写*], [*英文全称*], [*含义*]),
+  [SSS], [Side-Side-Side], [三边全等判定——三组对应边相等，则两三角形全等],
+  [SAS], [Side-Angle-Side], [两边夹角全等判定——两组对应边及其夹角相等，则全等],
+  [ASA], [Angle-Side-Angle], [两角夹边全等判定——两组对应角及其夹边相等，则全等],
+  [AAS], [Angle-Angle-Side], [两角及其对边全等判定——两组对应角和任一对应边相等，则全等],
+  [HL], [Hypotenuse-Leg], [斜边直角边全等判定——仅适用于直角三角形，斜边和一直角边对应相等，则全等],
+  [AA], [Angle-Angle], [两角相似判定——两组对应角相等，则两三角形相似],
+)
