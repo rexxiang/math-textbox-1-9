@@ -138,7 +138,7 @@
 #include "09-data-statistics/05-foundation-summary.typ"
 #include "09-data-statistics/06-probability.typ"
 #include "09-data-statistics/07-probability-experiments.typ"
-#include "09-data-statistics/07-sampling-estimation.typ"
+#include "09-data-statistics/08-sampling-estimation.typ"
 #include "09-data-statistics/08-review.typ"
 
 // 第 10 章：终章综合
