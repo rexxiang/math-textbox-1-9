@@ -112,11 +112,13 @@
 
   *挑战*
 
-  + 用一句话比较：`ASA`、`AAS` 为什么都可以，而“只有两角”为什么还不够？
+  + *挑战 1（AAS 证明）*：已知 $triangle A B C$ 中 $angle B = angle C$，且 $B D perp A C$ 于 $D$，$C E perp A B$ 于 $E$。证明 $B D = C E$。
 
-  + 为什么 `HL` 可以看成“直角已经替你先送出了一部分条件”？
+    （提示：先找到两个包含 $B D$ 和 $C E$ 的三角形，证明它们全等，再用对应元素相等得出结论。考虑 $triangle B D C$ 和 $triangle C E B$。）
 
-  + 若两个三角形已经有两角相等，再补哪一类边信息，就能从“相似风险”升级到“全等确定”？请分别举出 `ASA` 与 `AAS` 的说法。
+  + *挑战 2（HL 证明）*：两个直角三角形 $triangle A B C$ 和 $triangle D E F$，$angle B = angle E = 90 degree$，斜边 $A C = D F$，且直角边 $A B = D E$。
+    - 用 HL 判定说明 $triangle A B C tilde.eq triangle D E F$
+    - 由此能得出什么结论？（对应元素还相等哪些？）
 
   #line(length: 100%, stroke: 0.3pt + luma(200))
   _参考答案：_
@@ -139,9 +141,12 @@
 
   *挑战*
 
-  + 因为 `ASA`、`AAS` 都额外给出了一条边，既锁住了方向，也锁住了大小；而只有两角时，大小还可以一起放大缩小。
+  挑战 1 答案：考虑 $triangle B D C$ 和 $triangle C E B$：
+  - $angle B D C = angle C E B = 90 degree$（直角，因为 $B D perp A C$、$C E perp A B$）
+  - $B C = C B$（公共边）
+  - $angle D B C = angle E C B$（即 $angle B = angle C$，已知）
 
-  + 因为“都是直角三角形”这件事，已经先把一个角固定成同样的 $90 degree$ 了。
+  由 AAS 知 $triangle B D C tilde.eq triangle C E B$，所以 $B D = C E$（对应边）。
 
-  + 可补夹边，对应 `ASA`；也可补其中一角的对边，对应 `AAS`。
+  挑战 2 答案：$angle B = angle E = 90 degree$（直角），$A C = D F$（斜边相等），$A B = D E$（直角边相等），满足 HL，所以 $triangle A B C tilde.eq triangle D E F$。由此 $B C = E F$（对应直角边也相等）、$angle A = angle D$、$angle C = angle F$。
 ]
