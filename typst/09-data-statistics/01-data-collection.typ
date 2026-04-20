@@ -1,4 +1,5 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../lib/diagram-packages.typ": cetz
 
 == §9.1 数据收集与整理 <sec-9-1>
 
@@ -100,6 +101,58 @@
     [各类别谁多谁少], [条形图],
     [随时间怎样变化], [折线图],
     [各部分占整体多少], [扇形图],
+  )
+
+  #figure(
+    cetz.canvas(length: 0.75cm, {
+      import cetz.draw: *
+
+      // == 条形图 (left panel, x: 0-4) ==
+      content((2, 5.2), text(8pt, weight: "bold")[条形图], anchor: "south")
+      line((0, 0), (0, 4.5), stroke: 0.6pt, mark: (end: ">", size: 0.10))
+      line((0, 0), (4, 0), stroke: 0.6pt, mark: (end: ">", size: 0.10))
+      // 3 bars: heights 2.4, 3.6, 1.8 (representing counts)
+      rect((0.3, 0), (1.1, 2.4), fill: blue.lighten(70%), stroke: 0.4pt)
+      rect((1.4, 0), (2.2, 3.6), fill: blue.lighten(70%), stroke: 0.4pt)
+      rect((2.5, 0), (3.3, 1.8), fill: blue.lighten(70%), stroke: 0.4pt)
+      content((0.7, -0.3), text(6pt)[甲], anchor: "north")
+      content((1.8, -0.3), text(6pt)[乙], anchor: "north")
+      content((2.9, -0.3), text(6pt)[丙], anchor: "north")
+
+      // == 折线图 (middle panel, x: 5-9) ==
+      content((7, 5.2), text(8pt, weight: "bold")[折线图], anchor: "south")
+      line((5, 0), (5, 4.5), stroke: 0.6pt, mark: (end: ">", size: 0.10))
+      line((5, 0), (9, 0), stroke: 0.6pt, mark: (end: ">", size: 0.10))
+      let pts = ((5.5, 1.2), (6.2, 2.4), (6.9, 1.8), (7.6, 3.2), (8.3, 2.6))
+      line(..pts, stroke: (paint: eastern, thickness: 0.7pt))
+      circle((5.5, 1.2), radius: 0.07, fill: eastern, stroke: none)
+      circle((6.2, 2.4), radius: 0.07, fill: eastern, stroke: none)
+      circle((6.9, 1.8), radius: 0.07, fill: eastern, stroke: none)
+      circle((7.6, 3.2), radius: 0.07, fill: eastern, stroke: none)
+      circle((8.3, 2.6), radius: 0.07, fill: eastern, stroke: none)
+      content((5.5, -0.3), text(6pt)[一], anchor: "north")
+      content((6.2, -0.3), text(6pt)[二], anchor: "north")
+      content((6.9, -0.3), text(6pt)[三], anchor: "north")
+      content((7.6, -0.3), text(6pt)[四], anchor: "north")
+      content((8.3, -0.3), text(6pt)[五], anchor: "north")
+
+      // == 扇形图 (right panel, center: 12, 2.5) ==
+      content((12, 5.2), text(8pt, weight: "bold")[扇形图], anchor: "south")
+      let cx = 12.0
+      let cy = 2.5
+      let r = 1.8
+      // Sectors: 40% = 144°, 35% = 126° (144→270), 25% = 90° (270→360)
+      cetz.draw.arc((cx, cy), start: 0deg, stop: 144deg, radius: r,
+        fill: blue.lighten(60%), stroke: 0.4pt, mode: "PIE")
+      cetz.draw.arc((cx, cy), start: 144deg, stop: 270deg, radius: r,
+        fill: eastern.lighten(60%), stroke: 0.4pt, mode: "PIE")
+      cetz.draw.arc((cx, cy), start: 270deg, stop: 360deg, radius: r,
+        fill: red.lighten(70%), stroke: 0.4pt, mode: "PIE")
+      content((12.8, 3.6), text(6pt)[40%])
+      content((11.0, 4.0), text(6pt)[35%])
+      content((13.2, 1.6), text(6pt)[25%])
+    }),
+    caption: [三种常见统计图：条形图（比较各类别大小）、折线图（反映随时间变化趋势）、扇形图（显示各部分占整体比例）]
   )
 
   把这套流程换到另一组数据里，做法并不会变。某班图书角借阅统计：文学 15 本，科学 9 本，历史 6 本，艺术 10 本。

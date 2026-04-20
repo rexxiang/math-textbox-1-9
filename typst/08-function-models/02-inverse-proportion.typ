@@ -1,4 +1,5 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, vocab, side-hack, secref, tryit, pitfall
+#import "../lib/diagram-packages.typ": cetz
 
 == §8.2 反比例函数：固定乘积的变化模型 <sec-8-2>
 
@@ -90,6 +91,32 @@
   - 曲线不断靠近坐标轴，但不会真正碰到坐标轴
 
   这和一次函数很不一样：一次函数是直线，反比例函数是弯曲的，而且越靠近坐标轴变化越剧烈。
+
+  #figure(
+    cetz.canvas(length: 0.85cm, {
+      import cetz.draw: *
+      // axes
+      line((-3.5, 0), (3.5, 0), stroke: 0.7pt, mark: (start: ">", end: ">", size: 0.12))
+      line((0, -3.5), (0, 3.5), stroke: 0.7pt, mark: (start: ">", end: ">", size: 0.12))
+      content((3.5, 0), $x$, anchor: "west", padding: 2pt)
+      content((0, 3.5), $y$, anchor: "south", padding: 2pt)
+      content((0, 0), $O$, anchor: "north-east", padding: 3pt)
+      // k>0: y = 6/x, first and third quadrants
+      // first quadrant branch: from x=0.5 to x=3
+      catmull((0.5, 3.0), (1.0, 2.0), (2.0, 1.0), (3.0, 0.67), stroke: (paint: blue, thickness: 0.8pt))
+      // third quadrant branch: from x=-3 to x=-0.5
+      catmull((-3.0, -0.67), (-2.0, -1.0), (-1.0, -2.0), (-0.5, -3.0), stroke: (paint: blue, thickness: 0.8pt))
+      // k<0: y = -6/x, second and fourth quadrants
+      // second quadrant: from x=-3 to x=-0.5
+      catmull((-3.0, 0.67), (-2.0, 1.0), (-1.0, 2.0), (-0.5, 3.0), stroke: (paint: eastern, thickness: 0.8pt))
+      // fourth quadrant: from x=0.5 to x=3
+      catmull((0.5, -3.0), (1.0, -2.0), (2.0, -1.0), (3.0, -0.67), stroke: (paint: eastern, thickness: 0.8pt))
+      // labels
+      content((3.2, 1.5), text(8pt, fill: blue)[$k{>}0$], anchor: "west")
+      content((3.2, -1.5), text(8pt, fill: eastern)[$k{<}0$], anchor: "west")
+    }),
+    caption: [反比例函数 $y = k/x$ 的图象：$k > 0$ 时在第一、三象限（蓝色），$k < 0$ 时在第二、四象限（绿色）；曲线靠近但不接触坐标轴]
+  )
 
   *四、怎样求比例系数 $k$？*
 

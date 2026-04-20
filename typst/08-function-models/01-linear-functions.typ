@@ -1,4 +1,5 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, vocab, side-hack, secref, tryit, pitfall
+#import "../lib/diagram-packages.typ": cetz
 
 == §8.1 一次函数：稳定变化的第一模型 <sec-8-1>
 
@@ -127,6 +128,31 @@
 
   - 令 $x = 0$，得到 $(0, b)$
   - 再任选一个方便的 $x$ 求对应 $y$
+
+  #figure(
+    cetz.canvas(length: 0.85cm, {
+      import cetz.draw: *
+      // axes
+      line((-3.5, 0), (4.5, 0), stroke: 0.7pt, mark: (end: ">", size: 0.15))
+      line((0, -2.5), (0, 4.5), stroke: 0.7pt, mark: (end: ">", size: 0.15))
+      content((4.5, 0), $x$, anchor: "west", padding: 3pt)
+      content((0, 4.5), $y$, anchor: "south", padding: 3pt)
+      content((0, 0), $O$, anchor: "north-east", padding: 3pt)
+      // y = 2x - 2 (k=2, b=-2): passes (0,-2) and (3,4)
+      line((-1, -4), (3, 4), stroke: (paint: blue, thickness: 0.8pt))
+      circle((0, -2), radius: 0.07, fill: blue, stroke: none)
+      content((0, -2), text(8pt)[$b{=}{-}2$], anchor: "west", padding: 3pt)
+      // y = 2x (k=2, b=0): passes (0,0) and (2,4)
+      line((-2, -4), (2, 4), stroke: (paint: eastern, thickness: 0.8pt))
+      // labels
+      content((3.2, 3.5), text(8pt, fill: blue)[$y{=}2x{-}2$], anchor: "west")
+      content((2.2, 3.5), text(8pt, fill: eastern)[$y{=}2x$], anchor: "east")
+      // tick at x=1 to show slope
+      content((1.5, -0.35), text(7pt)[$1$])
+      content((-0.35, 1.5), text(7pt)[$k{=}2$])
+    }),
+    caption: [一次函数（蓝）与正比例函数（绿）的图象对比：$k$ 控制斜率，$b$ 控制纵截距]
+  )
 
   例 1：出租车收费“起步价 13 元，每公里 2.3 元”。设里程为 $x$ 千米，车费为 $y$ 元。
 

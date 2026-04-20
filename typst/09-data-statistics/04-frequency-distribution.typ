@@ -90,23 +90,48 @@
   #figure(
     cetz.canvas(length: 0.85cm, {
       import cetz.draw: *
-      line((0, 0), (0, 4.1), stroke: 0.7pt)
-      line((0, 0), (5.8, 0), stroke: 0.7pt)
-
-      rect((0.6, 0), (1.5, 0.8), fill: teal.lighten(80%), stroke: 0.5pt)
-      rect((1.5, 0), (2.4, 1.9), fill: teal.lighten(74%), stroke: 0.5pt)
-      rect((2.4, 0), (3.3, 3.0), fill: teal.lighten(68%), stroke: 0.5pt)
-      rect((3.3, 0), (4.2, 2.4), fill: teal.lighten(74%), stroke: 0.5pt)
-      rect((4.2, 0), (5.1, 1.1), fill: teal.lighten(80%), stroke: 0.5pt)
-
-      content((0, 4.25), text(8pt)[人数], anchor: "south-west")
+      // y-axis scale: 1 person = 0.37 units; max=10 → 3.7 units
+      let scale = 0.37
+      // x/y axes with arrows
+      line((0, 0), (0, 4.2), stroke: 0.7pt, mark: (end: ">", size: 0.12))
+      line((0, 0), (5.9, 0), stroke: 0.7pt, mark: (end: ">", size: 0.12))
+      // y-axis ticks and labels (2,4,6,8,10)
+      let n = 2
+      let y = n * scale
+      line((-0.12, y), (0, y), stroke: 0.5pt)
+      content((-0.15, y), text(7pt)[#n], anchor: "east")
+      let n = 4
+      let y = n * scale
+      line((-0.12, y), (0, y), stroke: 0.5pt)
+      content((-0.15, y), text(7pt)[#n], anchor: "east")
+      let n = 6
+      let y = n * scale
+      line((-0.12, y), (0, y), stroke: 0.5pt)
+      content((-0.15, y), text(7pt)[#n], anchor: "east")
+      let n = 8
+      let y = n * scale
+      line((-0.12, y), (0, y), stroke: 0.5pt)
+      content((-0.15, y), text(7pt)[#n], anchor: "east")
+      let n = 10
+      let y = n * scale
+      line((-0.12, y), (0, y), stroke: 0.5pt)
+      content((-0.15, y), text(7pt)[#n], anchor: "east")
+      // axis labels
+      content((0, 4.3), text(8pt)[人数], anchor: "south-west")
       content((5.95, 0), text(8pt)[分数], anchor: "west")
+      // x-axis labels
       content((0.6, -0.35), text(7pt)[50])
       content((1.5, -0.35), text(7pt)[60])
       content((2.4, -0.35), text(7pt)[70])
       content((3.3, -0.35), text(7pt)[80])
       content((4.2, -0.35), text(7pt)[90])
       content((5.1, -0.35), text(7pt)[100])
+      // bars: data = (2,6,10,8,4), proportional heights
+      rect((0.6, 0), (1.5, 2 * scale), fill: teal.lighten(75%), stroke: 0.5pt)
+      rect((1.5, 0), (2.4, 6 * scale), fill: teal.lighten(75%), stroke: 0.5pt)
+      rect((2.4, 0), (3.3, 10 * scale), fill: teal.lighten(75%), stroke: 0.5pt)
+      rect((3.3, 0), (4.2, 8 * scale), fill: teal.lighten(75%), stroke: 0.5pt)
+      rect((4.2, 0), (5.1, 4 * scale), fill: teal.lighten(75%), stroke: 0.5pt)
     }),
     caption: [示意图：成绩主要集中在 $70 tilde 90$ 分之间]
   )

@@ -1,4 +1,5 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../lib/diagram-packages.typ": cetz
 
 == §8.4 二次函数：弯曲变化与最值模型 <sec-8-4>
 
@@ -37,6 +38,40 @@
   - 中间的 $x = 2$ 给出了最高点
 
   如果把这些点画到坐标图上，再平滑地连起来，就会看到：这不是直线，而是一条关于 $x = 2$ 左右对称的弯曲轨迹。
+
+  #figure(
+    cetz.canvas(length: 1.0cm, {
+      import cetz.draw: *
+      // axes
+      line((-0.5, 0), (5.0, 0), stroke: 0.7pt, mark: (end: ">", size: 0.15))
+      line((0, -0.5), (0, 3.0), stroke: 0.7pt, mark: (end: ">", size: 0.15))
+      content((5.0, 0), $x$, anchor: "west", padding: 3pt)
+      content((0, 3.0), $y$, anchor: "south", padding: 3pt)
+      content((0, 0), $O$, anchor: "north-east", padding: 3pt)
+      // axis of symmetry (dashed)
+      line((2, 0), (2, 2.3), stroke: (paint: gray, thickness: 0.6pt, dash: "dashed"))
+      content((2, -0.35), text(8pt)[$x{=}2$])
+      // data points from table: (0,0),(1,1.5),(2,2),(3,1.5),(4,0)
+      let pts = ((0,0), (1,1.5), (2,2.0), (3,1.5), (4,0))
+      for p in pts {
+        circle(p, radius: 0.07, fill: black, stroke: none)
+      }
+      // parabola curve y = -0.5(x-2)^2 + 2 sampled at many points
+      bezier((0,0), (2,2), (0.8, 2.2), (3.2, 2.2))
+      bezier((2,2), (4,0), (3.2, 2.2), (4.0, 0.5))
+      // vertex label
+      content((2, 2.0), text(8pt)[顶点$(2,2)$], anchor: "south", padding: 4pt)
+      // x axis ticks
+      for xi in (1, 2, 3, 4) {
+        content((xi, -0.3), text(7pt)[#xi])
+      }
+      // y axis ticks
+      for yi in (1, 2) {
+        content((-0.3, yi), text(7pt)[#yi])
+      }
+    }),
+    caption: [表格中五个数据点连成关于 $x = 2$ 对称的弯曲轨迹（抛物线）]
+  )
 
   所以在研究这类关系时，我们会优先抓住三件事：
 
@@ -104,7 +139,33 @@
   - *顶点位置*：决定最高点或最低点
   - *与 $x$ 轴的交点*：表示函数值回到 $0$ 的位置，可以从图象、表格或情境中读出来
 
-  这一节先把重点放在“会读图、会找顶点、会解释最值”。至于交点，这里先把它当成图象上的“归零位置”来理解：够用来读情境，但还不把这一节改成精确解方程训练。
+  这一节先把重点放在”会读图、会找顶点、会解释最值”。至于交点，这里先把它当成图象上的”归零位置”来理解：够用来读情境，但还不把这一节改成精确解方程训练。
+
+  #figure(
+    cetz.canvas(length: 0.85cm, {
+      import cetz.draw: *
+      // axes for left figure (a>0)
+      line((-0.3, 0), (4.3, 0), stroke: 0.7pt, mark: (end: “>”, size: 0.12))
+      line((2, -0.5), (2, 3.5), stroke: 0.7pt, mark: (end: “>”, size: 0.12))
+      content((4.3, 0), $x$, anchor: “west”, padding: 2pt)
+      content((2, 3.5), $y$, anchor: “south”, padding: 2pt)
+      // parabola opening up: y = (x-2)^2 + 1
+      bezier((0.0, 5.0), (2, 1.0), (0.8, 1.5), (3.2, 1.5))
+      bezier((2, 1.0), (4.0, 5.0), (3.2, 1.5), (4.0, 4.0))
+      // vertex (2,1)
+      circle((2, 1), radius: 0.07, fill: blue, stroke: none)
+      content((2, 1), text(7pt, fill: blue)[$(h,k)$], anchor: “north”, padding: 4pt)
+      // symmetry axis
+      line((2, 0), (2, 1), stroke: (paint: gray, thickness: 0.5pt, dash: “dashed”))
+      content((2, -0.35), text(7pt)[$x{=}h$])
+      // label: a>0
+      content((0.5, 3.0), text(8pt, fill: blue)[$a > 0$])
+      content((0.5, 2.3), text(7pt)[开口向上])
+      // O label
+      content((2, 0), $O$, anchor: “north-east”, padding: 2pt)
+    }),
+    caption: [$a > 0$ 时抛物线开口向上，顶点 $(h, k)$ 是最低点；对称轴为 $x = h$]
+  )
 
   例 1：喷泉模型
 
