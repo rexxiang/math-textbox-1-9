@@ -6,7 +6,6 @@ build/
 
 # Generated docs
 docs/plan/
-docs/review/
 docs/.superpowers/
 
 # macOS
