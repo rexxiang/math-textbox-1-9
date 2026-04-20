@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §4.3 把数轴补完整 <sec-4-3>
+== §4.2 把数轴补完整 <sec-4-2>
 
 #vocab[平方根记号 square root notation / $sqrt(2)$ 表示 2 的算术平方根]
 

@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §4.5 左右一样多的关系 <sec-4-5>
+== §4.4 左右一样多的关系 <sec-4-4>
 
 #vocab[方程 equation / 解 solution]
 
