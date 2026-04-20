@@ -78,7 +78,7 @@
     content((3.3, 1.1), text(8pt, fill: eastern)[对边])  // BC = opposite
     content((1.2, 1.3), text(8pt, fill: red)[斜边])      // AC = hypotenuse
   }),
-  caption: [角 $A$ 的对边 $= BC$，邻边 $= AB$，斜边 $= AC$（斜边是直角三角形最长的边，在直角的对面）]
+  caption: [角 $A$ 的对边 $= B C$，邻边 $= A B$，斜边 $= A C$（斜边是直角三角形最长的边，在直角的对面）]
 )
 
   在直角三角形中，对于锐角 $A$：

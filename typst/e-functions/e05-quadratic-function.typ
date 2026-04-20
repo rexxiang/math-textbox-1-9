@@ -145,8 +145,8 @@
     cetz.canvas(length: 0.85cm, {
       import cetz.draw: *
       // axes for left figure (a>0)
-      line((-0.3, 0), (4.3, 0), stroke: 0.7pt, mark: (end: “>”, size: 0.12))
-      line((2, -0.5), (2, 3.5), stroke: 0.7pt, mark: (end: “>”, size: 0.12))
+      line((-0.3, 0), (4.3, 0), stroke: 0.7pt, mark: (end: ">", size: 0.12))
+      line((2, -0.5), (2, 3.5), stroke: 0.7pt, mark: (end: ">", size: 0.12))
       content((4.3, 0), $x$, anchor: "west", padding: 2pt)
       content((2, 3.5), $y$, anchor: "south", padding: 2pt)
       // parabola opening up: y = (x-2)^2 + 1

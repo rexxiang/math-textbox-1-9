@@ -50,6 +50,8 @@
 #include "../foundation-gate/01-foundation-check.typ"
 #include "../foundation-gate/02-branch-entry-recaps.typ"
 #include "../foundation-gate/03-review.typ"
+#include "../c-symbols/c01-variable.typ"
+#include "../c-symbols/c04-equation.typ"
 #include "../e-functions/_overview-from-08-function-models.typ"
 #include "../e-functions/e01-function-concept.typ"
 #include "../e-functions/e04-inverse-proportion.typ"

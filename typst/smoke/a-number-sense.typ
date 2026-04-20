@@ -6,6 +6,8 @@
 
 = 烟雾测试：a 域 数感
 
+#include "../c-symbols/c01-variable.typ"
+#include "../c-symbols/c04-equation.typ"
 #include "../a-number-sense/_overview-from-01-counting.typ"
 #include "../a-number-sense/_overview-from-02-fraction-ratio-foundation.typ"
 #include "../a-number-sense/_overview-from-04-number-line-algebra-bridge.typ"
