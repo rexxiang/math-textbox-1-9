@@ -117,6 +117,7 @@
 #include "07-geometry-deepening/03-rigidity-criteria-ii.typ"
 #include "07-geometry-deepening/04-similar-triangles.typ"
 #include "07-geometry-deepening/05-quadrilaterals.typ"
+#include "07-geometry-deepening/05a-special-quadrilaterals.typ"
 #include "07-geometry-deepening/06-circles.typ"
 #include "07-geometry-deepening/07-foundation-summary.typ"
 #include "07-geometry-deepening/08-pythagorean-theorem.typ"
@@ -148,7 +149,7 @@
 #include "09-data-statistics/06-probability.typ"
 #include "09-data-statistics/07-probability-experiments.typ"
 #include "09-data-statistics/08-sampling-estimation.typ"
-#include "09-data-statistics/08-review.typ"
+#include "09-data-statistics/09-review.typ"
 
 // 第 10 章：终章综合
 = 终章综合
