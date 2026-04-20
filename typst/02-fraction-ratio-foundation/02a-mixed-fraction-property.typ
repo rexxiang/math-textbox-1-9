@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §2.2C 带分数与分数基本性质 <sec-2-2C>
+== §2.2A 带分数与分数基本性质 <sec-2-2A>
 
 #vocab[带分数 mixed number / 假分数与带分数互化 converting between improper fractions and mixed numbers / 分数基本性质 fundamental property of fractions]
 

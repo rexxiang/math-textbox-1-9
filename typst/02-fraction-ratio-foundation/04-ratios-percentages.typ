@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §2.5 比、比例与百分数 <sec-2-5>
+== §2.4 比、比例与百分数 <sec-2-4>
 
 #vocab[比 ratio / 比例 proportion / 百分数 percentage]
 

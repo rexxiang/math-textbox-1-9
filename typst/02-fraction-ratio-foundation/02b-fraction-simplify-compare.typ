@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
-== §2.2A 约分与通分：让分数"穿上同款衣服" <sec-2-2A>
+== §2.2B 约分与通分：让分数"穿上同款衣服" <sec-2-2B>
 
 #vocab[约分 simplification / 最简分数 fraction in lowest terms / 通分 finding common denominator]
 
@@ -21,7 +21,7 @@
 
   $6/10$：分子分母都能被 2 整除，$6 div 2 = 3$，$10 div 2 = 5$，得到 $3/5$。
 
-  这和 §2.2 里学到的分数基本性质一脉相承：分子分母同除以同一个不为零的数，分数值不变。
+  这和 #secref("2.2A") 里学到的分数基本性质一脉相承：分子分母同除以同一个不为零的数，分数值不变。
 
   那比较大小呢？
 

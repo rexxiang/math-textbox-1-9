@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, side-hack, vocab, tryit, pitfall
 
-== §2.6 互化与比较 <sec-2-6>
+== §2.5 互化与比较 <sec-2-5>
 
 #vocab[互化 conversion / 同一标准 common basis / 通分 common denominator]
 

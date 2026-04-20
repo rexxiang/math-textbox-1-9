@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §2.4 小数 <sec-2-4>
+== §2.3 小数 <sec-2-3>
 
 #vocab[小数 decimal / 位值 decimal place / 有限小数 terminating decimal]
 
