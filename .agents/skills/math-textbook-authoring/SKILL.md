@@ -26,22 +26,20 @@ description: Content-authoring conventions for the 1-9 grade Chinese math self-s
 
 > `typst/main.typ` 中的 `#include` 列表是章节目录的权威来源。下表为便于快速查阅的概览；如与源文件不符，以源文件为准。
 
-| 章 | 子目录 | 名称 | 年级 |
+| 段 | 子目录 | 名称 | 脊椎段 |
 |---|---|---|---|
-| 00 | `00-gateway/` | 导读 | — |
-| 01 | `01-counting/` | 数的萌芽 | 小学 1-4 年级 |
-| 02 | `02-fraction-ratio-foundation/` | 分数、比与百分数基础 | 小学 3-6 年级 |
-| 03 | `03-geometry-foundation/` | 几何基础 | 小学 3-6 年级 |
-| 04 | `04-number-line-algebra-bridge/` | 数轴与代数桥 | 初中 7-8 年级 |
-| 05 | `05-foundation-gate/` | 主干收束闸门 | — |
-| 06 | `06-algebra-deepening/` | 代数深化 | 初中 7-9 年级 |
-| 07 | `07-geometry-deepening/` | 几何深化 | 初中 7-9 年级 |
-| 08 | `08-function-models/` | 函数模型 | 初中 8-9 年级 |
-| 09 | `09-data-statistics/` | 数据统计 | 初中 7-9 年级 |
-| 10 | `10-capstone/` | 终章综合 | — |
+| 0 | `0-orientation/` | 导读与使用导航 | 导读（不属于脊椎正文） |
+| 1a | `1a-number-sense/` | 数感与运算 | 公共基础 |
+| 1b | `1b-shapes/` | 图形直观 | 公共基础 |
+| 2 | `2-foundation-transition/` | 基础收束与分支起步 | 基础总结 |
+| 3a | `3a-symbols/` | 符号与方程 | 分支进阶 |
+| 3b | `3b-geometry-proof/` | 几何推理 | 分支进阶 |
+| 3c | `3c-functions/` | 函数与变化 | 分支进阶 |
+| 3d | `3d-data/` | 数据与不确定性 | 分支进阶 |
+| 4 | `4-capstone/` | 终章综合 | 全书总结 + 后续展望 |
 
-`00-gateway/` 是导读材料，不属于五段脊椎正文。  
-章节 01-04 = 公共基础；05 = 基础总结/闸门；06-09 = 分支进阶；10 = 全书总结 + 后续展望。
+`0-orientation/` 是导读材料，不属于五段脊椎正文。  
+`1a/1b` = 公共基础；`2` = 基础总结；`3a-3d` = 分支进阶；`4` = 全书总结 + 后续展望。
 
 ---
 
@@ -73,12 +71,12 @@ description: Content-authoring conventions for the 1-9 grade Chinese math self-s
 
 ---
 
-## 主干闸门约定（`05-foundation-gate/`）
+## 基础收束与分支起步约定（`2-foundation-transition/`）
 
 职责：**收束**共同主干，不是继续扩展。
 
 **必须包含**：
-- 对章节 01-04 的累计 readiness check
+- 对 `1a-number-sense` + `1b-shapes` 的累计 readiness check
 - 面向后续分支的短 recap
 - 用 `#secref(...)` 回指主干小节的螺旋复习
 - 清晰的分支地图与自检提示
@@ -93,7 +91,7 @@ description: Content-authoring conventions for the 1-9 grade Chinese math self-s
 
 ## 分支入口 Recap 约定
 
-分支首章（06-09）的入口 recap **同时**满足以下两条：
+分支首章（`3a-3d`）的入口 recap **同时**满足以下两条：
 
 - 使用简短的 `#side-hack[...]` 块
 - 放在 `#history-note[...]` 之后、`本章的主线是` 列表之前；若该章没有主线列表，则放在引言段落之后、第一组章节列表之前

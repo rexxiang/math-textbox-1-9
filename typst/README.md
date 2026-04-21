@@ -8,17 +8,15 @@
 - `lib/theme-v2.typ` — 页面布局、页眉页脚、主题框函数样式
 - `lib/diagram-packages.typ` — 图形包导入（`cetz`、`fletcher` 等）
 - `lib/geometry-helpers.typ` — 几何辅助函数（如等角标记）
-- `00-gateway/` — 导读
-- `01-counting/` — 数的萌芽（现役第 1 章）
-- `02-fraction-ratio-foundation/` — 分数、比与百分数基础
-- `03-geometry-foundation/` — 几何基础
-- `04-number-line-algebra-bridge/` — 数轴与代数桥
-- `05-foundation-gate/` — 基础总闸门
-- `06-algebra-deepening/` — 代数深化
-- `07-geometry-deepening/` — 几何深化
-- `08-function-models/` — 函数模型
-- `09-data-statistics/` — 数据统计
-- `10-capstone/` — 终章综合
+- `0-orientation/` — 导读与使用导航
+- `1a-number-sense/` — 数感与运算
+- `1b-shapes/` — 图形直观
+- `2-foundation-transition/` — 基础收束与分支起步
+- `3a-symbols/` — 符号与方程
+- `3b-geometry-proof/` — 几何推理
+- `3c-functions/` — 函数与变化
+- `3d-data/` — 数据与不确定性
+- `4-capstone/` — 终章综合
 - `smoke/` — 构建烟雾测试与包锁检查
 
 ## 构建

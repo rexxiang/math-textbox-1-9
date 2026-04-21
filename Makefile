@@ -1,14 +1,14 @@
 TYPST_IMAGE := math-textbook-typst
 TYPST_DOCKER_RUN := docker run --rm -v "$$(pwd):/book" -v "$$(pwd)/output/.typst-cache:/root/.cache/typst" $(TYPST_IMAGE)
 SMOKE_DOMAINS := \
-	a-number-sense \
-	b-shapes \
-	foundation-gate \
-	c-symbols \
-	d-geometry-proof \
-	e-functions \
-	f-data \
-	capstone
+	1a-number-sense \
+	1b-shapes \
+	2-foundation-transition \
+	3a-symbols \
+	3b-geometry-proof \
+	3c-functions \
+	3d-data \
+	4-capstone
 
 .PHONY: pdf check clean _docker-image
 

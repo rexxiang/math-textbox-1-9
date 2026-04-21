@@ -37,62 +37,62 @@
 
 | tool-id | 中文名 / 定义 | 概念前置 | 例题前置(额外) | 源码位置 |
 |---|---|---|---|---|
-| `a01-natural-number` | 自然数 — 0,1,2,3,… 表"多少个" | — | — | a-number-sense/a01-natural-number.typ |
-| `a02-zero` | 零(0) — "一个都没有",也是自然数 | `a01-natural-number` | — | a-number-sense/a01-natural-number.typ |
-| `a03-order` | 大小比较(<,>) | `a01-natural-number` | — | a-number-sense/a01-natural-number.typ |
-| `a04-digit` | 数字 — 0-9 十个基础符号 | `a01-natural-number` | — | a-number-sense/a04-digit.typ |
-| `a05-place-value` | 位值 — 同一数字不同位置代表不同量 | `a04-digit` | — | a-number-sense/a04-digit.typ |
-| `a06-decimal-system` | 十进制(满十进一) | `a05-place-value` | — | a-number-sense/a04-digit.typ |
-| `a07-addition` | 加法(+) — 合并运算 | `a01-natural-number` | — | a-number-sense/a07-addition.typ |
-| `a08-subtraction` | 减法(−) — 加法的逆 | `a07-addition` | — | a-number-sense/a07-addition.typ |
-| `a09-carry-borrow` | 进位与退位竖式规则 | `a05-place-value`, `a07-addition`, `a08-subtraction` | — | a-number-sense/a07-addition.typ |
-| `a10-multiplication` | 乘法(×) — 相同加数的简记 | `a07-addition` | — | a-number-sense/a10-multiplication.typ |
-| `a11-division` | 除法(÷) — 等分/包含,乘法的逆 | `a10-multiplication`, `a08-subtraction` | — | a-number-sense/a10-multiplication.typ |
-| `a12-remainder` | 余数 — 除不尽的剩余部分 | `a11-division` | — | a-number-sense/a10-multiplication.typ |
-| `a13-order-of-operations` | 运算顺序(先乘除后加减) | `a07-addition`, `a08-subtraction`, `a09-carry-borrow`, `a10-multiplication`, `a11-division`, `a12-remainder` | — | a-number-sense/a13-order-of-operations.typ |
-| `a14-parentheses` | 括号 — 强制改变运算顺序 | `a13-order-of-operations` | — | a-number-sense/a13-order-of-operations.typ |
-| `a15-add-commutative` | 加法交换律 a+b=b+a | `a07-addition` | — | a-number-sense/a15-add-commutative.typ |
-| `a16-add-associative` | 加法结合律 (a+b)+c=a+(b+c) | `a07-addition` | — | a-number-sense/a15-add-commutative.typ |
-| `a17-mul-commutative` | 乘法交换律 a×b=b×a | `a10-multiplication` | — | a-number-sense/a17-mul-commutative.typ |
-| `a18-mul-associative` | 乘法结合律 (a×b)×c=a×(b×c) | `a10-multiplication` | — | a-number-sense/a17-mul-commutative.typ |
-| `a19-distributive` | 分配律 a(b+c)=ab+ac | `a10-multiplication`, `a07-addition` | `a08-subtraction`(例题含 4×(5-2)) | a-number-sense/a17-mul-commutative.typ |
-| `a20-factor-multiple` | 因数与倍数 — a=b×c 时 b,c 是因数 | `a10-multiplication`, `a11-division` | — | a-number-sense/a20-factor-multiple.typ |
-| `a21-divisibility-cues` | 整除线索 — 2/3/5 的末位或数字和规则 | `a20-factor-multiple`, `a05-place-value` | — | a-number-sense/a20-factor-multiple.typ |
-| `a22-factor-pairing` | 因数配对法 — 从小到大试除 | `a20-factor-multiple`, `a11-division` | — | a-number-sense/a20-factor-multiple.typ |
-| `a23-prime` | 质数 — 大于 1,正因数只有 1 和自身 | `a20-factor-multiple` | — | a-number-sense/a23-prime.typ |
-| `a24-composite` | 合数 — 大于 1,除 1 和自身外还有正因数 | `a20-factor-multiple`, `a23-prime` | — | a-number-sense/a23-prime.typ |
-| `a25-prime-factorization` | 质因数分解 — 写成若干质数相乘 | `a23-prime`, `a24-composite` | — | a-number-sense/a25-prime-factorization.typ |
-| `a26-gcd` | 最大公因数 — 共同质因数的较小次幂相乘 | `a25-prime-factorization` | — | a-number-sense/a25-prime-factorization.typ |
-| `a27-lcm` | 最小公倍数 — 所有质因数的较大次幂相乘 | `a25-prime-factorization` | — | a-number-sense/a25-prime-factorization.typ |
-| `a28-fraction-definition` | 分数 a/b — 整体分 b 取 a,含分子分母 | `a20-factor-multiple`, `a11-division` | `a11-division`(a/b = a÷b) | a-number-sense/a28-fraction-definition.typ |
-| `a29-proper-fraction` | 真分数 — 分子<分母 | `a28-fraction-definition`, `a03-order` | — | a-number-sense/a28-fraction-definition.typ |
-| `a30-improper-fraction` | 假分数 — 分子≥分母 | `a28-fraction-definition`, `a03-order` | — | a-number-sense/a28-fraction-definition.typ |
-| `a31-mixed-number` | 带分数 — 整数加真分数 | `a29-proper-fraction`, `a07-addition` | — | a-number-sense/a31-mixed-number.typ |
-| `a32-convert-improper-mixed` | 假/带互化 | `a31-mixed-number`, `a30-improper-fraction`, `a11-division`, `a12-remainder` | — | a-number-sense/a31-mixed-number.typ |
-| `a33-fraction-property` | 分数基本性质 — 分子分母同乘除非零数值不变 | `a28-fraction-definition`, `a10-multiplication`, `a11-division` | — | a-number-sense/a31-mixed-number.typ |
-| `a34-simplify` | 约分 — 分子分母同除 GCD | `a33-fraction-property`, `a26-gcd` | — | a-number-sense/a34-simplify.typ |
-| `a35-lowest-terms` | 最简分数 — 分子分母互质 | `a34-simplify`, `a26-gcd` | — | a-number-sense/a34-simplify.typ |
-| `a36-common-denominator` | 通分 — 用 LCM 化为共同分母 | `a33-fraction-property`, `a27-lcm` | — | a-number-sense/a34-simplify.typ |
-| `a37-fraction-compare` | 分数比较大小 | `a36-common-denominator`, `a03-order` | — | a-number-sense/a34-simplify.typ |
-| `a38-fraction-add-sub` | 分数加减 — 通分后加减分子 | `a36-common-denominator`, `a07-addition`, `a08-subtraction` | `a15-add-commutative`, `a16-add-associative`, `a17-mul-commutative`, `a18-mul-associative`, `a19-distributive` | a-number-sense/a38-fraction-add-sub.typ |
-| `a39-fraction-mul` | 分数乘法 — 分子乘分子、分母乘分母 | `a28-fraction-definition`, `a10-multiplication` | `a34-simplify`(交叉约分) | a-number-sense/a38-fraction-add-sub.typ |
-| `a40-fraction-div` | 分数除法 — 乘以倒数 | `a39-fraction-mul`, `a11-division` | — | a-number-sense/a38-fraction-add-sub.typ |
-| `a41-decimal` | 小数 — 分母 10/100/... 的分数的简写 | `a28-fraction-definition`, `a05-place-value` | — | a-number-sense/a41-decimal.typ |
-| `a42-decimal-operations` | 小数四则(加减对齐/乘法定点/除法右移) | `a41-decimal`, `a07-addition`, `a08-subtraction`, `a09-carry-borrow`, `a10-multiplication`, `a11-division`, `a12-remainder` | — | a-number-sense/a41-decimal.typ |
-| `a43-frac-decimal-conversion` | 分小数互化 | `a41-decimal`, `a28-fraction-definition`, `a34-simplify`, `a11-division` | — | a-number-sense/a41-decimal.typ |
-| `a44-ratio` | 比与比值 a:b | `a28-fraction-definition`, `a11-division` | — | a-number-sense/a44-ratio.typ |
-| `a45-proportion` | 比例与按比分配 a:b=c:d↔ad=bc | `a44-ratio`, `a10-multiplication` | — | a-number-sense/a44-ratio.typ |
-| `a46-percentage` | 百分数 a% = a/100 | `a44-ratio`, `a41-decimal` | — | a-number-sense/a44-ratio.typ |
-| `a47-decimal-fraction-conversion` | 小数↔分数互化规范 | `a43-frac-decimal-conversion`, `a34-simplify` | — | a-number-sense/a47-decimal-fraction-conversion.typ |
-| `a48-percent-decimal-conversion` | 百分数↔小数↔分数 | `a46-percentage`, `a47-decimal-fraction-conversion` | — | a-number-sense/a47-decimal-fraction-conversion.typ |
-| `a49-number-line` | 数轴 — 数按序排在直线上 | `b03-straight-line`, `b01-point`, `a03-order`, `a02-zero` | — | a-number-sense/a49-number-line.typ |
-| `a50-negative-number` | 负数 — 0 左侧,反方向 | `a49-number-line`, `a02-zero`, `a03-order` | — | a-number-sense/a49-number-line.typ |
-| `a51-rational-number` | 有理数 — 能写成两整数之比 p/q(q≠0) | `a50-negative-number`, `a28-fraction-definition`, `a41-decimal` | — | a-number-sense/a49-number-line.typ |
-| `a52-opposite-number` | 相反数 — 0 两侧等距反向的一对数 | `a49-number-line`, `a50-negative-number` | — | a-number-sense/a52-opposite-number.typ |
-| `a53-absolute-value` | 绝对值 — 到 0 的距离,非负 | `a52-opposite-number`, `a49-number-line` | — | a-number-sense/a52-opposite-number.typ |
-| `a54-rational-arithmetic` | 有理数四则(同号异号规则) | `a51-rational-number`, `a53-absolute-value`, `a52-opposite-number`, `a07-addition`, `a08-subtraction`, `a09-carry-borrow`, `a10-multiplication`, `a11-division`, `a12-remainder`, `a38-fraction-add-sub`, `a39-fraction-mul`, `a40-fraction-div` | — | a-number-sense/a52-opposite-number.typ |
-| `a55-irrational-number` | 无理数 — 不能写成两整数之比的实数 | `a28-fraction-definition`, `b12-circle-circumference`(π,主例), `a51-rational-number` | — | a-number-sense/a55-irrational-number.typ |
-| `a56-real-number` | 实数 — 有理数与无理数的总和 | `a55-irrational-number`, `a51-rational-number` | — | a-number-sense/a55-irrational-number.typ |
+| `a01-natural-number` | 自然数 — 0,1,2,3,… 表"多少个" | — | — | 1a-number-sense/1-a01-natural-number.typ |
+| `a02-zero` | 零(0) — "一个都没有",也是自然数 | `a01-natural-number` | — | 1a-number-sense/1-a01-natural-number.typ |
+| `a03-order` | 大小比较(<,>) | `a01-natural-number` | — | 1a-number-sense/1-a01-natural-number.typ |
+| `a04-digit` | 数字 — 0-9 十个基础符号 | `a01-natural-number` | — | 1a-number-sense/1-a04-digit.typ |
+| `a05-place-value` | 位值 — 同一数字不同位置代表不同量 | `a04-digit` | — | 1a-number-sense/1-a04-digit.typ |
+| `a06-decimal-system` | 十进制(满十进一) | `a05-place-value` | — | 1a-number-sense/1-a04-digit.typ |
+| `a07-addition` | 加法(+) — 合并运算 | `a01-natural-number` | — | 1a-number-sense/1-a07-addition.typ |
+| `a08-subtraction` | 减法(−) — 加法的逆 | `a07-addition` | — | 1a-number-sense/1-a07-addition.typ |
+| `a09-carry-borrow` | 进位与退位竖式规则 | `a05-place-value`, `a07-addition`, `a08-subtraction` | — | 1a-number-sense/1-a07-addition.typ |
+| `a10-multiplication` | 乘法(×) — 相同加数的简记 | `a07-addition` | — | 1a-number-sense/1-a10-multiplication.typ |
+| `a11-division` | 除法(÷) — 等分/包含,乘法的逆 | `a10-multiplication`, `a08-subtraction` | — | 1a-number-sense/1-a10-multiplication.typ |
+| `a12-remainder` | 余数 — 除不尽的剩余部分 | `a11-division` | — | 1a-number-sense/1-a10-multiplication.typ |
+| `a13-order-of-operations` | 运算顺序(先乘除后加减) | `a07-addition`, `a08-subtraction`, `a09-carry-borrow`, `a10-multiplication`, `a11-division`, `a12-remainder` | — | 1a-number-sense/1-a13-order-of-operations.typ |
+| `a14-parentheses` | 括号 — 强制改变运算顺序 | `a13-order-of-operations` | — | 1a-number-sense/1-a13-order-of-operations.typ |
+| `a15-add-commutative` | 加法交换律 a+b=b+a | `a07-addition` | — | 1a-number-sense/1-a15-add-commutative.typ |
+| `a16-add-associative` | 加法结合律 (a+b)+c=a+(b+c) | `a07-addition` | — | 1a-number-sense/1-a15-add-commutative.typ |
+| `a17-mul-commutative` | 乘法交换律 a×b=b×a | `a10-multiplication` | — | 1a-number-sense/1-a17-mul-commutative.typ |
+| `a18-mul-associative` | 乘法结合律 (a×b)×c=a×(b×c) | `a10-multiplication` | — | 1a-number-sense/1-a17-mul-commutative.typ |
+| `a19-distributive` | 分配律 a(b+c)=ab+ac | `a10-multiplication`, `a07-addition` | `a08-subtraction`(例题含 4×(5-2)) | 1a-number-sense/1-a17-mul-commutative.typ |
+| `a20-factor-multiple` | 因数与倍数 — a=b×c 时 b,c 是因数 | `a10-multiplication`, `a11-division` | — | 1a-number-sense/1-a20-factor-multiple.typ |
+| `a21-divisibility-cues` | 整除线索 — 2/3/5 的末位或数字和规则 | `a20-factor-multiple`, `a05-place-value` | — | 1a-number-sense/1-a20-factor-multiple.typ |
+| `a22-factor-pairing` | 因数配对法 — 从小到大试除 | `a20-factor-multiple`, `a11-division` | — | 1a-number-sense/1-a20-factor-multiple.typ |
+| `a23-prime` | 质数 — 大于 1,正因数只有 1 和自身 | `a20-factor-multiple` | — | 1a-number-sense/1-a23-prime.typ |
+| `a24-composite` | 合数 — 大于 1,除 1 和自身外还有正因数 | `a20-factor-multiple`, `a23-prime` | — | 1a-number-sense/1-a23-prime.typ |
+| `a25-prime-factorization` | 质因数分解 — 写成若干质数相乘 | `a23-prime`, `a24-composite` | — | 1a-number-sense/1-a25-prime-factorization.typ |
+| `a26-gcd` | 最大公因数 — 共同质因数的较小次幂相乘 | `a25-prime-factorization` | — | 1a-number-sense/1-a25-prime-factorization.typ |
+| `a27-lcm` | 最小公倍数 — 所有质因数的较大次幂相乘 | `a25-prime-factorization` | — | 1a-number-sense/1-a25-prime-factorization.typ |
+| `a28-fraction-definition` | 分数 a/b — 整体分 b 取 a,含分子分母 | `a20-factor-multiple`, `a11-division` | `a11-division`(a/b = a÷b) | 1a-number-sense/1-a28-fraction-definition.typ |
+| `a29-proper-fraction` | 真分数 — 分子<分母 | `a28-fraction-definition`, `a03-order` | — | 1a-number-sense/1-a28-fraction-definition.typ |
+| `a30-improper-fraction` | 假分数 — 分子≥分母 | `a28-fraction-definition`, `a03-order` | — | 1a-number-sense/1-a28-fraction-definition.typ |
+| `a31-mixed-number` | 带分数 — 整数加真分数 | `a29-proper-fraction`, `a07-addition` | — | 1a-number-sense/1-a31-mixed-number.typ |
+| `a32-convert-improper-mixed` | 假/带互化 | `a31-mixed-number`, `a30-improper-fraction`, `a11-division`, `a12-remainder` | — | 1a-number-sense/1-a31-mixed-number.typ |
+| `a33-fraction-property` | 分数基本性质 — 分子分母同乘除非零数值不变 | `a28-fraction-definition`, `a10-multiplication`, `a11-division` | — | 1a-number-sense/1-a31-mixed-number.typ |
+| `a34-simplify` | 约分 — 分子分母同除 GCD | `a33-fraction-property`, `a26-gcd` | — | 1a-number-sense/1-a34-simplify.typ |
+| `a35-lowest-terms` | 最简分数 — 分子分母互质 | `a34-simplify`, `a26-gcd` | — | 1a-number-sense/1-a34-simplify.typ |
+| `a36-common-denominator` | 通分 — 用 LCM 化为共同分母 | `a33-fraction-property`, `a27-lcm` | — | 1a-number-sense/1-a34-simplify.typ |
+| `a37-fraction-compare` | 分数比较大小 | `a36-common-denominator`, `a03-order` | — | 1a-number-sense/1-a34-simplify.typ |
+| `a38-fraction-add-sub` | 分数加减 — 通分后加减分子 | `a36-common-denominator`, `a07-addition`, `a08-subtraction` | `a15-add-commutative`, `a16-add-associative`, `a17-mul-commutative`, `a18-mul-associative`, `a19-distributive` | 1a-number-sense/1-a38-fraction-add-sub.typ |
+| `a39-fraction-mul` | 分数乘法 — 分子乘分子、分母乘分母 | `a28-fraction-definition`, `a10-multiplication` | `a34-simplify`(交叉约分) | 1a-number-sense/1-a38-fraction-add-sub.typ |
+| `a40-fraction-div` | 分数除法 — 乘以倒数 | `a39-fraction-mul`, `a11-division` | — | 1a-number-sense/1-a38-fraction-add-sub.typ |
+| `a41-decimal` | 小数 — 分母 10/100/... 的分数的简写 | `a28-fraction-definition`, `a05-place-value` | — | 1a-number-sense/1-a41-decimal.typ |
+| `a42-decimal-operations` | 小数四则(加减对齐/乘法定点/除法右移) | `a41-decimal`, `a07-addition`, `a08-subtraction`, `a09-carry-borrow`, `a10-multiplication`, `a11-division`, `a12-remainder` | — | 1a-number-sense/1-a41-decimal.typ |
+| `a43-frac-decimal-conversion` | 分小数互化 | `a41-decimal`, `a28-fraction-definition`, `a34-simplify`, `a11-division` | — | 1a-number-sense/1-a41-decimal.typ |
+| `a44-ratio` | 比与比值 a:b | `a28-fraction-definition`, `a11-division` | — | 1a-number-sense/1-a44-ratio.typ |
+| `a45-proportion` | 比例与按比分配 a:b=c:d↔ad=bc | `a44-ratio`, `a10-multiplication` | — | 1a-number-sense/1-a44-ratio.typ |
+| `a46-percentage` | 百分数 a% = a/100 | `a44-ratio`, `a41-decimal` | — | 1a-number-sense/1-a44-ratio.typ |
+| `a47-decimal-fraction-conversion` | 小数↔分数互化规范 | `a43-frac-decimal-conversion`, `a34-simplify` | — | 1a-number-sense/1-a47-decimal-fraction-conversion.typ |
+| `a48-percent-decimal-conversion` | 百分数↔小数↔分数 | `a46-percentage`, `a47-decimal-fraction-conversion` | — | 1a-number-sense/1-a47-decimal-fraction-conversion.typ |
+| `a49-number-line` | 数轴 — 数按序排在直线上 | `b03-straight-line`, `b01-point`, `a03-order`, `a02-zero` | — | 1a-number-sense/1-a49-number-line.typ |
+| `a50-negative-number` | 负数 — 0 左侧,反方向 | `a49-number-line`, `a02-zero`, `a03-order` | — | 1a-number-sense/1-a49-number-line.typ |
+| `a51-rational-number` | 有理数 — 能写成两整数之比 p/q(q≠0) | `a50-negative-number`, `a28-fraction-definition`, `a41-decimal` | — | 1a-number-sense/1-a49-number-line.typ |
+| `a52-opposite-number` | 相反数 — 0 两侧等距反向的一对数 | `a49-number-line`, `a50-negative-number` | — | 1a-number-sense/1-a52-opposite-number.typ |
+| `a53-absolute-value` | 绝对值 — 到 0 的距离,非负 | `a52-opposite-number`, `a49-number-line` | — | 1a-number-sense/1-a52-opposite-number.typ |
+| `a54-rational-arithmetic` | 有理数四则(同号异号规则) | `a51-rational-number`, `a53-absolute-value`, `a52-opposite-number`, `a07-addition`, `a08-subtraction`, `a09-carry-borrow`, `a10-multiplication`, `a11-division`, `a12-remainder`, `a38-fraction-add-sub`, `a39-fraction-mul`, `a40-fraction-div` | — | 1a-number-sense/1-a52-opposite-number.typ |
+| `a55-irrational-number` | 无理数 — 不能写成两整数之比的实数 | `a28-fraction-definition`, `b12-circle-circumference`(π,主例), `a51-rational-number` | — | 1a-number-sense/1-a55-irrational-number.typ |
+| `a56-real-number` | 实数 — 有理数与无理数的总和 | `a55-irrational-number`, `a51-rational-number` | — | 1a-number-sense/1-a55-irrational-number.typ |
 
 > **说明**:末尾 8 条(`a49-a56`)为数轴/负数/有理数/无理数/实数的数系扩展段,数学上是本域数系建构的自然收尾。跨域依赖仅 2 条(`a49-number-line` → `b03-straight-line`/`b01-point`、`a55-irrational-number` → `b12-circle-circumference` 引 π),表明与图形域仅以"几何表示"为桥。
 
@@ -104,44 +104,44 @@
 
 | tool-id | 中文名 / 定义 | 概念前置 | 例题前置(额外) | 源码位置 |
 |---|---|---|---|---|
-| `b01-point` | 点 — 表位置,无大小 | — | — | b-shapes/b01-point.typ |
-| `b02-line-segment` | 线段 — 两端点,有限长 | `b01-point` | — | b-shapes/b01-point.typ |
-| `b03-straight-line` | 直线 — 无端点,双向无限延伸 | `b01-point` | — | b-shapes/b01-point.typ |
-| `b04-ray` | 射线 — 一端点,单向无限 | `b01-point`, `b03-straight-line` | — | b-shapes/b04-ray.typ |
-| `b05-plane` | 平面 — 二维无限延伸 | `b01-point`, `b03-straight-line` | — | b-shapes/b04-ray.typ |
-| `b06-point-line-relation` | 点与直线的位置关系 | `b01-point`, `b03-straight-line` | — | b-shapes/b04-ray.typ |
-| `b07-triangle` | 三角形 — 3 条线段首尾相接 | `b02-line-segment` | — | b-shapes/b07-triangle.typ |
-| `b08-quadrilateral` | 四边形 — 4 条线段首尾相接 | `b02-line-segment` | — | b-shapes/b07-triangle.typ |
-| `b09-circle` | 圆 — 到中心等距所有点 | `b01-point` | — | b-shapes/b07-triangle.typ |
-| `b10-perimeter` | 周长 — 封闭图形一圈长度 | `b02-line-segment`, `a07-addition` | — | b-shapes/b10-perimeter.typ |
-| `b11-rectangle-perimeter` | 长方形周长 C=2(a+b) | `b10-perimeter`, `b08-quadrilateral`, `a19-distributive` | `a10-multiplication`, `a07-addition` | b-shapes/b10-perimeter.typ |
-| `b12-circle-circumference` | 圆周长 C=2πr | `b10-perimeter`, `b09-circle` | — | b-shapes/b10-perimeter.typ |
-| `b13-area` | 面积 — 能铺多少单位方格 | `b08-quadrilateral`, `a10-multiplication` | — | b-shapes/b13-area.typ |
-| `b14-cut-rearrange-method` | 割补法 — 剪开拼成已知形 | `b13-area` | — | b-shapes/b13-area.typ |
-| `b15-parallelogram-area` | 平行四边形面积 底×高 | `b14-cut-rearrange-method`, `b13-area` | — | b-shapes/b13-area.typ |
-| `b16-triangle-area` | 三角形面积 底×高÷2 | `b15-parallelogram-area`, `b07-triangle`, `a11-division` | — | b-shapes/b13-area.typ |
-| `b17-volume` | 体积 — 立体能放多少单位立方 | `b13-area`, `b05-plane`, `a10-multiplication` | — | b-shapes/b17-volume.typ |
-| `b18-rectangular-solid-volume` | 长方体体积 长×宽×高 | `b17-volume`, `b08-quadrilateral` | — | b-shapes/b17-volume.typ |
-| `b19-cylinder-volume` | 圆柱体积 底面积×高 | `b17-volume`, `b12-circle-circumference`, `b13-area` | — | b-shapes/b17-volume.typ |
-| `b20-angle` | 角 — 两射线同一端点 | `b01-point`, `b04-ray` | — | b-shapes/b20-angle.typ |
-| `b21-right-angle` | 直角 — 90° | `b20-angle` | — | b-shapes/b20-angle.typ |
-| `b22-degree` | 度(°) — 一整圈旋转的 1/360 | `b20-angle`, `a11-division` | — | b-shapes/b20-angle.typ |
-| `b23-acute-angle` | 锐角 0°<∠<90° | `b20-angle`, `b21-right-angle`, `a03-order` | — | b-shapes/b23-acute-angle.typ |
-| `b24-obtuse-angle` | 钝角 90°<∠<180° | `b21-right-angle`, `a03-order` | — | b-shapes/b23-acute-angle.typ |
-| `b25-straight-angle` | 平角 180° | `b20-angle` | — | b-shapes/b23-acute-angle.typ |
-| `b26-complementary` | 互余 — 两角和 90° | `b21-right-angle`, `a07-addition` | `a08-subtraction`(求余角) | b-shapes/b26-complementary.typ |
-| `b27-supplementary` | 互补 — 两角和 180° | `b25-straight-angle`, `a07-addition` | `a08-subtraction` | b-shapes/b26-complementary.typ |
-| `b28-vertical-angles` | 对顶角相等 | `b20-angle`, `b25-straight-angle`, `a08-subtraction` | — | b-shapes/b26-complementary.typ |
-| `b29-parallel-lines` | 平行线 — 同平面不相交 | `b03-straight-line`, `b05-plane` | — | b-shapes/b29-parallel-lines.typ |
-| `b30-corresponding-angles` | 同位角相等 | `b29-parallel-lines`, `b20-angle` | — | b-shapes/b29-parallel-lines.typ |
-| `b31-alternate-interior-angles` | 内错角相等 | `b29-parallel-lines`, `b20-angle`, `b28-vertical-angles` | — | b-shapes/b29-parallel-lines.typ |
-| `b32-co-interior-supplementary` | 同旁内角互补 | `b29-parallel-lines`, `b20-angle`, `b27-supplementary` | — | b-shapes/b32-co-interior-supplementary.typ |
-| `b33-triangle-angle-sum` | 三角形内角和 — 三内角之和 = 180°，由平行线内错角/同位角证明 | `b29-parallel-lines`, `b31-alternate-interior-angles`, `b22-degree`, `a07-addition` | — | **(规划)** b-shapes/b33-triangle-angle-sum.typ |
-| `b34-perpendicular` | 垂直 a⊥b — 相交夹 90° | `b03-straight-line`, `b21-right-angle` | — | b-shapes/b32-co-interior-supplementary.typ |
-| `b35-distance-point-line` | 点到直线距离 — 垂线段长度 | `b34-perpendicular`, `b02-line-segment` | — | b-shapes/b32-co-interior-supplementary.typ |
-| `b36-coordinate-system` | 坐标系 — 平面上两垂直数轴 | `b34-perpendicular`, `b05-plane`, `a49-number-line` | — | b-shapes/b36-coordinate-system.typ |
-| `b37-ordered-pair` | 有序数对 (a,b) | `b36-coordinate-system` | — | b-shapes/b36-coordinate-system.typ |
-| `b38-axis-on-point` | 坐标轴上的点规律 | `b37-ordered-pair`, `a02-zero` | — | b-shapes/b36-coordinate-system.typ |
+| `b01-point` | 点 — 表位置,无大小 | — | — | 1b-shapes/1-b01-point.typ |
+| `b02-line-segment` | 线段 — 两端点,有限长 | `b01-point` | — | 1b-shapes/1-b01-point.typ |
+| `b03-straight-line` | 直线 — 无端点,双向无限延伸 | `b01-point` | — | 1b-shapes/1-b01-point.typ |
+| `b04-ray` | 射线 — 一端点,单向无限 | `b01-point`, `b03-straight-line` | — | 1b-shapes/1-b04-ray.typ |
+| `b05-plane` | 平面 — 二维无限延伸 | `b01-point`, `b03-straight-line` | — | 1b-shapes/1-b04-ray.typ |
+| `b06-point-line-relation` | 点与直线的位置关系 | `b01-point`, `b03-straight-line` | — | 1b-shapes/1-b04-ray.typ |
+| `b07-triangle` | 三角形 — 3 条线段首尾相接 | `b02-line-segment` | — | 1b-shapes/1-b07-triangle.typ |
+| `b08-quadrilateral` | 四边形 — 4 条线段首尾相接 | `b02-line-segment` | — | 1b-shapes/1-b07-triangle.typ |
+| `b09-circle` | 圆 — 到中心等距所有点 | `b01-point` | — | 1b-shapes/1-b07-triangle.typ |
+| `b10-perimeter` | 周长 — 封闭图形一圈长度 | `b02-line-segment`, `a07-addition` | — | 1b-shapes/1-b10-perimeter.typ |
+| `b11-rectangle-perimeter` | 长方形周长 C=2(a+b) | `b10-perimeter`, `b08-quadrilateral`, `a19-distributive` | `a10-multiplication`, `a07-addition` | 1b-shapes/1-b10-perimeter.typ |
+| `b12-circle-circumference` | 圆周长 C=2πr | `b10-perimeter`, `b09-circle` | — | 1b-shapes/1-b10-perimeter.typ |
+| `b13-area` | 面积 — 能铺多少单位方格 | `b08-quadrilateral`, `a10-multiplication` | — | 1b-shapes/1-b13-area.typ |
+| `b14-cut-rearrange-method` | 割补法 — 剪开拼成已知形 | `b13-area` | — | 1b-shapes/1-b13-area.typ |
+| `b15-parallelogram-area` | 平行四边形面积 底×高 | `b14-cut-rearrange-method`, `b13-area` | — | 1b-shapes/1-b13-area.typ |
+| `b16-triangle-area` | 三角形面积 底×高÷2 | `b15-parallelogram-area`, `b07-triangle`, `a11-division` | — | 1b-shapes/1-b13-area.typ |
+| `b17-volume` | 体积 — 立体能放多少单位立方 | `b13-area`, `b05-plane`, `a10-multiplication` | — | 1b-shapes/1-b17-volume.typ |
+| `b18-rectangular-solid-volume` | 长方体体积 长×宽×高 | `b17-volume`, `b08-quadrilateral` | — | 1b-shapes/1-b17-volume.typ |
+| `b19-cylinder-volume` | 圆柱体积 底面积×高 | `b17-volume`, `b12-circle-circumference`, `b13-area` | — | 1b-shapes/1-b17-volume.typ |
+| `b20-angle` | 角 — 两射线同一端点 | `b01-point`, `b04-ray` | — | 1b-shapes/1-b20-angle.typ |
+| `b21-right-angle` | 直角 — 90° | `b20-angle` | — | 1b-shapes/1-b20-angle.typ |
+| `b22-degree` | 度(°) — 一整圈旋转的 1/360 | `b20-angle`, `a11-division` | — | 1b-shapes/1-b20-angle.typ |
+| `b23-acute-angle` | 锐角 0°<∠<90° | `b20-angle`, `b21-right-angle`, `a03-order` | — | 1b-shapes/1-b23-acute-angle.typ |
+| `b24-obtuse-angle` | 钝角 90°<∠<180° | `b21-right-angle`, `a03-order` | — | 1b-shapes/1-b23-acute-angle.typ |
+| `b25-straight-angle` | 平角 180° | `b20-angle` | — | 1b-shapes/1-b23-acute-angle.typ |
+| `b26-complementary` | 互余 — 两角和 90° | `b21-right-angle`, `a07-addition` | `a08-subtraction`(求余角) | 1b-shapes/1-b26-complementary.typ |
+| `b27-supplementary` | 互补 — 两角和 180° | `b25-straight-angle`, `a07-addition` | `a08-subtraction` | 1b-shapes/1-b26-complementary.typ |
+| `b28-vertical-angles` | 对顶角相等 | `b20-angle`, `b25-straight-angle`, `a08-subtraction` | — | 1b-shapes/1-b26-complementary.typ |
+| `b29-parallel-lines` | 平行线 — 同平面不相交 | `b03-straight-line`, `b05-plane` | — | 1b-shapes/1-b29-parallel-lines.typ |
+| `b30-corresponding-angles` | 同位角相等 | `b29-parallel-lines`, `b20-angle` | — | 1b-shapes/1-b29-parallel-lines.typ |
+| `b31-alternate-interior-angles` | 内错角相等 | `b29-parallel-lines`, `b20-angle`, `b28-vertical-angles` | — | 1b-shapes/1-b29-parallel-lines.typ |
+| `b32-co-interior-supplementary` | 同旁内角互补 | `b29-parallel-lines`, `b20-angle`, `b27-supplementary` | — | 1b-shapes/1-b32-co-interior-supplementary.typ |
+| `b33-triangle-angle-sum` | 三角形内角和 — 三内角之和 = 180°，由平行线内错角/同位角证明 | `b29-parallel-lines`, `b31-alternate-interior-angles`, `b22-degree`, `a07-addition` | — | **(规划)** 1b-shapes/1-b33-triangle-angle-sum.typ |
+| `b34-perpendicular` | 垂直 a⊥b — 相交夹 90° | `b03-straight-line`, `b21-right-angle` | — | 1b-shapes/1-b32-co-interior-supplementary.typ |
+| `b35-distance-point-line` | 点到直线距离 — 垂线段长度 | `b34-perpendicular`, `b02-line-segment` | — | 1b-shapes/1-b32-co-interior-supplementary.typ |
+| `b36-coordinate-system` | 坐标系 — 平面上两垂直数轴 | `b34-perpendicular`, `b05-plane`, `a49-number-line` | — | 1b-shapes/1-b36-coordinate-system.typ |
+| `b37-ordered-pair` | 有序数对 (a,b) | `b36-coordinate-system` | — | 1b-shapes/1-b36-coordinate-system.typ |
+| `b38-axis-on-point` | 坐标轴上的点规律 | `b37-ordered-pair`, `a02-zero` | — | 1b-shapes/1-b36-coordinate-system.typ |
 
 > **说明**:行序按**拓扑依赖**排列——点/线/面作为原子(b01–b06)在前,形状(`b07-triangle` 起)依赖线段,度量/角/平行随后。源码物理布局中 `01-plane-shapes.typ` 排在 `02-points-lines.typ` 之前,与本表拓扑方向相反,属遗留,留待未来 typst 源码重排对齐。
 
@@ -153,54 +153,54 @@
 
 | tool-id | 中文名 / 定义 | 概念前置 | 例题前置(额外) | 源码位置 |
 |---|---|---|---|---|
-| `c01-variable` | 字母表示数 | `a01-natural-number` | — | c-symbols/c01-variable.typ |
-| `c02-algebraic-expression` | 代数式 — 数/字母/运算组成的计算模板 | `c01-variable`, `a07-addition`, `a08-subtraction`, `a09-carry-borrow`, `a10-multiplication`, `a11-division`, `a12-remainder`, `a54-rational-arithmetic` | — | c-symbols/c01-variable.typ |
-| `c03-substitution` | 代入求值 | `c02-algebraic-expression`, `a54-rational-arithmetic`, `a13-order-of-operations` | — | c-symbols/c01-variable.typ |
-| `c04-equation` | 方程 — 含等号的式子 | `c02-algebraic-expression` | — | c-symbols/c04-equation.typ |
-| `c05-solution` | 方程的解 — 使方程成立的值 | `c04-equation`, `c03-substitution` | — | c-symbols/c04-equation.typ |
-| `c06-undo-balance` | Undo 与 Balance 两视角解方程 | `c04-equation`, `c05-solution`, `a07-addition`, `a08-subtraction`, `a09-carry-borrow`, `a10-multiplication`, `a11-division`, `a12-remainder` | — | c-symbols/c04-equation.typ |
-| `c07-polynomial` | 整式 — 字母/数/非负整数次幂加减乘组成 | `c02-algebraic-expression`, `c01-variable` | — | c-symbols/c07-polynomial.typ |
-| `c08-combine-like-terms` | 合并同类项 — 字母部分相同的项合系数 | `c07-polynomial`, `a19-distributive` | — | c-symbols/c07-polynomial.typ |
-| `c09-remove-parentheses` | 去括号 — 括号前是减则每项反号 | `c07-polynomial`, `a19-distributive`, `a52-opposite-number` | — | c-symbols/c07-polynomial.typ |
-| `c10-square` | 平方 x² — x²=x·x(具体数/表达式自乘的简记,a^n 的第一例) | `a10-multiplication`, `c01-variable` | — | **(规划)** c-symbols/c10-square.typ |
-| `c11-square-root` | 平方根记号 √n — 使 x²=n 的非负 x(平方的逆) | `c10-square`, `a51-rational-number`, `a10-multiplication` | — | **(规划)** c-symbols/c11-square-root.typ |
-| `c12-polynomial-multiply` | 多项式乘法 — 每项与每项相乘再合并 | `c07-polynomial`, `c08-combine-like-terms`, `a19-distributive` | — | c-symbols/c12-polynomial-multiply.typ |
-| `c13-difference-squares` | 平方差公式 (a+b)(a-b)=a²-b² | `c12-polynomial-multiply`, `c10-square` | — | c-symbols/c12-polynomial-multiply.typ |
-| `c14-perfect-square-formula` | 完全平方公式 (a±b)²=a²±2ab+b² | `c12-polynomial-multiply`, `c10-square` | — | c-symbols/c12-polynomial-multiply.typ |
-| `c15-power-notation` | 幂记号 a^n(把 `c10-square` 的 x² 一般化到指数 n) | `a10-multiplication`, `c10-square` | — | c-symbols/c15-power-notation.typ |
-| `c16-same-base-multiply` | 同底数幂相乘 a^m·a^n=a^(m+n) | `c15-power-notation`, `a07-addition` | — | c-symbols/c15-power-notation.typ |
-| `c17-same-base-divide` | 同底数幂相除 a^m/a^n=a^(m-n) | `c15-power-notation`, `a08-subtraction`, `a11-division` | — | c-symbols/c15-power-notation.typ |
-| `c18-zero-exponent` | 零次幂 a⁰=1(a≠0) | `c17-same-base-divide` | — | c-symbols/c18-zero-exponent.typ |
-| `c19-power-of-power` | 幂的乘方 (a^m)^n=a^(mn) | `c15-power-notation`, `c16-same-base-multiply`, `a10-multiplication` | — | c-symbols/c18-zero-exponent.typ |
-| `c20-power-of-product` | 积的乘方 (ab)^n=a^n b^n | `c15-power-notation`, `a19-distributive` | — | c-symbols/c18-zero-exponent.typ |
-| `c21-factorization` | 因式分解 — 和写成积(乘法展开逆) | `c12-polynomial-multiply` | — | c-symbols/c21-factorization.typ |
-| `c22-common-factor` | 提公因式 — 取各项 GCD 提出 | `c21-factorization`, `a26-gcd`, `a19-distributive` | — | c-symbols/c21-factorization.typ |
-| `c23-formula-factoring` | 公式法 — 平方差/完全平方反用 | `c21-factorization`, `c13-difference-squares`, `c14-perfect-square-formula` | — | c-symbols/c21-factorization.typ |
-| `c24-cross-multiplication` | 十字相乘 x²+bx+c 找两数 | `c21-factorization`, `c12-polynomial-multiply` | — | c-symbols/c21-factorization.typ |
-| `c25-rational-expression` | 分式 — 分母含字母的分数式 | `a28-fraction-definition`, `c07-polynomial` | — | c-symbols/c25-rational-expression.typ |
-| `c26-rational-property` | 分式基本性质 — 同乘除非零式值不变 | `c25-rational-expression`, `a33-fraction-property` | — | c-symbols/c25-rational-expression.typ |
-| `c27-simplify-fraction` | 约分与最简分式 | `c26-rational-property`, `a34-simplify`, `c21-factorization` | `c23-formula-factoring` | c-symbols/c25-rational-expression.typ |
-| `c28-common-denominator` | 通分与最简公分母 | `c26-rational-property`, `a36-common-denominator`, `c21-factorization` | — | c-symbols/c28-common-denominator.typ |
-| `c29-rational-add-sub` | 分式加减 — 通分后加减分子 | `c28-common-denominator`, `a38-fraction-add-sub`, `c09-remove-parentheses` | — | c-symbols/c28-common-denominator.typ |
-| `c30-rational-mul-div` | 分式乘除 — 乘:分子分母分别相乘;除:倒数 | `c25-rational-expression`, `a39-fraction-mul`, `a40-fraction-div`, `c21-factorization` | — | c-symbols/c28-common-denominator.typ |
-| `c31-rational-equation` | 分式方程 — 分母含字母的方程 | `c25-rational-expression`, `c04-equation` | — | c-symbols/c31-rational-equation.typ |
-| `c32-clear-denominators` | 去分母 — 乘 LCD 转整式方程 | `c31-rational-equation`, `c28-common-denominator` | `c36-five-step-solution` | c-symbols/c31-rational-equation.typ |
-| `c33-extraneous-root` | 增根与验根 — 检查是否使分母为零 | `c32-clear-denominators`, `c25-rational-expression` | — | c-symbols/c31-rational-equation.typ |
-| `c34-linear-equation` | 一元一次方程 ax+b=c | `c04-equation`, `c07-polynomial` | — | c-symbols/c34-linear-equation.typ |
-| `c35-equality-properties` | 等式两条性质(加减/乘除) | `c06-undo-balance` | — | c-symbols/c34-linear-equation.typ |
-| `c36-five-step-solution` | 五步解法:去分母/去括号/移项/合并/系数化 1 | `c34-linear-equation`, `c35-equality-properties`, `c09-remove-parentheses`, `c08-combine-like-terms`, `a27-lcm` | `a19-distributive` | c-symbols/c34-linear-equation.typ |
-| `c37-system-of-equations` | 二元一次方程组 | `c34-linear-equation` | — | c-symbols/c37-system-of-equations.typ |
-| `c38-substitution-method` | 代入消元法 | `c37-system-of-equations`, `c36-five-step-solution` | `a19-distributive` | c-symbols/c37-system-of-equations.typ |
-| `c39-elimination-method` | 加减消元法 | `c37-system-of-equations`, `c35-equality-properties` | `c08-combine-like-terms` | c-symbols/c37-system-of-equations.typ |
-| `c40-quadratic-equation` | 一元二次方程 ax²+bx+c=0 | `c15-power-notation`, `c07-polynomial`, `c04-equation` | — | c-symbols/c40-quadratic-equation.typ |
-| `c41-square-root-method` | 直接开方法 (x+m)²=k 两边开根 | `c40-quadratic-equation`, `c11-square-root`, `c06-undo-balance` | — | c-symbols/c40-quadratic-equation.typ |
-| `c42-completing-square` | 配方法 — 加减"半数平方"化顶点式 | `c41-square-root-method`, `c14-perfect-square-formula` | — | c-symbols/c40-quadratic-equation.typ |
-| `c43-quadratic-formula` | 求根公式 x=(-b±√(b²-4ac))/(2a) | `c42-completing-square`, `c11-square-root` | — | c-symbols/c40-quadratic-equation.typ |
-| `c44-factor-method` | 因式分解法 — 零乘积性质 | `c40-quadratic-equation`, `c21-factorization`, `c24-cross-multiplication` | — | c-symbols/c40-quadratic-equation.typ |
-| `c45-inequality` | 不等式与解集 — <,>,≤,≥ 连接 | `a03-order`, `a49-number-line` | — | c-symbols/c45-inequality.typ |
-| `c46-inequality-properties` | 不等式三性质(乘除负数反号) | `c45-inequality`, `a50-negative-number`, `a54-rational-arithmetic` | — | c-symbols/c45-inequality.typ |
-| `c47-linear-inequality` | 一元一次不等式 | `c46-inequality-properties`, `c36-five-step-solution` | — | c-symbols/c45-inequality.typ |
-| `c48-inequality-system` | 不等式组与交集口诀 | `c47-linear-inequality`, `a49-number-line` | — | c-symbols/c45-inequality.typ |
+| `c01-variable` | 字母表示数 | `a01-natural-number` | — | 3a-symbols/1-c01-variable.typ |
+| `c02-algebraic-expression` | 代数式 — 数/字母/运算组成的计算模板 | `c01-variable`, `a07-addition`, `a08-subtraction`, `a09-carry-borrow`, `a10-multiplication`, `a11-division`, `a12-remainder`, `a54-rational-arithmetic` | — | 3a-symbols/1-c01-variable.typ |
+| `c03-substitution` | 代入求值 | `c02-algebraic-expression`, `a54-rational-arithmetic`, `a13-order-of-operations` | — | 3a-symbols/1-c01-variable.typ |
+| `c04-equation` | 方程 — 含等号的式子 | `c02-algebraic-expression` | — | 3a-symbols/1-c04-equation.typ |
+| `c05-solution` | 方程的解 — 使方程成立的值 | `c04-equation`, `c03-substitution` | — | 3a-symbols/1-c04-equation.typ |
+| `c06-undo-balance` | Undo 与 Balance 两视角解方程 | `c04-equation`, `c05-solution`, `a07-addition`, `a08-subtraction`, `a09-carry-borrow`, `a10-multiplication`, `a11-division`, `a12-remainder` | — | 3a-symbols/1-c04-equation.typ |
+| `c07-polynomial` | 整式 — 字母/数/非负整数次幂加减乘组成 | `c02-algebraic-expression`, `c01-variable` | — | 3a-symbols/1-c07-polynomial.typ |
+| `c08-combine-like-terms` | 合并同类项 — 字母部分相同的项合系数 | `c07-polynomial`, `a19-distributive` | — | 3a-symbols/1-c07-polynomial.typ |
+| `c09-remove-parentheses` | 去括号 — 括号前是减则每项反号 | `c07-polynomial`, `a19-distributive`, `a52-opposite-number` | — | 3a-symbols/1-c07-polynomial.typ |
+| `c10-square` | 平方 x² — x²=x·x(具体数/表达式自乘的简记,a^n 的第一例) | `a10-multiplication`, `c01-variable` | — | **(规划)** 3a-symbols/1-c10-square.typ |
+| `c11-square-root` | 平方根记号 √n — 使 x²=n 的非负 x(平方的逆) | `c10-square`, `a51-rational-number`, `a10-multiplication` | — | **(规划)** 3a-symbols/1-c11-square-root.typ |
+| `c12-polynomial-multiply` | 多项式乘法 — 每项与每项相乘再合并 | `c07-polynomial`, `c08-combine-like-terms`, `a19-distributive` | — | 3a-symbols/1-c12-polynomial-multiply.typ |
+| `c13-difference-squares` | 平方差公式 (a+b)(a-b)=a²-b² | `c12-polynomial-multiply`, `c10-square` | — | 3a-symbols/1-c12-polynomial-multiply.typ |
+| `c14-perfect-square-formula` | 完全平方公式 (a±b)²=a²±2ab+b² | `c12-polynomial-multiply`, `c10-square` | — | 3a-symbols/1-c12-polynomial-multiply.typ |
+| `c15-power-notation` | 幂记号 a^n(把 `c10-square` 的 x² 一般化到指数 n) | `a10-multiplication`, `c10-square` | — | 3a-symbols/1-c15-power-notation.typ |
+| `c16-same-base-multiply` | 同底数幂相乘 a^m·a^n=a^(m+n) | `c15-power-notation`, `a07-addition` | — | 3a-symbols/1-c15-power-notation.typ |
+| `c17-same-base-divide` | 同底数幂相除 a^m/a^n=a^(m-n) | `c15-power-notation`, `a08-subtraction`, `a11-division` | — | 3a-symbols/1-c15-power-notation.typ |
+| `c18-zero-exponent` | 零次幂 a⁰=1(a≠0) | `c17-same-base-divide` | — | 3a-symbols/1-c18-zero-exponent.typ |
+| `c19-power-of-power` | 幂的乘方 (a^m)^n=a^(mn) | `c15-power-notation`, `c16-same-base-multiply`, `a10-multiplication` | — | 3a-symbols/1-c18-zero-exponent.typ |
+| `c20-power-of-product` | 积的乘方 (ab)^n=a^n b^n | `c15-power-notation`, `a19-distributive` | — | 3a-symbols/1-c18-zero-exponent.typ |
+| `c21-factorization` | 因式分解 — 和写成积(乘法展开逆) | `c12-polynomial-multiply` | — | 3a-symbols/1-c21-factorization.typ |
+| `c22-common-factor` | 提公因式 — 取各项 GCD 提出 | `c21-factorization`, `a26-gcd`, `a19-distributive` | — | 3a-symbols/1-c21-factorization.typ |
+| `c23-formula-factoring` | 公式法 — 平方差/完全平方反用 | `c21-factorization`, `c13-difference-squares`, `c14-perfect-square-formula` | — | 3a-symbols/1-c21-factorization.typ |
+| `c24-cross-multiplication` | 十字相乘 x²+bx+c 找两数 | `c21-factorization`, `c12-polynomial-multiply` | — | 3a-symbols/1-c21-factorization.typ |
+| `c25-rational-expression` | 分式 — 分母含字母的分数式 | `a28-fraction-definition`, `c07-polynomial` | — | 3a-symbols/1-c25-rational-expression.typ |
+| `c26-rational-property` | 分式基本性质 — 同乘除非零式值不变 | `c25-rational-expression`, `a33-fraction-property` | — | 3a-symbols/1-c25-rational-expression.typ |
+| `c27-simplify-fraction` | 约分与最简分式 | `c26-rational-property`, `a34-simplify`, `c21-factorization` | `c23-formula-factoring` | 3a-symbols/1-c25-rational-expression.typ |
+| `c28-common-denominator` | 通分与最简公分母 | `c26-rational-property`, `a36-common-denominator`, `c21-factorization` | — | 3a-symbols/1-c28-common-denominator.typ |
+| `c29-rational-add-sub` | 分式加减 — 通分后加减分子 | `c28-common-denominator`, `a38-fraction-add-sub`, `c09-remove-parentheses` | — | 3a-symbols/1-c28-common-denominator.typ |
+| `c30-rational-mul-div` | 分式乘除 — 乘:分子分母分别相乘;除:倒数 | `c25-rational-expression`, `a39-fraction-mul`, `a40-fraction-div`, `c21-factorization` | — | 3a-symbols/1-c28-common-denominator.typ |
+| `c31-rational-equation` | 分式方程 — 分母含字母的方程 | `c25-rational-expression`, `c04-equation` | — | 3a-symbols/1-c31-rational-equation.typ |
+| `c32-clear-denominators` | 去分母 — 乘 LCD 转整式方程 | `c31-rational-equation`, `c28-common-denominator` | `c36-five-step-solution` | 3a-symbols/1-c31-rational-equation.typ |
+| `c33-extraneous-root` | 增根与验根 — 检查是否使分母为零 | `c32-clear-denominators`, `c25-rational-expression` | — | 3a-symbols/1-c31-rational-equation.typ |
+| `c34-linear-equation` | 一元一次方程 ax+b=c | `c04-equation`, `c07-polynomial` | — | 3a-symbols/1-c34-linear-equation.typ |
+| `c35-equality-properties` | 等式两条性质(加减/乘除) | `c06-undo-balance` | — | 3a-symbols/1-c34-linear-equation.typ |
+| `c36-five-step-solution` | 五步解法:去分母/去括号/移项/合并/系数化 1 | `c34-linear-equation`, `c35-equality-properties`, `c09-remove-parentheses`, `c08-combine-like-terms`, `a27-lcm` | `a19-distributive` | 3a-symbols/1-c34-linear-equation.typ |
+| `c37-system-of-equations` | 二元一次方程组 | `c34-linear-equation` | — | 3a-symbols/3-c37-system-of-equations.typ |
+| `c38-substitution-method` | 代入消元法 | `c37-system-of-equations`, `c36-five-step-solution` | `a19-distributive` | 3a-symbols/3-c37-system-of-equations.typ |
+| `c39-elimination-method` | 加减消元法 | `c37-system-of-equations`, `c35-equality-properties` | `c08-combine-like-terms` | 3a-symbols/3-c37-system-of-equations.typ |
+| `c40-quadratic-equation` | 一元二次方程 ax²+bx+c=0 | `c15-power-notation`, `c07-polynomial`, `c04-equation` | — | 3a-symbols/3-c40-quadratic-equation.typ |
+| `c41-square-root-method` | 直接开方法 (x+m)²=k 两边开根 | `c40-quadratic-equation`, `c11-square-root`, `c06-undo-balance` | — | 3a-symbols/3-c40-quadratic-equation.typ |
+| `c42-completing-square` | 配方法 — 加减"半数平方"化顶点式 | `c41-square-root-method`, `c14-perfect-square-formula` | — | 3a-symbols/3-c40-quadratic-equation.typ |
+| `c43-quadratic-formula` | 求根公式 x=(-b±√(b²-4ac))/(2a) | `c42-completing-square`, `c11-square-root` | — | 3a-symbols/3-c40-quadratic-equation.typ |
+| `c44-factor-method` | 因式分解法 — 零乘积性质 | `c40-quadratic-equation`, `c21-factorization`, `c24-cross-multiplication` | — | 3a-symbols/3-c40-quadratic-equation.typ |
+| `c45-inequality` | 不等式与解集 — <,>,≤,≥ 连接 | `a03-order`, `a49-number-line` | — | 3a-symbols/3-c45-inequality.typ |
+| `c46-inequality-properties` | 不等式三性质(乘除负数反号) | `c45-inequality`, `a50-negative-number`, `a54-rational-arithmetic` | — | 3a-symbols/3-c45-inequality.typ |
+| `c47-linear-inequality` | 一元一次不等式 | `c46-inequality-properties`, `c36-five-step-solution` | — | 3a-symbols/3-c45-inequality.typ |
+| `c48-inequality-system` | 不等式组与交集口诀 | `c47-linear-inequality`, `a49-number-line` | — | 3a-symbols/3-c45-inequality.typ |
 
 > **说明**:本域以代数符号入口(`c01-c06`,字母/代数式/代入 + 方程/解/undo-balance)作为门槛,主体是整式/幂/因式分解/分式/方程/不等式(`c07-c48`)。入口 6 条在源码中原属 ch04,但其 90% 的出边流向 ch06 的代数深化,在本图谱归并为同一域。
 
@@ -212,44 +212,44 @@
 
 | tool-id | 中文名 / 定义 | 概念前置 | 例题前置(额外) | 源码位置 |
 |---|---|---|---|---|
-| `d01-congruence-definition` | 全等记号 △ABC≅△DEF(顶点对应) | `b07-triangle`, `b02-line-segment`, `b20-angle` | `b26-complementary`, `b27-supplementary`, `b28-vertical-angles`, `b29-parallel-lines`, `b30-corresponding-angles`, `b31-alternate-interior-angles` | d-geometry-proof/d01-congruence-definition.typ |
-| `d02-proof-chain` | 三步证明链 已知→桥→结论 | `d01-congruence-definition` | — | d-geometry-proof/d01-congruence-definition.typ |
-| `d03-ssa-warning` | SSA 不是判定(反例警示) | `d01-congruence-definition` | — | d-geometry-proof/d01-congruence-definition.typ |
-| `d04-sss-criterion` | SSS 全等判定 — 三边对应相等 | `d01-congruence-definition`, `d02-proof-chain` | — | d-geometry-proof/d04-sss-criterion.typ |
-| `d05-sas-criterion` | SAS — 两边及夹角对应相等 | `d01-congruence-definition`, `d02-proof-chain`, `b20-angle` | — | d-geometry-proof/d04-sss-criterion.typ |
-| `d06-isosceles-property` | 等腰三角形三线合一 | `d05-sas-criterion` | — | d-geometry-proof/d04-sss-criterion.typ |
-| `d07-asa-criterion` | ASA — 两角及夹边 | `d02-proof-chain` | — | d-geometry-proof/d07-asa-criterion.typ |
-| `d08-aas-criterion` | AAS — 两角及非夹边 | `d07-asa-criterion`, `b33-triangle-angle-sum` | — | d-geometry-proof/d07-asa-criterion.typ |
-| `d09-hl-criterion` | HL(直角斜边+直角边) | `d01-congruence-definition`, `b21-right-angle` | — | d-geometry-proof/d07-asa-criterion.typ |
-| `d10-similar-triangles` | 相似三角形 △∽△(对应角等/边成比例) | `d01-congruence-definition`, `a44-ratio`, `a45-proportion` | — | d-geometry-proof/d10-similar-triangles.typ |
-| `d11-similarity-scaling` | 相似边/周长/面积比 k/k/k² | `d10-similar-triangles`, `c10-square` | — | d-geometry-proof/d10-similar-triangles.typ |
-| `d12-parallel-similarity` | 平行线截三角形相似 | `d10-similar-triangles`, `b29-parallel-lines`, `b30-corresponding-angles` | — | d-geometry-proof/d10-similar-triangles.typ |
-| `d13-midsegment` | 三角形中位线 — 平行第三边且长度一半 | `d12-parallel-similarity` | — | d-geometry-proof/d10-similar-triangles.typ |
-| `d14-quadrilateral-angle-sum` | 四边形内角和 360° | `b08-quadrilateral`, `b22-degree`, `b33-triangle-angle-sum` | — | d-geometry-proof/d14-quadrilateral-angle-sum.typ |
-| `d15-parallelogram-properties` | 平行四边形性质(对边等/对角等/对角线平分) | `d14-quadrilateral-angle-sum`, `b29-parallel-lines`, `d05-sas-criterion` | — | d-geometry-proof/d14-quadrilateral-angle-sum.typ |
-| `d16-parallelogram-criteria` | 平行四边形 5 种判定 | `d15-parallelogram-properties`, `d04-sss-criterion`, `d07-asa-criterion` | — | d-geometry-proof/d14-quadrilateral-angle-sum.typ |
-| `d17-rectangle` | 矩形 — 有一直角的平行四边形 | `d15-parallelogram-properties`, `b21-right-angle`, `d05-sas-criterion` | — | d-geometry-proof/d17-rectangle.typ |
-| `d18-rhombus` | 菱形 — 四边相等平行四边形 | `d15-parallelogram-properties`, `b34-perpendicular`, `d05-sas-criterion` | — | d-geometry-proof/d17-rectangle.typ |
-| `d19-square` | 正方形 = 矩形 ∩ 菱形 | `d17-rectangle`, `d18-rhombus` | — | d-geometry-proof/d17-rectangle.typ |
-| `d20-radius-linking` | 连半径战术 — 圆→等腰/全等 | `b09-circle`, `d05-sas-criterion`, `d06-isosceles-property` | — | d-geometry-proof/d20-radius-linking.typ |
-| `d21-inscribed-angle` | 圆周角定理 = 圆心角一半;半圆圆周角 90° | `d20-radius-linking`, `b20-angle` | — | d-geometry-proof/d20-radius-linking.typ |
-| `d22-perpendicular-chord` | 垂径定理 — 过心垂线平分弦 | `d20-radius-linking`, `b34-perpendicular`, `d05-sas-criterion`, `b02-line-segment` | — | d-geometry-proof/d20-radius-linking.typ |
-| `d23-pythagorean-theorem` | 勾股定理 a²+b²=c² | `b07-triangle`, `b02-line-segment`, `b21-right-angle`, `c10-square`, `b13-area`(面积法证明) | `c11-square-root`(结果) | d-geometry-proof/d23-pythagorean-theorem.typ |
-| `d24-pythagorean-converse` | 勾股逆定理(SSS 判定直角) | `d23-pythagorean-theorem`, `d04-sss-criterion` | — | d-geometry-proof/d23-pythagorean-theorem.typ |
-| `d25-pythagorean-triples` | 勾股数与隐藏直角三角形(矩形对角/菱形半对角/弦心距) | `d23-pythagorean-theorem`, `d17-rectangle`, `d18-rhombus`, `d22-perpendicular-chord` | — | d-geometry-proof/d23-pythagorean-theorem.typ |
-| `d26-trigonometric-ratios` | sin/cos/tan 三角比 | `d10-similar-triangles`, `b21-right-angle`, `a44-ratio` | `d23-pythagorean-theorem`(验算) | d-geometry-proof/d26-trigonometric-ratios.typ |
-| `d27-trig-invariance` | 同角三角比不变 — 由相似保证 | `d26-trigonometric-ratios`, `d11-similarity-scaling` | — | d-geometry-proof/d26-trigonometric-ratios.typ |
-| `d28-special-angles` | 30°/45°/60° 特殊角三角比值 | `d26-trigonometric-ratios`, `d23-pythagorean-theorem` | — | d-geometry-proof/d26-trigonometric-ratios.typ |
-| `d29-elevation-depression` | 仰角与俯角(平行水平线上两角相等) | `b20-angle`, `b29-parallel-lines` | — | d-geometry-proof/d29-elevation-depression.typ |
-| `d30-slope` | 坡度 i = rise/run = tan α | `d26-trigonometric-ratios`, `a44-ratio` | — | d-geometry-proof/d29-elevation-depression.typ |
-| `d31-scene-to-triangle` | 场景→直角三角形标准流程 | `d29-elevation-depression`, `d26-trigonometric-ratios`, `d23-pythagorean-theorem`, `b34-perpendicular` | — | d-geometry-proof/d29-elevation-depression.typ |
-| `d32-rigid-transformations` | 三类刚性变换(平移/翻折/旋转)共同不变量 | `b02-line-segment`, `b20-angle`, `d05-sas-criterion` | — | d-geometry-proof/d32-rigid-transformations.typ |
-| `d33-central-symmetry` | 中心对称 = 旋转 180° | `d32-rigid-transformations` | — | d-geometry-proof/d32-rigid-transformations.typ |
-| `d34-coordinate-transformations` | 坐标下变换记法 (x,-y)/(-x,y)/(-x,-y)/(x+a,y+b) | `d32-rigid-transformations`, `b36-coordinate-system`, `a52-opposite-number` | — | d-geometry-proof/d32-rigid-transformations.typ |
-| `d35-orthographic-projection` | 正投影(非透视) | `b34-perpendicular`, `b05-plane` | — | d-geometry-proof/d35-orthographic-projection.typ |
-| `d36-three-views` | 主/俯/左三视图对齐规则 | `d35-orthographic-projection`, `b18-rectangular-solid-volume` | — | d-geometry-proof/d35-orthographic-projection.typ |
-| `d37-regular-polygon-inscribed` | 圆内接正多边形(中心角 360°/n) | `b09-circle`, `d21-inscribed-angle`, `b22-degree` | — | d-geometry-proof/d37-regular-polygon-inscribed.typ |
-| `d38-circle-position` | 两圆位置关系(外离/切/交/内切/内含) | `b09-circle`, `a03-order` | — | d-geometry-proof/d37-regular-polygon-inscribed.typ |
+| `d01-congruence-definition` | 全等记号 △ABC≅△DEF(顶点对应) | `b07-triangle`, `b02-line-segment`, `b20-angle` | `b26-complementary`, `b27-supplementary`, `b28-vertical-angles`, `b29-parallel-lines`, `b30-corresponding-angles`, `b31-alternate-interior-angles` | 3b-geometry-proof/1-d01-congruence-definition.typ |
+| `d02-proof-chain` | 三步证明链 已知→桥→结论 | `d01-congruence-definition` | — | 3b-geometry-proof/1-d01-congruence-definition.typ |
+| `d03-ssa-warning` | SSA 不是判定(反例警示) | `d01-congruence-definition` | — | 3b-geometry-proof/1-d01-congruence-definition.typ |
+| `d04-sss-criterion` | SSS 全等判定 — 三边对应相等 | `d01-congruence-definition`, `d02-proof-chain` | — | 3b-geometry-proof/1-d04-sss-criterion.typ |
+| `d05-sas-criterion` | SAS — 两边及夹角对应相等 | `d01-congruence-definition`, `d02-proof-chain`, `b20-angle` | — | 3b-geometry-proof/1-d04-sss-criterion.typ |
+| `d06-isosceles-property` | 等腰三角形三线合一 | `d05-sas-criterion` | — | 3b-geometry-proof/1-d04-sss-criterion.typ |
+| `d07-asa-criterion` | ASA — 两角及夹边 | `d02-proof-chain` | — | 3b-geometry-proof/1-d07-asa-criterion.typ |
+| `d08-aas-criterion` | AAS — 两角及非夹边 | `d07-asa-criterion`, `b33-triangle-angle-sum` | — | 3b-geometry-proof/1-d07-asa-criterion.typ |
+| `d09-hl-criterion` | HL(直角斜边+直角边) | `d01-congruence-definition`, `b21-right-angle` | — | 3b-geometry-proof/1-d07-asa-criterion.typ |
+| `d10-similar-triangles` | 相似三角形 △∽△(对应角等/边成比例) | `d01-congruence-definition`, `a44-ratio`, `a45-proportion` | — | 3b-geometry-proof/1-d10-similar-triangles.typ |
+| `d11-similarity-scaling` | 相似边/周长/面积比 k/k/k² | `d10-similar-triangles`, `c10-square` | — | 3b-geometry-proof/1-d10-similar-triangles.typ |
+| `d12-parallel-similarity` | 平行线截三角形相似 | `d10-similar-triangles`, `b29-parallel-lines`, `b30-corresponding-angles` | — | 3b-geometry-proof/1-d10-similar-triangles.typ |
+| `d13-midsegment` | 三角形中位线 — 平行第三边且长度一半 | `d12-parallel-similarity` | — | 3b-geometry-proof/1-d10-similar-triangles.typ |
+| `d14-quadrilateral-angle-sum` | 四边形内角和 360° | `b08-quadrilateral`, `b22-degree`, `b33-triangle-angle-sum` | — | 3b-geometry-proof/1-d14-quadrilateral-angle-sum.typ |
+| `d15-parallelogram-properties` | 平行四边形性质(对边等/对角等/对角线平分) | `d14-quadrilateral-angle-sum`, `b29-parallel-lines`, `d05-sas-criterion` | — | 3b-geometry-proof/1-d14-quadrilateral-angle-sum.typ |
+| `d16-parallelogram-criteria` | 平行四边形 5 种判定 | `d15-parallelogram-properties`, `d04-sss-criterion`, `d07-asa-criterion` | — | 3b-geometry-proof/1-d14-quadrilateral-angle-sum.typ |
+| `d17-rectangle` | 矩形 — 有一直角的平行四边形 | `d15-parallelogram-properties`, `b21-right-angle`, `d05-sas-criterion` | — | 3b-geometry-proof/1-d17-rectangle.typ |
+| `d18-rhombus` | 菱形 — 四边相等平行四边形 | `d15-parallelogram-properties`, `b34-perpendicular`, `d05-sas-criterion` | — | 3b-geometry-proof/1-d17-rectangle.typ |
+| `d19-square` | 正方形 = 矩形 ∩ 菱形 | `d17-rectangle`, `d18-rhombus` | — | 3b-geometry-proof/1-d17-rectangle.typ |
+| `d20-radius-linking` | 连半径战术 — 圆→等腰/全等 | `b09-circle`, `d05-sas-criterion`, `d06-isosceles-property` | — | 3b-geometry-proof/1-d20-radius-linking.typ |
+| `d21-inscribed-angle` | 圆周角定理 = 圆心角一半;半圆圆周角 90° | `d20-radius-linking`, `b20-angle` | — | 3b-geometry-proof/1-d20-radius-linking.typ |
+| `d22-perpendicular-chord` | 垂径定理 — 过心垂线平分弦 | `d20-radius-linking`, `b34-perpendicular`, `d05-sas-criterion`, `b02-line-segment` | — | 3b-geometry-proof/1-d20-radius-linking.typ |
+| `d23-pythagorean-theorem` | 勾股定理 a²+b²=c² | `b07-triangle`, `b02-line-segment`, `b21-right-angle`, `c10-square`, `b13-area`(面积法证明) | `c11-square-root`(结果) | 3b-geometry-proof/3-d23-pythagorean-theorem.typ |
+| `d24-pythagorean-converse` | 勾股逆定理(SSS 判定直角) | `d23-pythagorean-theorem`, `d04-sss-criterion` | — | 3b-geometry-proof/3-d23-pythagorean-theorem.typ |
+| `d25-pythagorean-triples` | 勾股数与隐藏直角三角形(矩形对角/菱形半对角/弦心距) | `d23-pythagorean-theorem`, `d17-rectangle`, `d18-rhombus`, `d22-perpendicular-chord` | — | 3b-geometry-proof/3-d23-pythagorean-theorem.typ |
+| `d26-trigonometric-ratios` | sin/cos/tan 三角比 | `d10-similar-triangles`, `b21-right-angle`, `a44-ratio` | `d23-pythagorean-theorem`(验算) | 3b-geometry-proof/3-d26-trigonometric-ratios.typ |
+| `d27-trig-invariance` | 同角三角比不变 — 由相似保证 | `d26-trigonometric-ratios`, `d11-similarity-scaling` | — | 3b-geometry-proof/3-d26-trigonometric-ratios.typ |
+| `d28-special-angles` | 30°/45°/60° 特殊角三角比值 | `d26-trigonometric-ratios`, `d23-pythagorean-theorem` | — | 3b-geometry-proof/3-d26-trigonometric-ratios.typ |
+| `d29-elevation-depression` | 仰角与俯角(平行水平线上两角相等) | `b20-angle`, `b29-parallel-lines` | — | 3b-geometry-proof/3-d29-elevation-depression.typ |
+| `d30-slope` | 坡度 i = rise/run = tan α | `d26-trigonometric-ratios`, `a44-ratio` | — | 3b-geometry-proof/3-d29-elevation-depression.typ |
+| `d31-scene-to-triangle` | 场景→直角三角形标准流程 | `d29-elevation-depression`, `d26-trigonometric-ratios`, `d23-pythagorean-theorem`, `b34-perpendicular` | — | 3b-geometry-proof/3-d29-elevation-depression.typ |
+| `d32-rigid-transformations` | 三类刚性变换(平移/翻折/旋转)共同不变量 | `b02-line-segment`, `b20-angle`, `d05-sas-criterion` | — | 3b-geometry-proof/3-d32-rigid-transformations.typ |
+| `d33-central-symmetry` | 中心对称 = 旋转 180° | `d32-rigid-transformations` | — | 3b-geometry-proof/3-d32-rigid-transformations.typ |
+| `d34-coordinate-transformations` | 坐标下变换记法 (x,-y)/(-x,y)/(-x,-y)/(x+a,y+b) | `d32-rigid-transformations`, `b36-coordinate-system`, `a52-opposite-number` | — | 3b-geometry-proof/3-d32-rigid-transformations.typ |
+| `d35-orthographic-projection` | 正投影(非透视) | `b34-perpendicular`, `b05-plane` | — | 3b-geometry-proof/3-d35-orthographic-projection.typ |
+| `d36-three-views` | 主/俯/左三视图对齐规则 | `d35-orthographic-projection`, `b18-rectangular-solid-volume` | — | 3b-geometry-proof/3-d35-orthographic-projection.typ |
+| `d37-regular-polygon-inscribed` | 圆内接正多边形(中心角 360°/n) | `b09-circle`, `d21-inscribed-angle`, `b22-degree` | — | 3b-geometry-proof/3-d37-regular-polygon-inscribed.typ |
+| `d38-circle-position` | 两圆位置关系(外离/切/交/内切/内含) | `b09-circle`, `a03-order` | — | 3b-geometry-proof/3-d37-regular-polygon-inscribed.typ |
 
 ---
 
@@ -259,15 +259,15 @@
 
 | tool-id | 中文名 / 定义 | 概念前置 | 例题前置(额外) | 源码位置 |
 |---|---|---|---|---|
-| `e01-function-concept` | 函数 — 每个 x 对应唯一 y;四种读法 | `c01-variable`, `c02-algebraic-expression`, `b36-coordinate-system` | — | e-functions/e01-function-concept.typ |
-| `e02-direct-proportion` | 正比例函数 y=kx — 过原点 | `e01-function-concept`, `a45-proportion` | — | e-functions/e01-function-concept.typ |
-| `e03-linear-function` | 一次函数 y=kx+b(k:斜率,b:截距) | `e02-direct-proportion`, `c02-algebraic-expression` | `c04-equation`(求参数时), `c34-linear-equation` | e-functions/e01-function-concept.typ |
-| `e04-inverse-proportion` | 反比例函数 y=k/x — xy 恒定 | `e01-function-concept`, `a44-ratio`, `b36-coordinate-system` | `c47-linear-inequality`(例题 600/x≤12) | e-functions/e04-inverse-proportion.typ |
-| `e05-quadratic-function` | 二次函数 y=ax²+bx+c | `e01-function-concept`, `c40-quadratic-equation` | — | e-functions/e05-quadratic-function.typ |
-| `e06-vertex-axis` | 顶点 + 对称轴(顶点式 y=a(x-h)²+k) | `e05-quadratic-function`, `c42-completing-square` | — | e-functions/e05-quadratic-function.typ |
-| `e07-parabola-zeros` | 抛物线与 x 轴交点 = 方程根 | `e05-quadratic-function`, `c43-quadratic-formula`, `c44-factor-method` | — | e-functions/e05-quadratic-function.typ |
-| `e08-additive-growth` | 加法增长 y=a+kn(对应一次函数) | `e03-linear-function` | — | e-functions/e08-additive-growth.typ |
-| `e09-multiplicative-growth` | 乘法增长 y=a(1+r)^n(复利式) | `c15-power-notation`, `c19-power-of-power`, `a46-percentage`, `a48-percent-decimal-conversion` | — | e-functions/e08-additive-growth.typ |
+| `e01-function-concept` | 函数 — 每个 x 对应唯一 y;四种读法 | `c01-variable`, `c02-algebraic-expression`, `b36-coordinate-system` | — | 3c-functions/1-e01-function-concept.typ |
+| `e02-direct-proportion` | 正比例函数 y=kx — 过原点 | `e01-function-concept`, `a45-proportion` | — | 3c-functions/1-e01-function-concept.typ |
+| `e03-linear-function` | 一次函数 y=kx+b(k:斜率,b:截距) | `e02-direct-proportion`, `c02-algebraic-expression` | `c04-equation`(求参数时), `c34-linear-equation` | 3c-functions/1-e01-function-concept.typ |
+| `e04-inverse-proportion` | 反比例函数 y=k/x — xy 恒定 | `e01-function-concept`, `a44-ratio`, `b36-coordinate-system` | `c47-linear-inequality`(例题 600/x≤12) | 3c-functions/1-e04-inverse-proportion.typ |
+| `e05-quadratic-function` | 二次函数 y=ax²+bx+c | `e01-function-concept`, `c40-quadratic-equation` | — | 3c-functions/3-e05-quadratic-function.typ |
+| `e06-vertex-axis` | 顶点 + 对称轴(顶点式 y=a(x-h)²+k) | `e05-quadratic-function`, `c42-completing-square` | — | 3c-functions/3-e05-quadratic-function.typ |
+| `e07-parabola-zeros` | 抛物线与 x 轴交点 = 方程根 | `e05-quadratic-function`, `c43-quadratic-formula`, `c44-factor-method` | — | 3c-functions/3-e05-quadratic-function.typ |
+| `e08-additive-growth` | 加法增长 y=a+kn(对应一次函数) | `e03-linear-function` | — | 3c-functions/3-e08-additive-growth.typ |
+| `e09-multiplicative-growth` | 乘法增长 y=a(1+r)^n(复利式) | `c15-power-notation`, `c19-power-of-power`, `a46-percentage`, `a48-percent-decimal-conversion` | — | 3c-functions/3-e08-additive-growth.typ |
 
 ---
 
@@ -277,24 +277,24 @@
 
 | tool-id | 中文名 / 定义 | 概念前置 | 例题前置(额外) | 源码位置 |
 |---|---|---|---|---|
-| `f01-frequency-count` | 频数 — 某类别出现的次数 | `a01-natural-number` | — | f-data/f01-frequency-count.typ |
-| `f02-frequency-rate` | 频率 = 频数/总数 | `f01-frequency-count`, `a46-percentage`, `a48-percent-decimal-conversion` | — | f-data/f01-frequency-count.typ |
-| `f03-chart-selection` | 图表选择(条形/扇形/折线) | `f02-frequency-rate`, `b36-coordinate-system`, `a46-percentage` | — | f-data/f01-frequency-count.typ |
-| `f04-mean` | 平均数 = 总和/个数 | `f01-frequency-count`, `a11-division`, `a07-addition` | — | f-data/f04-mean.typ |
-| `f05-median` | 中位数 — 排序后中间值 | `a03-order`, `f01-frequency-count` | — | f-data/f04-mean.typ |
-| `f06-mode` | 众数 — 出现次数最多 | `f01-frequency-count` | — | f-data/f04-mean.typ |
-| `f07-range` | 极差 = 最大-最小 | `a03-order`, `a08-subtraction` | — | f-data/f07-range.typ |
-| `f08-variance` | 方差 — 偏差平方的平均 $s^2$ | `f04-mean`, `c10-square`, `a08-subtraction` | `a53-absolute-value`(偏差直觉) | f-data/f07-range.typ |
-| `f09-frequency-distribution-table` | 频率分布表 — 连续数据分组 | `f01-frequency-count`, `f02-frequency-rate`, `a03-order` | — | f-data/f09-frequency-distribution-table.typ |
-| `f10-histogram` | 直方图 — 频率/组距为纵轴的连续柱图 | `f09-frequency-distribution-table`, `b36-coordinate-system` | — | f-data/f09-frequency-distribution-table.typ |
-| `f11-sample-space` | 样本空间 — 所有等可能结果列举 | `a01-natural-number` | — | f-data/f11-sample-space.typ |
-| `f12-probability-definition` | 概率 P = 有利数/总数 | `f11-sample-space`, `a28-fraction-definition`, `a44-ratio` | — | f-data/f11-sample-space.typ |
-| `f13-complement-rule` | 对立事件 P(¬A)=1-P(A) | `f12-probability-definition`, `a08-subtraction` | — | f-data/f11-sample-space.typ |
-| `f14-experimental-probability` | 实验概率 — 重复中发生的频率 | `f02-frequency-rate` | — | f-data/f14-experimental-probability.typ |
-| `f15-frequency-to-probability` | 频率稳定于概率(大数规律直觉版) | `f14-experimental-probability`, `f12-probability-definition` | — | f-data/f14-experimental-probability.typ |
-| `f16-population-sample` | 总体/个体/样本/样本容量 | `f01-frequency-count` | — | f-data/f16-population-sample.typ |
-| `f17-random-sampling` | 随机抽样(代表性) | `f16-population-sample`, `f12-probability-definition` | — | f-data/f16-population-sample.typ |
-| `f18-sample-estimation` | 样本均值/频率估计总体 | `f17-random-sampling`, `f04-mean`, `f02-frequency-rate`, `a44-ratio` | — | f-data/f16-population-sample.typ |
+| `f01-frequency-count` | 频数 — 某类别出现的次数 | `a01-natural-number` | — | 3d-data/1-f01-frequency-count.typ |
+| `f02-frequency-rate` | 频率 = 频数/总数 | `f01-frequency-count`, `a46-percentage`, `a48-percent-decimal-conversion` | — | 3d-data/1-f01-frequency-count.typ |
+| `f03-chart-selection` | 图表选择(条形/扇形/折线) | `f02-frequency-rate`, `b36-coordinate-system`, `a46-percentage` | — | 3d-data/1-f01-frequency-count.typ |
+| `f04-mean` | 平均数 = 总和/个数 | `f01-frequency-count`, `a11-division`, `a07-addition` | — | 3d-data/1-f04-mean.typ |
+| `f05-median` | 中位数 — 排序后中间值 | `a03-order`, `f01-frequency-count` | — | 3d-data/1-f04-mean.typ |
+| `f06-mode` | 众数 — 出现次数最多 | `f01-frequency-count` | — | 3d-data/1-f04-mean.typ |
+| `f07-range` | 极差 = 最大-最小 | `a03-order`, `a08-subtraction` | — | 3d-data/1-f07-range.typ |
+| `f08-variance` | 方差 — 偏差平方的平均 $s^2$ | `f04-mean`, `c10-square`, `a08-subtraction` | `a53-absolute-value`(偏差直觉) | 3d-data/1-f07-range.typ |
+| `f09-frequency-distribution-table` | 频率分布表 — 连续数据分组 | `f01-frequency-count`, `f02-frequency-rate`, `a03-order` | — | 3d-data/1-f09-frequency-distribution-table.typ |
+| `f10-histogram` | 直方图 — 频率/组距为纵轴的连续柱图 | `f09-frequency-distribution-table`, `b36-coordinate-system` | — | 3d-data/1-f09-frequency-distribution-table.typ |
+| `f11-sample-space` | 样本空间 — 所有等可能结果列举 | `a01-natural-number` | — | 3d-data/3-f11-sample-space.typ |
+| `f12-probability-definition` | 概率 P = 有利数/总数 | `f11-sample-space`, `a28-fraction-definition`, `a44-ratio` | — | 3d-data/3-f11-sample-space.typ |
+| `f13-complement-rule` | 对立事件 P(¬A)=1-P(A) | `f12-probability-definition`, `a08-subtraction` | — | 3d-data/3-f11-sample-space.typ |
+| `f14-experimental-probability` | 实验概率 — 重复中发生的频率 | `f02-frequency-rate` | — | 3d-data/3-f14-experimental-probability.typ |
+| `f15-frequency-to-probability` | 频率稳定于概率(大数规律直觉版) | `f14-experimental-probability`, `f12-probability-definition` | — | 3d-data/3-f14-experimental-probability.typ |
+| `f16-population-sample` | 总体/个体/样本/样本容量 | `f01-frequency-count` | — | 3d-data/3-f16-population-sample.typ |
+| `f17-random-sampling` | 随机抽样(代表性) | `f16-population-sample`, `f12-probability-definition` | — | 3d-data/3-f16-population-sample.typ |
+| `f18-sample-estimation` | 样本均值/频率估计总体 | `f17-random-sampling`, `f04-mean`, `f02-frequency-rate`, `a44-ratio` | — | 3d-data/3-f16-population-sample.typ |
 
 ---
 
