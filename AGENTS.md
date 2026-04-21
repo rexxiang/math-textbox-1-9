@@ -54,4 +54,4 @@ make clean  # 清理构建产物
 
 Typst 语法与图形规范（数学写法、CeTZ 角标记、框函数速查、交叉引用等）：
 
-> `.claude/skills/typst/SKILL.md`
+> `.agents/skills/typst/SKILL.md`
