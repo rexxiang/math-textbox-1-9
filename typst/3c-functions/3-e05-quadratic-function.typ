@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §e05 二次函数：弯曲变化与最值模型 <tool:e05-quadratic-function>
+== 二次函数：弯曲变化与最值模型 <tool:e05-quadratic-function>
 
 #vocab[二次函数 quadratic function / 顶点 vertex / 对称轴 axis of symmetry / 抛物线 parabola]
 

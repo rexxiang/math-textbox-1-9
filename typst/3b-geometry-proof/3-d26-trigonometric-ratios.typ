@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §d26 三角比：让角度先变成稳定比例 <tool:d26-trigonometric-ratios>
+== 三角比：让角度先变成稳定比例 <tool:d26-trigonometric-ratios>
 
 #vocab[三角比 trigonometric ratios / 正弦 sine (sin) / 余弦 cosine (cos) / 正切 tangent (tan)]
 

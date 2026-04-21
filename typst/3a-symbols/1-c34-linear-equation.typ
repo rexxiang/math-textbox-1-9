@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== §c34 一元一次方程 <tool:c34-linear-equation>
+== 一元一次方程 <tool:c34-linear-equation>
 
 #vocab[移项 transposition / 去分母 clearing denominators / 去括号 distribution]
 

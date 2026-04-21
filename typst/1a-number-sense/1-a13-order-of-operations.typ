@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §a13 混合运算 <tool:a13-order-of-operations>
+== 混合运算 <tool:a13-order-of-operations>
 
 #crisis[
   便利店购物：3 包薯片每包 5 元，再加 1 瓶水 3 元。

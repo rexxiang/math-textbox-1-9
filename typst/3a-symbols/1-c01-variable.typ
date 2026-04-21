@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §c01 用字母写计算模板 <tool:c01-variable>
+== 用字母写计算模板 <tool:c01-variable>
 
 #vocab[字母表示数 variable / 代数式 algebraic expression]
 

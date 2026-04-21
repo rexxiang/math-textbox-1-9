@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §b13 面积：先看铺了多少小方格 <tool:b13-area>
+== 面积：先看铺了多少小方格 <tool:b13-area>
 
 #vocab[面积 area / 体积 volume / 割补法 cut-and-rearrange]
 

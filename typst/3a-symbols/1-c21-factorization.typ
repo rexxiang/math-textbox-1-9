@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
-== §c21 因式分解 <tool:c21-factorization>
+== 因式分解 <tool:c21-factorization>
 
 #vocab[因式分解 factorization / 公因式 common factor]
 

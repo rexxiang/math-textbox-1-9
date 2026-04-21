@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== §c15 幂的记号与乘除法则 <tool:c15-power-notation>
+== 幂的记号与乘除法则 <tool:c15-power-notation>
 
 #vocab[幂 power / 指数 exponent / 底数 base]
 

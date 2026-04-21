@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, side-hack, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §b23 锐角、钝角与平角 <tool:b23-acute-angle>
+== 锐角、钝角与平角 <tool:b23-acute-angle>
 
 #vocab[锐角 acute angle / 钝角 obtuse angle / 平角 straight angle]
 

@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §a55 把数轴补完整 <tool:a55-irrational-number>
+== 把数轴补完整 <tool:a55-irrational-number>
 
 #vocab[平方根记号 square root notation / $sqrt(2)$ 表示 2 的算术平方根]
 

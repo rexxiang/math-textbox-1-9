@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §e08 利率与增长率：函数应用比较 <tool:e08-additive-growth>
+== 利率与增长率：函数应用比较 <tool:e08-additive-growth>
 
 #vocab[固定增加模型 fixed-increment model / 固定倍率模型 fixed-multiplier model / 倍率 multiplier]
 

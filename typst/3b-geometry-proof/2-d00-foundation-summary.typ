@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": blueprint, mastery, side-hack, secref
 
-== §7.7 几何基础总结：把证明地基收紧 <meta:d-foundation-summary>
+== 几何基础总结：把证明地基收紧 <meta:d-foundation-summary>
 
 #blueprint[
   *基础段速查卡*

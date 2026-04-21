@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
-== §a34 约分与通分：让分数"穿上同款衣服" <tool:a34-simplify>
+== 约分与通分：让分数"穿上同款衣服" <tool:a34-simplify>
 
 #vocab[约分 simplification / 最简分数 fraction in lowest terms / 通分 finding common denominator]
 

@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== §c12 整式相乘与乘法公式 <tool:c12-polynomial-multiply>
+== 整式相乘与乘法公式 <tool:c12-polynomial-multiply>
 
 #vocab[展开 expansion / 平方差公式 difference of squares / 完全平方公式 perfect-square formula]
 

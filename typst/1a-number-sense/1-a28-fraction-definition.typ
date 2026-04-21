@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §a28 分数的意义：整数世界装不下的数 <tool:a28-fraction-definition>
+== 分数的意义：整数世界装不下的数 <tool:a28-fraction-definition>
 
 #vocab[分数 fraction / 真分数 proper fraction / 假分数 improper fraction]
 

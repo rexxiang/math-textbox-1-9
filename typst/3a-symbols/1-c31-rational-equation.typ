@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
-== §c31 分式方程：去掉分母的诀窍 <tool:c31-rational-equation>
+== 分式方程：去掉分母的诀窍 <tool:c31-rational-equation>
 
 #vocab[分式方程 rational equation / 增根 extraneous root / 验根 checking the solution]
 

@@ -60,11 +60,12 @@
   set page(numbering: "1", header: main-page-header, footer: main-page-footer)
 }
 
-// ── 交叉引用（沿用 V1）──────────────────────────────────────────
+// ── 交叉引用 ──────────────────────────────────────────────────
 
 // id 形式:
-//   tool-id:  "a01-natural-number" → label("tool:a01-natural-number"),显示 §a01
-//   meta 节号: "5.1" → label("meta:...") 由调用方保证存在,显示 §5.1
+//   tool-id:  "a01-natural-number" → label("tool:a01-natural-number")
+//   meta 节号: "5.1" → label("meta:...") 由调用方保证存在
+// 两类均动态取 Typst 自动章节号，显示如 §1.3
 #let _meta-label = (
   "5.1": "meta:foundation-check",
   "5.2": "meta:branch-entry-recaps",
@@ -73,13 +74,19 @@
   "8.3": "meta:e-foundation-summary",
   "9.5": "meta:f-foundation-summary",
 )
-#let secref(id) = {
-  if id in _meta-label {
-    link(label(_meta-label.at(id)), [§#id])
+#let secref(id) = context {
+  let lbl = if id in _meta-label {
+    label(_meta-label.at(id))
   } else {
-    // tool-id: 取第一段作为显示名
-    let short = id.split("-").at(0)
-    link(label("tool:" + id), [§#short])
+    label("tool:" + id)
+  }
+  let elems = query(lbl)
+  if elems.len() > 0 {
+    let loc = elems.first().location()
+    let nums = counter(heading).at(loc)
+    link(loc, "§" + numbering("1.1", ..nums))
+  } else {
+    [§?]
   }
 }
 #let secrange(from, to) = [#secref(from)--#secref(to)]

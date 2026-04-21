@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §d07 刚性判定（二）：角也能把形状锁住 <tool:d07-asa-criterion>
+== 刚性判定（二）：角也能把形状锁住 <tool:d07-asa-criterion>
 
 #vocab[角边角 Angle-Side-Angle (ASA) / 角角边 Angle-Angle-Side (AAS) / 斜边直角边 Hypotenuse-Leg (HL)]
 

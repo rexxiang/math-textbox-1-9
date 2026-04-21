@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §a15 加法运算律：换顺序、先配对 <tool:a15-add-commutative>
+== 加法运算律：换顺序、先配对 <tool:a15-add-commutative>
 
 #vocab[加法交换律 commutative law of addition / 加法结合律 associative law of addition]
 

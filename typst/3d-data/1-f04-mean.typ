@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §f04 平均数、中位数与众数 <tool:f04-mean>
+== 平均数、中位数与众数 <tool:f04-mean>
 
 #vocab[平均数 mean / 中位数 median / 众数 mode]
 

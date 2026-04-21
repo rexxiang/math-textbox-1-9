@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== §c40 一元二次方程 <tool:c40-quadratic-equation>
+== 一元二次方程 <tool:c40-quadratic-equation>
 
 #vocab[一元二次方程 quadratic equation / 配方法 completing the square / 求根公式 quadratic formula]
 

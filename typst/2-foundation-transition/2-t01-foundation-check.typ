@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, tryit, pitfall, secref
 
-== §5.1 基础总检：四条主干是否已经连起来 <meta:foundation-check>
+== 基础总检：四条主干是否已经连起来 <meta:foundation-check>
 
 #crisis[
   走到分支入口前，最危险的不是“没学过新东西”，而是把旧工具分散地记着，用不到一起。

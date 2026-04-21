@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== §c18 幂的高级规则：乘方与零次幂 <tool:c18-zero-exponent>
+== 幂的高级规则：乘方与零次幂 <tool:c18-zero-exponent>
 
 #vocab[零次幂 zero exponent / 幂的乘方 power of a power / 积的乘方 power of a product]
 

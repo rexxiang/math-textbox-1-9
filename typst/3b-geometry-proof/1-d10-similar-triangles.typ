@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
-== §d10 同形放缩与测量 <tool:d10-similar-triangles>
+== 同形放缩与测量 <tool:d10-similar-triangles>
 
 #vocab[相似三角形 similar triangles / 相似比 similarity ratio / 相似判定 similarity criteria / 角角相似 Angle-Angle similarity (AA) / 边角边相似 Side-Angle-Side similarity (SAS) / 边边边相似 Side-Side-Side similarity (SSS)]
 

@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §b20 角、直角与度量 <tool:b20-angle>
+== 角、直角与度量 <tool:b20-angle>
 
 #vocab[角 angle / 直角 right angle / 度 degree]
 

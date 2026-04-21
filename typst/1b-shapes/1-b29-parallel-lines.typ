@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §b29 平行线：两条永不相交的直线 <tool:b29-parallel-lines>
+== 平行线：两条永不相交的直线 <tool:b29-parallel-lines>
 
 #vocab[平行线 parallel lines / 同位角 corresponding angles / 内错角 alternate interior angles]
 

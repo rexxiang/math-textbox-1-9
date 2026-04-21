@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §a52 相反数、绝对值与有理数运算 <tool:a52-opposite-number>
+== 相反数、绝对值与有理数运算 <tool:a52-opposite-number>
 
 #vocab[相反数 opposite number / 绝对值 absolute value / 有理数运算 rational arithmetic]
 

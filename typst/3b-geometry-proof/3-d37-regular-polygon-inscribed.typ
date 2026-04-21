@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §d37 圆的拓展（选学）：正多边形与圆的位置关系 <tool:d37-regular-polygon-inscribed>
+== 圆的拓展（选学）：正多边形与圆的位置关系 <tool:d37-regular-polygon-inscribed>
 
 #vocab[正多边形 regular polygon / 外接圆 circumcircle / 圆心距 distance between centers]
 

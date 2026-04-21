@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §f01 数据收集与整理 <tool:f01-frequency-count>
+== 数据收集与整理 <tool:f01-frequency-count>
 
 #vocab[频数 frequency count / 频率 frequency / 条形图 bar chart / 折线图 line graph / 扇形图 pie chart]
 

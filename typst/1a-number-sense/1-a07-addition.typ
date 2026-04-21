@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §a07 加法与减法 <tool:a07-addition>
+== 加法与减法 <tool:a07-addition>
 
 #vocab[加法 addition / 减法 subtraction / 进退位 regrouping]
 

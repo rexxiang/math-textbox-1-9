@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
-== §d14 平行四边形：两组对边平行的四边形 <tool:d14-quadrilateral-angle-sum>
+== 平行四边形：两组对边平行的四边形 <tool:d14-quadrilateral-angle-sum>
 
 #vocab[四边形 quadrilateral / 平行四边形 parallelogram / 对角线 diagonal]
 

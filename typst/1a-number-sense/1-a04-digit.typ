@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §a04 计数与数位 <tool:a04-digit>
+== 计数与数位 <tool:a04-digit>
 
 #vocab[十进制 decimal system / 数位 place value]
 

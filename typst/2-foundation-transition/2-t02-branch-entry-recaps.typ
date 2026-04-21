@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, tryit, pitfall, secref
 
-== §5.2 分支入口回看：带着哪些旧工具继续前进 <meta:branch-entry-recaps>
+== 分支入口回看：带着哪些旧工具继续前进 <meta:branch-entry-recaps>
 
 #crisis[
   同样是继续往后走，有人进 06 会卡在整理式子，有人进 07 会卡在角关系，有人进 08 会把图象和关系割裂，有人进 09 会把“占整体多少”和“彼此相比多少”混成一团。

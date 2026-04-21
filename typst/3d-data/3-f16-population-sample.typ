@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §f16 总体、样本与估计 <tool:f16-population-sample>
+== 总体、样本与估计 <tool:f16-population-sample>
 
 #vocab[总体 population / 样本 sample / 样本容量 sample size]
 

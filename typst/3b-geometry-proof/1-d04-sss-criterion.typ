@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
-== §d04 刚性判定（一）：边把形状锁住 <tool:d04-sss-criterion>
+== 刚性判定（一）：边把形状锁住 <tool:d04-sss-criterion>
 
 #vocab[边边边 Side-Side-Side (SSS) / 边角边 Side-Angle-Side (SAS) / 等腰三角形 isosceles triangle]
 

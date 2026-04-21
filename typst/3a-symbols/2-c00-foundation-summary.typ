@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": blueprint, mastery, side-hack, secref
 
-== §6.7 代数基础总结：从整式到一元一次方程 <meta:c-foundation-summary>
+== 代数基础总结：从整式到一元一次方程 <meta:c-foundation-summary>
 
 #blueprint[
   *基础段速查卡*

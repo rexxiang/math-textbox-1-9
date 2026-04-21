@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== §c07 整式整理 <tool:c07-polynomial>
+== 整式整理 <tool:c07-polynomial>
 
 #vocab[整式 polynomial expression / 同类项 like terms / 去括号 removing parentheses]
 

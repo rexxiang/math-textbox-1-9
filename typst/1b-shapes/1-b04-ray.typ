@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §b04 射线与平面 <tool:b04-ray>
+== 射线与平面 <tool:b04-ray>
 
 #vocab[射线 ray / 平面 plane / 点与直线的关系 point-line relationship]
 

@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §a10 乘法与除法 <tool:a10-multiplication>
+== 乘法与除法 <tool:a10-multiplication>
 
 #vocab[乘法 multiplication / 除法 division / 余数 remainder]
 

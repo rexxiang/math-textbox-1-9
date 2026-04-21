@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §f09 频率分布与直方图 <tool:f09-frequency-distribution-table>
+== 频率分布与直方图 <tool:f09-frequency-distribution-table>
 
 #vocab[组距 class width / 频率分布表 frequency table / 频率分布直方图 histogram]
 

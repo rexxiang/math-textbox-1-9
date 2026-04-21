@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
-== §a38 分数的四则运算 <tool:a38-fraction-add-sub>
+== 分数的四则运算 <tool:a38-fraction-add-sub>
 
 #vocab[分数加减法 fraction addition/subtraction / 分数乘法 fraction multiplication / 分数除法 fraction division]
 

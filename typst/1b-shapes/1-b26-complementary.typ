@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, side-hack, vocab, tryit, pitfall
 
-== §b26 互余、互补与对顶角 <tool:b26-complementary>
+== 互余、互补与对顶角 <tool:b26-complementary>
 
 #vocab[互余 complementary / 互补 supplementary / 对顶角 vertical angles]
 

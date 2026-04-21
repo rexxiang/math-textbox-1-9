@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §b07 基本平面图形 <tool:b07-triangle>
+== 基本平面图形 <tool:b07-triangle>
 
 #vocab[三角形 triangle / 四边形 quadrilateral / 圆 circle]
 

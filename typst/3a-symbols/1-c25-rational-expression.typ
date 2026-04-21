@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
-== §c25 分式：字母也能当分母 <tool:c25-rational-expression>
+== 分式：字母也能当分母 <tool:c25-rational-expression>
 
 #vocab[分式 rational expression / 最简分式 irreducible rational expression / 约分 simplification]
 

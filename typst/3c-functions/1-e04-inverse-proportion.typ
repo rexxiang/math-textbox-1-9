@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, vocab, side-hack, secref, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §e04 反比例函数：固定乘积的变化模型 <tool:e04-inverse-proportion>
+== 反比例函数：固定乘积的变化模型 <tool:e04-inverse-proportion>
 
 #vocab[反比例函数 inverse proportional function / 固定乘积 fixed product]
 

@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §a23 质数与合数：整数的"素颜"与"组合脸" <tool:a23-prime>
+== 质数与合数：整数的"素颜"与"组合脸" <tool:a23-prime>
 
 #vocab[质数 prime number / 合数 composite number]
 

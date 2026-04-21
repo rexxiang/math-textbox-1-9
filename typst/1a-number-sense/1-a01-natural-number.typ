@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §a01 自然数与零 <tool:a01-natural-number>
+== 自然数与零 <tool:a01-natural-number>
 
 #vocab[自然数 natural number / 零 zero]
 

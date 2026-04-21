@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
-== §d17 矩形、菱形与正方形：特殊的平行四边形 <tool:d17-rectangle>
+== 矩形、菱形与正方形：特殊的平行四边形 <tool:d17-rectangle>
 
 #vocab[矩形 rectangle / 菱形 rhombus / 正方形 square / 直角 right angle]
 

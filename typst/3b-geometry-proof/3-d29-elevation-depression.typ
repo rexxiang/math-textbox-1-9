@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
-== §d29 角度测量与坡度：把场景题压回直角三角形 <tool:d29-elevation-depression>
+== 角度测量与坡度：把场景题压回直角三角形 <tool:d29-elevation-depression>
 
 #vocab[仰角与俯角 / 坡度 slope]
 

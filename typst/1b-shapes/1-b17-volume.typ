@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §b17 体积：再看能装多少东西 <tool:b17-volume>
+== 体积：再看能装多少东西 <tool:b17-volume>
 
 #vocab[体积 volume / 容积 capacity / 分层与堆叠 layering]
 

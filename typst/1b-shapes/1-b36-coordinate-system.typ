@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §b36 坐标入门：在方格纸上定位 <tool:b36-coordinate-system>
+== 坐标入门：在方格纸上定位 <tool:b36-coordinate-system>
 
 #vocab[坐标系 coordinate plane / 原点 origin / 有序数对 ordered pair]
 

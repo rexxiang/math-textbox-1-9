@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §a20 因数、倍数与整除线索 <tool:a20-factor-multiple>
+== 因数、倍数与整除线索 <tool:a20-factor-multiple>
 
 #vocab[因数 factor / 倍数 multiple / 整除线索 divisibility cues]
 

@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §f11 概率：先把结果列清楚 <tool:f11-sample-space>
+== 概率：先把结果列清楚 <tool:f11-sample-space>
 
 #vocab[事件 event / 样本空间 sample space / 概率 probability]
 

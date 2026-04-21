@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, vocab, side-hack, secref, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §e01 一次函数：稳定变化的第一模型 <tool:e01-function-concept>
+== 一次函数：稳定变化的第一模型 <tool:e01-function-concept>
 
 #vocab[函数 function / 正比例函数 direct proportional function / 一次函数 linear function]
 

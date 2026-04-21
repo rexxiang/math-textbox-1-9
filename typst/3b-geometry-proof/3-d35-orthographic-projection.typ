@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §d35 投影与三视图：先把框架搭稳 <tool:d35-orthographic-projection>
+== 投影与三视图：先把框架搭稳 <tool:d35-orthographic-projection>
 
 #vocab[投影 projection / 正投影 orthographic projection / 三视图 three views]
 

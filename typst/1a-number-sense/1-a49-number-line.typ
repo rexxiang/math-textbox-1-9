@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== §a49 数轴、负数与有理数入口 <tool:a49-number-line>
+== 数轴、负数与有理数入口 <tool:a49-number-line>
 
 #vocab[数轴 number line / 负数 negative number / 有理数 rational number]
 

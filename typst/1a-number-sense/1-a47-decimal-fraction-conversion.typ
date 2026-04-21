@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, side-hack, vocab, tryit, pitfall
 
-== §a47 互化与比较 <tool:a47-decimal-fraction-conversion>
+== 互化与比较 <tool:a47-decimal-fraction-conversion>
 
 #vocab[互化 conversion / 同一标准 common basis / 通分 common denominator]
 

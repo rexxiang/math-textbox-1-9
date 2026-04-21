@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §c04 左右一样多的关系 <tool:c04-equation>
+== 左右一样多的关系 <tool:c04-equation>
 
 #vocab[方程 equation / 解 solution]
 

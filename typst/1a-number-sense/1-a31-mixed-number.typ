@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §a31 带分数与分数基本性质 <tool:a31-mixed-number>
+== 带分数与分数基本性质 <tool:a31-mixed-number>
 
 #vocab[带分数 mixed number / 假分数与带分数互化 converting between improper fractions and mixed numbers / 分数基本性质 fundamental property of fractions]
 

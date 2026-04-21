@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": blueprint, mastery, side-hack, secref
 
-== §9.5 数据基础总结：先把“整理—描述—分布”这条线收束 <meta:f-foundation-summary>
+== 数据基础总结：先把“整理—描述—分布”这条线收束 <meta:f-foundation-summary>
 
 #blueprint[
   *基础段速查卡*

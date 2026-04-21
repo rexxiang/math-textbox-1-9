@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §c37 二元一次方程组 <tool:c37-system-of-equations>
+== 二元一次方程组 <tool:c37-system-of-equations>
 
 #vocab[方程组 system of equations / 代入法 substitution method / 加减消元 addition-subtraction elimination]
 

@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
-== §a25 最大公因数与最小公倍数：找"公约"和"公倍" <tool:a25-prime-factorization>
+== 最大公因数与最小公倍数：找"公约"和"公倍" <tool:a25-prime-factorization>
 
 #vocab[质因数分解 prime factorization / 最大公因数 Greatest Common Divisor (GCD) / 最小公倍数 Least Common Multiple (LCM)]
 

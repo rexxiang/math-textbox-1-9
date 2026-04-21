@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, vocab, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §b32 同旁内角与垂直 <tool:b32-co-interior-supplementary>
+== 同旁内角与垂直 <tool:b32-co-interior-supplementary>
 
 #vocab[同旁内角 co-interior angles / 垂直 perpendicular / 垂足 foot of perpendicular / 点到直线距离 distance from point to line]
 

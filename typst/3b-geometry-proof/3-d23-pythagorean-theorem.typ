@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §d23 勾股定理：把直角三角形变成长度机器 <tool:d23-pythagorean-theorem>
+== 勾股定理：把直角三角形变成长度机器 <tool:d23-pythagorean-theorem>
 
 #vocab[勾股定理 Pythagorean theorem / 逆定理 converse of Pythagorean theorem / 勾股数 Pythagorean triple]
 

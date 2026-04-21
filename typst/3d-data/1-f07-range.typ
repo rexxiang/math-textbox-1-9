@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §f07 数据的波动程度 <tool:f07-range>
+== 数据的波动程度 <tool:f07-range>
 
 #vocab[极差 range / 方差 variance]
 

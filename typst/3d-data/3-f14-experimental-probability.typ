@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §f14 概率：用实验看长期趋势 <tool:f14-experimental-probability>
+== 概率：用实验看长期趋势 <tool:f14-experimental-probability>
 
 #vocab[实验概率 experimental probability / 理论概率 theoretical probability / 公平性 fairness]
 

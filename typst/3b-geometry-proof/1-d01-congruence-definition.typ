@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== §d01 全等与证明入口：先学会“完全重合”怎么说 <tool:d01-congruence-definition>
+== 全等与证明入口：先学会“完全重合”怎么说 <tool:d01-congruence-definition>
 
 #vocab[全等 congruent / 对应 correspondence / 证明链 proof chain / 两边和一个非夹角 Side-Side-Angle (SSA)]
 

@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §c45 不等式 <tool:c45-inequality>
+== 不等式 <tool:c45-inequality>
 
 #vocab[不等式 inequality / 解集 solution set / 不等式组 system of inequalities]
 

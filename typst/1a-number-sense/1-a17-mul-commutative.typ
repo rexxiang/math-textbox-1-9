@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §a17 乘法运算律与分配：先成整，再展开 <tool:a17-mul-commutative>
+== 乘法运算律与分配：先成整，再展开 <tool:a17-mul-commutative>
 
 #vocab[乘法交换律 commutative law of multiplication / 乘法结合律 associative law of multiplication / 乘法分配律 distributive law]
 

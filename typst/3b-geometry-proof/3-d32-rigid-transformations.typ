@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §d32 图形变换：移动、翻折与旋转中的不变量 <tool:d32-rigid-transformations>
+== 图形变换：移动、翻折与旋转中的不变量 <tool:d32-rigid-transformations>
 
 #vocab[轴对称 reflection / 平移 translation / 旋转 rotation]
 

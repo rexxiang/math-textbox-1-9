@@ -1,7 +1,7 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 #import "../lib/diagram-packages.typ": cetz
 
-== §d20 圆里被锁定的线与角 <tool:d20-radius-linking>
+== 圆里被锁定的线与角 <tool:d20-radius-linking>
 
 #vocab[连半径看圆题 radius-link strategy / 圆周角定理 inscribed-angle theorem / 垂径性质 perpendicular-chord property]
 

@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== §b01 点、线段与直线：最基本的几何对象 <tool:b01-point>
+== 点、线段与直线：最基本的几何对象 <tool:b01-point>
 
 #vocab[点 point / 线段 line segment / 直线 line]
 

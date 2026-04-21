@@ -1,6 +1,6 @@
 #import "../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, secref, tryit, pitfall
 
-== §c28 分式的四则运算 <tool:c28-common-denominator>
+== 分式的四则运算 <tool:c28-common-denominator>
 
 #vocab[通分 finding a common denominator / 最简公分母 least common denominator of rational expressions]
 
