@@ -30,7 +30,7 @@
     - $angle A = angle D$（只给一对角相等）
     - $angle A = angle E$、$angle B = angle D$
   + 若 $triangle A B C tilde triangle A' B' C'$，相似比 $= 3 slash 5$。已知 $triangle A B C$ 周长 $18$、面积 $12$。求 $triangle A' B' C'$ 的周长与面积。
-  + 比例尺 $1 : 40000$ 的地图上，一块图示为 $5$ 厘米 $times$ $4$ 厘米的矩形地，实际面积多少平方千米？
+  + 比例尺 $1 : 40000$ 的地图上，一块图示为 $5$ 厘米 $times$ $4$ 厘米的长方形地，实际面积多少平方千米？
   + 同一时刻，直立标杆 $1.2$ 米影长 $1.6$ 米；旗杆影长 $12$ 米。求旗杆高。
   + $triangle A B C$ 中 $D E parallel B C$，$D$ 在 $A B$ 上、$E$ 在 $A C$ 上。若 $A D slash D B = 2 slash 3$，求 $D E slash B C$ 与 $triangle A D E$ 与 $triangle A B C$ 的面积比。
   + 说明“AA 为什么足以判相似”——为什么两角定了就连边比也跟着定？用一句话。
