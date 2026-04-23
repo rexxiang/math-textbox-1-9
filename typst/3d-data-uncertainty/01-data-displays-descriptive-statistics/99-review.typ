@@ -65,7 +65,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - #secref("cb01-percent")、#secref("cb01-ratio-basics")：扇形图本质上是“把百分比用圆心角表示”——占比 $p$ 对应圆心角 $360° p$。
   - #secref("cb03-rectangular-system")：折线图依赖坐标平面——横轴顺序 / 时间，纵轴数值。

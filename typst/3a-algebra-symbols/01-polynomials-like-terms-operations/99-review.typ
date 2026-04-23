@@ -48,7 +48,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - 回看 #secref("pf02-order-laws")：分配律是所有整式乘法的根。
   - 回看 #secref("cb04-expressions-and-like-terms")：桥梁里给“项/同类项”搭好了骨架，本章只是把骨架压实。

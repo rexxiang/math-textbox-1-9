@@ -46,7 +46,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - 回看 #secref("pf02-order-laws")：等式性质是运算律的“在等式中”的再表述。
   - 回看 #secref("pf02-add-subtract-undo")：加减互为撤销，正是“反向操作”的直观原型。

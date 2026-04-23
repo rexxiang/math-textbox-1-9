@@ -46,7 +46,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - 回看 #secref("pf08-coordinate-intuition")：从“位置 = 数对”的直觉，到本章“四象限”被正式命名，逻辑是连续的。
   - 回看 #secref("pf07-angles")：两轴交成的 $90 degree$ 是坐标系能“竖着量、横着量”的依据。

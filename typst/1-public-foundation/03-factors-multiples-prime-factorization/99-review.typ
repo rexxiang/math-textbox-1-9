@@ -45,7 +45,7 @@
 + 错；3 是 24 的因数，24 才是 3 的倍数。
 + 12。
 
-=== 螺旋复习
+=== 巩固复习
 
 + #secref("pf02-mul-div-structure") 把乘除看成“打包”和“拆开”；到了 #secref("pf03-factors-multiples")，这种结构眼光为什么能帮助我们判断一个数能否整齐分开？
 + #secref("pf03-primes-factorization") 里的质因数分解，和 #secref("pf04-fraction-equivalence") 里约分会怎样接起来？先提前猜一猜。

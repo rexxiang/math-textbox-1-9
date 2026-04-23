@@ -47,7 +47,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - 回看 #secref("ge02-similarity-aa-ratio")：两个*锐角相等*的直角三角形必然相似，这正是“$sin alpha$、$cos alpha$、$tan alpha$ 只依赖 $alpha$”这件事的逻辑源头。
   - 回看 #secref("ge03-circle-basics-inscribed")：直径所对的圆周角 $= 90 degree$，所以弦 $+$ 直径总能拼出直角三角形并使用勾股。

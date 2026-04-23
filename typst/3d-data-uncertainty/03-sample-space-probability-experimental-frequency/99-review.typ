@@ -66,7 +66,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - #secref("cb01-ratio-basics")、#secref("cb01-percent")：概率本质上是 $[0, 1]$ 的比例——用分数、小数、百分比都能写。
   - #secref("dt04-frequency-distributions")：本章的“相对频率”就是上章“频率”在重复试验中的应用。

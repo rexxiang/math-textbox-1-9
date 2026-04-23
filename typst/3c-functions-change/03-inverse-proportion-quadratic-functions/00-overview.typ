@@ -20,7 +20,7 @@
   *这章通向哪里*
 
   - 第 4 章：把“每加 $1$ 加固定量”和“每加 $1$ 乘固定倍数”放一起对比——后者用表和图展示，是*乘法增长* / *指数现象*，但本章不把它写成代数族。
-  - 代数分支：求 $y = 0$ 时的 $x$（抛物线与 $x$ 轴交点）就是解一元二次方程，直接调用 #secref("al05-quadratic-solving")、#secref("al05-vieta")。
+  - 代数分支：求 $y = 0$ 时的 $x$（抛物线与 $x$ 轴交点）就是解一元二次方程，直接用到 #secref("al05-quadratic-solving")、#secref("al05-vieta")。
   - 几何分支：$y = a (x - h)^2 + k$ 的 $(h, k)$ 是把 $y = a x^2$ 图像做的一次*平移*（#secref("ge05-coordinate-transforms") 已经讲过）。
 ]
 

@@ -46,7 +46,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - #secref("fn05-linear-function") / #secref("fn06-slope-as-rate")：线性族是本章“加法增长”的代数化。
   - #secref("fn07-inverse-proportion")：反比例是族等级里最低的一族；$x$ 大时趋于 $0$。

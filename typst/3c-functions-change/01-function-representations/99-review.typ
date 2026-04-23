@@ -52,7 +52,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - 坐标点、四象限、描点：#secref("cb03-rectangular-system")、#secref("cb03-plotting-transforming")。函数图像就是“所有 $(x, f(x))$ 描出来”的那条曲线。
   - 字母代替数、代数式：#secref("cb04-letters-represent-numbers")、#secref("cb04-expressions-and-like-terms")。函数公式本质是一条*带独立变量*的代数式 $+$ 一份定义域。

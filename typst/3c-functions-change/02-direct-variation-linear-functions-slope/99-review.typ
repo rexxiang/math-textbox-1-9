@@ -55,7 +55,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - #secref("cb01-ratio-basics") / #secref("cb01-proportion")：正比例“同 $k$”就是“同比”的函数化表达。
   - #secref("cb03-rectangular-system") / #secref("cb03-plotting-transforming")：描点、平移；一次函数 $=$ 正比例平移 $b$。

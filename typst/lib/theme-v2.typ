@@ -1,4 +1,4 @@
-// V2 主题：四段发明链 + 平铺内联注记
+// V2 主题：六段式知识点节 + 平铺内联注记
 // 页面布局：ISO B5，正文边距（x: 18mm, y: 18mm）
 
 #let textbook-v2(body) = {
@@ -64,7 +64,7 @@
 
 // id 形式:
 //   tool-id:  "a01-natural-number" → label("tool:a01-natural-number")
-//   meta 节号: "5.1" → label("meta:...") 由调用方保证存在
+//   meta 节号: "5.1" → label("meta:...") 由使用方保证存在
 // 两类均动态取 Typst 自动章节号，显示如 §1.3
 #let _meta-label = (
   "5.1": "meta:foundation-check",
@@ -93,7 +93,7 @@
 }
 #let secrange(from, to) = [#secref(from)--#secref(to)]
 
-// ── 四段发明链函数（对话框式：边框 + 标题栏浅色背景，正文白底）────
+// ── 四段学习流程函数（对话框式：边框 + 标题栏浅色背景，正文白底）────
 
 #let invention-box(title, border-color, head-bg, head-fg, body) = {
   block(

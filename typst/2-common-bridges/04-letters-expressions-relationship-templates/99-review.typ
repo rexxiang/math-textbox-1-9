@@ -46,7 +46,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - 回看 #secref("pf02-order-laws")：字母和具体数共享同一套运算律，所以合并同类项可行。
   - 回看 #secref("pf02-mul-div-structure")：乘法“相同结构打包”正是 $a b$、$a^2$ 这些记法的起点。

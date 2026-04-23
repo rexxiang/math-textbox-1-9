@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-== 分支学完后的常见误读与回补路径 <meta:al-repair-routes>
+== 分支学完后的常见误读与查漏指引 <meta:al-repair-routes>
 
 #blueprint[
   *代数支最容易出现的 $10$ 类误读*

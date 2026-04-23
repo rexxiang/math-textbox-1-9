@@ -50,7 +50,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - 回看 #secref("pf04-fraction-equivalence")：分式基本性质其实就是分数基本性质——把“数字”换成“整式”而已。
   - 回看 #secref("pf04-fraction-arithmetic")：通分、加减、乘除的套路同源。

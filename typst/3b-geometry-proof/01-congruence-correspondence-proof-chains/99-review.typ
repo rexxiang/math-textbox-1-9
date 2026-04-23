@@ -54,7 +54,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - 回看 #secref("pf07-angles")：对顶角、邻补角、角的定义是很多证明链里“免费条件”的来源。
   - 回看 #secref("pf08-parallel-transversal")：内错角、同位角、同旁内角随时在证明链里充当桥梁。

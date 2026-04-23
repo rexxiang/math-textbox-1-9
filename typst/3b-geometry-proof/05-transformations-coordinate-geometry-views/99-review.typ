@@ -51,7 +51,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - 回看 #secref("ge01-congruence-correspondence")：刚体变换保距 $=>$ 变换后和变换前全等。这是本章的一条“再解释”而不是新事实。
   - 回看 #secref("ge04-pythagorean")：两点距离公式是勾股定理的直接坐标化。

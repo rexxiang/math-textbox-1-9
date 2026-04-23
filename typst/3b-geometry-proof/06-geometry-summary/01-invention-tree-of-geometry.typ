@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-== 几何分支的发明树 <tool:ge-invention-tree>
+== 几何分支的知识地图 <tool:ge-invention-tree>
 
 #blueprint[
   *主干：从“图形直观”到“坐标化 & 变换”*
@@ -26,7 +26,7 @@
 ]
 
 #blueprint[
-  *发明树表：每一步因何被发明出来*
+  *知识地图表：每一步因何被发明出来*
 
   #table(
     columns: (1fr, 1.5fr, 1.5fr),
@@ -52,7 +52,7 @@
 ]
 
 #side-hack[
-  *发明树的三组横向联系*
+  *知识地图的三组横向联系*
 
   - *全等 → 相似*：把“三条边相等”松到“三条边按同一比例”即得相似。AA 判定是其中最省事的一版（两角对应相等 $=>$ 第三角自动对应相等）。
   - *勾股 ↔ 坐标距离*：两点距离公式 $sqrt((Delta x)^2 + (Delta y)^2)$ 就是勾股。坐标系把几何问题翻成代数问题，但本质长度来自勾股。

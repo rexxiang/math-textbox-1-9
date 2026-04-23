@@ -47,7 +47,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - 回看 #secref("pf02-add-subtract-undo")：把“减法是撤销”的直觉接到“$a + (-b) = a - b$”这种新写法上。
   - 回看 #secref("pf01-decimal-system")：当小数点向左走过原点，就得到负小数，位值规则仍然一样。

@@ -62,7 +62,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - 回看 #secref("ge01-sss-sas")：矩形 / 菱形的很多“对角线相关性质”都落到一对全等三角形。
   - 回看 #secref("ge02-similarity-aa-ratio")：圆里的弦长比例、梯形 / 相似四边形的相关问题都用 AA。

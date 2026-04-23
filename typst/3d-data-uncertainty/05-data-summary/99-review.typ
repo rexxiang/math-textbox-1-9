@@ -76,7 +76,7 @@
 ]
 
 #blueprint[
-  *分支收束：数据这条发明链的全景*
+  *分支收束：数据这条学习流程的全景*
 
   #table(
     columns: (auto, 1fr),
@@ -99,7 +99,7 @@
 ]
 
 #blueprint[
-  *螺旋复习（跨分支回指）*
+  *巩固复习（跨分支回指）*
 
   - #secref("pf04-fraction-arithmetic")、#secref("cb01-percent")、#secref("cb01-ratio-basics")：统计运算几乎全程用分数 $\/$ 比例 $\/$ 百分比。
   - #secref("pf05-decimals-conversion")：频率、概率常用小数表达。

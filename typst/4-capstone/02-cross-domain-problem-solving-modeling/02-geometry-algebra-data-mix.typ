@@ -2,7 +2,7 @@
 
 == 跨领域已解案例：几何·代数·函数·数据 <tool:cp04-cross-domain-mix>
 
-本节给 4 道*已解案例*，每道题标出“调用哪些分支工具”以及“为何该用它们”。
+本节给 4 道*已解案例*，每道题标出“使用哪些分支工具”以及“为何该用它们”。
 
 #blueprint[
   *案例 A：几何 $+$ 代数 —— 三角比结合方程*
@@ -16,7 +16,7 @@
 
   对边 $= 15$、邻边 $= 20$。*回检*：$15^2 + 20^2 = 225 + 400 = 625 = 25^2$ ✓；$15 / 20 = 3 / 4 = tan theta$ ✓。
 
-  *调用工具链*：#secref("ge04-special-right-triangles") $->$ #secref("ge04-pythagorean") $->$ #secref("al05-quadratic-solving")（仅开方一步）$->$ #secref("cb06-square-and-square-root")。
+  *使用工具链*：#secref("ge04-special-right-triangles") $->$ #secref("ge04-pythagorean") $->$ #secref("al05-quadratic-solving")（仅开方一步）$->$ #secref("cb06-square-and-square-root")。
 ]
 
 #blueprint[
@@ -47,7 +47,7 @@
 
   *回检*：$x = 5$：$y_A = 21.6, y_B = 22 =>$ 乙贵 $0.4$ 元 ✓；$x = 4$：$y_A = 19.2, y_B = 19 =>$ 甲贵 $0.2$ 元 ✓。
 
-  *调用工具链*：#secref("fn11-model-choice") $->$ #secref("fn05-linear-function") $->$ #secref("al05-linear-inequalities") $->$ #secref("dt02-charts-and-readings")。
+  *使用工具链*：#secref("fn11-model-choice") $->$ #secref("fn05-linear-function") $->$ #secref("al05-linear-inequalities") $->$ #secref("dt02-charts-and-readings")。
 ]
 
 #blueprint[
@@ -64,7 +64,7 @@
 
   *回检*：$0 <= 0.36 <= 1$ ✓（#secref("dt08-probability-language") 要求概率在 $[0, 1]$）。注意这是*估计*，不是精确值——样本越大，估计越稳。
 
-  *调用工具链*：#secref("dt09-experimental-frequency") $->$ #secref("dt08-probability-language") $->$ #secref("pf04-fraction-arithmetic")。
+  *使用工具链*：#secref("dt09-experimental-frequency") $->$ #secref("dt08-probability-language") $->$ #secref("pf04-fraction-arithmetic")。
 ]
 
 #blueprint[
@@ -82,7 +82,7 @@
 
   *回检*：$1^2 - 4 + 3 = 0$ ✓；$9 - 12 + 3 = 0$ ✓。
 
-  *调用工具链*：#secref("al05-quadratic-solving") $=$ #secref("fn08-quadratic-function")（方程 $<->$ 函数零点）；#secref("al02-factorization-as-reverse")；#secref("cb05-equation-as-balance")。
+  *使用工具链*：#secref("al05-quadratic-solving") $=$ #secref("fn08-quadratic-function")（方程 $<->$ 函数零点）；#secref("al02-factorization-as-reverse")；#secref("cb05-equation-as-balance")。
 ]
 
 #side-hack[

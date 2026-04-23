@@ -18,7 +18,7 @@
 #discovery[
   *第 0 层：一般四边形*
 
-  只需要四条线段首尾相连。内角和 $= 360 degree$（这是 #secref("pf06-polygons-and-circle") 已经有的旧工具）。
+  只需要四条线段首尾相连。内角和 $= 360 degree$（这是 #secref("pf06-polygons-and-circle") 已经有的前面学过的知识）。
 
   *第 1 层：平行四边形 $=$ 两组对边分别平行*
 

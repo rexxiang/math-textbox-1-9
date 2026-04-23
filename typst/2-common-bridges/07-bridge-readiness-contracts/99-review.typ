@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, tryit, secref
 
-= 本章回顾：四分支就绪契约的答案汇总 <meta:bridge-readiness-contracts-review>
+= 本章回顾：四分支准备清单的答案汇总 <meta:bridge-readiness-contracts-review>
 
 #blueprint[
   本节把 #secref("meta:ready-for-algebra")、#secref("meta:ready-for-geometry-proof")、#secref("meta:ready-for-functions")、#secref("meta:ready-for-data") 四节的自测诊断答案集中给出。最后再附上一题*跨四分支综合小试*，用于确认你已经可以顺畅地在四条分支之间切换。
@@ -61,9 +61,9 @@
 #blueprint[
   *最终前进信号*
 
-  - 你在四条分支的诊断里都能口头说出用了哪些桥梁工具、哪些 Part I 旧工具。
+  - 你在四条分支的诊断里都能口头说出用了哪些桥梁知识、哪些 Part I 前面学过的知识。
   - 你愿意把一道综合题拆成“比例部分 / 几何部分 / 函数关系部分 / 数据解释部分”。
-  - 你在做错时，能立刻按回补路径表定位具体章节，而不是重刷整章。
+  - 你在做错时，能立刻按查漏表定位具体章节，而不是重刷整章。
 
   满足这三条，你已经正式准备好进入分支进阶。
 ]

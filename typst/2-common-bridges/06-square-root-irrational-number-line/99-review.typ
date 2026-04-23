@@ -46,7 +46,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - 回看 #secref("pf07-perimeter-area")、#secref("pf07-volume")：面积、体积问题一旦反解“边长”，就必然呼唤平方根。
   - 回看 #secref("cb02-rational-numbers")：$QQ$ 的稠密性解释了“有理数铺得很密”，而无理数解释了“密不等于满”。

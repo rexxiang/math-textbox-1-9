@@ -1,9 +1,9 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, tryit, secref
 
-== 通往函数分支的就绪契约 <meta:ready-for-functions>
+== 通往函数分支的准备清单 <meta:ready-for-functions>
 
 #blueprint[
-  *已掌握的旧工具*
+  *前面学过的知识*
 
   #table(
     columns: (1fr, 1fr),
@@ -30,7 +30,7 @@
 ]
 
 #blueprint[
-  *回补路径*
+  *哪里不会回哪里*
 
   #table(
     columns: (1fr, 1fr),

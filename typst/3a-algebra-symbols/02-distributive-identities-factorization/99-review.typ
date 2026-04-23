@@ -48,7 +48,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - 回看 #secref("pf02-order-laws")：分配律一条规则，正用、反用都是它。
   - 回看 #secref("pf03-gcd-lcm")：提公因式时，“数字取 GCD”就是小学最大公因数的再用。

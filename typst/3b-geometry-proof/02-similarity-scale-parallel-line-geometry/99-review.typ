@@ -52,10 +52,10 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - 回看 #secref("ge01-congruence-correspondence")：全等是相似比 $k = 1$ 的特例；本章把锁形锁大小松开成只锁形。
-  - 回看 #secref("cb01-ratio-basics")：反比、合比、分比在相似里被频繁调用；化简不熟会卡在“读不出 $D E slash B C$”。
+  - 回看 #secref("cb01-ratio-basics")：反比、合比、分比在相似里被频繁使用；化简不熟会卡在“读不出 $D E slash B C$”。
   - 衔接 #secref("ch:quadrilaterals-circles-structures")：平行四边形的对边性质、圆里的比例线段都要用到本章三条引理 $+$ AA。
   - 衔接 #secref("pf08-coordinate-intuition") 与坐标几何：相似 $=>$ “点 $P$ 关于原点位似为 $P'$，坐标乘 $k$”是后续解析几何里向量 / 位似变换的几何根。
   - 衔接 3c 域函数：正比例函数 $y = k x$ 的图像——输入按 $lambda$ 放缩、输出按 $lambda$ 同步放缩——就是一维的相似。

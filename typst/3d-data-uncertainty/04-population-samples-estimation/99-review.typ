@@ -59,7 +59,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - #secref("dt04-frequency-distributions"), #secref("dt09-experimental-frequency")：本章的 $f_n$ 估 $p$ 就是这两节在“总体 $\/$ 样本”语境下的直接应用。
   - #secref("dt03-center-and-spread")：样本均值、样本方差——本章给它们*新的角色*：总体参数的估计量。

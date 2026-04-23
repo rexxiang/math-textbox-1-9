@@ -20,7 +20,7 @@
 ]
 
 #blueprint[
-  *螺旋复习：本章调用过的工具回看*
+  *巩固复习：本章使用过的工具回看*
 
   - 代数：#secref("al04-modeling-word-problems")、#secref("al04-linear-one-variable")、#secref("al04-systems-linear")、#secref("al05-quadratic-solving")、#secref("al05-linear-inequalities")、#secref("al02-factorization-as-reverse")。
   - 几何：#secref("ge04-pythagorean")、#secref("ge04-special-right-triangles")。
@@ -32,7 +32,7 @@
 #blueprint[
   *过关信号*
 
-  ☞ 看到一道应用题，*动笔前*能口述“本题可能调用 × × × 三支工具”。 \
+  ☞ 看到一道应用题，*动笔前*能口述“本题可能使用 × × × 三支工具”。 \
   ☞ 写答卷时自觉分“草稿 / 正式 / 回检”三栏。 \
   ☞ 看到“图 + 表 + 文字”混合的题，能识别哪一部分信息要求哪一支工具（图 $->$ 几何 / 函数；表 $->$ 数据 / 函数；文字 $->$ 代数建模）。 \
   ☞ 解完每题都主动问：*数值合理吗？概率在 $[0, 1]$ 吗？长度为正吗？族判定与预测相容吗？*

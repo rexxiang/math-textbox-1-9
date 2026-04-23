@@ -1,11 +1,11 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-== 回补路径：哪里不稳就回哪里 <tool:pf09-repair-routes>
+== 查漏指引：哪里不稳就回哪里 <tool:pf09-repair-routes>
 
 #blueprint[
-  *回补路径表*
+  *查漏表*
 
-  按“上一节里没答对的题”定位到回补点，再决定继续前进或先补稳。
+  按“上一节里没答对的题”定位到补缺点，再决定继续前进或先补稳。
 
   #table(
     columns: (1fr, 1fr, 1fr),
@@ -33,13 +33,13 @@
 #blueprint[
   *桥梁层即将登场的新旧对照*
 
-  共通桥梁（Part II）里的 6 座桥梁会反复征用公共基础里的旧工具：
+  共通桥梁（Part II）里的 6 座桥梁会反复征用公共基础里的前面学过的知识：
 
   #table(
     columns: (1fr, 1fr),
     inset: 6pt,
     stroke: 0.4pt,
-    [*桥梁主题*], [*被反复征用的旧工具*],
+    [*桥梁主题*], [*被反复征用的前面学过的知识*],
     [比 / 比例 / 百分比], [#secref("pf04-fraction-equivalence")、#secref("pf04-fraction-comparison")、#secref("pf05-decimals-conversion")],
     [数轴与负数], [#secref("pf01-decimal-system")、#secref("pf02-add-subtract-undo")],
     [坐标], [#secref("pf08-coordinate-intuition")、#secref("pf07-angles")],
@@ -48,15 +48,15 @@
     [平方根与无理数入门], [#secref("pf07-perimeter-area")、#secref("pf07-volume")],
   )
 
-  换句话说：本章不是要教新公式，而是让你在进入桥梁前，能随时把这些旧工具调出来。
+  换句话说：本章不是要教新公式，而是让你在进入桥梁前，能随时把这些前面学过的知识调出来。
 ]
 
 #blueprint[
   *可以继续前进的最终信号*
 
   - 能说出自己上一节哪些题做错了、各自属于四条主干里的哪一条。
-  - 对照“回补路径表”，能立刻指向哪一节回补，而不是重刷整章。
-  - 在诊断题里，即便做错，也能在看答案后说清“我当时该调用哪条旧工具”。
+  - 对照“查漏表”，能立刻指向哪一节补缺，而不是重刷整章。
+  - 在诊断题里，即便做错，也能在看答案后说清“我当时该使用哪条前面学过的知识”。
 
   如果这三条你都能做到，你已经准备好进入共通桥梁层。
 ]

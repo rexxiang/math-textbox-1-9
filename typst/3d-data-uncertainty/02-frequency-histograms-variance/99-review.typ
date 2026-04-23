@@ -64,7 +64,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - #secref("dt01-organizing-data")、#secref("dt02-charts-and-readings")：条形图 vs. 直方图的分界在“横轴连续不连续”。
   - #secref("dt03-center-and-spread")：本章 spread 从极差升级到方差；$s$ 取代极差成为正式报告用量。

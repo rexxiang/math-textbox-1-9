@@ -5,9 +5,9 @@
 #blueprint[
   *怎样用这一节*
 
-  下面 $4$ 道题每一题都明确标注了它所调用的*工具链*——即从几何支的哪几章出发。做每题之前，请先把标出的 `#secref` 过一遍，想一下“这里具体会用到那章的哪个动作”，再动笔。
+  下面 $4$ 道题每一题都明确标注了它所用到的*工具链*——即从几何支的哪几章出发。做每题之前，请先把标出的 `#secref` 过一遍，想一下“这里具体会用到那章的哪个动作”，再动笔。
 
-  做完后对照 #secref("meta:geometry-summary") 里的参考答案。如果某题卡住，到 #secref("meta:ge-repair-routes") 查“回补路径”。
+  做完后对照 #secref("meta:geometry-summary") 里的参考答案。如果某题卡住，到 #secref("meta:ge-repair-routes") 查“查漏指引”。
 ]
 
 #tryit[

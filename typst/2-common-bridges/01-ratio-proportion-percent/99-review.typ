@@ -46,7 +46,7 @@
 ]
 
 #blueprint[
-  *螺旋复习*
+  *巩固复习*
 
   - 回看 #secref("pf04-fraction-equivalence") 和 #secref("pf04-fraction-comparison")：等值分数、通分为什么正好给了比和比例扎实的基础？
   - 把 #secref("pf05-decimals-conversion") 拿来对照：小数和百分数只是改换位值的命名方式。
@@ -55,5 +55,5 @@
   *☞ 高中桥*
 
   - 高中会把比的极限写成“变化率 $Delta y / Delta x$”，本章的比值就是它的离散原型。
-  - 指数增长、复利也会反复调用“每期变 $r%$”这条百分数结构。
+  - 指数增长、复利也会反复用到“每期变 $r%$”这条百分数结构。
 ]
