@@ -171,7 +171,7 @@
 
   *应用*
   + 由“对角线互相平分”得平行四边形；再加“对角线互相垂直”得菱形（判定之二）。
-  + 作 $D E perp A B$、$C F perp A B$，垂足为 $E$、$F$。由 $A B parallel C D$ 得 $D E = C F$（两条等高的平行线段）；$A D = B C$（已知），于是在直角三角形 $triangle A D E$、$triangle B C F$ 中，由勾股定理 $A E = sqrt(A D^2 - D E^2) = sqrt(B C^2 - C F^2) = B F$。由 `SSS`（$A D = B C$、$D E = C F$、$A E = B F$）得 $triangle A D E tilde.eq triangle B C F$，对应角 $angle A = angle B$。
+  + 作 $D E perp A B$、$C F perp A B$，垂足为 $E$、$F$。由 $A B parallel C D$ 得 $D E = C F$（两条等高的平行线段）；$A D = B C$（已知），于是在直角三角形 $triangle A D E$、$triangle B C F$ 中，由直角三角形三边关系（☞ 正式证明见后面章节）$A E = sqrt(A D^2 - D E^2) = sqrt(B C^2 - C F^2) = B F$。由 `SSS`（$A D = B C$、$D E = C F$、$A E = B F$）得 $triangle A D E tilde.eq triangle B C F$，对应角 $angle A = angle B$。
   + 自 $D$ 作 $A B$ 上的高 $D H$，垂足 $H$。$triangle A D H$ 中 $angle A = 60 degree$、$angle A H D = 90 degree$，是 30-60-90 三角形：$A H = A D slash 2 = 5 slash 2$，$D H = (5 sqrt(3)) slash 2$。$H B = A B - A H = 8 - 5 slash 2 = 11 slash 2$。在直角三角形 $triangle B H D$ 中 $B D^2 = H B^2 + D H^2 = 121 slash 4 + 75 slash 4 = 49$，故 $B D = 7$。
   + 在 $triangle D A E$ 与 $triangle D C F$ 中：$D A = D C$（正方形边）、$angle A = angle C = 90 degree$、$A E = A B slash 2 = B C slash 2 = C F$。由 `SAS` 得 $triangle D A E tilde.eq triangle D C F$，对应边 $D E = D F$。
   + 设 $angle B A C = angle D A C$，在 $triangle A B C$ 与 $triangle A D C$ 中，$A C$ 公共、$angle B A C = angle D A C$、$angle B C A = angle D C A$（由 $A B parallel C D$ 的内错角）。由 ASA 得 $triangle A B C tilde.eq triangle A D C$，故 $A B = A D$；平行四边形 $+$ 邻边相等 $=>$ 菱形。

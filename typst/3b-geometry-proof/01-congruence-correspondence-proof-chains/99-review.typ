@@ -44,7 +44,7 @@
   + $angle E = angle B = 180 degree - 50 degree - 70 degree = 60 degree$；$D E = A B = 6$。
   + `SAS`（$angle B$ 是 $A B$、$B C$ 的夹角）；不行（AAA，只相似）；`SAS`（$angle C$ 是 $A C$、$B C$ 的夹角）。
   + 陈述 / 理由：$B D = C D$（中点）；$A D = E D$（所作）；$angle A D B = angle E D C$（对顶角）；$triangle A B D tilde.eq triangle E C D$（`SAS`）；$A B = E C$（对应边），即 $A B = C E$。
-  + 陈述：$A B = A C$（已知）；$A D = A D$（公共边）；$angle A D B = angle A D C = 90 degree$（$A D perp B C$）。在直角三角形 $triangle A B D$、$triangle A C D$ 中由勾股定理：$B D = sqrt(A B^2 - A D^2) = sqrt(A C^2 - A D^2) = C D$，故 $D$ 是 $B C$ 中点。再由 `SSS`（$A B = A C$、$A D = A D$、$B D = C D$）得 $triangle A B D tilde.eq triangle A C D$，对应角 $angle B A D = angle C A D$，即 $A D$ 平分 $angle B A C$。
+  + 陈述：$A B = A C$（已知）；$A D = A D$（公共边）；$angle A D B = angle A D C = 90 degree$（$A D perp B C$）。在直角三角形 $triangle A B D$、$triangle A C D$ 中由直角三角形三边关系（☞ 正式证明见勾股定理章节）：$B D = sqrt(A B^2 - A D^2) = sqrt(A C^2 - A D^2) = C D$，故 $D$ 是 $B C$ 中点。再由 `SSS`（$A B = A C$、$A D = A D$、$B D = C D$）得 $triangle A B D tilde.eq triangle A C D$，对应角 $angle B A D = angle C A D$，即 $A D$ 平分 $angle B A C$。
   + 由 $A B = C D$、$B E = D F$ 得 $A E = A B - B E = C D - D F = C F$（若 $E$、$F$ 同向取）。因 $A B parallel C D$，连 $A F$、$C E$ 后由 `SAS` 或 `ASA` 得 $triangle A E F tilde.eq triangle C F E$（对应取法视图形），由对应边 $A F = C E$。（具体写法视图而定；要点是先凑全等再读对应。）
   + 必须 $A C = B C$（等腰），即以 $A B$ 为底边的等腰三角形。
   + AAA 只定形状不定大小；AAS 在两角的基础上*再给一条对应边*，把大小也锁死（第三角由内角和自动给出，实际就是两角一边）。
