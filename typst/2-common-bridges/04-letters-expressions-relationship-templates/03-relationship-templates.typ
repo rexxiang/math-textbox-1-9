@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 关系模板：把常见情景写成可复用的公式 <tool:cb04-relationship-templates>
+== 关系模板：把常见情景写成能反复套用的公式 <tool:cb04-relationship-templates>
 
 #vocab[公式 formula / 周长模板 / 面积模板 / 距离—速度—时间]
 
@@ -11,7 +11,7 @@
 ]
 
 #history-note[
-  把常用关系写成字母公式，是中小学数学和物理共用的传统：一条公式背后其实是“这个量如何被别的几个量共同决定”，一旦认下来，就能迁移到类似情景。
+  把常用关系写成字母公式，是中小学数学和物理共用的传统：一条公式背后其实是“这个量如何被别的几个量共同决定”，一旦认下来，碰到类似的场景就能直接套用。
 ]
 
 #discovery[

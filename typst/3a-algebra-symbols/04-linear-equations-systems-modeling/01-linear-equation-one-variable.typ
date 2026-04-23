@@ -5,7 +5,7 @@
 #vocab[去分母 clearing denominators / 去括号 distribution / 移项 transposition / 合并同类项 combining like terms / 系数化 1 normalizing leading coefficient]
 
 #crisis[
-  在桥梁章 #secref("cb05-solving-linear") 里，你已经能够稳稳地处理 $2 x + 3 = 11$ 这类题目。但一旦方程里同时出现括号、分母，并且未知量在两边同时出现，口算 undo 就开始慌：
+  在桥梁章 #secref("cb05-solving-linear") 里，你已经能够稳稳地处理 $2 x + 3 = 11$ 这类题目。但一旦方程里同时出现括号、分母，并且未知量在两边同时出现，口算"倒推"就开始慌：
 
   $ frac(x - 1, 2) - frac(x + 3, 6) = 1 $
 
@@ -67,7 +67,7 @@
 ]
 
 #tryit[
-  先不要看下面的 blueprint，按五步自己写：
+  先不要看下面的方法总结，按五步自己写：
 
   + 解 $5 x + 3 = 2 x - 9$（没有分母也没有括号）。
   + 解 $3 (2 x - 1) = 4 (x + 2)$（只有括号）。

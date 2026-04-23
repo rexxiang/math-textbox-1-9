@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 函数支总结 <ch:functions-summary>
+= 函数总结 <ch:functions-summary>
 
 #blueprint[
   *难度*：★★★★☆ \

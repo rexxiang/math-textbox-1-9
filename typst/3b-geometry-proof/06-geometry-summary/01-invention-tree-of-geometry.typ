@@ -5,7 +5,7 @@
 #blueprint[
   *主干：从“图形直观”到“坐标化 & 变换”*
 
-  几何支由一条主干生长，每一章都回答*上一章解决不了的那件事*：
+  几何由一条主干生长，每一章都回答*上一章解决不了的那件事*：
 
   + *图形直观*（#secref("pf06-polygons-and-circle")、#secref("pf06-simple-solids")、#secref("pf07-angles")、#secref("pf08-triangles-angle-sum")）：什么是点、线、面、角、多边形、圆；三角形内角和 $= 180 degree$。
   + *全等与对应*（#secref("ge01-congruence-correspondence")）：把“两图相等”从图感升级为*可写下来的对应关系*。
@@ -60,7 +60,7 @@
 
   *一条核心阅读线*
 
-  如果你只能挑出几何支里最抗遗忘的两件事，建议挑：
+  如果你只能挑出几何里最抗遗忘的两件事，建议挑：
   - “两图全等 $<=>$ 对应边对应角相等 $<=>$ 可以用一组刚体变换叠合”（#secref("ge01-congruence-correspondence") $+$ #secref("ge05-rigid-transforms")）；
   - “直角三角形：$a^2 + b^2 = c^2$；特殊角给出定边比”（#secref("ge04-pythagorean") $+$ #secref("ge04-special-right-triangles")）。
 

@@ -27,7 +27,7 @@
 #blueprint[
   *过关信号总清单*
 
-  能同时做到这五条，几何支就可以正式宣布过关：
+  能同时做到这五条，几何就可以正式宣布过关：
 
   ☞ 在任何全等 / 相似题上能先写对应表、再选判定法，并按两步证明链写出来（#secref("ge01-congruence-correspondence") / #secref("ge01-sss-sas") / #secref("ge02-similarity-aa-ratio") / #secref("ge01-two-step-proof-chain")）。\
   ☞ 在任何涉及四边形 / 圆的题上，能在继承树上找到位置，或优先想到圆周角定理 / Thales（#secref("ge03-quadrilateral-family") / #secref("ge03-circle-basics-inscribed")）。\

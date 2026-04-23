@@ -5,7 +5,7 @@
 #blueprint[
   *主干：从“字母代替数”到“方程与不等式”*
 
-  整个代数支由一条主干生长：
+  整个代数脉络由一条主干生长：
 
   + *字母代替数*（#secref("cb04-letters-represent-numbers")）：把“待定的数”写成记号，运算规则原样保留。
   + *代数式与同类项*（#secref("al01-terms-like")、#secref("al01-add-subtract-polynomials")、#secref("al01-multiply-polynomials")）：字母与数的“加减乘”组合怎样化简？
@@ -16,7 +16,7 @@
   + *建模*（#secref("al04-modeling-word-problems")）：把一段自然语言翻译成等量关系、解之、检验。
   + *二次方程*（#secref("al05-quadratic-solving")）：未知量出现平方——五步不够，引入配方法与求根公式。
   + *韦达定理*（#secref("al05-vieta")）：从“根”反问“系数”，把对称式、构造方程、判根捆在一起。
-  + *一元一次不等式与 $|x|$*（#secref("al05-linear-inequalities")）：等式性质几乎都保留——唯一坏掉那条（乘除负数）把方向翻转；$|x|$ 作为“数轴距离”让一类不等式秒可读。
+  + *一元一次不等式与 $|x|$*（#secref("al05-linear-inequalities")）：等式性质几乎都保留——唯一坏掉那条（乘除负数）把方向翻转；$|x|$ 作为“数轴距离”让一类不等式一眼就能读懂。
 ]
 
 #blueprint[

@@ -51,7 +51,7 @@
   *巩固复习*
 
   - 回看 #secref("pf02-order-laws")：分配律是所有整式乘法的根。
-  - 回看 #secref("cb04-expressions-and-like-terms")：桥梁里给“项/同类项”搭好了骨架，本章只是把骨架压实。
+  - 回看 #secref("cb04-expressions-and-like-terms")：前面给“项/同类项”搭好了骨架，本章只是把骨架压实。
   - 回看 #secref("cb05-equality-properties")：当整式出现在方程里，两边同时整理必须守住等式平衡。
   - 衔接 #secref("ch:distributive-identities-factorization")：本章的乘法展开正是下一章“公式 $+$ 因式分解”的原料。
 
