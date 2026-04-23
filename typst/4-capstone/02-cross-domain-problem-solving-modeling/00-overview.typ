@@ -4,10 +4,10 @@
 
 #blueprint[
   *难度*：★★★★★ \
-  *核心问题*：拿到一道*真实世界*的题，它并不会告诉你“这是代数题”“这是几何题”。题目里混着数、形、变化与数据。本章训练的就是：在不被*学科标签*提示的情况下，主动拆出这道题里*应该使用哪几条工具链*，并让不同分支的工具在同一道题里合作。 \
-  *需要先会*：本章使用的每个工具都在前 3 部分安装过，包括但不限于 #secref("al04-modeling-word-problems")、#secref("al05-quadratic-solving")、#secref("ge04-pythagorean")、#secref("ge02-similarity-aa-ratio")、#secref("fn05-linear-function")、#secref("fn08-quadratic-function")、#secref("fn11-model-choice")、#secref("dt03-center-and-spread")、#secref("dt08-probability-language")、#secref("dt09-experimental-frequency")。本章*不引入任何新工具*。 \
+  *核心问题*：拿到一道*真实世界*的题，它并不会告诉你“这是代数题”“这是几何题”。题目里混着数、形、变化与数据。本章训练的就是：在不被*学科标签*提示的情况下，主动拆出这道题里*应该使用哪几条知识链*，并让不同分支的工具在同一道题里合作。 \
+  *需要先会*：本章使用的每个工具都在前 3 部分学过，包括但不限于 #secref("al04-modeling-word-problems")、#secref("al05-quadratic-solving")、#secref("ge04-pythagorean")、#secref("ge02-similarity-aa-ratio")、#secref("fn05-linear-function")、#secref("fn08-quadratic-function")、#secref("fn11-model-choice")、#secref("dt03-center-and-spread")、#secref("dt08-probability-language")、#secref("dt09-experimental-frequency")。本章*不引入任何新概念*。 \
   *本章在全书的位置*：综合运用层——像一场四支工具的合奏演出，每一题都标出谁出场、为何出场。 \
-  *忘了可以回到*：每个示范题都列出“本题使用工具链”。卡在哪个工具就回哪节。
+  *忘了可以回到*：每个示范题都列出“本题使用知识链”。卡在哪个工具就回哪节。
 ]
 
 #side-hack[

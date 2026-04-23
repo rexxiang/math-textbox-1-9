@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 判定法的两位主将：SSS 与 SAS <tool:ge01-sss-sas>
+== SSS 与 SAS：两条最基本的判定法 <tool:ge01-sss-sas>
 
 #vocab[判定法 criterion / 边边边 SSS / 边角边 SAS]
 
@@ -9,11 +9,11 @@
 
   自然就想偷懒：*能不能只核几项就下结论？* 一条肯定不够，两条也压不死形状，那*三条*信息够不够？选哪三条？
 
-  这一节先把最扎实的两员主将立起来：*只比三条边* 的 `SSS`，和*两边加它们的夹角* 的 `SAS`。下一节再把两角一边的情形补齐，并交代“两边一角”里那条会翻车的路线——SSA。
+  这一节先从最扎实的两条开始：*只比三条边* 的 `SSS`，和*两边加它们的夹角* 的 `SAS`。下一节再把两角一边的情形补齐，并交代"两边一角"里那条会翻车的路线——SSA。
 ]
 
 #history-note[
-  欧几里得《几何原本》第一卷里，SAS 是*公设*（第 4 条），SSS 是被*证明出来*的命题（命题 I.8）。不同公理体系下哪一条当公理、哪一条当定理可以互换，但“三条信息就能锁死三角形”这件事稳得像桌面——本节就从这两条最干净的家族成员开始。
+  欧几里得《几何原本》第一卷里，SAS 是*公设*（第 4 条），SSS 是被*证明出来*的命题（命题 I.8）。不同公理体系下哪一条当公理、哪一条当定理可以互换，但"三条信息就能锁死三角形"这件事非常稳固——本节就从这两条最干净的判定法开始。
 ]
 
 #discovery[
@@ -130,7 +130,7 @@
     - $A B = D E$、$B C = E F$、$angle B = angle E$
     - $A B = D E$、$B C = E F$、$angle A = angle D$（$angle A$ 在两条已知边之间吗？）
 
-  + $triangle A B C$ 与 $triangle D E F$ 中 $A B = D E = 4$、$B C = E F = 5$、$angle B = angle E = 70 degree$。判定能否全等，并说明用了哪员主将。
+  + $triangle A B C$ 与 $triangle D E F$ 中 $A B = D E = 4$、$B C = E F = 5$、$angle B = angle E = 70 degree$。判定能否全等，并说明用了哪条判定法。
 
   *应用*
 

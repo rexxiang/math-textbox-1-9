@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== 判定法的两员副将与 SSA 反例：ASA / AAS 为什么成、SSA 为什么不成 <tool:ge01-asa-aas-ssa>
+== ASA、AAS 与 SSA 反例：哪些判定能成、哪条不行 <tool:ge01-asa-aas-ssa>
 
 #vocab[角边角 ASA / 角角边 AAS / SSA 反例 SSA counterexample]
 
@@ -11,7 +11,7 @@
   - *两角一边*：两角都量到了，边却只有一条——还够不够？如果够，边放在哪里才算数？
   - *两边一非夹角*：两条边加一个不是夹角的角。看起来和 SAS 差不多，可真能判全等吗？
 
-  这一节一次性处理这两件事：*判定法家族还剩两员——ASA / AAS；还有一位“伪成员” SSA 要公开除名*。
+  这一节一次性处理这两件事：*判定法家族还剩两条——ASA 和 AAS；另外还得说清楚 SSA 为什么不算数*。
 ]
 
 #history-note[
@@ -36,9 +36,9 @@
     [`AAS`], [两个对应角*及其中一角的对边*分别相等], [两角定 $⟹$ 三角全定 $⟹$ 形状定；再配一条对应边 $⟹$ 大小定],
   )
 
-  两员副将的根子是同一件事：*两角一边足以锁死三角形*。边在哪个位置，不影响结论，只决定你写缩写时叫它 `ASA` 还是 `AAS`。
+  这两条判定法的根子是同一件事：*两角一边足以锁死三角形*。边在哪个位置，不影响结论，只决定你写缩写时叫它 `ASA` 还是 `AAS`。
 
-  *两边一非夹角：SSA 为什么不是第五员*
+  *两边一非夹角：SSA 为什么不成立*
 
   现在换成“两条边 $+$ 一个*非夹角*的角”——也就是角站在其中一条边的外侧而不是两条边中间。能锁死吗？
 
@@ -155,7 +155,7 @@
     - $angle A = angle D$、$angle B = angle E$、$angle C = angle F$
     - $A B = D E$、$B C = E F$、$angle A = angle D$（$angle A$ 是 $A B$ 与 $A C$ 的夹角，不是 $A B, B C$ 的夹角）
 
-  + $triangle A B C$ 与 $triangle D E F$ 中 $angle A = angle D = 50 degree$、$angle B = angle E = 70 degree$、$A C = D F = 6$。判定能否全等；若能，说明用了哪员副将。
+  + $triangle A B C$ 与 $triangle D E F$ 中 $angle A = angle D = 50 degree$、$angle B = angle E = 70 degree$、$A C = D F = 6$。判定能否全等；若能，说明用了哪条判定法。
 
   *应用*
 

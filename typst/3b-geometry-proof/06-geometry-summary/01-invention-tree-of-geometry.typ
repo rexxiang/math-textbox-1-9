@@ -18,7 +18,7 @@
   + *圆基础与圆周角定理*（#secref("ge03-circle-basics-inscribed")）：圆心角、圆周角、Thales——把“圆”变成可证明的结构。
   + *内接 / 外接圆*（#secref("ge03-inscribed-circumscribed")）：三角形外心 / 内心、正多边形 $R^2 = r^2 + (a slash 2)^2$。
   + *勾股定理 & 根式边长*（#secref("ge04-pythagorean")）：直角三角形三边一条公式；接纳 $sqrt(2)$、$sqrt(3)$、$sqrt(5)$ 这类合法长度。
-  + *特殊直角三角形 & 三角比*（#secref("ge04-special-right-triangles")）：$30$–$60$–$90$、$45$–$45$–$90$ 的固定边比；$sin$、$cos$、$tan$ 的定义（本支只处理特殊角）。
+  + *特殊直角三角形 & 三角比*（#secref("ge04-special-right-triangles")）：$30$–$60$–$90$、$45$–$45$–$90$ 的固定边比；$sin$、$cos$、$tan$ 的定义（这部分只处理特殊角）。
   + *仰角 / 俯角 / 坡度*（#secref("ge04-elevation-slope")）：实际测量落成直角三角形建模。
   + *刚体变换族*（#secref("ge05-rigid-transforms")）：平移 / 旋转 / 反射同属保距变换；两图全等 $<=>$ 存在一组刚体变换叠合。
   + *坐标几何 & 变换公式*（#secref("ge05-coordinate-transforms")）：距离、中点、三类变换全写成坐标公式。

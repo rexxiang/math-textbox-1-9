@@ -6,7 +6,7 @@
   *难度*：★★★★★ \
   *核心问题*：当未知量出现*平方*时，一元一次方程的五步不够用。怎样稳定地解任意 $a x^2 + b x + c = 0$？一旦会解，能不能反过来从“想要的根”构造方程？此外，如果等号换成了 $<, >, <=, >=$，等式性质还能用吗？ \
   *需要先会*：#secref("al02-distributive-rewrite")、#secref("al02-special-identities")、#secref("al02-factorization-as-reverse")、#secref("al04-linear-one-variable")、#secref("cb06-square-and-square-root")。 \
-  *本章在全书的位置*：代数分支第 5 章——把解方程技术从“一次”推到“二次”，再把等号松动为不等号，为第 6 章总结做收束。 \
+  *本章在全书的位置*：代数分支第 5 章——把解方程技术从“一次”推到“二次”，再把等号松动为不等号，为第 6 章总结做总结。 \
   *忘了可以回到*：若因式分解不稳，请回 #secref("al02-factorization-as-reverse")；若“$sqrt$”的意义还不清楚，请回 #secref("cb06-square-and-square-root")。
 ]
 

@@ -7,7 +7,7 @@
 
   #grid(columns: (1fr, 1fr), gutter: 12pt,
     block[
-      *证明工具链*（#secref("d01-congruence-definition")、#secref("d04-sss-criterion")、#secref("d07-asa-criterion")、#secref("d10-similar-triangles")）
+      *证明知识链*（#secref("d01-congruence-definition")、#secref("d04-sss-criterion")、#secref("d07-asa-criterion")、#secref("d10-similar-triangles")）
       - 全等先说清对应和证明链，再分步学会 `SSS / SAS / ASA / AAS / HL`
       - `SSA` 不能直接判全等
       - 相似判定：AA、SAS、SSS
@@ -24,7 +24,7 @@
 
   #grid(columns: (1fr, 1fr), gutter: 12pt,
     block[
-      *测量工具链*（#secref("d23-pythagorean-theorem")、#secref("d26-trigonometric-ratios")、#secref("d29-elevation-depression")）
+      *测量知识链*（#secref("d23-pythagorean-theorem")、#secref("d26-trigonometric-ratios")、#secref("d29-elevation-depression")）
       - 勾股定理：$a^2 + b^2 = c^2$
       - 逆定理：满足平方关系且最大边为 $c$ 时，可判定为直角三角形
       - $sin = frac("对边", "斜边")$

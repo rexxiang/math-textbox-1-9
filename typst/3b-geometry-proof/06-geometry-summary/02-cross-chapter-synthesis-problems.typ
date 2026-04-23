@@ -5,13 +5,13 @@
 #blueprint[
   *怎样用这一节*
 
-  下面 $4$ 道题每一题都明确标注了它所用到的*工具链*——即从几何支的哪几章出发。做每题之前，请先把标出的 `#secref` 过一遍，想一下“这里具体会用到那章的哪个动作”，再动笔。
+  下面 $4$ 道题每一题都明确标注了它所用到的*知识链*——即从几何支的哪几章出发。做每题之前，请先把标出的章节引用过一遍，想一下“这里具体会用到那章的哪个动作”，再动笔。
 
   做完后对照 #secref("meta:geometry-summary") 里的参考答案。如果某题卡住，到 #secref("meta:ge-repair-routes") 查“查漏指引”。
 ]
 
 #tryit[
-  *综合题 1*（工具链：#secref("ge03-circle-basics-inscribed") + #secref("ge04-pythagorean")）
+  *综合题 1*（知识链：#secref("ge03-circle-basics-inscribed") + #secref("ge04-pythagorean")）
 
   $A B$ 是圆 $O$ 的直径，$A B = 10$。$C$ 在圆上，$A C = 6$。
 
@@ -20,7 +20,7 @@
 
   ---
 
-  *综合题 2*（工具链：#secref("ge02-similarity-aa-ratio") + #secref("ge04-pythagorean")）
+  *综合题 2*（知识链：#secref("ge02-similarity-aa-ratio") + #secref("ge04-pythagorean")）
 
   两个直角三角形相似，相似比 $2 : 3$。较小者两条直角边分别为 $6$、$8$。
 
@@ -29,7 +29,7 @@
 
   ---
 
-  *综合题 3*（工具链：#secref("ge05-coordinate-transforms") + #secref("ge04-pythagorean") + #secref("ge05-rigid-transforms")）
+  *综合题 3*（知识链：#secref("ge05-coordinate-transforms") + #secref("ge04-pythagorean") + #secref("ge05-rigid-transforms")）
 
   $triangle A B C$ 的顶点 $A(0, 0)$、$B(6, 0)$、$C(0, 8)$。
 
@@ -39,7 +39,7 @@
 
   ---
 
-  *综合题 4*（工具链：#secref("ge04-elevation-slope") + #secref("ge04-special-right-triangles")）
+  *综合题 4*（知识链：#secref("ge04-elevation-slope") + #secref("ge04-special-right-triangles")）
 
   某段水平直路的远端有一座塔。在 $A$ 处测得塔顶仰角 $= 30 degree$；沿路*朝塔走 $60$ 米*到 $B$ 处，再测得塔顶仰角 $= 60 degree$。
 
