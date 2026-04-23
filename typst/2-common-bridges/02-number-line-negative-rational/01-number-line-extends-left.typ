@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 数轴向左延伸：负数登场 <tool:cb02-number-line-extends-left>
 
@@ -25,6 +26,74 @@
   把 $3 - 5$ 放回数轴：从 $3$ 向左走 $5$ 步，落在 $-2$。原来的减法并没有坏——只是落点可以在原点左边。
 
   于是*负号是方向，减号是操作*，它们长得像只是历史巧合。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let ox = 13  // origin x position (0 maps here)
+      let axis-y = 0
+      let scale = 2.0
+
+      // Background zones
+      rect((ox + (-6) * scale, axis-y - 1.5), (ox + 0 * scale, axis-y + 1.5),
+           fill: rgb("#FFEBEE"), stroke: none)
+      rect((ox + 0 * scale, axis-y - 1.5), (ox + 6 * scale, axis-y + 1.5),
+           fill: rgb("#E3F2FD"), stroke: none)
+
+      // Zone labels
+      content((ox + (-3) * scale, axis-y + 2.2),
+        text(size: 8pt, weight: "bold", fill: rgb("#C62828"))[负数], anchor: "south")
+      content((ox + 3 * scale, axis-y + 2.2),
+        text(size: 8pt, weight: "bold", fill: rgb("#1565C0"))[正数], anchor: "south")
+
+      // Main axis
+      line((ox + (-6) * scale, axis-y), (ox + 6.3 * scale, axis-y),
+           stroke: 1.5pt + rgb("#333333"), mark: (end: ">"))
+
+      // Tick marks and labels
+      for i in range(-5, 6) {
+        let tx = ox + i * scale
+        line((tx, axis-y - 0.4), (tx, axis-y + 0.4), stroke: 1pt + rgb("#555555"))
+        let label-color = if i < 0 { rgb("#C62828") } else if i > 0 { rgb("#1565C0") } else { rgb("#333333") }
+        content((tx, axis-y - 1.0), text(size: 7pt, fill: label-color)[#str(i)], anchor: "north")
+      }
+
+      // Origin mark
+      circle((ox, axis-y), radius: 0.3, fill: rgb("#333333"), stroke: 1pt + rgb("#333333"))
+      content((ox, axis-y + 0.9), text(size: 8pt, weight: "bold")[O], anchor: "south")
+
+      // --- "3 - 5 = -2" hop animation ---
+      let hop-h = 1.4
+      let start-x = ox + 3 * scale
+
+      // Start dot at 3
+      circle((start-x, axis-y), radius: 0.25, fill: rgb("#1565C0"), stroke: 1pt + rgb("#0D47A1"))
+
+      // Five leftward hop arrows
+      for step in range(5) {
+        let from-x = start-x - step * scale
+        let to-x = from-x - scale
+        let mid-x = (from-x + to-x) / 2
+        let base-y = axis-y + hop-h + step * 0.5
+        bezier((from-x, axis-y + 0.3), (to-x, axis-y + 0.3), (mid-x, base-y),
+               stroke: 1.2pt + rgb("#E53935"), mark: (end: ">"))
+        content((mid-x, base-y + 0.25),
+          text(size: 6pt, fill: rgb("#C62828"))[−1], anchor: "south")
+      }
+
+      // End dot at -2
+      let end-x = ox + (-2) * scale
+      circle((end-x, axis-y), radius: 0.25, fill: rgb("#E53935"), stroke: 1pt + rgb("#B71C1C"))
+
+      // Labels for start/end
+      content((start-x, axis-y - 1.8),
+        text(size: 7pt, weight: "bold", fill: rgb("#1565C0"))[起点 3], anchor: "north")
+      content((end-x, axis-y - 1.8),
+        text(size: 7pt, weight: "bold", fill: rgb("#E53935"))[终点 −2], anchor: "north")
+    }),
+    caption: [$3 - 5 = -2$：从 3 向左走 5 步，落在 $-2$],
+  )
 ]
 
 #side-hack[

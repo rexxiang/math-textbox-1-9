@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 质数、合数与质因数分解 <tool:pf03-primes-factorization>
 
@@ -29,6 +30,58 @@
   - 像 4、6、8、9、12 这样，还能拆出别的因数的数，叫合数
 
   合数继续往里拆，最后总会拆成若干个质数的乘积，这就叫质因数分解。
+
+  #figure(
+    cetz.canvas(length: 0.38cm, {
+      import cetz.draw: *
+
+      let prime-fill = rgb("#C8E6C9")
+      let prime-stroke = rgb("#2E7D32")
+      let comp-fill = rgb("#E0E0E0")
+      let comp-stroke = luma(120)
+
+      // Helper: draw a node circle with label
+      let node(pos, lbl, is-prime) = {
+        circle(pos, radius: 1.1,
+          fill: if is-prime { prime-fill } else { comp-fill },
+          stroke: 1.2pt + if is-prime { prime-stroke } else { comp-stroke })
+        content(pos, text(weight: "bold", size: 9pt, lbl))
+      }
+
+      // Positions (y increases upward)
+      let n60  = (8, 9)
+      let n2a  = (4, 6)
+      let n30  = (12, 6)
+      let n2b  = (9, 3)
+      let n15  = (15, 3)
+      let n3   = (12, 0)
+      let n5   = (18, 0)
+
+      // Connecting lines (drawn first, behind nodes)
+      for (p, c) in ((n60, n2a), (n60, n30), (n30, n2b), (n30, n15), (n15, n3), (n15, n5)) {
+        line(p, c, stroke: 1pt + luma(100))
+      }
+
+      // Nodes
+      node(n60, [60], false)
+      node(n2a, [2], true)
+      node(n30, [30], false)
+      node(n2b, [2], true)
+      node(n15, [15], false)
+      node(n3,  [3], true)
+      node(n5,  [5], true)
+
+      // Legend dots
+      circle((3, -2), radius: 0.4, fill: prime-fill, stroke: 0.8pt + prime-stroke)
+      content((4.2, -2), text(size: 7pt)[\= 质数（拆不动）], anchor: "west")
+      circle((11, -2), radius: 0.4, fill: comp-fill, stroke: 0.8pt + comp-stroke)
+      content((12.2, -2), text(size: 7pt)[\= 合数（还能拆）], anchor: "west")
+
+      // Result line
+      content((10, -4), text(size: 10pt)[$ 60 = 2 times 2 times 3 times 5 $])
+    }),
+    caption: [质因数分解树：$60 = 2 times 2 times 3 times 5$],
+  )
 ]
 
 #side-hack[

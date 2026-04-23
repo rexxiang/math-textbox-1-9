@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 方程即天平 <tool:cb05-equation-as-balance>
 
@@ -29,6 +30,77 @@
   - 当 $x = 5$ 时，左边 $= 13 != 11$，所以 $x = 5$ 不是解。
 
   把方程看成一架*天平*：等号左右两边的物体一样重。只要这架天平一直保持平衡，你在两边同时做相同的事都不会打破平衡。这就是下一节“等式性质”的直觉来源。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      // --- Fulcrum (triangle) ---
+      let ful-x = 12
+      let ful-y = 0
+      let ful-h = 2.5
+      line((ful-x - 1.5, ful-y), (ful-x + 1.5, ful-y), (ful-x, ful-y + ful-h),
+           close: true, fill: rgb("#78909C"), stroke: 1pt + rgb("#455A64"))
+
+      // --- Beam ---
+      let beam-y = ful-y + ful-h
+      let beam-half = 9
+      line((ful-x - beam-half, beam-y), (ful-x + beam-half, beam-y),
+           stroke: 2pt + rgb("#37474F"))
+
+      // --- Left pan ---
+      let lp-cx = ful-x - 6.5
+      let pan-y = beam-y
+
+      // Two x-boxes
+      for i in range(2) {
+        let bx = lp-cx - 1.5 + i * 2.2
+        let by = pan-y + 0.3
+        rect((bx, by), (bx + 1.8, by + 1.8),
+             fill: rgb("#BBDEFB"), stroke: 1.2pt + rgb("#1565C0"), radius: 2pt)
+        content((bx + 0.9, by + 0.9), text(size: 9pt, weight: "bold", fill: rgb("#0D47A1"))[_x_])
+      }
+
+      // Three "1" circles (the +3)
+      for i in range(3) {
+        let cx = lp-cx + 3.2 + i * 1.3
+        let cy = pan-y + 1.2
+        circle((cx, cy), radius: 0.5, fill: rgb("#EEEEEE"), stroke: 1pt + rgb("#757575"))
+        content((cx, cy), text(size: 7pt, fill: rgb("#424242"))[1])
+      }
+
+      // Left pan label
+      content((lp-cx + 1.2, pan-y - 0.8),
+        text(size: 8pt, weight: "bold", fill: rgb("#1565C0"))[$2x + 3$], anchor: "north")
+
+      // --- Equals sign ---
+      content((ful-x, beam-y + 1.2),
+        text(size: 14pt, weight: "bold", fill: rgb("#555555"))[=], anchor: "south")
+
+      // --- Right pan ---
+      let rp-cx = ful-x + 4.0
+
+      // 11 circles arranged in rows
+      let cols = 4
+      for i in range(11) {
+        let col = calc.rem(i, cols)
+        let row = calc.floor(i / cols)
+        let cx = rp-cx + col * 1.2
+        let cy = pan-y + 0.3 + 0.7 + row * 1.15
+        circle((cx, cy), radius: 0.45, fill: rgb("#EEEEEE"), stroke: 1pt + rgb("#757575"))
+        content((cx, cy), text(size: 6.5pt, fill: rgb("#424242"))[1])
+      }
+
+      // Right pan label
+      content((rp-cx + 1.8, pan-y - 0.8),
+        text(size: 8pt, weight: "bold", fill: rgb("#C62828"))[$11$], anchor: "north")
+
+      // Equation label below
+      content((ful-x, ful-y - 1.0),
+        text(size: 10pt, weight: "bold")[$2x + 3 = 11$], anchor: "north")
+    }),
+    caption: [方程就是一架天平：两边一样重],
+  )
 ]
 
 #side-hack[

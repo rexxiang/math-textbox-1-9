@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 三角形与内角和：三角合起来是一条直线 <tool:pf08-triangles-angle-sum>
 
@@ -28,6 +29,72 @@
   所以
 
   $ angle A + angle B + angle C = 180°. $
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      // --- Triangle vertices ---
+      let A = (5, 7)
+      let B = (0, 0)
+      let C = (10, 0)
+
+      // --- Parallel line through A ---
+      let line-ext = 5
+      let L-left = (A.at(0) - line-ext, A.at(1))
+      let L-right = (A.at(0) + line-ext, A.at(1))
+
+      // Colored angle fills at vertex A (wedges on the line)
+      // angle B' on left side of A (between line-left and AB)
+      let angle-r = 1.8
+      // ∠B' = alternate interior angle to ∠B, between ray A→L-left and ray A→B
+      arc(A, start: 180deg, stop: 213deg, radius: angle-r,
+          fill: rgb("#F4433640"), stroke: 1.2pt + rgb("#F44336"), mode: "PIE")
+      // ∠A at vertex A, between ray A→B and ray A→C
+      arc(A, start: 213deg, stop: 323deg, radius: angle-r,
+          fill: rgb("#2196F340"), stroke: 1.2pt + rgb("#2196F3"), mode: "PIE")
+      // ∠C' on right side of A (between ray A→C and line-right)
+      arc(A, start: 323deg, stop: 360deg, radius: angle-r,
+          fill: rgb("#4CAF5040"), stroke: 1.2pt + rgb("#4CAF50"), mode: "PIE")
+
+      // Angle arcs at B (∠B in red)
+      arc(B, start: 0deg, stop: 35deg, radius: 2.0,
+          fill: rgb("#F4433630"), stroke: 1pt + rgb("#F44336"), mode: "PIE")
+
+      // Angle arcs at C (∠C in green)
+      arc(C, start: 145deg, stop: 180deg, radius: 2.0,
+          fill: rgb("#4CAF5030"), stroke: 1pt + rgb("#4CAF50"), mode: "PIE")
+
+      // Dashed parallel line through A
+      line(L-left, L-right, stroke: (dash: "dashed", paint: rgb("#555555"), thickness: 1pt))
+
+      // Triangle sides
+      line(A, B, stroke: 1.5pt + rgb("#333333"))
+      line(B, C, stroke: 1.5pt + rgb("#333333"))
+      line(A, C, stroke: 1.5pt + rgb("#333333"))
+
+      // Vertex labels
+      content((A.at(0), A.at(1) + 1.2), [*A*], anchor: "south")
+      content((B.at(0) - 0.8, B.at(1) - 0.5), [*B*], anchor: "north-east")
+      content((C.at(0) + 0.8, C.at(1) - 0.5), [*C*], anchor: "north-west")
+
+      // Label for line l
+      content((L-right.at(0) + 0.5, L-right.at(1) + 0.5), [_l_], anchor: "south-west")
+
+      // Angle labels
+      content((A.at(0) - 2.8, A.at(1) - 1.0), text(size: 7pt, fill: rgb("#F44336"))[∠B′ = ∠B（内错角）], anchor: "east")
+      content((A.at(0) + 2.8, A.at(1) - 1.0), text(size: 7pt, fill: rgb("#4CAF50"))[∠C′ = ∠C（内错角）], anchor: "west")
+      content((A.at(0), A.at(1) - 2.2), text(size: 7pt, fill: rgb("#2196F3"))[∠A], anchor: "north")
+
+      // 180° annotation along the line
+      let ann-y = A.at(1) + 2.2
+      line((A.at(0) - line-ext + 0.5, ann-y), (A.at(0) + line-ext - 0.5, ann-y),
+           stroke: 0.8pt + rgb("#888888"), mark: (start: "|", end: "|"))
+      content((A.at(0), ann-y + 0.6),
+        text(size: 7pt, fill: rgb("#555555"))[三个角拼成 180°（平角）], anchor: "south")
+    }),
+    caption: [过 $A$ 作 $B C$ 的平行线：三个角拼成一条直线],
+  )
 
   这个结论对所有三角形都成立——因为我们用的工具，只是“过 $A$ 可以作一条平行线”和前一节的角关系。
 ]

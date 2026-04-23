@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 直线、射线与线段：按“有没有端”分开的三种线 <tool:pf06-lines-rays-segments>
 
@@ -34,6 +35,49 @@
   - 直线 0 个端 → 不谈长度。
   - 射线 1 个端 → 不谈总长度（另一端在远方）。
   - 线段 2 个端 → 有确定的长度，可以度量。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let purple = rgb("#9C27B0")
+      let orange = rgb("#FF9800")
+      let teal   = rgb("#009688")
+
+      // ---- 直线 (0 endpoints) ----
+      let y1 = 8
+      line((-1, y1), (15, y1), stroke: 2pt + purple,
+           mark: (start: ">", end: ">"))
+      content((17, y1),
+        text(fill: purple, weight: "bold", size: 9pt)[直线（0 个端点）],
+        anchor: "west")
+
+      // ---- 射线 (1 endpoint) ----
+      let y2 = 4
+      line((0, y2), (15, y2), stroke: 2pt + orange,
+           mark: (end: ">"))
+      circle((0, y2), radius: 0.3, fill: orange, stroke: 1pt + orange)
+      content((0, y2 - 1.3),
+        text(fill: orange, size: 7pt)[端点], anchor: "north")
+      content((17, y2),
+        text(fill: orange, weight: "bold", size: 9pt)[射线（1 个端点）],
+        anchor: "west")
+
+      // ---- 线段 (2 endpoints) ----
+      let y3 = 0
+      line((0, y3), (14, y3), stroke: 2pt + teal)
+      circle((0, y3), radius: 0.3, fill: teal, stroke: 1pt + teal)
+      circle((14, y3), radius: 0.3, fill: teal, stroke: 1pt + teal)
+      content((0, y3 - 1.3),
+        text(fill: teal, weight: "bold", size: 8pt)[A], anchor: "north")
+      content((14, y3 - 1.3),
+        text(fill: teal, weight: "bold", size: 8pt)[B], anchor: "north")
+      content((17, y3),
+        text(fill: teal, weight: "bold", size: 9pt)[线段（2 个端点）],
+        anchor: "west")
+    }),
+    caption: [三种线：按端点数分类],
+  )
 ]
 
 #side-hack[

@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 加法与减法：合并与撤销 <tool:pf02-add-subtract-undo>
 
@@ -27,6 +28,37 @@
   - 现在 63 支，去掉后来加的 25 支，得到 $63 - 25 = 38$
 
   所以减法常常不是新世界的规则，而是在把加法倒着走回来。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let red = rgb("#F44336")
+
+      // Number line axis
+      line((-1, 0), (17, 0), stroke: 1.2pt + luma(80), mark: (end: ">"))
+
+      // Tick marks and labels
+      for (px, lbl) in ((3, [38]), (13, [63])) {
+        line((px, -0.5), (px, 0.5), stroke: 1pt + luma(60))
+        content((px, -1.4), text(weight: "bold", size: 9pt, lbl), anchor: "north")
+      }
+
+      // Blue forward arc: 38 → 63  (curved upward)
+      bezier((3, 0.4), (13, 0.4), (8, 5),
+             stroke: 1.8pt + blue, mark: (end: ">"))
+      content((8, 5.2),
+        text(fill: blue, weight: "bold", size: 10pt)[+25], anchor: "south")
+
+      // Red backward arc: 63 → 38  (curved downward)
+      bezier((13, -0.4), (3, -0.4), (8, -5),
+             stroke: 1.8pt + red, mark: (end: ">"))
+      content((8, -5.2),
+        text(fill: red, weight: "bold", size: 10pt)[−25], anchor: "north")
+    }),
+    caption: [加法往右走，减法往回走——互逆],
+  )
 ]
 
 #side-hack[

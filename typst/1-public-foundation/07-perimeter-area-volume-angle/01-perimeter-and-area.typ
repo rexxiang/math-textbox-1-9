@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 周长与面积：沿边界走一圈，用单位正方形铺满 <tool:pf07-perimeter-area>
 
@@ -28,6 +29,55 @@
   - 面积量的是“里面能铺多少个单位正方形”，单位是平方单位（平方米、平方厘米……）。
 
   对长方形而言，面积 $= "长" times "宽"$；这不是背来的口诀，而是“数几行几列的小方格”的自然结果。
+
+  #figure(
+    cetz.canvas(length: 0.65cm, {
+      import cetz.draw: *
+
+      let light-blue = rgb("#E3F2FD")
+      let red   = rgb("#F44336")
+      let blue  = rgb("#2196F3")
+
+      // Grid cells with numbers
+      for row in range(3) {
+        for col in range(4) {
+          let x = col * 2
+          let y = row * 2
+          rect((x, y), (x + 2, y + 2),
+               fill: light-blue, stroke: 0.5pt + luma(180))
+          let num = (2 - row) * 4 + col + 1
+          content((x + 1, y + 1),
+            text(fill: luma(170), size: 7pt, str(num)))
+        }
+      }
+
+      // Thick red perimeter border
+      rect((0, 0), (8, 6), stroke: 2.5pt + red)
+
+      // Clockwise directional arrows just outside the border
+      line((0.5, -0.5), (7.5, -0.5), stroke: 1.2pt + red,
+           mark: (end: ">"))
+      line((8.5, 0.5), (8.5, 5.5), stroke: 1.2pt + red,
+           mark: (end: ">"))
+      line((7.5, 6.5), (0.5, 6.5), stroke: 1.2pt + red,
+           mark: (end: ">"))
+      line((-0.5, 5.5), (-0.5, 0.5), stroke: 1.2pt + red,
+           mark: (end: ">"))
+
+      // Dimension labels
+      content((4, -1.6), text(weight: "bold", size: 9pt)[4 米])
+      content((-1.8, 3), text(weight: "bold", size: 9pt)[3 米])
+
+      // Result labels on the right
+      content((11, 4.5),
+        text(fill: red, weight: "bold", size: 9pt)[周长 = 4+3+4+3 = 14 米],
+        anchor: "west")
+      content((11, 1.5),
+        text(fill: blue, weight: "bold", size: 9pt)[面积 = 4×3 = 12 平方米],
+        anchor: "west")
+    }),
+    caption: [同一块长方形：红色走一圈 = 周长，蓝色铺满 = 面积],
+  )
 ]
 
 #side-hack[

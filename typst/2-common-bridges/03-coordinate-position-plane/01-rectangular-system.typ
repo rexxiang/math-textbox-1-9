@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 平面直角坐标系：给每个点发身份证 <tool:cb03-rectangular-system>
 
@@ -26,6 +27,80 @@
 
   + *顺序不能变*：横在前，纵在后。
   + *轴上的点*：$(a, 0)$ 在 $x$ 轴上，$(0, b)$ 在 $y$ 轴上；原点是 $(0, 0)$。
+
+  #figure(
+    cetz.canvas(length: 0.55cm, {
+      import cetz.draw: *
+
+      let s = 2.0  // scale: 1 unit = 2.0 canvas units
+      let lo = -4
+      let hi = 4
+
+      // Quadrant background fills
+      rect((0, 0), (hi * s, hi * s), fill: rgb("#E3F2FD"), stroke: none)      // I
+      rect((lo * s, 0), (0, hi * s), fill: rgb("#E8F5E9"), stroke: none)      // II
+      rect((lo * s, lo * s), (0, 0), fill: rgb("#FFF8E1"), stroke: none)      // III
+      rect((0, lo * s), (hi * s, 0), fill: rgb("#FFF3E0"), stroke: none)      // IV
+
+      // Grid lines
+      for i in range(lo, hi + 1) {
+        if i != 0 {
+          line((i * s, lo * s), (i * s, hi * s), stroke: 0.3pt + rgb("#CCCCCC"))
+          line((lo * s, i * s), (hi * s, i * s), stroke: 0.3pt + rgb("#CCCCCC"))
+        }
+      }
+
+      // Axes
+      line((lo * s - 0.5, 0), (hi * s + 1.0, 0), stroke: 1.5pt + rgb("#333333"), mark: (end: ">"))
+      line((0, lo * s - 0.5), (0, hi * s + 1.0), stroke: 1.5pt + rgb("#333333"), mark: (end: ">"))
+
+      // Axis labels
+      content((hi * s + 1.5, 0), text(size: 8pt, weight: "bold")[_x_], anchor: "west")
+      content((0, hi * s + 1.8), text(size: 8pt, weight: "bold")[_y_], anchor: "south")
+
+      // Tick marks and labels on axes
+      for i in range(lo, hi + 1) {
+        if i != 0 {
+          // x-axis ticks
+          line((i * s, -0.25), (i * s, 0.25), stroke: 0.8pt + rgb("#555555"))
+          content((i * s, -0.7), text(size: 6pt)[#str(i)], anchor: "north")
+          // y-axis ticks
+          line((-0.25, i * s), (0.25, i * s), stroke: 0.8pt + rgb("#555555"))
+          content((-0.7, i * s), text(size: 6pt)[#str(i)], anchor: "east")
+        }
+      }
+
+      // Quadrant labels
+      content((hi * s / 2, hi * s / 2), text(size: 14pt, fill: rgb("#BBBBBB"), weight: "bold")[Ⅰ])
+      content((lo * s / 2, hi * s / 2), text(size: 14pt, fill: rgb("#BBBBBB"), weight: "bold")[Ⅱ])
+      content((lo * s / 2, lo * s / 2), text(size: 14pt, fill: rgb("#BBBBBB"), weight: "bold")[Ⅲ])
+      content((hi * s / 2, lo * s / 2), text(size: 14pt, fill: rgb("#BBBBBB"), weight: "bold")[Ⅳ])
+
+      // --- Plotted points with dashed guide lines ---
+      let points = (
+        ("A(3, 2)", 3, 2, rgb("#1565C0")),
+        ("B(−2, 4)", -2, 4, rgb("#2E7D32")),
+        ("C(−3, −1)", -3, -1, rgb("#E65100")),
+        ("D(4, −3)", 4, -3, rgb("#C62828")),
+      )
+      for (label, px, py, clr) in points {
+        let cx = px * s
+        let cy = py * s
+        // Dashed guide lines to axes
+        line((cx, 0), (cx, cy), stroke: (dash: "dashed", paint: clr, thickness: 0.6pt))
+        line((0, cy), (cx, cy), stroke: (dash: "dashed", paint: clr, thickness: 0.6pt))
+        // Point dot
+        circle((cx, cy), radius: 0.25, fill: clr, stroke: 1pt + clr)
+        // Label
+        content((cx + 0.5, cy + 0.5), text(size: 7pt, weight: "bold", fill: clr)[#label], anchor: "south-west")
+      }
+
+      // Origin
+      circle((0, 0), radius: 0.25, fill: rgb("#333333"), stroke: 1pt + rgb("#333333"))
+      content((-0.6, -0.6), text(size: 7pt, weight: "bold")[O], anchor: "north-east")
+    }),
+    caption: [平面直角坐标系：每个点有唯一的 $(x, y)$ 身份证],
+  )
 ]
 
 #side-hack[
