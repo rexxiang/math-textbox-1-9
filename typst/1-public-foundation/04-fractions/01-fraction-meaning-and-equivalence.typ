@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 分数的意义与等值 <tool:pf04-fraction-equivalence>
 
@@ -27,6 +28,51 @@
   - 原来的 $2/3$ 会变成 $4/6$
 
   份数名字变了，但吃到的总量并没变。于是我们看到：同一个量可以有不同写法，这些写法叫等值分数。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      // --- 面积模型：1/2 vs 2/4 ---
+      // 左边：1/2
+      rect((0, 0), (6, 2), stroke: 0.6pt)
+      line((3, 0), (3, 2), stroke: 0.6pt)
+      rect((0, 0), (3, 2), fill: rgb("#a8d8ea"), stroke: 0.6pt)
+      content((3, -0.8), $1 / 2$, anchor: "north")
+
+      // 右边：2/4
+      let rx = 8
+      rect((rx, 0), (rx + 6, 2), stroke: 0.6pt)
+      for i in (1, 2, 3) {
+        line((rx + i * 1.5, 0), (rx + i * 1.5, 2), stroke: 0.6pt)
+      }
+      rect((rx, 0), (rx + 1.5, 2), fill: rgb("#a8d8ea"), stroke: 0.6pt)
+      rect((rx + 1.5, 0), (rx + 3, 2), fill: rgb("#a8d8ea"), stroke: 0.6pt)
+      content((rx + 3, -0.8), $2 / 4$, anchor: "north")
+
+      // 等号
+      content((7, 1), $=$, anchor: "center")
+
+      // --- 数轴模型 ---
+      let ny = -4
+      line((-0.5, ny), (15, ny), stroke: 0.5pt, mark: (end: ">"))
+      // 刻度
+      for (val, label) in ((0, $0$), (6, $1 / 2$), (12, $1$)) {
+        line((val, ny - 0.3), (val, ny + 0.3), stroke: 0.5pt)
+        content((val, ny - 0.8), label, anchor: "north")
+      }
+      // 四等分刻度
+      for i in (3, 9) {
+        line((i, ny - 0.2), (i, ny + 0.2), stroke: 0.4pt + rgb("#888"))
+      }
+      content((3, ny + 0.8), $1 / 4$, anchor: "south")
+      content((9, ny + 0.8), $3 / 4$, anchor: "south")
+      // 标注 2/4 = 1/2
+      circle((6, ny), radius: 0.25, fill: rgb("#f5a623"), stroke: 0.5pt)
+      content((6, ny + 1.2), text(size: 0.75em, $2 / 4 = 1 / 2$), anchor: "south")
+    }),
+    caption: [面积模型与数轴都能看到：$1 / 2 = 2 / 4$],
+  )
 ]
 
 #side-hack[

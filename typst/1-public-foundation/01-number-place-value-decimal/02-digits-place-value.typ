@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 数字符号与位值 <tool:pf01-digits-place-value>
 
@@ -30,6 +31,45 @@
   - 3 个一
 
   同一个数字 2，写在百位表示 200；写在十位表示 20；写在个位才表示 2。
+
+  #figure(
+    cetz.canvas(length: 0.35cm, {
+      import cetz.draw: *
+
+      // --- 散铅笔 (个位) ---
+      let pencil(x, y) = {
+        line((x, y), (x, y + 2.2), stroke: 0.8pt + rgb("#4a90d9"))
+        circle((x, y + 2.4), radius: 0.15, fill: rgb("#f5a623"), stroke: 0.5pt)
+      }
+      for i in range(3) { pencil(i * 0.8, 0) }
+      content((1.2, -1), [3 个一], anchor: "north")
+
+      // --- 一捆 (十位) ---
+      let bundle-x = 6
+      rect((bundle-x - 0.3, -0.2), (bundle-x + 3.5, 2.8), stroke: (dash: "dashed", paint: rgb("#7b7b7b"), thickness: 0.5pt), radius: 3pt)
+      for i in range(4) {
+        for j in range(0, 10) {
+          line((bundle-x + i * 0.8, 0), (bundle-x + i * 0.8, 2.2), stroke: 0.8pt + rgb("#4a90d9"))
+          circle((bundle-x + i * 0.8, 2.4), radius: 0.15, fill: rgb("#f5a623"), stroke: 0.5pt)
+        }
+      }
+      // 只画 4 支代表 "4 个十"
+      content((bundle-x + 1.6, -1), [4 捆 = 4 个十], anchor: "north")
+
+      // --- 大组 (百位) ---
+      let big-x = 14
+      rect((big-x - 0.3, -0.5), (big-x + 5.9, 3.2), stroke: (paint: rgb("#7b7b7b"), thickness: 0.8pt), radius: 3pt)
+      rect((big-x - 0.1, -0.2), (big-x + 3.5, 2.8), stroke: (dash: "dashed", paint: rgb("#bbb"), thickness: 0.5pt), radius: 3pt)
+      rect((big-x + 2.3, -0.2), (big-x + 5.7, 2.8), stroke: (dash: "dashed", paint: rgb("#bbb"), thickness: 0.5pt), radius: 3pt)
+      content((big-x + 2.8, 1.2), [10 捆], anchor: "center")
+      content((big-x + 2.8, -1), [×2 大组 = 2 个百], anchor: "north")
+
+      // --- 等号与总数 ---
+      content((22, 1.2), $=$, anchor: "center")
+      content((24, 1.2), [*243*], anchor: "center")
+    }),
+    caption: [243 = 2 个百 + 4 个十 + 3 个一],
+  )
 ]
 
 #side-hack[
