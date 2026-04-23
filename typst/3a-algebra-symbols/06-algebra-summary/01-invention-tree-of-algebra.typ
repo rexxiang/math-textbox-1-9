@@ -35,7 +35,7 @@
     [因式分解流程 #secref("al02-factorization-as-reverse")], [“先提 → 再看公式 → 再匹配中间项”给出统一流程], [分式约分、二次方程、恒等变形],
     [分式 #secref("al03-rational-expression-structure")], [要允许“除以未知量”], [约分、通分需要分子分母能因式分解],
     [通分与分式运算 #secref("al03-common-denominator-operations")], [把“异分母相加减”这件事机械化], [为分式方程做准备],
-    [分式方程 & 增根 #secref("al03-rational-equations-and-extraneous-roots")], [分母含未知量时，去分母扩大了定义域], [“验根”成为不能省略的一步],
+    [分式方程 & 增根 #secref("al03-rational-equations-and-extraneous-roots")], [分母含未知量时，去分母扩大了有意义范围], [“验根”成为不能省略的一步],
     [一元一次方程五步 #secref("al04-linear-one-variable")], [复杂系数下解法要机械化], [为建模和不等式提供同一套流程],
     [方程组 #secref("al04-systems-linear")], [多条件多未知量时，一条方程锁不住解], [代入 / 加减消元两条路线],
     [建模 #secref("al04-modeling-word-problems")], [要把自然语言翻成等量关系], [“设元 → 译句 → 检验”三步统一入口],
