@@ -36,6 +36,7 @@
 
 // 1-public-foundation
 = 公共基础
+#include "1-public-foundation/00-part-map.typ"
 #include "1-public-foundation/01-number-place-value-decimal/00-overview.typ"
 #include "1-public-foundation/01-number-place-value-decimal/99-review.typ"
 #include "1-public-foundation/02-four-operations-structure/00-overview.typ"
@@ -57,6 +58,7 @@
 
 // 2-common-bridges
 = 共通桥梁
+#include "2-common-bridges/00-part-map.typ"
 #include "2-common-bridges/01-ratio-proportion-percent/00-overview.typ"
 #include "2-common-bridges/01-ratio-proportion-percent/99-review.typ"
 #include "2-common-bridges/02-number-line-negative-rational/00-overview.typ"
@@ -74,6 +76,7 @@
 
 // 3a-algebra-symbols
 = 代数与符号
+#include "3a-algebra-symbols/00-part-map.typ"
 #include "3a-algebra-symbols/01-polynomials-like-terms-operations/00-overview.typ"
 #include "3a-algebra-symbols/01-polynomials-like-terms-operations/99-review.typ"
 #include "3a-algebra-symbols/02-distributive-identities-factorization/00-overview.typ"
@@ -89,6 +92,7 @@
 
 // 3b-geometry-proof
 = 几何与证明
+#include "3b-geometry-proof/00-part-map.typ"
 #include "3b-geometry-proof/01-congruence-correspondence-proof-chains/00-overview.typ"
 #include "3b-geometry-proof/01-congruence-correspondence-proof-chains/99-review.typ"
 #include "3b-geometry-proof/02-similarity-scale-parallel-line-geometry/00-overview.typ"
@@ -104,6 +108,7 @@
 
 // 3c-functions-change
 = 函数与变化
+#include "3c-functions-change/00-part-map.typ"
 #include "3c-functions-change/01-function-representations/00-overview.typ"
 #include "3c-functions-change/01-function-representations/99-review.typ"
 #include "3c-functions-change/02-direct-variation-linear-functions-slope/00-overview.typ"
@@ -117,6 +122,7 @@
 
 // 3d-data-uncertainty
 = 数据与不确定性
+#include "3d-data-uncertainty/00-part-map.typ"
 #include "3d-data-uncertainty/01-data-displays-descriptive-statistics/00-overview.typ"
 #include "3d-data-uncertainty/01-data-displays-descriptive-statistics/99-review.typ"
 #include "3d-data-uncertainty/02-frequency-histograms-variance/00-overview.typ"
@@ -130,6 +136,7 @@
 
 // 4-capstone
 = 终章综合
+#include "4-capstone/00-part-map.typ"
 #include "4-capstone/01-shared-invention-tree-review/00-overview.typ"
 #include "4-capstone/01-shared-invention-tree-review/99-review.typ"
 #include "4-capstone/02-cross-domain-problem-solving-modeling/00-overview.typ"
