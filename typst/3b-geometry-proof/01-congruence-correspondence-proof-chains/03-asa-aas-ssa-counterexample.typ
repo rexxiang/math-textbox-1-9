@@ -165,7 +165,7 @@
 
   + 自己构造一组具体数据演示 SSA 的双解反例：给出 $A B$、$B C$、$angle A$ 的具体数值，并画出两种不同的 $triangle A B C$。
 
-  *挑战*
+  *挑战 ☞ 选做*
 
   + 为什么“两边一角”这三个字不能简写——必须说清“是夹角还是对角”？用一句话说清。
 
@@ -185,7 +185,7 @@
   + 在 $triangle A O C$ 与 $triangle B O D$ 中：$A O = B O$（中点）、$angle A O C = angle B O D$（对顶角）、$angle O A C = angle O B D$（两直线平行被第三线所截，内错角相等——见 #secref("pf08-parallel-transversal")）。由 `AAS` 得 $triangle A O C tilde.eq triangle B O D$，故 $O C = O D$。
   + 一例：$A B = 7$、$B C = 5$、$angle A = 30 degree$（$angle A$ 不是 $A B, B C$ 的夹角）；可以配出两种 $triangle A B C$——$A C approx 8.34$ 与 $A C approx 2.16$。两者都合法，形状不同。
 
-  *挑战*
+  *挑战 ☞ 选做*
   + “两边一角”在*夹角*下给的是 SAS（可判），在*非夹角*下给的是 SSA（不可判）——判与不判只差一字，省了就错了。
   + 补 $A C = D F$（同一个顶点 $A / D$ 出发的另一条边）得 `SAS`；或补 $angle B = angle E$ 得 `ASA`。选 $B C = E F$ 是不够的——那会让三项变成 $A B$、$B C$ 两边加 $angle A$（$angle A$ 是 $A B$ 的对角而不是夹角），落入 SSA 反例区。
   + 在两个直角三角形中，直角对应相等（$90 degree = 90 degree$），斜边与一条直角边给出；两角（一个直角 $+$ 一个由斜边与已知直角边决定的底角）相等，再配那条给定的直角边即 `AAS`。等价地，由勾股把第三边算出来，再 `SSS` 也行。

@@ -138,7 +138,7 @@
 
   + 正方形 $A B C D$ 中，$E$、$F$ 分别是 $B C$、$C D$ 的中点。求证：$A E = A F$。（提示：找一对全等三角形；看清夹角。）
 
-  *挑战*
+  *挑战 ☞ 选做*
 
   + 已知 $triangle A B C$ 与 $triangle D E F$ 中 $A B = D E$、$A C = D F$，再补一项让结论成立。你会补 $B C = E F$（SSS）还是 $angle A = angle D$（SAS）？两者各有什么优势？能不能补 $angle B = angle E$？为什么不行？
 
@@ -155,7 +155,7 @@
   + 在 $triangle A B D$ 与 $triangle A C D$ 中：$A B = A C$（已知）、$angle B A D = angle C A D$（$A D$ 是角平分线）、$A D = A D$（公共边）。由 `SAS` 得 $triangle A B D tilde.eq triangle A C D$，故对应角 $angle B = angle C$。
   + 在 $triangle A B E$ 与 $triangle A D F$ 中：$A B = A D$（正方形边）、$B E = D F$（都是边的一半）、$angle A B E = angle A D F = 90 degree$（$angle A B E$ 是 $A B, B E$ 的夹角）。由 `SAS` 得 $triangle A B E tilde.eq triangle A D F$，故 $A E = A F$。
 
-  *挑战*
+  *挑战 ☞ 选做*
   + 补 $B C = E F$ 得 SSS——纯测量、不依赖角度，适合角度难量的题；补 $angle A = angle D$ 得 SAS——只要能读出夹角就非常快。补 $angle B = angle E$ 不行：$angle B$ 既不是 $A B, A C$ 的夹角，也不是 $A B, B C$ 的夹角对应方关系，落进 SSA 风险区（下一节详解）。
   + 三段确定长度的“硬杆”首尾铰接，角度都不能自由调——杆子一围起来，形状就只有一种，连同所有三个内角一起被自动固定。
 ]

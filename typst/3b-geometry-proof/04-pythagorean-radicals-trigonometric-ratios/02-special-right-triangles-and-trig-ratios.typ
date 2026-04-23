@@ -156,7 +156,7 @@
   + 直角三角形中，$angle B = 30 degree$、斜边 $A B = 12$。求 $angle B$ 的对边与邻边长度。
   + 计算 $tan 60 degree dot tan 30 degree$。
 
-  *挑战*
+  *挑战 ☞ 选做*
 
   + 直角三角形 $A B C$，$angle C = 90 degree$、$angle A = 30 degree$、$A C = 6$。求 $B C$、$A B$。
   + 等边三角形边长 $= 6$。求它的高与面积。
@@ -175,7 +175,7 @@
   + $angle B = 30 degree$ 的对边（短直角边）$= 12 slash 2 = 6$；邻边（长直角边）$= 6 sqrt(3)$。
   + $tan 60 degree dot tan 30 degree = sqrt(3) dot (sqrt(3) slash 3) = 3 slash 3 = 1$。
 
-  *挑战*
+  *挑战 ☞ 选做*
   + $angle A = 30 degree$ 的邻边是 $A C = 6$（对 $60 degree$ 的长直角边）。由 $30$–$60$–$90$ 边比 $1 : sqrt(3) : 2$，设短直角边 $= k$，则 $k sqrt(3) = 6 => k = 2 sqrt(3)$。于是 $B C$（对 $30 degree$）$= 2 sqrt(3)$，$A B$（斜边）$= 2 k = 4 sqrt(3)$。
   + 高 $= (sqrt(3) slash 2) times 6 = 3 sqrt(3)$；面积 $= 1 slash 2 times 6 times 3 sqrt(3) = 9 sqrt(3)$。
   + $tan alpha = B C slash A B = 3 sqrt(3) slash 3 = sqrt(3)$，故 $alpha = 60 degree$。

@@ -153,7 +153,7 @@
 
   + $square A B C D$ 中，$A B = 8$、$A D = 5$、$angle A = 60 degree$。求对角线 $B D$ 的长。（提示：在 $triangle A B D$ 中自 $D$ 作 $A B$ 上的高 $D H$，$triangle A D H$ 是 30-60-90 三角形，再用勾股。）
 
-  *挑战*
+  *挑战 ☞ 选做*
 
   + 正方形 $A B C D$ 中，$E$、$F$ 分别是 $A B$、$B C$ 的中点。证明 $triangle D A E tilde.eq triangle D C F$，并由此得 $D E = D F$。
 

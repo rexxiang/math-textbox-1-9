@@ -143,7 +143,7 @@
   + 一段斜坡坡角 $= 30 degree$，水平距离 $= 12$ 米。求它的铅直上升与坡长。
   + 在离旗杆底 $10$ 米处测得旗杆顶仰角 $60 degree$。求旗杆高。
 
-  *挑战*
+  *挑战 ☞ 选做*
 
   + 从一座高楼顶楼水平望出去，俯角 $45 degree$ 正好瞄到地面一处井盖。已知楼高 $= 40$ 米。求井盖到楼底的水平距离。
   + 一位测量员先在 $A$ 处测得山顶仰角 $30 degree$；他*向山脚方向走 $50$ 米*到 $B$ 处，再测得山顶仰角 $60 degree$。设山高 $h$。求 $h$。
@@ -162,7 +162,7 @@
   + 铅直上升 $= 12 tan 30 degree = 4 sqrt(3)$ 米；坡长 $= 12 slash cos 30 degree = 12 dot 2 slash sqrt(3) = 8 sqrt(3)$ 米。
   + 旗杆高 $= 10 tan 60 degree = 10 sqrt(3)$ 米。
 
-  *挑战*
+  *挑战 ☞ 选做*
   + 俯角 $= 45 degree$、铅直 $= 40 =>$ 水平距离 $= 40 slash tan 45 degree = 40$ 米。
   + 山顶正下方在地面投影点设为 $F$；$A$、$B$ 都在 $F$ 的同侧水平线上，$A$ 远、$B$ 近。由仰角定义：$A F = h slash tan 30 degree = h sqrt(3)$，$B F = h slash tan 60 degree = h slash sqrt(3) = h sqrt(3) slash 3$。由 $A B = A F - B F$：$50 = h sqrt(3) - h sqrt(3) slash 3 = (2 sqrt(3) slash 3) h => h = 50 dot 3 slash (2 sqrt(3)) = 75 slash sqrt(3) = 25 sqrt(3)$ 米。
   + 坡角 $45 degree$、铅直 $4 =>$ 水平 $= 4$、坡长 $= 4 sqrt(2)$。故坡长 $= 4 sqrt(2)$ 米，底脚水平宽度 $= 4$ 米。

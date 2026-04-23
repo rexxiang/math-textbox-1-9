@@ -137,7 +137,7 @@
   + 若 $triangle A B C tilde.eq triangle D E F$ 且 $angle B = angle C$，求证 $angle E = angle F$。（提示：先用对应角，再用传递。）
   + 已知 $triangle A B C tilde.eq triangle D E F$，$A B = 2 x + 1$，$D E = x + 5$。求 $x$ 与 $A B$ 的长。
 
-  *挑战*
+  *挑战 ☞ 选做*
 
   + 判断并说明：若 $triangle A B C tilde.eq triangle D E F$ 且 $triangle D E F tilde.eq triangle G H I$，能否立刻得 $triangle A B C tilde.eq triangle G H I$？为什么？
   + 已知 $triangle A B C tilde.eq triangle A' B' C'$，点 $M$、$M'$ 分别是 $B C$、$B' C'$ 的中点。能不能得出 $A M = A' M'$？写下你的理由。
@@ -156,7 +156,7 @@
   + 由全等对应角：$angle E = angle B$、$angle F = angle C$。已知 $angle B = angle C$，故 $angle E = angle F$。
   + 对应边相等，$2 x + 1 = x + 5$，解得 $x = 4$，所以 $A B = 2 times 4 + 1 = 9$。
 
-  *挑战*
+  *挑战 ☞ 选做*
   + 能。设第一次对应 $A <-> D$、$B <-> E$、$C <-> F$，第二次 $D <-> G$、$E <-> H$、$F <-> I$。把两张对应表串起来得 $A <-> G$、$B <-> H$、$C <-> I$，且各条边角都沿链条传递相等，所以 $triangle A B C tilde.eq triangle G H I$。
   + 能。对应关系里 $B C$ 对应 $B' C'$，所以它们的中点也对应（$M <-> M'$），而 $A M$ 与 $A' M'$ 是两侧“顶点到对应中点”的线段，由对应关系的整体性它们相等。（严格证明要再用一次全等判定，下一节就给出工具。）
   + 因为“相等”可以随便挑一对，但“对应相等”要求*一张固定的表*把左右两边的边、角一一配对。没有“对应”两字，就可能只抓到了“都有一条长 $5$ 的边”，而这条边在两个三角形里的位置根本不同，结论立刻失效。
