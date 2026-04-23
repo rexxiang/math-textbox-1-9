@@ -17,68 +17,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Build Typst Docker image
-        run: docker build -t math-textbook-typst .
-
-      - name: Build PDF
-        run: |
-          mkdir -p output
-          docker run --rm -v "$(pwd):/book" math-textbook-typst \
-            compile --root /book /book/typst/main.typ /book/output/math-textbook.pdf
+      - name: Build and verify via Makefile
+        run: make ci
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
           name: math-textbook-pdf
           path: output/math-textbook.pdf
-
-      - name: Verify package lock
-        run: |
-          mkdir -p output
-          docker run --rm -v "$(pwd):/book" math-textbook-typst \
-            compile --root /book /book/typst/smoke/package-lock.typ /book/output/typst-package-lock-check.pdf
-
-      - name: Verify number-line algebra bridge smoke
-        run: |
-          mkdir -p output
-          docker run --rm -v "$(pwd):/book" math-textbook-typst \
-            compile --root /book /book/typst/smoke/04-number-line-algebra-bridge.typ /book/output/04-number-line-algebra-bridge-smoke.pdf
-
-      - name: Verify foundation gate smoke
-        run: |
-          mkdir -p output
-          docker run --rm -v "$(pwd):/book" math-textbook-typst \
-            compile --root /book /book/typst/smoke/05-foundation-gate.typ /book/output/05-foundation-gate-smoke.pdf
-
-      - name: Verify algebra deepening smoke
-        run: |
-          mkdir -p output
-          docker run --rm -v "$(pwd):/book" math-textbook-typst \
-            compile --root /book /book/typst/smoke/06-algebra-deepening.typ /book/output/06-algebra-deepening-smoke.pdf
-
-      - name: Verify geometry deepening smoke
-        run: |
-          mkdir -p output
-          docker run --rm -v "$(pwd):/book" math-textbook-typst \
-            compile --root /book /book/typst/smoke/07-geometry-deepening.typ /book/output/07-geometry-deepening-smoke.pdf
-
-      - name: Verify function models smoke
-        run: |
-          mkdir -p output
-          docker run --rm -v "$(pwd):/book" math-textbook-typst \
-            compile --root /book /book/typst/smoke/08-function-models.typ /book/output/08-function-models-smoke.pdf
-
-      - name: Verify data statistics smoke
-        run: |
-          mkdir -p output
-          docker run --rm -v "$(pwd):/book" math-textbook-typst \
-            compile --root /book /book/typst/smoke/09-data-statistics.typ /book/output/09-data-statistics-smoke.pdf
-
-      - name: Verify capstone smoke
-        run: |
-          mkdir -p output
-          docker run --rm -v "$(pwd):/book" math-textbook-typst \
-            compile --root /book /book/typst/smoke/10-capstone.typ /book/output/10-capstone-smoke.pdf
 
       - name: Determine next version
         id: version

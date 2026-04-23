@@ -11,22 +11,40 @@ SMOKE_PARTS := \
 	3d-data-uncertainty \
 	4-capstone
 
-.PHONY: pdf check clean _docker-image validate-secrefs
+.PHONY: pdf check ci clean _docker-image validate-secrefs \
+	_prepare-output _verify-typst-setup _compile-book-check _compile-book-pdf \
+	_verify-package-lock _verify-smoke-parts _diff-check
 
 # ── Host targets ────────────────────────────────────────────────────
 
-pdf: _docker-image
-	mkdir -p output output/.typst-cache
+pdf: _docker-image _prepare-output
 	$(TYPST_DOCKER_RUN) compile --root /book /book/typst/main.typ /book/output/math-textbook.pdf
 
-check: _docker-image kg-validate-book validate-secrefs
+check: _docker-image kg-validate-book validate-secrefs _prepare-output _verify-typst-setup _compile-book-check _verify-package-lock _verify-smoke-parts _diff-check
+
+ci: _docker-image kg-validate-book validate-secrefs _prepare-output _verify-typst-setup _compile-book-pdf _verify-package-lock _verify-smoke-parts _diff-check
+
+_prepare-output:
 	mkdir -p output output/.typst-cache
+
+_verify-typst-setup:
 	$(TYPST_DOCKER_RUN) --version
+
+_compile-book-check:
 	$(TYPST_DOCKER_RUN) compile --root /book /book/typst/main.typ /book/output/math-textbook-check.pdf
+
+_compile-book-pdf:
+	$(TYPST_DOCKER_RUN) compile --root /book /book/typst/main.typ /book/output/math-textbook.pdf
+
+_verify-package-lock:
 	$(TYPST_DOCKER_RUN) compile --root /book /book/typst/smoke/package-lock.typ /book/output/typst-package-lock-check.pdf
+
+_verify-smoke-parts:
 	for part in $(SMOKE_PARTS); do \
 		$(TYPST_DOCKER_RUN) compile --root /book /book/typst/smoke/$$part.typ /book/output/$$part-smoke.pdf || exit 1; \
 	done
+
+_diff-check:
 	git --no-pager diff --check
 
 validate-secrefs:
