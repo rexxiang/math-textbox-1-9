@@ -180,8 +180,8 @@
 
   *应用*
   + 弧 $A C$ 度数 $= 80 degree$，弧 $B D$ 度数 $= 60 degree$。$angle A P C$（两弦相交角）$= 1 slash 2 ("弧 " A C + "弧 " B D) = 1 slash 2 (80 degree + 60 degree) = 70 degree$。
-  + 过 $O$ 作 $O M perp A B$ 于 $M$，由垂径定理 $M$ 是 $A B$ 中点，$A M = 3$。$triangle O M A$ 为直角三角形，由勾股定理 $O M = sqrt(r^2 - A M^2) = sqrt(25 - 9) = 4$。
-  + Thales：$triangle A C B$ 直角 $=>$ $A B = sqrt(36 + 64) = 10$。
+  + 过 $O$ 作 $O M perp A B$ 于 $M$，由垂径定理 $M$ 是 $A B$ 中点，$A M = 3$。$triangle O M A$ 为直角三角形，$O A = r = 5$，$A M = 3$，由直角三角形三边关系 $O M = sqrt(r^2 - A M^2) = sqrt(25 - 9) = 4$。（☞ 这条三边关系就是下一章要正式证明的*勾股定理*；本题先用它当已知结论。）
+  + Thales：$triangle A C B$ 直角 $=>$ 直径 $A B$ 是斜边。$A C = 6$、$B C = 8$，由直角三角形三边关系 $A B = sqrt(36 + 64) = 10$。
   + 由 $angle A C B = angle A D B$ 及 $C$、$D$ 同侧，设 $A B$ 与 $C$ 决定的圆为 $omega$；若 $D$ 不在 $omega$ 上，则 $angle A D B$ 与 $angle A C B$ 的比较可由 $D$ 在 $omega$ 内或外的判别给出矛盾（经典“圆周角大小与弦外点关系”）。
   + $angle B A C = 30 degree$、$angle C A D = 50 degree$、$angle B A D = 80 degree$。
   + 三点不共线 $=>$ 可作 $A B$、$B C$ 的中垂线，它们的交点 $O'$ 到三点等距 $=>$ 唯一圆过三点。若要求半径 $= r$，须 $A$、$B$、$C$ 本来就在半径 $r$ 的圆上，外接圆即该圆。（为下节外接圆作铺垫。）
