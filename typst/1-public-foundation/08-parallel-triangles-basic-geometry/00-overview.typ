@@ -18,6 +18,14 @@
   + 最后从“一个点 $=$ 一个数对 $(x,y)$”这一步，把坐标感带出来，为后面共通桥梁铺路。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 一个角比直角小，它叫什么角？
+  + 三角形有几条边、几个顶点？
+  + 正方形的每个角各是多少度？
+]
+
 #include "01-parallel-and-transversal.typ"
 #include "02-triangles-and-angle-sum.typ"
 #include "03-coordinate-intuition.typ"

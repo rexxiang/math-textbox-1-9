@@ -24,6 +24,14 @@
   - 高中还会学*对数函数*（“把乘法换成加法”的逆变换）和*三角函数*（周期性的、新的函数族）。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + $y = -3x + 2$ 的斜率是多少？$y$ 随 $x$ 增大是上升还是下降？
+  + 函数 $y = 6 / x$ 在 $x = 2$ 时的值是多少？
+  + 已知 $x = 1, 2, 3, 4$ 对应 $y = 2, 5, 10, 17$，相邻的 $y$ 值之差是否恒定？
+]
+
 #include "01-additive-vs-multiplicative-growth.typ"
 #include "02-model-choice.typ"
 #include "03-function-comparison.typ"

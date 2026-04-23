@@ -24,6 +24,14 @@
   - 高中的“有理函数”“定义域讨论”，其“分母不为零”正是这里第一次明确提出来的。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 把 $x^2 - 9$ 因式分解。
+  + 解方程 $2x + 1 = 7$。
+  + $2 slash 3 + 1 slash 6 = ?$
+]
+
 #include "01-rational-expression-structure.typ"
 #include "02-common-denominator-and-operations.typ"
 #include "03-rational-equations-and-extraneous-roots.typ"

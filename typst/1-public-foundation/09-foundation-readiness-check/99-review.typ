@@ -53,3 +53,13 @@
 + 如果诊断 2 卡住：回到 #secref("pf04-fraction-comparison") 与 #secref("pf05-decimals-conversion")。
 + 如果诊断 3 卡住：回到 #secref("pf07-perimeter-area")、#secref("pf08-parallel-transversal") 与 #secref("pf08-coordinate-intuition")。
 + 如果诊断 4 卡住：回到 #secref("pf05-units-measurement") 与 #secref("pf07-volume")。
+
+==== 跨章混合练习
+
+以下几道题有意把不同章节的知识搅在一起——自学时正需要这种"不告诉你该用哪章"的练习。
+
++ 一块长方形菜地长 $12$ 米、宽 $8$ 米，四周围了一圈篱笆。篱笆每米造价 $3.5$ 元。先算周长（#secref("pf07-perimeter-area")），再算总花费（#secref("pf05-decimals-conversion")）。
++ 把 $24$ 块巧克力平均分给 $6$ 个人，每人得几块？再把其中 $2$ 块切成 $3$ 等份分给 $3$ 个小朋友，每人得多少块？用分数表示（#secref("pf02-mul-div-structure") + #secref("pf04-fraction-equivalence")）。
++ 一个三角形三个内角之比为 $1 : 2 : 3$，求三个角各是多少度？最大的角是什么角？（#secref("pf08-triangles-angle-sum") + #secref("pf03-factors-multiples")）
++ 教室的黑板长 $4.2$ 米，学生量的时候把尺子放歪了，量出 $4.5$ 米。估算误差大约百分之几？（#secref("pf05-estimation-reasonableness") + #secref("pf04-fraction-arithmetic")）
++ 一个正方体棱长 $5$ 厘米，它的一个面的面积是多少？六个面的总面积呢？体积呢？（#secref("pf07-perimeter-area") + #secref("pf07-volume")）

@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": blueprint, mastery
+#import "../../lib/theme-v2.typ": blueprint, mastery, side-hack
 
 == 分数：意义、等值、比较与运算 <ch:fractions>
 
@@ -16,6 +16,14 @@
   + 先把分数看成“整体被均分后的若干份”，并理解等值分数。
   + 再学习把不同分母改写成同一标准，从而稳定比较大小。
   + 最后把共同单位思想推广到分数运算。
+]
+
+#side-hack[
+  *入章自检*——以下几道小题只用你已有的生活经验。如果觉得吃力，不用担心——慢慢读就好。
+
+  + $17 div 5 = ?$ 余 $?$
+  + 一块蛋糕平均切成 $4$ 份，拿走 $3$ 份，还剩几份？
+  + $24 + 37 = ?$，$50 - 28 = ?$
 ]
 
 #include "01-fraction-meaning-and-equivalence.typ"

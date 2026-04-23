@@ -25,6 +25,14 @@
   - 数据分支：概率中的“至少” / “不超过”常常落成一元一次不等式或不等式组。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 因式分解 $x^2 + 6x + 9$。
+  + 解方程 $5x - 3 = 2x + 9$。
+  + $sqrt(25) = ?$
+]
+
 #include "01-quadratic-equations-by-factoring-and-formula.typ"
 #include "02-quadratic-applications-and-vieta.typ"
 #include "03-linear-inequalities-and-absolute-value.typ"

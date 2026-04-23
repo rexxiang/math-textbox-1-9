@@ -27,6 +27,14 @@
   - 高中：条件概率 $P(B | A)$、独立事件、贝叶斯公式——都建立在本章“古典概率 $+$ 相对频率”之上。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 一组数据中某个值出现了 $12$ 次，总共有 $60$ 个数据，这个值的频率是多少？
+  + $3 slash 5$ 化成百分数等于多少？
+  + 化简比 $20 : 50$。
+]
+
 #include "01-sample-spaces.typ"
 #include "02-probability-language.typ"
 #include "03-experimental-frequency.typ"

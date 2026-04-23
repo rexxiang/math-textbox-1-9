@@ -25,6 +25,14 @@
   - 几何分支：一次函数图像的斜率 $k$ 是它倾斜角 $alpha$ 的 $tan alpha$（#secref("ge04-special-right-triangles")）。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 化简比 $8 : 12$。
+  + 解方程 $4x - 1 = 11$。
+  + 下面这张表里，$y$ 是 $x$ 的函数吗？$x = 1, 2, 3$；$y = 3, 5, 7$。
+]
+
 #include "01-direct-variation.typ"
 #include "02-linear-functions.typ"
 #include "03-slope-as-rate.typ"

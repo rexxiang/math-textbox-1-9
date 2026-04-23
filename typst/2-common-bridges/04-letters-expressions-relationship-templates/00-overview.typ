@@ -24,6 +24,14 @@
   - 数据分支写均值、方差公式时，字母就是原始数据的代称。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + $3 + 5 times 2 = ?$（注意运算顺序。）
+  + $-3$ 在数轴上 $0$ 的哪一边？
+  + 一支铅笔 $2$ 元，买 $n$ 支要花多少元？
+]
+
 #include "01-letters-represent-numbers.typ"
 #include "02-expressions-and-like-terms.typ"
 #include "03-relationship-templates.typ"

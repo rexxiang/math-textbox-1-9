@@ -24,6 +24,14 @@
   - 几何分支：设边长、设角度的方程思想是解几何题的常用方法。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 若 $a = 3$，那 $2a + 1 = ?$
+  + $|-5| = ?$
+  + $7 + ? = 12$，你会怎样找到 $?$ 的值？
+]
+
 #include "01-equation-as-balance.typ"
 #include "02-equality-properties.typ"
 #include "03-solving-linear-one-variable.typ"

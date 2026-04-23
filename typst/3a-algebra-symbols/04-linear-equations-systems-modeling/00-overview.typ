@@ -24,6 +24,14 @@
   - 几何分支：设未知边 / 未知角列方程，是证明外最常用的求值工具。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 解方程 $3x - 4 = 11$。
+  + 化简 $(2x + 3) + (x - 1) = ?$
+  + 一支笔 $a$ 元，一本本子 $b$ 元，买 $2$ 支笔和 $3$ 本本子一共多少元？
+]
+
 #include "01-linear-equation-one-variable.typ"
 #include "02-systems-of-linear-equations.typ"
 #include "03-modeling-word-problems.typ"

@@ -24,6 +24,14 @@
   - 几何分支：$y = a (x - h)^2 + k$ 的 $(h, k)$ 是把 $y = a x^2$ 图像做的一次*平移*（#secref("ge05-coordinate-transforms") 已经讲过）。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 直线 $y = 2x + 1$ 经过点 $(0, ?)$ 和 $(1, ?)$，请填上 $y$ 值。
+  + 把 $x^2 - 4x + 4$ 因式分解。
+  + 分式 $6 / (x + 1)$ 在 $x = ?$ 时没有意义？
+]
+
 #include "01-inverse-proportion.typ"
 #include "02-parabolas-and-quadratics.typ"
 #include "03-comparing-function-families.typ"

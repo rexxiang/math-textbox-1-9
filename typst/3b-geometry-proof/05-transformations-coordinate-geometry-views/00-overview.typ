@@ -24,6 +24,14 @@
   - 全局：刚体变换保距、坐标化表达——这是高中向量、解析几何、乃至线性代数的直接前身。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 点 $(3, -2)$ 在第几象限？
+  + 把一个三角形整体向右平移 $3$ 格，它的形状和大小会变吗？
+  + 长方体有几个面、几条棱？
+]
+
 #include "01-rigid-transformations-and-congruence.typ"
 #include "02-coordinate-geometry-and-transformations.typ"
 #include "03-orthographic-views-of-solids.typ"

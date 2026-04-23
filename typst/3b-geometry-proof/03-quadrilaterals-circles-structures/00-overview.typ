@@ -24,6 +24,14 @@
   - 3c 域函数：圆周运动、周期性都要借本章的圆来直观理解。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 平行四边形的对边有什么关系？
+  + 如果两个三角形的三个角分别对应相等，但边长不同，它们是什么关系？
+  + 一个圆有几条对称轴？
+]
+
 #include "01-quadrilateral-family.typ"
 #include "02-circle-basics-and-angle-relations.typ"
 #include "03-inscribed-and-circumscribed.typ"

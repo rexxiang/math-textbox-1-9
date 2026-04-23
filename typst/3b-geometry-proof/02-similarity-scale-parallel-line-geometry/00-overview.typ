@@ -24,6 +24,14 @@
   - 3c 域函数：*“输入按 $k$ 放缩、输出按 $k$ 放缩”* 就是线性函数 / 正比例函数的几何版。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 如果两个三角形全等，它们的对应边有什么关系？
+  + 化简比 $12 : 8$。
+  + 两条平行线被一条直线所截，一对内错角相等还是互补？
+]
+
 #include "01-parallel-lines-and-angle-lemmas.typ"
 #include "02-similarity-and-ratio.typ"
 #include "03-scale-and-proportion-in-figures.typ"

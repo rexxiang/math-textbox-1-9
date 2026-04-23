@@ -24,6 +24,14 @@
   - 数据分支的散点图、折线图都是本章的直接后续应用。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 在数轴上，$-2$ 在 $0$ 的哪一边？
+  + 一个直角是多少度？
+  + 如果用"第 $3$ 排第 $5$ 列"来描述一个位置，需要几个数？
+]
+
 #include "01-rectangular-system.typ"
 #include "02-quadrants.typ"
 #include "03-plotting-and-transforming.typ"

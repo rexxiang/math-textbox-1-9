@@ -26,6 +26,14 @@
   - 几何分支：直线的斜率在 #secref("ge04-special-right-triangles") 里以 $tan$ 连回三角。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 在坐标系中，点 $(-1, 4)$ 在第几象限？
+  + 当 $x = 2$ 时，$3x^2 - 1 = ?$
+  + 分式 $5 / (x - 3)$ 在 $x = ?$ 时没有意义？
+]
+
 #include "01-input-output-tables.typ"
 #include "02-graphs-and-correspondence.typ"
 #include "03-formulas-as-rules.typ"

@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": blueprint, mastery
+#import "../../lib/theme-v2.typ": blueprint, mastery, side-hack
 
 == 四则与运算结构：加减乘除、顺序与运算律 <ch:four-operations-structure>
 
@@ -16,6 +16,14 @@
   + 先把加法、减法看成“合并”和“撤销”的一对动作。
   + 再把乘法、除法看成“相同结构的打包”和“按结构拆开”。
   + 最后用运算顺序与运算律整理多步算式，让式子保持同样意义却更容易算。
+]
+
+#side-hack[
+  *入章自检*——以下几道小题只用你已有的生活经验。如果觉得吃力，不用担心——慢慢读就好。
+
+  + 小明有 $3$ 颗糖，小红又给了他 $5$ 颗，现在一共几颗？
+  + $12$ 块饼干平均分给 $4$ 个小朋友，每人几块？
+  + $3$ 组小朋友，每组 $4$ 人，一共多少人？
 ]
 
 #include "01-add-subtract-as-undo.typ"

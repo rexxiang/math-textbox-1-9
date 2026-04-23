@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": blueprint, mastery
+#import "../../lib/theme-v2.typ": blueprint, mastery, side-hack
 
 == 因数、倍数、整除与质因数分解 <ch:factors-multiples-prime-factorization>
 
@@ -16,6 +16,14 @@
   + 先从“能不能整齐分开”入手，看清因数、倍数与常用整除线索。
   + 再把整数继续往里拆，分出质数、合数与质因数分解。
   + 最后用这些内部结构总结出最大公因数和最小公倍数。
+]
+
+#side-hack[
+  *入章自检*——以下几道小题只用你已有的生活经验。如果觉得吃力，不用担心——慢慢读就好。
+
+  + $7 times 8 = ?$
+  + $56 div 7 = ?$，有没有余数？
+  + $30$ 能不能被 $6$ 整除？你怎么判断的？
 ]
 
 #include "01-factors-multiples-divisibility.typ"

@@ -24,6 +24,14 @@
   - 几何分支在建立坐标几何时，点的坐标也允许负值。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 在数轴上，$3$ 和 $5$ 哪个更靠右？
+  + $2 slash 4$ 和 $1 slash 2$ 是同一个数吗？
+  + $3 - 5$，你觉得结果应该是多少？（如果觉得"减不了"也没关系，记下这个疑问。）
+]
+
 #include "01-number-line-extends-left.typ"
 #include "02-opposite-and-absolute-value.typ"
 #include "03-rational-numbers-on-line.typ"

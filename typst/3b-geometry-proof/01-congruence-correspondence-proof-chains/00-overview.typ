@@ -24,6 +24,14 @@
   - 第 4 章勾股、第 5 章变换：证明链的写法不再重新发明，本章已经定型。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 一个三角形的两个角分别是 $50 degree$ 和 $70 degree$，第三个角是多少度？
+  + 两条平行线被一条直线所截，一对同位角有什么关系？
+  + 正五边形有几条边、几个顶点？
+]
+
 #include "01-congruence-and-correspondence.typ"
 #include "02-sss-sas-criteria.typ"
 #include "03-asa-aas-ssa-counterexample.typ"

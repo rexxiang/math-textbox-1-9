@@ -24,6 +24,14 @@
   - 第 4、5 章的方程与不等式，所有“左边—右边”都得先按本章的规矩整理好。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 用分配律展开 $3 times (a + 2)$。
+  + $2a + 5a$ 能合并吗？结果是什么？
+  + 解方程：$x + 7 = 15$。
+]
+
 #include "01-terms-coefficients-like-terms.typ"
 #include "02-add-subtract-polynomials.typ"
 #include "03-multiply-simple-polynomials.typ"

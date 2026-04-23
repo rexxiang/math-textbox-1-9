@@ -24,6 +24,14 @@
   - 高中三角：本章只开了 $3$ 个特殊角的口子；一般角的 $sin$、$cos$ 由单位圆统一起来，是高中的工作。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + $sqrt(16) = ?$
+  + 两个三角形满足 AA 相似，它们的对应边之比一定相等吗？
+  + 一个三角形的三个内角之和是多少度？
+]
+
 #include "01-pythagorean-theorem-and-radical-lengths.typ"
 #include "02-special-right-triangles-and-trig-ratios.typ"
 #include "03-applications-elevation-depression-and-slopes.typ"

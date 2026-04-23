@@ -24,6 +24,14 @@
   - 几何部分的“面积重排”的经典证明，背后就是分配律和平方差的图形版。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 展开 $2(x + 3) = ?$
+  + $3x + 5x = ?$
+  + $12$ 和 $18$ 的最大公因数是多少？
+]
+
 #include "01-distributive-rewrite.typ"
 #include "02-special-identities.typ"
 #include "03-factorization-as-reverse.typ"

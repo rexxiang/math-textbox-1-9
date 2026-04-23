@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": blueprint, mastery
+#import "../../lib/theme-v2.typ": blueprint, mastery, side-hack
 
 == 小数、单位、估算与测量 <ch:decimals-units-estimation-measurement>
 
@@ -16,6 +16,14 @@
   + 先把小数看成位值系统向右延伸，并和分数互通。
   + 再理解测量一定是“数值 + 单位”，学会在同一量纲里换单位。
   + 最后用估算和合理性检查，为计算和测量结果做快速把关。
+]
+
+#side-hack[
+  *入章自检*——以下几道小题只用你已有的生活经验。如果觉得吃力，不用担心——慢慢读就好。
+
+  + $1 slash 2$ 读作什么？$3 slash 4$ 比 $1$ 大还是小？
+  + $345$ 里的 $4$ 表示几个几？
+  + $25 + 38 = ?$，$100 - 47 = ?$
 ]
 
 #include "01-decimals-and-conversion.typ"

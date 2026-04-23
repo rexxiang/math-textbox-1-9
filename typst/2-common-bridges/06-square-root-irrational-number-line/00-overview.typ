@@ -24,6 +24,14 @@
   - 函数分支讨论连续函数时要求定义域在 $RR$ 上，而不只是 $QQ$。
 ]
 
+#side-hack[
+  *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先按上面"忘了可以回到"的指引补一补。
+
+  + 一个正方形的边长是 $4$，面积是多少？
+  + $-3 slash 4$ 在数轴上大约在什么位置（$0$ 的左边还是右边？在 $-1$ 和 $0$ 之间吗）？
+  + $3^2 = ?$，$5^2 = ?$
+]
+
 #include "01-square-and-square-root.typ"
 #include "02-irrational-numbers-exist.typ"
 #include "03-real-number-line.typ"
