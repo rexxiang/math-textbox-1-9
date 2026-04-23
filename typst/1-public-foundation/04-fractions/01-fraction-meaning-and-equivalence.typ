@@ -71,7 +71,7 @@
       circle((6, ny), radius: 0.25, fill: rgb("#f5a623"), stroke: 0.5pt)
       content((6, ny + 1.2), text(size: 0.75em, $2 / 4 = 1 / 2$), anchor: "south")
     }),
-    caption: [面积模型与数轴都能看到：$1 / 2 = 2 / 4$],
+    caption: [把图形等分后数"占了几份"，和数轴上看分数，都能看到：$1 / 2 = 2 / 4$],
   )
 ]
 
