@@ -1,0 +1,106 @@
+name: Build Math Textbook
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build Typst Docker image
+        run: docker build -t math-textbook-typst .
+
+      - name: Build PDF
+        run: |
+          mkdir -p output
+          docker run --rm -v "$(pwd):/book" math-textbook-typst \
+            compile --root /book /book/typst/main.typ /book/output/math-textbook.pdf
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: math-textbook-pdf
+          path: output/math-textbook.pdf
+
+      - name: Verify package lock
+        run: |
+          mkdir -p output
+          docker run --rm -v "$(pwd):/book" math-textbook-typst \
+            compile --root /book /book/typst/smoke/package-lock.typ /book/output/typst-package-lock-check.pdf
+
+      - name: Verify number-line algebra bridge smoke
+        run: |
+          mkdir -p output
+          docker run --rm -v "$(pwd):/book" math-textbook-typst \
+            compile --root /book /book/typst/smoke/04-number-line-algebra-bridge.typ /book/output/04-number-line-algebra-bridge-smoke.pdf
+
+      - name: Verify foundation gate smoke
+        run: |
+          mkdir -p output
+          docker run --rm -v "$(pwd):/book" math-textbook-typst \
+            compile --root /book /book/typst/smoke/05-foundation-gate.typ /book/output/05-foundation-gate-smoke.pdf
+
+      - name: Verify algebra deepening smoke
+        run: |
+          mkdir -p output
+          docker run --rm -v "$(pwd):/book" math-textbook-typst \
+            compile --root /book /book/typst/smoke/06-algebra-deepening.typ /book/output/06-algebra-deepening-smoke.pdf
+
+      - name: Verify geometry deepening smoke
+        run: |
+          mkdir -p output
+          docker run --rm -v "$(pwd):/book" math-textbook-typst \
+            compile --root /book /book/typst/smoke/07-geometry-deepening.typ /book/output/07-geometry-deepening-smoke.pdf
+
+      - name: Verify function models smoke
+        run: |
+          mkdir -p output
+          docker run --rm -v "$(pwd):/book" math-textbook-typst \
+            compile --root /book /book/typst/smoke/08-function-models.typ /book/output/08-function-models-smoke.pdf
+
+      - name: Verify data statistics smoke
+        run: |
+          mkdir -p output
+          docker run --rm -v "$(pwd):/book" math-textbook-typst \
+            compile --root /book /book/typst/smoke/09-data-statistics.typ /book/output/09-data-statistics-smoke.pdf
+
+      - name: Verify capstone smoke
+        run: |
+          mkdir -p output
+          docker run --rm -v "$(pwd):/book" math-textbook-typst \
+            compile --root /book /book/typst/smoke/10-capstone.typ /book/output/10-capstone-smoke.pdf
+
+      - name: Determine next version
+        id: version
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          LATEST=$(git tag -l 'v0.*' | sort -t. -k2 -n | tail -1)
+          if [ -z "$LATEST" ]; then
+            NEXT="v0.1"
+          else
+            MINOR=$(echo "$LATEST" | sed 's/v0\.//')
+            NEXT="v0.$((MINOR + 1))"
+          fi
+          echo "version=$NEXT" >> "$GITHUB_OUTPUT"
+          echo "Next version: $NEXT"
+
+      - name: Create GitHub Release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.version }}
+          name: ${{ steps.version.outputs.version }}
+          body: "Math textbook PDF build from commit ${{ github.sha }}"
+          files: output/math-textbook.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

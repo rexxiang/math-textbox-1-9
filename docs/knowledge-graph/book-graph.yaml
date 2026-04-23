@@ -1,0 +1,393 @@
+# book-graph.yaml — 语义知识图谱 SSOT
+# Schema version: 1.0
+# 所有章节节点从本文件派生；nodes 列表现阶段为空，后续迭代填充。
+
+meta:
+  schema_version: "1.0"
+  title: 1-9 年级数学自学教材
+  description: >
+    Semantic knowledge graph for the Chinese math self-study textbook.
+    parts → chapters → nodes form the primary hierarchy.
+    node prerequisites encode the prerequisite DAG for learning-order validation.
+
+parts:
+  - id: 0-orientation
+    title_zh: 导向
+    title_en: Orientation
+  - id: 1-public-foundation
+    title_zh: 公共基础
+    title_en: Public Foundation
+  - id: 2-common-bridges
+    title_zh: 共同桥梁
+    title_en: Common Bridges
+  - id: 3a-algebra-symbols
+    title_zh: 代数与符号
+    title_en: Algebra & Symbols
+  - id: 3b-geometry-proof
+    title_zh: 几何与证明
+    title_en: Geometry & Proof
+  - id: 3c-functions-change
+    title_zh: 函数与变化
+    title_en: Functions & Change
+  - id: 3d-data-uncertainty
+    title_zh: 数据与不确定性
+    title_en: Data & Uncertainty
+  - id: 4-capstone
+    title_zh: 综合顶点
+    title_en: Capstone
+
+chapters:
+  # ── Part 0: Orientation ────────────────────────────────────────────────────
+  - id: ch:how-to-self-study
+    title_zh: 如何自学
+    title_en: How to Self-Study
+    part: 0-orientation
+    path: typst/0-orientation/01-how-to-self-study
+    difficulty: 1
+    mainline: true
+
+  - id: ch:symbols-invention-tree-repair-routes
+    title_zh: 符号·发明树·修复路线
+    title_en: Symbols, Invention Tree & Repair Routes
+    part: 0-orientation
+    path: typst/0-orientation/02-symbols-invention-tree-repair-routes
+    difficulty: 1
+    mainline: true
+
+  # ── Part 1: Public Foundation ──────────────────────────────────────────────
+  - id: ch:number-place-value-decimal
+    title_zh: 数与位值·十进制
+    title_en: Number, Place Value & Decimal
+    part: 1-public-foundation
+    path: typst/1-public-foundation/01-number-place-value-decimal
+    difficulty: 2
+    mainline: true
+
+  - id: ch:four-operations-structure
+    title_zh: 四则运算结构
+    title_en: Four Operations Structure
+    part: 1-public-foundation
+    path: typst/1-public-foundation/02-four-operations-structure
+    difficulty: 2
+    mainline: true
+
+  - id: ch:factors-multiples-prime-factorization
+    title_zh: 因数·倍数·质因数分解
+    title_en: Factors, Multiples & Prime Factorization
+    part: 1-public-foundation
+    path: typst/1-public-foundation/03-factors-multiples-prime-factorization
+    difficulty: 2
+    mainline: true
+
+  - id: ch:fractions
+    title_zh: 分数
+    title_en: Fractions
+    part: 1-public-foundation
+    path: typst/1-public-foundation/04-fractions
+    difficulty: 2
+    mainline: true
+
+  - id: ch:decimals-units-estimation-measurement
+    title_zh: 小数·单位·估算·测量
+    title_en: Decimals, Units, Estimation & Measurement
+    part: 1-public-foundation
+    path: typst/1-public-foundation/05-decimals-units-estimation-measurement
+    difficulty: 2
+    mainline: true
+
+  - id: ch:points-lines-planes-basic-shapes
+    title_zh: 点·线·面·基本图形
+    title_en: Points, Lines, Planes & Basic Shapes
+    part: 1-public-foundation
+    path: typst/1-public-foundation/06-points-lines-planes-basic-shapes
+    difficulty: 2
+    mainline: true
+
+  - id: ch:perimeter-area-volume-angle
+    title_zh: 周长·面积·体积·角
+    title_en: Perimeter, Area, Volume & Angle
+    part: 1-public-foundation
+    path: typst/1-public-foundation/07-perimeter-area-volume-angle
+    difficulty: 2
+    mainline: true
+
+  - id: ch:parallel-triangles-basic-geometry
+    title_zh: 平行·三角形·基础几何
+    title_en: Parallel, Triangles & Basic Geometry
+    part: 1-public-foundation
+    path: typst/1-public-foundation/08-parallel-triangles-basic-geometry
+    difficulty: 2
+    mainline: true
+
+  - id: ch:foundation-readiness-check
+    title_zh: 基础就绪检测
+    title_en: Foundation Readiness Check
+    part: 1-public-foundation
+    path: typst/1-public-foundation/09-foundation-readiness-check
+    difficulty: 3
+    mainline: true
+
+  # ── Part 2: Common Bridges ─────────────────────────────────────────────────
+  - id: ch:ratio-proportion-percent
+    title_zh: 比·比例·百分数
+    title_en: Ratio, Proportion & Percent
+    part: 2-common-bridges
+    path: typst/2-common-bridges/01-ratio-proportion-percent
+    difficulty: 3
+    mainline: true
+
+  - id: ch:number-line-negative-rational
+    title_zh: 数轴·负数·有理数
+    title_en: Number Line, Negative Numbers & Rational Numbers
+    part: 2-common-bridges
+    path: typst/2-common-bridges/02-number-line-negative-rational
+    difficulty: 3
+    mainline: true
+
+  - id: ch:coordinate-position-plane
+    title_zh: 坐标·位置·平面
+    title_en: Coordinates, Position & Plane
+    part: 2-common-bridges
+    path: typst/2-common-bridges/03-coordinate-position-plane
+    difficulty: 3
+    mainline: true
+
+  - id: ch:letters-expressions-relationship-templates
+    title_zh: 字母·式子·关系模板
+    title_en: Letters, Expressions & Relationship Templates
+    part: 2-common-bridges
+    path: typst/2-common-bridges/04-letters-expressions-relationship-templates
+    difficulty: 3
+    mainline: true
+
+  - id: ch:equation-balance-inverse-operations
+    title_zh: 方程·平衡·逆运算
+    title_en: Equations, Balance & Inverse Operations
+    part: 2-common-bridges
+    path: typst/2-common-bridges/05-equation-balance-inverse-operations
+    difficulty: 3
+    mainline: true
+
+  - id: ch:square-root-irrational-number-line
+    title_zh: 平方根·无理数·数轴
+    title_en: Square Roots, Irrationals & Number Line
+    part: 2-common-bridges
+    path: typst/2-common-bridges/06-square-root-irrational-number-line
+    difficulty: 3
+    mainline: true
+
+  - id: ch:bridge-readiness-contracts
+    title_zh: 桥梁就绪契约
+    title_en: Bridge Readiness Contracts
+    part: 2-common-bridges
+    path: typst/2-common-bridges/07-bridge-readiness-contracts
+    difficulty: 4
+    mainline: true
+
+  # ── Part 3a: Algebra & Symbols ─────────────────────────────────────────────
+  - id: ch:polynomials-like-terms-operations
+    title_zh: 多项式·同类项·运算
+    title_en: Polynomials, Like Terms & Operations
+    part: 3a-algebra-symbols
+    path: typst/3a-algebra-symbols/01-polynomials-like-terms-operations
+    difficulty: 4
+    mainline: true
+
+  - id: ch:distributive-identities-factorization
+    title_zh: 分配律·恒等式·因式分解
+    title_en: Distributive Law, Identities & Factorization
+    part: 3a-algebra-symbols
+    path: typst/3a-algebra-symbols/02-distributive-identities-factorization
+    difficulty: 4
+    mainline: true
+
+  - id: ch:rational-expressions-operations-extraneous-roots
+    title_zh: 有理式·运算·增根
+    title_en: Rational Expressions, Operations & Extraneous Roots
+    part: 3a-algebra-symbols
+    path: typst/3a-algebra-symbols/03-rational-expressions-operations-extraneous-roots
+    difficulty: 4
+    mainline: true
+
+  - id: ch:linear-equations-systems-modeling
+    title_zh: 一次方程组·建模
+    title_en: Linear Equations, Systems & Modeling
+    part: 3a-algebra-symbols
+    path: typst/3a-algebra-symbols/04-linear-equations-systems-modeling
+    difficulty: 4
+    mainline: true
+
+  - id: ch:quadratics-and-inequalities
+    title_zh: 二次方程与不等式
+    title_en: Quadratics & Inequalities
+    part: 3a-algebra-symbols
+    path: typst/3a-algebra-symbols/05-quadratics-and-inequalities
+    difficulty: 5
+    mainline: true
+
+  - id: ch:algebra-summary
+    title_zh: 代数小结
+    title_en: Algebra Summary
+    part: 3a-algebra-symbols
+    path: typst/3a-algebra-symbols/06-algebra-summary
+    difficulty: 5
+    mainline: true
+
+  # ── Part 3b: Geometry & Proof ──────────────────────────────────────────────
+  - id: ch:congruence-correspondence-proof-chains
+    title_zh: 全等·对应·证明链
+    title_en: Congruence, Correspondence & Proof Chains
+    part: 3b-geometry-proof
+    path: typst/3b-geometry-proof/01-congruence-correspondence-proof-chains
+    difficulty: 4
+    mainline: true
+
+  - id: ch:similarity-scale-parallel-line-geometry
+    title_zh: 相似·比例·平行线几何
+    title_en: Similarity, Scale & Parallel Line Geometry
+    part: 3b-geometry-proof
+    path: typst/3b-geometry-proof/02-similarity-scale-parallel-line-geometry
+    difficulty: 4
+    mainline: true
+
+  - id: ch:quadrilaterals-circles-structures
+    title_zh: 四边形·圆·结构
+    title_en: Quadrilaterals, Circles & Structures
+    part: 3b-geometry-proof
+    path: typst/3b-geometry-proof/03-quadrilaterals-circles-structures
+    difficulty: 4
+    mainline: true
+
+  - id: ch:pythagorean-radicals-trigonometric-ratios
+    title_zh: 勾股定理·根式·三角比
+    title_en: Pythagorean Theorem, Radicals & Trigonometric Ratios
+    part: 3b-geometry-proof
+    path: typst/3b-geometry-proof/04-pythagorean-radicals-trigonometric-ratios
+    difficulty: 5
+    mainline: true
+
+  - id: ch:transformations-coordinate-geometry-views
+    title_zh: 变换·坐标几何·视图
+    title_en: Transformations, Coordinate Geometry & Views
+    part: 3b-geometry-proof
+    path: typst/3b-geometry-proof/05-transformations-coordinate-geometry-views
+    difficulty: 5
+    mainline: true
+
+  - id: ch:geometry-summary
+    title_zh: 几何小结
+    title_en: Geometry Summary
+    part: 3b-geometry-proof
+    path: typst/3b-geometry-proof/06-geometry-summary
+    difficulty: 5
+    mainline: true
+
+  # ── Part 3c: Functions & Change ────────────────────────────────────────────
+  - id: ch:function-representations
+    title_zh: 函数表示
+    title_en: Function Representations
+    part: 3c-functions-change
+    path: typst/3c-functions-change/01-function-representations
+    difficulty: 4
+    mainline: true
+
+  - id: ch:direct-variation-linear-functions-slope
+    title_zh: 正比例·一次函数·斜率
+    title_en: Direct Variation, Linear Functions & Slope
+    part: 3c-functions-change
+    path: typst/3c-functions-change/02-direct-variation-linear-functions-slope
+    difficulty: 4
+    mainline: true
+
+  - id: ch:inverse-proportion-quadratic-functions
+    title_zh: 反比例·二次函数
+    title_en: Inverse Proportion & Quadratic Functions
+    part: 3c-functions-change
+    path: typst/3c-functions-change/03-inverse-proportion-quadratic-functions
+    difficulty: 5
+    mainline: true
+
+  - id: ch:growth-models-function-comparison
+    title_zh: 增长模型·函数比较
+    title_en: Growth Models & Function Comparison
+    part: 3c-functions-change
+    path: typst/3c-functions-change/04-growth-models-function-comparison
+    difficulty: 5
+    mainline: true
+
+  - id: ch:functions-summary
+    title_zh: 函数小结
+    title_en: Functions Summary
+    part: 3c-functions-change
+    path: typst/3c-functions-change/05-functions-summary
+    difficulty: 5
+    mainline: true
+
+  # ── Part 3d: Data & Uncertainty ────────────────────────────────────────────
+  - id: ch:data-displays-descriptive-statistics
+    title_zh: 数据展示·描述统计
+    title_en: Data Displays & Descriptive Statistics
+    part: 3d-data-uncertainty
+    path: typst/3d-data-uncertainty/01-data-displays-descriptive-statistics
+    difficulty: 4
+    mainline: true
+
+  - id: ch:frequency-histograms-variance
+    title_zh: 频率·直方图·方差
+    title_en: Frequency, Histograms & Variance
+    part: 3d-data-uncertainty
+    path: typst/3d-data-uncertainty/02-frequency-histograms-variance
+    difficulty: 4
+    mainline: true
+
+  - id: ch:sample-space-probability-experimental-frequency
+    title_zh: 样本空间·概率·实验频率
+    title_en: Sample Space, Probability & Experimental Frequency
+    part: 3d-data-uncertainty
+    path: typst/3d-data-uncertainty/03-sample-space-probability-experimental-frequency
+    difficulty: 4
+    mainline: true
+
+  - id: ch:population-samples-estimation
+    title_zh: 总体·样本·估计
+    title_en: Population, Samples & Estimation
+    part: 3d-data-uncertainty
+    path: typst/3d-data-uncertainty/04-population-samples-estimation
+    difficulty: 5
+    mainline: true
+
+  - id: ch:data-summary
+    title_zh: 数据小结
+    title_en: Data Summary
+    part: 3d-data-uncertainty
+    path: typst/3d-data-uncertainty/05-data-summary
+    difficulty: 5
+    mainline: true
+
+  # ── Part 4: Capstone ───────────────────────────────────────────────────────
+  - id: ch:shared-invention-tree-review
+    title_zh: 共同发明树回顾
+    title_en: Shared Invention Tree Review
+    part: 4-capstone
+    path: typst/4-capstone/01-shared-invention-tree-review
+    difficulty: 3
+    mainline: true
+
+  - id: ch:cross-domain-problem-solving-modeling
+    title_zh: 跨领域解题与建模
+    title_en: Cross-Domain Problem-Solving & Modeling
+    part: 4-capstone
+    path: typst/4-capstone/02-cross-domain-problem-solving-modeling
+    difficulty: 5
+    mainline: true
+
+  - id: ch:next-learning-map
+    title_zh: 下一阶段学习地图
+    title_en: Next Learning Map
+    part: 4-capstone
+    path: typst/4-capstone/03-next-learning-map
+    difficulty: 3
+    mainline: true
+
+# nodes are populated in subsequent task iterations.
+nodes: []

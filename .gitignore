@@ -1,0 +1,25 @@
+.vscode/
+
+# Build output
+output/
+build/
+
+# Generated docs
+docs/plan/
+docs/.superpowers/
+
+# macOS
+.DS_Store
+
+# Editor temp files
+*.swp
+*.sav
+*.bak
+.texpadtmp
+
+# Python
+__pycache__/
+*.pyc
+
+.superpowers/
+.worktrees/
