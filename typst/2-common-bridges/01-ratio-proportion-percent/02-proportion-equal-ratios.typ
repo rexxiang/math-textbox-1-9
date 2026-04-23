@@ -2,7 +2,7 @@
 
 === 比例：两个比相等 <tool:cb01-proportion>
 
-#vocab[比例 proportion / 外项 / 内项 / 交叉相乘 cross multiplication]
+#vocab[比例 proportion][外项][内项][交叉相乘 cross multiplication]
 
 #crisis[
   一张地图上，图上 $3$ 厘米代表实际 $120$ 千米。如果图上换成 $7$ 厘米，实际是多少？

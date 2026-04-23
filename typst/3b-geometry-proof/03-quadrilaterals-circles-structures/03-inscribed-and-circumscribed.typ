@@ -3,7 +3,7 @@
 
 === 内接与外接：三角形、四边形与正多边形的圆 <tool:ge03-inscribed-circumscribed>
 
-#vocab[内接 inscribed / 外接 circumscribed / 外心 circumcenter / 内心 incenter / 外接圆 circumcircle / 内切圆 incircle]
+#vocab[内接 inscribed][外接 circumscribed][外心 circumcenter][内心 incenter][外接圆 circumcircle][内切圆 incircle]
 
 #crisis[
   第 2 节里我们碰到：*三点不共线 $=>$ 它们的外接圆唯一*。但这个外接圆的*圆心*到底在哪？怎么用尺规把它*作*出来？如果把三角形换成四边形、正多边形，又是什么情况？

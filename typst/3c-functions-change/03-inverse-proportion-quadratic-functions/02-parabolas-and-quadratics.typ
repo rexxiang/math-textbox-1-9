@@ -3,7 +3,7 @@
 
 === 抛物线：二次函数 $y = a x^2 + b x + c$ <tool:fn08-quadratic-function>
 
-#vocab[二次函数 quadratic function / 抛物线 parabola / 顶点 vertex / 顶点式 vertex form / 对称轴 axis of symmetry]
+#vocab[二次函数 quadratic function][抛物线 parabola][顶点 vertex][顶点式 vertex form][对称轴 axis of symmetry]
 
 #crisis[
   一次函数“每加 $1$ 单位 $x$、$y$ 加固定 $k$”描述*稳定*的变化，反比例描述*反向*的变化。但日常里还有另一类现象：*变化本身也在变化*。

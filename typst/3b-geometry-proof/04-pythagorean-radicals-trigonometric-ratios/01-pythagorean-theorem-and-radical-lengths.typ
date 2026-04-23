@@ -3,7 +3,7 @@
 
 === 勾股定理与根号边长 <tool:ge04-pythagorean>
 
-#vocab[直角三角形 right triangle / 直角边 leg / 斜边 hypotenuse / 勾股定理 Pythagorean theorem / 勾股逆定理 converse of the Pythagorean theorem / 根号边长 radical length]
+#vocab[直角三角形 right triangle][直角边 leg][斜边 hypotenuse][勾股定理 Pythagorean theorem][勾股逆定理 converse of the Pythagorean theorem][根号边长 radical length]
 
 #crisis[
   直角三角形在工地、屏幕、栏杆、门窗里随处可见。它的三条边中，最长的那一条——*斜边*——到底和另外两条*直角边*有什么关系？

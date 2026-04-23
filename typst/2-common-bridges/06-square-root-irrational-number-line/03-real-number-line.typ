@@ -2,7 +2,7 @@
 
 === 把无理数放回数轴：$RR$ 的完整性 <tool:cb06-real-number-line>
 
-#vocab[实数 $RR$ / 连续 continuous / 完备 complete]
+#vocab[实数 $RR$][连续 continuous][完备 complete]
 
 #crisis[
   $sqrt(2)$ 不是有理数。那它到底在数轴上的什么位置？有理数已经在数轴上“稠密”铺了，按说不该再有空位——可 $sqrt(2)$ 确实需要一个精确位置。

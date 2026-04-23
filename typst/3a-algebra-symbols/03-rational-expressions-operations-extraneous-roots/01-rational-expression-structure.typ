@@ -2,7 +2,7 @@
 
 === 分式的结构与化简 <tool:al03-rational-expression-structure>
 
-#vocab[分式 rational expression / 分式有意义 domain of a rational expression / 最简分式 irreducible rational expression / 约分 simplification]
+#vocab[分式 rational expression][分式有意义 domain of a rational expression][最简分式 irreducible rational expression][约分 simplification]
 
 #crisis[
   在 #secref("pf04-fraction-equivalence") 里，你已经很熟悉 $3/4$、$5/12$ 这种“分母是具体数字”的分数。现在问题变了：

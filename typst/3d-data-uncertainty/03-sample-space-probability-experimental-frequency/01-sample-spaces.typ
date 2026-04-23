@@ -2,7 +2,7 @@
 
 === 样本空间：把所有可能结果数清楚 <tool:dt07-sample-spaces>
 
-#vocab[样本空间 sample space / 事件 event / 树状图 tree diagram]
+#vocab[样本空间 sample space][事件 event][树状图 tree diagram]
 
 #crisis[
   一句日常话：“*随便抓一颗*，抓到红球的可能性是多少？”

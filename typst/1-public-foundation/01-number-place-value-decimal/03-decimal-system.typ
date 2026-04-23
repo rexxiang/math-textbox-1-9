@@ -2,7 +2,7 @@
 
 === 十进制：满十换一个新单位 <tool:pf01-decimal-system>
 
-#vocab[十进制 decimal system / 进位 regrouping / 小数点 decimal point]
+#vocab[十进制 decimal system][进位 regrouping][小数点 decimal point]
 
 #crisis[
   一根绳子长 1 米多一点，却不到 2 米。如果只会写整数，就只能含糊地说“1 米多”。

@@ -2,7 +2,7 @@
 
 === 频率分布直方图：给连续数据一张形状 <tool:dt05-histograms>
 
-#vocab[直方图 histogram / 频率密度 frequency density / 左闭右开 left-closed right-open]
+#vocab[直方图 histogram][频率密度 frequency density][左闭右开 left-closed right-open]
 
 #crisis[
   上一节的频率分布表已经把 $50$ 个分数整理成六档。但表格形式*看不出形状*——哪档“高”、哪档“矮”、分布是*中间鼓两头瘦*还是*一边倒*、有没有双峰？

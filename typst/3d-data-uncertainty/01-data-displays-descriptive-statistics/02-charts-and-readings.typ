@@ -2,7 +2,7 @@
 
 === 从图里读数 & 识别误导图 <tool:dt02-charts-and-readings>
 
-#vocab[趋势 trend / 对照 comparison / 误导图 misleading chart / 截断纵轴 truncated axis / 等宽分类 equal-width categories]
+#vocab[趋势 trend][对照 comparison][误导图 misleading chart][截断纵轴 truncated axis][等宽分类 equal-width categories]
 
 #crisis[
   广告里经常看到这样一张图：纵轴从 $95$ 起跳、到 $100$ 结束，画出 A 品牌 $98$ 分、B 品牌 $96$ 分。视觉上 A 的条*看起来是 B 的 $2$ 倍高*——但真实数值只差 $2$ 分。

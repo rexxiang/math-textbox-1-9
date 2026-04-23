@@ -3,7 +3,7 @@
 
 === 数字符号与位值 <tool:pf01-digits-place-value>
 
-#vocab[数字 digit / 数 number / 位值 place value]
+#vocab[数字 digit][数 number][位值 place value]
 
 #crisis[
   你会写 2，也会写 20，还会写 200。

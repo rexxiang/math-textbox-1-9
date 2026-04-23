@@ -3,7 +3,7 @@
 
 === 圆的基础与圆周角定理 <tool:ge03-circle-basics-inscribed>
 
-#vocab[圆心 center / 半径 radius / 弦 chord / 弧 arc / 圆心角 central angle / 圆周角 inscribed angle / Thales 定理 Thales' theorem]
+#vocab[圆心 center][半径 radius][弦 chord][弧 arc][圆心角 central angle][圆周角 inscribed angle][Thales 定理 Thales' theorem]
 
 #crisis[
   圆是一个*没有顶点*的图形。三角形用三个顶点、三条边就能说完，圆却要用“所有到一点等距的点”这样一个*无穷多点*的条件。那么*圆里的角到底该怎么度量*？同一条弧对应的角，站在圆心看和站在圆上看，读出来的是同一个数吗？

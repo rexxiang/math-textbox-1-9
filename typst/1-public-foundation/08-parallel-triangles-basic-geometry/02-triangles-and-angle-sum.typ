@@ -3,7 +3,7 @@
 
 === 三角形与内角和：三角合起来是一条直线 <tool:pf08-triangles-angle-sum>
 
-#vocab[三角形 triangle / 内角 interior angle / 内角和 angle sum]
+#vocab[三角形 triangle][内角 interior angle][内角和 angle sum]
 
 #crisis[
   画一个三角形，量三个角，结果是 $62°$、$55°$、$63°$——加起来恰好是 $180°$。

@@ -2,7 +2,7 @@
 
 === 体积：用单位立方体堆出来 <tool:pf07-volume>
 
-#vocab[体积 volume / 单位立方体 unit cube / 立方单位 cubic unit]
+#vocab[体积 volume][单位立方体 unit cube][立方单位 cubic unit]
 
 #crisis[
   面积能告诉你“地上能铺多少草皮”，但当你要装水、装沙、搬家装箱子时，你关心的是“这个空间能装下多少东西”。

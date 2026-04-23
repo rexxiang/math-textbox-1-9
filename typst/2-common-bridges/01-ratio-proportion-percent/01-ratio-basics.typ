@@ -2,7 +2,7 @@
 
 === 比：两个量相比的写法 <tool:cb01-ratio-basics>
 
-#vocab[比 ratio / 前项 / 后项 / 比值 value of ratio]
+#vocab[比 ratio][前项][后项][比值 value of ratio]
 
 #crisis[
   配一杯奶茶用 $2$ 份茶 和 $5$ 份奶。如果你要配两杯、十杯，分量一定变了，但那种“喝起来一样的味道”却不能变。

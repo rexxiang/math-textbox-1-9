@@ -181,7 +181,7 @@
 
 #let history-note(body) = side-note([小历史], rgb("#FFA726"), rgb("#E65100"), body)
 #let side-hack(body)    = side-note([小提示], rgb("#66BB6A"), rgb("#2E7D32"), body)
-#let vocab(body)        = side-note([术语],     rgb("#78909C"), rgb("#546E7A"), body)
+#let vocab(..terms)     = side-note([术语], rgb("#78909C"), rgb("#546E7A"), terms.pos().join[ · ])
 
 // ── 试一试（例题前的主动尝试提示，虚线蓝框）────────────────────────
 

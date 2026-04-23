@@ -2,7 +2,7 @@
 
 === 单项式、多项式与同类项 <tool:al01-terms-like>
 
-#vocab[单项式 monomial / 系数 coefficient / 次数 degree / 多项式 polynomial / 项 term / 同类项 like terms]
+#vocab[单项式 monomial][系数 coefficient][次数 degree][多项式 polynomial][项 term][同类项 like terms]
 
 #crisis[
   在 #secref("cb04-expressions-and-like-terms") 里，你已经会说“$3x$ 和 $2x$ 是同类项”“$3x + 2x = 5x$”。但真正开始学代数之后，式子会很快长成这样：

@@ -2,7 +2,7 @@
 
 === 坐标直觉：一个点等于一个数对 <tool:pf08-coordinate-intuition>
 
-#vocab[坐标 coordinate / 原点 origin / 横轴 $x$-axis / 纵轴 $y$-axis / 有序数对 ordered pair]
+#vocab[坐标 coordinate][原点 origin][横轴 $x$-axis][纵轴 $y$-axis][有序数对 ordered pair]
 
 #crisis[
   你想在电话里告诉朋友“我站在操场的哪里”——只说“靠东一点”、“再往北走几步”会一直不准。

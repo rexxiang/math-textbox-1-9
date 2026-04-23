@@ -2,7 +2,7 @@
 
 === SSS 与 SAS：两条最基本的判定法 <tool:ge01-sss-sas>
 
-#vocab[判定法 criterion / 边边边 SSS / 边角边 SAS]
+#vocab[判定法 criterion][边边边 SSS][边角边 SAS]
 
 #crisis[
   上一节的定义说：两个三角形全等当且仅当*三条边、三个角一一对应相等*。可是真做题时，谁有耐心把六项都量一遍？何况有些边、有些角*根本没告诉你*。

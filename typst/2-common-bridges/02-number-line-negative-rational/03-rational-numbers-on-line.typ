@@ -2,7 +2,7 @@
 
 === 有理数：把整数和分数都接回数轴 <tool:cb02-rational-numbers>
 
-#vocab[有理数 rational number / 整数 $ZZ$ / 有理数集 $QQ$ / 稠密 dense]
+#vocab[有理数 rational number][整数 $ZZ$][有理数集 $QQ$][稠密 dense]
 
 #crisis[
   加入负数后，数轴左边不再空白；但数轴上是不是只剩下“整数”这些点？$1/2$、$-3/4$、$0.7$ 要放哪儿？

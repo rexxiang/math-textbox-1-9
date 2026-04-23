@@ -3,7 +3,7 @@
 
 === 加法与减法：合并与撤销 <tool:pf02-add-subtract-undo>
 
-#vocab[加法 addition / 减法 subtraction / 互逆 inverse]
+#vocab[加法 addition][减法 subtraction][互逆 inverse]
 
 #crisis[
   铅笔盒里原来有 38 支铅笔，又放进 25 支，现在共有多少支？

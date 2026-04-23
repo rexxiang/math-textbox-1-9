@@ -2,7 +2,7 @@
 
 === 加法增长 vs. 乘法增长 <tool:fn10-additive-vs-multiplicative-growth>
 
-#vocab[加法增长 additive growth / 乘法增长 multiplicative growth / 线性增长 linear growth / 倍增 doubling]
+#vocab[加法增长 additive growth][乘法增长 multiplicative growth][线性增长 linear growth][倍增 doubling]
 
 #crisis[
   *同样是“每周增加”，下面两种故事背后的数学完全不同。*

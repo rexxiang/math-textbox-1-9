@@ -3,7 +3,7 @@
 
 === 坐标几何与变换的坐标公式 <tool:ge05-coordinate-transforms>
 
-#vocab[中点公式 midpoint formula / 两点距离公式 distance formula / 坐标变换 coordinate transformation]
+#vocab[中点公式 midpoint formula][两点距离公式 distance formula][坐标变换 coordinate transformation]
 
 #crisis[
   上一节把三种变换说清楚了，但“画在方格纸上比一比”终究不是严格的写法。数学家希望把*这个点去了哪*写成一条*公式*——像函数那样，输入坐标、输出坐标。这样一来，变换可以嵌进代数里，一道题里同时处理成千上万个点。

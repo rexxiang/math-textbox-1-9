@@ -2,7 +2,7 @@
 
 === 公式：函数的第三张面孔 <tool:fn03-formula-as-function-view>
 
-#vocab[独立变量 independent variable / 因变量 dependent variable / 定义域 domain / 对应规则 rule of correspondence / 函数记号 function notation]
+#vocab[独立变量 independent variable][因变量 dependent variable][定义域 domain][对应规则 rule of correspondence][函数记号 function notation]
 
 #crisis[
   表给出了几个样本；图给出了整体形状——但若要*精确*算“输入 $x = 17.3$ 时输出是多少”，查表也画不出，读图也读不准。幸好，上一节里售水机那条规则“输出 $=$ 输入 $div 2$”只是一句代数式——这让我们能随便取一个 $x$，机械地算出对应 $y$。

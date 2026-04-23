@@ -2,7 +2,7 @@
 
 === 相反数与绝对值：方向与远近分开记 <tool:cb02-opposite-and-absolute>
 
-#vocab[相反数 opposite / 绝对值 absolute value / 距离 distance]
+#vocab[相反数 opposite][绝对值 absolute value][距离 distance]
 
 #crisis[
   $+7$ 和 $-7$ 在数轴上离原点一样远，只是方向相反。可我们经常要一起谈“它们在哪一边”*以及*“离原点多远”两件事。

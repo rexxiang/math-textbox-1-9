@@ -2,7 +2,7 @@
 
 === 画点、读点与简单变换 <tool:cb03-plotting-transforming>
 
-#vocab[描点 plot / 平移 translation / 轴对称 reflection]
+#vocab[描点 plot][平移 translation][轴对称 reflection]
 
 #crisis[
   有了坐标系和象限，你还得把“$(x, y)$”真正画在格子纸上——反过来，看到纸上一个点，也要能报出它的坐标。

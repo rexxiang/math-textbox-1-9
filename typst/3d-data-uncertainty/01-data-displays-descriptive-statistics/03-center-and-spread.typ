@@ -2,7 +2,7 @@
 
 === 用一两个数字概括：center 与 spread <tool:dt03-center-and-spread>
 
-#vocab[平均数 mean / 中位数 median / 众数 mode]
+#vocab[平均数 mean][中位数 median][众数 mode]
 
 #crisis[
   某小公司 $6$ 位员工月薪（元）：$3000, 3000, 3000, 3500, 4000, 15000$。

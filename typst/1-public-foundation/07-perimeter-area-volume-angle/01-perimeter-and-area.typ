@@ -3,7 +3,7 @@
 
 === 周长与面积：沿边界走一圈，用单位正方形铺满 <tool:pf07-perimeter-area>
 
-#vocab[周长 perimeter / 面积 area / 单位正方形 unit square]
+#vocab[周长 perimeter][面积 area][单位正方形 unit square]
 
 #crisis[
   老师让你围起学校一块小花坛，并且告诉你：围栏按米收费，草皮按平方米收费。

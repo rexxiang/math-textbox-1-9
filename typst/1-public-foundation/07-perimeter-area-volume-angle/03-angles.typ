@@ -2,7 +2,7 @@
 
 === 角：两条射线之间的旋转量 <tool:pf07-angles>
 
-#vocab[角 angle / 顶点 vertex / 度 degree / 锐角 / 直角 / 钝角 / 平角]
+#vocab[角 angle][顶点 vertex][度 degree][锐角][直角][钝角][平角]
 
 #crisis[
   两条街道从同一个路口岔开，一条和另一条之间“张得多大”，决定了你走错路的概率。

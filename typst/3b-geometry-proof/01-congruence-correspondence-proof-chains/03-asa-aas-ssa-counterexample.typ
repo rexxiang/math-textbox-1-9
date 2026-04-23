@@ -3,7 +3,7 @@
 
 === ASA、AAS 与 SSA 反例：哪些判定能成、哪条不行 <tool:ge01-asa-aas-ssa>
 
-#vocab[角边角 ASA / 角角边 AAS / SSA 反例 SSA counterexample]
+#vocab[角边角 ASA][角角边 AAS][SSA 反例 SSA counterexample]
 
 #crisis[
   上一节把 `SSS`、`SAS` 立起来了：*三条边* 或 *两边夹角* 都能锁死三角形。但真做题时有两类条件我们还没讨论：

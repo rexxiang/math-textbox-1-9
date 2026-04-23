@@ -3,7 +3,7 @@
 
 === 立体的三视图 <tool:ge05-orthographic-views>
 
-#vocab[正视图 front view / 侧视图 side view / 俯视图 top view / 三视图 orthographic views / 平行投影 parallel projection]
+#vocab[正视图 front view][侧视图 side view][俯视图 top view][三视图 orthographic views][平行投影 parallel projection]
 
 #crisis[
   立体的东西画在纸上，总要损失一个维度。一张照片会带来透视扭曲——远处的东西看起来比实际小。工程上需要一种*不扭曲*、*能复现原尺寸*的画法：从*正前方、正侧面、正上方*分别把立体投影在纸上，三张小图加起来要能让制图工人把它还原出来。

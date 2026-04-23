@@ -2,7 +2,7 @@
 
 === 运算顺序与运算律：让结构不走样 <tool:pf02-order-laws>
 
-#vocab[运算顺序 order of operations / 运算律 laws of operations / 分配律 distributive law]
+#vocab[运算顺序 order of operations][运算律 laws of operations][分配律 distributive law]
 
 #crisis[
   计算 $3 + 4 times 5$ 时，有人先算加法得 35，有人先算乘法得 23。

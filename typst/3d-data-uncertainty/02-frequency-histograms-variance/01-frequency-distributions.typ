@@ -2,7 +2,7 @@
 
 === 频率分布表：把一把数据排成结构 <tool:dt04-frequency-distributions>
 
-#vocab[频数 frequency count / 频率 relative frequency / 分布表 frequency distribution table]
+#vocab[频数 frequency count][频率 relative frequency][分布表 frequency distribution table]
 
 #crisis[
   某次年级数学测验 $50$ 位同学成绩（分）打乱顺序写在草稿纸上：

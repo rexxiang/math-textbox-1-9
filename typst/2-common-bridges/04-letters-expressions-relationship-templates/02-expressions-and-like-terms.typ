@@ -2,7 +2,7 @@
 
 === 代数式与合并同类项 <tool:cb04-expressions-and-like-terms>
 
-#vocab[项 term / 同类项 like terms / 合并同类项 combining like terms]
+#vocab[项 term][同类项 like terms][合并同类项 combining like terms]
 
 #crisis[
   代数式 $3 x + 2 x$ 到底等于 $5 x$ 还是 $5 x^2$？

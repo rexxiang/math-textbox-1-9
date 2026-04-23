@@ -2,7 +2,7 @@
 
 === 平方差与完全平方：两条公式，正反两用 <tool:al02-special-identities>
 
-#vocab[平方差公式 difference of squares / 完全平方公式 perfect-square identity]
+#vocab[平方差公式 difference of squares][完全平方公式 perfect-square identity]
 
 #crisis[
   第 1 章里你已经会机械展开 $(a + b)(a - b)$ 和 $(a + b)^2$。可一旦换成具体数：

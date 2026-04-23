@@ -2,7 +2,7 @@
 
 === 分配律的双向使用 <tool:al02-distributive-rewrite>
 
-#vocab[乘法分配律 distributive law / 提公因式 factoring out the common factor]
+#vocab[乘法分配律 distributive law][提公因式 factoring out the common factor]
 
 #crisis[
   在 #secref("pf02-order-laws") 里，分配律只被当成“乘开括号”的工具：

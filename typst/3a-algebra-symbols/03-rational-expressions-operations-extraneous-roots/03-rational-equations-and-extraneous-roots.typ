@@ -2,7 +2,7 @@
 
 === 分式方程与增根 <tool:al03-rational-equations-and-extraneous-roots>
 
-#vocab[分式方程 rational equation / 去分母 clearing denominators / 增根 extraneous root / 验根 checking the solution]
+#vocab[分式方程 rational equation][去分母 clearing denominators][增根 extraneous root][验根 checking the solution]
 
 #crisis[
   分母里出现未知量的方程，像下面这样：

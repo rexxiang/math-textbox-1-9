@@ -2,7 +2,7 @@
 
 === 图形之间的关系：里外、相邻、相交、平行 <tool:pf06-shape-relations>
 
-#vocab[内部 interior / 边界 boundary / 外部 exterior / 相邻 adjacent / 相交 intersect / 平行 parallel (直观)]
+#vocab[内部 interior][边界 boundary][外部 exterior][相邻 adjacent][相交 intersect][平行 parallel (直观)]
 
 #crisis[
   你画了一张学校平面图，想告诉别人：操场在教学楼旁边、花坛在操场*里面*、两条过道*互相平行*、主干道和小路在门口*相交*。

@@ -3,7 +3,7 @@
 
 === 质数、合数与质因数分解 <tool:pf03-primes-factorization>
 
-#vocab[质数 prime number / 合数 composite number / 质因数分解 prime factorization]
+#vocab[质数 prime number][合数 composite number][质因数分解 prime factorization]
 
 #crisis[
   12 可以拆成 $3 times 4$，还能继续拆成 $3 times 2 times 2$。

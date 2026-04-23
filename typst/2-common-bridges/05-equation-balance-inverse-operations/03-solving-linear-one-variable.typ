@@ -2,7 +2,7 @@
 
 === 反向操作解一元一次方程（简单系数）<tool:cb05-solving-linear>
 
-#vocab[反向操作 inverse operation / 一元一次方程 linear equation in one variable]
+#vocab[反向操作 inverse operation][一元一次方程 linear equation in one variable]
 
 #crisis[
   摆在你面前的是 $2 x + 3 = 11$。大家都知道答案是 $4$，但你必须有一条*机械可靠*的步骤，才能在复杂系数时也不会慌。

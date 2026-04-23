@@ -2,7 +2,7 @@
 
 === 一元一次不等式与 $|x|$ 直觉 <tool:al05-linear-inequalities>
 
-#vocab[不等式 inequality / 解集 solution set / 不等式组 system of inequalities / 绝对值 absolute value]
+#vocab[不等式 inequality][解集 solution set][不等式组 system of inequalities][绝对值 absolute value]
 
 #crisis[
   你手头最多有 $100$ 元。想买 $3$ 本价格相同的书，买完*至少要留 $10$ 元*坐车回家。每本书最多多少钱？

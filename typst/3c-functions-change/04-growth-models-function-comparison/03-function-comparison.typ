@@ -2,7 +2,7 @@
 
 === 函数家族的长期较量 <tool:fn12-function-comparison>
 
-#vocab[长期行为 long-run behavior / 超越 overtaking / 量级 order of magnitude]
+#vocab[长期行为 long-run behavior][超越 overtaking][量级 order of magnitude]
 
 #crisis[
   把几种函数放在同一个坐标系里，短期 / 中期 / 长期的“名次”经常*重新洗牌*：

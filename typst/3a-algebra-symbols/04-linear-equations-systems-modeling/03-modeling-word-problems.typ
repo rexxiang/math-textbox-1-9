@@ -2,7 +2,7 @@
 
 === 建模：设元、译句与“答得合理” <tool:al04-modeling-word-problems>
 
-#vocab[设元 introducing an unknown / 等量关系 equality relation / 合理性检验 sanity check / 建模 modeling]
+#vocab[设元 introducing an unknown][等量关系 equality relation][合理性检验 sanity check][建模 modeling]
 
 #crisis[
   方程真正的威力不在“做给定的式子”，而在*把一段文字变成式子*。可很多同学到应用题就卡住——不知道“设谁”、不知道“怎么列”、更不知道算出的数“合不合理”。

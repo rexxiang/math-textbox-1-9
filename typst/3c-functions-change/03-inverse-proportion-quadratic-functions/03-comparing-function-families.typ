@@ -2,7 +2,7 @@
 
 === 三类函数对照：一次 / 反比例 / 二次 <tool:fn09-comparing-function-families>
 
-#vocab[函数族 function family / 模型识别 model recognition]
+#vocab[函数族 function family][模型识别 model recognition]
 
 #crisis[
   $3$ 张常见数据表摆在你面前——但没人告诉你它们出自什么现象：

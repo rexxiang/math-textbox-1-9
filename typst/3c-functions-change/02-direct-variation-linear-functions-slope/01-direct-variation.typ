@@ -3,7 +3,7 @@
 
 === 正比例函数：$y = k x$ <tool:fn04-direct-variation>
 
-#vocab[正比例函数 direct variation / 比例系数 constant of proportionality / 过原点直线 line through the origin]
+#vocab[正比例函数 direct variation][比例系数 constant of proportionality][过原点直线 line through the origin]
 
 #crisis[
   *比例*我们早就会（#secref("cb01-ratio-basics")、#secref("cb01-proportion")）：两袋米 $10$ 公斤、四袋米 $20$ 公斤，不管几袋，每袋永远 $5$ 公斤。这类关系在生活中最多：匀速行进的路程与时间、买多件同款商品的总价与件数、正方形的周长与边长。

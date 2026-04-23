@@ -2,7 +2,7 @@
 
 === 整理数据的三张常用图：条形图 / 折线图 / 扇形图 <tool:dt01-organizing-data>
 
-#vocab[条形图 bar chart / 折线图 line chart / 扇形图 pie chart / 分类数据 categorical data / 时间序列 time series]
+#vocab[条形图 bar chart][折线图 line chart][扇形图 pie chart][分类数据 categorical data][时间序列 time series]
 
 #crisis[
   某年级 $60$ 位同学选兴趣班，老师把结果抄在黑板上：

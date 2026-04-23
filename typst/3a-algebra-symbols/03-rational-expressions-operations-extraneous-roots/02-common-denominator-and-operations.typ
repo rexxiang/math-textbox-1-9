@@ -2,7 +2,7 @@
 
 === 通分、分式加减与乘除 <tool:al03-common-denominator-operations>
 
-#vocab[通分 finding a common denominator / 最简公分母 least common denominator / 分式加减 adding and subtracting rational expressions / 分式乘除 multiplying and dividing rational expressions]
+#vocab[通分 finding a common denominator][最简公分母 least common denominator][分式加减 adding and subtracting rational expressions][分式乘除 multiplying and dividing rational expressions]
 
 #crisis[
   在 #secref("pf04-fraction-arithmetic") 里，你会算 $1/3 + 1/4 = 7/12$——诀窍是先通分再相加。

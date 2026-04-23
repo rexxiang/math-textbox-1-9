@@ -2,7 +2,7 @@
 
 === 实验频率与概率：做得多了会稳定 <tool:dt09-experimental-frequency>
 
-#vocab[相对频率 relative frequency / 经验概率 empirical probability / 大数定律 law of large numbers（朴素版）]
+#vocab[相对频率 relative frequency][经验概率 empirical probability][大数定律 law of large numbers（朴素版）]
 
 #crisis[
   古典概率公式 $P(A) = |A| \/ |Omega|$ 只在*有限 $+$ 等可能*的场景用得上。很多现实问题两个前提都不满足：

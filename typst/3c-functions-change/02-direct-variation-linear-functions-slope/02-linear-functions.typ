@@ -3,7 +3,7 @@
 
 === 一次函数：$y = k x + b$ <tool:fn05-linear-function>
 
-#vocab[一次函数 linear function / 截距 y-intercept / 平移 translation]
+#vocab[一次函数 linear function][截距 y-intercept][平移 translation]
 
 #crisis[
   某出租车起步价 $10$ 元，起步里程内不额外计价；超过部分每公里 $2$ 元。设你坐车行驶 $x$ 公里（$x >= $ 起步里程），总价 $y$ 元：

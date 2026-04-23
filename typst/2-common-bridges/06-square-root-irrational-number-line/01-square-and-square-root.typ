@@ -2,7 +2,7 @@
 
 === 平方、平方根与算术平方根 <tool:cb06-square-and-square-root>
 
-#vocab[平方 square / 平方根 square root / 算术平方根 principal square root / 根号 radical sign]
+#vocab[平方 square][平方根 square root][算术平方根 principal square root][根号 radical sign]
 
 #crisis[
   边长 $4$ 的正方形面积是 $16$。反过来：面积是 $16$ 的正方形，边长是多少？

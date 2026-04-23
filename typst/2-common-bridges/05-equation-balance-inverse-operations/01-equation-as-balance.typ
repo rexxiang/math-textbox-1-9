@@ -3,7 +3,7 @@
 
 === 方程即天平 <tool:cb05-equation-as-balance>
 
-#vocab[方程 equation / 未知量 unknown / 解 solution / 等式 equation (literal)]
+#vocab[方程 equation][未知量 unknown][解 solution][等式 equation (literal)]
 
 #crisis[
   一本书 $p$ 元，小明付了 $50$ 元找回 $14$ 元。你立刻会想：“那 $p = 36$ 吧。”

@@ -2,7 +2,7 @@
 
 === 计数与数量感 <tool:pf01-place-counting>
 
-#vocab[计数 counting / 数量 quantity / 零 zero]
+#vocab[计数 counting][数量 quantity][零 zero]
 
 #crisis[
   桌上放着几支铅笔。你指着它们说：“1，2，3，4，5。”

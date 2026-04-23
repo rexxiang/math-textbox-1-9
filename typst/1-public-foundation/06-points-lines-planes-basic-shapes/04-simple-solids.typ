@@ -2,7 +2,7 @@
 
 === 简单立体：把平面图形“抬起来”得到的形状 <tool:pf06-simple-solids>
 
-#vocab[立体图形 solid / 长方体 cuboid / 正方体 cube / 圆柱 cylinder / 棱锥 pyramid / 圆锥 cone / 球 sphere]
+#vocab[立体图形 solid][长方体 cuboid][正方体 cube][圆柱 cylinder][棱锥 pyramid][圆锥 cone][球 sphere]
 
 #crisis[
   你已经能认三角形、正方形、圆了。可当你要描述一个*牛奶盒*、一个*易拉罐*、一个*足球*时，平面图形就不够用了。

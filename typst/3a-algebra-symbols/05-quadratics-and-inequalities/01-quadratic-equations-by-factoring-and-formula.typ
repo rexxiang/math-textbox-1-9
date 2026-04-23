@@ -2,7 +2,7 @@
 
 === 一元二次方程：配方法 → 求根公式 <tool:al05-quadratic-solving>
 
-#vocab[一元二次方程 quadratic equation / 配方法 completing the square / 求根公式 quadratic formula / 判别式 discriminant]
+#vocab[一元二次方程 quadratic equation][配方法 completing the square][求根公式 quadratic formula][判别式 discriminant]
 
 #crisis[
   一块长方形花圃，长比宽多 $1$ 米，面积 $7$ 平方米。设宽 $x$ 米，那么

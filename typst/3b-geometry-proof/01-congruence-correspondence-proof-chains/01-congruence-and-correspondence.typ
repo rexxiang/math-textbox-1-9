@@ -2,7 +2,7 @@
 
 === 全等的含义与对应关系 <tool:ge01-congruence-correspondence>
 
-#vocab[全等 congruent / 对应顶点 corresponding vertices / 对应边 corresponding sides / 对应角 corresponding angles / 记号 $tilde.eq$]
+#vocab[全等 congruent][对应顶点 corresponding vertices][对应边 corresponding sides][对应角 corresponding angles][记号 $tilde.eq$]
 
 #crisis[
   造桥、裁剪、印刷、零件互换——所有这些场景都怕的不是“两个三角形看起来像”，而是“实际上是否真的一模一样”。看起来像可以骗人：两块厚薄颜色都相同的三角板，一旦把它们叠在一起，也许一条边就差了 $1$ 毫米。

@@ -3,7 +3,7 @@
 
 === 平行线与三类角关系 <tool:ge02-parallel-line-angles>
 
-#vocab[同位角 corresponding angles / 内错角 alternate interior angles / 同旁内角 co-interior angles / 截线 transversal]
+#vocab[同位角 corresponding angles][内错角 alternate interior angles][同旁内角 co-interior angles][截线 transversal]
 
 #crisis[
   上一章的每一道证明，几乎都要用到“内错角相等”“同位角相等”这种“两条平行线被第三条直线截到”之后产生的等角。可它们不是从天上掉下来的——它们背后有一整个*角关系家族*，是平行线最珍贵的馈赠。

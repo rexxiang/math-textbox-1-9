@@ -3,7 +3,7 @@
 
 === 刚体变换与全等 <tool:ge05-rigid-transforms>
 
-#vocab[刚体变换 rigid motion / 平移 translation / 旋转 rotation / 反射（关于直线）reflection / 保距 distance-preserving / 对应点 corresponding points]
+#vocab[刚体变换 rigid motion][平移 translation][旋转 rotation][反射（关于直线）reflection][保距 distance-preserving][对应点 corresponding points]
 
 #crisis[
   把一张三角形纸片往右挪一段——它和原来相等；转一个角度——还相等；对着一条直线翻个面——依然相等。这三种“动它”的办法长得完全不一样，为什么得到的都是*全等*的图形？

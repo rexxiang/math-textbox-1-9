@@ -3,7 +3,7 @@
 
 === 分数的意义与等值 <tool:pf04-fraction-equivalence>
 
-#vocab[分数 fraction / 等值分数 equivalent fractions / 均分 equal parts]
+#vocab[分数 fraction][等值分数 equivalent fractions][均分 equal parts]
 
 #crisis[
   2 张披萨平均分给 3 个人，每人分到多少？

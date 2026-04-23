@@ -2,7 +2,7 @@
 
 === 因数、倍数与整除线索 <tool:pf03-factors-multiples>
 
-#vocab[因数 factor / 倍数 multiple / 整除 divisibility]
+#vocab[因数 factor][倍数 multiple][整除 divisibility]
 
 #crisis[
   24 个学生要平均分组做实验，要求每组人数相同、不能有人落单。

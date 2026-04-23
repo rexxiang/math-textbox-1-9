@@ -2,7 +2,7 @@
 
 === 多边形与圆：用线段围起来，用曲线绕起来 <tool:pf06-polygons-and-circle>
 
-#vocab[多边形 polygon / 三角形 triangle / 四边形 quadrilateral / 圆 circle / 顶点 vertex / 边 edge]
+#vocab[多边形 polygon][三角形 triangle][四边形 quadrilateral][圆 circle][顶点 vertex][边 edge]
 
 #crisis[
   手边的几何零件已经有了：点、线段、平面。

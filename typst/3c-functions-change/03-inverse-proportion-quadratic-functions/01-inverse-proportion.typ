@@ -3,7 +3,7 @@
 
 === 反比例函数：$y = k / x$ <tool:fn07-inverse-proportion>
 
-#vocab[反比例函数 inverse proportion / 双曲线 hyperbola / 常积关系 constant-product relation]
+#vocab[反比例函数 inverse proportion][双曲线 hyperbola][常积关系 constant-product relation]
 
 #crisis[
   $12$ 个苹果要分给一群人，每人拿到的数目 $y$ 取决于总人数 $x$：$1$ 人拿 $12$、$2$ 人每人拿 $6$、$3$ 人每人拿 $4$、$4$ 人每人拿 $3$、$6$ 人每人拿 $2$…… 写成表：

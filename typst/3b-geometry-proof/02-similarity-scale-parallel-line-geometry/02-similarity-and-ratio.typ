@@ -3,7 +3,7 @@
 
 === 相似的含义：AA 判定与相似比 <tool:ge02-similarity-aa-ratio>
 
-#vocab[相似 similar / 相似比 similarity ratio / AA 判定 Angle-Angle similarity]
+#vocab[相似 similar][相似比 similarity ratio][AA 判定 Angle-Angle similarity]
 
 #crisis[
   全等太严格了：它要求两个三角形能*完全重合*，一点放大或缩小都不允许。可现实里面对的往往是*同形不同大*——地图上的小房子和真实大小的房子、手机屏幕上的人脸和真实的人脸。它们不全等，却又“是同一个东西的两个大小”。

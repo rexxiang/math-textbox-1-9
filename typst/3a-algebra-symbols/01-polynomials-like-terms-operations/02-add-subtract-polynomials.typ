@@ -2,7 +2,7 @@
 
 === 整式加减：去括号 + 合并同类项 <tool:al01-add-subtract-polynomials>
 
-#vocab[去括号 removing parentheses / 整式加减 adding and subtracting polynomials]
+#vocab[去括号 removing parentheses][整式加减 adding and subtracting polynomials]
 
 #crisis[
   给你两段钢筋，长分别记作 $A = 4 x + 7$（米）和 $B = 2 x - 3$（米）。

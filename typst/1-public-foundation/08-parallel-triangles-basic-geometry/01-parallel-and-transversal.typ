@@ -2,7 +2,7 @@
 
 === 平行线与横截线：一张图里的角关系 <tool:pf08-parallel-transversal>
 
-#vocab[平行 parallel / 横截线 transversal / 同位角 corresponding / 内错角 alternate / 同旁内角 co-interior]
+#vocab[平行 parallel][横截线 transversal][同位角 corresponding][内错角 alternate][同旁内角 co-interior]
 
 #crisis[
   两条铁轨平行向远方延伸，一条枕木横穿过去——你会看到好几对角。有些看起来“一样大”，有些看起来“加起来是一条直线”。

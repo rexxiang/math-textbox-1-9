@@ -2,7 +2,7 @@
 
 === 分数比较：先统一尺子 <tool:pf04-fraction-comparison>
 
-#vocab[通分 common denominator / 同分母 same denominator / 同单位 common unit]
+#vocab[通分 common denominator][同分母 same denominator][同单位 common unit]
 
 #crisis[
   $3/4$ 和 $2/3$，谁更大？

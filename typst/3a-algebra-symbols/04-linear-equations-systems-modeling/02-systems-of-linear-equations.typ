@@ -2,7 +2,7 @@
 
 === 二元一次方程组：代入与加减消元 <tool:al04-systems-linear>
 
-#vocab[二元一次方程组 system of linear equations in two unknowns / 代入消元法 substitution / 加减消元法 elimination by addition or subtraction / 消元 elimination]
+#vocab[二元一次方程组 system of linear equations in two unknowns][代入消元法 substitution][加减消元法 elimination by addition or subtraction][消元 elimination]
 
 #crisis[
   *鸡兔同笼*：笼子里有鸡和兔共 $35$ 个头、$94$ 只脚。鸡和兔各几只？

@@ -2,7 +2,7 @@
 
 === 一元一次方程的标准五步 <tool:al04-linear-one-variable>
 
-#vocab[去分母 clearing denominators / 去括号 distribution / 移项 transposition / 合并同类项 combining like terms / 系数化 1 normalizing leading coefficient]
+#vocab[去分母 clearing denominators][去括号 distribution][移项 transposition][合并同类项 combining like terms][系数化 1 normalizing leading coefficient]
 
 #crisis[
   在桥梁章 #secref("cb05-solving-linear") 里，你已经能够稳稳地处理 $2 x + 3 = 11$ 这类题目。但一旦方程里同时出现括号、分母，并且未知量在两边同时出现，口算"倒推"就开始慌：

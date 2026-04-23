@@ -3,7 +3,7 @@
 
 === 仰角·俯角·坡度的实际测量 <tool:ge04-elevation-slope>
 
-#vocab[仰角 angle of elevation / 俯角 angle of depression / 坡角 slope angle / 坡度（比） slope ratio / 水平距离 / 铅直距离]
+#vocab[仰角 angle of elevation][俯角 angle of depression][坡角 slope angle][坡度（比） slope ratio][水平距离][铅直距离]
 
 #crisis[
   要测一座塔的高度，没法爬上去拿尺子量。要知道一段山坡“陡不陡”，光靠眼睛看不够客观。工程师、测量员、也包括真正的登山者，都需要把“从某处看上去的角度”换算成“真实的距离或高度”。

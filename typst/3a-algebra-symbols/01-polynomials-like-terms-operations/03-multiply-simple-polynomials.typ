@@ -2,7 +2,7 @@
 
 === 整式乘法：三种搭配一次打通 <tool:al01-multiply-polynomials>
 
-#vocab[单项式乘法 monomial multiplication / 指数相加法则 law of exponents (product) / 多项式乘法 polynomial multiplication]
+#vocab[单项式乘法 monomial multiplication][指数相加法则 law of exponents (product)][多项式乘法 polynomial multiplication]
 
 #crisis[
   一块矩形园地长 $(x + 5)$ 米、宽 $(x + 2)$ 米，求面积的整式表达式。

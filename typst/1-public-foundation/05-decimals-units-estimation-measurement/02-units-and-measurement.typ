@@ -2,7 +2,7 @@
 
 === 单位与测量：数值必须带尺子 <tool:pf05-units-measurement>
 
-#vocab[单位 unit / 测量 measurement / 换算 conversion]
+#vocab[单位 unit][测量 measurement][换算 conversion]
 
 #crisis[
   甲说桌子长 120，乙说桌子长 1.2。谁对？

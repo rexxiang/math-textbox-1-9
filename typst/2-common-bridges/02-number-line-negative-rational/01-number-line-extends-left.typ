@@ -3,7 +3,7 @@
 
 === 数轴向左延伸：负数登场 <tool:cb02-number-line-extends-left>
 
-#vocab[数轴 number line / 原点 / 正数 / 负数 / 符号 sign]
+#vocab[数轴 number line][原点][正数][负数][符号 sign]
 
 #crisis[
   温度 $-5 degree$C、电梯“$-1$ 楼”、账户欠款 $-120$ 元——这些说法每天都在用。

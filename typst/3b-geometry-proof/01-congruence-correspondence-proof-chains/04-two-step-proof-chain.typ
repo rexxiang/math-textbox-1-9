@@ -2,7 +2,7 @@
 
 === 证明链的书写：已知 → 推出 → 结论 <tool:ge01-two-step-proof-chain>
 
-#vocab[证明 proof / 证明链 proof chain / 理由栏 reason column / 两步证明 two-step proof]
+#vocab[证明 proof][证明链 proof chain][理由栏 reason column][两步证明 two-step proof]
 
 #crisis[
   前两节我们发明了“全等”这套语言，也拿到了四位判定大将。可是一旦进入考试题，很多同学仍然卡在同一处：*知道要用 SAS，可不知道怎么“写出来”*。

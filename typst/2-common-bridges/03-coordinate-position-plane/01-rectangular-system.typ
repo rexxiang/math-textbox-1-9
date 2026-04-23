@@ -3,7 +3,7 @@
 
 === 平面直角坐标系：给每个点发身份证 <tool:cb03-rectangular-system>
 
-#vocab[平面直角坐标系 rectangular coordinate system / $x$ 轴 / $y$ 轴 / 原点 / 有序数对]
+#vocab[平面直角坐标系 rectangular coordinate system][$x$ 轴][$y$ 轴][原点][有序数对]
 
 #crisis[
   你在 #secref("pf08-coordinate-intuition") 已经会用 $(x, y)$ 描述位置了。但“两条数轴垂直放在一起”这件事还没有被正式命名。

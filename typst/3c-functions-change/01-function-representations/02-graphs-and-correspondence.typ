@@ -3,7 +3,7 @@
 
 === 图像：函数的第二张面孔 <tool:fn02-graph-as-function-view>
 
-#vocab[函数图像 graph of a function / 垂线检验 vertical line test / 单值性 single-valuedness]
+#vocab[函数图像 graph of a function][垂线检验 vertical line test][单值性 single-valuedness]
 
 #crisis[
   上一节里函数是一张*表*。但生活里很多关系*连续*在变：水温随时间下降、气球高度随时间上升——每一瞬都有一个数值，而表只能挑几个瞬间记下来。

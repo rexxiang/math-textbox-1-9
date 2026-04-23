@@ -2,7 +2,7 @@
 
 === 小数与互化：位值继续向右长 <tool:pf05-decimals-conversion>
 
-#vocab[小数 decimal / 十分位 tenths place / 互化 conversion]
+#vocab[小数 decimal][十分位 tenths place][互化 conversion]
 
 #crisis[
   量身高时，1 米太短，2 米又太长，记录成“1 米多一点”还是太模糊。

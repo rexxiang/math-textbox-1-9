@@ -2,7 +2,7 @@
 
 === 等式性质：保持天平平衡 <tool:cb05-equality-properties>
 
-#vocab[等式性质 properties of equality / 同加同减 / 同乘同除]
+#vocab[等式性质 properties of equality][同加同减][同乘同除]
 
 #crisis[
   方程是个天平。想把未知量“请出来”，你得一步步变形，但每一步都*不能破坏平衡*。到底什么样的变形是合法的？

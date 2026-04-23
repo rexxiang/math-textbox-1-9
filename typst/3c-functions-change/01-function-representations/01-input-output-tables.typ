@@ -2,7 +2,7 @@
 
 === 输入 / 输出表：函数的第一张面孔 <tool:fn01-table-as-function-view>
 
-#vocab[函数 function / 输入 input / 输出 output / 对应 correspondence / 输入输出表 input-output table]
+#vocab[函数 function][输入 input][输出 output][对应 correspondence][输入输出表 input-output table]
 
 #crisis[
   有一台自动售水机，你投入不同金额，它会吐出对应的矿泉水瓶数。把一次次操作记下来：

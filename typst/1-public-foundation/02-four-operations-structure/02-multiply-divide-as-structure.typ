@@ -2,7 +2,7 @@
 
 === 乘法与除法：相同结构的打包与拆分 <tool:pf02-mul-div-structure>
 
-#vocab[乘法 multiplication / 除法 division / 平均分 equal sharing]
+#vocab[乘法 multiplication][除法 division][平均分 equal sharing]
 
 #crisis[
   6 把椅子摆成一排，要摆 5 排，一共多少把？

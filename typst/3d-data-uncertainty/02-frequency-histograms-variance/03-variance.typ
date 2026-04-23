@@ -2,7 +2,7 @@
 
 === 方差与标准差：比极差更细的一把尺子 <tool:dt06-variance>
 
-#vocab[方差 variance / 标准差 standard deviation / 偏差 deviation / 离散程度 spread]
+#vocab[方差 variance][标准差 standard deviation][偏差 deviation][离散程度 spread]
 
 #crisis[
   甲班 $5$ 位同学的作业用时（分钟）：$0, 5, 5, 5, 10$。

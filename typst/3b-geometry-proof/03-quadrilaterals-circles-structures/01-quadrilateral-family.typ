@@ -3,7 +3,7 @@
 
 === 四边形家族：从一般到正方形 <tool:ge03-quadrilateral-family>
 
-#vocab[平行四边形 parallelogram / 矩形 rectangle / 菱形 rhombus / 正方形 square / 梯形 trapezoid]
+#vocab[平行四边形 parallelogram][矩形 rectangle][菱形 rhombus][正方形 square][梯形 trapezoid]
 
 #crisis[
   小学画过正方形、长方形、菱形、平行四边形、梯形，像一组互不相关的图形卡片。可进了初中，这些名称突然都和*性质、判定*、*对角线*、*证明*连在一起：“证明一个四边形是矩形”到底要证什么？“正方形”就是“又矩又菱”吗？

@@ -2,7 +2,7 @@
 
 === 最大公因数与最小公倍数 <tool:pf03-gcd-lcm>
 
-#vocab[最大公因数 greatest common divisor / 最小公倍数 least common multiple / 公共结构 common structure]
+#vocab[最大公因数 greatest common divisor][最小公倍数 least common multiple][公共结构 common structure]
 
 #crisis[
   有 24 颗糖和 36 块饼干，想平均分成若干份，每份里糖和饼干的数量都必须是整数，而且份数尽量多。

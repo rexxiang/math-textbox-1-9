@@ -2,7 +2,7 @@
 
 === 放缩规律、比例尺与测量 <tool:ge02-scale-and-measurement>
 
-#vocab[周长比 perimeter ratio / 面积比 area ratio / 比例尺 scale / 相似测量 similar-triangle measurement]
+#vocab[周长比 perimeter ratio][面积比 area ratio][比例尺 scale][相似测量 similar-triangle measurement]
 
 #crisis[
   相似三角形不只是一对“长得像”的图形——它是一整套*放缩规律*。图放大 $3$ 倍，对应的边也放大 $3$ 倍，这是直觉；可是面积呢？面积变成了 $9$ 倍，不是 $3$ 倍。这件事如果没有在一开始就说清楚，所有涉及“面积比”的题都会做错。

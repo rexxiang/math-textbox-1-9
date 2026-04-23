@@ -2,7 +2,7 @@
 
 === 点与平面：两个没有“端”的几何原名 <tool:pf06-points-and-planes>
 
-#vocab[点 point / 平面 plane]
+#vocab[点 point][平面 plane]
 
 #crisis[
   画一张学校平面图时，你想说两类完全不同的事：

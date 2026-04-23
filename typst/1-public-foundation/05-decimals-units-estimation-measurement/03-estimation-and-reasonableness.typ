@@ -2,7 +2,7 @@
 
 === 估算与合理性检查 <tool:pf05-estimation-reasonableness>
 
-#vocab[估算 estimation / 近似 approximate value / 合理性 reasonableness]
+#vocab[估算 estimation][近似 approximate value][合理性 reasonableness]
 
 #crisis[
   计算器显示：$19.8 + 30.4 = 5.02$。

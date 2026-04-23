@@ -2,7 +2,7 @@
 
 === 字母代替数：规则代替一次计算 <tool:cb04-letters-represent-numbers>
 
-#vocab[变量 variable / 常量 constant / 代数式 algebraic expression / 系数 coefficient]
+#vocab[变量 variable][常量 constant][代数式 algebraic expression][系数 coefficient]
 
 #crisis[
   一斤苹果 $6$ 元，买 $3$ 斤是 $18$ 元。下次如果买 $7$ 斤呢？$10$ 斤呢？

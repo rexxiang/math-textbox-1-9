@@ -2,7 +2,7 @@
 
 === 古典概率：把可能性量化到 $[0, 1]$ <tool:dt08-probability-language>
 
-#vocab[古典概率 classical probability / 对立事件 complement / 互斥事件 mutually exclusive]
+#vocab[古典概率 classical probability][对立事件 complement][互斥事件 mutually exclusive]
 
 #crisis[
   上一节我们学会了把“所有可能结果”数清楚。下一步就该给事件 $A$ 配一个*数字*：

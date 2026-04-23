@@ -3,7 +3,7 @@
 
 === 斜率：把“每加 $1$ 单位 $x$，$y$ 变多少”写成数 <tool:fn06-slope-as-rate>
 
-#vocab[斜率 slope / 变化率 rate of change / 水平变化 run / 铅直变化 rise]
+#vocab[斜率 slope][变化率 rate of change][水平变化 run][铅直变化 rise]
 
 #crisis[
   上一节我们已经知道 $y = k x + b$ 里的 $k$ 控制*陡度*——两条同 $k$ 的直线平行，$k$ 越大看起来越陡。但到现在 $k$ 只是“公式里的一个系数”——它为什么叫*斜率*？怎么从图里、从表里、从两个点读出它？

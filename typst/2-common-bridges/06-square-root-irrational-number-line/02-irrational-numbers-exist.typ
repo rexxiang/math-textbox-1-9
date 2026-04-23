@@ -2,7 +2,7 @@
 
 === 无理数：$sqrt(2)$ 不能写成分数 <tool:cb06-irrational-numbers>
 
-#vocab[无理数 irrational number / 反证法 proof by contradiction / 既约分数 fraction in lowest terms]
+#vocab[无理数 irrational number][反证法 proof by contradiction][既约分数 fraction in lowest terms]
 
 #crisis[
   $sqrt(2)$ 这种记号我们已经能写、能用了。但它到底是“有理数”还是“有理数之外的新东西”？

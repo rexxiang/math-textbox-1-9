@@ -2,7 +2,7 @@
 
 === 模型选择：看表、看图、选函数 <tool:fn11-model-choice>
 
-#vocab[建模 modeling / 模型选择 model selection / 拟合 fit / 趋势 trend]
+#vocab[建模 modeling][模型选择 model selection][拟合 fit][趋势 trend]
 
 #crisis[
   之前每一节都告诉你“*这是* 线性 / 反比例 / 二次 / 乘法增长”，然后教你用。现实里*没有人*来告诉你用哪种。老师给你一张陌生的表、或者一张描点图，问：“这批数据最像下面哪种关系？”你该怎么答？
