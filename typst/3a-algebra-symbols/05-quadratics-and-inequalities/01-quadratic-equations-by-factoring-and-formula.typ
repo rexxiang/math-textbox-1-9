@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 一元二次方程：配方法 → 求根公式 <tool:al05-quadratic-solving>
+=== 一元二次方程：配方法 → 求根公式 <tool:al05-quadratic-solving>
 
 #vocab[一元二次方程 quadratic equation / 配方法 completing the square / 求根公式 quadratic formula / 判别式 discriminant]
 

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, secref
 
-= 本章回顾 <meta:letters-expressions-relationship-templates>
+== 本章回顾 <meta:letters-expressions-relationship-templates>
 
 #blueprint[
   *知识速查卡*

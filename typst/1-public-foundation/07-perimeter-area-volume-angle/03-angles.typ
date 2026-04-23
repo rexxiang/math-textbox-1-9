@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 角：两条射线之间的旋转量 <tool:pf07-angles>
+=== 角：两条射线之间的旋转量 <tool:pf07-angles>
 
 #vocab[角 angle / 顶点 vertex / 度 degree / 锐角 / 直角 / 钝角 / 平角]
 

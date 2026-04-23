@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== 平行线与三类角关系 <tool:ge02-parallel-line-angles>
+=== 平行线与三类角关系 <tool:ge02-parallel-line-angles>
 
 #vocab[同位角 corresponding angles / 内错角 alternate interior angles / 同旁内角 co-interior angles / 截线 transversal]
 

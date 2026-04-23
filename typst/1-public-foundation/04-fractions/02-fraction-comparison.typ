@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 分数比较：先统一尺子 <tool:pf04-fraction-comparison>
+=== 分数比较：先统一尺子 <tool:pf04-fraction-comparison>
 
 #vocab[通分 common denominator / 同分母 same denominator / 同单位 common unit]
 

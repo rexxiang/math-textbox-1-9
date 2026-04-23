@@ -13,32 +13,48 @@
     region: "cn",
   )
   show math.equation: set text(font: "New Computer Modern Math")
-  set heading(numbering: "1.1")
+  // 只给 Part（1 级）和 Chapter（2 级）编号；Section 及以下不编号
+  set heading(numbering: (..nums) => {
+    let n = nums.pos()
+    if n.len() <= 2 { numbering("1.1", ..n) }
+  })
   set par(justify: true, leading: 0.85em, spacing: 1.5em)
-  // 一级标题前强制分页
+  // Part（一级）：强制分页 + 大标题
   show heading.where(level: 1): it => {
     pagebreak(weak: true)
     block(above: 0em, below: 1.5em, it)
   }
-  // 二三级标题间距
-  show heading.where(level: 2): set block(above: 2em, below: 1em)
+  // Chapter（二级）：强制分页
+  show heading.where(level: 2): it => {
+    pagebreak(weak: true)
+    block(above: 0em, below: 1em, it)
+  }
+  // Section（三级）和 Subsection（四级）：仅留间距
   show heading.where(level: 3): set block(above: 2em, below: 1em)
+  show heading.where(level: 4): set block(above: 1.5em, below: 0.8em)
   body
 }
 
 #let main-page-header = context {
-  let chapter-headings = query(heading.where(level: 1).before(here()))
+  // Part = level 1, Chapter = level 2
+  let part-headings = query(heading.where(level: 1).before(here()))
   let current-page = counter(page).get().first()
-  let chapter-on-page = query(heading.where(level: 1)).filter(h => counter(page).at(h.location()).first() == current-page)
+  // 不在 Part/Chapter 起始页显示 header
+  let part-on-page = query(heading.where(level: 1)).filter(h => counter(page).at(h.location()).first() == current-page)
+  let ch-on-page = query(heading.where(level: 2)).filter(h => counter(page).at(h.location()).first() == current-page)
 
-  if chapter-headings.len() > 0 and chapter-on-page.len() == 0 {
-    let chapter = chapter-headings.last()
-    let chapter-num = counter(heading).at(chapter.location()).first()
-    let section-headings = query(heading.where(level: 2).before(here())).filter(h => counter(heading).at(h.location()).first() == chapter-num)
+  if part-headings.len() > 0 and part-on-page.len() == 0 and ch-on-page.len() == 0 {
+    let part = part-headings.last()
+    let part-num = counter(heading).at(part.location()).first()
+    let ch-headings = query(heading.where(level: 2).before(here())).filter(h => counter(heading).at(h.location()).first() == part-num)
 
     emph[
-      第 #chapter-num 章 #h(0.3em) #chapter.body
-      #if section-headings.len() > 0 [#h(0.5em)•#h(0.5em) #section-headings.last().body]
+      #part.body
+      #if ch-headings.len() > 0 {
+        let ch = ch-headings.last()
+        let ch-nums = counter(heading).at(ch.location())
+        [#h(0.5em)•#h(0.5em) #numbering("1.1", ..ch-nums.slice(0, 2)) #h(0.3em) #ch.body]
+      }
     ]
     line(length: 100%, stroke: 0.4pt)
   }
@@ -123,25 +139,25 @@
 }
 
 #let crisis(body) = invention-box(
-  [一、遇到的问题],
+  [遇到的问题],
   rgb("#C62828"), rgb("#FFCDD2"), rgb("#B71C1C"),
   body,
 )
 
 #let discovery(body) = invention-box(
-  [二、想一想],
+  [想一想],
   rgb("#EF6C00"), rgb("#FFE0B2"), rgb("#E65100"),
   body,
 )
 
 #let blueprint(body) = invention-box(
-  [三、这节的方法],
+  [划重点],
   rgb("#1565C0"), rgb("#BBDEFB"), rgb("#0D47A1"),
   body,
 )
 
 #let mastery(body) = invention-box(
-  [四、练一练],
+  [练一练],
   rgb("#2E7D32"), rgb("#C8E6C9"), rgb("#1B5E20"),
   body,
 )

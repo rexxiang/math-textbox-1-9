@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 周长与面积：沿边界走一圈，用单位正方形铺满 <tool:pf07-perimeter-area>
+=== 周长与面积：沿边界走一圈，用单位正方形铺满 <tool:pf07-perimeter-area>
 
 #vocab[周长 perimeter / 面积 area / 单位正方形 unit square]
 

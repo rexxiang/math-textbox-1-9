@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery
 
-= 数与位值：从“多少个”到十进制 <ch:number-place-value-decimal>
+== 数与位值：从“多少个”到十进制 <ch:number-place-value-decimal>
 
 #blueprint[
   *难度*：★☆☆☆☆ \

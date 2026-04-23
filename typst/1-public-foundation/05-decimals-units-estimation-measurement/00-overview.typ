@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery
 
-= 小数、单位、估算与测量 <ch:decimals-units-estimation-measurement>
+== 小数、单位、估算与测量 <ch:decimals-units-estimation-measurement>
 
 #blueprint[
   *难度*：★★☆☆☆ \

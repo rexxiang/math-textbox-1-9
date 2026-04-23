@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 正比例 · 一次函数 · 斜率 <ch:direct-variation-linear-functions-slope>
+== 正比例 · 一次函数 · 斜率 <ch:direct-variation-linear-functions-slope>
 
 #blueprint[
   *难度*：★★★★☆ \

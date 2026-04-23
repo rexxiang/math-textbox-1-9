@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 整理数据的三张常用图：条形图 / 折线图 / 扇形图 <tool:dt01-organizing-data>
+=== 整理数据的三张常用图：条形图 / 折线图 / 扇形图 <tool:dt01-organizing-data>
 
 #vocab[条形图 bar chart / 折线图 line chart / 扇形图 pie chart / 分类数据 categorical data / 时间序列 time series]
 

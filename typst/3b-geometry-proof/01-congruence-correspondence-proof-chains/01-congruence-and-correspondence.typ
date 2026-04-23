@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 全等的含义与对应关系 <tool:ge01-congruence-correspondence>
+=== 全等的含义与对应关系 <tool:ge01-congruence-correspondence>
 
 #vocab[全等 congruent / 对应顶点 corresponding vertices / 对应边 corresponding sides / 对应角 corresponding angles / 记号 $tilde.eq$]
 

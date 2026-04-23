@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== 坐标几何与变换的坐标公式 <tool:ge05-coordinate-transforms>
+=== 坐标几何与变换的坐标公式 <tool:ge05-coordinate-transforms>
 
 #vocab[中点公式 midpoint formula / 两点距离公式 distance formula / 坐标变换 coordinate transformation]
 

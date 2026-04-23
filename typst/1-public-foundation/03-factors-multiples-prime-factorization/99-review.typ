@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, secref
 
-= 本章回顾 <meta:factors-multiples-prime-factorization>
+== 本章回顾 <meta:factors-multiples-prime-factorization>
 
 #blueprint[
   *知识速查卡*
@@ -32,7 +32,7 @@
   + 若一个数既是 4 的倍数，又是 6 的倍数，最小可能是多少？
 ]
 
-=== 参考答案
+==== 参考答案
 
 + 因数有 $1, 2, 3, 4, 6, 9, 12, 18, 36$；因为 $36 = 6 times 6$，所以 36 是 6 的倍数。
 + 135 能被 3、5 整除；248 能被 2 整除；410 能被 2、5 整除。
@@ -45,7 +45,7 @@
 + 错；3 是 24 的因数，24 才是 3 的倍数。
 + 12。
 
-=== 巩固复习
+==== 巩固复习
 
 + #secref("pf02-mul-div-structure") 把乘除看成“打包”和“拆开”；到了 #secref("pf03-factors-multiples")，这种结构眼光为什么能帮助我们判断一个数能否整齐分开？
 + #secref("pf03-primes-factorization") 里的质因数分解，和 #secref("pf04-fraction-equivalence") 里约分会怎样接起来？先提前猜一猜。

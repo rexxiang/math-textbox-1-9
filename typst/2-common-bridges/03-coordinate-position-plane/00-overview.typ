@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 平面直角坐标系与四象限 <ch:coordinate-position-plane>
+== 平面直角坐标系与四象限 <ch:coordinate-position-plane>
 
 #blueprint[
   *难度*：★★★☆☆ \

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-== 高中桥：十二条延伸 <tool:cp06-after-grade-9>
+=== 高中桥：十二条延伸 <tool:cp06-after-grade-9>
 
 高中数学不是全新内容，而是把本书的工具向四个方向*继续生长*。本节列出 12 条最直接的桥。每条桥标出：高中要学的新工具 / 它从本书哪节长出 / 一句“为什么它衔接这里”。
 

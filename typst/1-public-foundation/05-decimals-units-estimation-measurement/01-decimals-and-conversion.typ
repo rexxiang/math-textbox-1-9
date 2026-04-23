@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 小数与互化：位值继续向右长 <tool:pf05-decimals-conversion>
+=== 小数与互化：位值继续向右长 <tool:pf05-decimals-conversion>
 
 #vocab[小数 decimal / 十分位 tenths place / 互化 conversion]
 

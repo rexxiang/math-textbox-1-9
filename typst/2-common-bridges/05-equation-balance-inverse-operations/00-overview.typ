@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 方程：平衡与反向操作 <ch:equation-balance-inverse-operations>
+== 方程：平衡与反向操作 <ch:equation-balance-inverse-operations>
 
 #blueprint[
   *难度*：★★★☆☆ \

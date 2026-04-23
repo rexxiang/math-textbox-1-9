@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 数据展示与描述统计：数据的第一张脸 <ch:data-displays-descriptive-statistics>
+== 数据展示与描述统计：数据的第一张脸 <ch:data-displays-descriptive-statistics>
 
 #blueprint[
   *难度*：★★★☆☆ \

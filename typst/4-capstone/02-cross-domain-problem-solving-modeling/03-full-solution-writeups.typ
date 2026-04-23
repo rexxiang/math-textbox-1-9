@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-== 完整答卷示范：草稿 / 正式书写 / 回检 <tool:cp05-full-solution-writeups>
+=== 完整答卷示范：草稿 / 正式书写 / 回检 <tool:cp05-full-solution-writeups>
 
 自学者最缺的不是*会解题*，而是*会写一张完整、别人看得懂的答卷*。本节给 3 道题，把写答卷拆成三栏：
 

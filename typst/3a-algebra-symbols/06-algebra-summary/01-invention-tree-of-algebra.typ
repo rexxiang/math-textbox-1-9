@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-== 代数分支的知识地图 <meta:al-invention-tree>
+=== 代数分支的知识地图 <meta:al-invention-tree>
 
 #blueprint[
   *主干：从“字母代替数”到“方程与不等式”*

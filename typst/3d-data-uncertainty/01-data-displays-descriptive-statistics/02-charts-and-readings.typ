@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 从图里读数 & 识别误导图 <tool:dt02-charts-and-readings>
+=== 从图里读数 & 识别误导图 <tool:dt02-charts-and-readings>
 
 #vocab[趋势 trend / 对照 comparison / 误导图 misleading chart / 截断纵轴 truncated axis / 等宽分类 equal-width categories]
 

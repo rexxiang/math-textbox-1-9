@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 三类函数对照：一次 / 反比例 / 二次 <tool:fn09-comparing-function-families>
+=== 三类函数对照：一次 / 反比例 / 二次 <tool:fn09-comparing-function-families>
 
 #vocab[函数族 function family / 模型识别 model recognition]
 

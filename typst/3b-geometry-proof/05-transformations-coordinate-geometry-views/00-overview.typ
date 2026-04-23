@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 变换·坐标几何·视图 <ch:transformations-coordinate-geometry-views>
+== 变换·坐标几何·视图 <ch:transformations-coordinate-geometry-views>
 
 #blueprint[
   *难度*：★★★★☆ \

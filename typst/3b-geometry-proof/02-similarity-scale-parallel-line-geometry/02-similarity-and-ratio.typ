@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== 相似的含义：AA 判定与相似比 <tool:ge02-similarity-aa-ratio>
+=== 相似的含义：AA 判定与相似比 <tool:ge02-similarity-aa-ratio>
 
 #vocab[相似 similar / 相似比 similarity ratio / AA 判定 Angle-Angle similarity]
 

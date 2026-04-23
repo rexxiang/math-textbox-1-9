@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 韦达定理：从“解”反问“系数” <tool:al05-vieta>
+=== 韦达定理：从“解”反问“系数” <tool:al05-vieta>
 
 #vocab[韦达定理 Vieta's formulas / 根与系数的关系 root-coefficient relationship / 对称式 symmetric expression / 构造方程 constructing an equation]
 

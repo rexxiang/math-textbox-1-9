@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 平方根与无理数：给数轴补洞 <ch:square-root-irrational-number-line>
+== 平方根与无理数：给数轴补洞 <ch:square-root-irrational-number-line>
 
 #blueprint[
   *难度*：★★★☆☆ \

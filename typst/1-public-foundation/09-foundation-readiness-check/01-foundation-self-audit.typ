@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, tryit, secref
 
-== 自测诊断：四条主干有没有连起来 <tool:pf09-self-audit>
+=== 自测诊断：四条主干有没有连起来 <tool:pf09-self-audit>
 
 #blueprint[
   *公共基础的四条主干*

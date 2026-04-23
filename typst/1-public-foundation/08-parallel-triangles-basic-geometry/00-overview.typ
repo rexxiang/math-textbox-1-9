@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack
 
-= 平行、三角形与基础几何关系 <ch:parallel-triangles-basic-geometry>
+== 平行、三角形与基础几何关系 <ch:parallel-triangles-basic-geometry>
 
 #blueprint[
   *难度*：★★☆☆☆ \

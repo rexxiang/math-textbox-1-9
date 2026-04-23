@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, secref
 
-= 本章回顾 <meta:perimeter-area-volume-angle>
+== 本章回顾 <meta:perimeter-area-volume-angle>
 
 #blueprint[
   *知识速查卡*
@@ -32,7 +32,7 @@
   + 两个长方形周长都是 20，但一个是 8 × 2，一个是 6 × 4。哪个面积更大？说明原因。
 ]
 
-=== 参考答案
+==== 参考答案
 
 + 周长 $26$ 厘米，面积 $36$ 平方厘米。
 + 周长 $24$ 米，面积 $36$ 平方米。
@@ -45,7 +45,7 @@
 + $180°$（平角）。
 + $6 times 4 = 24$ 比 $8 times 2 = 16$ 大；形状更接近正方形的矩形，在同周长下面积更大。
 
-=== 巩固复习
+==== 巩固复习
 
 + 回看 #secref("pf02-mul-div-structure")：为什么“铺几行几列”和乘法结构是同一件事？这一章里哪两种量都在用这种结构？
 + 对照 #secref("pf05-units-measurement")：为什么周长、面积、体积都强调单位必须先统一？如果不统一会出什么错？

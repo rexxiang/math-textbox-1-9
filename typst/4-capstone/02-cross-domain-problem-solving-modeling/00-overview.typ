@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 跨领域解题与建模 <ch:cross-domain-problem-solving-modeling>
+== 跨领域解题与建模 <ch:cross-domain-problem-solving-modeling>
 
 #blueprint[
   *难度*：★★★★★ \

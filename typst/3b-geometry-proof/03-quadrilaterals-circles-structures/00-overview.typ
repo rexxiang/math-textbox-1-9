@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 四边形·圆·结构 <ch:quadrilaterals-circles-structures>
+== 四边形·圆·结构 <ch:quadrilaterals-circles-structures>
 
 #blueprint[
   *难度*：★★★★☆ \

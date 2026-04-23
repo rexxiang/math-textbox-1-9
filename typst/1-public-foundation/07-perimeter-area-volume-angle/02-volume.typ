@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 体积：用单位立方体堆出来 <tool:pf07-volume>
+=== 体积：用单位立方体堆出来 <tool:pf07-volume>
 
 #vocab[体积 volume / 单位立方体 unit cube / 立方单位 cubic unit]
 

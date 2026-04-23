@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 分式：结构、运算与增根 <ch:rational-expressions-operations-extraneous-roots>
+== 分式：结构、运算与增根 <ch:rational-expressions-operations-extraneous-roots>
 
 #blueprint[
   *难度*：★★★★☆ \

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack
 
-= 公共基础总检：准备进入共通桥梁 <meta:foundation-readiness-check>
+== 公共基础总检：准备进入共通桥梁 <meta:foundation-readiness-check>
 
 #blueprint[
   *难度*：★★☆☆☆ \

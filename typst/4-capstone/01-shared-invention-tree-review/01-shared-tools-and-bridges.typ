@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-== 公共基础与共通桥梁的跨分支复用 <tool:cp01-shared-tools-crossref>
+=== 公共基础与共通桥梁的跨分支复用 <tool:cp01-shared-tools-crossref>
 
 全书分成 6 个大块：公共基础、共通桥梁、代数、几何、函数、数据。四支分支各自独立生长，但它们*都建在公共基础与共通桥梁这 25 个基础概念上*。本节把哪些基础概念被*几个*分支同时使用排成一张可复查的表。
 

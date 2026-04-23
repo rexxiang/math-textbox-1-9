@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== 特殊直角三角形与三角比 <tool:ge04-special-right-triangles>
+=== 特殊直角三角形与三角比 <tool:ge04-special-right-triangles>
 
 #vocab[$30$–$60$–$90$ 三角形 / $45$–$45$–$90$ 三角形 / 正弦 sine $sin$ / 余弦 cosine $cos$ / 正切 tangent $tan$]
 

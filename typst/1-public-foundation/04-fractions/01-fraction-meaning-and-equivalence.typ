@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 分数的意义与等值 <tool:pf04-fraction-equivalence>
+=== 分数的意义与等值 <tool:pf04-fraction-equivalence>
 
 #vocab[分数 fraction / 等值分数 equivalent fractions / 均分 equal parts]
 

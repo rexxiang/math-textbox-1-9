@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 因式分解的流程与“中间项匹配” <tool:al02-factorization-as-reverse>
+=== 因式分解的流程与“中间项匹配” <tool:al02-factorization-as-reverse>
 
 #vocab[因式分解 factorization / 分解流程 factorization procedure / 中间项匹配 middle-term match]
 

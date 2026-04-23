@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 质数、合数与质因数分解 <tool:pf03-primes-factorization>
+=== 质数、合数与质因数分解 <tool:pf03-primes-factorization>
 
 #vocab[质数 prime number / 合数 composite number / 质因数分解 prime factorization]
 

@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== 圆的基础与圆周角定理 <tool:ge03-circle-basics-inscribed>
+=== 圆的基础与圆周角定理 <tool:ge03-circle-basics-inscribed>
 
 #vocab[圆心 center / 半径 radius / 弦 chord / 弧 arc / 圆心角 central angle / 圆周角 inscribed angle / Thales 定理 Thales' theorem]
 

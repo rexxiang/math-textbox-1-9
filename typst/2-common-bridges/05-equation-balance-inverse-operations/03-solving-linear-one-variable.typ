@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 反向操作解一元一次方程（简单系数）<tool:cb05-solving-linear>
+=== 反向操作解一元一次方程（简单系数）<tool:cb05-solving-linear>
 
 #vocab[反向操作 inverse operation / 一元一次方程 linear equation in one variable]
 

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery
 
-= 四则与运算结构：加减乘除、顺序与运算律 <ch:four-operations-structure>
+== 四则与运算结构：加减乘除、顺序与运算律 <ch:four-operations-structure>
 
 #blueprint[
   *难度*：★☆☆☆☆ \

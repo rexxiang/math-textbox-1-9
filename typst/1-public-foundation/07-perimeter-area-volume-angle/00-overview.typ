@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack
 
-= 周长、面积、体积与角 <ch:perimeter-area-volume-angle>
+== 周长、面积、体积与角 <ch:perimeter-area-volume-angle>
 
 #blueprint[
   *难度*：★★☆☆☆ \

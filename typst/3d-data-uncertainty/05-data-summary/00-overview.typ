@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 数据分支总结 <ch:data-summary>
+== 数据分支总结 <ch:data-summary>
 
 #blueprint[
   *难度*：★★★★☆ \

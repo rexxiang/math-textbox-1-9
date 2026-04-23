@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 本章回顾 <meta:shared-invention-tree-review>
+== 本章回顾 <meta:shared-invention-tree-review>
 
 #blueprint[
   *跨分支速查卡*

@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== 正比例函数：$y = k x$ <tool:fn04-direct-variation>
+=== 正比例函数：$y = k x$ <tool:fn04-direct-variation>
 
 #vocab[正比例函数 direct variation / 比例系数 constant of proportionality / 过原点直线 line through the origin]
 

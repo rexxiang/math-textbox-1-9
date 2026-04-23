@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 公式：函数的第三张面孔 <tool:fn03-formula-as-function-view>
+=== 公式：函数的第三张面孔 <tool:fn03-formula-as-function-view>
 
 #vocab[独立变量 independent variable / 因变量 dependent variable / 定义域 domain / 对应规则 rule of correspondence / 函数记号 function notation]
 

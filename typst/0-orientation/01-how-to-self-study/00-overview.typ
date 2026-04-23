@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack
 
-= 怎样自学这本书 <ch:how-to-self-study>
+== 怎样自学这本书 <ch:how-to-self-study>
 
 #blueprint[
   *核心问题*：怎样把"先试一试、暴露空白、补缺、再尝试"变成稳定的自学循环？ \

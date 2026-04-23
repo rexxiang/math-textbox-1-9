@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 平方差与完全平方：两条公式，正反两用 <tool:al02-special-identities>
+=== 平方差与完全平方：两条公式，正反两用 <tool:al02-special-identities>
 
 #vocab[平方差公式 difference of squares / 完全平方公式 perfect-square identity]
 

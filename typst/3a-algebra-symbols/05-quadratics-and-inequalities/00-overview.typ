@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 一元二次方程与不等式 <ch:quadratics-and-inequalities>
+== 一元二次方程与不等式 <ch:quadratics-and-inequalities>
 
 #blueprint[
   *难度*：★★★★★ \

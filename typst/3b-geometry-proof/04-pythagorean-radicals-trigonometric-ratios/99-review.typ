@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, side-hack, secref
 
-= 本章回顾 <meta:pythagorean-radicals-trigonometric-ratios>
+== 本章回顾 <meta:pythagorean-radicals-trigonometric-ratios>
 
 #blueprint[
   *知识速查卡*

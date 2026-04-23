@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 图形之间的关系：里外、相邻、相交、平行 <tool:pf06-shape-relations>
+=== 图形之间的关系：里外、相邻、相交、平行 <tool:pf06-shape-relations>
 
 #vocab[内部 interior / 边界 boundary / 外部 exterior / 相邻 adjacent / 相交 intersect / 平行 parallel (直观)]
 

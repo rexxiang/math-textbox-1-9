@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 勾股·根式·三角比 <ch:pythagorean-radicals-trigonometric-ratios>
+== 勾股·根式·三角比 <ch:pythagorean-radicals-trigonometric-ratios>
 
 #blueprint[
   *难度*：★★★★★ \

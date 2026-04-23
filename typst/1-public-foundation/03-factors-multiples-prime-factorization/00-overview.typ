@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery
 
-= 因数、倍数、整除与质因数分解 <ch:factors-multiples-prime-factorization>
+== 因数、倍数、整除与质因数分解 <ch:factors-multiples-prime-factorization>
 
 #blueprint[
   *难度*：★★☆☆☆ \

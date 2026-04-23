@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 分式的结构与化简 <tool:al03-rational-expression-structure>
+=== 分式的结构与化简 <tool:al03-rational-expression-structure>
 
 #vocab[分式 rational expression / 分式有意义 domain of a rational expression / 最简分式 irreducible rational expression / 约分 simplification]
 

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 模型选择：看表、看图、选函数 <tool:fn11-model-choice>
+=== 模型选择：看表、看图、选函数 <tool:fn11-model-choice>
 
 #vocab[建模 modeling / 模型选择 model selection / 拟合 fit / 趋势 trend]
 

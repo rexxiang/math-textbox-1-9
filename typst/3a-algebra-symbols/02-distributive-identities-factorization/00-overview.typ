@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 分配律、乘法公式与因式分解 <ch:distributive-identities-factorization>
+== 分配律、乘法公式与因式分解 <ch:distributive-identities-factorization>
 
 #blueprint[
   *难度*：★★★★☆ \

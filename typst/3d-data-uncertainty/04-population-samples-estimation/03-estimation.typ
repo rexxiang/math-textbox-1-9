@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": vocab, crisis, history-note, discovery, tryit, blueprint, pitfall, mastery
 
-== 点估计：用样本推总体 <tool:dt12-estimation>
+=== 点估计：用样本推总体 <tool:dt12-estimation>
 
 #vocab[
   *本节发明“用样本均值 $bar x$ 估总体均值 $mu$、用样本频率 $f_n$ 估总体比例 $p$”的点估计工具*，并刻画其*随机性*——每次抽样得到的估计值不同，但随 $n$ 增大集中到真值附近。

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, tryit, secref
 
-== 函数分支速查卡 <tool:functions-checklist>
+=== 函数分支速查卡 <tool:functions-checklist>
 
 #blueprint[
   *四族函数 + 一个现象 + 一条选择流程*

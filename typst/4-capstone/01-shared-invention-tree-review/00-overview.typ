@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 共同知识地图回顾 <ch:shared-invention-tree-review>
+== 共同知识地图回顾 <ch:shared-invention-tree-review>
 
 #blueprint[
   *难度*：★★★☆☆ \

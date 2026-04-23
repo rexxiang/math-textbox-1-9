@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, tryit, secref
 
-== 跨章综合练习 <meta:ge-synthesis-problems>
+=== 跨章综合练习 <meta:ge-synthesis-problems>
 
 #blueprint[
   *怎样用这一节*

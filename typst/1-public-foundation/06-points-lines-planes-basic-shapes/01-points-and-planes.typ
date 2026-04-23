@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 点与平面：两个没有“端”的几何原名 <tool:pf06-points-and-planes>
+=== 点与平面：两个没有“端”的几何原名 <tool:pf06-points-and-planes>
 
 #vocab[点 point / 平面 plane]
 

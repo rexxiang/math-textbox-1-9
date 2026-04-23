@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, side-hack, secref
 
-= 本章回顾 <meta:data-displays-descriptive-statistics>
+== 本章回顾 <meta:data-displays-descriptive-statistics>
 
 #blueprint[
   *知识速查卡*
@@ -51,7 +51,7 @@
 
 #pagebreak()
 
-== 参考答案 <meta:data-displays-descriptive-statistics-answers>
+=== 参考答案 <meta:data-displays-descriptive-statistics-answers>
 
 #mastery[
   + (a) 条形图或扇形图都可。(b) 总人数 $= 40$，稀饭占 $12 / 40 = 0.3$，圆心角 $= 360° times 0.3 = 108°$。(c) 各块之和 $= 360°$。验证：$108° + 90° + 72° + 54° + 36° = 360°$ ✓。

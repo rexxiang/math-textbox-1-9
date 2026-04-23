@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 分配律的双向使用 <tool:al02-distributive-rewrite>
+=== 分配律的双向使用 <tool:al02-distributive-rewrite>
 
 #vocab[乘法分配律 distributive law / 提公因式 factoring out the common factor]
 

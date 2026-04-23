@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 相反数与绝对值：方向与远近分开记 <tool:cb02-opposite-and-absolute>
+=== 相反数与绝对值：方向与远近分开记 <tool:cb02-opposite-and-absolute>
 
 #vocab[相反数 opposite / 绝对值 absolute value / 距离 distance]
 

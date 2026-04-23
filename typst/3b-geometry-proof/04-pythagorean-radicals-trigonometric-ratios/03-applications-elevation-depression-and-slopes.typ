@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== 仰角·俯角·坡度的实际测量 <tool:ge04-elevation-slope>
+=== 仰角·俯角·坡度的实际测量 <tool:ge04-elevation-slope>
 
 #vocab[仰角 angle of elevation / 俯角 angle of depression / 坡角 slope angle / 坡度（比） slope ratio / 水平距离 / 铅直距离]
 

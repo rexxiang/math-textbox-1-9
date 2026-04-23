@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== 抛物线：二次函数 $y = a x^2 + b x + c$ <tool:fn08-quadratic-function>
+=== 抛物线：二次函数 $y = a x^2 + b x + c$ <tool:fn08-quadratic-function>
 
 #vocab[二次函数 quadratic function / 抛物线 parabola / 顶点 vertex / 顶点式 vertex form / 对称轴 axis of symmetry]
 

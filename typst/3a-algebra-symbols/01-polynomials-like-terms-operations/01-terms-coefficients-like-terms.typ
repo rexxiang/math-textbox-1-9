@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 单项式、多项式与同类项 <tool:al01-terms-like>
+=== 单项式、多项式与同类项 <tool:al01-terms-like>
 
 #vocab[单项式 monomial / 系数 coefficient / 次数 degree / 多项式 polynomial / 项 term / 同类项 like terms]
 

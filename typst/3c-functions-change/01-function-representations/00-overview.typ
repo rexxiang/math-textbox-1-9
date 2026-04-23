@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 函数表示：表 / 图 / 公式三张面孔 <ch:function-representations>
+== 函数表示：表 / 图 / 公式三张面孔 <ch:function-representations>
 
 #blueprint[
   *难度*：★★★★☆ \

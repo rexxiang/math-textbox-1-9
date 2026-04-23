@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, secref
 
-= 本章回顾 <meta:distributive-identities-factorization>
+== 本章回顾 <meta:distributive-identities-factorization>
 
 #blueprint[
   *知识速查卡*

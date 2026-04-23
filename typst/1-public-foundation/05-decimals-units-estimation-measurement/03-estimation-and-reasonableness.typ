@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 估算与合理性检查 <tool:pf05-estimation-reasonableness>
+=== 估算与合理性检查 <tool:pf05-estimation-reasonableness>
 
 #vocab[估算 estimation / 近似 approximate value / 合理性 reasonableness]
 

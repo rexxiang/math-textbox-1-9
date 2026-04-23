@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-== 查漏指引：哪里不稳就回哪里 <tool:pf09-repair-routes>
+=== 查漏指引：哪里不稳就回哪里 <tool:pf09-repair-routes>
 
 #blueprint[
   *查漏表*

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 因数、倍数与整除线索 <tool:pf03-factors-multiples>
+=== 因数、倍数与整除线索 <tool:pf03-factors-multiples>
 
 #vocab[因数 factor / 倍数 multiple / 整除 divisibility]
 

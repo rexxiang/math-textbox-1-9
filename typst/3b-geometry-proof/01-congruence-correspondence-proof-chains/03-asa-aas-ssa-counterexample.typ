@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== ASA、AAS 与 SSA 反例：哪些判定能成、哪条不行 <tool:ge01-asa-aas-ssa>
+=== ASA、AAS 与 SSA 反例：哪些判定能成、哪条不行 <tool:ge01-asa-aas-ssa>
 
 #vocab[角边角 ASA / 角角边 AAS / SSA 反例 SSA counterexample]
 

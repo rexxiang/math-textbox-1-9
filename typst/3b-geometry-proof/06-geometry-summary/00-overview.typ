@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 几何总结 <ch:geometry-summary>
+== 几何总结 <ch:geometry-summary>
 
 #blueprint[
   *难度*：★★★★☆ \

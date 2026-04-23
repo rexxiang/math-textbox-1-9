@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-== 如何继续自学 <tool:cp07-keep-studying>
+=== 如何继续自学 <tool:cp07-keep-studying>
 
 本书结束之后，若没有老师带着，你会遇到的第一个问题不是*题难*，而是*节奏乱*。这一节给出一套基本可操作的自学日常。
 

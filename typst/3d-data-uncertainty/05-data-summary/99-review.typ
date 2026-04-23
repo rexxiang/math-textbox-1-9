@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": mastery, blueprint, side-hack, secref
 
-= 混合自测答案与分支总结 <meta:data-summary>
+== 混合自测答案与分支总结 <meta:data-summary>
 
 #mastery[
   *参考答案与讲解*

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 频率分布表：把一把数据排成结构 <tool:dt04-frequency-distributions>
+=== 频率分布表：把一把数据排成结构 <tool:dt04-frequency-distributions>
 
 #vocab[频数 frequency count / 频率 relative frequency / 分布表 frequency distribution table]
 

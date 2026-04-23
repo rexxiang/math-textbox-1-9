@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": mastery, side-hack
 
-= 本章回顾 <meta:symbols-invention-tree-repair-routes>
+== 本章回顾 <meta:symbols-invention-tree-repair-routes>
 
 本章给你三套导航工具：读懂符号的三步法、标注框的类型表，以及知识地图的查漏指引。
 

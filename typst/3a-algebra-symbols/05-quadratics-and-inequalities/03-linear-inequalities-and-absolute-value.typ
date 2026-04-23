@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 一元一次不等式与 $|x|$ 直觉 <tool:al05-linear-inequalities>
+=== 一元一次不等式与 $|x|$ 直觉 <tool:al05-linear-inequalities>
 
 #vocab[不等式 inequality / 解集 solution set / 不等式组 system of inequalities / 绝对值 absolute value]
 

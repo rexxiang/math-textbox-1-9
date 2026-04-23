@@ -11,7 +11,7 @@
 ]
 
 #pagebreak()
-#outline(title: [目录])
+#outline(title: [目录], depth: 2)
 #pagebreak()
 
 #set heading(numbering: none)
@@ -27,7 +27,10 @@
 #include "0-orientation/02-symbols-invention-tree-repair-routes/99-review.typ"
 
 #counter(heading).update(0)
-#set heading(numbering: "1.1")
+#set heading(numbering: (..nums) => {
+  let n = nums.pos()
+  if n.len() <= 2 { numbering("1.1", ..n) }
+})
 #set page(numbering: "1", header: main-page-header, footer: main-page-footer)
 #counter(page).update(1)
 

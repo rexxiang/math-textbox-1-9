@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, tryit, secref
 
-== 综合建模流程：读题 → 设元 → 关系 → 求解 → 回检 <tool:cp03-multi-step-modeling>
+=== 综合建模流程：读题 → 设元 → 关系 → 求解 → 回检 <tool:cp03-multi-step-modeling>
 
 #blueprint[
   *五步法*

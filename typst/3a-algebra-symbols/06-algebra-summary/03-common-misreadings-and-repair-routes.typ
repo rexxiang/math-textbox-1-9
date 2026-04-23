@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-== 代数学完后的常见误读与查漏指引 <meta:al-repair-routes>
+=== 代数学完后的常见误读与查漏指引 <meta:al-repair-routes>
 
 #blueprint[
   *代数最容易出现的 $10$ 类误读*

@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== 刚体变换与全等 <tool:ge05-rigid-transforms>
+=== 刚体变换与全等 <tool:ge05-rigid-transforms>
 
 #vocab[刚体变换 rigid motion / 平移 translation / 旋转 rotation / 反射（关于直线）reflection / 保距 distance-preserving / 对应点 corresponding points]
 

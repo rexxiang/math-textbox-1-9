@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-== 查漏指引手册 <tool:cp02-repair-route-playbook>
+=== 查漏指引手册 <tool:cp02-repair-route-playbook>
 
 卡住是*正常*的。问题不是“卡了”，而是“卡住之后*下一步到底做什么*”。本节给出 6 条典型的补缺样板线——凡遇到类似症状，照着线头补缺即可。
 

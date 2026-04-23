@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 分数运算：在共同单位上加减，在结构里乘除 <tool:pf04-fraction-arithmetic>
+=== 分数运算：在共同单位上加减，在结构里乘除 <tool:pf04-fraction-arithmetic>
 
 #vocab[分数加减 fraction addition and subtraction / 分数乘法 fraction multiplication / 分数除法 fraction division]
 

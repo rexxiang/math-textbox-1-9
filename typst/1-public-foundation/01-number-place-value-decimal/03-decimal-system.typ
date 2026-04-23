@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 十进制：满十换一个新单位 <tool:pf01-decimal-system>
+=== 十进制：满十换一个新单位 <tool:pf01-decimal-system>
 
 #vocab[十进制 decimal system / 进位 regrouping / 小数点 decimal point]
 

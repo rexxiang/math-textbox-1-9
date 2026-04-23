@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 证明链的书写：已知 → 推出 → 结论 <tool:ge01-two-step-proof-chain>
+=== 证明链的书写：已知 → 推出 → 结论 <tool:ge01-two-step-proof-chain>
 
 #vocab[证明 proof / 证明链 proof chain / 理由栏 reason column / 两步证明 two-step proof]
 

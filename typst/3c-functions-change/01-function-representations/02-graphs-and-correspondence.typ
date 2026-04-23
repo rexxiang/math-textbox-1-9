@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== 图像：函数的第二张面孔 <tool:fn02-graph-as-function-view>
+=== 图像：函数的第二张面孔 <tool:fn02-graph-as-function-view>
 
 #vocab[函数图像 graph of a function / 垂线检验 vertical line test / 单值性 single-valuedness]
 

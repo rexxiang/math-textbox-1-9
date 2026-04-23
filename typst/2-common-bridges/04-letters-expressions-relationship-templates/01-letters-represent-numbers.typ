@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 字母代替数：规则代替一次计算 <tool:cb04-letters-represent-numbers>
+=== 字母代替数：规则代替一次计算 <tool:cb04-letters-represent-numbers>
 
 #vocab[变量 variable / 常量 constant / 代数式 algebraic expression / 系数 coefficient]
 

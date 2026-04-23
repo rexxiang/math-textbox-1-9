@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 本章回顾：全书结束 <meta:next-learning-map-review>
+== 本章回顾：全书结束 <meta:next-learning-map-review>
 
 #blueprint[
   *速查卡：12 条高中桥*

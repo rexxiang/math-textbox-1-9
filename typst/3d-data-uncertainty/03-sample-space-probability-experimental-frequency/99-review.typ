@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, side-hack, secref
 
-= 本章回顾 <meta:sample-space-probability-experimental-frequency>
+== 本章回顾 <meta:sample-space-probability-experimental-frequency>
 
 #blueprint[
   *知识速查卡*
@@ -53,7 +53,7 @@
 
 #pagebreak()
 
-== 参考答案 <meta:sample-space-probability-experimental-frequency-answers>
+=== 参考答案 <meta:sample-space-probability-experimental-frequency-answers>
 
 #mastery[
   + (a) $|Omega| = 8$：$H H H, H H T, H T H, H T T, T H H, T H T, T T H, T T T$。(b) 恰 $1$ 次 $= \{H T T, T H T, T T H\} = 3 / 8$；至少 $1$ 次正面 $= 1 - P("全反") = 1 - 1 / 8 = 7 / 8$；$3$ 次都一样 $= \{H H H, T T T\} = 2 / 8 = 1 / 4$。

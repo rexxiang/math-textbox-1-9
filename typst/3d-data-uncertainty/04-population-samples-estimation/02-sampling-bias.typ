@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": vocab, crisis, history-note, discovery, tryit, blueprint, pitfall, mastery
 
-== 怎样抽样才不偏？ <tool:dt11-sampling-bias>
+=== 怎样抽样才不偏？ <tool:dt11-sampling-bias>
 
 #vocab[
   *本节发明一套“把抽样方式好坏说清楚”*的语言——简单随机抽样 SRS 是基准，偏差样本（方便样本、自选样本、无应答偏差）是反面教材。只有*公平抽样*的样本才可能代表总体。

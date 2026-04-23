@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 本章回顾：综合题答案与过关信号 <meta:algebra-summary-review>
+== 本章回顾：综合题答案与过关信号 <meta:algebra-summary-review>
 
 #blueprint[
   *综合题参考答案（§2）*

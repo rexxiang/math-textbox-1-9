@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 整式：项、合并与加减乘法 <ch:polynomials-like-terms-operations>
+== 整式：项、合并与加减乘法 <ch:polynomials-like-terms-operations>
 
 #blueprint[
   *难度*：★★★★☆ \

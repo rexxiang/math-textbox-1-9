@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== 斜率：把“每加 $1$ 单位 $x$，$y$ 变多少”写成数 <tool:fn06-slope-as-rate>
+=== 斜率：把“每加 $1$ 单位 $x$，$y$ 变多少”写成数 <tool:fn06-slope-as-rate>
 
 #vocab[斜率 slope / 变化率 rate of change / 水平变化 run / 铅直变化 rise]
 

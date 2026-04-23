@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 整式加减：去括号 + 合并同类项 <tool:al01-add-subtract-polynomials>
+=== 整式加减：去括号 + 合并同类项 <tool:al01-add-subtract-polynomials>
 
 #vocab[去括号 removing parentheses / 整式加减 adding and subtracting polynomials]
 

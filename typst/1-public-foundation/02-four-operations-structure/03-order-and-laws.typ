@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 运算顺序与运算律：让结构不走样 <tool:pf02-order-laws>
+=== 运算顺序与运算律：让结构不走样 <tool:pf02-order-laws>
 
 #vocab[运算顺序 order of operations / 运算律 laws of operations / 分配律 distributive law]
 

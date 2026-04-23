@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 简单立体：把平面图形“抬起来”得到的形状 <tool:pf06-simple-solids>
+=== 简单立体：把平面图形“抬起来”得到的形状 <tool:pf06-simple-solids>
 
 #vocab[立体图形 solid / 长方体 cuboid / 正方体 cube / 圆柱 cylinder / 棱锥 pyramid / 圆锥 cone / 球 sphere]
 

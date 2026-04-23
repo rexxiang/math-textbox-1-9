@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery
 
-= 分数：意义、等值、比较与运算 <ch:fractions>
+== 分数：意义、等值、比较与运算 <ch:fractions>
 
 #blueprint[
   *难度*：★★☆☆☆ \

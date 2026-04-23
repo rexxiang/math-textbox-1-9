@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 反比例 · 二次函数 <ch:inverse-proportion-quadratic-functions>
+== 反比例 · 二次函数 <ch:inverse-proportion-quadratic-functions>
 
 #blueprint[
   *难度*：★★★★★ \

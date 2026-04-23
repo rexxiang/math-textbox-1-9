@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 实验频率与概率：做得多了会稳定 <tool:dt09-experimental-frequency>
+=== 实验频率与概率：做得多了会稳定 <tool:dt09-experimental-frequency>
 
 #vocab[相对频率 relative frequency / 经验概率 empirical probability / 大数定律 law of large numbers（朴素版）]
 

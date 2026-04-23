@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 整式乘法：三种搭配一次打通 <tool:al01-multiply-polynomials>
+=== 整式乘法：三种搭配一次打通 <tool:al01-multiply-polynomials>
 
 #vocab[单项式乘法 monomial multiplication / 指数相加法则 law of exponents (product) / 多项式乘法 polynomial multiplication]
 

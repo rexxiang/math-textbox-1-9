@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, secref
 
-= 本章回顾 <meta:square-root-irrational-number-line>
+== 本章回顾 <meta:square-root-irrational-number-line>
 
 #blueprint[
   *知识速查卡*

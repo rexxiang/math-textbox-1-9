@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 最大公因数与最小公倍数 <tool:pf03-gcd-lcm>
+=== 最大公因数与最小公倍数 <tool:pf03-gcd-lcm>
 
 #vocab[最大公因数 greatest common divisor / 最小公倍数 least common multiple / 公共结构 common structure]
 

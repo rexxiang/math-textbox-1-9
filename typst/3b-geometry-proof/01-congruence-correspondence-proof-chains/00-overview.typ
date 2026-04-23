@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 全等·对应·证明链 <ch:congruence-correspondence-proof-chains>
+== 全等·对应·证明链 <ch:congruence-correspondence-proof-chains>
 
 #blueprint[
   *难度*：★★★★☆ \

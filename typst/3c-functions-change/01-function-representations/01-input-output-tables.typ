@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 输入 / 输出表：函数的第一张面孔 <tool:fn01-table-as-function-view>
+=== 输入 / 输出表：函数的第一张面孔 <tool:fn01-table-as-function-view>
 
 #vocab[函数 function / 输入 input / 输出 output / 对应 correspondence / 输入输出表 input-output table]
 

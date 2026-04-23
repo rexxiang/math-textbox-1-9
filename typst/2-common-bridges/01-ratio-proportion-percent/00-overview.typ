@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 比、比例与百分数 <ch:ratio-proportion-percent>
+== 比、比例与百分数 <ch:ratio-proportion-percent>
 
 #blueprint[
   *难度*：★★★☆☆ \

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 放缩规律、比例尺与测量 <tool:ge02-scale-and-measurement>
+=== 放缩规律、比例尺与测量 <tool:ge02-scale-and-measurement>
 
 #vocab[周长比 perimeter ratio / 面积比 area ratio / 比例尺 scale / 相似测量 similar-triangle measurement]
 

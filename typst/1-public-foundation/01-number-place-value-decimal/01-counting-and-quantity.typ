@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, vocab, tryit, pitfall
 
-== 计数与数量感 <tool:pf01-place-counting>
+=== 计数与数量感 <tool:pf01-place-counting>
 
 #vocab[计数 counting / 数量 quantity / 零 zero]
 

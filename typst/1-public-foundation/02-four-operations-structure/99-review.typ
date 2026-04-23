@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, secref
 
-= 本章回顾 <meta:four-operations-structure>
+== 本章回顾 <meta:four-operations-structure>
 
 #blueprint[
   *知识速查卡*
@@ -32,7 +32,7 @@
   + 用自己的话说明：为什么“先乘除后加减”不是随便定的，而是在保护式子的原本结构？
 ]
 
-=== 参考答案
+==== 参考答案
 
 + 因为加减互逆，若 $38 + 25 = 63$，就应有 $63 - 25 = 38$。
 + $4 times 6 = 24$；相关除法如 $24 div 4 = 6$ 或 $24 div 6 = 4$。
@@ -45,7 +45,7 @@
 + 他忽略了乘法优先，先把 3 和 4 加了。
 + 因为“4 times 5”先把 5 个 4 组织成一个整体，再和别的量相加；若先加，原来的情境结构就变了。
 
-=== 巩固复习
+==== 巩固复习
 
 + #secref("pf01-digits-place-value") 里我们说“一个数可以看成几个百、几个十、几个一”。这和 #secref("pf02-mul-div-structure") 里“几个相同小组”的思想有什么共同点？
 + 读一读 #secref("pf02-add-subtract-undo") 与 #secref("pf02-order-laws")，解释为什么运算律不是“乱改式子”，而是在不改变数量关系的前提下重排结构。

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": vocab, crisis, history-note, discovery, tryit, blueprint, pitfall, mastery
 
-== 总体 vs 样本 <tool:dt10-population-vs-sample>
+=== 总体 vs 样本 <tool:dt10-population-vs-sample>
 
 #vocab[
   *本节发明一套“把所有关心对象取个名字、再把手上能摸到的那一小撮取个名字”*的语言——总体 $\/$ 个体 $\/$ 样本 $\/$ 样本容量——为后两节“怎么抽 $+$ 怎么估”提供对象。

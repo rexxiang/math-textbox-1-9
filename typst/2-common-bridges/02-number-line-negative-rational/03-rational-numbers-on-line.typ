@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 有理数：把整数和分数都接回数轴 <tool:cb02-rational-numbers>
+=== 有理数：把整数和分数都接回数轴 <tool:cb02-rational-numbers>
 
 #vocab[有理数 rational number / 整数 $ZZ$ / 有理数集 $QQ$ / 稠密 dense]
 

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 三角形与内角和：三角合起来是一条直线 <tool:pf08-triangles-angle-sum>
+=== 三角形与内角和：三角合起来是一条直线 <tool:pf08-triangles-angle-sum>
 
 #vocab[三角形 triangle / 内角 interior angle / 内角和 angle sum]
 

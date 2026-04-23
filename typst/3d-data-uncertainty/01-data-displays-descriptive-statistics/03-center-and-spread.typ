@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 用一两个数字概括：center 与 spread <tool:dt03-center-and-spread>
+=== 用一两个数字概括：center 与 spread <tool:dt03-center-and-spread>
 
 #vocab[平均数 mean / 中位数 median / 众数 mode]
 

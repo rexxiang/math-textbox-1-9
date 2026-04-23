@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, side-hack, secref
 
-= 本章回顾 <meta:frequency-histograms-variance>
+== 本章回顾 <meta:frequency-histograms-variance>
 
 #blueprint[
   *知识速查卡*
@@ -50,7 +50,7 @@
 
 #pagebreak()
 
-== 参考答案 <meta:frequency-histograms-variance-answers>
+=== 参考答案 <meta:frequency-histograms-variance-answers>
 
 #mastery[
   + (a) 人数 $= 15, 35, 30, 15, 5$。和 $= 100$ ✓。频率和 $= 0.15 + 0.35 + 0.30 + 0.15 + 0.05 = 1.00$ ✓。(b) 横轴 $7$~$12$，条紧贴；五条高度（频率）$0.15, 0.35, 0.30, 0.15, 0.05$；*峰在 $[8, 9)$*。(c) 组距减半 $=>$ 档数加倍；每档频率一般会变小（同样的总人数被分到更多档），但*形状*变得更细腻。

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 频率分布直方图：给连续数据一张形状 <tool:dt05-histograms>
+=== 频率分布直方图：给连续数据一张形状 <tool:dt05-histograms>
 
 #vocab[直方图 histogram / 频率密度 frequency density / 左闭右开 left-closed right-open]
 

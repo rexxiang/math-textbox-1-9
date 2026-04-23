@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 样本空间、概率与实验频率 <ch:sample-space-probability-experimental-frequency>
+== 样本空间、概率与实验频率 <ch:sample-space-probability-experimental-frequency>
 
 #blueprint[
   *难度*：★★★★☆ \

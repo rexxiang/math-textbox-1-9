@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": mastery, side-hack
 
-= 本章回顾 <meta:how-to-self-study>
+== 本章回顾 <meta:how-to-self-study>
 
 本章给你的核心方法有两样：一个*自学循环*，和一张*查漏诊断表*。
 

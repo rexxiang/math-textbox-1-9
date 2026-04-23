@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 无理数：$sqrt(2)$ 不能写成分数 <tool:cb06-irrational-numbers>
+=== 无理数：$sqrt(2)$ 不能写成分数 <tool:cb06-irrational-numbers>
 
 #vocab[无理数 irrational number / 反证法 proof by contradiction / 既约分数 fraction in lowest terms]
 

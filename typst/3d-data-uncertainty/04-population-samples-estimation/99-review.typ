@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, side-hack, secref
 
-= 本章回顾 <meta:population-samples-estimation>
+== 本章回顾 <meta:population-samples-estimation>
 
 #blueprint[
   *知识速查卡*
@@ -47,7 +47,7 @@
 
 #pagebreak()
 
-== 参考答案 <meta:population-samples-estimation-answers>
+=== 参考答案 <meta:population-samples-estimation-answers>
 
 #mastery[
   + (a) 总体 $=$ 初三 $300$ 人；个体 $=$ 每一位初三同学；$n = 30$。(b) *不是*。打篮球的男生是*方便样本 $+$ 自选*——*严重偏高估*身高。(c) 给 $300$ 人编号 $1$~$300$，准备 $300$ 张写有编号的签；搅拌均匀后抽 $30$ 张（不放回）；对应编号的同学构成样本。

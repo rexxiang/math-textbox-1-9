@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 坐标直觉：一个点等于一个数对 <tool:pf08-coordinate-intuition>
+=== 坐标直觉：一个点等于一个数对 <tool:pf08-coordinate-intuition>
 
 #vocab[坐标 coordinate / 原点 origin / 横轴 $x$-axis / 纵轴 $y$-axis / 有序数对 ordered pair]
 

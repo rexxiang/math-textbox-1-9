@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 下一阶段学习地图 <ch:next-learning-map>
+== 下一阶段学习地图 <ch:next-learning-map>
 
 #blueprint[
   *难度*：★★★☆☆ \

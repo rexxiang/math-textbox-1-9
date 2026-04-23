@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, secref
 
-== 数据分支速查卡 <tool:data-checklist>
+=== 数据分支速查卡 <tool:data-checklist>
 
 #blueprint[
   *第 $1$ 层——描述（把数据看清楚）*

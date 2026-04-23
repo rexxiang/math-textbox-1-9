@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== 立体的三视图 <tool:ge05-orthographic-views>
+=== 立体的三视图 <tool:ge05-orthographic-views>
 
 #vocab[正视图 front view / 侧视图 side view / 俯视图 top view / 三视图 orthographic views / 平行投影 parallel projection]
 

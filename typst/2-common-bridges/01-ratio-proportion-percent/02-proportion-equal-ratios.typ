@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 比例：两个比相等 <tool:cb01-proportion>
+=== 比例：两个比相等 <tool:cb01-proportion>
 
 #vocab[比例 proportion / 外项 / 内项 / 交叉相乘 cross multiplication]
 

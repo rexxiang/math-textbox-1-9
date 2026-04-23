@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, tryit, secref
 
-== 通往函数分支的准备清单 <meta:ready-for-functions>
+=== 通往函数分支的准备清单 <meta:ready-for-functions>
 
 #blueprint[
   *前面学过的知识*

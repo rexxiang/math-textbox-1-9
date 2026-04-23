@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 字母、代数式与关系模板 <ch:letters-expressions-relationship-templates>
+== 字母、代数式与关系模板 <ch:letters-expressions-relationship-templates>
 
 #blueprint[
   *难度*：★★★☆☆ \

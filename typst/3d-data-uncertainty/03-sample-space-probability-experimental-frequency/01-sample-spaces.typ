@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 样本空间：把所有可能结果数清楚 <tool:dt07-sample-spaces>
+=== 样本空间：把所有可能结果数清楚 <tool:dt07-sample-spaces>
 
 #vocab[样本空间 sample space / 事件 event / 树状图 tree diagram]
 

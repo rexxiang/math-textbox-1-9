@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-== 几何学完后的常见误读与查漏指引 <meta:ge-repair-routes>
+=== 几何学完后的常见误读与查漏指引 <meta:ge-repair-routes>
 
 #blueprint[
   *几何最容易出现的 $10$ 类误读*

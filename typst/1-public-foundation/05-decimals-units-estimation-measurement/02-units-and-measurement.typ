@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 单位与测量：数值必须带尺子 <tool:pf05-units-measurement>
+=== 单位与测量：数值必须带尺子 <tool:pf05-units-measurement>
 
 #vocab[单位 unit / 测量 measurement / 换算 conversion]
 

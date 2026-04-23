@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, secref
 
-= 本章回顾 <meta:coordinate-position-plane>
+== 本章回顾 <meta:coordinate-position-plane>
 
 #blueprint[
   *知识速查卡*

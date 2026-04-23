@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== 勾股定理与根号边长 <tool:ge04-pythagorean>
+=== 勾股定理与根号边长 <tool:ge04-pythagorean>
 
 #vocab[直角三角形 right triangle / 直角边 leg / 斜边 hypotenuse / 勾股定理 Pythagorean theorem / 勾股逆定理 converse of the Pythagorean theorem / 根号边长 radical length]
 

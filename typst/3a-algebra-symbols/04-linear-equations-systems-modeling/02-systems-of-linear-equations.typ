@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 二元一次方程组：代入与加减消元 <tool:al04-systems-linear>
+=== 二元一次方程组：代入与加减消元 <tool:al04-systems-linear>
 
 #vocab[二元一次方程组 system of linear equations in two unknowns / 代入消元法 substitution / 加减消元法 elimination by addition or subtraction / 消元 elimination]
 

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 方差与标准差：比极差更细的一把尺子 <tool:dt06-variance>
+=== 方差与标准差：比极差更细的一把尺子 <tool:dt06-variance>
 
 #vocab[方差 variance / 标准差 standard deviation / 偏差 deviation / 离散程度 spread]
 

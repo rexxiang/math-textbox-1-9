@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 本章回顾：示范题答案与过关信号 <meta:cross-domain-problem-solving-modeling-review>
+== 本章回顾：示范题答案与过关信号 <meta:cross-domain-problem-solving-modeling-review>
 
 #blueprint[
   *§1 “你来试”参考答案*

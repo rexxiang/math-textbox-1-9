@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 增长模型与函数比较 <ch:growth-models-function-comparison>
+== 增长模型与函数比较 <ch:growth-models-function-comparison>
 
 #blueprint[
   *难度*：★★★★★ \

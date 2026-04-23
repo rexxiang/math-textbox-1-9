@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 加法与减法：合并与撤销 <tool:pf02-add-subtract-undo>
+=== 加法与减法：合并与撤销 <tool:pf02-add-subtract-undo>
 
 #vocab[加法 addition / 减法 subtraction / 互逆 inverse]
 

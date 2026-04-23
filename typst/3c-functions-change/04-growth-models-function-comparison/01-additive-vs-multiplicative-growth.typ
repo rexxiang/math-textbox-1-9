@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 加法增长 vs. 乘法增长 <tool:fn10-additive-vs-multiplicative-growth>
+=== 加法增长 vs. 乘法增长 <tool:fn10-additive-vs-multiplicative-growth>
 
 #vocab[加法增长 additive growth / 乘法增长 multiplicative growth / 线性增长 linear growth / 倍增 doubling]
 

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 一元一次方程的标准五步 <tool:al04-linear-one-variable>
+=== 一元一次方程的标准五步 <tool:al04-linear-one-variable>
 
 #vocab[去分母 clearing denominators / 去括号 distribution / 移项 transposition / 合并同类项 combining like terms / 系数化 1 normalizing leading coefficient]
 

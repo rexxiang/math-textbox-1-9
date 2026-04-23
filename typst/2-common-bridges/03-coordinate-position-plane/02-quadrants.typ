@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 四象限：平面被两条轴分成的四块 <tool:cb03-quadrants>
+=== 四象限：平面被两条轴分成的四块 <tool:cb03-quadrants>
 
 #vocab[象限 quadrant / 第一象限 / 第二象限 / 第三象限 / 第四象限]
 

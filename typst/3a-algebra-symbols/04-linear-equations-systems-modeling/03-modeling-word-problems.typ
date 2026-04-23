@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 建模：设元、译句与“答得合理” <tool:al04-modeling-word-problems>
+=== 建模：设元、译句与“答得合理” <tool:al04-modeling-word-problems>
 
 #vocab[设元 introducing an unknown / 等量关系 equality relation / 合理性检验 sanity check / 建模 modeling]
 

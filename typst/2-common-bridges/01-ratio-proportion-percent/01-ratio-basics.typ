@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 比：两个量相比的写法 <tool:cb01-ratio-basics>
+=== 比：两个量相比的写法 <tool:cb01-ratio-basics>
 
 #vocab[比 ratio / 前项 / 后项 / 比值 value of ratio]
 

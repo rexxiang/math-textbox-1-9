@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 直线、射线与线段：按“有没有端”分开的三种线 <tool:pf06-lines-rays-segments>
+=== 直线、射线与线段：按“有没有端”分开的三种线 <tool:pf06-lines-rays-segments>
 
 #vocab[直线 line / 射线 ray / 线段 segment / 端点 endpoint]
 

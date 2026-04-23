@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== 一次函数：$y = k x + b$ <tool:fn05-linear-function>
+=== 一次函数：$y = k x + b$ <tool:fn05-linear-function>
 
 #vocab[一次函数 linear function / 截距 y-intercept / 平移 translation]
 

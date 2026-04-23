@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== 反比例函数：$y = k / x$ <tool:fn07-inverse-proportion>
+=== 反比例函数：$y = k / x$ <tool:fn07-inverse-proportion>
 
 #vocab[反比例函数 inverse proportion / 双曲线 hyperbola / 常积关系 constant-product relation]
 

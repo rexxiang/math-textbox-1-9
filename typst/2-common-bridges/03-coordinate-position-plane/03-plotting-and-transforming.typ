@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 画点、读点与简单变换 <tool:cb03-plotting-transforming>
+=== 画点、读点与简单变换 <tool:cb03-plotting-transforming>
 
 #vocab[描点 plot / 平移 translation / 轴对称 reflection]
 

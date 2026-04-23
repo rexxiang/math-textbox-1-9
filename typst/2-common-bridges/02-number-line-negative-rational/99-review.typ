@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, secref
 
-= 本章回顾 <meta:number-line-negative-rational>
+== 本章回顾 <meta:number-line-negative-rational>
 
 #blueprint[
   *知识速查卡*

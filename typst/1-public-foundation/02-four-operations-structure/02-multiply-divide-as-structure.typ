@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 乘法与除法：相同结构的打包与拆分 <tool:pf02-mul-div-structure>
+=== 乘法与除法：相同结构的打包与拆分 <tool:pf02-mul-div-structure>
 
 #vocab[乘法 multiplication / 除法 division / 平均分 equal sharing]
 

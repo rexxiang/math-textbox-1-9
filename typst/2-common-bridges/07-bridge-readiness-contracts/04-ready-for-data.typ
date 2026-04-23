@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, tryit, secref
 
-== 通往数据分支的准备清单 <meta:ready-for-data>
+=== 通往数据分支的准备清单 <meta:ready-for-data>
 
 #blueprint[
   *前面学过的知识*

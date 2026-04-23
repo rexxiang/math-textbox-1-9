@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, tryit, secref
 
-== 函数分支混合自测 <tool:functions-mixed-self-test>
+=== 函数分支混合自测 <tool:functions-mixed-self-test>
 
 #blueprint[
   *题目*

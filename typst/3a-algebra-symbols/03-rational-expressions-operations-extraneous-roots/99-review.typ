@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, secref
 
-= 本章回顾 <meta:rational-expressions-operations-extraneous-roots>
+== 本章回顾 <meta:rational-expressions-operations-extraneous-roots>
 
 #blueprint[
   *知识速查卡*

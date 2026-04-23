@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 百分数：把比的尺子统一成 100 <tool:cb01-percent>
+=== 百分数：把比的尺子统一成 100 <tool:cb01-percent>
 
 #vocab[百分数 percent / 百分率 / 基数 / 比较量]
 

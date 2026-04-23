@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== SSS 与 SAS：两条最基本的判定法 <tool:ge01-sss-sas>
+=== SSS 与 SAS：两条最基本的判定法 <tool:ge01-sss-sas>
 
 #vocab[判定法 criterion / 边边边 SSS / 边角边 SAS]
 

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 数轴向左延伸：负数登场 <tool:cb02-number-line-extends-left>
+=== 数轴向左延伸：负数登场 <tool:cb02-number-line-extends-left>
 
 #vocab[数轴 number line / 原点 / 正数 / 负数 / 符号 sign]
 

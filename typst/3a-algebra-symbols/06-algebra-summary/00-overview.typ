@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 代数总结 <ch:algebra-summary>
+== 代数总结 <ch:algebra-summary>
 
 #blueprint[
   *难度*：★★★★☆ \

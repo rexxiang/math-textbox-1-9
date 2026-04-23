@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 数轴、负数与有理数 <ch:number-line-negative-rational>
+== 数轴、负数与有理数 <ch:number-line-negative-rational>
 
 #blueprint[
   *难度*：★★★☆☆ \

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 本章回顾：综合题答案与过关信号 <meta:geometry-summary>
+== 本章回顾：综合题答案与过关信号 <meta:geometry-summary>
 
 #blueprint[
   *综合题参考答案（§2）*

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 相似·放缩·平行线几何 <ch:similarity-scale-parallel-line-geometry>
+== 相似·放缩·平行线几何 <ch:similarity-scale-parallel-line-geometry>
 
 #blueprint[
   *难度*：★★★★☆ \

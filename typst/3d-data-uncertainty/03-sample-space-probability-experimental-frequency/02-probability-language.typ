@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 古典概率：把可能性量化到 $[0, 1]$ <tool:dt08-probability-language>
+=== 古典概率：把可能性量化到 $[0, 1]$ <tool:dt08-probability-language>
 
 #vocab[古典概率 classical probability / 对立事件 complement / 互斥事件 mutually exclusive]
 

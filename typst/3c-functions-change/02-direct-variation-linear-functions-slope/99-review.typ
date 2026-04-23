@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, side-hack, secref
 
-= 本章回顾 <meta:direct-variation-linear-functions-slope>
+== 本章回顾 <meta:direct-variation-linear-functions-slope>
 
 #blueprint[
   *知识速查卡*

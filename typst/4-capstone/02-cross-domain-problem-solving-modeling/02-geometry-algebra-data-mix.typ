@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, tryit, secref
 
-== 跨领域已解案例：几何·代数·函数·数据 <tool:cp04-cross-domain-mix>
+=== 跨领域已解案例：几何·代数·函数·数据 <tool:cp04-cross-domain-mix>
 
 本节给 4 道*已解案例*，每道题标出“使用哪些分支工具”以及“为何该用它们”。
 

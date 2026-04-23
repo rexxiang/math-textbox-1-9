@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, secref
 
-= 本章回顾 <meta:linear-equations-systems-modeling>
+== 本章回顾 <meta:linear-equations-systems-modeling>
 
 #blueprint[
   *知识速查卡*

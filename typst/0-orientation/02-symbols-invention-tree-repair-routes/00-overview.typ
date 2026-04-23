@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack
 
-= 符号、知识地图与查漏路线 <ch:symbols-invention-tree-repair-routes>
+== 符号、知识地图与查漏路线 <ch:symbols-invention-tree-repair-routes>
 
 #blueprint[
   *核心问题*：看到符号、知识地图和查漏提示时，我该怎样把它们变成自学导航，而不是装饰信息？ \

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 抽样：从部分看整体 <ch:population-samples-estimation>
+== 抽样：从部分看整体 <ch:population-samples-estimation>
 
 #blueprint[
   *难度*：★★★★☆ \

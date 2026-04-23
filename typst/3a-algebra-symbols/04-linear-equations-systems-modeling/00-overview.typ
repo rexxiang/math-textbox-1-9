@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 一元一次方程、方程组与建模 <ch:linear-equations-systems-modeling>
+== 一元一次方程、方程组与建模 <ch:linear-equations-systems-modeling>
 
 #blueprint[
   *难度*：★★★★☆ \

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 数字符号与位值 <tool:pf01-digits-place-value>
+=== 数字符号与位值 <tool:pf01-digits-place-value>
 
 #vocab[数字 digit / 数 number / 位值 place value]
 

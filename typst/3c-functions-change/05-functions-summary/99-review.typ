@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 本章回顾：综合题答案与过关信号 <meta:functions-summary-review>
+== 本章回顾：综合题答案与过关信号 <meta:functions-summary-review>
 
 #blueprint[
   *混合自测参考答案（§2）*

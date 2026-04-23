@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 桥梁准备清单：进入四条分支之前的自检 <meta:bridge-readiness-contracts>
+== 桥梁准备清单：进入四条分支之前的自检 <meta:bridge-readiness-contracts>
 
 #blueprint[
   *难度*：★★★☆☆ \

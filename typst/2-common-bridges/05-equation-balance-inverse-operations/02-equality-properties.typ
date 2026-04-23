@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 等式性质：保持天平平衡 <tool:cb05-equality-properties>
+=== 等式性质：保持天平平衡 <tool:cb05-equality-properties>
 
 #vocab[等式性质 properties of equality / 同加同减 / 同乘同除]
 

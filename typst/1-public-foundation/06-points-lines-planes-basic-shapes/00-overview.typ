@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack
 
-= 点、线、面与基本图形 <ch:points-lines-planes-basic-shapes>
+== 点、线、面与基本图形 <ch:points-lines-planes-basic-shapes>
 
 #blueprint[
   *难度*：★☆☆☆☆ \

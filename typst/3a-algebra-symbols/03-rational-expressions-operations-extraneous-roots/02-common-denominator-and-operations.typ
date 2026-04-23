@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 通分、分式加减与乘除 <tool:al03-common-denominator-operations>
+=== 通分、分式加减与乘除 <tool:al03-common-denominator-operations>
 
 #vocab[通分 finding a common denominator / 最简公分母 least common denominator / 分式加减 adding and subtracting rational expressions / 分式乘除 multiplying and dividing rational expressions]
 

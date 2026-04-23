@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 本章回顾：你已经准备好进入共通桥梁 <meta:foundation-readiness-check-review>
+== 本章回顾：你已经准备好进入共通桥梁 <meta:foundation-readiness-check-review>
 
 #blueprint[
   *参考答案：自测诊断（§9.1）*
@@ -47,7 +47,7 @@
   以上五条都能打勾，就正式进入共通共通桥梁 —— 比 / 数轴 / 坐标 / 字母 / 方程 / 平方根 正等着你。
 ]
 
-=== 巩固复习入口
+==== 巩固复习入口
 
 + 如果诊断 1 卡住：回到 #secref("pf02-order-laws") 与 #secref("pf04-fraction-equivalence")。
 + 如果诊断 2 卡住：回到 #secref("pf04-fraction-comparison") 与 #secref("pf05-decimals-conversion")。

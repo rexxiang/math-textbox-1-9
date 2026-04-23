@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
 
-== 平行线与横截线：一张图里的角关系 <tool:pf08-parallel-transversal>
+=== 平行线与横截线：一张图里的角关系 <tool:pf08-parallel-transversal>
 
 #vocab[平行 parallel / 横截线 transversal / 同位角 corresponding / 内错角 alternate / 同旁内角 co-interior]
 

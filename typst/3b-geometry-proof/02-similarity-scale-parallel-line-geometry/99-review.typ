@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, secref
 
-= 本章回顾 <meta:similarity-scale-parallel-line-geometry>
+== 本章回顾 <meta:similarity-scale-parallel-line-geometry>
 
 #blueprint[
   *知识速查卡*

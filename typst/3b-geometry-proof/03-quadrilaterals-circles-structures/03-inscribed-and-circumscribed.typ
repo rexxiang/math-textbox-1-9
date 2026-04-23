@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 #import "../../lib/diagram-packages.typ": cetz
 
-== 内接与外接：三角形、四边形与正多边形的圆 <tool:ge03-inscribed-circumscribed>
+=== 内接与外接：三角形、四边形与正多边形的圆 <tool:ge03-inscribed-circumscribed>
 
 #vocab[内接 inscribed / 外接 circumscribed / 外心 circumcenter / 内心 incenter / 外接圆 circumcircle / 内切圆 incircle]
 

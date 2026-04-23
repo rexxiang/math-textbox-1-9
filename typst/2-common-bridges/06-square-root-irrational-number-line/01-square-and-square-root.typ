@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 平方、平方根与算术平方根 <tool:cb06-square-and-square-root>
+=== 平方、平方根与算术平方根 <tool:cb06-square-and-square-root>
 
 #vocab[平方 square / 平方根 square root / 算术平方根 principal square root / 根号 radical sign]
 

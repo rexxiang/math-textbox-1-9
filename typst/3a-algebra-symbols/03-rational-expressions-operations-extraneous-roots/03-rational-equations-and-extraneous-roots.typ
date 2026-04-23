@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
 
-== 分式方程与增根 <tool:al03-rational-equations-and-extraneous-roots>
+=== 分式方程与增根 <tool:al03-rational-equations-and-extraneous-roots>
 
 #vocab[分式方程 rational equation / 去分母 clearing denominators / 增根 extraneous root / 验根 checking the solution]
 

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-= 频率分布、直方图与方差 <ch:frequency-histograms-variance>
+== 频率分布、直方图与方差 <ch:frequency-histograms-variance>
 
 #blueprint[
   *难度*：★★★★☆ \

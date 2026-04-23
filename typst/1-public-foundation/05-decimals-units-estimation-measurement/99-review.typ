@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, secref
 
-= 本章回顾 <meta:decimals-units-estimation-measurement>
+== 本章回顾 <meta:decimals-units-estimation-measurement>
 
 #blueprint[
   *知识速查卡*
@@ -32,7 +32,7 @@
   + 如果计算出一瓶 1.5 升果汁平均分给 3 人，每人得到 0.05 升，这个答案哪里不对？
 ]
 
-=== 参考答案
+==== 参考答案
 
 + $0.45 = 45/100 = 9/20 = 45%$。
 + $5/8 = 0.625 = 62.5%$，所以 $5/8 > 62% > 0.6$。
@@ -45,7 +45,7 @@
 + 先看数量级是否合理：课桌通常不会有门那么长，6 米明显过大。
 + 因为 1.5 升平均分成 3 份应接近 0.5 升；0.05 升小了 10 倍。
 
-=== 巩固复习
+==== 巩固复习
 
 + #secref("pf01-decimal-system") 里的位值系统，如何在 #secref("pf05-decimals-conversion") 中继续支持小数与分数互化？
 + 对照 #secref("pf04-fraction-comparison") 和 #secref("pf05-units-measurement")：为什么“先统一标准”既适用于分数比较，也适用于单位换算与测量？

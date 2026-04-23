@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, tryit, secref
 
-== 通往代数分支的准备清单 <meta:ready-for-algebra>
+=== 通往代数分支的准备清单 <meta:ready-for-algebra>
 
 #blueprint[
   *前面学过的知识*
