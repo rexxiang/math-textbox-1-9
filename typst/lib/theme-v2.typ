@@ -77,6 +77,8 @@
 #let secref(id) = context {
   let lbl = if id in _meta-label {
     label(_meta-label.at(id))
+  } else if id.starts-with("ch:") or id.starts-with("meta:") or id.starts-with("tool:") {
+    label(id)
   } else {
     label("tool:" + id)
   }
@@ -121,25 +123,25 @@
 }
 
 #let crisis(body) = invention-box(
-  [现代困境],
+  [一、遇到的问题],
   rgb("#C62828"), rgb("#FFCDD2"), rgb("#B71C1C"),
   body,
 )
 
 #let discovery(body) = invention-box(
-  [探索发现],
+  [二、想一想],
   rgb("#EF6C00"), rgb("#FFE0B2"), rgb("#E65100"),
   body,
 )
 
 #let blueprint(body) = invention-box(
-  [工具蓝图],
+  [三、这节的方法],
   rgb("#1565C0"), rgb("#BBDEFB"), rgb("#0D47A1"),
   body,
 )
 
 #let mastery(body) = invention-box(
-  [工具磨砺],
+  [四、练一练],
   rgb("#2E7D32"), rgb("#C8E6C9"), rgb("#1B5E20"),
   body,
 )
@@ -161,8 +163,8 @@
   ]
 }
 
-#let history-note(body) = side-note([历史注脚], rgb("#FFA726"), rgb("#E65100"), body)
-#let side-hack(body)    = side-note([认知捷径], rgb("#66BB6A"), rgb("#2E7D32"), body)
+#let history-note(body) = side-note([小历史], rgb("#FFA726"), rgb("#E65100"), body)
+#let side-hack(body)    = side-note([小提示], rgb("#66BB6A"), rgb("#2E7D32"), body)
 #let vocab(body)        = side-note([术语],     rgb("#78909C"), rgb("#546E7A"), body)
 
 // ── 试一试（例题前的主动尝试提示，虚线蓝框）────────────────────────
@@ -181,7 +183,7 @@
       width: 100%,
       fill: rgb("#E3F2FD"),
       inset: (x: 10pt, y: 5pt),
-    )[#text(weight: "bold", fill: rgb("#0D47A1"), size: 10pt)[✏ 试一试]]
+    )[#text(weight: "bold", fill: rgb("#0D47A1"), size: 10pt)[先试一下]]
     #block(
       width: 100%,
       fill: rgb("#F8FBFF"),
@@ -206,7 +208,7 @@
       width: 100%,
       fill: rgb("#FFECB3"),
       inset: (x: 10pt, y: 5pt),
-    )[#text(weight: "bold", fill: rgb("#B71C1C"), size: 10pt)[⚠ 常见陷阱]]
+    )[#text(weight: "bold", fill: rgb("#B71C1C"), size: 10pt)[常见陷阱]]
     #block(
       width: 100%,
       fill: rgb("#FFFDE7"),
@@ -215,7 +217,7 @@
   ]
 }
 
-// ── 数学实验室（动手探究活动，紫色边框）────────────────────────────
+// ── 动手试试（动手探究活动，紫色边框）────────────────────────────
 
 #let lab(body) = {
   block(
@@ -231,7 +233,7 @@
       width: 100%,
       fill: rgb("#EDE7F6"),
       inset: (x: 10pt, y: 5pt),
-    )[#text(weight: "bold", fill: rgb("#4A148C"), size: 10pt)[🔬 数学实验室]]
+    )[#text(weight: "bold", fill: rgb("#4A148C"), size: 10pt)[动手试试]]
     #block(
       width: 100%,
       fill: rgb("#F9F5FF"),

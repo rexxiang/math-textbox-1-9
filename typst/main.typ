@@ -18,136 +18,118 @@
 #counter(page).update(1)
 #set page(numbering: "i", header: none, footer: frontmatter-page-footer)
 
-// 导读
-= 导读与使用导航
-#include "0-orientation/0-o00-welcome.typ"
-#include "0-orientation/0-o01-how-to-use.typ"
-#include "0-orientation/0-o02-symbols.typ"
-#include "0-orientation/0-o03-invention-tree.typ"
+// 导读（前言：罗马页码，无章号）
+= 导读
+
+#include "0-orientation/01-how-to-self-study/00-overview.typ"
+#include "0-orientation/01-how-to-self-study/99-review.typ"
+#include "0-orientation/02-symbols-invention-tree-repair-routes/00-overview.typ"
+#include "0-orientation/02-symbols-invention-tree-repair-routes/99-review.typ"
 
 #counter(heading).update(0)
 #set heading(numbering: "1.1")
 #set page(numbering: "1", header: main-page-header, footer: main-page-footer)
 #counter(page).update(1)
 
-// a 域：数感（ℕ→ℤ→ℚ→ℝ + 四则 + 位值 + 比例）
-= 数感
-#include "1a-number-sense/0-a00-overview-counting.typ"
-#include "1a-number-sense/0-a01-overview-fraction-ratio-foundation.typ"
-#include "1a-number-sense/0-a02-overview-number-line-algebra-bridge.typ"
-#include "1a-number-sense/1-a01-natural-number.typ"
-#include "1a-number-sense/1-a04-digit.typ"
-#include "1a-number-sense/1-a07-addition.typ"
-#include "1a-number-sense/1-a10-multiplication.typ"
-#include "1a-number-sense/1-a13-order-of-operations.typ"
-#include "1a-number-sense/1-a15-add-commutative.typ"
-#include "1a-number-sense/1-a17-mul-commutative.typ"
-#include "1a-number-sense/1-a20-factor-multiple.typ"
-#include "1a-number-sense/1-a23-prime.typ"
-#include "1a-number-sense/1-a25-prime-factorization.typ"
-#include "1a-number-sense/1-a28-fraction-definition.typ"
-#include "1a-number-sense/1-a31-mixed-number.typ"
-#include "1a-number-sense/1-a34-simplify.typ"
-#include "1a-number-sense/1-a38-fraction-add-sub.typ"
-#include "1a-number-sense/1-a41-decimal.typ"
-#include "1a-number-sense/1-a44-ratio.typ"
-#include "1a-number-sense/1-a47-decimal-fraction-conversion.typ"
-#include "1a-number-sense/1-a49-number-line.typ"
-#include "1a-number-sense/1-a52-opposite-number.typ"
-#include "1a-number-sense/1-a55-irrational-number.typ"
-#include "1a-number-sense/4-a00-review-counting.typ"
-#include "1a-number-sense/4-a01-review-fraction-ratio-foundation.typ"
-#include "1a-number-sense/4-a02-review-number-line-algebra-bridge.typ"
+// 1-public-foundation
+= 公共基础
+#include "1-public-foundation/01-number-place-value-decimal/00-overview.typ"
+#include "1-public-foundation/01-number-place-value-decimal/99-review.typ"
+#include "1-public-foundation/02-four-operations-structure/00-overview.typ"
+#include "1-public-foundation/02-four-operations-structure/99-review.typ"
+#include "1-public-foundation/03-factors-multiples-prime-factorization/00-overview.typ"
+#include "1-public-foundation/03-factors-multiples-prime-factorization/99-review.typ"
+#include "1-public-foundation/04-fractions/00-overview.typ"
+#include "1-public-foundation/04-fractions/99-review.typ"
+#include "1-public-foundation/05-decimals-units-estimation-measurement/00-overview.typ"
+#include "1-public-foundation/05-decimals-units-estimation-measurement/99-review.typ"
+#include "1-public-foundation/06-points-lines-planes-basic-shapes/00-overview.typ"
+#include "1-public-foundation/06-points-lines-planes-basic-shapes/99-review.typ"
+#include "1-public-foundation/07-perimeter-area-volume-angle/00-overview.typ"
+#include "1-public-foundation/07-perimeter-area-volume-angle/99-review.typ"
+#include "1-public-foundation/08-parallel-triangles-basic-geometry/00-overview.typ"
+#include "1-public-foundation/08-parallel-triangles-basic-geometry/99-review.typ"
+#include "1-public-foundation/09-foundation-readiness-check/00-overview.typ"
+#include "1-public-foundation/09-foundation-readiness-check/99-review.typ"
 
-// b 域：形状（点线面 + 周长面积体积 + 角平行 + 坐标入门）
-= 形状
-#include "1b-shapes/0-b00-overview-geometry-foundation.typ"
-#include "1b-shapes/1-b01-point.typ"
-#include "1b-shapes/1-b04-ray.typ"
-#include "1b-shapes/1-b07-triangle.typ"
-#include "1b-shapes/1-b10-perimeter.typ"
-#include "1b-shapes/1-b13-area.typ"
-#include "1b-shapes/1-b17-volume.typ"
-#include "1b-shapes/1-b20-angle.typ"
-#include "1b-shapes/1-b23-acute-angle.typ"
-#include "1b-shapes/1-b26-complementary.typ"
-#include "1b-shapes/1-b29-parallel-lines.typ"
-#include "1b-shapes/1-b32-co-interior-supplementary.typ"
-#include "1b-shapes/1-b36-coordinate-system.typ"
-#include "1b-shapes/4-b00-review-geometry-foundation.typ"
+// 2-common-bridges
+= 共通桥梁
+#include "2-common-bridges/01-ratio-proportion-percent/00-overview.typ"
+#include "2-common-bridges/01-ratio-proportion-percent/99-review.typ"
+#include "2-common-bridges/02-number-line-negative-rational/00-overview.typ"
+#include "2-common-bridges/02-number-line-negative-rational/99-review.typ"
+#include "2-common-bridges/03-coordinate-position-plane/00-overview.typ"
+#include "2-common-bridges/03-coordinate-position-plane/99-review.typ"
+#include "2-common-bridges/04-letters-expressions-relationship-templates/00-overview.typ"
+#include "2-common-bridges/04-letters-expressions-relationship-templates/99-review.typ"
+#include "2-common-bridges/05-equation-balance-inverse-operations/00-overview.typ"
+#include "2-common-bridges/05-equation-balance-inverse-operations/99-review.typ"
+#include "2-common-bridges/06-square-root-irrational-number-line/00-overview.typ"
+#include "2-common-bridges/06-square-root-irrational-number-line/99-review.typ"
+#include "2-common-bridges/07-bridge-readiness-contracts/00-overview.typ"
+#include "2-common-bridges/07-bridge-readiness-contracts/99-review.typ"
 
-// 基础总结闸门
-= 基础收束与分支起步
-#include "2-foundation-transition/2-t00-overview.typ"
-#include "2-foundation-transition/2-t01-foundation-check.typ"
-#include "2-foundation-transition/2-t02-branch-entry-recaps.typ"
-#include "2-foundation-transition/2-t03-review.typ"
+// 3a-algebra-symbols
+= 代数与符号
+#include "3a-algebra-symbols/01-polynomials-like-terms-operations/00-overview.typ"
+#include "3a-algebra-symbols/01-polynomials-like-terms-operations/99-review.typ"
+#include "3a-algebra-symbols/02-distributive-identities-factorization/00-overview.typ"
+#include "3a-algebra-symbols/02-distributive-identities-factorization/99-review.typ"
+#include "3a-algebra-symbols/03-rational-expressions-operations-extraneous-roots/00-overview.typ"
+#include "3a-algebra-symbols/03-rational-expressions-operations-extraneous-roots/99-review.typ"
+#include "3a-algebra-symbols/04-linear-equations-systems-modeling/00-overview.typ"
+#include "3a-algebra-symbols/04-linear-equations-systems-modeling/99-review.typ"
+#include "3a-algebra-symbols/05-quadratics-and-inequalities/00-overview.typ"
+#include "3a-algebra-symbols/05-quadratics-and-inequalities/99-review.typ"
+#include "3a-algebra-symbols/06-algebra-summary/00-overview.typ"
+#include "3a-algebra-symbols/06-algebra-summary/99-review.typ"
 
-// c 域：符号（字母式 + 整式 + 幂 + 因式分解 + 方程/不等式/分式）
-= 符号
-#include "3a-symbols/0-c00-overview-algebra-deepening.typ"
-#include "3a-symbols/1-c01-variable.typ"
-#include "3a-symbols/1-c04-equation.typ"
-#include "3a-symbols/1-c07-polynomial.typ"
-#include "3a-symbols/1-c12-polynomial-multiply.typ"
-#include "3a-symbols/1-c15-power-notation.typ"
-#include "3a-symbols/1-c18-zero-exponent.typ"
-#include "3a-symbols/1-c21-factorization.typ"
-#include "3a-symbols/1-c25-rational-expression.typ"
-#include "3a-symbols/1-c28-common-denominator.typ"
-#include "3a-symbols/1-c31-rational-equation.typ"
-#include "3a-symbols/1-c34-linear-equation.typ"
-#include "3a-symbols/2-c00-foundation-summary.typ"
-#include "3a-symbols/3-c37-system-of-equations.typ"
-#include "3a-symbols/3-c40-quadratic-equation.typ"
-#include "3a-symbols/3-c45-inequality.typ"
-#include "3a-symbols/4-c00-review-algebra-deepening.typ"
+// 3b-geometry-proof
+= 几何与证明
+#include "3b-geometry-proof/01-congruence-correspondence-proof-chains/00-overview.typ"
+#include "3b-geometry-proof/01-congruence-correspondence-proof-chains/99-review.typ"
+#include "3b-geometry-proof/02-similarity-scale-parallel-line-geometry/00-overview.typ"
+#include "3b-geometry-proof/02-similarity-scale-parallel-line-geometry/99-review.typ"
+#include "3b-geometry-proof/03-quadrilaterals-circles-structures/00-overview.typ"
+#include "3b-geometry-proof/03-quadrilaterals-circles-structures/99-review.typ"
+#include "3b-geometry-proof/04-pythagorean-radicals-trigonometric-ratios/00-overview.typ"
+#include "3b-geometry-proof/04-pythagorean-radicals-trigonometric-ratios/99-review.typ"
+#include "3b-geometry-proof/05-transformations-coordinate-geometry-views/00-overview.typ"
+#include "3b-geometry-proof/05-transformations-coordinate-geometry-views/99-review.typ"
+#include "3b-geometry-proof/06-geometry-summary/00-overview.typ"
+#include "3b-geometry-proof/06-geometry-summary/99-review.typ"
 
-// d 域：几何证明（全等/相似/圆/勾股/三角比/变换/视图）
-= 几何证明
-#include "3b-geometry-proof/0-d00-overview-geometry-deepening.typ"
-#include "3b-geometry-proof/1-d01-congruence-definition.typ"
-#include "3b-geometry-proof/1-d04-sss-criterion.typ"
-#include "3b-geometry-proof/1-d07-asa-criterion.typ"
-#include "3b-geometry-proof/1-d10-similar-triangles.typ"
-#include "3b-geometry-proof/1-d14-quadrilateral-angle-sum.typ"
-#include "3b-geometry-proof/1-d17-rectangle.typ"
-#include "3b-geometry-proof/1-d20-radius-linking.typ"
-#include "3b-geometry-proof/2-d00-foundation-summary.typ"
-#include "3b-geometry-proof/3-d23-pythagorean-theorem.typ"
-#include "3b-geometry-proof/3-d26-trigonometric-ratios.typ"
-#include "3b-geometry-proof/3-d29-elevation-depression.typ"
-#include "3b-geometry-proof/3-d32-rigid-transformations.typ"
-#include "3b-geometry-proof/3-d35-orthographic-projection.typ"
-#include "3b-geometry-proof/3-d37-regular-polygon-inscribed.typ"
-#include "3b-geometry-proof/4-d00-review-geometry-deepening.typ"
+// 3c-functions-change
+= 函数与变化
+#include "3c-functions-change/01-function-representations/00-overview.typ"
+#include "3c-functions-change/01-function-representations/99-review.typ"
+#include "3c-functions-change/02-direct-variation-linear-functions-slope/00-overview.typ"
+#include "3c-functions-change/02-direct-variation-linear-functions-slope/99-review.typ"
+#include "3c-functions-change/03-inverse-proportion-quadratic-functions/00-overview.typ"
+#include "3c-functions-change/03-inverse-proportion-quadratic-functions/99-review.typ"
+#include "3c-functions-change/04-growth-models-function-comparison/00-overview.typ"
+#include "3c-functions-change/04-growth-models-function-comparison/99-review.typ"
+#include "3c-functions-change/05-functions-summary/00-overview.typ"
+#include "3c-functions-change/05-functions-summary/99-review.typ"
 
-// e 域：函数（一次/反比例/二次 + 增长模型）
-= 函数
-#include "3c-functions/0-e00-overview-function-models.typ"
-#include "3c-functions/1-e01-function-concept.typ"
-#include "3c-functions/1-e04-inverse-proportion.typ"
-#include "3c-functions/2-e00-foundation-summary.typ"
-#include "3c-functions/3-e05-quadratic-function.typ"
-#include "3c-functions/3-e08-additive-growth.typ"
-#include "3c-functions/4-e00-review-function-models.typ"
+// 3d-data-uncertainty
+= 数据与不确定性
+#include "3d-data-uncertainty/01-data-displays-descriptive-statistics/00-overview.typ"
+#include "3d-data-uncertainty/01-data-displays-descriptive-statistics/99-review.typ"
+#include "3d-data-uncertainty/02-frequency-histograms-variance/00-overview.typ"
+#include "3d-data-uncertainty/02-frequency-histograms-variance/99-review.typ"
+#include "3d-data-uncertainty/03-sample-space-probability-experimental-frequency/00-overview.typ"
+#include "3d-data-uncertainty/03-sample-space-probability-experimental-frequency/99-review.typ"
+#include "3d-data-uncertainty/04-population-samples-estimation/00-overview.typ"
+#include "3d-data-uncertainty/04-population-samples-estimation/99-review.typ"
+#include "3d-data-uncertainty/05-data-summary/00-overview.typ"
+#include "3d-data-uncertainty/05-data-summary/99-review.typ"
 
-// f 域：数据（描述统计 + 频率分布 + 概率 + 抽样）
-= 数据
-#include "3d-data/0-f00-overview-data-statistics.typ"
-#include "3d-data/1-f01-frequency-count.typ"
-#include "3d-data/1-f04-mean.typ"
-#include "3d-data/1-f07-range.typ"
-#include "3d-data/1-f09-frequency-distribution-table.typ"
-#include "3d-data/2-f00-foundation-summary.typ"
-#include "3d-data/3-f11-sample-space.typ"
-#include "3d-data/3-f14-experimental-probability.typ"
-#include "3d-data/3-f16-population-sample.typ"
-#include "3d-data/4-f00-review-data-statistics.typ"
-
-// 终章综合
+// 4-capstone
 = 终章综合
-#include "4-capstone/4-z00-overview.typ"
-#include "4-capstone/4-z01-invention-tree.typ"
-#include "4-capstone/4-z02-review.typ"
-#include "4-capstone/4-z03-whats-next.typ"
+#include "4-capstone/01-shared-invention-tree-review/00-overview.typ"
+#include "4-capstone/01-shared-invention-tree-review/99-review.typ"
+#include "4-capstone/02-cross-domain-problem-solving-modeling/00-overview.typ"
+#include "4-capstone/02-cross-domain-problem-solving-modeling/99-review.typ"
+#include "4-capstone/03-next-learning-map/00-overview.typ"
+#include "4-capstone/03-next-learning-map/99-review.typ"

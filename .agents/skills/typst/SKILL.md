@@ -451,7 +451,7 @@ For flowcharts/diagrams, use Fletcher (`@preview/fletcher:0.5.8`).
 | `#discovery[...]` | 探索发现 | crisis 之后 |
 | `#tryit[...]` | 试一试（先尝试再看解） | blueprint 之前 |
 | `#blueprint[...]` | 工具蓝图（正式概念 / 公式） | discovery 之后 |
-| `#pitfall[...]` | 常见陷阱（❌ / ✓ 对比） | blueprint 之后 |
+| `#pitfall[...]` | 常见陷阱（✗ / ✓ 对比） | blueprint 之后 |
 | `#mastery[...]` | 工具磨砺（三级练习） | 节末 |
 
 ### 内联注记函数
