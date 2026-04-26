@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 一元二次方程：配方法 → 求根公式 <tool:al05-quadratic-solving>
 
@@ -43,6 +44,47 @@
 
   “加什么”的规则：一次项系数*除以 $2$ 再平方*。因为 $(x + m)^2 = x^2 + 2 m x + m^2$，要让 $2 m = b$，必须 $m = b / 2$，补的那一项就是 $m^2 = (b / 2)^2$。
 
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let xlen = 5
+      let m = 2.5
+
+      // x² square (blue)
+      rect((0, 0), (xlen, xlen), fill: rgb("#cce5ff"), stroke: 0.7pt)
+      content((xlen / 2, xlen / 2), text(size: 10pt)[$x^2$])
+
+      // Right rectangle x × 3 (green)
+      rect((xlen, 0), (xlen + m, xlen), fill: rgb("#d4edda"), stroke: 0.7pt)
+      content((xlen + m / 2, xlen / 2), text(size: 9pt)[$3 x$])
+
+      // Top rectangle 3 × x (green)
+      rect((0, xlen), (xlen, xlen + m), fill: rgb("#d4edda"), stroke: 0.7pt)
+      content((xlen / 2, xlen + m / 2), text(size: 9pt)[$3 x$])
+
+      // Missing corner 3 × 3 (dashed yellow — the "补" part)
+      rect((xlen, xlen), (xlen + m, xlen + m),
+        fill: rgb("#fff3cd"),
+        stroke: (paint: rgb("#856404"), dash: "dashed", thickness: 0.7pt))
+      content((xlen + m / 2, xlen + m / 2), text(size: 9pt)[$9$])
+
+      // Dimension labels
+      content((xlen / 2, -0.7), text(size: 8pt)[$x$])
+      content((xlen + m / 2, -0.7), text(size: 8pt)[$3$])
+      content((-0.7, xlen / 2), text(size: 8pt)[$x$])
+      content((-0.7, xlen + m / 2), text(size: 8pt)[$3$])
+
+      // Right bracket line indicating total side = x + 3
+      let bx = xlen + m + 0.5
+      line((bx, 0), (bx, xlen + m), stroke: 0.4pt + rgb("#555"))
+      line((bx - 0.15, 0), (bx + 0.15, 0), stroke: 0.4pt + rgb("#555"))
+      line((bx - 0.15, xlen + m), (bx + 0.15, xlen + m), stroke: 0.4pt + rgb("#555"))
+      content((bx + 1.2, (xlen + m) / 2), text(size: 8pt)[$x + 3$])
+    }),
+    caption: [配方法的几何模型：$x^2 + 6 x$ 补上虚线方块 $9$ 凑成 $(x + 3)^2$]
+  )
+
   如果二次项系数不是 $1$，先两边同除让它变成 $1$ 再配方：
 
   $ 2 x^2 - 4 x - 1 = 0 => x^2 - 2 x = 1 / 2 => (x - 1)^2 = 3 / 2 => x = 1 plus.minus frac(sqrt(6), 2). $
@@ -71,6 +113,47 @@
     [$Delta > 0$], [两个*不相等*的实数根], [$x^2 - 5 x + 6 = 0$：$Delta = 1$；根 $2, 3$],
     [$Delta = 0$], [一个*二重*实数根], [$x^2 - 4 x + 4 = 0$：$Delta = 0$；$x = 2$],
     [$Delta < 0$], [在实数范围内*无解*], [$x^2 - 4 x + 5 = 0$：$Delta = -4$],
+  )
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let w = 10
+      let gap = 2.8
+
+      // --- Δ > 0：两个不相等实根 ---
+      let y1 = 2 * gap
+      line((-1, y1), (w + 1, y1), stroke: 0.7pt + rgb("#333"), mark: (end: ">"))
+      for i in range(0, 11) {
+        line((float(i), y1 - 0.15), (float(i), y1 + 0.15), stroke: 0.3pt + rgb("#aaa"))
+      }
+      circle((3, y1), radius: 0.2, fill: rgb("#2563eb"), stroke: none)
+      circle((7, y1), radius: 0.2, fill: rgb("#2563eb"), stroke: none)
+      content((3, y1 - 0.7), text(size: 7pt)[$x_1$])
+      content((7, y1 - 0.7), text(size: 7pt)[$x_2$])
+      content((-2.8, y1), text(size: 8pt, fill: rgb("#2563eb"))[$Delta > 0$])
+
+      // --- Δ = 0：一个二重根 ---
+      let y2 = gap
+      line((-1, y2), (w + 1, y2), stroke: 0.7pt + rgb("#333"), mark: (end: ">"))
+      for i in range(0, 11) {
+        line((float(i), y2 - 0.15), (float(i), y2 + 0.15), stroke: 0.3pt + rgb("#aaa"))
+      }
+      circle((5, y2), radius: 0.2, fill: rgb("#16a34a"), stroke: none)
+      content((5, y2 - 0.7), text(size: 7pt)[$x_1 = x_2$])
+      content((-2.8, y2), text(size: 8pt, fill: rgb("#16a34a"))[$Delta = 0$])
+
+      // --- Δ < 0：无实根 ---
+      let y3 = 0
+      line((-1, y3), (w + 1, y3), stroke: 0.7pt + rgb("#333"), mark: (end: ">"))
+      for i in range(0, 11) {
+        line((float(i), y3 - 0.15), (float(i), y3 + 0.15), stroke: 0.3pt + rgb("#aaa"))
+      }
+      content((5, y3 + 0.6), text(size: 8pt, fill: rgb("#dc2626"))[无实根])
+      content((-2.8, y3), text(size: 8pt, fill: rgb("#dc2626"))[$Delta < 0$])
+    }),
+    caption: [判别式 $Delta$ 的三种情形与实数根在数轴上的分布]
   )
 
   注意：“$Delta < 0$ 无解”只是在实数范围内的说法。要一并承认复数时，其实存在两个共轭复根，本书不展开。

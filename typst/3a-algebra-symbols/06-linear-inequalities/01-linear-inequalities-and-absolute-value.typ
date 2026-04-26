@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 一元一次不等式与 $|x|$ 直觉 <tool:al05-linear-inequalities>
 
@@ -51,6 +52,64 @@
   - $x >= 3$：实心圆（含 $3$），向右；
   - $x < - 2$：空心圆，向左。
 
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let s = 1.4
+      let gap = 3.0
+
+      // --- Top: x > 3 ---
+      let y1 = 2 * gap
+      line((0, y1), (7 * s + 0.8, y1), stroke: 0.5pt + rgb("#666"), mark: (end: ">"))
+      for i in range(0, 8) {
+        let tx = float(i) * s
+        line((tx, y1 - 0.15), (tx, y1 + 0.15), stroke: 0.3pt + rgb("#aaa"))
+        content((tx, y1 - 0.55), text(size: 6pt)[#str(i)])
+      }
+      let pt1 = 3 * s
+      // Blue ray going right
+      line((pt1 + 0.25, y1), (7 * s + 0.3, y1), stroke: 1.5pt + rgb("#2563eb"))
+      // Hollow circle at 3
+      circle((pt1, y1), radius: 0.18, fill: white, stroke: 0.7pt + rgb("#2563eb"))
+      content((-1.8, y1), text(size: 8pt)[$x > 3$])
+
+      // --- Middle: x ≥ 3 ---
+      let y2 = gap
+      line((0, y2), (7 * s + 0.8, y2), stroke: 0.5pt + rgb("#666"), mark: (end: ">"))
+      for i in range(0, 8) {
+        let tx = float(i) * s
+        line((tx, y2 - 0.15), (tx, y2 + 0.15), stroke: 0.3pt + rgb("#aaa"))
+        content((tx, y2 - 0.55), text(size: 6pt)[#str(i)])
+      }
+      let pt2 = 3 * s
+      // Blue ray going right
+      line((pt2 + 0.25, y2), (7 * s + 0.3, y2), stroke: 1.5pt + rgb("#2563eb"))
+      // Filled circle at 3
+      circle((pt2, y2), radius: 0.18, fill: rgb("#2563eb"), stroke: 0.7pt + rgb("#2563eb"))
+      content((-1.8, y2), text(size: 8pt)[$x >= 3$])
+
+      // --- Bottom: x < -2 ---
+      let y3 = 0
+      let lo = -5
+      let hi = 2
+      let n = hi - lo
+      line((0, y3), (float(n) * s + 0.8, y3), stroke: 0.5pt + rgb("#666"), mark: (end: ">"))
+      for i in range(lo, hi + 1) {
+        let tx = float(i - lo) * s
+        line((tx, y3 - 0.15), (tx, y3 + 0.15), stroke: 0.3pt + rgb("#aaa"))
+        content((tx, y3 - 0.55), text(size: 6pt)[#str(i)])
+      }
+      let pt3 = float(-2 - lo) * s
+      // Blue ray going left
+      line((pt3 - 0.25, y3), (0.3, y3), stroke: 1.5pt + rgb("#2563eb"))
+      // Hollow circle at -2
+      circle((pt3, y3), radius: 0.18, fill: white, stroke: 0.7pt + rgb("#2563eb"))
+      content((-1.8, y3), text(size: 8pt)[$x < -2$])
+    }),
+    caption: [数轴上表示不等式解集：空心圆表示不含端点，实心圆表示包含端点]
+  )
+
   *不等式组：取交集*
 
   同时满足两条不等式的 $x$，是两个解集的*公共部分*。常用口诀：
@@ -69,6 +128,47 @@
   - $|x| < r$（$r > 0$）→ “$x$ 离 $0$ 不超过 $r$” → $- r < x < r$。
   - $|x| > r$（$r > 0$）→ “$x$ 离 $0$ 比 $r$ 还远” → $x < - r$ 或 $x > r$。
   - $|x - c| < r$ → “$x$ 离 $c$ 不超过 $r$” → $c - r < x < c + r$。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let s = 1.6
+      let cx = 6 * s
+      let rv = 2.5 * s
+
+      // Number line axis
+      line((0, 0), (12 * s, 0), stroke: 0.5pt + rgb("#666"), mark: (end: ">"))
+
+      // Shaded interval (drawn before circles so circles sit on top)
+      rect((cx - rv, -0.15), (cx + rv, 0.15), fill: rgb("#bfdbfe"), stroke: none)
+
+      // Tick marks at key positions
+      line((cx - rv, -0.25), (cx - rv, 0.25), stroke: 0.5pt + rgb("#333"))
+      content((cx - rv, -0.8), text(size: 7pt)[$c - r$])
+
+      line((cx, -0.25), (cx, 0.25), stroke: 0.5pt + rgb("#333"))
+      content((cx, -0.8), text(size: 7pt)[$c$])
+
+      line((cx + rv, -0.25), (cx + rv, 0.25), stroke: 0.5pt + rgb("#333"))
+      content((cx + rv, -0.8), text(size: 7pt)[$c + r$])
+
+      // Hollow circles at endpoints
+      circle((cx - rv, 0), radius: 0.18, fill: white, stroke: 0.7pt + rgb("#2563eb"))
+      circle((cx + rv, 0), radius: 0.18, fill: white, stroke: 0.7pt + rgb("#2563eb"))
+
+      // Center dot at c
+      circle((cx, 0), radius: 0.1, fill: rgb("#333"), stroke: none)
+
+      // Arrow from c to c+r labeled "r"
+      line((cx, 1.0), (cx + rv, 1.0), stroke: 0.7pt + rgb("#dc2626"), mark: (end: ">"))
+      content((cx + rv / 2, 1.5), text(size: 8pt, fill: rgb("#dc2626"))[$r$])
+
+      // 解集 label
+      content((cx, -1.5), text(size: 8pt, fill: rgb("#2563eb"))[解集])
+    }),
+    caption: [$|x - c| < r$ 的几何含义：$x$ 到 $c$ 的距离不超过 $r$，解集为 $c - r < x < c + r$]
+  )
 
   这里 $r$ 必须 $> 0$，否则 $|x| < r$ 本身就无解（$r = 0$ 仅允许 $x = 0$；$r < 0$ 永远不成立）。
 ]

@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 分式的结构与化简 <tool:al03-rational-expression-structure>
 
@@ -31,6 +32,52 @@
   - $(x + 1)/(x - 2)$：要求 $x - 2 != 0$，也就是 $x != 2$；
   - $1/((x - 1)(x + 3))$：要求 $x != 1$ 且 $x != -3$。
 
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#1565C0")
+      let red = rgb("#C62828")
+      let gray = luma(160)
+
+      // Title
+      content((5, 3.2), text(size: 8pt, weight: "bold")[分式有意义的范围], anchor: "south")
+
+      // Main axis
+      line((-5.5, 0), (5.5, 0), stroke: 1pt + gray)
+
+      // Valid domain segments (blue)
+      line((-5.5, 0), (-3.15, 0), stroke: 2pt + blue)
+      line((-2.85, 0), (0.85, 0), stroke: 2pt + blue)
+      line((1.15, 0), (5.5, 0), stroke: 2pt + blue)
+
+      // Tick marks and labels
+      for x in range(-5, 6) {
+        line((x, -0.2), (x, 0.2), stroke: 0.6pt + gray)
+        if x != -3 and x != 1 {
+          content((x, -0.7), text(size: 6pt)[#str(x)], anchor: "north")
+        }
+      }
+
+      // Excluded point: x = -3
+      circle((-3, 0), radius: 0.2, stroke: 1.5pt + red, fill: white)
+      content((-3.3, 1.0), text(size: 7pt, fill: red)[✗], anchor: "south")
+      content((-3, -0.7), text(size: 6pt, fill: red, weight: "bold")[$-3$], anchor: "north")
+
+      // Excluded point: x = 1
+      circle((1, 0), radius: 0.2, stroke: 1.5pt + red, fill: white)
+      content((0.7, 1.0), text(size: 7pt, fill: red)[✗], anchor: "south")
+      content((1, -0.7), text(size: 6pt, fill: red, weight: "bold")[$1$], anchor: "north")
+
+      // Arrow tips
+      line((-5.5, 0.08), (-5.8, 0), stroke: 1pt + blue)
+      line((-5.5, -0.08), (-5.8, 0), stroke: 1pt + blue)
+      line((5.5, 0.08), (5.8, 0), stroke: 1pt + blue)
+      line((5.5, -0.08), (5.8, 0), stroke: 1pt + blue)
+    }),
+    caption: [分式 $1 slash ((x - 1)(x + 3))$ 的定义域：$x = -3$ 与 $x = 1$ 处被排除]
+  )
+
   这个“有意义的条件”不是装饰——它规定了分式在哪些值下才有意义。下一节通分和第 3 节解方程都要靠它。
 
   *分式基本性质 = 分数基本性质的升级*
@@ -54,6 +101,51 @@
   约到分子分母再无公因式（除了常数 $1$），就叫*最简分式*。
 
   注意约分*只能约掉因式*，不能约掉“项”。$(x + 3)/(x + 5)$ 不能约掉 $x$——那会把加法当成乘法处理，是一个经典错误。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let green = rgb("#2E7D32")
+      let red = rgb("#C62828")
+      let gray = luma(120)
+
+      // === Left box: correct factor cancellation ===
+      rect((0, 0), (14, 7), fill: rgb("#E8F5E9"), stroke: 1.2pt + green, radius: 4pt)
+      content((7, 6.3), text(size: 8pt, weight: "bold", fill: green)[因式可约 ✓], anchor: "south")
+
+      // Before simplification
+      content((7, 4.2), text(size: 9pt)[
+        $frac(cancel((x + 3)) dot (x - 1), cancel((x + 3)) dot (x + 2))$
+      ])
+
+      // Arrow
+      content((7, 2.6), text(size: 10pt, fill: green)[↓])
+
+      // After simplification
+      content((7, 1.5), text(size: 9pt, weight: "bold")[
+        $frac(x - 1, x + 2)$
+      ])
+
+      // === Right box: incorrect term cancellation ===
+      rect((16, 0), (30, 7), fill: rgb("#FFEBEE"), stroke: 1.2pt + red, radius: 4pt)
+      content((23, 6.3), text(size: 8pt, weight: "bold", fill: red)[项不可约 ✗], anchor: "south")
+
+      // The incorrect attempt
+      content((23, 4.2), text(size: 9pt)[
+        $frac(x + 3, x + 5)$
+      ])
+
+      // Diagonal strike-through with X
+      content((23, 2.6), text(size: 10pt, fill: red)[✗ 不能约 $x$])
+
+      // The wrong result
+      content((23, 1.2), text(size: 7pt, fill: gray)[
+        $frac(3, 5)$ ← 错误！
+      ])
+    }),
+    caption: [约分只能约掉公因式（左），不能约掉加法中的项（右）]
+  )
 
   约分之后的分式仍然带着原来的“有意义条件”。例如上例里 $x - 3$ 被约掉了，但 $x != 3$ 这个限制必须保留，否则分式的有意义范围会被悄悄扩大。
 ]

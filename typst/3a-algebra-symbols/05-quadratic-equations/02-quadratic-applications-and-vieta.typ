@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 韦达定理：从“解”反问“系数” <tool:al05-vieta>
 
@@ -35,6 +36,36 @@
 
   $ x_1 + x_2 = - b / a, quad x_1 x_2 = c / a. $
 
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      // Top: equation box
+      rect((-3, 4), (3, 5.5), fill: rgb("#f3f4f6"),
+        stroke: 0.7pt + rgb("#6b7280"), radius: 3pt)
+      content((0, 4.75), text(size: 9pt, weight: "bold")[$a x^2 + b x + c = 0$])
+
+      // Left arrow → sum (blue)
+      line((-1.5, 4), (-4, 2), stroke: 1pt + rgb("#2563eb"), mark: (end: ">"))
+      content((-3.5, 3.3), text(size: 7pt, fill: rgb("#2563eb"))[和], anchor: "east")
+
+      // Right arrow → product (green)
+      line((1.5, 4), (4, 2), stroke: 1pt + rgb("#16a34a"), mark: (end: ">"))
+      content((3.5, 3.3), text(size: 7pt, fill: rgb("#16a34a"))[积], anchor: "west")
+
+      // Left box: sum formula
+      rect((-7, 0.5), (-1, 2), fill: rgb("#dbeafe"),
+        stroke: 0.7pt + rgb("#2563eb"), radius: 3pt)
+      content((-4, 1.25), text(size: 9pt, fill: rgb("#1e40af"))[$x_1 + x_2 = - b / a$])
+
+      // Right box: product formula
+      rect((1, 0.5), (7, 2), fill: rgb("#dcfce7"),
+        stroke: 0.7pt + rgb("#16a34a"), radius: 3pt)
+      content((4, 1.25), text(size: 9pt, fill: rgb("#166534"))[$x_1 x_2 = c / a$])
+    }),
+    caption: [韦达定理：从方程系数直接读出两根之和与两根之积]
+  )
+
   *它解决三类问题*
 
   1. *对称式求值*：$x_1^2 + x_2^2$、$1 / x_1 + 1 / x_2$、$(x_1 - x_2)^2$ 这些表达式都可以*不解方程*就求出。
@@ -58,6 +89,62 @@
   - $x_1 x_2 > 0$ 且 $x_1 + x_2 > 0$：两根同正。
   - $x_1 x_2 > 0$ 且 $x_1 + x_2 < 0$：两根同负。
   - $x_1 x_2 < 0$：两根一正一负（前提 $Delta > 0$）。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let bw = 8
+      let bh = 3.2
+      let gap = 0.8
+
+      // --- Top-left: 两正 ---
+      rect((0, bh + gap), (bw, 2 * bh + gap),
+        stroke: 0.6pt + rgb("#2563eb"), radius: 3pt, fill: rgb("#eff6ff"))
+      content((bw / 2, 2 * bh + gap - 0.5),
+        text(size: 7pt)[$x_1 x_2 > 0, quad x_1 + x_2 > 0$])
+      let ny1 = bh + gap + 1.0
+      line((0.5, ny1), (bw - 0.5, ny1), stroke: 0.4pt + rgb("#999"))
+      line((bw / 2, ny1 - 0.12), (bw / 2, ny1 + 0.12), stroke: 0.4pt)
+      content((bw / 2, ny1 - 0.4), text(size: 5pt)[$0$])
+      circle((bw / 2 + 1.5, ny1), radius: 0.12, fill: rgb("#2563eb"), stroke: none)
+      circle((bw / 2 + 2.8, ny1), radius: 0.12, fill: rgb("#2563eb"), stroke: none)
+      content((bw / 2 + 2.15, ny1 + 0.55),
+        text(size: 8pt, weight: "bold", fill: rgb("#1e40af"))[两正])
+
+      // --- Top-right: 两负 ---
+      let x1 = bw + gap
+      rect((x1, bh + gap), (x1 + bw, 2 * bh + gap),
+        stroke: 0.6pt + rgb("#dc2626"), radius: 3pt, fill: rgb("#fef2f2"))
+      content((x1 + bw / 2, 2 * bh + gap - 0.5),
+        text(size: 7pt)[$x_1 x_2 > 0, quad x_1 + x_2 < 0$])
+      let ny2 = bh + gap + 1.0
+      line((x1 + 0.5, ny2), (x1 + bw - 0.5, ny2), stroke: 0.4pt + rgb("#999"))
+      line((x1 + bw / 2, ny2 - 0.12), (x1 + bw / 2, ny2 + 0.12), stroke: 0.4pt)
+      content((x1 + bw / 2, ny2 - 0.4), text(size: 5pt)[$0$])
+      circle((x1 + bw / 2 - 1.5, ny2), radius: 0.12, fill: rgb("#dc2626"), stroke: none)
+      circle((x1 + bw / 2 - 2.8, ny2), radius: 0.12, fill: rgb("#dc2626"), stroke: none)
+      content((x1 + bw / 2 - 2.15, ny2 + 0.55),
+        text(size: 8pt, weight: "bold", fill: rgb("#991b1b"))[两负])
+
+      // --- Bottom center: 一正一负 ---
+      let total-w = 2 * bw + gap
+      let x2 = (total-w - bw) / 2
+      rect((x2, 0), (x2 + bw, bh),
+        stroke: 0.6pt + rgb("#9333ea"), radius: 3pt, fill: rgb("#faf5ff"))
+      content((x2 + bw / 2, bh - 0.5),
+        text(size: 7pt)[$x_1 x_2 < 0$])
+      let ny3 = 1.0
+      line((x2 + 0.5, ny3), (x2 + bw - 0.5, ny3), stroke: 0.4pt + rgb("#999"))
+      line((x2 + bw / 2, ny3 - 0.12), (x2 + bw / 2, ny3 + 0.12), stroke: 0.4pt)
+      content((x2 + bw / 2, ny3 - 0.4), text(size: 5pt)[$0$])
+      circle((x2 + bw / 2 - 2.0, ny3), radius: 0.12, fill: rgb("#dc2626"), stroke: none)
+      circle((x2 + bw / 2 + 2.0, ny3), radius: 0.12, fill: rgb("#2563eb"), stroke: none)
+      content((x2 + bw / 2, ny3 + 0.55),
+        text(size: 8pt, weight: "bold", fill: rgb("#7e22ce"))[一正一负])
+    }),
+    caption: [根的符号判别：由 $x_1 x_2$ 与 $x_1 + x_2$ 的正负判断两根的符号组合]
+  )
 
   判根前要先保证 $Delta >= 0$；否则根本没有实根。
 ]

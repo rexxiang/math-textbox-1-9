@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 整式加减：去括号 + 合并同类项 <tool:al01-add-subtract-polynomials>
 
@@ -29,6 +30,32 @@
 
   结论：括号前带减号，去括号时*括号里的每一项都变号*，一个不能漏。
 
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#1565C0")
+      let red = rgb("#C62828")
+      let green = rgb("#2E7D32")
+
+      // Plus sign case
+      content((7, 9), text(size: 9pt, weight: "bold")[括号前的符号决定变号规则], anchor: "south")
+
+      // + case
+      rect((0, 4.5), (13, 7.5), stroke: 1pt + blue, radius: 3pt)
+      content((1.5, 6.8), text(size: 8pt, fill: blue, weight: "bold")[＋（  ）])
+      content((6.5, 6), text(size: 8pt)[$+(2 x - 3) = +2 x - 3$])
+      content((6.5, 5.2), text(size: 7pt, fill: green)[每项符号不变 ✓])
+
+      // - case
+      rect((0, 0.5), (13, 3.5), stroke: 1pt + red, radius: 3pt)
+      content((1.5, 2.8), text(size: 8pt, fill: red, weight: "bold")[−（  ）])
+      content((6.5, 2), text(size: 8pt)[$-(2 x - 3) = -2 x + 3$])
+      content((6.5, 1.2), text(size: 7pt, fill: red)[每项都变号！])
+    }),
+    caption: [去括号规则：加号不变，减号全变],
+  )
+
   一旦括号去干净，剩下的就是 #secref("cb04-expressions-and-like-terms") 里的老动作——合并同类项。整式加减的固定流程就成型了：
 
   + 按加减把每个括号原样摊平（遇减号，每项变号）。
@@ -36,6 +63,36 @@
   + 合并同类项（系数加减，字母部分不动）。
 
   这三步顺序可以颠倒吗？不行。先去括号是为了让“同类项”暴露出来；否则 $(4x+7) - (2x-3)$ 里被锁在括号里的 $-3$ 永远和外面的 $+7$ 相遇不上。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let gray = luma(100)
+      let blue = rgb("#1565C0")
+      let green = rgb("#2E7D32")
+      let orange = rgb("#E65100")
+
+      // Step 1
+      rect((0, 6), (8, 8), fill: rgb("#E3F2FD"), stroke: 1pt + blue, radius: 3pt)
+      content((4, 7), text(size: 8pt, weight: "bold", fill: blue)[① 去括号])
+
+      // Arrow
+      line((4, 5.8), (4, 5), stroke: 1pt + gray, mark: (end: ">"))
+
+      // Step 2
+      rect((0, 3), (8, 5), fill: rgb("#FFF3E0"), stroke: 1pt + orange, radius: 3pt)
+      content((4, 4), text(size: 8pt, weight: "bold", fill: orange)[② 聚同类项])
+
+      // Arrow
+      line((4, 2.8), (4, 2), stroke: 1pt + gray, mark: (end: ">"))
+
+      // Step 3
+      rect((0, 0), (8, 2), fill: rgb("#E8F5E9"), stroke: 1pt + green, radius: 3pt)
+      content((4, 1), text(size: 8pt, weight: "bold", fill: green)[③ 合并同类项])
+    }),
+    caption: [整式加减固定三步：顺序不可颠倒],
+  )
 ]
 
 #side-hack[

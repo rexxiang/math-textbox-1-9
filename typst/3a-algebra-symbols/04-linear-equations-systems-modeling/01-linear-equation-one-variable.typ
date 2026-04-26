@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 一元一次方程的标准五步 <tool:al04-linear-one-variable>
 
@@ -37,6 +38,59 @@
     [3. 移项], [含未知量移到一边、常数移到另一边（*变号*）], [两边同加/同减 → 等式保持],
     [4. 合并同类项], [每一侧内部把同类项写到一起], [左右两侧各自化简，不动等号],
     [5. 系数化 1], [两边同除 $a$（$a != 0$）], [两边同除非零数 → 等式保持],
+  )
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      // === Top balance: 2x + 3 = 11 ===
+      let ful-x = 14
+      let ful-y = 0
+      // Fulcrum triangle
+      line((ful-x - 1.2, ful-y), (ful-x + 1.2, ful-y), (ful-x, ful-y + 1.5), close: true,
+           fill: rgb("#BDBDBD"), stroke: 0.8pt + rgb("#616161"))
+      // Beam
+      line((ful-x - 10, ful-y + 1.5), (ful-x + 10, ful-y + 1.5), stroke: 1.5pt + rgb("#424242"))
+      // Left pan: 2x block
+      rect((ful-x - 9.5, ful-y + 1.5), (ful-x - 5, ful-y + 4.2),
+           fill: rgb("#BBDEFB"), stroke: 1pt + rgb("#1565C0"), radius: 3pt)
+      content((ful-x - 7.25, ful-y + 2.85), text(size: 9pt, weight: "bold", fill: rgb("#0D47A1"))[$2 x$])
+      // Left pan: +3 block
+      rect((ful-x - 4.5, ful-y + 1.5), (ful-x - 1.5, ful-y + 4.2),
+           fill: rgb("#C8E6C9"), stroke: 1pt + rgb("#2E7D32"), radius: 3pt)
+      content((ful-x - 3, ful-y + 2.85), text(size: 9pt, weight: "bold", fill: rgb("#1B5E20"))[$3$])
+      // Right pan: 11 block
+      rect((ful-x + 2.5, ful-y + 1.5), (ful-x + 8, ful-y + 4.2),
+           fill: rgb("#FFCDD2"), stroke: 1pt + rgb("#C62828"), radius: 3pt)
+      content((ful-x + 5.25, ful-y + 2.85), text(size: 9pt, weight: "bold", fill: rgb("#B71C1C"))[$11$])
+      // Equals at fulcrum
+      content((ful-x, ful-y + 5), text(size: 10pt, weight: "bold")[$2 x + 3 = 11$])
+
+      // Arrow down
+      line((ful-x, ful-y - 0.5), (ful-x, ful-y - 2.5), stroke: 1.2pt + rgb("#757575"),
+           mark: (end: "stealth", fill: rgb("#757575"), scale: 0.6))
+      content((ful-x + 5, ful-y - 1.5), text(size: 7pt, fill: rgb("#616161"))[两边同减 $3$（移项）])
+
+      // === Bottom balance: 2x = 8 ===
+      let by = -8
+      // Fulcrum
+      line((ful-x - 1.2, by), (ful-x + 1.2, by), (ful-x, by + 1.5), close: true,
+           fill: rgb("#BDBDBD"), stroke: 0.8pt + rgb("#616161"))
+      // Beam
+      line((ful-x - 10, by + 1.5), (ful-x + 10, by + 1.5), stroke: 1.5pt + rgb("#424242"))
+      // Left pan: 2x only
+      rect((ful-x - 8, by + 1.5), (ful-x - 3.5, by + 4.2),
+           fill: rgb("#BBDEFB"), stroke: 1pt + rgb("#1565C0"), radius: 3pt)
+      content((ful-x - 5.75, by + 2.85), text(size: 9pt, weight: "bold", fill: rgb("#0D47A1"))[$2 x$])
+      // Right pan: 8
+      rect((ful-x + 3.5, by + 1.5), (ful-x + 8, by + 4.2),
+           fill: rgb("#FFCDD2"), stroke: 1pt + rgb("#C62828"), radius: 3pt)
+      content((ful-x + 5.75, by + 2.85), text(size: 9pt, weight: "bold", fill: rgb("#B71C1C"))[$8$])
+      // Label
+      content((ful-x, by + 5), text(size: 10pt, weight: "bold")[$2 x = 8$])
+    }),
+    caption: [天平演示"移项"：两边同减 $3$，左边只剩 $2 x$，右边变为 $8$],
   )
 
   五步中真正“动等号”的只有 1、3、5；2、4 是每一侧内部的等值改写。搞清这一点，就不会再把移项和合并同类项混为一谈。
@@ -84,6 +138,47 @@
   + *系数化 1*：两边同除未知量的系数（系数 $!= 0$）。
 
   每题做完，*代回原方程检验*：把算出来的值塞回等号两边，看是否相等。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let box-h = 3
+      let box-w = 5.5
+      let gap = 1.8
+      let y0 = 0
+      let colors = (
+        rgb("#1565C0"), rgb("#E65100"), rgb("#2E7D32"), rgb("#6A1B9A"), rgb("#C62828"),
+      )
+      let fills = (
+        rgb("#BBDEFB"), rgb("#FFE0B2"), rgb("#C8E6C9"), rgb("#E1BEE7"), rgb("#FFCDD2"),
+      )
+      let labels = ("① 去分母", "② 去括号", "③ 移项", "④ 合并", "⑤ 系数化1")
+
+      for i in range(5) {
+        let x0 = i * (box-w + gap)
+        rect((x0, y0), (x0 + box-w, y0 + box-h),
+             fill: fills.at(i), stroke: 1.2pt + colors.at(i), radius: 4pt)
+        content((x0 + box-w / 2, y0 + box-h / 2),
+                text(size: 7pt, weight: "bold", fill: colors.at(i))[#labels.at(i)])
+        if i < 4 {
+          let ax = x0 + box-w + 0.2
+          line((ax, y0 + box-h / 2), (ax + gap - 0.4, y0 + box-h / 2),
+               stroke: 1pt + rgb("#757575"),
+               mark: (end: "stealth", fill: rgb("#757575"), scale: 0.5))
+        }
+      }
+
+      // Return arrow: "代回检验"
+      let total-w = 5 * box-w + 4 * gap
+      let arr-y = y0 - 1.5
+      line((total-w, y0 - 0.2), (total-w, arr-y), (0, arr-y), (0, y0 - 0.2),
+           stroke: 1pt + rgb("#D84315"),
+           mark: (end: "stealth", fill: rgb("#D84315"), scale: 0.5))
+      content((total-w / 2, arr-y - 0.8), text(size: 7pt, fill: rgb("#D84315"), weight: "bold")[代回检验])
+    }),
+    caption: [一元一次方程五步流程：从去分母到系数化 1，最后代回检验],
+  )
 
   *例 A*：$5 x + 3 = 2 x - 9$ → 移项合并：$3 x = -12$ → 系数化 1：$x = -4$。代回：$5 dot (-4) + 3 = -17$，$2 dot (-4) - 9 = -17$ ✓。
 

@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 分配律的双向使用 <tool:al02-distributive-rewrite>
 
@@ -27,6 +28,45 @@
 
   $ "乘开：" quad a (b + c) = a b + a c \
     "提公因式：" quad a b + a c = a (b + c) $
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue-fill = rgb("#BBDEFB")
+      let orange-fill = rgb("#FFE0B2")
+      let blue = rgb("#1565C0")
+      let orange = rgb("#E65100")
+
+      let h = 5
+      let w1 = 5
+      let w2 = 3.5
+
+      // Left part: area ab
+      rect((0, 0), (w1, h), fill: blue-fill, stroke: 0.8pt)
+      // Right part: area ac
+      rect((w1, 0), (w1 + w2, h), fill: orange-fill, stroke: 0.8pt)
+      // Outer boundary
+      rect((0, 0), (w1 + w2, h), stroke: 1.2pt)
+
+      // Dashed divider
+      line((w1, 0), (w1, h), stroke: (dash: "dashed", thickness: 0.6pt))
+
+      // Height label
+      content((-1.2, h / 2), text(size: 11pt)[$a$])
+      // Width labels
+      content((w1 / 2, h + 0.8), text(size: 11pt)[$b$])
+      content((w1 + w2 / 2, h + 0.8), text(size: 11pt)[$c$])
+
+      // Area labels inside
+      content((w1 / 2, h / 2), text(size: 11pt, fill: blue)[$a b$])
+      content((w1 + w2 / 2, h / 2), text(size: 11pt, fill: orange)[$a c$])
+
+      // Total width
+      content(((w1 + w2) / 2, -1), text(size: 10pt)[总面积 $= a(b + c)$])
+    }),
+    caption: [分配律的面积模型：高 $a$、宽 $b + c$ 的长方形，面积既是 $a(b+c)$，也是 $a b + a c$]
+  )
 
   两行是同一条规则，读法不同而已。
 
@@ -90,6 +130,34 @@
   *例 4*（提负号）：$-6 x^2 + 9 x = -3 x (2 x - 3)$。
 
   提出负号能让括号里首项更干净；它改变每一项的符号，不改变值。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#1565C0")
+      let green = rgb("#2E7D32")
+      let light-blue = rgb("#E3F2FD")
+      let light-green = rgb("#E8F5E9")
+
+      // Left box: factored form
+      rect((0, 0), (7, 3), fill: light-blue, stroke: 0.8pt + blue, radius: 0.3)
+      content((3.5, 1.5), text(size: 11pt, fill: blue)[$a(b + c)$])
+
+      // Right box: expanded form
+      rect((12, 0), (19, 3), fill: light-green, stroke: 0.8pt + green, radius: 0.3)
+      content((15.5, 1.5), text(size: 11pt, fill: green)[$a b + a c$])
+
+      // Top arrow: expand (left → right)
+      line((7.2, 2.2), (11.8, 2.2), stroke: 0.8pt + blue, mark: (end: ">", fill: blue))
+      content((9.5, 2.9), text(size: 9pt, fill: blue)[展开（乘开）])
+
+      // Bottom arrow: factor (right → left)
+      line((11.8, 0.8), (7.2, 0.8), stroke: 0.8pt + green, mark: (end: ">", fill: green))
+      content((9.5, 0.1), text(size: 9pt, fill: green)[提公因式])
+    }),
+    caption: ["乘开"与"提公因式"是分配律的正反两个方向]
+  )
 ]
 
 #pitfall[

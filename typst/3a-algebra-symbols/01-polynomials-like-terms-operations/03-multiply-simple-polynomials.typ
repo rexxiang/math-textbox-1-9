@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 整式乘法：三种搭配一次打通 <tool:al01-multiply-polynomials>
 
@@ -47,9 +48,97 @@
 
   $ = x^2 + 2 x + 5 x + 10 = x^2 + 7 x + 10 $
 
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#1565C0")
+      let orange = rgb("#E65100")
+      let green = rgb("#2E7D32")
+      let purple = rgb("#6A1B9A")
+      let light-blue = rgb("#E3F2FD")
+      let light-orange = rgb("#FFF3E0")
+      let light-green = rgb("#E8F5E9")
+      let light-purple = rgb("#F3E5F5")
+
+      let w1 = 6
+      let w2 = 3
+      let h1 = 6
+      let h2 = 4
+
+      // Four cells with fills
+      rect((0, 0), (w1, h2), fill: light-orange, stroke: 0.8pt)
+      rect((w1, 0), (w1 + w2, h2), fill: light-purple, stroke: 0.8pt)
+      rect((0, h2), (w1, h2 + h1), fill: light-blue, stroke: 0.8pt)
+      rect((w1, h2), (w1 + w2, h2 + h1), fill: light-green, stroke: 0.8pt)
+
+      // Cell labels
+      content((w1 / 2, h2 + h1 / 2), text(size: 11pt, fill: blue, weight: "bold")[$x^2$])
+      content((w1 + w2 / 2, h2 + h1 / 2), text(size: 11pt, fill: green, weight: "bold")[$2 x$])
+      content((w1 / 2, h2 / 2), text(size: 11pt, fill: orange, weight: "bold")[$5 x$])
+      content((w1 + w2 / 2, h2 / 2), text(size: 11pt, fill: purple, weight: "bold")[$10$])
+
+      // Top dimension labels
+      content((w1 / 2, h2 + h1 + 1.2), text(size: 10pt, weight: "bold")[$x$])
+      content((w1 + w2 / 2, h2 + h1 + 1.2), text(size: 10pt, weight: "bold")[$2$])
+      line((0.3, h2 + h1 + 0.5), (w1 - 0.3, h2 + h1 + 0.5), stroke: 0.6pt, mark: (start: ">", end: ">"))
+      line((w1 + 0.3, h2 + h1 + 0.5), (w1 + w2 - 0.3, h2 + h1 + 0.5), stroke: 0.6pt, mark: (start: ">", end: ">"))
+
+      // Left dimension labels
+      content((-1.5, h2 + h1 / 2), text(size: 10pt, weight: "bold")[$x$])
+      content((-1.5, h2 / 2), text(size: 10pt, weight: "bold")[$5$])
+      line((-0.5, h2 + 0.3), (-0.5, h2 + h1 - 0.3), stroke: 0.6pt, mark: (start: ">", end: ">"))
+      line((-0.5, 0.3), (-0.5, h2 - 0.3), stroke: 0.6pt, mark: (start: ">", end: ">"))
+    }),
+    caption: [面积模型：$(x + 5)(x + 2)$ 的四块拼合],
+  )
+
   一般地：
 
   $ (a + b)(c + d) = a c + a d + b c + b d $
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#1565C0")
+      let red = rgb("#C62828")
+      let green = rgb("#2E7D32")
+      let orange = rgb("#E65100")
+
+      let lx = 2
+      let rx = 12
+      let y-top = 4
+      let y-bot = 0
+      let gap = 3
+
+      // Left bracket terms
+      content((lx, y-top), text(size: 12pt, weight: "bold")[$a$])
+      content((lx, y-bot), text(size: 12pt, weight: "bold")[$b$])
+
+      // Right bracket terms
+      content((rx, y-top), text(size: 12pt, weight: "bold")[$c$])
+      content((rx, y-bot), text(size: 12pt, weight: "bold")[$d$])
+
+      // Bracket labels
+      content((lx, y-top + 1.5), text(size: 9pt, fill: luma(100))[\( 第一个括号 \)])
+      content((rx, y-top + 1.5), text(size: 9pt, fill: luma(100))[\( 第二个括号 \)])
+
+      // Lines: a→c, a→d, b→c, b→d
+      line((lx + 0.6, y-top + 0.1), (rx - 0.6, y-top + 0.1), stroke: 1.2pt + blue, mark: (end: ">"))
+      content(((lx + rx) / 2, y-top + 0.9), text(size: 8pt, fill: blue)[$a c$])
+
+      line((lx + 0.6, y-top - 0.3), (rx - 0.6, y-bot + 0.5), stroke: 1.2pt + green, mark: (end: ">"))
+      content(((lx + rx) / 2 + 2.2, (y-top + y-bot) / 2 + 0.9), text(size: 8pt, fill: green)[$a d$])
+
+      line((lx + 0.6, y-bot + 0.3), (rx - 0.6, y-top - 0.5), stroke: 1.2pt + orange, mark: (end: ">"))
+      content(((lx + rx) / 2 - 2.2, (y-top + y-bot) / 2 - 0.9), text(size: 8pt, fill: orange)[$b c$])
+
+      line((lx + 0.6, y-bot - 0.1), (rx - 0.6, y-bot - 0.1), stroke: 1.2pt + red, mark: (end: ">"))
+      content(((lx + rx) / 2, y-bot - 0.9), text(size: 8pt, fill: red)[$b d$])
+    }),
+    caption: ["握手"图：$(a + b)(c + d)$ 展开时的四次配对],
+  )
 
   前面括号的每一项要和后面括号的每一项各乘一次——一共*项数相乘*次乘法。别漏握手，也别握两遍。
 ]

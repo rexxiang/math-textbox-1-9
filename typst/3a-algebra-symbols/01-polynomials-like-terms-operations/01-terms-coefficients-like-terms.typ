@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 单项式、多项式与同类项 <tool:al01-terms-like>
 
@@ -36,6 +37,44 @@
   - *系数*：前面那个数（含正负号），如 $-5 a^2 b$ 的系数是 $-5$。
   - *次数*：所有字母指数之和，如 $-5 a^2 b$ 的次数是 $2 + 1 = 3$。
 
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#1565C0")
+      let green = rgb("#2E7D32")
+      let gray = luma(120)
+
+      // Title
+      content((8, 8.5), text(size: 9pt, weight: "bold")[单项式 $-5 a^2 b$ 的结构], anchor: "south")
+
+      // Coefficient box
+      rect((0, 4), (4, 7), fill: rgb("#BBDEFB"), stroke: 1pt + blue, radius: 3pt)
+      content((2, 5.5), text(size: 10pt, weight: "bold", fill: blue)[$-5$])
+      content((2, 4.6), text(size: 7pt, fill: blue)[系数])
+
+      // × sign
+      content((4.7, 5.5), text(size: 12pt, fill: gray)[$times$])
+
+      // Variable a² box
+      rect((5.4, 4), (9.4, 7), fill: rgb("#C8E6C9"), stroke: 1pt + green, radius: 3pt)
+      content((7.4, 5.5), text(size: 10pt, weight: "bold", fill: green)[$a^2$])
+      content((7.4, 4.6), text(size: 7pt, fill: green)[指数 2])
+
+      // × sign and variable b box
+      rect((10.1, 4), (14.1, 7), fill: rgb("#C8E6C9"), stroke: 1pt + green, radius: 3pt)
+      content((12.1, 5.5), text(size: 10pt, weight: "bold", fill: green)[$b$])
+      content((12.1, 4.6), text(size: 7pt, fill: green)[指数 1])
+
+      // Brace for total degree
+      line((5.4, 3.4), (14.1, 3.4), stroke: 0.8pt + gray)
+      line((5.4, 3.2), (5.4, 3.6), stroke: 0.8pt + gray)
+      line((14.1, 3.2), (14.1, 3.6), stroke: 0.8pt + gray)
+      content((9.75, 2.6), text(size: 8pt, fill: gray)[次数 $= 2 + 1 = 3$], anchor: "north")
+    }),
+    caption: [单项式的结构拆解：系数 $times$ 字母幂的乘积],
+  )
+
   约定：纯数字 $7$ 也是单项式，它的次数是 $0$；而系数是 $1$ 或 $-1$ 时通常省略写，$-a^2 b$ 的系数是 $-1$。
 
   再看*一串*用加减号连起来的式子：
@@ -51,7 +90,36 @@
   + *出现的字母完全一样*（比如都只含 $a, b$，不多也不少）；
   + *每个字母的次数分别相等*（$a^2 b$ 和 $a b^2$ 不同类——前者 $a$ 为 2 次，后者 $a$ 为 1 次）。
 
-  系数可以不同，正负号也可以不同。常数项之间一律是同类项。按这条判据重新看开头那串：
+  系数可以不同，正负号也可以不同。常数项之间一律是同类项。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let red = rgb("#C62828")
+      let blue = rgb("#1565C0")
+      let green = rgb("#2E7D32")
+      let gray = luma(160)
+
+      // Group 1: a²b terms (red)
+      rect((0, 4), (6, 6.5), fill: rgb("#FFCDD2"), stroke: 1.2pt + red, radius: 3pt)
+      content((3, 5.7), text(size: 9pt, weight: "bold", fill: red)[同类项 ✓])
+      content((3, 4.8), text(size: 9pt)[$-5 a^2 b$ 与 $-a^2 b$])
+
+      // Group 2: ab² terms (blue)
+      rect((7.5, 4), (13.5, 6.5), fill: rgb("#BBDEFB"), stroke: 1.2pt + blue, radius: 3pt)
+      content((10.5, 5.7), text(size: 9pt, weight: "bold", fill: blue)[同类项 ✓])
+      content((10.5, 4.8), text(size: 9pt)[$7 a b^2$ 与 $-a b^2$])
+
+      // Not like terms example
+      rect((0, 0.5), (13.5, 3), fill: rgb("#FFF9C4"), stroke: 1.2pt + luma(180), radius: 3pt)
+      content((6.75, 2.3), text(size: 9pt, weight: "bold", fill: red)[不是同类项 ✗])
+      content((6.75, 1.2), text(size: 8pt)[$a^2 b$（$a$ 的指数 2）与 $a b^2$（$a$ 的指数 1）——字母指数不同])
+    }),
+    caption: [同类项判断：字母骨架必须完全一致，系数不影响],
+  )
+
+  按这条判据重新看开头那串：
 
   - $-5 a^2 b$ 与 $-a^2 b$ 同类；
   - $7 a b^2$ 与 $-a b^2$ 同类；

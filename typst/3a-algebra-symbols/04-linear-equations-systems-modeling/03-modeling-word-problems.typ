@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 建模：设元、译句与“答得合理” <tool:al04-modeling-word-problems>
 
@@ -26,6 +27,42 @@
   + *设元*：选一个（或两个）*你能用式子表示其他量*的未知量，记作 $x$（或 $x, y$）。
   + *译句*：把原文里“是”“等于”“比…多”“比…少”“一共”“打折后付”等关键词，*一句一句*翻译成等式。题里有几句独立的等量关系，就能列出几条方程。
   + *检验合理性*：把解代入原文情境——答案的*量纲、正负、数量级*都必须讲得通。不合理的解（例如“宽 $= -5$ 厘米”）要*舍去*，而不是留着。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let bw = 8
+      let bh = 4
+      let gap = 3
+
+      // Box 1: 设元
+      rect((0, 0), (bw, bh), fill: rgb("#BBDEFB"), stroke: 1.2pt + rgb("#1565C0"), radius: 4pt)
+      content((bw / 2, bh - 1), text(size: 8pt, weight: "bold", fill: rgb("#0D47A1"))[设元])
+      content((bw / 2, 1.2), text(size: 6pt, fill: rgb("#1565C0"))[选未知量 $x$])
+
+      // Arrow 1→2
+      line((bw + 0.3, bh / 2), (bw + gap - 0.3, bh / 2), stroke: 1pt + rgb("#757575"),
+           mark: (end: "stealth", fill: rgb("#757575"), scale: 0.5))
+
+      // Box 2: 译句
+      let x2 = bw + gap
+      rect((x2, 0), (x2 + bw, bh), fill: rgb("#FFE0B2"), stroke: 1.2pt + rgb("#E65100"), radius: 4pt)
+      content((x2 + bw / 2, bh - 1), text(size: 8pt, weight: "bold", fill: rgb("#E65100"))[译句])
+      content((x2 + bw / 2, 1.2), text(size: 6pt, fill: rgb("#E65100"))[文字 → 等式])
+
+      // Arrow 2→3
+      line((x2 + bw + 0.3, bh / 2), (x2 + bw + gap - 0.3, bh / 2), stroke: 1pt + rgb("#757575"),
+           mark: (end: "stealth", fill: rgb("#757575"), scale: 0.5))
+
+      // Box 3: 检验
+      let x3 = x2 + bw + gap
+      rect((x3, 0), (x3 + bw, bh), fill: rgb("#C8E6C9"), stroke: 1.2pt + rgb("#2E7D32"), radius: 4pt)
+      content((x3 + bw / 2, bh - 1), text(size: 8pt, weight: "bold", fill: rgb("#2E7D32"))[检验])
+      content((x3 + bw / 2, 1.2), text(size: 6pt, fill: rgb("#2E7D32"))[合理？✓])
+    }),
+    caption: [建模三步流程：设元、译句、检验合理性],
+  )
 
   *译句的关键是“等量关系”*
 
@@ -62,6 +99,46 @@
     [工程（甲乙合做）], [设时间 $d$ 或工作量 $u, v$], [工作量之和 $=$ 全部工作；约定“全部 $= 1$”],
     [比例 / 配比], [设份数 $k$ 或比中的一量], [各部分按比例写，加起来 $=$ 总量],
     [价格 / 利润], [设原价 $x$ 或数量 $n$], [折后价 / 成本 / 利润 $=$ 约束条件],
+  )
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let total-w = 30
+      let bar-h = 3
+
+      // Total distance bar (outline)
+      rect((0, 0), (total-w, bar-h), stroke: 1.2pt + rgb("#424242"), radius: 2pt)
+
+      // Car distance from left: 80t portion
+      // 80/(80+70) * 30 = 16
+      let car-w = 16
+      rect((0, 0), (car-w, bar-h), fill: rgb("#BBDEFB"), stroke: 1pt + rgb("#1565C0"), radius: 2pt)
+      content((car-w / 2, bar-h / 2), text(size: 7pt, weight: "bold", fill: rgb("#0D47A1"))[汽车 $80 t$])
+
+      // Motorcycle distance from right: 70t portion
+      let moto-w = total-w - car-w
+      rect((car-w, 0), (total-w, bar-h), fill: rgb("#FFCDD2"), stroke: 1pt + rgb("#C62828"), radius: 2pt)
+      content((car-w + moto-w / 2, bar-h / 2), text(size: 7pt, weight: "bold", fill: rgb("#B71C1C"))[摩托 $70 t$])
+
+      // Meeting point marker
+      line((car-w, -0.5), (car-w, bar-h + 0.5), stroke: 1.5pt + rgb("#2E7D32"))
+      content((car-w, bar-h + 1.5), text(size: 7pt, fill: rgb("#2E7D32"), weight: "bold")[相遇])
+
+      // Arrow left side
+      line((0.5, -1.5), (car-w - 0.5, -1.5), stroke: 0.8pt + rgb("#1565C0"),
+           mark: (end: "stealth", fill: rgb("#1565C0"), scale: 0.4))
+      // Arrow right side
+      line((total-w - 0.5, -1.5), (car-w + 0.5, -1.5), stroke: 0.8pt + rgb("#C62828"),
+           mark: (end: "stealth", fill: rgb("#C62828"), scale: 0.4))
+
+      // Total label
+      content((total-w / 2, -3), text(size: 7pt, weight: "bold")[全程 $300$ 千米])
+      line((0, -2.5), (total-w, -2.5), stroke: 0.6pt + rgb("#757575"),
+           mark: (start: "|", end: "|", scale: 0.4))
+    }),
+    caption: [行程问题的线段图：汽车与摩托车相向而行，两段路程之和 $= 300$ 千米],
   )
 
   表里列的是不同情境的“变奏”——但拆开看都是*设元 + 译句 + 检验*同一条流程。不要为每种情境记死一套步骤。
