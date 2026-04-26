@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 实验频率与概率：做得多了会稳定 <tool:dt09-experimental-frequency>
 
@@ -49,6 +50,40 @@
 
   *历史著名实验*：$18$ 世纪的 Buffon 抛硬币 $4040$ 次，正面 $2048$ 次 $=>$ $f_n approx 0.5069$。$20$ 世纪初 Pearson 抛 $24000$ 次，正面 $12012$ 次 $=>$ $f_n approx 0.5005$。越做越贴近 $0.5$——这正是“正面概率 $= 0.5$”最经验的印证。
 
+  把某班同学做的抛硬币实验结果画成折线图，可以看到频率如何收敛到 $0.5$：
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      line((-0.5, 0), (16, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -0.5), (0, 8), stroke: 0.4pt, mark: (end: ">"))
+      content((16.3, 0), text(size: 6pt)[$n$], anchor: "west")
+      content((0, 8.5), text(size: 6pt)[$f_n$], anchor: "south")
+      // P=0.5 理论线
+      line((0, 4), (15, 4), stroke: (paint: rgb("#C62828"), thickness: 0.4pt, dash: "dashed"))
+      content((15.5, 4), text(size: 5pt, fill: rgb("#C62828"))[$0.5$], anchor: "west")
+      // 模拟数据
+      let ns = (1, 2.5, 4, 6, 8, 10, 12, 14)
+      let fs = (6, 5.2, 4.8, 4.3, 3.8, 4.1, 3.9, 4.05)
+      for i in range(ns.len()) {
+        circle((ns.at(i), fs.at(i)), radius: 0.12, fill: rgb("#1976D2"))
+        if i > 0 {
+          line((ns.at(i - 1), fs.at(i - 1)), (ns.at(i), fs.at(i)), stroke: 0.5pt + rgb("#1976D2"))
+        }
+      }
+      let n-labels = ("10", "20", "50", "100", "200", "500", "1k", "2k")
+      for i in range(ns.len()) {
+        content((ns.at(i), -0.6), text(size: 4pt)[#n-labels.at(i)], anchor: "north")
+      }
+      for val in (0.3, 0.5, 0.7) {
+        let y = val * 8
+        line((-0.3, y), (0, y), stroke: 0.2pt)
+        content((-0.6, y), text(size: 4pt)[#val], anchor: "east")
+      }
+    }),
+    caption: [抛硬币频率收敛图：$n$ 越大，$f_n$ 波动越小，逐渐贴近 $P = 0.5$]
+  )
+
   *用实验频率估计未知概率*
 
   当一个随机事件的概率*无法从样本空间推出*（图钉、药效、生产合格率等），标准办法是：
@@ -68,6 +103,29 @@
   *模拟是现代概率统计的核心工具之一*——尤其在事件复杂、样本空间难以枚举时，模拟往往比纸笔推导更容易。
 
   *实验频率 $<->$ 理论概率：两件事的关系*
+
+  下面以某班 $40$ 名同学"抛图钉"实验为例：每位同学抛 $50$ 次，记录"钉尖朝上"的相对频率。$40$ 个频率值散布在 $0.55$~$0.70$ 之间，集中在 $0.62$ 附近——经验概率估计为 $hat(P) approx 0.62$。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      line((-0.5, 0), (14, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -0.5), (0, 8), stroke: 0.4pt, mark: (end: ">"))
+      content((14.3, 0), text(size: 6pt)[$f_n$], anchor: "west")
+      content((0, 8.5), text(size: 6pt)[人数], anchor: "south")
+      // 频率分布条
+      let ranges = ("0.55", "0.58", "0.60", "0.62", "0.64", "0.66", "0.70")
+      let freqs = (2, 5, 8, 12, 8, 3, 2)
+      for i in range(freqs.len()) {
+        let x = i * 2
+        let h = freqs.at(i) * 0.55
+        rect((x, 0), (x + 1.8, h), fill: rgb("#1976D2").lighten(60%), stroke: 0.5pt + rgb("#1976D2"))
+        content((x + 0.9, -0.6), text(size: 4pt)[#ranges.at(i)])
+        content((x + 0.9, h + 0.3), text(size: 5pt)[#freqs.at(i)])
+      }
+    }),
+    caption: [$40$ 位同学各抛图钉 $50$ 次后的相对频率分布：集中在 $0.62$ 附近——经验概率的直觉]
+  )
 
   #align(center, table(
     columns: (1fr, 1fr),

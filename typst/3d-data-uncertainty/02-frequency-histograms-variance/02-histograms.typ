@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 频率分布直方图：给连续数据一张形状 <tool:dt05-histograms>
 
@@ -41,7 +42,39 @@
     [*频率 / 组距*], [$0.004$], [$0.004$], [$0.016$], [$0.036$], [$0.028$], [$0.012$],
   ))
 
-  以*频率 / 组距*做纵轴：横轴从 $40$ 到 $100$；六根*紧贴*的条，高度分别为 $0.004, 0.004, 0.016, 0.036, 0.028, 0.012$。最高的一档是 $[70, 80)$。
+  以*频率 / 组距*做纵轴：横轴从 $40$ 到 $100$；六根*紧贴*的条：
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      line((-0.5, 0), (14, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -0.5), (0, 10), stroke: 0.4pt, mark: (end: ">"))
+      content((14.3, 0), text(size: 6pt)[分数], anchor: "west")
+      content((-0.3, 10.5), text(size: 5pt)[频率/组距], anchor: "south")
+      let densities = (0.004, 0.004, 0.016, 0.036, 0.028, 0.012)
+      let scale = 240
+      for i in range(densities.len()) {
+        let x1 = i * 2
+        let x2 = (i + 1) * 2
+        let h = densities.at(i) * scale
+        rect((x1, 0), (x2, h), fill: rgb("#1976D2").lighten(60%), stroke: 0.5pt + rgb("#1976D2"))
+      }
+      let tick-labels = (40, 50, 60, 70, 80, 90, 100)
+      for i in range(tick-labels.len()) {
+        let x = i * 2
+        line((x, -0.2), (x, 0), stroke: 0.3pt)
+        content((x, -0.7), text(size: 5pt)[#tick-labels.at(i)])
+      }
+      for val in (0.01, 0.02, 0.03) {
+        let y = val * scale
+        line((-0.3, y), (0, y), stroke: 0.3pt)
+        content((-0.8, y), text(size: 4pt)[#val], anchor: "east")
+      }
+    }),
+    caption: [某班 $50$ 人分数频率分布直方图：条紧贴、$[70, 80)$ 最高——典型单峰分布]
+  )
+
+  最高的一档是 $[70, 80)$。
 
   形状一眼就看出来：$[70, 80)$ 最高，向两边逐渐降低——一种“中间鼓、两边瘦”的单峰形状。如果改成小组距（比如 $w = 5$）重画一版，这种形状会更细腻。
 
@@ -57,6 +90,51 @@
     [纵轴], [*频率密度*（或等宽时直接频率）], [*数值 / 频数*（直接条高即读数）],
     [信息], [*形状*（集中、离散、对称、偏态）], [*对比*（谁多谁少）],
   ))
+
+  下面用某班 $40$ 名同学最喜欢的水果（分类）和某班 $40$ 名同学身高分布（连续区间）做对比：
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    figure(
+      cetz.canvas(length: 0.38cm, {
+        import cetz.draw: *
+        line((-0.5, 0), (11, 0), stroke: 0.4pt, mark: (end: ">"))
+        line((0, -0.5), (0, 8), stroke: 0.4pt, mark: (end: ">"))
+        content((0, 8.5), text(size: 5pt)[人数], anchor: "south")
+        let names = ("苹果", "香蕉", "橘子", "葡萄")
+        let vals = (14, 10, 8, 8)
+        for i in range(names.len()) {
+          let x = 1 + i * 2.5
+          let h = vals.at(i) * 0.45
+          rect((x, 0), (x + 1.6, h), fill: rgb("#388E3C").lighten(60%), stroke: 0.5pt + rgb("#388E3C"))
+          content((x + 0.8, -0.7), text(size: 5pt)[#names.at(i)])
+          content((x + 0.8, h + 0.3), text(size: 5pt)[#vals.at(i)])
+        }
+      }),
+      caption: [*条形图*：分类数据，条间*留间隙*]
+    ),
+    figure(
+      cetz.canvas(length: 0.38cm, {
+        import cetz.draw: *
+        line((-0.5, 0), (11, 0), stroke: 0.4pt, mark: (end: ">"))
+        line((0, -0.5), (0, 8), stroke: 0.4pt, mark: (end: ">"))
+        content((0, 8.5), text(size: 5pt)[频数], anchor: "south")
+        let freqs = (4, 10, 16, 8, 2)
+        let labels = (150, 155, 160, 165, 170, 175)
+        for i in range(freqs.len()) {
+          let x1 = i * 2
+          let h = freqs.at(i) * 0.45
+          rect((x1, 0), (x1 + 2, h), fill: rgb("#E65100").lighten(60%), stroke: 0.5pt + rgb("#E65100"))
+          content((x1 + 1, h + 0.3), text(size: 5pt)[#freqs.at(i)])
+        }
+        for i in range(labels.len()) {
+          content((i * 2, -0.7), text(size: 5pt)[#labels.at(i)])
+        }
+      }),
+      caption: [*直方图*：连续区间，条*紧贴*]
+    ),
+  )
 
   识图第一步：看*横轴是否是数值区间 + 条是否紧贴*。是则直方图，用“面积 / 密度”解读；否则条形图，用“条高 / 数值”解读。
 

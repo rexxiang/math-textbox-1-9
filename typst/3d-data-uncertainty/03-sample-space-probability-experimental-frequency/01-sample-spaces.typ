@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 样本空间：把所有可能结果数清楚 <tool:dt07-sample-spaces>
 
@@ -49,6 +50,44 @@
 
   两枚硬币的 $Omega$ 可以画成一棵树：
 
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      // 根
+      circle((6, 8), radius: 0.2, fill: luma(180))
+      // 第一层
+      line((6, 8), (3, 5.5), stroke: 0.5pt)
+      line((6, 8), (9, 5.5), stroke: 0.5pt)
+      content((3, 5.5), text(size: 7pt)[H], anchor: "north")
+      content((9, 5.5), text(size: 7pt)[T], anchor: "north")
+      content((4, 7), text(size: 6pt)[第一枚], anchor: "south")
+      // 第二层 - H分支
+      line((3, 5), (1.5, 2.5), stroke: 0.5pt)
+      line((3, 5), (4.5, 2.5), stroke: 0.5pt)
+      content((1.5, 2.2), text(size: 7pt)[H], anchor: "north")
+      content((4.5, 2.2), text(size: 7pt)[T], anchor: "north")
+      // 第二层 - T分支
+      line((9, 5), (7.5, 2.5), stroke: 0.5pt)
+      line((9, 5), (10.5, 2.5), stroke: 0.5pt)
+      content((7.5, 2.2), text(size: 7pt)[H], anchor: "north")
+      content((10.5, 2.2), text(size: 7pt)[T], anchor: "north")
+      // 结果标注
+      rect((0.5, 0.3), (2.5, 1.3), fill: rgb("#1976D2").lighten(80%), stroke: 0.3pt)
+      content((1.5, 0.8), text(size: 6pt)[HH])
+      rect((3.5, 0.3), (5.5, 1.3), fill: rgb("#1976D2").lighten(80%), stroke: 0.3pt)
+      content((4.5, 0.8), text(size: 6pt)[HT])
+      rect((6.5, 0.3), (8.5, 1.3), fill: rgb("#1976D2").lighten(80%), stroke: 0.3pt)
+      content((7.5, 0.8), text(size: 6pt)[TH])
+      rect((9.5, 0.3), (11.5, 1.3), fill: rgb("#1976D2").lighten(80%), stroke: 0.3pt)
+      content((10.5, 0.8), text(size: 6pt)[TT])
+      line((1.5, 1.3), (1.5, 2), stroke: 0.3pt + luma(150))
+      line((4.5, 1.3), (4.5, 2), stroke: 0.3pt + luma(150))
+      line((7.5, 1.3), (7.5, 2), stroke: 0.3pt + luma(150))
+      line((10.5, 1.3), (10.5, 2), stroke: 0.3pt + luma(150))
+    }),
+    caption: [抛两枚硬币的树状图：每条根→叶路径 $=$ 一个样本点，共 $2 times 2 = 4$ 条路径]
+  )
+
   - 第一层：第一枚硬币结果 $H$ 或 $T$（两支）；
   - 第二层：每支再分第二枚 $H$ 或 $T$（四支）。
 
@@ -61,6 +100,34 @@
   连续做几件独立的事（每件有 $a_1, a_2, a_3, ...$ 种可能）—— 总结果数 $= a_1 times a_2 times a_3 times ...$。
   - 抛 $3$ 枚硬币：$2 times 2 times 2 = 8$ 种。
   - 投 $2$ 颗骰子：$6 times 6 = 36$ 种。
+
+  例如，某班 $40$ 名同学从 $\{1, 2, 3, 4, 5, 6\}$ 中各随机选一个幸运数字的实验，一次的样本空间 $|Omega| = 6$。如果两位同学各选一次，用乘法原理：$|Omega| = 6 times 6 = 36$。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      // 展示乘法原理的网格图：掷两颗骰子 6×6
+      for i in range(7) {
+        line((i * 1.5, 0), (i * 1.5, 9), stroke: 0.2pt + luma(200))
+        line((0, i * 1.5), (9, i * 1.5), stroke: 0.2pt + luma(200))
+      }
+      content((4.5, 10), text(size: 6pt)[第一颗骰子], anchor: "south")
+      content((-1, 4.5), text(size: 6pt)[第二颗], anchor: "east")
+      for i in range(6) {
+        content((i * 1.5 + 0.75, -0.5), text(size: 5pt)[#(i + 1)])
+        content((-0.5, i * 1.5 + 0.75), text(size: 5pt)[#(i + 1)])
+      }
+      // 标记"和=7"的点
+      let sum7 = ((0, 5), (1, 4), (2, 3), (3, 2), (4, 1), (5, 0))
+      for pt in sum7 {
+        let px = pt.at(0) * 1.5 + 0.75
+        let py = pt.at(1) * 1.5 + 0.75
+        circle((px, py), radius: 0.35, fill: rgb("#C62828").lighten(60%), stroke: 0.3pt + rgb("#C62828"))
+      }
+      content((10.5, 4.5), text(size: 5pt)[红点 $=$ 和为 $7$\ 共 $6$ 个], anchor: "west")
+    }),
+    caption: [掷两颗骰子的 $6 times 6 = 36$ 个样本点（网格图）。红点标出"和 $= 7$"的 $6$ 个事件点]
+  )
 
   *枚举要无漏 $+$ 无重*
 

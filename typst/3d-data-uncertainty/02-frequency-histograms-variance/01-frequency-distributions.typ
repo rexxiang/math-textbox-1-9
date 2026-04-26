@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 频率分布表：把一把数据排成结构 <tool:dt04-frequency-distributions>
 
@@ -60,6 +61,33 @@
 
   这就是*频率分布表*。三个要点：
 
+  把这张表画成柱状图，数据的*形状*一目了然（某班 $50$ 名同学期末考试成绩）：
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      line((-0.5, 0), (16, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -0.5), (0, 10), stroke: 0.4pt, mark: (end: ">"))
+      content((16.3, 0), text(size: 6pt)[分数段], anchor: "west")
+      content((0, 10.5), text(size: 6pt)[频数], anchor: "south")
+      let labels = ("[40,50)", "[50,60)", "[60,70)", "[70,80)", "[80,90)", "[90,100]")
+      let freqs = (2, 2, 8, 18, 14, 6)
+      for i in range(labels.len()) {
+        let x = 0.5 + i * 2.5
+        let h = freqs.at(i) * 0.5
+        rect((x, 0), (x + 2, h), fill: rgb("#1976D2").lighten(60%), stroke: 0.5pt + rgb("#1976D2"))
+        content((x + 1, -0.8), text(size: 5pt)[#labels.at(i)])
+        content((x + 1, h + 0.4), text(size: 5pt)[#freqs.at(i)])
+      }
+      for val in (5, 10, 15) {
+        let y = val * 0.5
+        line((-0.3, y), (0, y), stroke: 0.3pt)
+        content((-0.6, y), text(size: 5pt)[#val], anchor: "east")
+      }
+    }),
+    caption: [某班 $50$ 人分数频数柱状图：$[70, 80)$ 一档最高，数据集中在中高分段]
+  )
+
   + *频数* $f_k$ 是*整数*；所有 $f_k$ 之和 $= n$。
   + *频率* $p_k = f_k / n$ 是*小数*（介于 $0$ 与 $1$）；所有 $p_k$ 之和 $= 1$。
   + *百分比* $= p_k times 100%$ 只是频率的另一种书写方式。
@@ -96,6 +124,30 @@
   - *组距* $w$：每档的宽度（本书默认*各档等宽*）。
 
   *分组流程*
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      line((-0.5, 0), (14, 0), stroke: 0.5pt, mark: (end: ">"))
+      content((14.3, 0), text(size: 6pt)[分数], anchor: "west")
+      let starts = (40, 50, 60, 70, 80, 90)
+      let freqs = (2, 2, 8, 18, 14, 6)
+      for i in range(starts.len()) {
+        let x1 = (starts.at(i) - 40) * 0.2
+        let x2 = x1 + 2
+        line((x1, -0.3), (x1, 0.3), stroke: 0.4pt)
+        let h = freqs.at(i) * 0.3
+        rect((x1, 0.5), (x2, 0.5 + h), fill: rgb("#1976D2").lighten(70%), stroke: 0.3pt + rgb("#1976D2"))
+        content(((x1 + x2) / 2, 0.5 + h + 0.4), text(size: 5pt)[$f = #freqs.at(i)$], anchor: "south")
+      }
+      line((12, -0.3), (12, 0.3), stroke: 0.4pt)
+      for val in (40, 50, 60, 70, 80, 90, 100) {
+        let x = (val - 40) * 0.2
+        content((x, -0.7), text(size: 5pt)[#val], anchor: "north")
+      }
+    }),
+    caption: [频率分布表的几何直觉：数轴上等宽分档，堆积高度 $=$ 频数]
+  )
 
   + 算*极差* $= max - min$。
   + 定*组数* $m$（经验：$n in [20, 50]$ 取 $5$~$8$；$n in [50, 500]$ 取 $8$~$12$）。

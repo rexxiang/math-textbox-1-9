@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 整理数据的三张常用图：条形图 / 折线图 / 扇形图 <tool:dt01-organizing-data>
 
@@ -33,6 +34,32 @@
   - *折线图*：如果我们把“兴趣班”换成“时间”，比如“每天晚自习报名足球课的人数”，那每一天的数字是按*顺序*变化的。把每天的点描在坐标里、相邻两点连线，就是折线图——它强调*变化趋势*。
   - *扇形图*：把圆盘分成五块，每块的*角度*与兴趣班*占总人数的比例*成正比。$18$ 人报足球、总共 $60$ 人，对应扇形的圆心角是 $18/60 times 360° = 108°$。扇形图强调*构成比例*——“足球占 $30%$、画画占 $20%$”。
 
+  把兴趣班那组数据画成条形图，一眼就能比出高低：
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      line((-0.5, 0), (14, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -0.5), (0, 10.5), stroke: 0.4pt, mark: (end: ">"))
+      content((0, 11), text(size: 7pt)[人数], anchor: "south")
+      for val in (3, 6, 9, 12, 15, 18) {
+        let y = val * 0.5
+        line((-0.3, y), (0, y), stroke: 0.3pt)
+        content((-0.8, y), text(size: 6pt)[#val], anchor: "east")
+      }
+      let names = ("足球", "画画", "编程", "合唱", "围棋")
+      let vals  = (18, 12, 15, 9, 6)
+      for i in range(names.len()) {
+        let x = 1.2 + i * 2.4
+        let h = vals.at(i) * 0.5
+        rect((x, 0), (x + 1.6, h), fill: rgb("#1976D2").lighten(60%), stroke: 0.5pt + rgb("#1976D2"))
+        content((x + 0.8, -0.8), text(size: 7pt)[#names.at(i)])
+        content((x + 0.8, h + 0.4), text(size: 6pt)[#vals.at(i)])
+      }
+    }),
+    caption: [某年级 $60$ 位同学兴趣班人数条形图：条高 $=$ 人数，足球最多、围棋最少]
+  )
+
   *三种图各自擅长的问题*
 
   #align(center, table(
@@ -44,6 +71,38 @@
     [一个量随时间 / 顺序怎样变化], [折线图], [相邻点连成线 → 升降趋势一目了然],
     [各部分在总体中占多大比例], [扇形图], [圆盘 $=$ 总体；扇形角度 / 面积 $=$ 占比],
   ))
+
+  下面是某市 $12$ 个月平均气温（°C）数据。这种有*时间顺序*的数据，适合折线图展示趋势：
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      line((-0.5, 0), (15, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -1), (0, 9), stroke: 0.4pt, mark: (end: ">"))
+      content((15.3, 0), text(size: 7pt)[月份], anchor: "west")
+      content((0, 9.5), text(size: 7pt)[气温/°C], anchor: "south")
+      let temps = (2, 5, 10, 16, 22, 28, 30, 29, 24, 17, 9, 3)
+      for i in range(temps.len()) {
+        let x = 1 + i * 1.1
+        let y = temps.at(i) * 0.26
+        circle((x, y), radius: 0.12, fill: rgb("#E65100"))
+        if i > 0 {
+          let px = 1 + (i - 1) * 1.1
+          let py = temps.at(i - 1) * 0.26
+          line((px, py), (x, y), stroke: 0.6pt + rgb("#E65100"))
+        }
+        if calc.rem(i, 3) == 0 {
+          content((x, -0.7), text(size: 5pt)[#(i + 1)月])
+        }
+      }
+      for val in (0, 10, 20, 30) {
+        let y = val * 0.26
+        line((-0.3, y), (0, y), stroke: 0.3pt)
+        content((-0.8, y), text(size: 5pt)[#val], anchor: "east")
+      }
+    }),
+    caption: [某市 $12$ 个月平均气温折线图：横轴有时间顺序，折线清楚展示"夏高冬低"的趋势]
+  )
 
   *为什么不能乱配？*
 

@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": vocab, crisis, history-note, discovery, tryit, blueprint, pitfall, mastery
+#import "../../lib/diagram-packages.typ": cetz
 
 === 总体 vs 样本 <tool:dt10-population-vs-sample>
 
@@ -39,6 +40,28 @@
 
   *容量说了算*
 
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      // 总体大圆
+      circle((5, 5), radius: 4.5, stroke: 0.6pt + rgb("#1976D2"), fill: rgb("#1976D2").lighten(90%))
+      content((5, 9.8), text(size: 7pt, fill: rgb("#1976D2"))[总体 $N = 300$], anchor: "south")
+      // 样本小圆
+      circle((5, 4.5), radius: 2, stroke: 0.8pt + rgb("#C62828"), fill: rgb("#C62828").lighten(80%))
+      content((5, 4.5), text(size: 7pt, fill: rgb("#C62828"))[样本 $n = 30$])
+      // 个体点
+      let outer-pts = ((1.5, 6), (2, 3.5), (8, 7), (7.5, 3), (3, 8), (6.5, 8.5), (8.5, 5), (1.5, 5))
+      for p in outer-pts {
+        circle(p, radius: 0.12, fill: rgb("#1976D2").darken(20%))
+      }
+      let inner-pts = ((4, 4), (5, 3.5), (6, 5), (4.5, 5.5), (5.5, 4.8), (5.8, 3.8))
+      for p in inner-pts {
+        circle(p, radius: 0.15, fill: rgb("#C62828"))
+      }
+    }),
+    caption: [总体（蓝大圈 $N = 300$）中抽出样本（红小圈 $n = 30$）：每个点 $=$ 一个个体]
+  )
+
   样本里有两个不同的“数”：
   - $n$：*样本容量*——样本里有多少个个体。
   - 样本测出的*数据*（如 $30$ 个身高值）。
@@ -69,6 +92,40 @@
   它是*样本的描述*（第 $1$ 章讲过），也是下一节要用来*估计总体均值 $mu$* 的工具。
 
   *工具 3：为什么必须抽样*
+
+  以某校 $300$ 名初三学生身高为例——普查需要量 $300$ 人，而抽样只需要 $30$ 人：
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      // 普查
+      rect((0, 0), (5, 4), stroke: 0.5pt)
+      content((2.5, 4.5), text(size: 6pt)[普查], anchor: "south")
+      for i in range(5) {
+        for j in range(4) {
+          circle((0.5 + i, 0.5 + j), radius: 0.15, fill: rgb("#1976D2").lighten(50%))
+        }
+      }
+      content((2.5, -0.5), text(size: 5pt)[量 $300$ 人], anchor: "north")
+      // 箭头
+      content((6.5, 2), text(size: 8pt)[→])
+      // 抽样
+      rect((8, 0), (13, 4), stroke: 0.5pt)
+      content((10.5, 4.5), text(size: 6pt)[抽样], anchor: "south")
+      for i in range(5) {
+        for j in range(4) {
+          let is-sample = (i + j * 5) < 6
+          if is-sample {
+            circle((8.5 + i, 0.5 + j), radius: 0.15, fill: rgb("#C62828"))
+          } else {
+            circle((8.5 + i, 0.5 + j), radius: 0.15, fill: luma(220))
+          }
+        }
+      }
+      content((10.5, -0.5), text(size: 5pt)[只量 $30$ 人（红点）], anchor: "north")
+    }),
+    caption: [普查 vs 抽样：用少量代表换取结论，节约时间和成本]
+  )
 
   - *成本 / 时间*：普查 $N$ 个对象要 $N$ 次操作；样本只要 $n << N$。
   - *破坏性检验*：测灯泡寿命要把灯泡点到报废——不可能全测。

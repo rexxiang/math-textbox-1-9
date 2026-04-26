@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 从图里读数 & 识别误导图 <tool:dt02-charts-and-readings>
 
@@ -42,11 +43,80 @@
 
   *花招 A：截断纵轴*
 
-  最常见——纵轴不从 $0$ 起。$96$ 分 vs. $98$ 分画出来像 $1 : 3$。
+  最常见——纵轴不从 $0$ 起。$96$ 分 vs. $98$ 分画出来像 $1 : 3$。看一看两张图的对比（数据来自某中学月考两位同学的总评分）：
+
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    figure(
+      cetz.canvas(length: 0.4cm, {
+        import cetz.draw: *
+        line((-0.5, 0), (7, 0), stroke: 0.4pt, mark: (end: ">"))
+        line((0, -0.5), (0, 8), stroke: 0.4pt, mark: (end: ">"))
+        content((0, 8.5), text(size: 6pt)[分数], anchor: "south")
+        for i in range(6) {
+          let val = 95 + i
+          let y = i * 1.6
+          line((-0.3, y), (0, y), stroke: 0.3pt)
+          content((-0.8, y), text(size: 5pt)[#val], anchor: "east")
+        }
+        rect((1.5, 0), (3.5, 4.8), fill: rgb("#1976D2").lighten(60%), stroke: 0.5pt + rgb("#1976D2"))
+        content((2.5, -0.7), text(size: 6pt)[A])
+        content((2.5, 5.2), text(size: 5pt)[98])
+        rect((4, 0), (6, 1.6), fill: rgb("#C62828").lighten(60%), stroke: 0.5pt + rgb("#C62828"))
+        content((5, -0.7), text(size: 6pt)[B])
+        content((5, 2.0), text(size: 5pt)[96])
+      }),
+      caption: [纵轴从 $95$ 起——A 看起来是 B 的 $3$ 倍高！]
+    ),
+    figure(
+      cetz.canvas(length: 0.4cm, {
+        import cetz.draw: *
+        line((-0.5, 0), (7, 0), stroke: 0.4pt, mark: (end: ">"))
+        line((0, -0.5), (0, 8), stroke: 0.4pt, mark: (end: ">"))
+        content((0, 8.5), text(size: 6pt)[分数], anchor: "south")
+        for i in range(6) {
+          let val = i * 20
+          let y = i * 1.6
+          line((-0.3, y), (0, y), stroke: 0.3pt)
+          content((-0.8, y), text(size: 5pt)[#val], anchor: "east")
+        }
+        let ya = 98.0 / 100 * 8
+        let yb = 96.0 / 100 * 8
+        rect((1.5, 0), (3.5, ya), fill: rgb("#1976D2").lighten(60%), stroke: 0.5pt + rgb("#1976D2"))
+        content((2.5, -0.7), text(size: 6pt)[A])
+        rect((4, 0), (6, yb), fill: rgb("#C62828").lighten(60%), stroke: 0.5pt + rgb("#C62828"))
+        content((5, -0.7), text(size: 6pt)[B])
+      }),
+      caption: [纵轴从 $0$ 起——差距几乎看不出（事实如此）]
+    ),
+  )
+
   - 识别方法：看条形图时，*先瞄一眼纵轴起点*。不从 $0$ 起的条形图，条长比例*不能直接解读*为数值比例。
   - 合理应用：折线图*可以*不从 $0$ 起——因为折线图要呈现的是*趋势*（升降形状），不是绝对条长对比，纵轴截断不影响趋势解读。
 
   *花招 B：非等宽分类 / 等间距伪装*
+
+  某校调查三个年级男生人数（七年级 $120$ 人、八年级 $115$ 人、九年级 $118$ 人），如果故意把八年级的条画窄：
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      line((-0.5, 0), (12, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -0.5), (0, 7), stroke: 0.4pt, mark: (end: ">"))
+      content((0, 7.5), text(size: 6pt)[人数], anchor: "south")
+      rect((1, 0), (4, 6), fill: rgb("#1976D2").lighten(60%), stroke: 0.5pt + rgb("#1976D2"))
+      content((2.5, -0.7), text(size: 6pt)[七年级])
+      content((2.5, 6.4), text(size: 5pt)[120])
+      rect((5, 0), (6.2, 5.75), fill: rgb("#C62828").lighten(60%), stroke: 0.5pt + rgb("#C62828"))
+      content((5.6, -0.7), text(size: 6pt)[八年级])
+      content((5.6, 6.15), text(size: 5pt)[115])
+      rect((7, 0), (10, 5.9), fill: rgb("#388E3C").lighten(60%), stroke: 0.5pt + rgb("#388E3C"))
+      content((8.5, -0.7), text(size: 6pt)[九年级])
+      content((8.5, 6.3), text(size: 5pt)[118])
+    }),
+    caption: [非等宽条：八年级条窄、视觉面积小，三个年级实际差距不到 $5$ 人]
+  )
 
   - 条形图里，两条宽度一窄一宽，眼睛会被*面积*骗：宽条看起来“更有分量”，即使高度一样。条宽应*一律相等*。
   - 或者是折线图里把“$2010, 2015, 2018, 2019, 2020$”这种*不等距*的年份按*等距*摆开——$2010$ 到 $2015$ 是 $5$ 年，$2018$ 到 $2019$ 只有 $1$ 年，视觉上前后增长速度都被扭曲。

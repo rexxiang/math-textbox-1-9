@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 用一两个数字概括：center 与 spread <tool:dt03-center-and-spread>
 
@@ -44,6 +45,34 @@
 
   $ bar(x) = 5250, quad "中位数" = 3250, quad "众数" = 3000. $
 
+  把 $6$ 个薪资画成数轴上的点，再标出三个 center 的位置：
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      line((-0.5, 0), (17, 0), stroke: 0.5pt, mark: (end: ">"))
+      content((17.3, 0), text(size: 6pt)[元], anchor: "west")
+      for val in (0, 3000, 6000, 9000, 12000, 15000) {
+        let x = val / 1000
+        line((x, -0.3), (x, 0.3), stroke: 0.3pt)
+        content((x, -0.9), text(size: 5pt)[#val], anchor: "north")
+      }
+      circle((3, 0.6), radius: 0.18, fill: rgb("#1976D2"))
+      circle((3, 1.1), radius: 0.18, fill: rgb("#1976D2"))
+      circle((3, 1.6), radius: 0.18, fill: rgb("#1976D2"))
+      circle((3.5, 0.6), radius: 0.18, fill: rgb("#1976D2"))
+      circle((4, 0.6), radius: 0.18, fill: rgb("#1976D2"))
+      circle((15, 0.6), radius: 0.18, fill: rgb("#1976D2"))
+      line((5.25, -2.0), (5.25, -0.6), stroke: 0.6pt + rgb("#C62828"), mark: (end: ">"))
+      content((5.25, -2.3), text(size: 5pt, fill: rgb("#C62828"))[$bar(x) = 5250$], anchor: "north")
+      line((3.25, 2.5), (3.25, 1.8), stroke: 0.6pt + rgb("#388E3C"), mark: (end: ">"))
+      content((4.8, 2.8), text(size: 5pt, fill: rgb("#388E3C"))[中位数 $= 3250$], anchor: "south")
+      line((3, 2.5), (3, 2.0), stroke: 0.6pt + rgb("#7B1FA2"), mark: (end: ">"))
+      content((1.2, 2.8), text(size: 5pt, fill: rgb("#7B1FA2"))[众数 $= 3000$], anchor: "south")
+    }),
+    caption: [小公司 $6$ 人月薪点图：$15000$ 的极端值把 $bar(x)$ 拉到右侧，中位数和众数紧贴大多数]
+  )
+
   平均数被 $15000$ 这个*极端值*（老板那份）拉高了 $2000$；中位数和众数却几乎感受不到它。这正是为什么“平均工资 $5250$”代表不了普通员工——极端值对平均数影响大，对中位数、众数影响小。
 
   *center 的选择经验*
@@ -63,6 +92,40 @@
     [*甲班*], [$80$], [$82$], [$85$], [$88$], [$90$], [平均 $85$，极差 $10$],
     [*乙班*], [$70$], [$75$], [$85$], [$95$], [$100$], [平均 $85$，极差 $30$],
   ))
+
+  用点图把两班数据画在同一把尺子上：
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      content((-2, 1.5), text(size: 7pt)[*甲班*], anchor: "east")
+      line((0, 1.5), (13, 1.5), stroke: 0.4pt, mark: (end: ">"))
+      for val in (70, 75, 80, 85, 90, 95, 100) {
+        let x = (val - 70) * 0.4
+        line((x, 1.2), (x, 1.8), stroke: 0.2pt)
+        content((x, 0.7), text(size: 4pt)[#val])
+      }
+      let jia = (80, 82, 85, 88, 90)
+      for v in jia {
+        circle(((v - 70) * 0.4, 2.1), radius: 0.16, fill: rgb("#1976D2"))
+      }
+      content((-2, -1), text(size: 7pt)[*乙班*], anchor: "east")
+      line((0, -1), (13, -1), stroke: 0.4pt, mark: (end: ">"))
+      for val in (70, 75, 80, 85, 90, 95, 100) {
+        let x = (val - 70) * 0.4
+        line((x, -1.3), (x, -0.7), stroke: 0.2pt)
+        content((x, -1.7), text(size: 4pt)[#val])
+      }
+      let yi = (70, 75, 85, 95, 100)
+      for v in yi {
+        circle(((v - 70) * 0.4, -0.4), radius: 0.16, fill: rgb("#C62828"))
+      }
+      let avg-x = (85 - 70) * 0.4
+      line((avg-x, -2.2), (avg-x, 2.8), stroke: (paint: rgb("#388E3C"), thickness: 0.5pt, dash: "dashed"))
+      content((avg-x, 3.2), text(size: 6pt, fill: rgb("#388E3C"))[$bar(x) = 85$], anchor: "south")
+    }),
+    caption: [甲班（蓝）与乙班（红）期末成绩点图：平均都是 $85$，但甲班紧凑、乙班分散]
+  )
 
   两班平均都是 $85$ 分，但甲班紧凑、乙班分散。只报“平均 $85$”无法区分二者。
 

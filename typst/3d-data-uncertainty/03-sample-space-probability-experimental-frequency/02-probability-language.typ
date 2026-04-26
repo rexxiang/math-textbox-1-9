@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 古典概率：把可能性量化到 $[0, 1]$ <tool:dt08-probability-language>
 
@@ -36,6 +37,33 @@
   - $|A| =$ 事件 $A$ 中样本点个数。
 
   *三个示范*
+
+  把骰子几个事件的概率画成条形图：
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      line((-0.5, 0), (14, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -0.5), (0, 8), stroke: 0.4pt, mark: (end: ">"))
+      content((14.3, 0), text(size: 6pt)[事件], anchor: "west")
+      content((0, 8.5), text(size: 6pt)[概率], anchor: "south")
+      let names = ("点=6", "偶数", "和=7")
+      let probs = (1.0/6, 1.0/2, 1.0/6)
+      let prob-labels = ($1\/6$, $1\/2$, $1\/6$)
+      for i in range(names.len()) {
+        let x = 1.5 + i * 4
+        let h = probs.at(i) * 12
+        rect((x, 0), (x + 2.5, h), fill: rgb("#1976D2").lighten(60%), stroke: 0.5pt + rgb("#1976D2"))
+        content((x + 1.25, -0.8), text(size: 6pt)[#names.at(i)])
+        content((x + 1.25, h + 0.4), text(size: 6pt)[#prob-labels.at(i)])
+      }
+      line((-0.3, 6), (0, 6), stroke: 0.3pt)
+      content((-0.6, 6), text(size: 5pt)[$1\/2$], anchor: "east")
+      line((-0.3, 2), (0, 2), stroke: 0.3pt)
+      content((-0.6, 2), text(size: 5pt)[$1\/6$], anchor: "east")
+    }),
+    caption: [骰子事件概率条形图——所有概率都在 $[0, 1]$ 之间]
+  )
 
   - 骰子“点数 $= 6$”：$P(A) = 1 \/ 6$。
   - 骰子“偶数点”：$P(A) = 3 \/ 6 = 1 \/ 2$。
@@ -83,6 +111,25 @@
   $= 3 \/ 6 + 3 \/ 6 - 2 \/ 6 = 4 \/ 6 = 2 \/ 3$ ✓。这条公式会在高中正式引入；本章只要*记住：事件有重叠时直接相加是错的，要减去重叠*。
 
   *对立事件就是互斥的极端情况*
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      // Ω 大矩形
+      rect((0, 0), (14, 7), stroke: 0.6pt + luma(100))
+      content((7, 7.5), text(size: 7pt)[$Omega$], anchor: "south")
+      // A 区域
+      rect((1, 1), (6, 6), fill: rgb("#1976D2").lighten(80%), stroke: 0.5pt + rgb("#1976D2"))
+      content((3.5, 3.5), text(size: 8pt)[$A$])
+      // A^c 区域标注
+      content((10, 3.5), text(size: 8pt)[$A^c$])
+      // P(A) 标签
+      content((3.5, 0.5), text(size: 5pt, fill: rgb("#1976D2"))[$P(A)$], anchor: "north")
+      // P(A^c) 标签
+      content((10, 0.5), text(size: 5pt, fill: rgb("#C62828"))[$P(A^c) = 1 - P(A)$], anchor: "north")
+    }),
+    caption: [$A$ 与 $A^c$ 把 $Omega$ *不重不漏*地一分为二：$P(A) + P(A^c) = 1$]
+  )
 
   $A$ 和 $A^c$ 互斥（没有共同样本点）且*并起来等于 $Omega$*。所以 $P(A) + P(A^c) = P(A union A^c) = P(Omega) = 1$。两条规则在 $A^c$ 这个特例下重合。
 ]

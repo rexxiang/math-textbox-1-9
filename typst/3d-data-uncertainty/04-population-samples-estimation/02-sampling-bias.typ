@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": vocab, crisis, history-note, discovery, tryit, blueprint, pitfall, mastery
+#import "../../lib/diagram-packages.typ": cetz
 
 === 怎样抽样才不偏？ <tool:dt11-sampling-bias>
 
@@ -30,6 +31,33 @@
 
   *三种常见偏差家族（一起看）*
 
+  用一张图概览三种偏差的发生机制（以某市 $10$ 万居民为总体为例）：
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      // 总体
+      rect((0, 0), (14, 3), fill: rgb("#1976D2").lighten(90%), stroke: 0.5pt + rgb("#1976D2"))
+      content((7, 1.5), text(size: 6pt)[总体：某市 $10$ 万居民])
+      // SRS
+      line((3, 3), (3, 5), stroke: 0.6pt + rgb("#388E3C"), mark: (end: ">"))
+      content((3, 5.5), text(size: 5pt, fill: rgb("#388E3C"))[SRS：等概率抽], anchor: "south")
+      rect((1, 6), (5, 8), fill: rgb("#388E3C").lighten(80%), stroke: 0.4pt + rgb("#388E3C"))
+      content((3, 7), text(size: 5pt)[✓ 代表性好])
+      // 方便样本
+      line((7, 3), (7, 5), stroke: 0.6pt + rgb("#E65100"), mark: (end: ">"))
+      content((7, 5.5), text(size: 5pt, fill: rgb("#E65100"))[方便样本], anchor: "south")
+      rect((5.5, 6), (8.5, 8), fill: rgb("#E65100").lighten(80%), stroke: 0.4pt + rgb("#E65100"))
+      content((7, 7), text(size: 5pt)[✗ 只抓近的])
+      // 自选样本
+      line((11, 3), (11, 5), stroke: 0.6pt + rgb("#C62828"), mark: (end: ">"))
+      content((11, 5.5), text(size: 5pt, fill: rgb("#C62828"))[自选样本], anchor: "south")
+      rect((9.5, 6), (12.5, 8), fill: rgb("#C62828").lighten(80%), stroke: 0.4pt + rgb("#C62828"))
+      content((11, 7), text(size: 5pt)[✗ 只来想说的])
+    }),
+    caption: [三种抽样方式对比：只有 SRS 能保证样本代表总体]
+  )
+
   三种偏差都来自“抽样时让某类个体进样本的概率变大或变小”：
 
   - *方便样本*（convenience sample）：谁近就抓谁。调查员在自家门口街访、老师在自己班上发问卷、公司在总部附近工厂做测试——都是方便样本。问题：样本系统偏向*近 $+$ 易接触*的那一小片。
@@ -43,6 +71,33 @@
   - *$500$ 份问卷 $210$ 份回*：无应答偏差。愿意花时间填问卷的家长本就更关注孩子教育，平均陪学时间系统性偏高。
 
   *样本量大并不救偏差*
+
+  《Literary Digest》$240$ 万样本的惨痛教训可以用一张图说明。比较两种抽样的结果：
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      line((-0.5, 0), (14, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -0.5), (0, 8), stroke: 0.4pt, mark: (end: ">"))
+      content((0, 8.5), text(size: 6pt)[预测得票率 %], anchor: "south")
+      // Literary Digest - 有偏
+      rect((1, 0), (4, 5.7), fill: rgb("#C62828").lighten(60%), stroke: 0.5pt + rgb("#C62828"))
+      content((2.5, -1), text(size: 5pt)[Literary Digest\ $n = 240$ 万（有偏）], anchor: "north")
+      content((2.5, 6.1), text(size: 5pt)[57%])
+      // Gallup - SRS
+      rect((5.5, 0), (8.5, 5.6), fill: rgb("#388E3C").lighten(60%), stroke: 0.5pt + rgb("#388E3C"))
+      content((7, -1), text(size: 5pt)[Gallup\ $n = 5$ 万（SRS）], anchor: "north")
+      content((7, 6.0), text(size: 5pt)[56%])
+      // 真实
+      rect((10, 0), (13, 6.2), fill: rgb("#1976D2").lighten(60%), stroke: 0.5pt + rgb("#1976D2"))
+      content((11.5, -1), text(size: 5pt)[真实结果\ 罗斯福], anchor: "north")
+      content((11.5, 6.6), text(size: 5pt)[62%])
+      // 50%基准线
+      line((-0.3, 5), (14, 5), stroke: (paint: luma(150), thickness: 0.3pt, dash: "dashed"))
+      content((-0.5, 5), text(size: 4pt)[50%], anchor: "east")
+    }),
+    caption: [《Literary Digest》$240$ 万有偏样本 vs Gallup $5$ 万 SRS——样本量大抵不过偏差]
+  )
 
   三场事故都有共同教训：*样本量再大，也救不了有偏的抽样方式*。《Literary Digest》$240$ 万份样本输给了 Gallup 的 $5$ 万——因为前者系统性偏向富裕阶层，后者随机。
 ]

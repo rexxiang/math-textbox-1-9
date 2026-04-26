@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 方差与标准差：比极差更细的一把尺子 <tool:dt06-variance>
 
@@ -43,6 +44,44 @@
 
   - 甲班偏差平方：$25, 0, 0, 0, 25$；平均 $= (25 + 0 + 0 + 0 + 25) / 5 = 50 / 5 = 10$。
   - 乙班偏差平方：$25, 25, 0, 25, 25$；平均 $= (25 + 25 + 0 + 25 + 25) / 5 = 100 / 5 = 20$。
+
+  把两班数据画在数轴上，用线段标出每个点到 $bar(x) = 5$ 的偏差：
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      // 甲班
+      content((-2, 2), text(size: 7pt)[*甲班*], anchor: "east")
+      line((-0.5, 2), (12, 2), stroke: 0.4pt, mark: (end: ">"))
+      for val in (0, 2, 4, 5, 6, 8, 10) {
+        line((val, 1.7), (val, 2.3), stroke: 0.2pt)
+        content((val, 1.2), text(size: 5pt)[#val])
+      }
+      line((5, 0.8), (5, 4.5), stroke: (paint: rgb("#C62828"), thickness: 0.5pt, dash: "dashed"))
+      content((5, 4.8), text(size: 5pt, fill: rgb("#C62828"))[$bar(x) = 5$], anchor: "south")
+      // 甲班点 0,5,5,5,10
+      for v in (0, 5, 5, 5, 10) {
+        circle((v, 2.7), radius: 0.15, fill: rgb("#1976D2"))
+      }
+      line((0, 3.1), (5, 3.1), stroke: 0.4pt + rgb("#1976D2"))
+      line((10, 3.1), (5, 3.1), stroke: 0.4pt + rgb("#1976D2"))
+      // 乙班
+      content((-2, -1), text(size: 7pt)[*乙班*], anchor: "east")
+      line((-0.5, -1), (12, -1), stroke: 0.4pt, mark: (end: ">"))
+      for val in (0, 2, 4, 5, 6, 8, 10) {
+        line((val, -1.3), (val, -0.7), stroke: 0.2pt)
+        content((val, -1.8), text(size: 5pt)[#val])
+      }
+      line((5, -2.5), (5, 0.5), stroke: (paint: rgb("#C62828"), thickness: 0.5pt, dash: "dashed"))
+      // 乙班点 0,0,5,10,10
+      for v in (0, 0, 5, 10, 10) {
+        circle((v, -0.4), radius: 0.15, fill: rgb("#C62828"))
+      }
+      line((0, -0.1), (5, -0.1), stroke: 0.4pt + rgb("#C62828"))
+      line((10, -0.1), (5, -0.1), stroke: 0.4pt + rgb("#C62828"))
+    }),
+    caption: [甲班 vs 乙班：到 $bar(x) = 5$ 的偏差线。甲班偏差短（$s^2 = 10$），乙班偏差长（$s^2 = 20$）]
+  )
 
   得到两个数 $10$ 和 $20$——*乙班分得更开*这件事终于能被定量区分了。
 
@@ -111,6 +150,38 @@
   - $s^2 >= 0$；$s^2 = 0 arrow.l.r.double$ 所有 $x_i = bar(x)$。
   - $s^2$ 对*平移*不变：把数据每个都加 $c$，$bar(x)$ 也加 $c$，偏差不变 → $s^2$ 不变。
   - $s^2$ 对*缩放*二次响应：把数据每个都乘 $k$，偏差也乘 $k$，偏差平方乘 $k^2$ → $s^2$ 乘 $k^2$、$s$ 乘 $|k|$。
+
+  某工厂质检：抽检 $10$ 个零件重量（克），目标 $50.0$ 克。数据为 $49.8, 50.1, 50.0, 49.9, 50.2, 50.0, 49.7, 50.3, 50.0, 50.0$，标准差 $s approx 0.17$ 克——典型偏离不到 $0.2$ 克。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      line((-0.5, 0), (14, 0), stroke: 0.5pt, mark: (end: ">"))
+      content((14.3, 0), text(size: 6pt)[克], anchor: "west")
+      for val in (497, 498, 499, 500, 501, 502, 503) {
+        let x = (val - 495) * 1.2
+        line((x, -0.3), (x, 0.3), stroke: 0.2pt)
+        let label = val / 10
+        content((x, -0.8), text(size: 4pt)[#calc.round(label, digits: 1)], anchor: "north")
+      }
+      // 手工放置点（50.0 出现 4 次需叠放）
+      let xs = (2.4, 3.6, 4.8, 6.0, 6.0, 6.0, 6.0, 7.2, 8.4, 9.6)
+      let ys = (0.6, 0.6, 0.6, 0.6, 1.05, 1.5, 1.95, 0.6, 0.6, 0.6)
+      for i in range(xs.len()) {
+        circle((xs.at(i), ys.at(i)), radius: 0.16, fill: rgb("#1976D2"))
+      }
+      // 均值
+      let mx = 6.0
+      line((mx, -1.5), (mx, -0.5), stroke: 0.6pt + rgb("#C62828"), mark: (end: ">"))
+      content((mx, -1.8), text(size: 5pt, fill: rgb("#C62828"))[$bar(x) = 50.0$], anchor: "north")
+      // 标准差范围
+      let sl = 6.0 - 0.17 * 12
+      let sr = 6.0 + 0.17 * 12
+      line((sl, 2.6), (sr, 2.6), stroke: 0.5pt + rgb("#388E3C"), mark: (start: "|", end: "|"))
+      content(((sl + sr) / 2, 3.0), text(size: 5pt, fill: rgb("#388E3C"))[$plus.minus s approx plus.minus 0.17$], anchor: "south")
+    }),
+    caption: [零件重量点图：大部分点落在 $bar(x) plus.minus s$ 范围内——$s$ 就是"典型离散宽度"]
+  )
 
   *与极差的组合策略*
 

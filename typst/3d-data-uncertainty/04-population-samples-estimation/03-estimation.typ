@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": vocab, crisis, history-note, discovery, tryit, blueprint, pitfall, mastery
+#import "../../lib/diagram-packages.typ": cetz
 
 === 点估计：用样本推总体 <tool:dt12-estimation>
 
@@ -45,7 +46,33 @@
 
   *估计值是随机的*
 
-  两位质检员各抽 $n = 20$ 袋大米：$bar x_1 = 5.02$ kg、$bar x_2 = 4.98$ kg。谁对？——*都对也都不完全对*。真实 $mu$ 是唯一确定的数，但*每次抽样抽到的 $n$ 个样本不同*，算出来的 $bar x$ 自然不同。这叫*抽样随机性*（sampling variability）。
+  两位质检员各抽 $n = 20$ 袋大米（某品牌 $5$ kg 装）：$bar x_1 = 5.02$ kg、$bar x_2 = 4.98$ kg。谁对？——*都对也都不完全对*。真实 $mu$ 是唯一确定的数，但*每次抽样抽到的 $n$ 个样本不同*，算出来的 $bar x$ 自然不同。这叫*抽样随机性*（sampling variability）。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      line((-0.5, 0), (16, 0), stroke: 0.5pt, mark: (end: ">"))
+      content((16.3, 0), text(size: 6pt)[kg], anchor: "west")
+      for val in (4.90, 4.95, 5.00, 5.05, 5.10) {
+        let x = (val - 4.85) * 50
+        line((x, -0.3), (x, 0.3), stroke: 0.3pt)
+        content((x, -0.8), text(size: 5pt)[#calc.round(val, digits: 2)], anchor: "north")
+      }
+      // 多次抽样结果点
+      let samples = (4.98, 5.02, 5.00, 4.97, 5.03, 5.01, 4.99, 5.04, 4.96, 5.01)
+      for i in range(samples.len()) {
+        let x = (samples.at(i) - 4.85) * 50
+        circle((x, 0.6 + calc.rem(i, 3) * 0.45), radius: 0.14, fill: rgb("#1976D2"))
+      }
+      // 真值标记
+      let mu-x = (5.00 - 4.85) * 50
+      line((mu-x, -1.8), (mu-x, -0.5), stroke: 0.7pt + rgb("#C62828"), mark: (end: ">"))
+      content((mu-x, -2.1), text(size: 5pt, fill: rgb("#C62828"))[$mu = 5.00$（真值）], anchor: "north")
+      // 波动范围
+      content((mu-x, 2.8), text(size: 5pt, fill: rgb("#388E3C"))[每次 $bar x$ 在真值附近随机波动], anchor: "south")
+    }),
+    caption: [$10$ 次 SRS 的 $bar x$ 值（蓝点）：每次抽样结果不同，但都在 $mu = 5.00$ 附近波动]
+  )
 
   换一组例子更直观：
 
@@ -69,6 +96,30 @@
   *$n$ 越大估计越稳*
 
   核心规律：*样本容量 $n$ 越大，$bar x$ 波动范围越小、越靠近 $mu$*。
+
+  以某校初三学生身高（总体 $mu = 170$ cm）为例，画出不同 $n$ 下 $bar x$ 的典型波动范围：
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      line((-0.5, 0), (14, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -0.5), (0, 9), stroke: 0.4pt, mark: (end: ">"))
+      content((14.3, 0), text(size: 6pt)[$n$], anchor: "west")
+      content((0, 9.5), text(size: 6pt)[$bar x$ 波动宽度], anchor: "south")
+      // 数据：n 越大波动越小
+      let ns = (2, 5, 8, 12)
+      let widths = (8, 4, 2, 0.8)
+      let n-labels = ("10", "40", "160", "1000")
+      for i in range(ns.len()) {
+        let x = ns.at(i)
+        let h = widths.at(i)
+        rect((x - 0.6, 0), (x + 0.6, h), fill: rgb("#1976D2").lighten(60%), stroke: 0.5pt + rgb("#1976D2"))
+        content((x, -0.7), text(size: 5pt)[$n = #n-labels.at(i)$], anchor: "north")
+        content((x, h + 0.3), text(size: 4pt)[$plus.minus #widths.at(i)$], anchor: "south")
+      }
+    }),
+    caption: [$n$ 越大，$bar x$ 的波动范围越小——大数定律在连续量上的版本]
+  )
 
   同一总体做三组模拟，每组做 $K$ 次 SRS：
 
