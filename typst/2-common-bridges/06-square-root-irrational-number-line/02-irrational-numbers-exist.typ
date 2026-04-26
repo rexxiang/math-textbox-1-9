@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 无理数：$sqrt(2)$ 不能写成分数 <tool:cb06-irrational-numbers>
 
@@ -16,6 +17,26 @@
 
 #discovery[
   先用反证法。
+
+  #figure(
+    cetz.canvas(length: 0.5cm, {
+      import cetz.draw: *
+      // Unit square with diagonal
+      let s = 6
+      rect((0, 0), (s, s), fill: rgb("#E3F2FD"), stroke: 1.5pt + rgb("#1565C0"))
+      // Diagonal
+      line((0, 0), (s, s), stroke: 2pt + rgb("#C62828"))
+      // Side labels
+      content((s / 2, -0.6), text(size: 9pt, weight: "bold", fill: rgb("#1565C0"))[$1$], anchor: "north")
+      content((-0.6, s / 2), text(size: 9pt, weight: "bold", fill: rgb("#1565C0"))[$1$], anchor: "east")
+      // Diagonal label
+      content((s / 2 + 0.6, s / 2 - 0.6),
+        text(size: 9pt, weight: "bold", fill: rgb("#C62828"))[$sqrt(2)$], anchor: "north-west")
+      // Right angle mark
+      rect((0.4, 0), (0.4 + 0.6, 0.6), stroke: 0.8pt + rgb("#555"), fill: none)
+    }),
+    caption: [边长为 $1$ 的正方形，对角线长 $= sqrt(2)$],
+  )
 
   *反证法思路*：先假设 $sqrt(2) = p / q$（$p, q$ 是整数，$q != 0$，并化成既约分数，使 $p$、$q$ 没有大于 $1$ 的公因数）。两边平方得到：
 
@@ -47,6 +68,37 @@
   - *判别直觉*：无限不循环的十进制小数 $<=>$ 无理数；有限小数或无限循环小数 $<=>$ 有理数。
   - *典型无理数*：$sqrt(2)$、$sqrt(3)$、$sqrt(p)$（$p$ 为非完全平方数的正整数）、$pi$ 等。
   - *反证法模板*：假设与结论相反 $->$ 推出矛盾 $->$ 结论成立。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      let ox = 4
+      let s = 8.0
+      // Zoomed number line from 1.0 to 2.0
+      line((ox, 0), (ox + 10 * s / 10 + 1, 0), stroke: 1.5pt + rgb("#333"), mark: (end: ">"))
+      // Ticks at 1.0, 1.1, ... 2.0
+      for i in range(0, 11) {
+        let tx = ox + i * s / 10
+        let thick = if calc.rem(i, 5) == 0 { 1pt } else { 0.5pt }
+        let h = if calc.rem(i, 5) == 0 { 0.4 } else { 0.25 }
+        line((tx, -h), (tx, h), stroke: thick + rgb("#555"))
+        if calc.rem(i, 5) == 0 or i == 4 {
+          let val = 1.0 + i * 0.1
+          content((tx, -0.8), text(size: 6pt)[#str(val)], anchor: "north")
+        }
+      }
+      // Mark sqrt(2) ≈ 1.414
+      let sq2-x = ox + 4.14 * s / 10
+      circle((sq2-x, 0), radius: 0.3, fill: rgb("#C62828"), stroke: 1pt + rgb("#B71C1C"))
+      content((sq2-x, 1.5), text(size: 8pt, weight: "bold", fill: rgb("#C62828"))[$sqrt(2) approx 1.414$], anchor: "south")
+      // Show bounds
+      let l14 = ox + 4 * s / 10
+      let l15 = ox + 5 * s / 10
+      line((l14, -1.5), (l15, -1.5), stroke: 1.5pt + rgb("#2E7D32"), mark: (start: "|", end: "|"))
+      content(((l14 + l15) / 2, -2.2), text(size: 7pt, fill: rgb("#2E7D32"))[$1.4^2 = 1.96 < 2 < 2.25 = 1.5^2$], anchor: "north")
+    }),
+    caption: [夹逼法定位 $sqrt(2)$：它在 $1.4$ 与 $1.5$ 之间],
+  )
 ]
 
 #pitfall[

@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 代数式与合并同类项 <tool:cb04-expressions-and-like-terms>
 
@@ -36,6 +37,37 @@
   $ 5 x^2 + 4 x - 4 $
 
   能不能合并的判据只有两个字：*同类*。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      let bw = 3.0
+      let bh = 1.8
+      let gap = 0.4
+      // Group 1: like terms (x terms) in blue
+      let gx = 0
+      for (i, label) in ((0, [$3 x$]), (1, [$2 x$]), (2, [$-x$])) {
+        let x = gx + i * (bw + gap)
+        rect((x, 0), (x + bw, bh), fill: rgb("#BBDEFB"), stroke: 1pt + rgb("#1565C0"), radius: 2pt)
+        content((x + bw / 2, bh / 2), text(size: 9pt, weight: "bold", fill: rgb("#0D47A1"))[#label])
+      }
+      content((gx + 1.5 * (bw + gap), bh + 0.8),
+        text(size: 8pt, weight: "bold", fill: rgb("#1565C0"))[同类项：都是 $x$ 的一次项], anchor: "south")
+      // Group 2: x^2 term (alone) in green
+      let g2x = 3 * (bw + gap) + 1.5
+      rect((g2x, 0), (g2x + bw, bh), fill: rgb("#C8E6C9"), stroke: 1pt + rgb("#388E3C"), radius: 2pt)
+      content((g2x + bw / 2, bh / 2), text(size: 9pt, weight: "bold", fill: rgb("#2E7D32"))[$5 x^2$])
+      content((g2x + bw / 2, bh + 0.8),
+        text(size: 8pt, weight: "bold", fill: rgb("#2E7D32"))[$x$ 的二次项], anchor: "south")
+      // Group 3: constant in amber
+      let g3x = g2x + bw + gap + 1.5
+      rect((g3x, 0), (g3x + bw, bh), fill: rgb("#FFECB3"), stroke: 1pt + rgb("#F9A825"), radius: 2pt)
+      content((g3x + bw / 2, bh / 2), text(size: 9pt, weight: "bold", fill: rgb("#F57F17"))[$-4$])
+      content((g3x + bw / 2, bh + 0.8),
+        text(size: 8pt, weight: "bold", fill: rgb("#F57F17"))[常数项], anchor: "south")
+    }),
+    caption: [分类：$3 x$、$2 x$、$-x$ 互为同类项；$5 x^2$ 和 $-4$ 各自一类],
+  )
 ]
 
 #side-hack[
@@ -53,6 +85,39 @@
   - *同类项*：字母部分（字母与指数）完全相同的两项。常数项之间互为同类项。
   - *合并同类项*：只把系数相加减，字母部分保持不变。
   - *顺序无所谓*：$x y$ 和 $y x$ 相同（乘法交换律）；$x y$ 和 $x^2$ 不同（指数不一致）。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      // Before: 3x + 2x - x as separate bars
+      let bw = 2.0
+      let bh = 1.2
+      // Top: before combining
+      content((-3.5, bh / 2), text(size: 7pt, weight: "bold")[合并前：], anchor: "east")
+      for (i, w-scale, label, clr) in (
+        (0, 3, [$3 x$], rgb("#1565C0")),
+        (1, 2, [$2 x$], rgb("#42A5F5")),
+        (2, 1, [$-x$], rgb("#90CAF9")),
+      ) {
+        let x = i * (bw * 3 + 1.0)
+        rect((x, 0), (x + bw * w-scale, bh), fill: rgb("#E3F2FD"), stroke: 0.8pt + clr)
+        content((x + bw * w-scale / 2, bh / 2), text(size: 8pt, fill: clr)[#label])
+      }
+      // Plus/minus signs
+      content((bw * 3 + 0.5, bh / 2), text(size: 10pt, weight: "bold")[$+$])
+      content((bw * 3 + 1.0 + bw * 2 + 0.5, bh / 2), text(size: 10pt, weight: "bold")[$+$])
+      // Arrow down
+      let mid-x = 6.0
+      line((mid-x, -0.5), (mid-x, -1.5), stroke: 1.2pt + rgb("#555"), mark: (end: ">"))
+      content((mid-x + 1.5, -1.0), text(size: 7pt, fill: rgb("#555"))[$= (3+2-1)x$], anchor: "west")
+      // Bottom: after combining
+      let by = -3.2
+      content((-3.5, by + bh / 2), text(size: 7pt, weight: "bold")[合并后：], anchor: "east")
+      rect((0, by), (bw * 4, by + bh), fill: rgb("#BBDEFB"), stroke: 1.2pt + rgb("#1565C0"))
+      content((bw * 2, by + bh / 2), text(size: 9pt, weight: "bold", fill: rgb("#0D47A1"))[$4 x$])
+    }),
+    caption: [合并同类项：$3 x + 2 x - x = (3 + 2 - 1) x = 4 x$],
+  )
 ]
 
 #pitfall[

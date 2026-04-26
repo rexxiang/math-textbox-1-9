@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 关系模板：把常见情景写成能反复套用的公式 <tool:cb04-relationship-templates>
 
@@ -20,6 +21,37 @@
   - 长方形：周长 $C = 2(a + b)$，面积 $S = a b$（$a$ 长、$b$ 宽）。
   - 正方形：$C = 4 a$，$S = a^2$。
   - 三角形：$S = 1/2 times a times h$（$a$ 底、$h$ 高）。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      // Rectangle with labeled sides
+      let w = 12
+      let h = 6
+      rect((0, 0), (w, h), fill: rgb("#E3F2FD"), stroke: 1.5pt + rgb("#1565C0"), radius: 2pt)
+      // Side labels
+      content((w / 2, -0.8), text(size: 9pt, weight: "bold", fill: rgb("#1565C0"))[$a$], anchor: "north")
+      content((-0.8, h / 2), text(size: 9pt, weight: "bold", fill: rgb("#1565C0"))[$b$], anchor: "east")
+      // Formulas inside
+      content((w / 2, h / 2 + 0.8), text(size: 8pt, fill: rgb("#0D47A1"))[$C = 2(a + b)$])
+      content((w / 2, h / 2 - 0.8), text(size: 8pt, fill: rgb("#0D47A1"))[$S = a b$])
+      // Triangle next to it
+      let tx = w + 5
+      let tw = 8
+      let th = 5
+      line((tx, 0), (tx + tw, 0), (tx + tw * 0.4, th), close: true,
+           fill: rgb("#FFF9C4"), stroke: 1.5pt + rgb("#F9A825"))
+      // Base label
+      content((tx + tw / 2, -0.8), text(size: 9pt, weight: "bold", fill: rgb("#F57F17"))[$a$], anchor: "north")
+      // Height dashed line
+      line((tx + tw * 0.4, 0), (tx + tw * 0.4, th),
+           stroke: (dash: "dashed", paint: rgb("#F57F17"), thickness: 1pt))
+      content((tx + tw * 0.4 - 0.8, th / 2), text(size: 9pt, weight: "bold", fill: rgb("#F57F17"))[$h$], anchor: "east")
+      // Formula
+      content((tx + tw / 2, th + 1.0), text(size: 8pt, fill: rgb("#F57F17"))[$S = 1/2 a h$], anchor: "south")
+    }),
+    caption: [长方形与三角形的面积模板],
+  )
 
   *距离—速度—时间模板*
 
@@ -53,6 +85,37 @@
   - *三角形*：$S = 1/2 a h$。
   - *匀速位移*：$s = v t$；反向：$t = s / v$、$v = s / t$。
   - *总价结构*：总价 $=$ 单价 $times$ 数量。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      // s = v × t triangle
+      let cx = 8
+      let cy = 3
+      let r = 4.5
+      // Triangle
+      let top = (cx, cy + r * 0.8)
+      let bl = (cx - r, cy - r * 0.5)
+      let br = (cx + r, cy - r * 0.5)
+      line(top, bl, br, close: true, fill: rgb("#E8F5E9"), stroke: 1.5pt + rgb("#388E3C"))
+      // Horizontal divider
+      let mid-y = cy + r * 0.15
+      line((cx - r * 0.7, mid-y), (cx + r * 0.7, mid-y), stroke: 1pt + rgb("#388E3C"))
+      // Vertical divider below
+      line((cx, cy - r * 0.5), (cx, mid-y), stroke: 1pt + rgb("#388E3C"))
+      // Labels
+      content((cx, mid-y + (cy + r * 0.8 - mid-y) / 2),
+        text(size: 11pt, weight: "bold", fill: rgb("#1B5E20"))[$s$])
+      content((cx - r * 0.35, mid-y - (mid-y - cy + r * 0.5) / 2),
+        text(size: 11pt, weight: "bold", fill: rgb("#1B5E20"))[$v$])
+      content((cx + r * 0.35, mid-y - (mid-y - cy + r * 0.5) / 2),
+        text(size: 11pt, weight: "bold", fill: rgb("#1B5E20"))[$t$])
+      // Formula label
+      content((cx, cy - r * 0.5 - 1.0),
+        text(size: 8pt, fill: rgb("#555"))[$s = v times t$，遮住一个就能读出另一个关系], anchor: "north")
+    }),
+    caption: [速度—时间—路程三角：遮住 $s$ 则 $s = v t$，遮住 $v$ 则 $v = s / t$],
+  )
 ]
 
 #pitfall[

@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 字母代替数：规则代替一次计算 <tool:cb04-letters-represent-numbers>
 
@@ -32,6 +33,25 @@
   $ 6 (n + 2) = 6 n + 12 $
 
   正是分配律；它对 $n$ 是具体数还是字母都成立。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      // Rectangle: width = 6, height = n
+      let w = 10
+      let h = 5
+      rect((0, 0), (w, h), fill: rgb("#E3F2FD"), stroke: 1.5pt + rgb("#1565C0"), radius: 3pt)
+      // Labels
+      content((w / 2, -0.8), text(size: 9pt, weight: "bold", fill: rgb("#1565C0"))[$6$], anchor: "north")
+      content((-0.8, h / 2), text(size: 9pt, weight: "bold", fill: rgb("#1565C0"))[$n$], anchor: "east")
+      // Area label inside
+      content((w / 2, h / 2), text(size: 12pt, weight: "bold", fill: rgb("#0D47A1"))[$S = 6 n$])
+      // Dimension arrows
+      line((-0.3, 0), (-0.3, h), stroke: 0.8pt + rgb("#555"), mark: (start: "|", end: "|"))
+      line((0, -0.3), (w, -0.3), stroke: 0.8pt + rgb("#555"), mark: (start: "|", end: "|"))
+    }),
+    caption: [面积模型：长 $6$、宽 $n$ 的长方形面积就是代数式 $6 n$],
+  )
 ]
 
 #side-hack[
@@ -49,6 +69,31 @@
   - *变量*：可以代表不同数的字母；*常量*：固定不变的数。
   - *系数*：代数式中字母前面的数字部分；$-3 x$ 的系数是 $-3$，不是 $3$。
   - *代入求值*：把变量换成具体数，按运算顺序（#secref("pf02-order-laws")）计算。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      // Input-formula-output machine
+      let bx = 0
+      // Input box
+      rect((bx, 0), (bx + 4, 2.5), fill: rgb("#E8F5E9"), stroke: 1.2pt + rgb("#388E3C"), radius: 3pt)
+      content((bx + 2, 1.25), text(size: 9pt, weight: "bold", fill: rgb("#2E7D32"))[$n = 7$])
+      content((bx + 2, -0.6), text(size: 7pt, fill: rgb("#555"))[输入], anchor: "north")
+      // Arrow
+      line((bx + 4.5, 1.25), (bx + 7.5, 1.25), stroke: 1.5pt + rgb("#555"), mark: (end: ">"))
+      // Formula box
+      rect((bx + 8, 0), (bx + 14, 2.5), fill: rgb("#FFF9C4"), stroke: 1.2pt + rgb("#F9A825"), radius: 3pt)
+      content((bx + 11, 1.25), text(size: 9pt, weight: "bold", fill: rgb("#F57F17"))[$6 times n$])
+      content((bx + 11, -0.6), text(size: 7pt, fill: rgb("#555"))[公式], anchor: "north")
+      // Arrow
+      line((bx + 14.5, 1.25), (bx + 17.5, 1.25), stroke: 1.5pt + rgb("#555"), mark: (end: ">"))
+      // Output box
+      rect((bx + 18, 0), (bx + 22, 2.5), fill: rgb("#FFCDD2"), stroke: 1.2pt + rgb("#C62828"), radius: 3pt)
+      content((bx + 20, 1.25), text(size: 9pt, weight: "bold", fill: rgb("#C62828"))[$42$])
+      content((bx + 20, -0.6), text(size: 7pt, fill: rgb("#555"))[输出], anchor: "north")
+    }),
+    caption: [代入求值：把 $n = 7$ 代入公式 $6 n$，输出 $42$],
+  )
 ]
 
 #pitfall[

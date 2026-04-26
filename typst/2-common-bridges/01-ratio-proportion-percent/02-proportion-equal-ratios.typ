@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 比例：两个比相等 <tool:cb01-proportion>
 
@@ -32,6 +33,84 @@
   外项是两端的两个数（$3$ 和 $x$），内项是中间的两个数（$120$ 和 $7$）。
 
   交叉相乘之所以成立，是因为等式两边同乘同一个量（#secref("pf02-order-laws")）并没有破坏等号。
+
+  #figure(
+    cetz.canvas(length: 0.5cm, {
+      import cetz.draw: *
+      // Four positions: a, b, c, d
+      let ax = 0
+      let bx = 4
+      let cx = 8
+      let dx = 12
+      let ty = 2.0
+      let by_ = -2.0
+
+      // Boxes for a : b = c : d
+      rect((ax - 1, ty - 0.8), (ax + 1, ty + 0.8),
+           fill: rgb("#E3F2FD"), stroke: 1pt + rgb("#1565C0"), radius: 3pt)
+      content((ax, ty), text(size: 10pt, weight: "bold", fill: rgb("#0D47A1"))[$a$])
+
+      rect((bx - 1, ty - 0.8), (bx + 1, ty + 0.8),
+           fill: rgb("#FFF9C4"), stroke: 1pt + rgb("#F9A825"), radius: 3pt)
+      content((bx, ty), text(size: 10pt, weight: "bold", fill: rgb("#F57F17"))[$b$])
+
+      content((cx / 2 - 2, ty), text(size: 12pt, weight: "bold")[$:$])
+      content((cx / 2 + 2, ty), text(size: 12pt, weight: "bold")[$=$])
+
+      rect((cx - 1, ty - 0.8), (cx + 1, ty + 0.8),
+           fill: rgb("#E8F5E9"), stroke: 1pt + rgb("#388E3C"), radius: 3pt)
+      content((cx, ty), text(size: 10pt, weight: "bold", fill: rgb("#2E7D32"))[$c$])
+
+      rect((dx - 1, ty - 0.8), (dx + 1, ty + 0.8),
+           fill: rgb("#FCE4EC"), stroke: 1pt + rgb("#C62828"), radius: 3pt)
+      content((dx, ty), text(size: 10pt, weight: "bold", fill: rgb("#C62828"))[$d$])
+
+      content(((cx + dx) / 2, ty), text(size: 12pt, weight: "bold")[$:$])
+
+      // Cross arrows
+      line((ax + 0.8, ty - 0.9), (dx - 0.8, by_ + 0.3),
+           stroke: 1.5pt + rgb("#1565C0"), mark: (end: ">"))
+      line((dx - 0.8, ty - 0.9), (ax + 0.8, by_ + 0.3),
+           stroke: 1.5pt + rgb("#C62828"), mark: (end: ">"))
+
+      // Result
+      content(((ax + dx) / 2, by_),
+        text(size: 10pt, weight: "bold")[$a d = b c$])
+      content(((ax + dx) / 2, by_ - 1.2),
+        text(size: 8pt, fill: rgb("#555"))[外项之积 $=$ 内项之积])
+    }),
+    caption: [交叉相乘：外项 $a$、$d$ 与内项 $b$、$c$ 交叉相乘],
+  )
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      // Map vs reality scale bar
+      let bar-y = 0
+      // Map bar
+      rect((0, bar-y), (6, bar-y + 1.2),
+           fill: rgb("#E3F2FD"), stroke: 1pt + rgb("#1565C0"))
+      content((3, bar-y + 0.6),
+        text(size: 8pt, weight: "bold", fill: rgb("#0D47A1"))[图上 3 cm])
+      // Reality bar
+      rect((0, bar-y - 2.2), (12, bar-y - 1.0),
+           fill: rgb("#FFF3E0"), stroke: 1pt + rgb("#E65100"))
+      content((6, bar-y - 1.6),
+        text(size: 8pt, weight: "bold", fill: rgb("#E65100"))[实际 120 km])
+      // Second pair
+      rect((14, bar-y), (28, bar-y + 1.2),
+           fill: rgb("#E3F2FD"), stroke: 1pt + rgb("#1565C0"))
+      content((21, bar-y + 0.6),
+        text(size: 8pt, weight: "bold", fill: rgb("#0D47A1"))[图上 7 cm])
+      rect((14, bar-y - 2.2), (42, bar-y - 1.0),
+           fill: rgb("#FFF3E0"), stroke: 1pt + rgb("#E65100"))
+      content((28, bar-y - 1.6),
+        text(size: 8pt, weight: "bold", fill: rgb("#E65100"))[实际 ? km])
+      // Equals
+      content((13, bar-y - 0.5), text(size: 14pt, weight: "bold")[$=$])
+    }),
+    caption: [同一比例尺下，图上长度与实际距离成比例],
+  )
 ]
 
 #side-hack[

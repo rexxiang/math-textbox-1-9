@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 百分数：把比的尺子统一成 100 <tool:cb01-percent>
 
@@ -23,11 +24,56 @@
 
   一放到“每 $100$ 人中有几个”的尺子上，差距立刻可见。
 
+  #figure(
+    cetz.canvas(length: 0.35cm, {
+      import cetz.draw: *
+      let cell = 1.4
+      for row in range(10) {
+        for col in range(10) {
+          let idx = row * 10 + col
+          let c = if idx < 68 { rgb("#42A5F5") } else { rgb("#EEEEEE") }
+          rect((col * cell, -row * cell), (col * cell + cell - 0.1, -row * cell + cell - 0.1),
+               fill: c, stroke: 0.3pt + rgb("#999999"))
+        }
+      }
+      content((5 * cell, 1.5),
+        text(size: 9pt, weight: "bold")[$68 / 100 = 68%$], anchor: "south")
+      content((5 * cell, -10 * cell - 0.5),
+        text(size: 7pt, fill: rgb("#555"))[蓝色格 $= 68$ 个，全部 $= 100$ 个], anchor: "north")
+    }),
+    caption: [$10 times 10$ 方格图：$68$ 格着色 $= 68%$],
+  )
+
   所以百分数就是一种*特殊的比*：后项永远是 $100$。于是三种写法互译只是换把尺子：
 
   $ 3 / 4 = 75 / 100 = 75% = 0.75 $
 
   这一步的位值依据正是 #secref("pf05-decimals-conversion")。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      let w = 16
+      let h = 1.5
+      let y-gap = 2.8
+      // Fraction bar: 3/4 filled
+      rect((0, 0), (w * 3 / 4, h), fill: rgb("#A5D6A7"), stroke: 0.8pt + rgb("#388E3C"))
+      rect((w * 3 / 4, 0), (w, h), fill: rgb("#EEEEEE"), stroke: 0.8pt + rgb("#999"))
+      content((w / 2, h / 2), text(size: 9pt, weight: "bold")[$3 / 4$])
+      // Decimal bar
+      rect((0, -y-gap), (w * 0.75, -y-gap + h), fill: rgb("#90CAF9"), stroke: 0.8pt + rgb("#1565C0"))
+      rect((w * 0.75, -y-gap), (w, -y-gap + h), fill: rgb("#EEEEEE"), stroke: 0.8pt + rgb("#999"))
+      content((w / 2, -y-gap + h / 2), text(size: 9pt, weight: "bold")[$0.75$])
+      // Percent bar
+      rect((0, -2 * y-gap), (w * 0.75, -2 * y-gap + h), fill: rgb("#FFE082"), stroke: 0.8pt + rgb("#F9A825"))
+      rect((w * 0.75, -2 * y-gap), (w, -2 * y-gap + h), fill: rgb("#EEEEEE"), stroke: 0.8pt + rgb("#999"))
+      content((w / 2, -2 * y-gap + h / 2), text(size: 9pt, weight: "bold")[$75%$])
+      // Equals signs
+      content((w + 1.5, 0 + h / 2), text(size: 10pt, weight: "bold")[$=$])
+      content((w + 1.5, -y-gap + h / 2), text(size: 10pt, weight: "bold")[$=$])
+    }),
+    caption: [三种写法表示同一个量：$3 / 4 = 0.75 = 75%$],
+  )
 ]
 
 #side-hack[

@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 画点、读点与简单变换 <tool:cb03-plotting-transforming>
 
@@ -31,6 +32,67 @@
   - 沿 $y$ 轴翻折：$(x, y) -> (-x, y)$。
 
   这些规律不过是把第 1 章建立的数轴“向右/向上”的直觉搬到平面上再用一遍。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      let s = 2.0
+      // Axes
+      line((-4 * s - 0.5, 0), (6 * s + 1, 0), stroke: 1.2pt + rgb("#333"), mark: (end: ">"))
+      line((0, -4 * s - 0.5), (0, 4 * s + 1), stroke: 1.2pt + rgb("#333"), mark: (end: ">"))
+      // Grid
+      for i in range(-3, 6) {
+        if i != 0 {
+          line((i * s, -3 * s), (i * s, 3 * s), stroke: 0.2pt + rgb("#DDD"))
+          line((-3 * s, i * s), (5 * s, i * s), stroke: 0.2pt + rgb("#DDD"))
+        }
+      }
+      // P(-2, 1)
+      let px = -2 * s
+      let py = 1 * s
+      circle((px, py), radius: 0.25, fill: rgb("#1565C0"), stroke: 1pt + rgb("#0D47A1"))
+      content((px - 0.5, py + 0.5), text(size: 7pt, weight: "bold", fill: rgb("#1565C0"))[$P(-2, 1)$], anchor: "south-east")
+      // Translation: right 5, down 4
+      let px2 = px + 5 * s
+      let py3 = py - 4 * s
+      // Horizontal arrow
+      line((px + 0.4, py), (px2 - 0.4, py), stroke: 1.2pt + rgb("#E65100"), mark: (end: ">"))
+      content(((px + px2) / 2, py + 0.8), text(size: 7pt, fill: rgb("#E65100"))[右移 5], anchor: "south")
+      // Vertical arrow
+      line((px2, py - 0.4), (px2, py3 + 0.4), stroke: 1.2pt + rgb("#7B1FA2"), mark: (end: ">"))
+      content((px2 + 1.0, (py + py3) / 2), text(size: 7pt, fill: rgb("#7B1FA2"))[下移 4], anchor: "west")
+      // P'(3, -3)
+      circle((px2, py3), radius: 0.25, fill: rgb("#C62828"), stroke: 1pt + rgb("#B71C1C"))
+      content((px2 + 0.5, py3 - 0.5), text(size: 7pt, weight: "bold", fill: rgb("#C62828"))[$P'(3, -3)$], anchor: "north-west")
+      // Origin
+      circle((0, 0), radius: 0.2, fill: rgb("#333"), stroke: 1pt + rgb("#333"))
+      content((-0.5, -0.5), text(size: 7pt, weight: "bold")[O])
+    }),
+    caption: [$P(-2, 1)$ 向右平移 $5$、向下平移 $4$，得到 $P'(3, -3)$],
+  )
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      let s = 2.0
+      // Axes
+      line((-4 * s - 0.5, 0), (5 * s + 1, 0), stroke: 1.2pt + rgb("#333"), mark: (end: ">"))
+      line((0, -5 * s - 0.5), (0, 5 * s + 1), stroke: 1.2pt + rgb("#333"), mark: (end: ">"))
+      // Q(3, -4)
+      let qx = 3 * s
+      let qy = -4 * s
+      circle((qx, qy), radius: 0.25, fill: rgb("#1565C0"), stroke: 1pt + rgb("#0D47A1"))
+      content((qx + 0.5, qy - 0.5), text(size: 7pt, weight: "bold", fill: rgb("#1565C0"))[$Q(3, -4)$], anchor: "north-west")
+      // x-axis reflection: Q'(3, 4)
+      circle((qx, -qy), radius: 0.25, fill: rgb("#C62828"), stroke: 1pt + rgb("#B71C1C"))
+      content((qx + 0.5, -qy + 0.5), text(size: 7pt, weight: "bold", fill: rgb("#C62828"))[$Q'(3, 4)$], anchor: "south-west")
+      // Dashed line
+      line((qx, qy + 0.3), (qx, -qy - 0.3), stroke: (dash: "dashed", paint: rgb("#888"), thickness: 0.8pt))
+      content((4.5 * s, 0.6), text(size: 7pt, fill: rgb("#555"))[沿 $x$ 轴翻折：$y$ 变号], anchor: "south")
+      circle((0, 0), radius: 0.2, fill: rgb("#333"), stroke: 1pt + rgb("#333"))
+    }),
+    caption: [$Q(3, -4)$ 沿 $x$ 轴翻折得 $Q'(3, 4)$：横坐标不变，纵坐标变号],
+  )
 ]
 
 #side-hack[

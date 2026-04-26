@@ -29,6 +29,41 @@
   + *轴上的点*：$(a, 0)$ 在 $x$ 轴上，$(0, b)$ 在 $y$ 轴上；原点是 $(0, 0)$。
 
   #figure(
+    cetz.canvas(length: 0.5cm, {
+      import cetz.draw: *
+      let s = 2.0
+      // Axes
+      line((-1, 0), (6 * s + 1, 0), stroke: 1.5pt + rgb("#333"), mark: (end: ">"))
+      line((0, -1), (0, 6 * s + 1), stroke: 1.5pt + rgb("#333"), mark: (end: ">"))
+      content((6 * s + 1.5, 0), text(size: 8pt, weight: "bold")[_x_], anchor: "west")
+      content((0, 6 * s + 1.5), text(size: 8pt, weight: "bold")[_y_], anchor: "south")
+      // Point (3,5) and (5,3) to show order matters
+      let ax = 3 * s
+      let ay = 5 * s
+      let bx = 5 * s
+      let by = 3 * s
+      // Dashed guides for A
+      line((ax, 0), (ax, ay), stroke: (dash: "dashed", paint: rgb("#1565C0"), thickness: 0.6pt))
+      line((0, ay), (ax, ay), stroke: (dash: "dashed", paint: rgb("#1565C0"), thickness: 0.6pt))
+      circle((ax, ay), radius: 0.25, fill: rgb("#1565C0"), stroke: 1pt + rgb("#1565C0"))
+      content((ax + 0.5, ay + 0.5), text(size: 7pt, weight: "bold", fill: rgb("#1565C0"))[$A(3, 5)$], anchor: "south-west")
+      // Dashed guides for B
+      line((bx, 0), (bx, by), stroke: (dash: "dashed", paint: rgb("#C62828"), thickness: 0.6pt))
+      line((0, by), (bx, by), stroke: (dash: "dashed", paint: rgb("#C62828"), thickness: 0.6pt))
+      circle((bx, by), radius: 0.25, fill: rgb("#C62828"), stroke: 1pt + rgb("#C62828"))
+      content((bx + 0.5, by + 0.5), text(size: 7pt, weight: "bold", fill: rgb("#C62828"))[$B(5, 3)$], anchor: "south-west")
+      // Tick labels
+      for i in range(1, 6) {
+        content((i * s, -0.6), text(size: 6pt)[#str(i)], anchor: "north")
+        content((-0.6, i * s), text(size: 6pt)[#str(i)], anchor: "east")
+      }
+      circle((0, 0), radius: 0.2, fill: rgb("#333"), stroke: 1pt + rgb("#333"))
+      content((-0.5, -0.5), text(size: 7pt, weight: "bold")[O], anchor: "north-east")
+    }),
+    caption: [$(3, 5)$ 与 $(5, 3)$ 是不同的点——顺序不能交换],
+  )
+
+  #figure(
     cetz.canvas(length: 0.55cm, {
       import cetz.draw: *
 

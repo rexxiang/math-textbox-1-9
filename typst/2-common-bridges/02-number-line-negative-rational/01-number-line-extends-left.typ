@@ -23,6 +23,34 @@
 
   $0$ 既不是正数也不是负数，它正好落在原点。
 
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      let ox = 8
+      let s = 2.0
+      // Vertical thermometer
+      rect((ox - 1.2, -6 * s), (ox + 1.2, 6 * s),
+           fill: rgb("#F5F5F5"), stroke: 1pt + rgb("#999"))
+      // Temperature scale
+      for i in range(-5, 6) {
+        let ty = i * s
+        line((ox - 1.2, ty), (ox + 1.2, ty), stroke: 0.4pt + rgb("#CCC"))
+        let clr = if i < 0 { rgb("#1565C0") } else if i > 0 { rgb("#C62828") } else { rgb("#333") }
+        content((ox + 1.8, ty), text(size: 6pt, fill: clr)[#str(i)°C], anchor: "west")
+      }
+      // Fill: below zero = blue, above zero = red
+      rect((ox - 0.8, -5 * s), (ox + 0.8, 0), fill: rgb("#BBDEFB"), stroke: none)
+      rect((ox - 0.8, 0), (ox + 0.8, 3 * s), fill: rgb("#FFCDD2"), stroke: none)
+      // Mercury level at 3°C
+      line((ox - 1.2, 3 * s), (ox + 1.2, 3 * s), stroke: 1.5pt + rgb("#C62828"))
+      content((ox - 2.0, 3 * s), text(size: 7pt, weight: "bold", fill: rgb("#C62828"))[当前], anchor: "east")
+      // Zero line
+      line((ox - 1.5, 0), (ox + 1.5, 0), stroke: 1.2pt + rgb("#333"))
+      content((ox - 2.0, 0), text(size: 7pt, weight: "bold")[0°C], anchor: "east")
+    }),
+    caption: [温度计就是竖着放的数轴：零上为正、零下为负],
+  )
+
   把 $3 - 5$ 放回数轴：从 $3$ 向左走 $5$ 步，落在 $-2$。原来的减法并没有坏——只是落点可以在原点左边。
 
   于是*负号是方向，减号是操作*，它们长得像只是历史巧合。
@@ -111,6 +139,32 @@
   - *正数 / 负数 / 零*：原点右边为正、左边为负、原点为 $0$；$0$ 不分正负。
   - *方向符号* $+ / -$：写在数的前面表示“向哪走”，不是减法；为了看得清，负数常写成 $(-3)$ 这种形式。
   - *比较大小*：数轴上“右大左小”。
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      let ox = 10
+      let s = 2.5
+      // Axis
+      line((ox - 4 * s, 0), (ox + 4.3 * s, 0), stroke: 1.5pt + rgb("#333"), mark: (end: ">"))
+      // Ticks
+      for i in range(-3, 4) {
+        let tx = ox + i * s
+        line((tx, -0.3), (tx, 0.3), stroke: 0.8pt + rgb("#555"))
+        content((tx, -0.8), text(size: 7pt)[#str(i)], anchor: "north")
+      }
+      // Highlight: -2 < 1 because -2 is to the left
+      let a = ox + (-2) * s
+      let b = ox + 1 * s
+      circle((a, 0), radius: 0.3, fill: rgb("#E53935"), stroke: 1pt + rgb("#B71C1C"))
+      circle((b, 0), radius: 0.3, fill: rgb("#1565C0"), stroke: 1pt + rgb("#0D47A1"))
+      content((a, 1.2), text(size: 8pt, weight: "bold", fill: rgb("#E53935"))[$-2$], anchor: "south")
+      content((b, 1.2), text(size: 8pt, weight: "bold", fill: rgb("#1565C0"))[$1$], anchor: "south")
+      // Arrow showing "left < right"
+      line((a + 0.5, 1.8), (b - 0.5, 1.8), stroke: 1pt + rgb("#555"), mark: (end: ">"))
+      content(((a + b) / 2, 2.5), text(size: 7pt, fill: rgb("#555"))[左小右大], anchor: "south")
+    }),
+    caption: [数轴上比较大小：$-2$ 在 $1$ 左边，所以 $-2 < 1$],
+  )
 ]
 
 #pitfall[

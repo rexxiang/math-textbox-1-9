@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 比：两个量相比的写法 <tool:cb01-ratio-basics>
 
@@ -24,6 +25,40 @@
   把后项当分母、前项当分子，就能翻译成分数：$2/5$ 和 $4/10$ 正是等值分数（#secref("pf04-fraction-equivalence")）。这就是为什么比可以同时乘或除同一个非零数而保持不变。
 
   把前项除以后项得到的那个数，叫*比值*。两个比相等，就是比值相等。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      let bw = 2.5
+      let bh = 1.6
+      let gap = 0.3
+      for i in range(2) {
+        let x = i * (bw + gap)
+        rect((x, 0), (x + bw, bh),
+             fill: rgb("#BBDEFB"), stroke: 1pt + rgb("#1565C0"), radius: 2pt)
+        content((x + bw / 2, bh / 2),
+          text(size: 9pt, weight: "bold", fill: rgb("#0D47A1"))[茶])
+      }
+      let ms = 2 * (bw + gap) + 0.8
+      for i in range(5) {
+        let x = ms + i * (bw + gap)
+        rect((x, 0), (x + bw, bh),
+             fill: rgb("#FFF9C4"), stroke: 1pt + rgb("#F9A825"), radius: 2pt)
+        content((x + bw / 2, bh / 2),
+          text(size: 9pt, weight: "bold", fill: rgb("#F57F17"))[奶])
+      }
+      let tea-mid = (bw + gap) - gap / 2
+      content((tea-mid, -0.8),
+        text(size: 8pt, weight: "bold", fill: rgb("#1565C0"))[2 份], anchor: "north")
+      let milk-mid = ms + (bw + gap) * 2 - gap / 2
+      content((milk-mid, -0.8),
+        text(size: 8pt, weight: "bold", fill: rgb("#F57F17"))[5 份], anchor: "north")
+      let total-end = ms + 5 * (bw + gap) - gap
+      content((total-end / 2, bh + 1.2),
+        text(size: 9pt, weight: "bold")[$"茶" : "奶" = 2 : 5$], anchor: "south")
+    }),
+    caption: [条形模型：茶与奶的比 $2 : 5$，整杯共 $7$ 份],
+  )
 ]
 
 #side-hack[
@@ -44,6 +79,39 @@
   - *比值*：$a : b$ 的比值就是 $a / b$；用比值判断两个比是否相等最可靠。
   - *化简比*：比的前项与后项同时乘或除同一个非零数，比不变；通常把它化到前后项互质的最简比。
   - *比可翻译成分数*：$a : b$ 对应 $a / b$；反之分数也可以还原成比。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      let bw = 1.3
+      let bh = 1.0
+      content((-2.5, bh / 2), text(size: 8pt, weight: "bold")[$6 : 9$], anchor: "east")
+      for i in range(6) {
+        rect((i * (bw + 0.15), 0), (i * (bw + 0.15) + bw, bh),
+             fill: rgb("#C8E6C9"), stroke: 0.6pt + rgb("#388E3C"))
+      }
+      let ns = 6 * (bw + 0.15) + 0.6
+      for i in range(9) {
+        rect((ns + i * (bw + 0.15), 0), (ns + i * (bw + 0.15) + bw, bh),
+             fill: rgb("#FFECB3"), stroke: 0.6pt + rgb("#F9A825"))
+      }
+      let mid-x = (ns + 9 * (bw + 0.15)) / 2
+      line((mid-x, -0.4), (mid-x, -1.6), stroke: 1.2pt + rgb("#555"), mark: (end: ">"))
+      content((mid-x + 1.5, -1.0), text(size: 7pt, fill: rgb("#555"))[$div 3$], anchor: "west")
+      let by = -3.0
+      content((-2.5, by + bh / 2), text(size: 8pt, weight: "bold")[$2 : 3$], anchor: "east")
+      for i in range(2) {
+        rect((i * (bw + 0.15), by), (i * (bw + 0.15) + bw, by + bh),
+             fill: rgb("#C8E6C9"), stroke: 0.6pt + rgb("#388E3C"))
+      }
+      let ts = 2 * (bw + 0.15) + 0.6
+      for i in range(3) {
+        rect((ts + i * (bw + 0.15), by), (ts + i * (bw + 0.15) + bw, by + bh),
+             fill: rgb("#FFECB3"), stroke: 0.6pt + rgb("#F9A825"))
+      }
+    }),
+    caption: [化简比：$6 : 9$ 前后同除以 $3$，得最简比 $2 : 3$],
+  )
 ]
 
 #pitfall[

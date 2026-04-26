@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 平方、平方根与算术平方根 <tool:cb06-square-and-square-root>
 
@@ -18,6 +19,27 @@
   *平方*：一个数自己乘以自己，就叫它的平方：
 
   $ a^2 = a times a $
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      // Square with side a and area a^2
+      let s = 7
+      rect((0, 0), (s, s), fill: rgb("#E3F2FD"), stroke: 1.5pt + rgb("#1565C0"), radius: 2pt)
+      // Side labels
+      content((s / 2, -0.8), text(size: 10pt, weight: "bold", fill: rgb("#1565C0"))[$a$], anchor: "north")
+      content((-0.8, s / 2), text(size: 10pt, weight: "bold", fill: rgb("#1565C0"))[$a$], anchor: "east")
+      // Area label
+      content((s / 2, s / 2), text(size: 12pt, weight: "bold", fill: rgb("#0D47A1"))[$a^2$])
+      // Bidirectional arrows
+      let ax = s + 3
+      line((ax, s / 2 + 0.5), (ax, s / 2 + 2), stroke: 1.2pt + rgb("#2E7D32"), mark: (end: ">"))
+      content((ax + 1.5, s / 2 + 1.5), text(size: 7pt, fill: rgb("#2E7D32"))[平方], anchor: "west")
+      line((ax, s / 2 - 0.5), (ax, s / 2 - 2), stroke: 1.2pt + rgb("#C62828"), mark: (end: ">"))
+      content((ax + 1.5, s / 2 - 1.5), text(size: 7pt, fill: rgb("#C62828"))[开方], anchor: "west")
+    }),
+    caption: [正方形：已知边长 $a$ 求面积是*平方*，已知面积求边长是*开方*],
+  )
 
   *平方根*：若 $x^2 = a$，就把 $x$ 叫做 $a$ 的一个平方根。
 
@@ -45,6 +67,35 @@
   - *平方根*：若 $x^2 = a$（$a >= 0$），则 $x$ 是 $a$ 的平方根；$a > 0$ 时有两个，互为相反数；$a = 0$ 时只有 $0$。
   - *算术平方根*：$sqrt(a)$ 规定取非负；$a < 0$ 时 $sqrt(a)$ 在实数范围内无定义。
   - *基本关系*：$(sqrt(a))^2 = a$（$a >= 0$）；$sqrt(a^2) = |a|$（对所有实数 $a$，请注意带绝对值）。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      let ox = 10
+      let s = 2.5
+      // Number line
+      line((ox - 1 * s, 0), (ox + 5.3 * s, 0), stroke: 1.5pt + rgb("#333"), mark: (end: ">"))
+      // Ticks for 0-5
+      for i in range(0, 6) {
+        let tx = ox + i * s
+        line((tx, -0.3), (tx, 0.3), stroke: 0.8pt + rgb("#555"))
+        content((tx, -0.8), text(size: 7pt)[#str(i)], anchor: "north")
+      }
+      // Perfect square roots
+      let roots = ((1, [$sqrt(1) = 1$], rgb("#2E7D32")),
+                   (2, [$sqrt(4) = 2$], rgb("#1565C0")),
+                   (3, [$sqrt(9) = 3$], rgb("#7B1FA2")),
+                   (4, [$sqrt(16) = 4$], rgb("#E65100")))
+      for (val, label, clr) in roots {
+        let tx = ox + val * s
+        circle((tx, 0), radius: 0.25, fill: clr, stroke: 1pt + clr)
+        content((tx, 1.2), text(size: 7pt, weight: "bold", fill: clr)[#label], anchor: "south")
+      }
+      // Origin
+      circle((ox, 0), radius: 0.2, fill: rgb("#333"), stroke: 1pt + rgb("#333"))
+    }),
+    caption: [完全平方数的算术平方根落在整数位置上],
+  )
 ]
 
 #pitfall[

@@ -34,6 +34,27 @@
   #figure(
     cetz.canvas(length: 0.4cm, {
       import cetz.draw: *
+      // Show substitution check: x=4 into 2x+3=11
+      let bx = 2
+      // Left side calculation
+      rect((bx, 0), (bx + 12, 3), fill: rgb("#E3F2FD"), stroke: 1pt + rgb("#1565C0"), radius: 3pt)
+      content((bx + 6, 2.0), text(size: 8pt, fill: rgb("#0D47A1"))[左边 $= 2 times 4 + 3$])
+      content((bx + 6, 0.8), text(size: 9pt, weight: "bold", fill: rgb("#0D47A1"))[$= 11$ ✓])
+      // Equals sign
+      content((bx + 14, 1.5), text(size: 14pt, weight: "bold")[$=$])
+      // Right side
+      rect((bx + 16, 0), (bx + 26, 3), fill: rgb("#FFCDD2"), stroke: 1pt + rgb("#C62828"), radius: 3pt)
+      content((bx + 21, 2.0), text(size: 8pt, fill: rgb("#C62828"))[右边])
+      content((bx + 21, 0.8), text(size: 9pt, weight: "bold", fill: rgb("#C62828"))[$= 11$ ✓])
+      // Top label
+      content((bx + 13, 4.0), text(size: 8pt, weight: "bold")[代入 $x = 4$ 检验], anchor: "south")
+    }),
+    caption: [检验解：把 $x = 4$ 代回 $2 x + 3 = 11$，左右两边都等于 $11$],
+  )
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
 
       // --- Fulcrum (triangle) ---
       let ful-x = 12

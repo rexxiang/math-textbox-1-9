@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 等式性质：保持天平平衡 <tool:cb05-equality-properties>
 
@@ -24,6 +25,52 @@
 
   天平直觉：同时在两侧加上同样重的砝码，平衡保持；同时减去等量，平衡也保持；两侧同乘 / 同除非零的同一个倍数，依旧平衡。
 
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      // Two balance states side by side
+      // State 1: a = b
+      let fx = 6
+      let fy = 0
+      let fh = 2.0
+      // Fulcrum
+      line((fx - 1.2, fy), (fx + 1.2, fy), (fx, fy + fh), close: true,
+           fill: rgb("#78909C"), stroke: 0.8pt + rgb("#455A64"))
+      let beam-y = fy + fh
+      line((fx - 6, beam-y), (fx + 6, beam-y), stroke: 1.5pt + rgb("#37474F"))
+      // Left pan: a
+      rect((fx - 5.5, beam-y + 0.3), (fx - 2.5, beam-y + 2.0),
+           fill: rgb("#BBDEFB"), stroke: 1pt + rgb("#1565C0"), radius: 2pt)
+      content((fx - 4, beam-y + 1.15), text(size: 10pt, weight: "bold", fill: rgb("#0D47A1"))[$a$])
+      // Right pan: b
+      rect((fx + 2.5, beam-y + 0.3), (fx + 5.5, beam-y + 2.0),
+           fill: rgb("#FFCDD2"), stroke: 1pt + rgb("#C62828"), radius: 2pt)
+      content((fx + 4, beam-y + 1.15), text(size: 10pt, weight: "bold", fill: rgb("#C62828"))[$b$])
+
+      // Arrow to state 2
+      line((fx + 7, beam-y + 1), (fx + 10, beam-y + 1), stroke: 1.2pt + rgb("#555"), mark: (end: ">"))
+      content((fx + 8.5, beam-y + 2.0), text(size: 7pt, fill: rgb("#555"))[两边 $+ c$], anchor: "south")
+
+      // State 2: a+c = b+c
+      let fx2 = fx + 17
+      line((fx2 - 1.2, fy), (fx2 + 1.2, fy), (fx2, fy + fh), close: true,
+           fill: rgb("#78909C"), stroke: 0.8pt + rgb("#455A64"))
+      line((fx2 - 6, beam-y), (fx2 + 6, beam-y), stroke: 1.5pt + rgb("#37474F"))
+      // Left: a + c
+      rect((fx2 - 5.5, beam-y + 0.3), (fx2 - 2.5, beam-y + 2.0),
+           fill: rgb("#BBDEFB"), stroke: 1pt + rgb("#1565C0"), radius: 2pt)
+      content((fx2 - 4, beam-y + 1.15), text(size: 9pt, weight: "bold", fill: rgb("#0D47A1"))[$a + c$])
+      // Right: b + c
+      rect((fx2 + 2.5, beam-y + 0.3), (fx2 + 5.5, beam-y + 2.0),
+           fill: rgb("#FFCDD2"), stroke: 1pt + rgb("#C62828"), radius: 2pt)
+      content((fx2 + 4, beam-y + 1.15), text(size: 9pt, weight: "bold", fill: rgb("#C62828"))[$b + c$])
+      // Equal signs
+      content((fx, beam-y + 2.5), text(size: 10pt, weight: "bold")[$=$], anchor: "south")
+      content((fx2, beam-y + 2.5), text(size: 10pt, weight: "bold")[$=$], anchor: "south")
+    }),
+    caption: [等式性质：天平两边同加 $c$，平衡不变],
+  )
+
   这四条规则加起来还给了一条常用的衍生：*移项* —— 把等式一边的某项移到另一边，要*变号*：
 
   $ x + 5 = 12 $
@@ -33,6 +80,30 @@
   $ x = 12 - 5 = 7 $
 
   于是“$+5$ 过到右边变 $-5$”。看起来像在“移动”，实质是两边同减 $5$ 的简写。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      // Step 1: x + 5 = 12
+      let y1 = 3
+      rect((0, y1), (6, y1 + 2), fill: rgb("#E3F2FD"), stroke: 1pt + rgb("#1565C0"), radius: 3pt)
+      content((3, y1 + 1), text(size: 9pt, weight: "bold", fill: rgb("#0D47A1"))[$x + 5$])
+      content((7, y1 + 1), text(size: 12pt, weight: "bold")[$=$])
+      rect((8, y1), (12, y1 + 2), fill: rgb("#FFCDD2"), stroke: 1pt + rgb("#C62828"), radius: 3pt)
+      content((10, y1 + 1), text(size: 9pt, weight: "bold", fill: rgb("#C62828"))[$12$])
+      // Arrow down
+      line((6, y1 - 0.3), (6, y1 - 1.5), stroke: 1.2pt + rgb("#555"), mark: (end: ">"))
+      content((8.5, y1 - 0.9), text(size: 7pt, fill: rgb("#555"))[两边 $- 5$], anchor: "west")
+      // Step 2: x = 12 - 5 = 7
+      let y2 = -0.5
+      rect((0, y2), (4, y2 + 2), fill: rgb("#E3F2FD"), stroke: 1pt + rgb("#1565C0"), radius: 3pt)
+      content((2, y2 + 1), text(size: 9pt, weight: "bold", fill: rgb("#0D47A1"))[$x$])
+      content((5, y2 + 1), text(size: 12pt, weight: "bold")[$=$])
+      rect((6, y2), (12, y2 + 2), fill: rgb("#FFCDD2"), stroke: 1pt + rgb("#C62828"), radius: 3pt)
+      content((9, y2 + 1), text(size: 9pt, weight: "bold", fill: rgb("#C62828"))[$12 - 5 = 7$])
+    }),
+    caption: [移项变号：$x + 5 = 12$ 两边同减 $5$，得 $x = 7$],
+  )
 ]
 
 #side-hack[

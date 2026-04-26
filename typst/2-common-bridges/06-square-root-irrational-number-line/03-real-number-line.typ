@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 把无理数放回数轴：$RR$ 的完整性 <tool:cb06-real-number-line>
 
@@ -19,6 +20,40 @@
 
   - 画一个边长为 $1$ 的正方形，它的对角线长度恰为 $sqrt(2)$（勾股定理的直接结论，几何分支会正式证明）。
   - 把这条长度用圆规“搬到”数轴原点右侧，搬到的端点对应的就是 $sqrt(2)$。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      let ox = 6
+      let s = 4.0
+      // Number line
+      line((ox - 1 * s, 0), (ox + 3.3 * s, 0), stroke: 1.5pt + rgb("#333"), mark: (end: ">"))
+      for i in range(0, 3) {
+        let tx = ox + i * s
+        line((tx, -0.3), (tx, 0.3), stroke: 0.8pt + rgb("#555"))
+        content((tx, -0.8), text(size: 7pt)[#str(i)], anchor: "north")
+      }
+      // Unit square at origin
+      rect((ox, 0), (ox + s, s), fill: rgb("#E3F2FD40"), stroke: 1pt + rgb("#1565C0"))
+      content((ox + s / 2, s / 2), text(size: 8pt, fill: rgb("#1565C0"))[$1 times 1$])
+      // Diagonal
+      line((ox, 0), (ox + s, s), stroke: 1.2pt + rgb("#C62828"))
+      content((ox + s / 2 - 0.3, s / 2 + 0.5), text(size: 7pt, fill: rgb("#C62828"))[$sqrt(2)$], anchor: "south-east")
+      // Arc from (1,1) down to number line
+      let diag-len = s * 1.414
+      // Draw arc
+      bezier((ox + s, s), (ox + diag-len, 0),
+             (ox + s + 1.5, s * 0.3),
+             stroke: (dash: "dashed", paint: rgb("#7B1FA2"), thickness: 1pt),
+             mark: (end: ">"))
+      // Mark sqrt(2) on number line
+      circle((ox + diag-len, 0), radius: 0.3, fill: rgb("#7B1FA2"), stroke: 1pt + rgb("#4A148C"))
+      content((ox + diag-len, -1.5), text(size: 8pt, weight: "bold", fill: rgb("#7B1FA2"))[$sqrt(2)$], anchor: "north")
+      // Origin
+      circle((ox, 0), radius: 0.2, fill: rgb("#333"), stroke: 1pt + rgb("#333"))
+    }),
+    caption: [几何构造：用单位正方形的对角线长度在数轴上定位 $sqrt(2)$],
+  )
   - 同理，$-sqrt(2)$ 是该端点关于原点的对称点。
 
   把所有无理数都这样“搬”到数轴上以后，数轴真正成为*实数轴*，记作：
@@ -49,6 +84,42 @@
   - *数集层级*：$NN subset.eq ZZ subset.eq QQ subset.eq RR$。
   - *数轴对应*：实数 $<=>$ 数轴上的点，一一对应，没有空位。
   - *估算技巧*：夹逼——找两个相邻整数 $n, n + 1$ 使 $n^2 < a < (n + 1)^2$，则 $sqrt(a)$ 落在 $(n, n + 1)$ 内；继续细分可得更精确的十进制近似。
+
+  #figure(
+    cetz.canvas(length: 0.5cm, {
+      import cetz.draw: *
+      // Nested rectangles for R ⊃ Q ⊃ Z ⊃ N
+      let w0 = 20
+      let h0 = 7
+      // R (outermost)
+      rect((-w0 / 2, -h0 / 2), (w0 / 2, h0 / 2),
+           fill: rgb("#FCE4EC"), stroke: 1.2pt + rgb("#C62828"), radius: 5pt)
+      content((w0 / 2 - 1.2, h0 / 2 - 0.6), text(size: 9pt, weight: "bold", fill: rgb("#C62828"))[$RR$], anchor: "north-east")
+      // Q
+      let w1 = 14
+      let h1 = 5
+      rect((-w1 / 2, -h1 / 2), (w1 / 2, h1 / 2),
+           fill: rgb("#FFF9C4"), stroke: 1.2pt + rgb("#F9A825"), radius: 4pt)
+      content((w1 / 2 - 1.0, h1 / 2 - 0.6), text(size: 9pt, weight: "bold", fill: rgb("#F57F17"))[$QQ$], anchor: "north-east")
+      // Z
+      let w2 = 8.5
+      let h2 = 3.2
+      rect((-w2 / 2, -h2 / 2), (w2 / 2, h2 / 2),
+           fill: rgb("#E3F2FD"), stroke: 1.2pt + rgb("#1565C0"), radius: 4pt)
+      content((w2 / 2 - 1.0, h2 / 2 - 0.6), text(size: 9pt, weight: "bold", fill: rgb("#1565C0"))[$ZZ$], anchor: "north-east")
+      // N (innermost)
+      let w3 = 4
+      let h3 = 1.8
+      rect((-w3 / 2, -h3 / 2), (w3 / 2, h3 / 2),
+           fill: rgb("#C8E6C9"), stroke: 1.2pt + rgb("#388E3C"), radius: 3pt)
+      content((0, 0), text(size: 9pt, weight: "bold", fill: rgb("#2E7D32"))[$NN$])
+      // Example members
+      content((-w2 / 2 + 1.2, 0), text(size: 7pt, fill: rgb("#1565C0"))[$-3$])
+      content((w1 / 2 - 1.8, 0), text(size: 7pt, fill: rgb("#F57F17"))[$2/3$])
+      content((w0 / 2 - 2.0, 0), text(size: 7pt, fill: rgb("#C62828"))[$sqrt(2)$])
+    }),
+    caption: [数集层级：$NN subset.eq ZZ subset.eq QQ subset.eq RR$],
+  )
 ]
 
 #pitfall[

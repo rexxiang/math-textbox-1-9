@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 相反数与绝对值：方向与远近分开记 <tool:cb02-opposite-and-absolute>
 
@@ -21,6 +22,39 @@
   - $0$ 的相反数还是 $0$。
   - 一句话：相反数在数轴上关于原点对称，且它们之和为 $0$（$3 + (-3) = 0$）。
 
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      let ox = 10
+      let s = 2.0
+      // Axis
+      line((ox - 5 * s, 0), (ox + 5.3 * s, 0), stroke: 1.5pt + rgb("#333"), mark: (end: ">"))
+      for i in range(-4, 5) {
+        let tx = ox + i * s
+        line((tx, -0.3), (tx, 0.3), stroke: 0.8pt + rgb("#555"))
+        content((tx, -0.8), text(size: 6pt)[#str(i)], anchor: "north")
+      }
+      // Origin
+      circle((ox, 0), radius: 0.25, fill: rgb("#333"), stroke: 1pt + rgb("#333"))
+      content((ox, 0.8), text(size: 7pt, weight: "bold")[O], anchor: "south")
+      // Pair: +3 and -3
+      let p3 = ox + 3 * s
+      let m3 = ox - 3 * s
+      circle((p3, 0), radius: 0.25, fill: rgb("#1565C0"), stroke: 1pt + rgb("#0D47A1"))
+      circle((m3, 0), radius: 0.25, fill: rgb("#C62828"), stroke: 1pt + rgb("#B71C1C"))
+      content((p3, 1.5), text(size: 8pt, weight: "bold", fill: rgb("#1565C0"))[$+3$], anchor: "south")
+      content((m3, 1.5), text(size: 8pt, weight: "bold", fill: rgb("#C62828"))[$-3$], anchor: "south")
+      // Symmetry arrows
+      let arc-h = 2.5
+      bezier((m3, 1.0), (ox, arc-h + 0.5), ((m3 + ox) / 2, arc-h + 1.0),
+             stroke: (dash: "dashed", paint: rgb("#888"), thickness: 0.8pt))
+      bezier((p3, 1.0), (ox, arc-h + 0.5), ((p3 + ox) / 2, arc-h + 1.0),
+             stroke: (dash: "dashed", paint: rgb("#888"), thickness: 0.8pt))
+      content((ox, arc-h + 1.5), text(size: 7pt, fill: rgb("#555"))[关于原点对称], anchor: "south")
+    }),
+    caption: [$+3$ 与 $-3$ 是一对相反数，关于原点对称],
+  )
+
   只看远近、不看方向，就得到*绝对值*：
 
   $ |a| = cases(a\, a >= 0, -a\, a < 0) $
@@ -28,6 +62,32 @@
   几何意义：$|a|$ 就是 $a$ 到原点的距离。于是 $|-4| = 4$，$|4| = 4$，$|0| = 0$。
 
   两点 $a$、$b$ 在数轴上的距离也可以用绝对值表达：$|a - b|$。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      let ox = 10
+      let s = 2.0
+      // Axis
+      line((ox - 5 * s, 0), (ox + 5.3 * s, 0), stroke: 1.5pt + rgb("#333"), mark: (end: ">"))
+      for i in range(-4, 5) {
+        let tx = ox + i * s
+        line((tx, -0.3), (tx, 0.3), stroke: 0.8pt + rgb("#555"))
+        content((tx, -0.8), text(size: 6pt)[#str(i)], anchor: "north")
+      }
+      circle((ox, 0), radius: 0.2, fill: rgb("#333"), stroke: 1pt + rgb("#333"))
+      // Point at -4: show |−4| = 4
+      let pt = ox - 4 * s
+      circle((pt, 0), radius: 0.25, fill: rgb("#E65100"), stroke: 1pt + rgb("#BF360C"))
+      content((pt, 1.2), text(size: 8pt, weight: "bold", fill: rgb("#E65100"))[$-4$], anchor: "south")
+      // Distance brace
+      line((pt, -1.5), (ox, -1.5), stroke: 1.2pt + rgb("#E65100"),
+           mark: (start: "|", end: "|"))
+      content(((pt + ox) / 2, -2.2),
+        text(size: 8pt, weight: "bold", fill: rgb("#E65100"))[$|{-4}| = 4$], anchor: "north")
+    }),
+    caption: [绝对值 $|-4| = 4$：$-4$ 到原点的距离是 $4$],
+  )
 ]
 
 #side-hack[

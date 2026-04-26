@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 四象限：平面被两条轴分成的四块 <tool:cb03-quadrants>
 
@@ -31,6 +32,36 @@
   两条坐标轴本身*不属于任何象限*；原点也不属于任何象限。
 
   只要拿到 $(x, y)$，先读符号——两正在第一，左上两异号在第二，两负在第三，右下再一次异号在第四——就能立刻说出位置。
+
+  #figure(
+    cetz.canvas(length: 0.5cm, {
+      import cetz.draw: *
+      let s = 3.5
+      // Quadrant fills
+      rect((0, 0), (s, s), fill: rgb("#E3F2FD"), stroke: none)
+      rect((-s, 0), (0, s), fill: rgb("#E8F5E9"), stroke: none)
+      rect((-s, -s), (0, 0), fill: rgb("#FFF8E1"), stroke: none)
+      rect((0, -s), (s, 0), fill: rgb("#FFF3E0"), stroke: none)
+      // Axes
+      line((-s - 0.5, 0), (s + 1, 0), stroke: 1.5pt + rgb("#333"), mark: (end: ">"))
+      line((0, -s - 0.5), (0, s + 1), stroke: 1.5pt + rgb("#333"), mark: (end: ">"))
+      content((s + 1.5, 0), text(size: 8pt, weight: "bold")[_x_], anchor: "west")
+      content((0, s + 1.5), text(size: 8pt, weight: "bold")[_y_], anchor: "south")
+      // Quadrant labels with sign patterns
+      content((s / 2, s / 2 + 0.8), text(size: 10pt, weight: "bold", fill: rgb("#BBB"))[Ⅰ])
+      content((s / 2, s / 2 - 0.5), text(size: 7pt, fill: rgb("#888"))[$( +, + )$])
+      content((-s / 2, s / 2 + 0.8), text(size: 10pt, weight: "bold", fill: rgb("#BBB"))[Ⅱ])
+      content((-s / 2, s / 2 - 0.5), text(size: 7pt, fill: rgb("#888"))[$( -, + )$])
+      content((-s / 2, -s / 2 + 0.8), text(size: 10pt, weight: "bold", fill: rgb("#BBB"))[Ⅲ])
+      content((-s / 2, -s / 2 - 0.5), text(size: 7pt, fill: rgb("#888"))[$( -, - )$])
+      content((s / 2, -s / 2 + 0.8), text(size: 10pt, weight: "bold", fill: rgb("#BBB"))[Ⅳ])
+      content((s / 2, -s / 2 - 0.5), text(size: 7pt, fill: rgb("#888"))[$( +, - )$])
+      // Origin
+      circle((0, 0), radius: 0.2, fill: rgb("#333"), stroke: 1pt + rgb("#333"))
+      content((-0.5, -0.5), text(size: 7pt, weight: "bold")[O])
+    }),
+    caption: [四象限与符号规律：逆时针从右上编号],
+  )
 ]
 
 #side-hack[
@@ -53,6 +84,34 @@
   - *两种常见对称*：
     - 关于 $x$ 轴对称：$(x, y) -> (x, -y)$；
     - 关于 $y$ 轴对称：$(x, y) -> (-x, y)$。
+
+  #figure(
+    cetz.canvas(length: 0.5cm, {
+      import cetz.draw: *
+      let s = 2.0
+      // Axes
+      line((-4 * s - 0.5, 0), (4 * s + 1, 0), stroke: 1.2pt + rgb("#333"), mark: (end: ">"))
+      line((0, -4 * s - 0.5), (0, 4 * s + 1), stroke: 1.2pt + rgb("#333"), mark: (end: ">"))
+      // Original point A(3,2)
+      let ax = 3 * s
+      let ay = 2 * s
+      circle((ax, ay), radius: 0.25, fill: rgb("#1565C0"), stroke: 1pt + rgb("#0D47A1"))
+      content((ax + 0.5, ay + 0.5), text(size: 7pt, weight: "bold", fill: rgb("#1565C0"))[$A(3, 2)$], anchor: "south-west")
+      // x-axis reflection: A'(3, -2)
+      circle((ax, -ay), radius: 0.25, fill: rgb("#C62828"), stroke: 1pt + rgb("#B71C1C"))
+      content((ax + 0.5, -ay - 0.5), text(size: 7pt, weight: "bold", fill: rgb("#C62828"))[$A'(3, -2)$], anchor: "north-west")
+      // y-axis reflection: A''(-3, 2)
+      circle((-ax, ay), radius: 0.25, fill: rgb("#2E7D32"), stroke: 1pt + rgb("#1B5E20"))
+      content((-ax - 0.5, ay + 0.5), text(size: 7pt, weight: "bold", fill: rgb("#2E7D32"))[$A''(-3, 2)$], anchor: "south-east")
+      // Dashed symmetry lines
+      line((ax, ay), (ax, -ay), stroke: (dash: "dashed", paint: rgb("#C62828"), thickness: 0.6pt))
+      line((ax, ay), (-ax, ay), stroke: (dash: "dashed", paint: rgb("#2E7D32"), thickness: 0.6pt))
+      // Origin
+      circle((0, 0), radius: 0.2, fill: rgb("#333"), stroke: 1pt + rgb("#333"))
+      content((-0.5, -0.5), text(size: 7pt, weight: "bold")[O])
+    }),
+    caption: [$A(3, 2)$ 关于 $x$ 轴对称得 $A'(3, -2)$，关于 $y$ 轴对称得 $A''(-3, 2)$],
+  )
 ]
 
 #pitfall[
