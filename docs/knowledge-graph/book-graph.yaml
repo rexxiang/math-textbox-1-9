@@ -250,11 +250,19 @@ chapters:
     mainline: true
 
   # ── Part 3b: Geometry & Proof ──────────────────────────────────────────────
-  - id: ch:congruence-correspondence-proof-chains
-    title_zh: 全等·对应·证明链
-    title_en: Congruence, Correspondence & Proof Chains
+  - id: ch:congruence-and-basic-criteria
+    title_zh: 全等与基本判定
+    title_en: Congruence & Basic Criteria
     part: 3b-geometry-proof
-    path: typst/3b-geometry-proof/01-congruence-correspondence-proof-chains
+    path: typst/3b-geometry-proof/01-congruence-and-basic-criteria
+    difficulty: 4
+    mainline: true
+
+  - id: ch:advanced-criteria-and-proof-writing
+    title_zh: 判定深化与证明书写
+    title_en: Advanced Criteria & Proof Writing
+    part: 3b-geometry-proof
+    path: typst/3b-geometry-proof/02-advanced-criteria-and-proof-writing
     difficulty: 4
     mainline: true
 
@@ -262,15 +270,23 @@ chapters:
     title_zh: 相似·比例·平行线几何
     title_en: Similarity, Scale & Parallel Line Geometry
     part: 3b-geometry-proof
-    path: typst/3b-geometry-proof/02-similarity-scale-parallel-line-geometry
+    path: typst/3b-geometry-proof/03-similarity-scale-parallel-line-geometry
     difficulty: 4
     mainline: true
 
-  - id: ch:quadrilaterals-circles-structures
-    title_zh: 四边形·圆·结构
-    title_en: Quadrilaterals, Circles & Structures
+  - id: ch:quadrilateral-family
+    title_zh: 四边形家族
+    title_en: Quadrilateral Family
     part: 3b-geometry-proof
-    path: typst/3b-geometry-proof/03-quadrilaterals-circles-structures
+    path: typst/3b-geometry-proof/04-quadrilateral-family
+    difficulty: 4
+    mainline: true
+
+  - id: ch:circles-and-inscribed-circumscribed
+    title_zh: 圆与内接外切
+    title_en: Circles & Inscribed/Circumscribed
+    part: 3b-geometry-proof
+    path: typst/3b-geometry-proof/05-circles-and-inscribed-circumscribed
     difficulty: 4
     mainline: true
 
@@ -278,7 +294,7 @@ chapters:
     title_zh: 勾股定理·根式·三角比
     title_en: Pythagorean Theorem, Radicals & Trigonometric Ratios
     part: 3b-geometry-proof
-    path: typst/3b-geometry-proof/04-pythagorean-radicals-trigonometric-ratios
+    path: typst/3b-geometry-proof/06-pythagorean-radicals-trigonometric-ratios
     difficulty: 5
     mainline: true
 
@@ -286,7 +302,7 @@ chapters:
     title_zh: 变换·坐标几何·视图
     title_en: Transformations, Coordinate Geometry & Views
     part: 3b-geometry-proof
-    path: typst/3b-geometry-proof/05-transformations-coordinate-geometry-views
+    path: typst/3b-geometry-proof/07-transformations-coordinate-geometry-views
     difficulty: 5
     mainline: true
 
@@ -294,7 +310,7 @@ chapters:
     title_zh: 几何小结
     title_en: Geometry Summary
     part: 3b-geometry-proof
-    path: typst/3b-geometry-proof/06-geometry-summary
+    path: typst/3b-geometry-proof/08-geometry-summary
     difficulty: 5
     mainline: true
 
