@@ -63,3 +63,5 @@
 + 一个三角形三个内角之比为 $1 : 2 : 3$，求三个角各是多少度？最大的角是什么角？（#secref("pf08-triangles-angle-sum") + #secref("pf03-factors-multiples")）
 + 教室的黑板长 $4.2$ 米，学生量的时候把尺子放歪了，量出 $4.5$ 米。估算误差大约百分之几？（#secref("pf05-estimation-reasonableness") + #secref("pf04-fraction-arithmetic")）
 + 一个正方体棱长 $5$ 厘米，它的一个面的面积是多少？六个面的总面积呢？体积呢？（#secref("pf07-perimeter-area") + #secref("pf07-volume")）
++ 一个长方体的底面是正方形，边长 $4$ 厘米，高 $10$ 厘米。它的底面积是多少平方厘米？体积呢？如果把它倒放（正方形面朝下变成朝侧面），体积会变吗？（#secref("pf07-perimeter-area") + #secref("pf07-volume")） // 跨章回顾
++ 两条平行线被一条横截线所截，其中一个角是 $70°$。写出它对应的同位角、内错角、同旁内角各是多少度？再算：如果有一个三角形的一个内角恰好等于这个同旁内角，另一个内角是 $50°$，第三个内角是多少？（#secref("pf08-parallel-transversal") + #secref("pf08-triangles-angle-sum")） // 跨章回顾

@@ -31,6 +31,11 @@
   + 已知 $M$ 是 $A B$ 中点、$N$ 是 $C D$ 中点，$A N = C M$、$A N parallel C M$。证明 $M N$ 平分 $A C$。
   + 为什么 ASA 和 AAS 本质上是"同一回事"？用一句话解释。
   + 在两栏证明中，"对顶角相等"属于"已知"还是"定理"？为什么？
+  // 跨章回顾
+  + 用 SSS 判据（#secref("ge01-sss-sas")）证明：若 $triangle A B C$ 中，$D$ 是 $B C$ 的中点，且 $A B = A C$，则 $triangle A B D tilde.eq triangle A C D$。
+  // 跨章回顾
+  + 先用三角形内角和（#secref("pf08-triangles-angle-sum")）求出缺失角，再用 ASA 判据证明两三角形全等：在 $triangle A B C$ 和 $triangle D E F$ 中，$angle A = angle D = 40 degree$、$A B = D E$、$angle B = angle E = 80 degree$。
+  + 找一个反例说明"SSA"（两边和一个非夹角相等）*不能*判定两三角形全等。画出或描述两个满足 SSA 条件但不全等的三角形。
 
   *参考答案*
 
@@ -41,6 +46,9 @@
   + 由 $A N parallel C M$ 且 $A N = C M$，四边形 $A N C M$（或 $A M C N$，视取法）是平行四边形（一组对边平行且相等）；平行四边形对角线互相平分，故 $M N$ 平分 $A C$。
   + 三角形内角和 $= 180 degree$，两角一旦定了第三角自动确定；所以 ASA 给的"两角 $+$ 夹边"与 AAS 给的"两角 $+$ 对边"本质都是"三个角全定 $+$ 一条边定大小"。
   + "定理"（推论）——对顶角相等不是题目告诉你的，而是你自己从图形关系推出的；它在"理由"栏里应写"对顶角相等"而非"已知"。
+  + $A B = A C$（已知）；$B D = C D$（$D$ 为中点）；$A D = A D$（公共边）。三边对应相等，由 SSS 得 $triangle A B D tilde.eq triangle A C D$。
+  + $angle C = 180 degree - 40 degree - 80 degree = 60 degree = angle F$。现在 $angle A = angle D$、$A B = D E$、$angle B = angle E$，由 ASA 得 $triangle A B C tilde.eq triangle D E F$。
+  + 取 $triangle_1$：$A B = 5, B C = 3, angle A = 30 degree$；$triangle_2$：$A' B' = 5, B' C' = 3, angle A' = 30 degree$，但 $B C$ 对应的角可以是锐角或钝角（以 $B$ 为圆心、$3$ 为半径画弧，弧与另一边有两个交点），所以存在两种不全等的三角形。这就是"SSA 歧义"——非夹角不能锁定三角形形状。
 ]
 
 #blueprint[

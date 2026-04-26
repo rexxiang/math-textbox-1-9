@@ -150,7 +150,6 @@
   先动手算：
 
   + $triangle A B C$ 与 $triangle D E F$ 中 $angle A = angle D = 70 degree$、$angle B = angle E = 55 degree$。能否断定两三角形相似？写出判据名。
-  + $triangle A B C$ 中，$D E parallel B C$，$D$ 在 $A B$ 上，$E$ 在 $A C$ 上。若 $A D slash A B = 1 slash 3$，求 $D E slash B C$。
   + 两相似三角形中，对应边之比是 $5 : 2$。一个三角形的一条边长 $8$，对应另一三角形这条边长多少？（先说清“哪个三角形的 $8$”。）
 ]
 
@@ -252,8 +251,8 @@
 
   *基础*
   + `AA` ✓；`AA` ✓（由 $angle A = angle D$ 与 $angle C = angle F$，第三角 $angle B = angle E$ 自动相等）；不够（只有一对角相等，形状还没锁死）；两对角虽相等，但对应顺序错位——不能直接写 $triangle A B C tilde triangle D E F$，需要改写成 $triangle A B C tilde triangle E D F$ 才是合法的相似关系。
-  + $A B = 2 times 3 = 6$、$B C = 2 times 4 = 8$、$A C = 2 times 5 = 10$。
-  + 由 $A D slash A B = 6 slash 10 = 3 slash 5$ 得 $D E = 3 slash 5 times 15 = 9$。
+  + $A B = 2 times 3 = 6$、$B C = 2 times 4 = 8$、$A C = 2 times 5 = 10$（相似比）。
+  + 由 $A D slash A B = 6 slash 10 = 3 slash 5$ 得 $D E = 3 slash 5 times 15 = 9$（平行线截比例）。
 
   *应用*
   + 设 $triangle A B C$ 中 $D E parallel B C$，$D in A B$、$E in A C$。由 $D E parallel B C$ 得 $angle A D E = angle A B C$（同位角，见 #secref("ge02-parallel-line-angles"));$angle A$ 公共。由 AA 得 $triangle A D E tilde triangle A B C$。

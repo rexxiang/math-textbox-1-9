@@ -30,6 +30,10 @@
   + $triangle A B C$ 中 $A B = A C$，$A D perp B C$ 于 $D$。用 SSS 或 SAS 证明 $triangle A B D tilde.eq triangle A C D$。
   + 若结论是 $triangle A B C tilde.eq triangle B A C$，那 $triangle A B C$ 必须具有什么特殊形状？写一句话说明。
   + 为什么 AAA 不能判全等？举一个例子。
+  // 跨章回顾
+  + 在 $triangle A B C$ 中，$angle A = 50 degree$、$angle B = 70 degree$。先用三角形内角和（#secref("pf08-triangles-angle-sum")）求 $angle C$，再判断：若另一个三角形也有 $angle A' = 50 degree$、$angle B' = 70 degree$，两三角形一定全等吗？为什么？
+  // 跨章回顾
+  + 已知 $A B parallel C D$（#secref("pf08-parallel-transversal")），被截线 $E F$ 分别交 $A B, C D$ 于 $E, F$，且 $angle A E F = 65 degree$。求 $angle E F D$ 的度数。
 
   *参考答案*
 
@@ -39,6 +43,8 @@
   + $A B = A C$（已知）；$A D = A D$（公共边）；$angle A D B = angle A D C = 90 degree$（$A D perp B C$）；由 HL 或 SAS 得 $triangle A B D tilde.eq triangle A C D$。更简单的路线：由等腰三角形底边上的高即中线得 $B D = C D$，再由 SSS 得全等。
   + 必须 $A C = B C$（等腰），即以 $A B$ 为底边的等腰三角形。
   + 任意三角形和它的放大版（比如把三边都乘以 $2$）三个角全一样，但大小不同，不全等。
+  + $angle C = 180 degree - 50 degree - 70 degree = 60 degree$。另一个三角形虽然三角对应相等（AAA），但大小可以不同，所以*不一定*全等——只能说它们*相似*。
+  + $A B parallel C D$，$angle A E F$ 与 $angle E F D$ 是内错角，所以 $angle E F D = angle A E F = 65 degree$。
 ]
 
 #blueprint[

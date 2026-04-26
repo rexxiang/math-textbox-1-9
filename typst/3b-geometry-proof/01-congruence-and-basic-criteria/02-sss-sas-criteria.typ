@@ -115,7 +115,6 @@
 
   + $triangle A B C$ 与 $triangle D E F$：$A B = D E = 5$、$B C = E F = 4$、$A C = D F = 6$。
   + $triangle P Q R$ 与 $triangle S T U$：$P Q = S T$、$angle Q = angle T$、$Q R = T U$。
-  + $triangle X Y Z$ 与 $triangle M N O$：$X Y = M N$、$Y Z = N O$、$angle X = angle M$（注意 $angle X$ 的位置！）。
 ]
 
 #blueprint[
@@ -239,7 +238,7 @@
 
   *基础*
   + `SSS` ✓；`SAS` ✓（$angle A$ 是 $A B, A C$ 的夹角）；`SAS` ✓（$angle B$ 是 $A B, B C$ 的夹角）；不够（$angle A$ 不是 $A B, B C$ 的夹角，落在 SSA 区，见下一节）。
-  + 可以，`SAS`（$angle B$ 是 $A B$ 与 $B C$ 的夹角）。
+  + 可以（SAS），$angle B$ 是 $A B$ 与 $B C$ 的夹角。
 
   *应用*
   + 在 $triangle A B D$ 与 $triangle A C D$ 中：$A B = A C$（已知）、$angle B A D = angle C A D$（$A D$ 是角平分线）、$A D = A D$（公共边）。由 `SAS` 得 $triangle A B D tilde.eq triangle A C D$，故对应角 $angle B = angle C$。

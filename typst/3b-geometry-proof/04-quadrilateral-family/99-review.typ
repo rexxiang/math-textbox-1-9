@@ -36,6 +36,10 @@
     - "所有正方形都是矩形。"
     - "所有菱形都是平行四边形。"
   + 等腰梯形两底分别为 $4$ 和 $10$，腰长为 $5$。作高，求梯形的高。
+  // 跨章回顾
+  + 用全等三角形（#secref("ge01-sss-sas")）证明：平行四边形的对角线互相平分。（提示：找两对全等三角形。）
+  // 跨章回顾
+  + 一个四边形四个内角之和等于 $360 degree$（#secref("pf08-triangles-angle-sum") 的推论）。若平行四边形一个角是 $70 degree$，求其余三个角。
 
   *参考答案*
 
@@ -45,6 +49,8 @@
   + 平行四边形 $+$ 对角线相等 $=>$ 矩形。
   + 错（矩形不一定四边相等）；对（正方形是邻边相等的矩形）；对（菱形是四边相等的平行四边形）。
   + 作高后底边多出的部分 $= (10 - 4) slash 2 = 3$，高 $= sqrt(5^2 - 3^2) = sqrt(16) = 4$。
+  + 设平行四边形 $A B C D$，对角线 $A C$ 与 $B D$ 交于 $O$。在 $triangle A O B$ 与 $triangle C O D$ 中：$A B = C D$（平行四边形对边相等）；$angle O A B = angle O C D$（$A B parallel C D$，内错角）；$angle A O B = angle C O D$（对顶角）。由 ASA 得 $triangle A O B tilde.eq triangle C O D$，故 $O A = O C$、$O B = O D$——即对角线互相平分。
+  + 平行四边形对角相等，所以对角也是 $70 degree$；邻角互补，$180 degree - 70 degree = 110 degree$。四个角为 $70 degree$、$110 degree$、$70 degree$、$110 degree$。
 ]
 
 #blueprint[

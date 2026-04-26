@@ -154,7 +154,6 @@
 #tryit[
   + 在 $square A B C D$ 中，$A B = C D$、$A D = B C$。它是平行四边形吗？给出一句话理由。
   + 已知某平行四边形对角线互相平分且相等，但没垂直。它是什么特殊四边形？
-  + 一个四边形四边都相等、一个角 $= 60 degree$。它是什么特殊四边形？有没有可能是正方形？
 ]
 
 #blueprint[
@@ -240,9 +239,9 @@
   _参考答案：_
 
   *基础*
-  + $angle A = angle C = 70 degree$；$angle B = angle D = 110 degree$。
-  + 矩形对角线相等且 $A C = B D = 10$；在 $triangle A B C$ 中，$A C^2 = A B^2 + B C^2$（直角），$100 = 36 + B C^2 => B C = 8$。
-  + 菱形对角线互相垂直平分，每边 $= sqrt(3^2 + 4^2) = 5$；面积 $= 1 slash 2 times 6 times 8 = 24$。
+  + $angle A = angle C = 70 degree$；$angle B = angle D = 110 degree$（平行四边形性质）。
+  + 矩形对角线相等且 $A C = B D = 10$（矩形性质）；在 $triangle A B C$ 中，$A C^2 = A B^2 + B C^2$（勾股定理），$100 = 36 + B C^2 => B C = 8$。
+  + 菱形对角线互相垂直平分（菱形性质），每边 $= sqrt(3^2 + 4^2) = 5$（勾股定理）；面积 $= 1 slash 2 times 6 times 8 = 24$。
 
   *应用*
   + 由“对角线互相平分”得平行四边形；再加“对角线互相垂直”得菱形（判定之二）。

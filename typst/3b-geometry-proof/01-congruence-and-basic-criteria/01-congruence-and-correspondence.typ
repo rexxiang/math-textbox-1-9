@@ -112,7 +112,6 @@
 
   + 若 $triangle P Q R tilde.eq triangle X Y Z$，写出三对对应边与三对对应角。
   + 若 $triangle A B C tilde.eq triangle D E F$ 且 $angle A = 35 degree$、$angle B = 65 degree$，求 $angle F$。
-  + 某人把结论写成 $triangle A B C tilde.eq triangle F E D$，并说“这和 $triangle A B C tilde.eq triangle D E F$ 是一回事，字母都全”。他错在哪里？
 ]
 
 #blueprint[
@@ -224,9 +223,9 @@
   _参考答案：_
 
   *基础*
-  + 顶点：$A <-> L$、$B <-> M$、$C <-> N$。边：$A B = L M$、$B C = M N$、$A C = L N$。角：$angle A = angle L$、$angle B = angle M$、$angle C = angle N$。
-  + $angle B = 180 degree - 72 degree - 28 degree = 80 degree$；由对应角 $angle E = angle B = 80 degree$。
-  + $S T = 9$、$T U = 12$、$S U = 15$。
+  + 顶点：$A <-> L$、$B <-> M$、$C <-> N$。边：$A B = L M$、$B C = M N$、$A C = L N$。角：$angle A = angle L$、$angle B = angle M$、$angle C = angle N$。（全等对应）
+  + $angle B = 180 degree - 72 degree - 28 degree = 80 degree$（三角形内角和）；由对应角 $angle E = angle B = 80 degree$（全等对应）。
+  + $S T = 9$、$T U = 12$、$S U = 15$（全等对应边）。
 
   *应用*
   + 对应关系要求 $A <-> B$、$B <-> A$、$C <-> C$。于是 $A B = B A$（自动）、$B C = A C$、$angle A = angle B$。即 $triangle A B C$ 必须是一个以 $A$、$B$ 为两个底角、$C$ 为顶角的*等腰三角形*（$A C = B C$）。

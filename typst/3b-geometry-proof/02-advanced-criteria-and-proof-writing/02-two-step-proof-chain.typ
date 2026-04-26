@@ -114,7 +114,6 @@
 
   + 已知 $A B = A C$，$A D perp B C$ 于 $D$。要证：$B D = C D$。先列“要证 / 已知 / 中间桥”，再选判定法。
   + 已知 $A B parallel C D$，$O$ 为 $A D$ 与 $B C$ 的交点。要证：若 $A O = D O$，则 $B O = C O$。先列三栏草稿。
-  + 已知等腰 $triangle A B C$ 中 $A B = A C$，$M$ 为 $B C$ 中点。要证：$angle B = angle C$。你会选用哪一条判定法？
 ]
 
 #blueprint[

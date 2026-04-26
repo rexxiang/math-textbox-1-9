@@ -137,7 +137,6 @@
 #tryit[
   + 圆 $O$ 中，$angle A O B = 80 degree$。求弧 $A B$（劣弧）所对的圆周角。
   + $A B$ 是圆 $O$ 的直径，$C$ 在圆上。已知 $angle B A C = 35 degree$。求 $angle A C B$ 与 $angle A B C$。
-  + 同一段弧所对的两个圆周角为 $angle 1$ 与 $angle 2$。它们一定相等吗？如果是对应优弧的圆周角呢？
 ]
 
 #blueprint[
@@ -221,8 +220,8 @@
   _参考答案：_
 
   *基础*
-  + $65 degree$。
-  + Thales：$angle A C B = 90 degree$；$angle B A C = 90 degree - 28 degree = 62 degree$。
+  + $65 degree$（圆周角定理）。
+  + Thales：$angle A C B = 90 degree$（泰勒斯定理）；$angle B A C = 90 degree - 28 degree = 62 degree$（三角形内角和）。
   + 同弧圆周角相等：$4 x = x + 30 => x = 10$。
 
   *应用*

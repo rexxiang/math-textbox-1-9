@@ -31,6 +31,11 @@
     - "任意四边形都有外接圆。"
   + 正六边形边长 $= 2$。用 $R$、$r$ 公式核对边心距 $r = sqrt(3)$。
   + 已知 $triangle A B C$ 中 $angle A = 90 degree$，$D$ 是 $B C$ 中点。说明 $D A = D B = D C$，即 $D$ 是外接圆圆心。
+  // 跨章回顾
+  + 用全等三角形（#secref("ge01-sss-sas")）证明：圆的同一条弦的两条半径与弦组成的三角形是等腰三角形。
+  // 跨章回顾
+  + 在圆中，若弦 $A B$ 经过圆心，则 $angle A C B = 90 degree$（泰勒斯定理）。利用三角形内角和（#secref("pf08-triangles-angle-sum")）求当 $angle C A B = 35 degree$ 时 $angle A B C$ 的度数。
+  + 不用精确计算，判断：一个半径为 $5$ 的圆的内接正三角形的边长是否大于 $8$？说明理由。
 
   *参考答案*
 
@@ -41,6 +46,9 @@
   + 对（将来几何补充证明，可由圆周角定理推出：对边弧相加 $= 360 degree$，对应圆周角相加 $= 180 degree$）；对（三角形三条中垂线交于一点，即外心，且到三顶点等距）；不对（只有*圆内接四边形*才有外接圆，一般四边形未必四点共圆）。
   + 正六边形是 $6$ 个等边三角形拼起来的，所以 $R = a = 2$；由 $R^2 = r^2 + (a slash 2)^2$ 得 $r = sqrt(4 - 1) = sqrt(3)$。✓
   + $angle A = 90 degree$ $=>$ $B C$ 是直径（Thales 逆定理）；$D$ 是 $B C$ 中点即圆心，故 $D A = D B = D C = B C slash 2$。
+  + 设弦为 $A B$，圆心为 $O$，则 $O A = O B = R$（都是半径）。$triangle O A B$ 中 $O A = O B$，所以它是等腰三角形。
+  + $angle A C B = 90 degree$（泰勒斯定理）；$angle C A B + angle A B C = 90 degree$（三角形内角和）；$angle A B C = 90 degree - 35 degree = 55 degree$。
+  + 内接正三角形边长 $= R sqrt(3) = 5 sqrt(3) approx 5 times 1.732 = 8.66 > 8$。所以边长大于 $8$。估算时只需知道 $sqrt(3) approx 1.73$。
 ]
 
 #blueprint[

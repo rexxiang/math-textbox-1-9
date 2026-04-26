@@ -88,7 +88,6 @@
   先写出能用的判定法缩写；若不够，标“信息不足”：
 
   + $triangle X Y Z$ 与 $triangle M N O$：$angle X = angle M$、$angle Y = angle N$、$Y Z = N O$。
-  + $triangle A B C$ 与 $triangle D E F$：$angle A = angle D$、$angle B = angle E$、$A B = D E$。
   + $triangle P Q R$ 与 $triangle S T U$：$P Q = S T = 6$、$Q R = T U = 4$、$angle P = angle S = 40 degree$（$angle P$ 不是 $P Q, Q R$ 的夹角）。
 ]
 
