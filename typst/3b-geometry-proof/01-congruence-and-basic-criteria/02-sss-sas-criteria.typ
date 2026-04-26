@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab
 #import "../../lib/diagram-packages.typ": cetz
 
 === SSS 与 SAS：两条最基本的判定法 <tool:ge01-sss-sas>
@@ -89,6 +89,25 @@
   *一个警告先挂在这里*
 
   如果“一个角”站在外侧（即是其中一条已知边的*对角*而不是夹角），形状会不会也锁死？——*不一定*。这正是下一节要把 SSA 单独拎出来讨论的原因。现在只需记住一句话：*SAS 的 A 必须在两条边中间*。
+]
+
+
+#lab[
+  *吸管三角形：哪些长度能围成三角形？*
+
+  *材料*：吸管若干根、剪刀、直尺、记录表。
+
+  *步骤*：
+
+  + 剪出以下几组吸管（单位 cm）：$(3, 4, 5)$、$(2, 3, 6)$、$(5, 5, 5)$、$(1, 2, 3)$、$(4, 6, 9)$。
+  + 逐组试着把三根吸管首尾相接，围成一个三角形。记录每组能否成功围合。
+  + 对于能围成三角形的组，试着改变围法（换个角度、换个顺序）——形状会不会变？用力掰一掰，三角形会不会变形？
+  + 对于不能围成三角形的组，观察：短的两根加起来和最长那根比，是什么关系？
+
+  *观察*：
+  - 能围成三角形的三根吸管满足什么条件？（提示：比较任意两根之和与第三根。）
+  - 三根长度一旦固定，三角形形状是不是唯一的？这和 SSS 判定法有什么关系？
+  - 如果把三角形的一个"关节"换成可以活动的铰链，形状还能保持不变吗？对比四边形试试。
 ]
 
 #tryit[

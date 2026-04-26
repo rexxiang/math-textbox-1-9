@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab
 #import "../../lib/diagram-packages.typ": cetz
 
 === 相似的含义：AA 判定与相似比 <tool:ge02-similarity-aa-ratio>
@@ -124,6 +124,26 @@
   看到“在三角形内部作平行于一边的线段”，第一反应：相似构型 $triangle A D E tilde triangle A B C$。
 
   相似比 $k$ 写错分子分母是高频错——记住：*分子是“新”（被比较方）*，*分母是“旧”（基准方）*，写 $tilde$ 时从左到右即左 $=$ 旧、右 $=$ 新。
+]
+
+#lab[
+  *影子测高：用相似三角形量大树*
+
+  *材料*：卷尺或长绳、直尺（或一根已知长度的竹竿）、阳光充足的户外场地。
+
+  *步骤*：
+
+  + 在阳光下，把一根已知长度的竹竿（比如 $1$ 米）竖直插在地上，量出它的影子长度 $l_1$。
+  + 同一时刻，量出大树影子的长度 $l_2$。
+  + 画出示意图：竹竿顶端、竿脚、影子尖端构成一个直角三角形；树顶、树根、影子尖端也构成一个直角三角形。
+  + 两个三角形的太阳光线方向相同，所以对应角相等——它们*相似*。
+
+  *计算*：设竹竿高 $h_1$，树高 $h_2$（未知），则
+  $ h_1 / l_1 = h_2 / l_2 quad => quad h_2 = h_1 times l_2 / l_1. $
+
+  *思考*：
+  - 如果没有阳光（阴天），能不能用*镜子*放在地上代替影子，利用入射角 $=$ 反射角构造相似？试着设计方案。
+  - 如果你换一个时间再测一次，$l_1$ 和 $l_2$ 都变了，但 $h_2$ 的计算结果应该差不多——为什么？
 ]
 
 #tryit[

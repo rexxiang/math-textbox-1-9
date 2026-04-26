@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab
 #import "../../lib/diagram-packages.typ": cetz
 
 === 勾股定理与根号边长 <tool:ge04-pythagorean>
@@ -64,6 +64,24 @@
   *边长不再只是整数*
 
   一旦允许开方，斜边就不再被“整数 / 分数”关住。边长 $1$ 的正方形的对角线 $= sqrt(2)$；边长 $1$ 的等边三角形的高 $= sqrt(3) slash 2$；直角边 $1$、$2$ 的直角三角形斜边 $= sqrt(5)$。它们都是*根号长度*——合法的几何长度，只是写不成分数。
+]
+
+
+#lab[
+  *剪拼正方形：亲手验证 $a^2 + b^2 = c^2$*
+
+  *材料*：硬卡纸、直尺、剪刀、铅笔。
+
+  *步骤*：
+
+  + 在卡纸上画一个直角三角形，两直角边分别取 $a = 3$ cm、$b = 4$ cm。量出斜边 $c$（应接近 $5$ cm）。
+  + 分别以三条边为边长，画出三个正方形：$a times a$（$9$ cm²）、$b times b$（$16$ cm²）、$c times c$（$25$ cm²）。剪下来。
+  + 把 $a times a$ 和 $b times b$ 两个小正方形剪成若干块（提示：一个不剪，另一个沿对角线或 T 形切两刀），尝试*拼满*大正方形 $c times c$。
+  + 如果拼满成功，说明了什么？
+
+  *进阶*：
+  - 换一组直角边试试：$a = 5$ cm、$b = 12$ cm。先用勾股定理算出 $c$，再用剪拼验证。
+  - 如果三角形*不是*直角三角形（比如三边 $4, 5, 7$），$a^2 + b^2$ 和 $c^2$ 还相等吗？用面积剪拼能看出什么？
 ]
 
 #side-hack[

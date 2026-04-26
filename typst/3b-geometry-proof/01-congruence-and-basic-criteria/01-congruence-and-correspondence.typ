@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab
 #import "../../lib/diagram-packages.typ": cetz
 
 === 全等的含义与对应关系 <tool:ge01-congruence-correspondence>
@@ -77,6 +77,24 @@
   两个三角形一旦全等，你不用再为每一条边角单独辩论。“对应边相等、对应角相等”是*九条现成结论一起打包*。这也是为什么后面几乎每一道证明题最后那一步都长得一样：
 
   #quote[由 $triangle ... tilde.eq triangle ...$，得 $某 边 = 某 边$（或 $某 角 = 某 角$）。]
+]
+
+#lab[
+  *折纸验证全等*
+
+  *材料*：两张同样大小的白纸、剪刀、铅笔、直尺。
+
+  *步骤*：
+
+  + 在第一张纸上画一个任意三角形，标记顶点 $A$、$B$、$C$，量出三条边长和三个内角。
+  + 把这张纸叠在第二张纸上，沿三角形轮廓剪下，得到两个"一刀剪出"的三角形。
+  + 把第二个三角形翻转、旋转，尝试与第一个完全重合。
+  + 再剪一个*看起来差不多*但不是叠着剪的三角形，尝试重合。
+
+  *观察*：
+  - 叠着剪出来的两个三角形能不能完全重合？对应的边和角是否分别相等？
+  - 目测画出来的那个能完全重合吗？量一量，哪些边或角其实不一样？
+  - 你能体会到"全等"要求的"严丝合缝"和"看起来差不多"之间的差别吗？
 ]
 
 #side-hack[

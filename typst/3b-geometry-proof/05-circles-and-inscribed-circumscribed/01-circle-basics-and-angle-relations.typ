@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab
 #import "../../lib/diagram-packages.typ": cetz
 
 === 圆的基础与圆周角定理 <tool:ge03-circle-basics-inscribed>
@@ -113,6 +113,25 @@
   + 若顶点在圆周，把它对应的弧找出来；
   + 用“圆周角 $= 1 slash 2$ 圆心角”直接换算；或者利用“同弧等角”搬到一个更好算的位置；
   + 若题目条件里有*直径*，第一反应是 Thales：直径所对圆周角 $= 90 degree$。
+]
+
+#lab[
+  *圆周角实测：同弧上的角真的都一样吗？*
+
+  *材料*：圆规、直尺、量角器、白纸。
+
+  *步骤*：
+
+  + 用圆规在纸上画一个半径约 $5$ cm 的圆，标出圆心 $O$。
+  + 在圆上取两个固定点 $A$、$B$（它们确定一段弧）。用直尺连 $O A$、$O B$，用量角器量出圆心角 $angle A O B$，记录。
+  + 在*同侧*弧上（不含 $A$、$B$ 的那段）任取 $5$ 个点 $C_1, C_2, C_3, C_4, C_5$。对每个点，连 $A C_i$、$B C_i$，量出圆周角 $angle A C_i B$，记录到表格。
+  + 比较 $5$ 个圆周角的度数——它们相等吗？它们和圆心角 $angle A O B$ 有什么数量关系？
+  + *额外挑战*：在弧的*另一侧*取一个点 $D$，量 $angle A D B$。它和之前的圆周角一样吗？和圆心角的关系又是什么？
+
+  *观察*：
+  - 同弧上的圆周角是否都相等？
+  - 圆周角大约是圆心角的几分之几？
+  - 如果 $A B$ 恰好是直径，圆周角会变成多少度？亲手量一量！
 ]
 
 #tryit[

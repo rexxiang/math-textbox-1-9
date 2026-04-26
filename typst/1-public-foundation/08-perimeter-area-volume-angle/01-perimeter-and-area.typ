@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, lab
 #import "../../lib/diagram-packages.typ": cetz
 
 === 周长与面积：沿边界走一圈，用单位正方形铺满 <tool:pf07-perimeter-area>
@@ -78,6 +78,25 @@
     }),
     caption: [同一块长方形：红色走一圈 = 周长，蓝色铺满 = 面积],
   )
+]
+
+#lab[
+  *形状探索：周长一样，面积一样吗？*
+
+  *材料*：方格纸（$1$ cm 格）、铅笔、剪刀、细绳（约 $30$ cm）。
+
+  *步骤*：
+
+  + 剪一段 $24$ cm 长的细绳，把两端接起来形成一个绳圈。
+  + 在方格纸上，用这个绳圈围出一个*长方形*（比如长 $8$ cm、宽 $4$ cm）。数方格算面积，记录。
+  + 用同一根绳圈围出*另一种*长方形（比如长 $10$ cm、宽 $2$ cm）。再数方格算面积。
+  + 再试一个正方形（$6 times 6$）。记录面积。
+  + 把结果填入表格：周长（都是 $24$ cm）| 长 | 宽 | 面积。
+
+  *观察*：
+  - 周长都是 $24$ cm，面积相同吗？
+  - 哪种形状的面积最大？你发现了什么规律？
+  - 能不能用绳圈围一个非长方形（比如不规则图形）？它的面积可能比正方形还大吗？
 ]
 
 #side-hack[

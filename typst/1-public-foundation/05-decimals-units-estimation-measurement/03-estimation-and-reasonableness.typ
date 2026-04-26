@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, lab
 #import "../../lib/diagram-packages.typ": cetz
 
 === 估算与合理性检查 <tool:pf05-estimation-reasonableness>
@@ -65,6 +65,24 @@
   - 单位有没有对上
   - 大小是不是在合理范围
   - 结果是应该比原数大还是小
+]
+
+#lab[
+  *估算大挑战：先猜再量*
+
+  *材料*：卷尺或直尺、一些日常物品（课本、铅笔、水杯、课桌、门框等）。
+
+  *步骤*：
+
+  + 准备一张表格，列标题为：物品名称、你的估算值、实测值、误差（$= |$估算 $-$ 实测$|$）。
+  + 选 $5$~$8$ 样身边物品，*先不量*，凭感觉估算它的长度（或高度、宽度），写进"估算值"列。
+  + 然后用尺子逐一测量，填入"实测值"列，算出误差。
+  + 统计：哪些物品你估得准（误差小），哪些估得远？
+
+  *思考*：
+  - 你估算时用了什么"锚点"？比如"一根铅笔大约 $18$ cm，课本比铅笔长一点"——这就是用熟悉基准做估算。
+  - 做完一轮后，再估一次新物品，准确度有没有提高？
+  - 估算和精确计算分别在什么场合更有用？
 ]
 
 #side-hack[

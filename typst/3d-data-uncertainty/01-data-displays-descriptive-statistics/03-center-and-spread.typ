@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab
 #import "../../lib/diagram-packages.typ": cetz
 
 === 用一两个数字概括：center 与 spread <tool:dt03-center-and-spread>
@@ -136,6 +136,24 @@
   报告一把数据时，*标配*是一对数字（center $+$ spread）。比如：“这次考试平均 $85$ 分、极差 $10$ 分” → 能传达*两件*事，比只报“平均 $85$”丰富得多。
 
   *极差的小局限*：极差只看*两头*，不看中间。两组数据可能极差一样、但“中间的密度”差得远——下一章的*方差*会补上这个短板。本节先把极差用熟。
+]
+
+#lab[
+  *班级数据调查：亲手体会 center 与 spread*
+
+  *材料*：纸、笔、直尺（画数轴用）。
+
+  *步骤*：
+
+  + 调查班上（或身边）$10$~$15$ 位同学的一项数值数据，例如：昨晚睡了几小时？上周读了几页课外书？今天书包有多重（千克）？
+  + 把收集到的数据从小到大排序，写在表格里。
+  + 分别计算：平均数 $bar(x)$、中位数、众数（如有）、极差。
+  + 在一条数轴上画出每个数据点（点图），并标出三个 center 的位置。
+
+  *观察*：
+  - 三个 center 位置接近吗？如果差得远，你的数据里有没有"极端值"在捣乱？
+  - 如果把数据中最大的那个数改成原来的两倍，哪些 center 会变？哪些几乎不动？
+  - 光看平均数能不能区分"大家差不多"和"有人特别多有人特别少"？你需要 spread 帮忙吗？
 ]
 
 #tryit[

@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab
 #import "../../lib/diagram-packages.typ": cetz
 
 === 实验频率与概率：做得多了会稳定 <tool:dt09-experimental-frequency>
@@ -139,6 +139,25 @@
   ))
 
   *一句话*：概率在“背后”规定节奏；频率在“前台”显示节奏——做得多了，前台越来越像背后的样子。
+]
+
+#lab[
+  *抛硬币实验：频率真的会稳定吗？*
+
+  *材料*：一枚硬币、记录表、铅笔。
+
+  *步骤*：
+
+  + 准备一张表格，列标题为：次数 $n$、本次结果（正/反）、累计正面次数 $n_A$、相对频率 $f_n = n_A \/ n$。
+  + 开始抛硬币，每抛一次就记录一行。至少抛 $50$ 次（如果有耐心，抛到 $100$ 次更好）。
+  + 每隔 $10$ 次，在坐标纸上描一个点：横轴是 $n$，纵轴是 $f_n$。把这些点用折线连起来。
+  + 在图上画一条 $f_n = 0.5$ 的水平虚线。
+
+  *观察*：
+  - 前 $10$ 次的 $f_n$ 波动大不大？$50$ 次之后呢？
+  - 折线是不是越来越贴近 $0.5$ 那条虚线？
+  - 有没有哪一段连续好几次都是正面（或反面）？这是不是说明硬币"不公平"？还是说小样本里这种"连续"其实很正常？
+  - 如果全班同学各做一次，把大家的折线画在同一张图上，会看到什么？
 ]
 
 #tryit[
