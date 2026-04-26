@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 公式：函数的第三张面孔 <tool:fn03-formula-as-function-view>
 
@@ -54,6 +55,28 @@
 
   如果题目没说现实限制，我们默认把定义域取成*让公式合法的所有实数*。
 
+  #figure(
+    cetz.canvas(length: 0.5cm, {
+      import cetz.draw: *
+      // y = 1/x domain: number line with hole at 0
+      content((-7, 1.5), text(8pt)[$y = 1 / x$], anchor: "west")
+      line((-6, 0), (6, 0), stroke: 0.5pt, mark: (end: ">", start: ">"))
+      circle((0, 0), radius: 0.2, stroke: 0.6pt + rgb("#B71C1C"), fill: white)
+      content((0, -0.6), text(7pt)[$0$])
+      content((6.5, 0), text(7pt)[$x$])
+      // y = sqrt(x) domain: ray from 0 rightward
+      content((-7, -2.5), text(8pt)[$y = sqrt(x)$], anchor: "west")
+      line((-6, -4), (6, -4), stroke: 0.3pt + luma(180))
+      line((0, -4), (6, -4), stroke: 0.7pt + rgb("#1976D2"), mark: (end: ">"))
+      circle((0, -4), radius: 0.15, fill: rgb("#1976D2"))
+      content((0, -4.6), text(7pt)[$0$])
+      content((6.5, -4), text(7pt)[$x$])
+      content((3, -3.4), text(7pt)[$x >= 0$])
+    }),
+    caption: [$y = 1 / x$ 的定义域在 $x = 0$ 处挖去一点；$y = sqrt(x)$ 的定义域只取 $x >= 0$ 的半轴。]
+  )
+
+
   *同一个函数的三张面孔*
 
   #align(center, table(
@@ -67,6 +90,30 @@
   ))
 
   同一个函数可以用这三种面孔*互相翻译*——遇到一种面孔不方便时换一种。这是本章最重要的一条自学技能。
+
+  #figure(
+    cetz.canvas(length: 0.6cm, {
+      import cetz.draw: *
+      // triangle vertices
+      let top = (0, 3)
+      let bl = (-3.5, -1)
+      let br = (3.5, -1)
+      // triangle edges with arrows
+      line(top, bl, stroke: 0.5pt + rgb("#1976D2"), mark: (end: ">", start: ">"))
+      line(bl, br, stroke: 0.5pt + rgb("#1976D2"), mark: (end: ">", start: ">"))
+      line(br, top, stroke: 0.5pt + rgb("#1976D2"), mark: (end: ">", start: ">"))
+      // labels at vertices
+      content(top, text(9pt)[*公式*], anchor: "south", padding: 0.3)
+      content(bl, text(9pt)[*表*], anchor: "north-east", padding: 0.3)
+      content(br, text(9pt)[*图*], anchor: "north-west", padding: 0.3)
+      // edge labels
+      content((-2.2, 1.3), text(7pt)[代入求值], anchor: "east")
+      content((0, -1.6), text(7pt)[逐点描出], anchor: "north")
+      content((2.2, 1.3), text(7pt)[读特征反推], anchor: "west")
+    }),
+    caption: [函数的"三张面孔"可以互相翻译：公式 $arrow.l.r$ 表 $arrow.l.r$ 图。]
+  )
+
 ]
 
 #tryit[

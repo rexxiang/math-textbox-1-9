@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 三类函数对照：一次 / 反比例 / 二次 <tool:fn09-comparing-function-families>
 
@@ -66,7 +67,84 @@
   + 都不恒定？算 $x times y$。若恒定 $=>$ *反比例*。
   + 再不符合？可能是更复杂的模型——本章暂不处理。
 
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      // Panel 1: Linear - constant differences
+      content((-7, 3.5), text(8pt)[*一次*], anchor: "west")
+      // bar-like steps showing constant delta y
+      for i in range(0, 4) {
+        let x = -7 + i * 2
+        rect((x, 0), (x + 1.5, 1 + i), stroke: 0.3pt, fill: rgb("#BBDEFB"))
+      }
+      // delta y arrows
+      for i in range(0, 3) {
+        let x = -7 + i * 2 + 1.7
+        line((x, 1 + i), (x, 2 + i), stroke: 0.4pt + rgb("#1976D2"), mark: (end: ">"))
+        content((x + 0.3, 1.5 + i), text(5pt)[$+k$])
+      }
+
+      // Panel 2: Inverse - constant product
+      content((3, 3.5), text(8pt)[*反比例*], anchor: "west")
+      let widths = (4, 2, 1.33, 1)
+      let heights = (1, 2, 3, 4)
+      for i in range(0, 4) {
+        let x = 3 + i * 1.5
+        rect((x, 0), (x + 1, heights.at(i)), stroke: 0.3pt, fill: rgb("#FFCDD2"))
+      }
+      content((5, -0.6), text(6pt)[$x y = k$])
+    }),
+    caption: [一次函数的指纹：相邻输出差 $Delta y$ 恒定（每阶等高增长）；反比例的指纹：$x y$ 乘积恒定（柱面积不变）。]
+  )
+
   *三族图像速览*
+
+  #figure(
+    cetz.canvas(length: 0.35cm, {
+      import cetz.draw: *
+      line((-6, 0), (8, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -5), (0, 8), stroke: 0.4pt, mark: (end: ">"))
+      content((8.2, 0), $x$, anchor: "west")
+      content((0, 8.3), $y$, anchor: "south")
+      // linear: y = 3x + 1
+      line((-2, -5), (2.3, 7.9), stroke: 0.7pt + rgb("#1976D2"))
+      content((2.5, 7.5), text(6pt)[一次], anchor: "west")
+      // inverse: y = 6/x (quadrant I only for clarity)
+      let s1 = range(0, 55).map(i => {
+        let x = 0.8 + 0.1 * i
+        (x, 6.0 / x)
+      })
+      for i in range(0, s1.len() - 1) {
+        if s1.at(i).at(1) <= 8 {
+          line(s1.at(i), s1.at(i + 1), stroke: 0.7pt + rgb("#B71C1C"))
+        }
+      }
+      // inverse quadrant III
+      let s2 = range(0, 40).map(i => {
+        let x = -5 + 0.1 * i
+        (x, 6.0 / x)
+      })
+      for i in range(0, s2.len() - 1) {
+        if s2.at(i).at(1) >= -5 {
+          line(s2.at(i), s2.at(i + 1), stroke: 0.7pt + rgb("#B71C1C"))
+        }
+      }
+      content((5, 1.5), text(6pt)[反比例], anchor: "west")
+      // quadratic: y = 0.5 x^2
+      let s3 = range(0, 81).map(i => {
+        let x = -4 + 0.1 * i
+        (x, 0.5 * x * x)
+      })
+      for i in range(0, s3.len() - 1) {
+        if s3.at(i).at(1) <= 8 and s3.at(i + 1).at(1) <= 8 {
+          line(s3.at(i), s3.at(i + 1), stroke: 0.7pt + rgb("#2E7D32"))
+        }
+      }
+      content((-3.5, 7), text(6pt)[二次], anchor: "east")
+      circle((0, 0), radius: 0.1, fill: black)
+    }),
+    caption: [一次（直线）、反比例（双曲线）、二次（抛物线）三族函数在同一坐标系中的图像对比。]
+  )
 
   #align(center, table(
     columns: (auto, 1fr, 1fr, 1fr),

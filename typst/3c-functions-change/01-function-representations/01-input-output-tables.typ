@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 输入 / 输出表：函数的第一张面孔 <tool:fn01-table-as-function-view>
 
@@ -37,6 +38,23 @@
 
   - 一类关系：每个输入都配*唯一*一个输出。这类关系有*名字*叫*函数*，值得专门研究。
   - 另一类：同一个输入可以对应好几个输出。这只是一张“数据表”，不算函数。
+
+  #figure(
+    cetz.canvas(length: 0.6cm, {
+      import cetz.draw: *
+      // input arrow
+      line((-5, 0), (-2.2, 0), stroke: 0.7pt, mark: (end: ">"))
+      content((-3.6, 0.5), text(8pt)[输入 $x$])
+      // machine box
+      rect((-2, -1.2), (2, 1.2), stroke: 0.7pt + rgb("#1976D2"), fill: rgb("#E3F2FD"), radius: 0.3)
+      content((0, 0.3), text(9pt)[*函数*])
+      content((0, -0.4), text(7pt)[对应规则])
+      // output arrow
+      line((2.2, 0), (5, 0), stroke: 0.7pt, mark: (end: ">"))
+      content((3.6, 0.5), text(8pt)[输出 $y$])
+    }),
+    caption: [函数就像一台“机器”：放入一个输入 $x$，按照内部规则，吐出*唯一*一个输出 $y$。]
+  )
 
   *把“函数”写清楚*
 
@@ -92,6 +110,31 @@
   + 看*输入*列：有没有同一个输入出现两次且*配着不同输出*？有 → 不是函数。
   + 看*对应*：每个输入是否都能在表里找到一个确定输出？都能 → 对。
   + 看*输出*列是否允许重复：允许。两个不同输入对应同一个输出，这完全合法（如常值函数）。
+
+  #figure(
+    cetz.canvas(length: 0.55cm, {
+      import cetz.draw: *
+      // left set: inputs
+      circle((-3.5, 0), radius: 2.2, stroke: 0.5pt + rgb("#1976D2"), name: "A")
+      content((-3.5, 2.6), text(8pt)[*输入*])
+      content((-3.5, 1.2), text(8pt)[$-2$])
+      content((-3.5, 0.2), text(8pt)[$-1$])
+      content((-3.5, -0.8), text(8pt)[$0$])
+      content((-3.5, -1.8), text(8pt)[$1$])
+      // right set: outputs
+      circle((3.5, 0), radius: 2.2, stroke: 0.5pt + rgb("#B71C1C"), name: "B")
+      content((3.5, 2.6), text(8pt)[*输出*])
+      content((3.5, 0.8), text(8pt)[$0$])
+      content((3.5, -0.2), text(8pt)[$1$])
+      content((3.5, -1.2), text(8pt)[$4$])
+      // arrows: each input maps to one output
+      line((-2.8, 1.2), (2.7, -1.2), stroke: 0.5pt + rgb("#2E7D32"), mark: (end: ">"))
+      line((-2.8, 0.2), (2.7, -0.2), stroke: 0.5pt + rgb("#2E7D32"), mark: (end: ">"))
+      line((-2.8, -0.8), (2.7, 0.8), stroke: 0.5pt + rgb("#2E7D32"), mark: (end: ">"))
+      line((-2.8, -1.8), (2.7, -0.2), stroke: 0.5pt + rgb("#2E7D32"), mark: (end: ">"))
+    }),
+    caption: [映射图：$-2 arrow.r 4$、$-1 arrow.r 1$、$0 arrow.r 0$、$1 arrow.r 1$。每个输入只发出*一支*箭头——是函数。输出 $1$ 被两支箭头指向（$-1$ 和 $1$ 都映射到 $1$）——合法。]
+  )
 
   *综合例*：下表是否刻画了函数？
 

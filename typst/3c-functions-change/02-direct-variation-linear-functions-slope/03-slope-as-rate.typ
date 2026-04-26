@@ -96,6 +96,34 @@
   - $m < 0$：$x$ 增 $=>$ $y$ 减（图像右下斜）。
   - $m = 0$：$y$ 恒定（水平线）。
   - 一条铅垂线不是函数图像（#secref("fn02-graph-as-function-view")），所以斜率不定义“铅垂线的斜率”——换句话说斜率要求 $Delta x != 0$。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      // Left panel: positive slope
+      line((-8, 0), (-2, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((-5, -3), (-5, 4), stroke: 0.4pt, mark: (end: ">"))
+      line((-7.5, -2.5), (-2.5, 2.5), stroke: 0.7pt + rgb("#1976D2"))
+      content((-5, 4.5), text(7pt)[$m > 0$])
+      // rise/run triangle
+      line((-7, -2), (-4, -2), stroke: 0.4pt + rgb("#2E7D32"))
+      line((-4, -2), (-4, 1), stroke: 0.4pt + rgb("#2E7D32"))
+      content((-5.5, -2.5), text(6pt)[run])
+      content((-3.5, -0.5), text(6pt)[rise])
+      // Right panel: negative slope
+      line((2, 0), (8, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((5, -3), (5, 4), stroke: 0.4pt, mark: (end: ">"))
+      line((2.5, 2.5), (7.5, -2.5), stroke: 0.7pt + rgb("#B71C1C"))
+      content((5, 4.5), text(7pt)[$m < 0$])
+      // rise/run triangle (rise is negative = drop)
+      line((3, 2), (6, 2), stroke: 0.4pt + rgb("#2E7D32"))
+      line((6, 2), (6, -1), stroke: 0.4pt + rgb("#2E7D32"))
+      content((4.5, 2.5), text(6pt)[run])
+      content((6.5, 0.5), text(6pt)[drop])
+    }),
+    caption: [$m > 0$ 时直线右上斜（rise 为正）；$m < 0$ 时直线右下斜（rise 为负，即 drop）。]
+  )
+
 ]
 
 #tryit[
@@ -132,6 +160,31 @@
   - 数值上，斜率是*每加 $1$ 单位 $x$，$y$ 的变化量*。
   - 符号上，$m$ 决定方向（正 $->$ 右上，负 $->$ 右下，$0 ->$ 水平）。
   - 绝对值大小决定陡度（$|m|$ 越大越陡）。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      line((-6, 0), (6, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -5), (0, 5), stroke: 0.4pt, mark: (end: ">"))
+      content((6.2, 0), $x$, anchor: "west")
+      content((0, 5.3), $y$, anchor: "south")
+      // m = 0.5 (gentle)
+      line((-5, -2.5), (5, 2.5), stroke: 0.5pt + rgb("#90CAF9"))
+      content((5, 3), text(6pt)[$m = 0.5$], anchor: "west")
+      // m = 1
+      line((-4.5, -4.5), (4.5, 4.5), stroke: 0.5pt + rgb("#42A5F5"))
+      content((4, 4.5), text(6pt)[$m = 1$], anchor: "west")
+      // m = 3 (steep)
+      line((-1.5, -4.5), (1.5, 4.5), stroke: 0.6pt + rgb("#0D47A1"))
+      content((1.5, 4.5), text(6pt)[$m = 3$], anchor: "west")
+      // m = -2
+      line((-2.2, 4.4), (2.2, -4.4), stroke: 0.5pt + rgb("#E53935"))
+      content((-2, 4.5), text(6pt)[$m = -2$], anchor: "east")
+      circle((0, 0), radius: 0.1, fill: black)
+    }),
+    caption: [$|m|$ 越大直线越陡：$|m| = 0.5$ 最平缓，$|m| = 3$ 最陡。$m$ 的正负决定方向，$|m|$ 决定陡度。]
+  )
+
 
   *综合例*：直线过 $(2, 1)$ 和 $(6, 9)$，求斜率；写出解析式；$x = 10$ 时 $y = ?$
 

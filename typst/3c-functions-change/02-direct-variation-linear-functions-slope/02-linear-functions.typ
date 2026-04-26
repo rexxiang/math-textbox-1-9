@@ -86,6 +86,31 @@
 
   *从表看一次函数*
 
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      line((-5, 0), (5, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -5), (0, 5), stroke: 0.4pt, mark: (end: ">"))
+      content((5.2, 0), $x$, anchor: "west")
+      content((0, 5.3), $y$, anchor: "south")
+      // y = 2x - 3 (red)
+      line((-1, -5), (4, 5), stroke: 0.5pt + rgb("#E53935"))
+      content((3.5, 4.5), text(6pt)[$b = -3$], anchor: "west")
+      // y = 2x (blue, dashed)
+      line((-2.5, -5), (2.5, 5), stroke: (paint: rgb("#1976D2"), thickness: 0.5pt, dash: "dashed"))
+      content((2, 4.5), text(6pt)[$b = 0$], anchor: "west")
+      // y = 2x + 3 (green)
+      line((-4, -5), (1, 5), stroke: 0.5pt + rgb("#2E7D32"))
+      content((0.5, 4.5), text(6pt)[$b = 3$], anchor: "west")
+      // y-intercept dots
+      circle((0, -3), radius: 0.12, fill: rgb("#E53935"))
+      circle((0, 0), radius: 0.12, fill: rgb("#1976D2"))
+      circle((0, 3), radius: 0.12, fill: rgb("#2E7D32"))
+    }),
+    caption: [同一斜率 $k = 2$，不同截距 $b = -3, 0, 3$：三条*平行*直线。$b$ 决定整条直线上下平移多少。]
+  )
+
   在 $x$ 每加 $1$ 的表里，一次函数的*相邻输出差*是常数 $k$（每次加 $k$）。这是判别“数据是否由一次函数产生”的快捷方式。
 ]
 
@@ -135,6 +160,33 @@
   - 与 $x$ 轴交点：令 $y = 0 => -2 x + 8 = 0 => x = 4$，交点 $(4, 0)$。
   - 画图：标 $(0, 8)$ 与 $(4, 0)$ 两点连直线。
   - 识别：是一次函数（$k = -2 != 0$）。
+
+  #figure(
+    cetz.canvas(length: 0.38cm, {
+      import cetz.draw: *
+      line((-1, 0), (7, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -2), (0, 10), stroke: 0.4pt, mark: (end: ">"))
+      content((7.2, 0), $x$, anchor: "west")
+      content((0, 10.3), $y$, anchor: "south")
+      // y = -2x + 8: from (0,8) to (4,0)
+      line((-0.5, 9), (5, -2), stroke: 0.8pt + rgb("#1976D2"))
+      // intercept labels
+      circle((0, 8), radius: 0.15, fill: rgb("#B71C1C"))
+      content((-0.5, 8), text(7pt)[$(0, 8)$], anchor: "east")
+      circle((4, 0), radius: 0.15, fill: rgb("#B71C1C"))
+      content((4, -0.6), text(7pt)[$(4, 0)$])
+      content((2.5, 6), text(7pt)[$y = -2 x + 8$], anchor: "west")
+      // axis ticks
+      for i in (2, 4) {
+        content((i, -0.4), text(6pt)[#i])
+      }
+      for j in (4, 8) {
+        content((-0.4, j), text(6pt)[#j])
+      }
+    }),
+    caption: [$y = -2 x + 8$：交 $y$ 轴于 $(0, 8)$、交 $x$ 轴于 $(4, 0)$。标两点、连直线。]
+  )
+
 ]
 
 #pitfall[

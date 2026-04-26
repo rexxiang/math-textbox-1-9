@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 模型选择：看表、看图、选函数 <tool:fn11-model-choice>
 
@@ -30,6 +31,61 @@
     [二次 #secref("fn08-quadratic-function")], [$y = a x^2 + b x + c$], [二阶差 $Delta^2 y$ 恒 $= 2 a (Delta x)^2$（$x$ 等间距；$Delta x = 1$ 时简化为 $2 a$）], [抛物线，有顶点与对称轴],
     [乘法增长（非正式族）#secref("fn10-additive-vs-multiplicative-growth")], [$y = y(0) r^x$], [相邻比 $y(x + 1) / y(x)$ 恒 $= r$], [“先贴地后向上翘”的弯曲],
   ))
+
+  #figure(
+    cetz.canvas(length: 0.3cm, {
+      import cetz.draw: *
+      // Panel 1: Linear
+      let ox1 = -12
+      line((ox1, 0), (ox1 + 5, 0), stroke: 0.3pt, mark: (end: ">"))
+      line((ox1 + 2.5, -2), (ox1 + 2.5, 3), stroke: 0.3pt, mark: (end: ">"))
+      line((ox1 + 0.5, -1.5), (ox1 + 4.5, 2.5), stroke: 0.6pt + rgb("#1976D2"))
+      content((ox1 + 2.5, -3), text(7pt)[一次])
+      // Panel 2: Inverse
+      let ox2 = -5
+      line((ox2, 0), (ox2 + 5, 0), stroke: 0.3pt, mark: (end: ">"))
+      line((ox2 + 2.5, -2), (ox2 + 2.5, 3), stroke: 0.3pt, mark: (end: ">"))
+      let inv = range(0, 20).map(i => {
+        let x = 0.5 + 0.15 * i
+        (ox2 + x + 2.5, 1.5 / x)
+      })
+      for i in range(0, inv.len() - 1) {
+        if inv.at(i).at(1) <= 3 {
+          line(inv.at(i), inv.at(i + 1), stroke: 0.6pt + rgb("#B71C1C"))
+        }
+      }
+      content((ox2 + 2.5, -3), text(7pt)[反比例])
+      // Panel 3: Quadratic
+      let ox3 = 2
+      line((ox3, 0), (ox3 + 5, 0), stroke: 0.3pt, mark: (end: ">"))
+      line((ox3 + 2.5, -2), (ox3 + 2.5, 3), stroke: 0.3pt, mark: (end: ">"))
+      let quad = range(0, 41).map(i => {
+        let x = -2 + 0.1 * i
+        (ox3 + x + 2.5, 0.5 * x * x - 1)
+      })
+      for i in range(0, quad.len() - 1) {
+        if quad.at(i).at(1) <= 3 and quad.at(i + 1).at(1) <= 3 {
+          line(quad.at(i), quad.at(i + 1), stroke: 0.6pt + rgb("#2E7D32"))
+        }
+      }
+      content((ox3 + 2.5, -3), text(7pt)[二次])
+      // Panel 4: Exponential
+      let ox4 = 9
+      line((ox4, 0), (ox4 + 5, 0), stroke: 0.3pt, mark: (end: ">"))
+      line((ox4 + 2.5, -2), (ox4 + 2.5, 3), stroke: 0.3pt, mark: (end: ">"))
+      let expo = range(0, 35).map(i => {
+        let x = -2 + 0.12 * i
+        (ox4 + x + 2.5, calc.pow(1.8, x) - 0.5)
+      })
+      for i in range(0, expo.len() - 1) {
+        if expo.at(i).at(1) <= 3 and expo.at(i + 1).at(1) <= 3 {
+          line(expo.at(i), expo.at(i + 1), stroke: 0.6pt + rgb("#FF6F00"))
+        }
+      }
+      content((ox4 + 2.5, -3), text(7pt)[乘法增长])
+    }),
+    caption: [四族函数各有标志性图像形状：直线、双曲线、抛物线、"先贴地后翘起"。]
+  )
 
   *本节的工具是一条决策流程*：
 
@@ -82,6 +138,36 @@
   - 双曲线（两轴为渐近线）$<=>$ 反比例；
   - 抛物线 $<=>$ 二次；
   - “先贴地后翘起” $<=>$ 乘法增长。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      line((-1, 0), (8, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -1), (0, 8), stroke: 0.4pt, mark: (end: ">"))
+      content((8.3, 0), $x$, anchor: "west")
+      content((0, 8.3), $y$, anchor: "south")
+      // scatter points following y = x^2 / 3 + 1
+      let pts = ((1, 1.3), (2, 2.3), (3, 4), (4, 6.3), (5, 7.5))
+      for p in pts {
+        circle(p, radius: 0.15, fill: rgb("#424242"))
+      }
+      // wrong fit: linear (dashed)
+      line((0.5, 0.5), (5.5, 8), stroke: (paint: rgb("#90CAF9"), thickness: 0.5pt, dash: "dashed"))
+      content((5.5, 7.5), text(6pt)[一次?], anchor: "west")
+      // correct fit: quadratic (solid)
+      let s = range(0, 51).map(i => {
+        let x = 0.5 + 0.1 * i
+        (x, x * x / 3 + 0.8)
+      })
+      for i in range(0, s.len() - 1) {
+        if s.at(i).at(1) <= 8 and s.at(i + 1).at(1) <= 8 {
+          line(s.at(i), s.at(i + 1), stroke: 0.6pt + rgb("#2E7D32"))
+        }
+      }
+      content((4.5, 5.5), text(6pt)[二次 ✓], anchor: "west")
+    }),
+    caption: [散点图上"看形状选模型"：这组散点沿抛物线排列，用二次拟合（实线）比一次（虚线）更贴合。]
+  )
 
   反过来，若先给的是散点图，可以*反推选模型*：点落在直线上 $=>$ 线性；落在抛物线上 $=>$ 二次；落在类似双曲线上 $=>$ 反比例；落在先平后翘曲线上 $=>$ 乘法增长。
 ]

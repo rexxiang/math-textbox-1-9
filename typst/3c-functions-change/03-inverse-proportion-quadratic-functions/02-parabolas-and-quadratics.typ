@@ -79,6 +79,51 @@
   - $|a|$ 大：开口窄（“瘦”）；$|a|$ 小：开口宽（“胖”）；
   - $a = 0$：退化为 $y = 0$，不再是二次，排除。
 
+  #figure(
+    cetz.canvas(length: 0.35cm, {
+      import cetz.draw: *
+      line((-6, 0), (6, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -6), (0, 8), stroke: 0.4pt, mark: (end: ">"))
+      content((6.2, 0), $x$, anchor: "west")
+      content((0, 8.3), $y$, anchor: "south")
+      // y = 0.3 x^2 (wide/fat, light blue)
+      let s1 = range(0, 101).map(i => {
+        let x = -5 + 0.1 * i
+        (x, 0.3 * x * x)
+      })
+      for i in range(0, s1.len() - 1) {
+        if s1.at(i).at(1) <= 8 and s1.at(i + 1).at(1) <= 8 {
+          line(s1.at(i), s1.at(i + 1), stroke: 0.5pt + rgb("#90CAF9"))
+        }
+      }
+      content((5, 7.5), text(6pt)[$a = 0.3$])
+      // y = x^2 (medium, blue)
+      let s2 = range(0, 101).map(i => {
+        let x = -5 + 0.1 * i
+        (x, x * x)
+      })
+      for i in range(0, s2.len() - 1) {
+        if s2.at(i).at(1) <= 8 and s2.at(i + 1).at(1) <= 8 {
+          line(s2.at(i), s2.at(i + 1), stroke: 0.6pt + rgb("#1976D2"))
+        }
+      }
+      content((2.5, 7.5), text(6pt)[$a = 1$])
+      // y = -x^2 (opening down, red)
+      let s3 = range(0, 101).map(i => {
+        let x = -5 + 0.1 * i
+        (x, -1 * x * x)
+      })
+      for i in range(0, s3.len() - 1) {
+        if s3.at(i).at(1) >= -6 and s3.at(i + 1).at(1) >= -6 {
+          line(s3.at(i), s3.at(i + 1), stroke: 0.6pt + rgb("#B71C1C"))
+        }
+      }
+      content((2.5, -5.5), text(6pt)[$a = -1$])
+      circle((0, 0), radius: 0.12, fill: black)
+    }),
+    caption: [$a > 0$ 开口朝上，$a < 0$ 开口朝下。$|a|$ 小（如 $0.3$）开口宽，$|a|$ 大开口窄。]
+  )
+
   *顶点式：给抛物线“搬家”*
 
   $y = x^2$ 的顶点在原点。若把图像*整体*左右移 $h$、上下移 $k$，顶点就落到 $(h, k)$。回忆桥梁层的平移直觉（#secref("cb03-plotting-transforming")，下方有速成）——把公式里的 $x$ 换成 $(x - h)$、再整体加 $k$：
@@ -86,6 +131,59 @@
   $ y = a (x - h)^2 + k. $
 
   这个形式叫*顶点式*。好处是*顶点坐标 $(h, k)$ 直接写在式子里*；对称轴是铅垂线 $x = h$。
+
+  #figure(
+    cetz.canvas(length: 0.35cm, {
+      import cetz.draw: *
+      line((-3, 0), (8, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -2), (0, 8), stroke: 0.4pt, mark: (end: ">"))
+      content((8.2, 0), $x$, anchor: "west")
+      content((0, 8.3), $y$, anchor: "south")
+      // y = x^2 (original, dashed)
+      let s1 = range(0, 61).map(i => {
+        let x = -3 + 0.1 * i
+        (x, x * x)
+      })
+      for i in range(0, s1.len() - 1) {
+        if s1.at(i).at(1) <= 8 and s1.at(i + 1).at(1) <= 8 {
+          line(s1.at(i), s1.at(i + 1), stroke: (paint: luma(150), thickness: 0.5pt, dash: "dashed"))
+        }
+      }
+      content((-2, 4.5), text(6pt)[$y = x^2$], anchor: "east")
+      // y = (x-3)^2 (shifted right by 3, dotted blue)
+      let s2 = range(0, 81).map(i => {
+        let x = -1 + 0.1 * i
+        (x, (x - 3) * (x - 3))
+      })
+      for i in range(0, s2.len() - 1) {
+        if s2.at(i).at(1) <= 8 and s2.at(i + 1).at(1) <= 8 {
+          line(s2.at(i), s2.at(i + 1), stroke: (paint: rgb("#1976D2"), thickness: 0.5pt, dash: "dotted"))
+        }
+      }
+      content((5.5, 5), text(6pt)[$y = (x - 3)^2$], anchor: "west")
+      // y = (x-3)^2 + 2 (shifted right 3, up 2, solid green)
+      let s3 = range(0, 81).map(i => {
+        let x = -1 + 0.1 * i
+        (x, (x - 3) * (x - 3) + 2)
+      })
+      for i in range(0, s3.len() - 1) {
+        if s3.at(i).at(1) <= 8 and s3.at(i + 1).at(1) <= 8 {
+          line(s3.at(i), s3.at(i + 1), stroke: 0.6pt + rgb("#2E7D32"))
+        }
+      }
+      content((5.8, 3), text(6pt)[$y = (x - 3)^2 + 2$], anchor: "west")
+      // mark vertices
+      circle((0, 0), radius: 0.12, fill: luma(150))
+      circle((3, 0), radius: 0.12, fill: rgb("#1976D2"))
+      circle((3, 2), radius: 0.12, fill: rgb("#2E7D32"))
+      // arrows showing shifts
+      line((0.3, 0), (2.7, 0), stroke: 0.4pt + rgb("#FF9800"), mark: (end: ">"))
+      content((1.5, -0.5), text(6pt)[右移 $3$])
+      line((3, 0.3), (3, 1.7), stroke: 0.4pt + rgb("#FF9800"), mark: (end: ">"))
+      content((3.5, 1), text(6pt)[上移 $2$])
+    }),
+    caption: [顶点式的“搬家”过程：$y = x^2$ 先右移 $3$ 变成 $y = (x - 3)^2$，再上移 $2$ 变成 $y = (x - 3)^2 + 2$，顶点从 $(0, 0)$ 搬到 $(3, 2)$。]
+  )
 
   *一般式：展开顶点式*
 

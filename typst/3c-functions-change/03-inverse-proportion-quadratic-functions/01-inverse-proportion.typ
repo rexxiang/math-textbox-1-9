@@ -93,6 +93,34 @@
 
   图像有*两支*，分别位于第一、三象限（$k > 0$）或第二、四象限（$k < 0$）。每支都靠近 $x$ 轴和 $y$ 轴但*永不相交*——这两条轴叫*渐近线*。
 
+  #figure(
+    cetz.canvas(length: 0.5cm, {
+      import cetz.draw: *
+      line((-5, 0), (5, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -5), (0, 5), stroke: 0.4pt, mark: (end: ">"))
+      content((5.2, 0), $x$, anchor: "west")
+      content((0, 5.3), $y$, anchor: "south")
+      // branch II: y = -2/x for x in [-5, -0.5]
+      let samples1 = range(0, 45).map(i => {
+        let x = -5 + 0.1 * i
+        (x, -2.0 / x)
+      })
+      for i in range(0, samples1.len() - 1) {
+        line(samples1.at(i), samples1.at(i + 1), stroke: 0.7pt + rgb("#B71C1C"))
+      }
+      // branch IV: y = -2/x for x in [0.5, 5]
+      let samples2 = range(0, 45).map(i => {
+        let x = 0.5 + 0.1 * i
+        (x, -2.0 / x)
+      })
+      for i in range(0, samples2.len() - 1) {
+        line(samples2.at(i), samples2.at(i + 1), stroke: 0.7pt + rgb("#B71C1C"))
+      }
+      content((-3.5, -1.3), text(7pt)[$y = k / x$, $k < 0$])
+    }),
+    caption: [反比例函数（$k < 0$）的图像：两支双曲线分别位于第二、第四象限。]
+  )
+
   *与正比例的本质区别*
 
   #align(center, table(
@@ -131,6 +159,38 @@
   - $k > 0$：图像在第一、三象限。
   - $k < 0$：图像在第二、四象限。
   - 两条坐标轴是*渐近线*：图像无限靠近但不相交、不穿过原点。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      line((-6, 0), (6, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -5), (0, 5), stroke: 0.4pt, mark: (end: ">"))
+      content((6.2, 0), $x$, anchor: "west")
+      content((0, 5.3), $y$, anchor: "south")
+      // y = 2x (linear, dashed blue)
+      line((-2, -4), (2, 4), stroke: (paint: rgb("#1976D2"), thickness: 0.6pt, dash: "dashed"))
+      content((1.8, 4.2), text(7pt)[$y = 2 x$], anchor: "west")
+      // y = 2/x (hyperbola, solid red)
+      let s1 = range(0, 45).map(i => {
+        let x = 0.5 + 0.1 * i
+        (x, 2.0 / x)
+      })
+      for i in range(0, s1.len() - 1) {
+        line(s1.at(i), s1.at(i + 1), stroke: 0.7pt + rgb("#B71C1C"))
+      }
+      let s2 = range(0, 45).map(i => {
+        let x = -5 + 0.1 * i
+        (x, 2.0 / x)
+      })
+      for i in range(0, s2.len() - 1) {
+        line(s2.at(i), s2.at(i + 1), stroke: 0.7pt + rgb("#B71C1C"))
+      }
+      content((3.5, 1.2), text(7pt)[$y = 2 / x$])
+      circle((0, 0), radius: 0.1, fill: black)
+      content((0.4, -0.4), text(6pt)[$O$])
+    }),
+    caption: [正比例 $y = 2 x$（直线，过原点）与反比例 $y = 2 / x$（双曲线，不过原点）的图像对照。]
+  )
 
   *识别法（任一成立）*
 

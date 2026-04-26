@@ -70,6 +70,31 @@
   )
 
   两个关键特征立刻可见：
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      line((-6, 0), (6, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -5), (0, 5), stroke: 0.4pt, mark: (end: ">"))
+      content((6.2, 0), $x$, anchor: "west")
+      content((0, 5.3), $y$, anchor: "south")
+      // k = 0.5
+      line((-5, -2.5), (5, 2.5), stroke: 0.5pt + rgb("#90CAF9"))
+      content((4.8, 2.8), text(6pt)[$k = 0.5$])
+      // k = 1
+      line((-4.5, -4.5), (4.5, 4.5), stroke: 0.5pt + rgb("#42A5F5"))
+      content((4, 4.5), text(6pt)[$k = 1$])
+      // k = 2
+      line((-2.2, -4.4), (2.2, 4.4), stroke: 0.6pt + rgb("#1565C0"))
+      content((2, 4.5), text(6pt)[$k = 2$])
+      // k = -1
+      line((-4.5, 4.5), (4.5, -4.5), stroke: 0.5pt + rgb("#EF9A9A"))
+      content((4.5, -4.5), text(6pt)[$k = -1$], anchor: "north")
+      circle((0, 0), radius: 0.12, fill: black)
+    }),
+    caption: [$k$ 越大，直线越陡。$k > 0$ 在一、三象限，$k < 0$ 在二、四象限。所有正比例直线都过原点。]
+  )
+
   - *过原点* $(0, 0)$：代入 $x = 0$ 必得 $y = 0$。
   - *是一条直线*：从表看，输入加固定步长 $=>$ 输出加固定步长，所以图像是*直线*（严格证明放在下一节）。
 
@@ -125,6 +150,35 @@
   - $L = 2.5$ 厘米时 $F = ?$：$F = 20 times 2.5 = 50$ 牛。
   - $F = 60$ 牛时 $L = ?$：$L = 60 / 20 = 3$ 厘米。
   - 图像：过原点的直线，斜向右上。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      line((-1, 0), (8, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -1), (0, 8), stroke: 0.4pt, mark: (end: ">"))
+      content((8.3, 0), $L$, anchor: "west")
+      content((0, 8.3), $F$, anchor: "south")
+      // F = 20L scaled: plot L in [0,3], F = 20L but scale F by 1/5 for display
+      // Use L on x-axis, F/10 on y-axis for readability
+      line((0, 0), (3, 6), stroke: 0.8pt + rgb("#1976D2"))
+      // mark points
+      circle((0, 0), radius: 0.1, fill: black)
+      circle((1, 2), radius: 0.1, fill: rgb("#1976D2"))
+      circle((2, 4), radius: 0.1, fill: rgb("#1976D2"))
+      circle((2.5, 5), radius: 0.1, fill: rgb("#1976D2"))
+      circle((3, 6), radius: 0.1, fill: rgb("#1976D2"))
+      // axis labels
+      for i in (1, 2, 3) {
+        content((i, -0.5), text(6pt)[#i])
+      }
+      content((-0.8, 2), text(6pt)[$20$])
+      content((-0.8, 4), text(6pt)[$40$])
+      content((-0.8, 6), text(6pt)[$60$])
+      content((2, 5), text(7pt)[$F = 20 L$], anchor: "west")
+    }),
+    caption: [弹簧伸长量 $L$（厘米）与受力 $F$（牛）的正比例关系：过原点直线，$k = 20$。]
+  )
+
 ]
 
 #pitfall[

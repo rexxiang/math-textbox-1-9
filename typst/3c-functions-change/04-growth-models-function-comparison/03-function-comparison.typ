@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 函数家族的长期较量 <tool:fn12-function-comparison>
 
@@ -38,6 +39,51 @@
   - $x = 5$：$2^x = 32 > x^2 = 25$，乘法增长已经追平二次；之后越拉越大。
   - $x = 20$：$2^x approx 10^6$，$x^2 = 400$——乘法增长对二次领先 $2500$ 倍以上。
 
+  #figure(
+    cetz.canvas(length: 0.35cm, {
+      import cetz.draw: *
+      line((-1, 0), (12, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -2), (0, 12), stroke: 0.4pt, mark: (end: ">"))
+      content((12.3, 0), $x$, anchor: "west")
+      content((0, 12.3), $y$, anchor: "south")
+      // inverse: y = 10/x (red, fading)
+      let inv = range(0, 80).map(i => {
+        let x = 1 + 0.12 * i
+        (x, 10.0 / x)
+      })
+      for i in range(0, inv.len() - 1) {
+        line(inv.at(i), inv.at(i + 1), stroke: 0.5pt + rgb("#E53935"))
+      }
+      content((8, 1.5), text(6pt)[反比例 $10 / x$])
+      // linear: y = x (blue)
+      line((0, 0), (10, 10), stroke: 0.6pt + rgb("#1976D2"))
+      content((9, 10.5), text(6pt)[线性 $x$], anchor: "west")
+      // quadratic: y = 0.1 x^2 (green)
+      let quad = range(0, 101).map(i => {
+        let x = 0.1 * i
+        (x, 0.1 * x * x)
+      })
+      for i in range(0, quad.len() - 1) {
+        if quad.at(i).at(1) <= 12 and quad.at(i + 1).at(1) <= 12 {
+          line(quad.at(i), quad.at(i + 1), stroke: 0.6pt + rgb("#2E7D32"))
+        }
+      }
+      content((10, 11), text(6pt)[二次 $0.1 x^2$])
+      // exponential: y = 1.3^x (orange, rises fast)
+      let expo = range(0, 91).map(i => {
+        let x = 0.1 * i
+        (x, calc.pow(1.35, x))
+      })
+      for i in range(0, expo.len() - 1) {
+        if expo.at(i).at(1) <= 12 and expo.at(i + 1).at(1) <= 12 {
+          line(expo.at(i), expo.at(i + 1), stroke: 0.7pt + rgb("#FF6F00"))
+        }
+      }
+      content((6, 8), text(6pt)[乘法 $1.35^x$], anchor: "west")
+    }),
+    caption: [四族函数的长期竞赛：反比例趋于 $0$，线性稳步上升，二次加速上升，乘法增长最终冲天。]
+  )
+
   *长期排序（$x$ 足够大时）*
 
   对正的 $x$：
@@ -55,6 +101,37 @@
   - 线性：稳步向右上走，斜率是 $k$；
   - 二次：先平缓、再越来越陡向右上翘起；
   - 乘法增长（$r > 1$）：几乎贴着 $x$ 轴一段后*突然冲天*——就是前一节见到的那种“先贴地后翘起”。
+
+  #figure(
+    cetz.canvas(length: 0.35cm, {
+      import cetz.draw: *
+      line((-1, 0), (14, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -1), (0, 12), stroke: 0.4pt, mark: (end: ">"))
+      content((14.3, 0), $x$, anchor: "west")
+      content((0, 12.3), $y$, anchor: "south")
+      // y = x (linear, blue)
+      line((0, 0), (11, 11), stroke: 0.6pt + rgb("#1976D2"))
+      content((11.2, 11), text(6pt)[$y = x$], anchor: "west")
+      // y = 0.1 x^2 (quadratic, green)
+      let quad = range(0, 111).map(i => {
+        let x = 0.1 * i
+        (x, 0.1 * x * x)
+      })
+      for i in range(0, quad.len() - 1) {
+        if quad.at(i).at(1) <= 12 and quad.at(i + 1).at(1) <= 12 {
+          line(quad.at(i), quad.at(i + 1), stroke: 0.6pt + rgb("#2E7D32"))
+        }
+      }
+      content((10.5, 11.5), text(6pt)[$y = 0.1 x^2$], anchor: "west")
+      // crossover point at x=10
+      circle((10, 10), radius: 0.2, fill: rgb("#FF9800"))
+      content((10, 10.8), text(6pt)[交叉点 $x = 10$], anchor: "south")
+      // region labels
+      content((5, 6), text(6pt, fill: rgb("#1976D2"))[线性领先])
+      content((11.5, 8), text(6pt, fill: rgb("#2E7D32"))[二次反超], anchor: "west")
+    }),
+    caption: [$y = x$（线性）在 $x < 10$ 时领先 $y = 0.1 x^2$（二次），但 $x = 10$ 处追平，之后二次*永远*超过线性——这是"族等级"的威力。]
+  )
 
   在任何足够远的区间内，*“翘得最厉害的”永远是乘法增长*。
 ]

@@ -127,6 +127,29 @@
 
   *判图三步*
 
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      line((-6, 0), (6, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -3), (0, 4), stroke: 0.4pt, mark: (end: ">"))
+      content((6.2, 0), $x$, anchor: "west")
+      content((0, 4.3), $y$, anchor: "south")
+      // smooth wave curve y = sin-like
+      let samples = range(0, 101).map(i => {
+        let x = -5 + 0.1 * i
+        (x, 1.5 * calc.sin(x * 1.2) + 0.5)
+      })
+      for i in range(0, samples.len() - 1) {
+        line(samples.at(i), samples.at(i + 1), stroke: 0.7pt + rgb("#1976D2"))
+      }
+      // scanning vertical lines
+      for xv in (-3, 0, 2, 4) {
+        line((xv, -2.5), (xv, 3.5), stroke: (paint: rgb("#2E7D32"), thickness: 0.4pt, dash: "dashed"))
+      }
+    }),
+    caption: [把一条铅垂线从左向右"扫过"：如果每次都与曲线至多交一次，就判定是函数。]
+  )
+
   + 画一条可变位置的铅垂线，让它从左向右扫过。
   + 若每一步它与图像的交点数都 $<= 1$，它是函数。
   + 若某处与图像交点 $>= 2$，立刻判定*不是函数*。
@@ -134,6 +157,33 @@
   *综合例*：半圆 $y = sqrt(4 - x^2)$（上半圆）的图像是函数吗？整圆 $x^2 + y^2 = 4$ 呢？
 
   *解*：上半圆每条铅垂线（$-2 <= x <= 2$）最多交一次 $=>$ *是函数*。整圆在 $-2 < x < 2$ 内每条铅垂线都交 $2$ 次 $=>$ *不是函数*。
+
+  #figure(
+    cetz.canvas(length: 0.5cm, {
+      import cetz.draw: *
+      line((-4, 0), (4, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -1), (0, 4), stroke: 0.4pt, mark: (end: ">"))
+      content((4.3, 0), $x$, anchor: "west")
+      content((0, 4.3), $y$, anchor: "south")
+      // upper semi-circle y = sqrt(4 - x^2)
+      let samples = range(0, 81).map(i => {
+        let x = -2 + 0.05 * i
+        let yval = calc.sqrt(calc.max(0, 4 - x * x))
+        (x, yval)
+      })
+      for i in range(0, samples.len() - 1) {
+        line(samples.at(i), samples.at(i + 1), stroke: 0.7pt + rgb("#1976D2"))
+      }
+      // vertical line probe
+      line((1, -0.5), (1, 3), stroke: (paint: rgb("#2E7D32"), thickness: 0.5pt, dash: "dashed"))
+      // intersection dot
+      let iy = calc.sqrt(4 - 1)
+      circle((1, iy), radius: 0.12, fill: rgb("#2E7D32"))
+      content((1.3, iy + 0.4), text(7pt)[一次])
+    }),
+    caption: [上半圆 $y = sqrt(4 - x^2)$：每条铅垂线至多交一次——是函数。]
+  )
+
 ]
 
 #pitfall[

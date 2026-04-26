@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 加法增长 vs. 乘法增长 <tool:fn10-additive-vs-multiplicative-growth>
 
@@ -65,6 +66,45 @@
   - 中期（$x = 4$ 附近）两者相近；
   - 长期（$x >= 5$）B 完胜，$x = 10$ 时 B 已是 A 的 $10$ 倍以上，而且还在继续拉开。
 
+  #figure(
+    cetz.canvas(length: 0.35cm, {
+      import cetz.draw: *
+      line((-1, 0), (12, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -1), (0, 12), stroke: 0.4pt, mark: (end: ">"))
+      content((12.3, 0), $x$, anchor: "west")
+      content((0, 12.3), $y$, anchor: "south")
+      // y = 10x (linear, scaled by 1/10 for display)
+      // Plot: y_display = x (since 10x / 10 = x)
+      line((0, 0), (10, 10), stroke: 0.7pt + rgb("#1976D2"))
+      content((9.5, 10.5), text(6pt)[A：$y = 10 x$])
+      // y = 2^x (exponential, scaled by 1/10 for display)
+      // Plot: y_display = 2^x / 100 * 10 -- let's just manually place points
+      // Better: plot 2^x but cap at display height
+      // 2^0=1, 2^3=8, 2^5=32, 2^7=128, 2^10=1024
+      // Scale: divide by 100 -> 0.01, 0.08, 0.32, 1.28, 10.24
+      let samples = range(0, 80).map(i => {
+        let x = 0.125 * i
+        let y = calc.pow(2, x) / 100
+        (x, y)
+      })
+      for i in range(0, samples.len() - 1) {
+        if samples.at(i).at(1) <= 12 and samples.at(i + 1).at(1) <= 12 {
+          line(samples.at(i), samples.at(i + 1), stroke: 0.7pt + rgb("#B71C1C"))
+        }
+      }
+      content((7, 3), text(6pt)[B：$y = 2^x$], anchor: "west")
+      // crossover annotation
+      line((6.6, 6.2), (6.6, 6.8), stroke: 0.3pt + rgb("#2E7D32"))
+      circle((6.6, 6.6), radius: 0.15, fill: rgb("#2E7D32"))
+      content((6.6, 7.3), text(5pt)[超车点], anchor: "south")
+      // axis ticks
+      for v in (5, 10) {
+        content((v, -0.5), text(5pt)[#v])
+      }
+    }),
+    caption: [加法增长（直线）与乘法增长（弯曲）：短期直线领先，但弯曲曲线终将*远远*超过直线。]
+  )
+
   *图像上的表现*
 
   把 A 点 $(0, 0), (1, 10), (2, 20), ... (10, 100)$ 画成坐标点——是一条直线（我们已熟悉）。把 B 点 $(0, 1), (1, 2), (2, 4), ..., (10, 1024)$ 画出来——先几乎贴地不动，后面突然*向上翘*得很陡。这条“先平后翘”的曲线就是乘法增长的*典型图像*（等到高中会知道它是指数函数图像）。
@@ -109,6 +149,39 @@
   - 规则：每加 $1$ 单位 $x$，$y$ 乘*同一倍率* $r$（$r > 0, r != 1$）。
   - 符号：$y(x) = y(0) r^x$（$x$ 为非负整数时就是反复乘 $r$）。
   - 图像：“先贴地后向上翘”（$r > 1$）或“快速下滑后贴地”（$0 < r < 1$，衰减）。
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      line((-1, 0), (10, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -1), (0, 8), stroke: 0.4pt, mark: (end: ">"))
+      content((10.3, 0), $x$, anchor: "west")
+      content((0, 8.3), $y$, anchor: "south")
+      // r = 2: growth curve y = 2^x / 50 (scaled)
+      let s1 = range(0, 71).map(i => {
+        let x = 0.1 * i
+        (x, calc.pow(1.5, x))
+      })
+      for i in range(0, s1.len() - 1) {
+        if s1.at(i).at(1) <= 8 and s1.at(i + 1).at(1) <= 8 {
+          line(s1.at(i), s1.at(i + 1), stroke: 0.7pt + rgb("#1976D2"))
+        }
+      }
+      content((5, 7.5), text(7pt)[$r > 1$：增长], anchor: "west")
+      // r = 0.7: decay curve y = 5 * 0.7^x
+      let s2 = range(0, 91).map(i => {
+        let x = 0.1 * i
+        (x, 5 * calc.pow(0.7, x))
+      })
+      for i in range(0, s2.len() - 1) {
+        if s2.at(i).at(1) >= -1 {
+          line(s2.at(i), s2.at(i + 1), stroke: 0.7pt + rgb("#B71C1C"))
+        }
+      }
+      content((6, 1.2), text(7pt)[$0 < r < 1$：衰减], anchor: "west")
+    }),
+    caption: [$r > 1$ 时曲线"先贴地后向上翘"（增长）；$0 < r < 1$ 时曲线"快速下滑后贴地"（衰减）。]
+  )
+
   - 表指纹：相邻*比值* $y(x + 1) / y(x)$ 恒 $= r$。
 
   *本章约定*：$y = y(0) r^x$ 不作为正式函数族收入本部分——它是“现象 / 识别”级别的工具。严格的指数函数理论留到高中。
