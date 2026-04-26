@@ -31,6 +31,41 @@
 
   这四条性质都可以通过连对角线 $+$ 全等三角形（SSS 或 ASA）读出。
 
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      let A = (0, 0)
+      let B = (4, 0)
+      let C = (5, 2.2)
+      let D = (1, 2.2)
+      let O = (2.5, 1.1)
+      // Parallelogram
+      line(A, B, C, D, close: true, stroke: 0.7pt)
+      // Diagonals
+      line(A, C, stroke: 0.5pt + luma(130))
+      line(B, D, stroke: 0.5pt + luma(130))
+      // Center point
+      circle(O, radius: 0.06, fill: black, stroke: none)
+      // Labels
+      content((-0.3, -0.2), $A$)
+      content((4.3, -0.2), $B$)
+      content((5.3, 2.4), $C$)
+      content((0.7, 2.4), $D$)
+      content((2.5, 0.75), $O$)
+      // Parallel marks
+      content((2, -0.25), text(7pt)[$arrow.r$])
+      content((3, 2.45), text(7pt)[$arrow.r$])
+      content((-0.1, 1.1), text(7pt)[$arrow.t$])
+      content((4.6, 1.1), text(7pt)[$arrow.t$])
+      // Equal diagonal halves
+      content((1.0, 0.35), text(7pt)[$|$])
+      content((4.0, 1.85), text(7pt)[$|$])
+      content((3.6, 0.35), text(7pt)[$||$])
+      content((1.4, 1.85), text(7pt)[$||$])
+    }),
+    caption: [平行四边形 $square A B C D$：对边平行且相等，对角线互相平分于 $O$（$O A = O C$, $O B = O D$）。]
+  )
+
   *判定（逆定理）*：满足下列任意一条 $=>$ 四边形是平行四边形：
 
   + 两组对边分别平行（定义）；
@@ -50,6 +85,46 @@
       对角线*互相垂直*，且*分别平分一组对角*。],
     [*正方形*：既是矩形又是菱形（等价：一个角是直角 $+$ 一组邻边相等）。
       同时具备矩形与菱形的*所有*性质：四角直角 $+$ 四边相等 $+$ 对角线相等、互相垂直、互相平分、还平分对角。],
+  )
+
+  #figure(
+    cetz.canvas(length: 0.8cm, {
+      import cetz.draw: *
+      // Rectangle
+      let rA = (0, 0)
+      let rB = (3, 0)
+      let rC = (3, 2)
+      let rD = (0, 2)
+      line(rA, rB, rC, rD, close: true, stroke: 0.6pt)
+      line(rA, rC, stroke: 0.3pt + luma(160))
+      line(rB, rD, stroke: 0.3pt + luma(160))
+      // right angle marks
+      rect((0, 0), (0.25, 0.25), stroke: 0.3pt + rgb("#B71C1C"), fill: none)
+      content((1.5, -0.45), text(8pt)[矩形])
+      // Rhombus
+      let dA = (5, 1)
+      let dB = (7, 0)
+      let dC = (9, 1)
+      let dD = (7, 2)
+      line(dA, dB, dC, dD, close: true, stroke: 0.6pt)
+      line(dA, dC, stroke: 0.3pt + luma(160))
+      line(dB, dD, stroke: 0.3pt + luma(160))
+      // perpendicular mark at center
+      rect((6.85, 0.85), (7.15, 1.15), stroke: 0.3pt + rgb("#1976D2"), fill: none)
+      content((7, -0.45), text(8pt)[菱形])
+      // Square
+      let sA = (11, 0)
+      let sB = (13, 0)
+      let sC = (13, 2)
+      let sD = (11, 2)
+      line(sA, sB, sC, sD, close: true, stroke: 0.6pt)
+      line(sA, sC, stroke: 0.3pt + luma(160))
+      line(sB, sD, stroke: 0.3pt + luma(160))
+      rect((11, 0), (11.25, 0.25), stroke: 0.3pt + rgb("#B71C1C"), fill: none)
+      rect((11.85, 0.85), (12.15, 1.15), stroke: 0.3pt + rgb("#1976D2"), fill: none)
+      content((12, -0.45), text(8pt)[正方形])
+    }),
+    caption: [三种特殊平行四边形：矩形（直角）、菱形（对角线垂直）、正方形（兼具两者）。]
   )
 
   *第 3 层（侧枝）：梯形*

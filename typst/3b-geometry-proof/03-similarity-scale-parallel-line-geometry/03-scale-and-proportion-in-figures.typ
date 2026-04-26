@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 放缩规律、比例尺与测量 <tool:ge02-scale-and-measurement>
 
@@ -26,6 +27,33 @@
   面积就不一样了。想象一个最简单的例子：正方形边长变成 $k$ 倍，面积从 $s^2$ 变成 $(k s)^2 = k^2 s^2$。一般三角形也一样——若底与高都按 $k$ 放缩，面积 $= 1 slash 2 dot ("底") dot ("高")$ 就要乘 $k dot k = k^2$。结论：
 
   $ frac("面积"(triangle D E F), "面积"(triangle A B C)) = k^2. $
+
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      // Small triangle
+      let A = (0, 0)
+      let B = (2, 0)
+      let C = (0.8, 1.5)
+      line(A, B, C, close: true, stroke: 0.7pt)
+      content((1, -0.35), text(8pt)[$a$])
+      content((1.6, 0.9), text(8pt)[$b$])
+      content((0.15, 0.85), text(8pt)[$c$])
+      // Large triangle (scaled by 1.5)
+      let k = 1.5
+      let D = (4, 0)
+      let E = (4 + 2 * k, 0)
+      let F = (4 + 0.8 * k, 1.5 * k)
+      line(D, E, F, close: true, stroke: 0.7pt + rgb("#1976D2"))
+      content(((D.at(0) + E.at(0)) / 2, -0.35), text(8pt, fill: rgb("#1976D2"))[$k a$])
+      content(((E.at(0) + F.at(0)) / 2 + 0.2, (E.at(1) + F.at(1)) / 2 + 0.1), text(8pt, fill: rgb("#1976D2"))[$k b$])
+      content(((D.at(0) + F.at(0)) / 2 - 0.3, (D.at(1) + F.at(1)) / 2 + 0.1), text(8pt, fill: rgb("#1976D2"))[$k c$])
+      // Labels
+      content((1, -0.8), text(8pt)[面积 $S$])
+      content(((D.at(0) + E.at(0)) / 2, -0.8), text(8pt, fill: rgb("#1976D2"))[面积 $k^2 S$])
+    }),
+    caption: [边长按 $k$ 放缩，面积按 $k^2$ 放缩——一维乘 $k$，二维乘 $k^2$。]
+  )
 
   更广地讲：
 
@@ -59,6 +87,35 @@
   若已知标杆高 $h_0 = 1.5$ 米、其影长 $ell_0 = 2$ 米；旗杆影长 $L = 16$ 米。则
 
   $ frac(h, h_0) = frac(L, ell_0) => h = 1.5 times 16 slash 2 = 12 " 米". $
+
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      // Ground line
+      line((-0.5, 0), (9, 0), stroke: 0.4pt)
+      // Stick (short)
+      line((1, 0), (1, 1.2), stroke: 0.7pt)
+      content((1, 1.45), text(8pt)[$h_0$])
+      // Stick shadow
+      line((1, 0), (2.6, 0), stroke: 0.7pt + rgb("#388E3C"))
+      content((1.8, -0.3), text(8pt, fill: rgb("#388E3C"))[$ell_0$])
+      // Sun ray to stick top
+      line((2.6, 0), (1, 1.2), stroke: 0.4pt + luma(140))
+      // Flagpole (tall)
+      line((6, 0), (6, 4.8), stroke: 0.7pt)
+      content((6, 5.1), text(8pt)[$h = ?$])
+      // Flagpole shadow
+      line((6, 0), (8.4, 0), stroke: 0.7pt + rgb("#388E3C"))
+      // Dotted shadow extension
+      content((7.2, -0.3), text(8pt, fill: rgb("#388E3C"))[$L$])
+      // Sun ray to flagpole top
+      line((8.4, 0), (6, 4.8), stroke: 0.4pt + luma(140))
+      // Parallel sun ray indicators
+      content((1.5, 0.9), text(7pt, fill: luma(120))[$alpha$])
+      content((6.8, 3.5), text(7pt, fill: luma(120))[$alpha$])
+    }),
+    caption: [影长法：同一时刻太阳光平行 $arrow.r.double$ 标杆与旗杆的"高 $slash$ 影长"比相等。]
+  )
 
   *场景二：测河宽（构造相似）*
 

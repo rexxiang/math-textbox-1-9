@@ -119,6 +119,29 @@
     [同旁内角], [截线同一侧、都在内部（C 形）], [互补，即 $= 180 degree$],
   )
 
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      // Z-shape for alternate interior angles
+      line((0, 2), (2.5, 2), stroke: 0.6pt)
+      line((1, 0), (3.5, 0), stroke: 0.6pt)
+      line((2.5, 2), (1, 0), stroke: 0.7pt + rgb("#1976D2"))
+      content((1.25, 2.25), text(8pt)[内错角])
+      arc((2.5, 2), start: 180deg, stop: 180deg + 42deg, radius: 0.5, stroke: 0.5pt + rgb("#B71C1C"))
+      arc((1, 0), start: 0deg, stop: -42deg, radius: 0.5, stroke: 0.5pt + rgb("#B71C1C"))
+      content((0.5, 1), text(9pt, fill: rgb("#1976D2"))[Z])
+      // C-shape for co-interior angles
+      line((5, 2), (7.5, 2), stroke: 0.6pt)
+      line((5, 0), (7.5, 0), stroke: 0.6pt)
+      line((6, 2), (6, 0), stroke: 0.7pt + rgb("#388E3C"))
+      content((5.5, 2.25), text(8pt)[同旁内角])
+      arc((6, 2), start: -90deg, stop: 0deg, radius: 0.4, stroke: 0.5pt + rgb("#B71C1C"))
+      arc((6, 0), start: 0deg, stop: 90deg, radius: 0.4, stroke: 0.5pt + rgb("#B71C1C"))
+      content((7.8, 1), text(9pt, fill: rgb("#388E3C"))[C])
+    }),
+    caption: [Z 形记忆内错角（相等），C 形记忆同旁内角（互补）。]
+  )
+
   *工具二：平行 $<=>$ 角关系（双向）*
 
   以下三组等价表述，任取其一即可判断 / 推出“两直线平行”：

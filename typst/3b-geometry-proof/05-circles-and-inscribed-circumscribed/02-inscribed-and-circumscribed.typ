@@ -61,6 +61,34 @@
   - 以 $I$ 为圆心、$r$ 为半径的圆与三条边都相切——这就是*内切圆*。
   - $I$ 叫*内心*，一定在三角形内部。
 
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      let A = (-2.5, -1.5)
+      let B = (2.8, -1.5)
+      let C = (0.2, 2.2)
+      // Triangle
+      line(A, B, C, close: true, stroke: 0.6pt)
+      content((-2.8, -1.7), $A$)
+      content((3.1, -1.7), $B$)
+      content((0.2, 2.5), $C$)
+      // Incircle (approximate incenter and inradius)
+      let I = (0.15, -0.25)
+      let r = 1.1
+      circle(I, radius: r, stroke: 0.5pt + rgb("#388E3C"))
+      circle(I, radius: 0.05, fill: rgb("#388E3C"))
+      content((0.45, -0.15), text(fill: rgb("#388E3C"))[$I$])
+      // Angle bisectors (dashed)
+      line(A, (1.6, 0.4), stroke: 0.3pt + luma(160))
+      line(B, (-1.2, 0.4), stroke: 0.3pt + luma(160))
+      line(C, (0.15, -1.5), stroke: 0.3pt + luma(160))
+      // Radius to one side
+      line(I, (0.15, -1.35), stroke: 0.4pt + rgb("#388E3C"))
+      content((0.5, -0.85), text(7pt, fill: rgb("#388E3C"))[$r$])
+    }),
+    caption: [三角形的内切圆：三条内角平分线交于内心 $I$，$I$ 到三边的垂直距离都等于 $r$。]
+  )
+
   （为什么两种“三线共点”成立？——都可由“到两条线（或两点）等距的点的轨迹”这一基本结果推出，第 1 章的全等 $+$ 轨迹思想已经足够。）
 
   *正多边形：内接圆与外接圆同心*

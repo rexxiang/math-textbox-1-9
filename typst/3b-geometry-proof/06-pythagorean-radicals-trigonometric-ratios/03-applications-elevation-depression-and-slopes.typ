@@ -66,6 +66,32 @@
   - 坡度写成 $1 : m$ 的形式时，指*铅直 $1$、水平 $m$*，故 $tan beta = 1 slash m$。
   - 坡长（斜坡本身长度）$= sqrt("水平"^2 + "铅直"^2)$——又是勾股定理。
 
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      // Ground line
+      line((-0.5, 0), (7, 0), stroke: 0.4pt)
+      // Slope
+      let base = 5
+      let rise = 2.5
+      line((1, 0), (1 + base, 0), stroke: 0.7pt + rgb("#388E3C"))
+      line((1 + base, 0), (1 + base, rise), stroke: 0.7pt + rgb("#1976D2"))
+      line((1, 0), (1 + base, rise), stroke: 0.8pt + rgb("#B71C1C"))
+      // Right angle mark
+      rect((1 + base - 0.3, 0), (1 + base, 0.3), stroke: 0.3pt, fill: none)
+      // Slope angle arc
+      arc((1, 0), start: 0deg, stop: 27deg, radius: 1.0, stroke: 0.5pt)
+      content((2.3, 0.25), text(8pt)[$beta$])
+      // Labels
+      content((3.5, -0.35), text(8pt, fill: rgb("#388E3C"))[水平距离])
+      content((6.7, 1.25), text(8pt, fill: rgb("#1976D2"))[铅直])
+      content((2.5, 1.6), text(8pt, fill: rgb("#B71C1C"))[坡长])
+      // Ratio label
+      content((3.5, -0.85), text(8pt)[坡度 $= tan beta =$ 铅直 $\/$ 水平])
+    }),
+    caption: [坡度 $= tan beta =$ 铅直上升 $\/$ 水平距离；坡长由勾股定理求出。]
+  )
+
   *综合例*：仰角 $45 degree$、水平距离 $80$ 米，看塔顶。塔高 $= 80 tan 45 degree = 80$ 米。
 ]
 

@@ -54,6 +54,36 @@
   - *旋转*：绕一个*固定点*（旋转中心）把整个图形转动一个*固定角度*。每一对对应点到中心的距离相等，连线与中心的夹角都等于同一个角度。
   - *反射*：关于一条*固定直线*（对称轴）把整个图形翻过去。每一对对应点关于这条直线对称——中点在轴上，连线垂直于轴。
 
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      // Center of rotation
+      let O = (3, 1.5)
+      circle(O, radius: 0.07, fill: black, stroke: none)
+      content((3.25, 1.2), $O$)
+      // Original triangle
+      let A = (1, 0)
+      let B = (2.5, 0)
+      let C = (1.5, 1.2)
+      line(A, B, C, close: true, stroke: 0.6pt)
+      content((0.75, -0.25), $A$)
+      content((2.7, -0.25), $B$)
+      content((1.3, 1.4), $C$)
+      // Rotated triangle (~90° counterclockwise around O)
+      let A2 = (4.5, 0)
+      let B2 = (4.5, 1.5)
+      let C2 = (3.3, 0.3)
+      line(A2, B2, C2, close: true, stroke: 0.6pt + rgb("#1976D2"))
+      content((4.75, -0.2), [$A'$])
+      content((4.75, 1.7), [$B'$])
+      content((3.05, 0.1), [$C'$])
+      // Rotation arc
+      arc(O, start: 210deg, stop: 300deg, radius: 1.8, stroke: 0.3pt + luma(150), mark: (end: ">"))
+      content((3, 3.5), text(8pt)[旋转角 $theta$])
+    }),
+    caption: [旋转：$triangle A B C$ 绕中心 $O$ 旋转角 $theta$ 得到 $triangle A' B' C'$，对应点到 $O$ 等距。]
+  )
+
   *三种里共通的那条性质*
 
   任取两点 $P$、$Q$ 及其像 $P'$、$Q'$，三种变换都使得

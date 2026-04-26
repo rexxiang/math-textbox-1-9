@@ -61,6 +61,39 @@
 
   （两坐标轴分别看，$M$ 在 $x$-轴投影就是 $P$、$Q$ 在 $x$-轴投影的中点，纵向同理。）
 
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      // Axes
+      line((-0.5, 0), (6, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -0.5), (0, 4.5), stroke: 0.4pt, mark: (end: ">"))
+      content((6.2, -0.2), $x$)
+      content((-0.2, 4.6), $y$)
+      // Points P and Q
+      let P = (1, 1)
+      let Q = (5, 3.5)
+      circle(P, radius: 0.07, fill: black)
+      circle(Q, radius: 0.07, fill: black)
+      content((0.6, 0.7), [$P(x_1, y_1)$])
+      content((5.4, 3.8), [$Q(x_2, y_2)$])
+      // Segment PQ
+      line(P, Q, stroke: 0.6pt)
+      // Midpoint M
+      let M = (3, 2.25)
+      circle(M, radius: 0.07, fill: rgb("#B71C1C"))
+      content((3.4, 2.55), text(fill: rgb("#B71C1C"))[$M$])
+      // Dashed projections
+      line(P, (1, 0), stroke: 0.3pt + luma(170))
+      line(Q, (5, 0), stroke: 0.3pt + luma(170))
+      line(M, (3, 0), stroke: 0.3pt + rgb("#B71C1C"))
+      // x-axis labels
+      content((1, -0.3), text(7pt)[$x_1$])
+      content((5, -0.3), text(7pt)[$x_2$])
+      content((3, -0.35), text(7pt, fill: rgb("#B71C1C"))[$(x_1 + x_2) slash 2$])
+    }),
+    caption: [中点公式：$M$ 的坐标是 $P$ 与 $Q$ 坐标的分别平均。]
+  )
+
   *三种刚体变换的坐标公式*
 
   - *平移* 向量 $(a, b)$：$(x, y) -> (x + a, y + b)$。

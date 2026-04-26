@@ -70,6 +70,34 @@
 
   $ angle A C B = 1 / 2 angle A O B. $
 
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      let r = 2.2
+      circle((0, 0), radius: r, stroke: 0.6pt)
+      circle((0, 0), radius: 0.05, fill: black)
+      content((0.25, -0.25), $O$)
+      // Arc endpoints A, B
+      let A = (-2.0, -0.92)
+      let B = (1.5, -1.6)
+      content((-2.3, -1.1), $A$)
+      content((1.75, -1.85), $B$)
+      // Central angle
+      line((0, 0), A, stroke: 0.5pt + rgb("#B71C1C"))
+      line((0, 0), B, stroke: 0.5pt + rgb("#B71C1C"))
+      arc((0, 0), start: -47deg, stop: -155deg, radius: 0.6, stroke: 0.5pt + rgb("#B71C1C"))
+      content((-0.4, -0.75), text(7pt, fill: rgb("#B71C1C"))[$2 alpha$])
+      // Inscribed angle at C on major arc
+      let C = (0.5, 2.15)
+      content((0.5, 2.5), $C$)
+      line(C, A, stroke: 0.6pt + rgb("#1976D2"))
+      line(C, B, stroke: 0.6pt + rgb("#1976D2"))
+      arc(C, start: -70deg, stop: -124deg, radius: 0.55, stroke: 0.5pt + rgb("#1976D2"))
+      content((0.15, 1.7), text(7pt, fill: rgb("#1976D2"))[$alpha$])
+    }),
+    caption: [圆周角 $angle A C B = alpha$ 恰好是同弧圆心角 $angle A O B = 2 alpha$ 的一半。]
+  )
+
   *证明思路*（圆心在角内的情形）：连 $O C$。$O A = O C$（半径）$=>$ $triangle O A C$ 等腰，$angle O A C = angle O C A$；外角 $angle A O D = 2 angle O C A$（其中 $D$ 是 $O C$ 延长交 $A$ 侧的辅助点），对 $B$ 侧同理。把两段加起来即得。另外两种位置关系（圆心在角外或角的一条边上）由等腰三角形外角重复同一套推理。
 
   *两条直接推论*

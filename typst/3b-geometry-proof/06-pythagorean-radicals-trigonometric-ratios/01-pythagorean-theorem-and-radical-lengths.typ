@@ -93,6 +93,30 @@
   - 求斜边：$c = sqrt(a^2 + b^2)$。
   - 求直角边：$a = sqrt(c^2 - b^2)$（必须 $c > b$，否则题设有问题）。
 
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      let A = (0, 0)
+      let B = (4, 0)
+      let C = (0, 3)
+      // Triangle
+      line(A, B, C, close: true, stroke: 0.7pt)
+      // Right angle mark at A
+      rect((0, 0), (0.35, 0.35), stroke: 0.4pt, fill: none)
+      // Labels
+      content((-0.3, -0.25), $A$)
+      content((4.3, -0.2), $B$)
+      content((-0.3, 3.2), $C$)
+      // Side labels
+      content((2, -0.4), text(9pt)[$a$ (直角边)])
+      content((-0.6, 1.5), text(9pt)[$b$ (直角边)])
+      content((2.4, 1.9), text(9pt, fill: rgb("#B71C1C"))[$c$ (斜边)])
+      // Formula
+      content((2, -1.1), text(9pt)[$a^2 + b^2 = c^2$])
+    }),
+    caption: [直角三角形三边关系：两直角边 $a$、$b$ 的平方和等于斜边 $c$ 的平方。]
+  )
+
   *工具二：勾股逆定理*
 
   对任意三角形三边 $a$、$b$、$c$，若 $a^2 + b^2 = c^2$，则此三角形是直角三角形，$c$ 所对的角 $= 90 degree$。

@@ -52,6 +52,30 @@
 
   给三张视图，能否*唯一*确定立体？对“由小立方体堆起来”的物体来说，三张视图加上对齐规律通常能定到相当精细——例外是少数“空腔”情形，这种情形靠本节所给信息可以确诊为歧义，须要额外信息。
 
+  #figure(
+    cetz.canvas(length: 0.9cm, {
+      import cetz.draw: *
+      // L-shaped front view (3 wide, 2 tall at left)
+      // Bottom row: 3 squares
+      rect((0, 0), (1, 1), stroke: 0.5pt)
+      rect((1, 0), (2, 1), stroke: 0.5pt)
+      rect((2, 0), (3, 1), stroke: 0.5pt)
+      // Top-left square
+      rect((0, 1), (1, 2), stroke: 0.5pt)
+      content((1.5, -0.4), text(8pt)[正视图])
+      // Side view: 1 wide, 2 tall (stacked)
+      rect((4.5, 0), (5.5, 1), stroke: 0.5pt)
+      rect((4.5, 1), (5.5, 2), stroke: 0.5pt)
+      content((5, -0.4), text(8pt)[侧视图])
+      // Top view: 3 wide, 1 tall
+      rect((0, -2.5), (1, -1.5), stroke: 0.5pt)
+      rect((1, -2.5), (2, -1.5), stroke: 0.5pt)
+      rect((2, -2.5), (3, -1.5), stroke: 0.5pt)
+      content((1.5, -2.9), text(8pt)[俯视图])
+    }),
+    caption: [L 形物体（$4$ 个小立方体）的三视图：正视图呈 L 形，侧视图为 $1 times 2$，俯视图为 $3 times 1$。]
+  )
+
   *视图面积与表面积的关系*
 
   对一个长方体（尺寸 $a times b times c$，长 $times$ 宽 $times$ 高）：

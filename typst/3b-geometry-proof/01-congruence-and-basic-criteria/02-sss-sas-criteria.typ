@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === SSS 与 SAS：两条最基本的判定法 <tool:ge01-sss-sas>
 
@@ -52,6 +53,39 @@
     [`SAS`], [两条对应边*及其夹角*分别相等], [两杆一开口，第三边被逼出来],
   )
 
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      // Triangle ABD
+      let A = (0, 0)
+      let B = (3, 0)
+      let C = (1.5, 2.2)
+      line(A, B, C, close: true, stroke: 0.7pt)
+      content((-0.3, -0.2), $A$)
+      content((3.3, -0.2), $B$)
+      content((1.5, 2.5), $C$)
+      // Triangle DEF
+      let D = (5, 0)
+      let E = (8, 0)
+      let F = (6.5, 2.2)
+      line(D, E, F, close: true, stroke: 0.7pt + rgb("#1976D2"))
+      content((4.7, -0.2), $D$)
+      content((8.3, -0.2), $E$)
+      content((6.5, 2.5), $F$)
+      // tick marks: single on AB=DE
+      content((1.5, -0.3), text(7pt)[$|$])
+      content((6.5, -0.3), text(7pt)[$|$])
+      // double on BC=EF
+      content((2.5, 1.25), text(7pt)[$||$])
+      content((7.5, 1.25), text(7pt)[$||$])
+      // triple on AC=DF
+      content((0.5, 1.25), text(7pt)[$|||$])
+      content((5.5, 1.25), text(7pt)[$|||$])
+      content((4, -0.7), text(8pt)[SSS：三条对应边分别相等])
+    }),
+    caption: [SSS 判定：三条对应边分别相等 $arrow.r.double$ 全等。]
+  )
+
   *一个警告先挂在这里*
 
   如果“一个角”站在外侧（即是其中一条已知边的*对角*而不是夹角），形状会不会也锁死？——*不一定*。这正是下一节要把 SSA 单独拎出来讨论的原因。现在只需记住一句话：*SAS 的 A 必须在两条边中间*。
@@ -81,6 +115,43 @@
   $ A B = D E, quad angle A = angle D, quad A C = D F, $
 
   （$angle A$ 必须是*边 $A B$ 与 $A C$ 的夹角*，$angle D$ 同理）则 $triangle A B C tilde.eq triangle D E F$。
+
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      // Triangle ABC with angle A highlighted
+      let A = (0, 0)
+      let B = (3.2, 0)
+      let C = (0.8, 2.0)
+      line(A, B, stroke: 0.7pt)
+      line(A, C, stroke: 0.7pt)
+      line(B, C, stroke: 0.4pt + luma(160))
+      content((-0.3, -0.2), $A$)
+      content((3.5, -0.2), $B$)
+      content((0.6, 2.25), $C$)
+      // angle arc at A
+      arc(A, start: 0deg, stop: 68deg, radius: 0.6, stroke: 0.5pt + rgb("#B71C1C"))
+      // Triangle DEF
+      let D = (5, 0)
+      let E = (8.2, 0)
+      let F = (5.8, 2.0)
+      line(D, E, stroke: 0.7pt + rgb("#1976D2"))
+      line(D, F, stroke: 0.7pt + rgb("#1976D2"))
+      line(E, F, stroke: 0.4pt + luma(160))
+      content((4.7, -0.2), $D$)
+      content((8.5, -0.2), $E$)
+      content((5.6, 2.25), $F$)
+      // angle arc at D
+      arc(D, start: 0deg, stop: 68deg, radius: 0.6, stroke: 0.5pt + rgb("#B71C1C"))
+      // labels
+      content((1.6, -0.3), text(7pt)[$|$])
+      content((6.6, -0.3), text(7pt)[$|$])
+      content((0.2, 1.1), text(7pt)[$||$])
+      content((5.2, 1.1), text(7pt)[$||$])
+      content((4, -0.7), text(8pt)[SAS：两边及其*夹角*分别相等])
+    }),
+    caption: [SAS 判定：两条对应边*及其夹角*（红色弧）分别相等 $arrow.r.double$ 全等。]
+  )
 
   *例 1（SSS）*：$triangle A B C$ 中，$A D$ 是底边 $B C$ 上的中线，且 $A B = A C$。求证 $triangle A B D tilde.eq triangle A C D$。
 

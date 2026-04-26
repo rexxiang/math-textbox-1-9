@@ -99,6 +99,41 @@
 
   $ angle A = angle D, quad A B = D E, quad angle B = angle E, $
 
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      // Triangle 1
+      let A = (0, 0)
+      let B = (3.5, 0)
+      let C = (1.2, 2.0)
+      line(A, B, C, close: true, stroke: 0.7pt)
+      content((-0.3, -0.2), $A$)
+      content((3.8, -0.2), $B$)
+      content((1.0, 2.25), $C$)
+      // angle arcs at A and B
+      arc(A, start: 0deg, stop: 59deg, radius: 0.55, stroke: 0.5pt + rgb("#B71C1C"))
+      arc(B, start: 180deg, stop: 180deg - 41deg, radius: 0.55, stroke: 0.5pt + rgb("#B71C1C"))
+      // side AB highlighted
+      line(A, B, stroke: 0.8pt + rgb("#1976D2"))
+      content((1.75, -0.35), text(8pt, fill: rgb("#1976D2"))[$A B$])
+      // Triangle 2
+      let D = (5.5, 0)
+      let E = (9, 0)
+      let F = (6.7, 2.0)
+      line(D, E, F, close: true, stroke: 0.7pt)
+      content((5.2, -0.2), $D$)
+      content((9.3, -0.2), $E$)
+      content((6.5, 2.25), $F$)
+      // angle arcs at D and E
+      arc(D, start: 0deg, stop: 59deg, radius: 0.55, stroke: 0.5pt + rgb("#B71C1C"))
+      arc(E, start: 180deg, stop: 180deg - 41deg, radius: 0.55, stroke: 0.5pt + rgb("#B71C1C"))
+      // side DE highlighted
+      line(D, E, stroke: 0.8pt + rgb("#1976D2"))
+      content((7.25, -0.35), text(8pt, fill: rgb("#1976D2"))[$D E$])
+    }),
+    caption: [ASA：两角（红弧）及其夹边（蓝线）分别相等即可判定全等。]
+  )
+
   （$A B$ 是 $angle A$ 与 $angle B$ *夹着* 的边）则 $triangle A B C tilde.eq triangle D E F$。
 
   *工具二：AAS（角角边）*

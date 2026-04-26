@@ -24,6 +24,31 @@
 
   *三边比（$45$–$45$–$90$）*：$1 : 1 : sqrt(2)$。
 
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      let A = (0, 0)
+      let B = (3, 0)
+      let C = (0, 3)
+      // Triangle
+      line(A, B, C, close: true, stroke: 0.7pt)
+      // Right angle mark
+      rect((0, 0), (0.3, 0.3), stroke: 0.4pt, fill: none)
+      // Labels
+      content((-0.25, -0.25), $A$)
+      content((3.25, -0.25), $B$)
+      content((-0.25, 3.25), $C$)
+      // Side labels
+      content((1.5, -0.4), text(9pt)[$1$])
+      content((-0.4, 1.5), text(9pt)[$1$])
+      content((1.9, 1.85), text(9pt, fill: rgb("#1976D2"))[$sqrt(2)$])
+      // Angle labels
+      content((2.2, 0.35), text(8pt)[$45 degree$])
+      content((0.35, 2.2), text(8pt)[$45 degree$])
+    }),
+    caption: [$45 degree$–$45 degree$–$90 degree$ 三角形：两直角边相等，斜边 $= sqrt(2)$ 倍直角边。]
+  )
+
   *第二族：$30$–$60$–$90$ 三角形*
 
   #figure(

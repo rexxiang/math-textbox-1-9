@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 证明链的书写：已知 → 推出 → 结论 <tool:ge01-two-step-proof-chain>
 
@@ -47,6 +48,34 @@
     [$A D = A D$], [公共边],
     [$triangle A B D tilde.eq triangle A C D$], [`SAS` 判定（#secref("ge01-sss-sas"))],
     [$B D = C D$], [全等对应边相等（#secref("ge01-congruence-correspondence"))],
+  )
+
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      let A = (2, 3)
+      let B = (0, 0)
+      let C = (4, 0)
+      let D = (2, 0)
+      // Triangle
+      line(B, C, stroke: 0.7pt)
+      line(A, B, stroke: 0.7pt)
+      line(A, C, stroke: 0.7pt)
+      // Angle bisector
+      line(A, D, stroke: 0.5pt + luma(120))
+      // Labels
+      content((2, 3.3), $A$)
+      content((-0.3, -0.2), $B$)
+      content((4.3, -0.2), $C$)
+      content((2, -0.35), $D$)
+      // Equal side marks
+      content((0.8, 1.7), text(7pt)[$|$])
+      content((3.2, 1.7), text(7pt)[$|$])
+      // Angle bisector marks
+      arc(A, start: -90deg + 27deg, stop: -90deg, radius: 0.45, stroke: 0.4pt + rgb("#B71C1C"))
+      arc(A, start: -90deg, stop: -90deg - 27deg, radius: 0.45, stroke: 0.4pt + rgb("#B71C1C"))
+    }),
+    caption: [等腰 $triangle A B C$（$A B = A C$），$A D$ 平分 $angle B A C$——典型的"先全等、后对应"证明配置。]
   )
 
   注意几个细节：
@@ -118,6 +147,41 @@
 
   + *第 1 步*：证两个三角形全等。
   + *第 2 步*：用“对应元素相等”拿到结论。
+
+
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      // Two triangles sharing edge AB||CD through point O
+      let A = (0, 1.5)
+      let B = (0, -1.5)
+      let O = (2.5, 0)
+      let C = (5, 1.2)
+      let D = (5, -1.2)
+      // Triangle ABO
+      line(A, B, stroke: 0.7pt)
+      line(A, O, stroke: 0.7pt)
+      line(B, O, stroke: 0.7pt)
+      // Triangle CDO
+      line(C, D, stroke: 0.7pt + rgb("#1976D2"))
+      line(C, O, stroke: 0.7pt + rgb("#1976D2"))
+      line(D, O, stroke: 0.7pt + rgb("#1976D2"))
+      // Labels
+      content((-0.3, 1.7), $A$)
+      content((-0.3, -1.7), $B$)
+      content((2.5, 0.35), $O$)
+      content((5.3, 1.4), $C$)
+      content((5.3, -1.4), $D$)
+      // Mark equal sides
+      content((1.1, 0.95), text(7pt)[$|$])
+      content((3.95, 0.8), text(7pt)[$|$])
+      content((1.1, -0.95), text(7pt)[$||$])
+      content((3.95, -0.8), text(7pt)[$||$])
+      // Vertical angle mark at O
+      circle(O, radius: 0.06, fill: black, stroke: none)
+    }),
+    caption: [两三角形共顶点 $O$：常见的“对顶角 $+$ 两对等边”构型——第 1 步证 $triangle A B O tilde.eq triangle C D O$，第 2 步取对应边 / 角。]
+  )
 
   *完整范例*：已知 $A B = A C$，$angle 1 = angle 2$（即 $A D$ 平分 $angle B A C$），$D$ 在 $B C$ 上。求证 $B D = C D$ 且 $A D perp B C$。
 

@@ -76,6 +76,34 @@
 
   由 AA 判定 $triangle A D E tilde triangle A B C$。这是整个初中几何里*最常用的相似构型*——一条平行于第三边的线段切出一对相似三角形。
 
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      let A = (2.5, 3.5)
+      let B = (0, 0)
+      let C = (5.5, 0)
+      // Main triangle
+      line(A, B, C, close: true, stroke: 0.7pt)
+      content((2.5, 3.85), $A$)
+      content((-0.3, -0.2), $B$)
+      content((5.8, -0.2), $C$)
+      // DE parallel to BC, at 2/3 height
+      let t = 0.4
+      let D = (A.at(0) * (1 - t) + B.at(0) * t,  A.at(1) * (1 - t) + B.at(1) * t)
+      let E = (A.at(0) * (1 - t) + C.at(0) * t,  A.at(1) * (1 - t) + C.at(1) * t)
+      line(D, E, stroke: 0.7pt + rgb("#1976D2"))
+      content((D.at(0) - 0.3, D.at(1)), $D$)
+      content((E.at(0) + 0.3, E.at(1)), $E$)
+      // Parallel marks (arrows on DE and BC)
+      content((2.75, 0.25), text(7pt)[$arrow.r$])
+      content(((D.at(0) + E.at(0))/2, D.at(1) + 0.25), text(7pt, fill: rgb("#1976D2"))[$arrow.r$])
+      // Ratio label
+      content((6.5, 1.8), text(8pt)[$D E parallel B C$])
+      content((6.5, 1.2), text(8pt)[$triangle A D E tilde triangle A B C$])
+    }),
+    caption: [$D E parallel B C$ 截出的小三角形 $triangle A D E$ 与原三角形 $triangle A B C$ 相似（同位角 $+$ 公共角 $arrow.r.double$ AA）。]
+  )
+
   *相似比怎么读*
 
   设 $triangle A B C tilde triangle D E F$，相似比 $k = "新" div "旧"$，习惯上以*被比较的那个三角形*在分子：

@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 全等的含义与对应关系 <tool:ge01-congruence-correspondence>
 
@@ -40,6 +41,37 @@
 
   换句话说，字母的*顺序*不是随便写的。若把结论写成 $triangle A B C tilde.eq triangle E D F$，意思就完全不同了——那是在说 $A <-> E$、$B <-> D$、$C <-> F$。
 
+
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      // Triangle ABC
+      let A = (0, 0)
+      let B = (3, 0)
+      let C = (1.2, 2)
+      line(A, B, C, close: true, stroke: 0.7pt)
+      content((-0.25, -0.25), $A$)
+      content((3.25, -0.25), $B$)
+      content((1.2, 2.3), $C$)
+      // Triangle DEF (congruent, shifted right)
+      let D = (5.5, 0)
+      let E = (8.5, 0)
+      let F = (6.7, 2)
+      line(D, E, F, close: true, stroke: 0.7pt + rgb("#1976D2"))
+      content((5.25, -0.25), $D$)
+      content((8.75, -0.25), $E$)
+      content((6.7, 2.3), $F$)
+      // Correspondence arrows
+      line(A, D, stroke: 0.3pt + luma(160), mark: (end: ">"))
+      line(B, E, stroke: 0.3pt + luma(160), mark: (end: ">"))
+      line(C, F, stroke: 0.3pt + luma(160), mark: (end: ">"))
+      // tick marks on equal sides AB=DE
+      content((1.5, -0.35), text(7pt)[$||$])
+      content((7.0, -0.35), text(7pt)[$||$])
+    }),
+    caption: [$triangle A B C tilde.eq triangle D E F$：字母顺序决定对应关系——$A arrow.r D$、$B arrow.r E$、$C arrow.r F$。]
+  )
+
   *第三步：一旦写好对应，结论就“自动”出来*
 
   两个三角形一旦全等，你不用再为每一条边角单独辩论。“对应边相等、对应角相等”是*九条现成结论一起打包*。这也是为什么后面几乎每一道证明题最后那一步都长得一样：
@@ -73,6 +105,33 @@
   $ triangle A B C tilde.eq triangle D E F. $
 
   记号 $tilde.eq$ 同时表达了“形状一样”“大小一样”两件事。
+
+
+  #figure(
+    cetz.canvas(length: 1cm, {
+      import cetz.draw: *
+      // Original triangle
+      let A = (0, 0)
+      let B = (3.5, 0)
+      let C = (1, 2.4)
+      line(A, B, C, close: true, stroke: 0.7pt)
+      content((-0.3, -0.25), $A$)
+      content((3.8, -0.25), $B$)
+      content((0.7, 2.6), $C$)
+      // Same triangle slightly offset to show overlap concept
+      let A2 = (0.08, 0.06)
+      let B2 = (3.58, 0.06)
+      let C2 = (1.08, 2.46)
+      line(A2, B2, C2, close: true, stroke: (paint: rgb("#1976D2"), thickness: 0.5pt, dash: "dashed"))
+      content((3.95, 0.15), text(fill: rgb("#1976D2"))[$D$])
+      content((1.45, 2.65), text(fill: rgb("#1976D2"))[$F$])
+      content((-0.05, 0.35), text(fill: rgb("#1976D2"))[$E$])
+      // note
+      content((1.75, -0.6), text(8pt)[全等 $=$ 能完全重合])
+    }),
+    caption: [全等的直觉：两个三角形能严丝合缝地叠在一起。]
+  )
+
 
   *工具二：对应关系随字母顺序走*
 
