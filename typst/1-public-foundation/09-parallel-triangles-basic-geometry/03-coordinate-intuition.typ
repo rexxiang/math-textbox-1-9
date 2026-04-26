@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 坐标直觉：一个点等于一个数对 <tool:pf08-coordinate-intuition>
 
@@ -31,6 +32,59 @@
   就把 $P$ 写成 $(x, y)$，这叫有序数对——*顺序不能乱*：横坐标在前，纵坐标在后。
 
   于是“位置”就变成了“两个数”。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let red = rgb("#F44336")
+      let green = rgb("#4CAF50")
+
+      // Axes
+      line((-1, 5), (11, 5), stroke: 1.2pt + luma(80), mark: (end: ">"))
+      line((5, -1), (5, 11), stroke: 1.2pt + luma(80), mark: (end: ">"))
+
+      // Axis labels
+      content((11.5, 5), text(size: 9pt)[$x$], anchor: "west")
+      content((5, 11.5), text(size: 9pt)[$y$], anchor: "south")
+
+      // Grid
+      for i in range(11) {
+        if i != 5 {
+          line((i, 4.8), (i, 5.2), stroke: 0.5pt + luma(150))
+          line((4.8, i), (5.2, i), stroke: 0.5pt + luma(150))
+        }
+      }
+
+      // Origin label
+      content((4.3, 4.3), text(size: 8pt)[O], anchor: "north-east")
+
+      // Some axis numbers
+      for (val, x) in ((-4, 1), (-2, 3), (2, 7), (4, 9)) {
+        content((x, 4.2), text(size: 6pt, str(val)), anchor: "north")
+      }
+      for (val, y) in ((-4, 1), (-2, 3), (2, 7), (4, 9)) {
+        content((4.2, y), text(size: 6pt, str(val)), anchor: "east")
+      }
+
+      // Plot points
+      // A(2, 3)
+      circle((7, 8), radius: 0.25, fill: blue, stroke: 0.8pt + blue)
+      content((7.5, 8.5), text(fill: blue, weight: "bold", size: 8pt)[$A(2, 3)$], anchor: "south-west")
+
+      // B(-3, 1)
+      circle((2, 6), radius: 0.25, fill: red, stroke: 0.8pt + red)
+      content((1, 6.5), text(fill: red, weight: "bold", size: 8pt)[$B(-3, 1)$], anchor: "south-east")
+
+      // C(4, -2)
+      circle((9, 3), radius: 0.25, fill: green, stroke: 0.8pt + green)
+      content((9.5, 2.5), text(fill: green, weight: "bold", size: 8pt)[$C(4, -2)$], anchor: "north-west")
+    }),
+    caption: [坐标系中三个点的位置：先横后纵，$(x, y)$],
+  )
+
+
 ]
 
 #side-hack[
@@ -52,6 +106,39 @@
     - $x$ 轴上的点：$y = 0$，形如 $(a, 0)$。
     - $y$ 轴上的点：$x = 0$，形如 $(0, b)$。
     - 原点：$(0, 0)$，两条轴的唯一交点。
+  -
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let orange = rgb("#FF9800")
+
+      // Axes
+      line((-1, 4), (11, 4), stroke: 1.2pt + luma(80), mark: (end: ">"))
+      line((4, -1), (4, 9), stroke: 1.2pt + luma(80), mark: (end: ">"))
+
+      content((11.5, 4), text(size: 9pt)[$x$], anchor: "west")
+      content((4, 9.5), text(size: 9pt)[$y$], anchor: "south")
+      content((3.3, 3.3), text(size: 7pt)[O], anchor: "north-east")
+
+      // x-axis point
+      circle((8, 4), radius: 0.25, fill: blue, stroke: 0.8pt + blue)
+      content((8, 3), text(fill: blue, size: 8pt)[$(a, 0)$], anchor: "north")
+      content((8, 5), text(fill: blue, size: 7pt)[在 $x$ 轴上], anchor: "south")
+
+      // y-axis point
+      circle((4, 7), radius: 0.25, fill: orange, stroke: 0.8pt + orange)
+      content((5, 7), text(fill: orange, size: 8pt)[$(0, b)$], anchor: "west")
+      content((2.5, 7), text(fill: orange, size: 7pt)[在 $y$ 轴上], anchor: "east")
+
+      // Origin
+      circle((4, 4), radius: 0.25, fill: luma(60), stroke: 0.8pt + luma(60))
+      content((5.5, 3), text(size: 7pt)[$(0, 0)$ 原点], anchor: "west")
+    }),
+    caption: [轴上的点：$x$ 轴上 $y = 0$，$y$ 轴上 $x = 0$],
+  )
+
   - 坐标的符号告诉你大致方向：$x$ 的正负决定左右，$y$ 的正负决定上下；两者合起来，就能粗略说出这个点“在原点的哪一侧”。
 ]
 

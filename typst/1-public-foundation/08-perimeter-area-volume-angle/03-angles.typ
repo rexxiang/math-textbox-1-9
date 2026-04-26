@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 角：两条射线之间的旋转量 <tool:pf07-angles>
 
@@ -25,6 +26,45 @@
   - 正好半圈：$180°$，叫*平角*。
 
   顶点是 $O$，两条射线叫角的两条*边*。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let green = rgb("#4CAF50")
+      let red = rgb("#F44336")
+
+      // Acute angle (45°)
+      let a-cx = 2
+      line((a-cx, 0), (a-cx + 5, 0), stroke: 1.2pt + blue)
+      line((a-cx, 0), (a-cx + 3.5, 3.5), stroke: 1.2pt + blue)
+      arc((a-cx + 1.5, 0), start: 0deg, stop: 45deg, radius: 1.5,
+          stroke: 1pt + blue, mode: "OPEN")
+      content((a-cx + 2.2, 0.7), text(fill: blue, size: 7pt)[$45°$])
+      content((a-cx + 2, -1.2), text(weight: "bold", size: 8pt)[锐角], anchor: "north")
+
+      // Right angle (90°)
+      let r-cx = 10
+      line((r-cx, 0), (r-cx + 5, 0), stroke: 1.2pt + green)
+      line((r-cx, 0), (r-cx, 4), stroke: 1.2pt + green)
+      // Right angle mark
+      rect((r-cx, 0), (r-cx + 0.8, 0.8), stroke: 0.8pt + green)
+      content((r-cx + 2, -1.2), text(weight: "bold", size: 8pt)[直角], anchor: "north")
+
+      // Obtuse angle (135°)
+      let o-cx = 18
+      line((o-cx, 0), (o-cx + 5, 0), stroke: 1.2pt + red)
+      line((o-cx, 0), (o-cx - 2.8, 2.8), stroke: 1.2pt + red)
+      arc((o-cx + 1.2, 0), start: 0deg, stop: 135deg, radius: 1.2,
+          stroke: 1pt + red, mode: "OPEN")
+      content((o-cx - 0.5, 1.2), text(fill: red, size: 7pt)[$135°$])
+      content((o-cx + 1, -1.2), text(weight: "bold", size: 8pt)[钝角], anchor: "north")
+    }),
+    caption: [三种角：锐角（$< 90°$）、直角（$= 90°$）、钝角（$> 90°$）],
+  )
+
+
 ]
 
 #history-note[
@@ -52,6 +92,51 @@
     - $90° < $ 钝角 $< 180°$
     - 平角 $= 180°$
     - 周角 $= 360°$
+  -
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let orange = rgb("#FF9800")
+
+      // Semicircle as protractor outline
+      arc((0, 0), start: 0deg, stop: 180deg, radius: 6,
+          stroke: 1.2pt + luma(150), mode: "OPEN")
+      line((-6, 0), (6, 0), stroke: 1pt + luma(150))
+
+      // Tick marks every 30°
+      line((5.3, 0.0), (6.0, 0.0), stroke: 0.6pt + luma(120))
+      content((6.8, 0.0), text(size: 6pt, "0°"), anchor: "center")
+      line((4.59, 2.65), (5.2, 3.0), stroke: 0.6pt + luma(120))
+      content((5.89, 3.4), text(size: 6pt, "30°"), anchor: "center")
+      line((2.65, 4.59), (3.0, 5.2), stroke: 0.6pt + luma(120))
+      content((3.4, 5.89), text(size: 6pt, "60°"), anchor: "center")
+      line((0.0, 5.3), (0.0, 6.0), stroke: 0.6pt + luma(120))
+      content((0.0, 6.8), text(size: 6pt, "90°"), anchor: "center")
+      line((-2.65, 4.59), (-3.0, 5.2), stroke: 0.6pt + luma(120))
+      content((-3.4, 5.89), text(size: 6pt, "120°"), anchor: "center")
+      line((-4.59, 2.65), (-5.2, 3.0), stroke: 0.6pt + luma(120))
+      content((-5.89, 3.4), text(size: 6pt, "150°"), anchor: "center")
+      line((-5.3, 0.0), (-6.0, 0.0), stroke: 0.6pt + luma(120))
+      content((-6.8, 0.0), text(size: 6pt, "180°"), anchor: "center")
+
+      // Vertex
+      circle((0, 0), radius: 0.15, fill: blue, stroke: 0.8pt + blue)
+      content((-0.5, -0.8), text(fill: blue, size: 8pt)[O], anchor: "north")
+
+      // Angle of 60°
+      line((0, 0), (5, 0), stroke: 1.2pt + blue)
+      line((0, 0), (2.5, 4.33), stroke: 1.2pt + orange)
+
+      // Arc for 60°
+      arc((1.5, 0), start: 0deg, stop: 60deg, radius: 1.5,
+          stroke: 1.5pt + orange, mode: "OPEN")
+      content((2, 1.2), text(fill: orange, weight: "bold", size: 9pt)[$60°$])
+    }),
+    caption: [量角器上的 $60°$：从 $0°$ 到 $60°$ 扫过的范围],
+  )
+
   - 角的大小只和“张开多少”有关，和两条边画得多长无关。
 ]
 

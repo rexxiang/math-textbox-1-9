@@ -91,6 +91,37 @@
   - *分数* $a/b$ 表示把整体平均分成 b 份，取其中 a 份；它也能看成 $a div b$。
   - *均分* 很关键：每一份必须一样大。
   - *等值分数*：分子分母同时乘或除同一个非零数，分数值不变。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let green = rgb("#4CAF50")
+
+      // 3/4 bar
+      for i in range(4) {
+        let x = i * 3
+        let fill-c = if i < 3 { rgb("#BBDEFB") } else { white }
+        rect((x, 3), (x + 2.8, 5), fill: fill-c, stroke: 0.6pt + blue)
+      }
+      content((6, 2.2), $3 / 4$, anchor: "north")
+
+      // 6/8 bar
+      for i in range(8) {
+        let x = i * 1.5
+        let fill-c = if i < 6 { rgb("#C8E6C9") } else { white }
+        rect((x, -1), (x + 1.3, 1), fill: fill-c, stroke: 0.6pt + green)
+      }
+      content((6, -1.8), $6 / 8$, anchor: "north")
+
+      // Equals sign
+      content((13, 2), $=$, anchor: "center")
+      content((13, 0), text(size: 8pt)[同样长], anchor: "center")
+    }),
+    caption: [分数条模型：$3 / 4 = 6 / 8$，涂色部分一样长],
+  )
+
 ]
 
 #pitfall[

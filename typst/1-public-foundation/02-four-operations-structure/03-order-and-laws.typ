@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 运算顺序与运算律：让结构不走样 <tool:pf02-order-laws>
 
@@ -18,6 +19,35 @@
 
 #discovery[
   在 $3 + 4 times 5$ 里，$4 times 5$ 本来表示“5 个 4”这个整体。如果先算 $3 + 4$，就把原来的结构改坏了。
+
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let red = rgb("#F44336")
+      let green = rgb("#4CAF50")
+
+      // Expression: 3 + 4 × 5
+      content((0, 8), text(weight: "bold", size: 11pt)[$3 + 4 times 5$], anchor: "west")
+
+      // Step 1: multiply first (circled)
+      rect((5.5, 6.5), (11, 8.5), stroke: 1.5pt + red, radius: 3pt)
+      content((8, 5.5), text(fill: red, size: 8pt)[① 先算乘法], anchor: "north")
+      line((8, 6.3), (8, 5.9), stroke: 0.8pt + red, mark: (end: ">"))
+
+      // Arrow down to result
+      content((4, 3.5), text(weight: "bold", size: 11pt)[$3 + 20$], anchor: "west")
+      line((5, 6.2), (5, 4.2), stroke: 0.8pt + luma(120), mark: (end: ">"))
+
+      // Step 2: add
+      content((4, 1), text(weight: "bold", size: 11pt)[$= 23$], anchor: "west")
+      content((10, 2.5), text(fill: blue, size: 8pt)[② 再算加法], anchor: "west")
+      line((5, 3.0), (5, 1.8), stroke: 0.8pt + luma(120), mark: (end: ">"))
+    }),
+    caption: [$3 + 4 times 5$：先乘除、后加减],
+  )
 
   所以我们约定：
 
@@ -49,7 +79,45 @@
 #blueprint[
   - *运算顺序*：有括号先算括号；无括号时先乘除，后加减；同级从左到右。
   - *交换律与结合律*：在加法中、乘法中可以重排和重组，帮助凑整与配对。
-  - *分配律*：$a times (b + c) = a times b + a times c$，也能反过来把共同因数提出来。
+  - *分配律*：$a times (b + c) = a times b + a times c$
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let green = rgb("#4CAF50")
+      let light-blue = rgb("#E3F2FD")
+      let light-green = rgb("#C8E6C9")
+
+      // Left: 6 × (9+1) as one big rectangle
+      content((5, 8), text(weight: "bold", size: 9pt)[$6 times (9 + 1) = 6 times 10$], anchor: "south")
+
+      // Right side: split into 6×9 + 6×1
+      // 6 rows × 9 columns
+      for row in range(6) {
+        for col in range(9) {
+          rect((col * 1.3, row * 1.1), (col * 1.3 + 1.2, row * 1.1 + 1.0),
+               fill: light-blue, stroke: 0.3pt + blue)
+        }
+      }
+
+      // 6 rows × 1 column
+      for row in range(6) {
+        rect((9 * 1.3, row * 1.1), (9 * 1.3 + 1.2, row * 1.1 + 1.0),
+             fill: light-green, stroke: 0.3pt + green)
+      }
+
+      // Labels
+      content((5.85, -0.8), text(size: 8pt, fill: blue)[$6 times 9$], anchor: "north")
+      content((12, -0.8), text(size: 8pt, fill: green)[$6 times 1$], anchor: "north")
+
+      // Dividing line
+      line((9 * 1.3 - 0.1, -0.2), (9 * 1.3 - 0.1, 6.8), stroke: (dash: "dashed", paint: luma(120), thickness: 1pt))
+    }),
+    caption: [分配律面积模型：$6 times (9+1) = 6 times 9 + 6 times 1$],
+  )
+，也能反过来把共同因数提出来。
 ]
 
 #pitfall[

@@ -110,6 +110,33 @@
   - 直线通常用一个小写字母（如 $l$）或两点名字（如“直线 $P Q$”）表示。
   - 射线通常写“以 $P$ 为端点、过 $Q$ 的射线”。
   - 线段通常写 $P Q$，它的长度也记作 $P Q$ 的值。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let teal = rgb("#009688")
+
+      // Segment with midpoint
+      line((0, 0), (12, 0), stroke: 2pt + teal)
+      circle((0, 0), radius: 0.3, fill: teal, stroke: 1pt + teal)
+      circle((12, 0), radius: 0.3, fill: teal, stroke: 1pt + teal)
+
+      // Midpoint
+      circle((6, 0), radius: 0.3, fill: rgb("#FFF9C4"), stroke: 1.2pt + rgb("#FBC02D"))
+
+      // Labels
+      content((0, -1.2), text(fill: teal, weight: "bold", size: 9pt)[A], anchor: "north")
+      content((12, -1.2), text(fill: teal, weight: "bold", size: 9pt)[B], anchor: "north")
+      content((6, 1.3), text(fill: rgb("#F57F17"), weight: "bold", size: 9pt)[M（中点）], anchor: "south")
+
+      // Equal marks
+      content((3, 0.8), text(size: 7pt)[|], anchor: "center")
+      content((9, 0.8), text(size: 7pt)[|], anchor: "center")
+    }),
+    caption: [线段 $A B$ 的中点 $M$：$A M = M B$],
+  )
+
 ]
 
 #pitfall[

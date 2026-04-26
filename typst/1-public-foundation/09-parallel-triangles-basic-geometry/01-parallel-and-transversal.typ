@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 平行线与横截线：一张图里的角关系 <tool:pf08-parallel-transversal>
 
@@ -28,6 +29,50 @@
   反过来说：只要找到一对同位角（或内错角）相等，或者一对同旁内角互补，就能判断两条直线平行。
 
   这就是本节最值得记住的“一张图，三对角”。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let red = rgb("#F44336")
+      let green = rgb("#4CAF50")
+      let orange = rgb("#FF9800")
+
+      // Two parallel lines
+      line((-1, 0), (16, 0), stroke: 1.5pt + blue)
+      line((-1, 6), (16, 6), stroke: 1.5pt + blue)
+
+      // Transversal
+      line((3, -1.5), (11, 7.5), stroke: 1.2pt + luma(80))
+
+      // Labels for lines
+      content((17, 0), text(fill: blue, size: 9pt)[$l_2$], anchor: "west")
+      content((17, 6), text(fill: blue, size: 9pt)[$l_1$], anchor: "west")
+      content((11.5, 7.5), text(size: 9pt)[$t$], anchor: "west")
+
+      // Intersection points
+      let P = (5.25, 1.5)
+      let Q = (8.25, 4.5)
+
+      // Mark corresponding angles (同位角) with same color
+      arc((P.at(0) + 0.8, P.at(1)), start: 0deg, stop: 56deg, radius: 0.8,
+          fill: rgb("#FF980040"), stroke: 1pt + orange, mode: "PIE")
+      arc((Q.at(0) + 0.8, Q.at(1)), start: 0deg, stop: 56deg, radius: 0.8,
+          fill: rgb("#FF980040"), stroke: 1pt + orange, mode: "PIE")
+
+      // Labels for angle pairs
+      content((P.at(0) + 2.5, P.at(1) + 0.8), text(fill: orange, size: 7pt)[∠1], anchor: "west")
+      content((Q.at(0) + 2.5, Q.at(1) + 0.8), text(fill: orange, size: 7pt)[∠2], anchor: "west")
+
+      // Annotation
+      content((14, 3), text(fill: orange, size: 8pt)[同位角相等], anchor: "west")
+      content((14, 2), text(fill: orange, size: 8pt)[$angle 1 = angle 2$], anchor: "west")
+    }),
+    caption: [平行线被横截线所截：同位角位于同侧同位置，大小相等],
+  )
+
+
 ]
 
 #side-hack[
@@ -47,6 +92,45 @@
 
   - *同位角相等*。
   - *内错角相等*。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let red = rgb("#F44336")
+      let green = rgb("#4CAF50")
+
+      // Two parallel lines
+      line((-1, 0), (16, 0), stroke: 1.5pt + blue)
+      line((-1, 5), (16, 5), stroke: 1.5pt + blue)
+
+      // Transversal
+      line((4, -1), (10, 6), stroke: 1.2pt + luma(80))
+
+      // Intersection points (approximate)
+      let P1 = (5, 0.67)
+      let P2 = (8.33, 4.33)
+
+      // Alternate interior angles (内错角)
+      arc((P1.at(0) - 0.8, P1.at(1)), start: 56deg, stop: 180deg, radius: 0.8,
+          fill: rgb("#4CAF5040"), stroke: 1pt + green, mode: "PIE")
+      arc((P2.at(0) + 0.8, P2.at(1)), start: 236deg, stop: 360deg, radius: 0.8,
+          fill: rgb("#4CAF5040"), stroke: 1pt + green, mode: "PIE")
+
+      // Co-interior angles (同旁内角)
+      arc((P1.at(0) + 0.7, P1.at(1)), start: 0deg, stop: 56deg, radius: 0.7,
+          fill: rgb("#F4433630"), stroke: 0.8pt + red, mode: "PIE")
+      arc((P2.at(0) + 0.7, P2.at(1)), start: 236deg, stop: 360deg, radius: 0.7,
+          fill: rgb("#F4433630"), stroke: 0.8pt + red, mode: "PIE")
+
+      // Labels
+      content((1, 2.5), text(fill: green, size: 8pt)[内错角相等], anchor: "west")
+      content((11, 2.5), text(fill: red, size: 8pt)[同旁内角互补], anchor: "west")
+    }),
+    caption: [内错角（绿）相等，同旁内角（红）互补（和为 $180°$）],
+  )
+
   - *同旁内角互补*（和为 $180°$）。
 
   反向判定：如果图中出现上面任何一条关系，就可以判定两条直线平行。

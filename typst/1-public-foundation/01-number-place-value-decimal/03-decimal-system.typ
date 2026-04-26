@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/diagram-packages.typ": cetz
 
 === 十进制：满十换一个新单位 <tool:pf01-decimal-system>
 
@@ -33,6 +34,39 @@
   - 3 个十分之一
   - 7 个百分之一
 
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let orange = rgb("#FF9800")
+
+      // Number line 0 to 3
+      line((-1, 0), (22, 0), stroke: 1.2pt + luma(80), mark: (end: ">"))
+
+      // Major ticks at 0, 1, 2, 3
+      for i in range(4) {
+        let x = i * 7
+        line((x, -0.6), (x, 0.6), stroke: 1pt + luma(60))
+        content((x, -1.6), text(weight: "bold", size: 10pt, str(i)), anchor: "north")
+      }
+
+      // Minor ticks for tenths between 2 and 3
+      for j in range(1, 10) {
+        let x = 14 + j * 0.7
+        line((x, -0.3), (x, 0.3), stroke: 0.5pt + luma(150))
+      }
+
+      // Mark 2.37
+      let px = 14 + 3.7 * 0.7
+      circle((px, 0), radius: 0.3, fill: orange, stroke: 1pt + orange)
+      content((px, 1.5), text(fill: orange, weight: "bold", size: 9pt)[2.37], anchor: "south")
+      line((px, 0.4), (px, 1.1), stroke: 0.8pt + orange)
+    }),
+    caption: [数轴上的 2.37：位于 2 和 3 之间],
+  )
+
   小数点不是魔法，它只是提醒我们：位值从“个位”往右，继续变成“十分位、百分位、千分位……”。
 ]
 
@@ -52,6 +86,53 @@
   - *十进制* 的核心是“每相邻两个单位都差 10 倍”。
   - 小数点左边是个位、十位、百位……；右边是十分位、百分位、千分位……
   - 一个小数可以写成“几个一 + 几个十分之一 + 几个百分之一”的和。
+
+  #figure(
+    cetz.canvas(length: 0.38cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let red = rgb("#F44336")
+
+      // Left side: integer positions
+      let positions = (
+        (0, [千], [$times 10$]),
+        (1, [百], [$times 10$]),
+        (2, [十], [$times 10$]),
+        (3, [个], []),
+      )
+
+      for (i, lbl, arrow-lbl) in positions {
+        let x = i * 5
+        rect((x, 0), (x + 4, 2.5), fill: rgb("#E3F2FD"), stroke: 0.8pt + blue)
+        content((x + 2, 1.25), text(weight: "bold", size: 9pt, fill: blue, lbl))
+        if arrow-lbl != [] {
+          content((x + 4.5, 1.25), text(size: 6pt, fill: luma(120), arrow-lbl))
+        }
+      }
+
+      // Decimal point
+      content((19.5, 1.25), text(weight: "bold", size: 14pt)[.])
+
+      // Right side: decimal positions
+      let dec-pos = (
+        (4, [十分位], [$div 10$]),
+        (5, [百分位], [$div 10$]),
+        (6, [千分位], []),
+      )
+
+      for (i, lbl, arrow-lbl) in dec-pos {
+        let x = i * 5 + 1
+        rect((x, 0), (x + 4, 2.5), fill: rgb("#FFF3E0"), stroke: 0.8pt + red)
+        content((x + 2, 1.25), text(weight: "bold", size: 9pt, fill: red, lbl))
+        if arrow-lbl != [] {
+          content((x - 0.5, 1.25), text(size: 6pt, fill: luma(120), arrow-lbl))
+        }
+      }
+    }),
+    caption: [位值从个位向右延伸：每一步都除以 10],
+  )
+
   - ☞ 小数和分数的关系，以及小数的运算，会在后面的章节（#secref("ch:fractions") 和 #secref("ch:decimals-units-estimation-measurement")）展开。
 ]
 

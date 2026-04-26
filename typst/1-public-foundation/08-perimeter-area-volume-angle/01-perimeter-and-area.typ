@@ -96,6 +96,33 @@
   - *周长* $= $ 所有边的长度之和；单位是长度单位（米 / 厘米 / 毫米）。
   - *面积* $= $ 能铺满图形内部的单位正方形的个数；单位是平方单位。
   - 对长方形：周长 $= 2 times ("长" + "宽")$；面积 $= "长" times "宽"$。
+  -
+  #figure(
+    cetz.canvas(length: 0.55cm, {
+      import cetz.draw: *
+
+      let green = rgb("#4CAF50")
+
+      // Square with dimension labels
+      rect((0, 0), (5, 5), fill: rgb("#C8E6C920"), stroke: 1.5pt + green)
+
+      // Grid
+      for i in range(1, 5) {
+        line((i, 0), (i, 5), stroke: 0.3pt + luma(200))
+        line((0, i), (5, i), stroke: 0.3pt + luma(200))
+      }
+
+      // Dimension labels
+      content((2.5, -0.8), text(weight: "bold", size: 9pt)[5], anchor: "north")
+      content((-0.8, 2.5), text(weight: "bold", size: 9pt)[5], anchor: "east")
+
+      // Results
+      content((2.5, 6.2), text(fill: green, size: 8pt)[周长 = $4 times 5 = 20$], anchor: "south")
+      content((2.5, -2), text(fill: green, size: 8pt)[面积 = $5 times 5 = 25$], anchor: "north")
+    }),
+    caption: [正方形：边长 5，周长 20，面积 25],
+  )
+
   - 对正方形：周长 $= 4 times "边长"$；面积 $= "边长" times "边长"$。
 ]
 

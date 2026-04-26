@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 简单立体：把平面图形“抬起来”得到的形状 <tool:pf06-simple-solids>
 
@@ -21,6 +22,58 @@
 
   - *长方形* 抬起 $arrow.r$ 得到一个六个面都是长方形的立体：*长方体*；若长宽高相等，就叫*正方体*。
   - *圆* 抬起 $arrow.r$ 得到一个上下是圆面、侧面是一圈曲面的立体：*圆柱*。
+
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+
+      // Rectangular prism wireframe
+      let w = 6
+      let h = 4
+      let d = 2.5
+
+      // Front face
+      let A = (0, 0)
+      let B = (w, 0)
+      let C = (w, h)
+      let D = (0, h)
+
+      // Back face (offset)
+      let E = (d, d)
+      let F = (w + d, d)
+      let G = (w + d, h + d)
+      let H = (d, h + d)
+
+      // Front face (solid lines)
+      line(A, B, stroke: 1.2pt + blue)
+      line(B, C, stroke: 1.2pt + blue)
+      line(C, D, stroke: 1.2pt + blue)
+      line(D, A, stroke: 1.2pt + blue)
+
+      // Back face (dashed for hidden)
+      line(E, F, stroke: (dash: "dashed", paint: blue, thickness: 0.8pt))
+      line(E, H, stroke: (dash: "dashed", paint: blue, thickness: 0.8pt))
+
+      // Visible back edges
+      line(F, G, stroke: 1.2pt + blue)
+      line(G, H, stroke: 1.2pt + blue)
+
+      // Connecting edges
+      line(A, E, stroke: (dash: "dashed", paint: blue, thickness: 0.8pt))
+      line(B, F, stroke: 1.2pt + blue)
+      line(C, G, stroke: 1.2pt + blue)
+      line(D, H, stroke: 1.2pt + blue)
+
+      // Dimension labels
+      content((w / 2, -0.8), text(size: 8pt)[长], anchor: "north")
+      content((w + 0.8, h / 2), text(size: 8pt)[高], anchor: "west")
+      content((w + d / 2 + 0.5, d / 2 - 0.5), text(size: 8pt)[宽], anchor: "north")
+    }),
+    caption: [长方体：长方形“抬起”得到的六面体],
+  )
 
   再换一种做法，不是平行抬起，而是*在图形正上方选一个顶点，把顶点和图形边界连起来*，得到“尖顶”立体：
 
@@ -58,6 +111,62 @@
     [棱锥], [多边形底 + 顶点], [金字塔、粽子立体模型],
     [圆锥], [圆底 + 顶点], [甜筒、路锥],
     [球], [圆绕直径转一圈], [足球、乒乓球],
+  )
+
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let green = rgb("#4CAF50")
+      let orange = rgb("#FF9800")
+
+      // Cylinder
+      let cx = 4
+      let bot-y = 0
+      let top-y = 6
+      let rx = 3
+      let ry = 0.8
+
+      // Bottom ellipse
+      arc((cx - rx, bot-y), start: 0deg, stop: 180deg, radius: (rx, ry),
+          stroke: (dash: "dashed", paint: green, thickness: 0.8pt))
+      arc((cx + rx, bot-y), start: 180deg, stop: 360deg, radius: (rx, ry),
+          stroke: 1.2pt + green)
+
+      // Top ellipse
+      arc((cx - rx, top-y), start: 0deg, stop: 180deg, radius: (rx, ry),
+          stroke: 1.2pt + green)
+      arc((cx + rx, top-y), start: 180deg, stop: 360deg, radius: (rx, ry),
+          stroke: 1.2pt + green)
+
+      // Side lines
+      line((cx - rx, bot-y), (cx - rx, top-y), stroke: 1.2pt + green)
+      line((cx + rx, bot-y), (cx + rx, top-y), stroke: 1.2pt + green)
+
+      content((cx, -1.5), text(size: 8pt)[圆柱], anchor: "north")
+
+      // Cone
+      let cone-cx = 14
+      let cone-bot = 0
+      let cone-top = 6
+
+      // Bottom ellipse
+      arc((cone-cx - rx, cone-bot), start: 0deg, stop: 180deg, radius: (rx, ry),
+          stroke: (dash: "dashed", paint: orange, thickness: 0.8pt))
+      arc((cone-cx + rx, cone-bot), start: 180deg, stop: 360deg, radius: (rx, ry),
+          stroke: 1.2pt + orange)
+
+      // Side lines to apex
+      line((cone-cx - rx, cone-bot), (cone-cx, cone-top), stroke: 1.2pt + orange)
+      line((cone-cx + rx, cone-bot), (cone-cx, cone-top), stroke: 1.2pt + orange)
+
+      // Apex point
+      circle((cone-cx, cone-top), radius: 0.15, fill: orange, stroke: 0.8pt + orange)
+
+      content((cone-cx, -1.5), text(size: 8pt)[圆锥], anchor: "north")
+    }),
+    caption: [圆柱与圆锥：底是圆，一个平行抬起，一个收成尖顶],
   )
 
   长方体、正方体、棱锥这类全部由平面构成的立体，也叫*多面体*；每两个面相交的一条线段是一条*棱*。

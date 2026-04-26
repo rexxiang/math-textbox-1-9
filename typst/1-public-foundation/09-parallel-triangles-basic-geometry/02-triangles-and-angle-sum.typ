@@ -119,6 +119,37 @@
   - 直角三角形的两个锐角之和 $= 90°$。
   - 等腰三角形两个底角相等，所以若顶角是 $alpha$，底角各是 $(180° - alpha)/2$。
   - 等边三角形每个内角都是 $60°$。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let red = rgb("#F44336")
+      let green = rgb("#4CAF50")
+
+      // Acute triangle
+      let t1 = ((0, 0), (5, 0), (2, 3.5))
+      line(..t1, close: true, fill: rgb("#BBDEFB40"), stroke: 1pt + blue)
+      content((2.3, -1), text(size: 7pt)[锐角三角形], anchor: "north")
+      content((2.3, -2), text(size: 6pt)[三个角都 $< 90°$], anchor: "north")
+
+      // Right triangle
+      let t2 = ((7, 0), (12, 0), (7, 4))
+      line(..t2, close: true, fill: rgb("#C8E6C940"), stroke: 1pt + green)
+      rect((7, 0), (7.6, 0.6), stroke: 0.6pt + green)
+      content((9.5, -1), text(size: 7pt)[直角三角形], anchor: "north")
+      content((9.5, -2), text(size: 6pt)[有一个角 $= 90°$], anchor: "north")
+
+      // Obtuse triangle
+      let t3 = ((14, 0), (20, 0), (15, 2.5))
+      line(..t3, close: true, fill: rgb("#FFCDD240"), stroke: 1pt + red)
+      content((17, -1), text(size: 7pt)[钝角三角形], anchor: "north")
+      content((17, -2), text(size: 6pt)[有一个角 $> 90°$], anchor: "north")
+    }),
+    caption: [三种三角形：按最大角分类],
+  )
+
 ]
 
 #pitfall[

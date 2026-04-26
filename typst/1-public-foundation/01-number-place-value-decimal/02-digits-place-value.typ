@@ -89,6 +89,36 @@
   - *数* 是用这些数字按一定位置写出来的数量表达。
   - *位值* 指数字因为所在位置不同而代表不同大小：个位、十位、百位、千位……
   - 0 除了表示“没有”，还常常负责*占位*，帮助我们看清别的数字在哪一位上。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let header-fill = rgb("#E3F2FD")
+
+      // Place value chart header
+      for (i, lbl) in ((0, [百位]), (1, [十位]), (2, [个位])) {
+        let x = i * 5
+        rect((x, 4), (x + 4, 6), fill: header-fill, stroke: 0.8pt + blue)
+        content((x + 2, 5), text(weight: "bold", size: 9pt, fill: blue, lbl))
+      }
+
+      // Value cells for 507
+      for (i, val) in ((0, [5]), (1, [0]), (2, [7])) {
+        let x = i * 5
+        rect((x, 1.5), (x + 4, 4), stroke: 0.6pt + luma(160))
+        content((x + 2, 2.75), text(weight: "bold", size: 14pt, val))
+      }
+
+      // Meaning below
+      for (i, meaning) in ((0, [\= 500]), (1, [\= 0]), (2, [\= 7])) {
+        let x = i * 5
+        content((x + 2, 0.5), text(size: 8pt, fill: luma(100), meaning))
+      }
+    }),
+    caption: [位值表：507 中每个数字的位置决定它的大小],
+  )
 ]
 
 #pitfall[

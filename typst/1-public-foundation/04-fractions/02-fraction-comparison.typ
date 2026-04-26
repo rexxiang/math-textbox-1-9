@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 分数比较：先统一尺子 <tool:pf04-fraction-comparison>
 
@@ -21,6 +22,42 @@
 
   - $3/4 = 9/12$
   - $2/3 = 8/12$
+
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let red = rgb("#F44336")
+
+      // Bar for 3/4
+      let w = 12
+      for i in range(4) {
+        let x = i * (w / 4)
+        let fill-c = if i < 3 { rgb("#BBDEFB") } else { white }
+        rect((x, 4), (x + w / 4 - 0.2, 6), fill: fill-c, stroke: 0.6pt + blue)
+      }
+      content((-2, 5), text(weight: "bold", size: 9pt)[$3 / 4$], anchor: "east")
+
+      // Bar for 2/3
+      for i in range(3) {
+        let x = i * (w / 3)
+        let fill-c = if i < 2 { rgb("#FFCDD2") } else { white }
+        rect((x, 1), (x + w / 3 - 0.2, 3), fill: fill-c, stroke: 0.6pt + red)
+      }
+      content((-2, 2), text(weight: "bold", size: 9pt)[$2 / 3$], anchor: "east")
+
+      // Comparison line
+      let end34 = 3 * (w / 4) - 0.2
+      let end23 = 2 * (w / 3) - 0.2
+      line((end34, 3.8), (end34, 0.5), stroke: (dash: "dashed", paint: blue, thickness: 0.8pt))
+      line((end23, 3.8), (end23, 0.5), stroke: (dash: "dashed", paint: red, thickness: 0.8pt))
+
+      content((w / 2, 7), text(size: 8pt, weight: "bold")[$3 / 4 > 2 / 3$], anchor: "south")
+    }),
+    caption: [分数条对比：$3 / 4$ 涂得更长，所以 $3 / 4 > 2 / 3$],
+  )
 
   这时两者都在用“十二分之一”做单位，就能直接比较：$9/12 > 8/12$。
 
@@ -48,6 +85,36 @@
   - 比较分数大小，本质上是在比较谁占了更多共同单位。
   - *同分母* 时，分子大的分数更大。
   - *同分子* 时，分母小的分数更大。
+  -
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let red = rgb("#F44336")
+
+      // Number line 0 to 1
+      line((-1, 0), (17, 0), stroke: 1.2pt + luma(80), mark: (end: ">"))
+
+      // Ticks at 0, 1
+      for (x, lbl) in ((0, $0$), (15, $1$)) {
+        line((x, -0.5), (x, 0.5), stroke: 1pt + luma(60))
+        content((x, -1.4), text(weight: "bold", size: 10pt, lbl), anchor: "north")
+      }
+
+      // Mark 2/3
+      let x23 = 10
+      circle((x23, 0), radius: 0.3, fill: red, stroke: 0.8pt + red)
+      content((x23, 1.5), text(fill: red, weight: "bold", size: 9pt)[$2 / 3$], anchor: "south")
+
+      // Mark 3/4
+      let x34 = 11.25
+      circle((x34, 0), radius: 0.3, fill: blue, stroke: 0.8pt + blue)
+      content((x34, -1.8), text(fill: blue, weight: "bold", size: 9pt)[$3 / 4$], anchor: "north")
+    }),
+    caption: [数轴上看：$3 / 4$ 在 $2 / 3$ 的右边，所以更大],
+  )
+
   - 分母不同又不方便直接看时，可以*通分*，把它们改写成同分母分数再比较。
 ]
 

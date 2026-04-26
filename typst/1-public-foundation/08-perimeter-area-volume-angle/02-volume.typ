@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 体积：用单位立方体堆出来 <tool:pf07-volume>
 
@@ -17,6 +18,48 @@
 
   - 先铺一层：底面是 $4 times 3 = 12$ 块小立方体。
   - 再堆 2 层高：整堆一共有 $12 times 2 = 24$ 块小立方体。
+
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let light = rgb("#BBDEFB")
+
+      // Isometric-style cube stack 4×3×2
+      let dx = 1.3
+      let dy = 0.8
+      let dz = 1.3
+
+      for z in range(2) {
+        for y in range(3) {
+          for x in range(4) {
+            let bx = x * dx + y * 0.5
+            let by = z * dz + y * 0.3
+
+            // Top face
+            let top = ((bx, by + dz), (bx + dx, by + dz), (bx + dx + 0.5, by + dz + 0.3), (bx + 0.5, by + dz + 0.3))
+            line(..top, close: true, fill: light, stroke: 0.4pt + blue)
+
+            // Front face
+            let front = ((bx, by), (bx + dx, by), (bx + dx, by + dz), (bx, by + dz))
+            line(..front, close: true, fill: rgb("#E3F2FD"), stroke: 0.4pt + blue)
+
+            // Right face
+            let right = ((bx + dx, by), (bx + dx + 0.5, by + 0.3), (bx + dx + 0.5, by + dz + 0.3), (bx + dx, by + dz))
+            line(..right, close: true, fill: rgb("#90CAF9"), stroke: 0.4pt + blue)
+          }
+        }
+      }
+
+      // Dimension labels
+      content((2.6, -1), text(size: 8pt)[长 = 4], anchor: "north")
+      content((-1.5, 1.3), text(size: 8pt)[高 = 2], anchor: "east")
+      content((6.5, 0.5), text(size: 8pt)[宽 = 3], anchor: "west")
+    }),
+    caption: [用小立方体堆出长方体：$4 times 3 times 2 = 24$ 块],
+  )
 
   所以长方体体积 $= "长" times "宽" times "高" = 4 times 3 times 2 = 24$ 立方单位。
 
@@ -49,6 +92,57 @@
   - *长方体体积* $= "长" times "宽" times "高"$。
   - *正方体体积* $= "边长"^3$。
   - 通用关系：*体积* $=$ *底面积* $times$ *高*。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let green = rgb("#4CAF50")
+
+      // Simple labeled rectangular prism
+      let w = 8
+      let h = 5
+      let d = 3
+
+      let A = (0, 0)
+      let B = (w, 0)
+      let C = (w, h)
+      let D = (0, h)
+      let E = (d * 0.7, d * 0.7)
+      let F = (w + d * 0.7, d * 0.7)
+      let G = (w + d * 0.7, h + d * 0.7)
+      let H = (d * 0.7, h + d * 0.7)
+
+      // Fill front face
+      line(A, B, C, D, close: true, fill: rgb("#C8E6C920"), stroke: 1pt + green)
+
+      // Hidden edges
+      line(A, E, stroke: (dash: "dashed", paint: green, thickness: 0.6pt))
+      line(E, F, stroke: (dash: "dashed", paint: green, thickness: 0.6pt))
+      line(E, H, stroke: (dash: "dashed", paint: green, thickness: 0.6pt))
+
+      // Visible edges
+      line(A, B, stroke: 1pt + green)
+      line(B, C, stroke: 1pt + green)
+      line(C, D, stroke: 1pt + green)
+      line(D, A, stroke: 1pt + green)
+      line(B, F, stroke: 1pt + green)
+      line(C, G, stroke: 1pt + green)
+      line(D, H, stroke: 1pt + green)
+      line(F, G, stroke: 1pt + green)
+      line(G, H, stroke: 1pt + green)
+
+      // Labels with values
+      content((w / 2, -0.8), text(weight: "bold", size: 9pt)[长 $a$], anchor: "north")
+      content((-1.2, h / 2), text(weight: "bold", size: 9pt)[高 $c$], anchor: "east")
+      content((w + d * 0.35 + 0.8, d * 0.35 - 0.5), text(weight: "bold", size: 9pt)[宽 $b$], anchor: "north")
+
+      // Formula
+      content((w / 2 + d * 0.35, h + d * 0.7 + 1.2), text(size: 9pt)[$V = a times b times c$], anchor: "south")
+    }),
+    caption: [长方体体积公式：$V = "长" times "宽" times "高"$],
+  )
+
   - 常用换算：$1 "立方分米" = 1 "升" = 1000 "立方厘米" = 1000 "毫升"$。
 ]
 

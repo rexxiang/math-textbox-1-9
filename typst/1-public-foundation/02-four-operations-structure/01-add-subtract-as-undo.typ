@@ -76,6 +76,36 @@
 #blueprint[
   - *加法* 表示把数量合并起来，结果叫和。
   - *减法* 表示把一部分撤掉，或追问还差多少、原来有多少，结果叫差。
+  -
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let green = rgb("#4CAF50")
+      let gray = luma(200)
+
+      // Bar for a
+      rect((0, 2), (6, 4), fill: rgb("#BBDEFB"), stroke: 0.8pt + blue)
+      content((3, 3), text(weight: "bold", size: 9pt)[$a$])
+
+      // Bar for b
+      rect((6, 2), (10, 4), fill: rgb("#C8E6C9"), stroke: 0.8pt + green)
+      content((8, 3), text(weight: "bold", size: 9pt)[$b$])
+
+      // Brace for c = a + b
+      line((0, 4.5), (10, 4.5), stroke: 0.8pt + luma(100))
+      line((0, 4.3), (0, 4.7), stroke: 0.8pt + luma(100))
+      line((10, 4.3), (10, 4.7), stroke: 0.8pt + luma(100))
+      content((5, 5.3), text(weight: "bold", size: 9pt)[$c = a + b$], anchor: "south")
+
+      // Labels below
+      content((3, 1.2), text(size: 8pt, fill: blue)[已知], anchor: "north")
+      content((8, 1.2), text(size: 8pt, fill: green)[又来了], anchor: "north")
+    }),
+    caption: [线段图：$a + b = c$，减法就是从 $c$ 里找回 $a$ 或 $b$],
+  )
+
   - 加法与减法是*互逆运算*：若 $a + b = c$，则 $c - b = a$，也有 $c - a = b$。
 ]
 

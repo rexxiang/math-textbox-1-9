@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 小数与互化：位值继续向右长 <tool:pf05-decimals-conversion>
 
@@ -32,6 +33,43 @@
   - $0.37 = 37/100$
 
   小数和分数只是同一个量的两种写法。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let orange = rgb("#FF9800")
+
+      // Number line 0 to 1
+      line((-1, 0), (17, 0), stroke: 1.2pt + luma(80), mark: (end: ">"))
+
+      // Major ticks
+      for (x, lbl) in ((0, $0$), (15, $1$)) {
+        line((x, -0.6), (x, 0.6), stroke: 1pt + luma(60))
+        content((x, -1.6), text(weight: "bold", size: 10pt, lbl), anchor: "north")
+      }
+
+      // Ten equal parts
+      for i in range(1, 10) {
+        let x = i * 1.5
+        line((x, -0.3), (x, 0.3), stroke: 0.5pt + luma(150))
+      }
+
+      // Mark 0.3
+      let px3 = 3 * 1.5
+      circle((px3, 0), radius: 0.3, fill: blue, stroke: 0.8pt + blue)
+      content((px3, 1.2), text(fill: blue, weight: "bold", size: 9pt)[$0.3 = 3 / 10$], anchor: "south")
+
+      // Mark 0.37 (between 0.3 and 0.4)
+      let px37 = 3.7 * 1.5
+      circle((px37, 0), radius: 0.3, fill: orange, stroke: 0.8pt + orange)
+      content((px37, -1.8), text(fill: orange, weight: "bold", size: 9pt)[$0.37$], anchor: "north")
+    }),
+    caption: [数轴上的小数：0.3 和 0.37 的位置],
+  )
+
+
 ]
 
 #side-hack[
@@ -49,6 +87,30 @@
 #blueprint[
   - 小数是十进位值系统向右延伸后的写法。
   - 小数 $arrow.r$ 分数：看它表示几个十分之一、百分之一、千分之一。
+  -
+  #figure(
+    cetz.canvas(length: 0.38cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let red = rgb("#F44336")
+
+      // Conversion arrows: 0.37 = 37/100
+      // Left: decimal form
+      rect((0, 0), (6, 3), fill: rgb("#E3F2FD"), stroke: 0.8pt + blue, radius: 3pt)
+      content((3, 1.5), text(weight: "bold", size: 11pt)[$0.37$])
+
+      // Arrow
+      line((7, 1.5), (11, 1.5), stroke: 1.5pt + luma(120), mark: (end: ">"))
+      content((9, 2.5), text(size: 8pt)[互化], anchor: "south")
+
+      // Right: fraction form
+      rect((12, 0), (18, 3), fill: rgb("#FFF3E0"), stroke: 0.8pt + red, radius: 3pt)
+      content((15, 1.5), text(weight: "bold", size: 11pt)[$37 / 100$])
+    }),
+    caption: [小数与分数互化：$0.37 = 37 / 100$],
+  )
+
   - 分数 $arrow.r$ 小数：当分母能写成 10、100、1000 的关系时，可以自然改写成小数；也可以直接做除法。
 ]
 

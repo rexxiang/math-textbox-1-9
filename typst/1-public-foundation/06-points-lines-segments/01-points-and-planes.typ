@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 点与平面：两个没有“端”的几何原名 <tool:pf06-points-and-planes>
 
@@ -33,6 +34,47 @@
   - 同一个平面上可以躺下无限多个点；
   - 但一个点本身没有长宽厚，所以谈“点多大”是没有意义的。
 
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let gray = luma(180)
+
+      // Parallelogram representing a plane
+      let p1 = (0, 0)
+      let p2 = (14, 0)
+      let p3 = (16, 4)
+      let p4 = (2, 4)
+      line(p1, p2, stroke: 0.8pt + gray)
+      line(p2, p3, stroke: 0.8pt + gray)
+      line(p3, p4, stroke: 0.8pt + gray)
+      line(p4, p1, stroke: 0.8pt + gray)
+
+      // Fill with light color
+      line(p1, p2, p3, p4, close: true, fill: rgb("#E3F2FD40"), stroke: none)
+
+      // Label plane
+      content((15, 0.5), text(fill: gray, style: "italic", size: 9pt)[$alpha$], anchor: "west")
+
+      // Points on the plane
+      circle((5, 1.5), radius: 0.2, fill: blue, stroke: 0.8pt + blue)
+      content((5, 2.3), text(fill: blue, weight: "bold", size: 9pt)[A], anchor: "south")
+
+      circle((9, 2), radius: 0.2, fill: blue, stroke: 0.8pt + blue)
+      content((9, 2.8), text(fill: blue, weight: "bold", size: 9pt)[B], anchor: "south")
+
+      circle((7, 1), radius: 0.2, fill: blue, stroke: 0.8pt + blue)
+      content((7, 0.2), text(fill: blue, weight: "bold", size: 9pt)[C], anchor: "north")
+
+      // A point NOT on the plane
+      circle((11, 5.5), radius: 0.2, fill: rgb("#F44336"), stroke: 0.8pt + rgb("#F44336"))
+      content((11, 6.3), text(fill: rgb("#F44336"), weight: "bold", size: 9pt)[D（不在平面上）], anchor: "south")
+    }),
+    caption: [平面 $alpha$ 上的三个点 A、B、C，以及不在平面上的点 D],
+  )
+
   换句话说，点和平面是一对“没有端”的原名：一个收缩到极小、一个摊开到无穷大。
 ]
 
@@ -51,6 +93,29 @@
 #blueprint[
   - *点*：一个几何原名，表示位置，没有大小，不谈长度、面积、体积。
   - *平面*：一个几何原名，没有厚度，向四周无限延伸，不由纸或桌面的边界封住。
+  -
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let orange = rgb("#FF9800")
+
+      // Point illustration
+      rect((0, 0), (7, 5), fill: rgb("#E3F2FD"), stroke: 0.8pt + blue, radius: 3pt)
+      content((3.5, 4), text(weight: "bold", size: 9pt, fill: blue)[点], anchor: "center")
+      content((3.5, 2.5), text(size: 7pt)[只有位置], anchor: "center")
+      content((3.5, 1.2), text(size: 7pt)[没有大小], anchor: "center")
+
+      // Plane illustration
+      rect((9, 0), (18, 5), fill: rgb("#FFF3E0"), stroke: 0.8pt + orange, radius: 3pt)
+      content((13.5, 4), text(weight: "bold", size: 9pt, fill: orange)[平面], anchor: "center")
+      content((13.5, 2.5), text(size: 7pt)[一整层], anchor: "center")
+      content((13.5, 1.2), text(size: 7pt)[没有厚度，向四周延伸], anchor: "center")
+    }),
+    caption: [点与平面：两个最基本的几何原名],
+  )
+
   - *点与平面的关系*：一个点可以*在平面上*，也可以*不在平面上*；这是本书里最常用的一种“里/外”关系。
 ]
 

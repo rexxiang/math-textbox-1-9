@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 计数与数量感 <tool:pf01-place-counting>
 
@@ -25,6 +26,25 @@
 
   这样，数字不再只是声音，而成了“数量记录”。
 
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let green = rgb("#4CAF50")
+
+      for i in range(5) {
+        let x = i * 3.5
+        circle((x, 2), radius: 0.9, fill: rgb("#C8E6C9"), stroke: 1.2pt + green)
+        line((x, 2.9), (x + 0.2, 3.6), stroke: 1pt + rgb("#795548"))
+        line((x, 0.8), (x, 0.2), stroke: 0.8pt + luma(120), mark: (end: ">"))
+        content((x, -0.5), text(weight: "bold", size: 10pt, str(i + 1)), anchor: "north")
+      }
+
+      content((7, -2.2), text(size: 8pt, fill: luma(100))[一个苹果 ↔ 一个数名], anchor: "north")
+    }),
+    caption: [一一对应：每个苹果恰好对应一个数名],
+  )
+
   再想一个特别的情况：篮子是空的。我们仍然需要一个数来记录“一个也没有”，这个数就是 0。
 ]
 
@@ -40,6 +60,26 @@
   - *计数* 是把数名和对象做一一对应，目的是追踪“有多少个”。
   - *数量* 指对象的多少；计数完成时，最后一个数名表示总数量。
   - *0* 表示“一个也没有”，它让“没有”也能被准确记录。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+
+      line((-1, 0), (17, 0), stroke: 1.2pt + luma(80), mark: (end: ">"))
+
+      for i in range(6) {
+        let x = i * 3
+        line((x, -0.5), (x, 0.5), stroke: 1pt + luma(60))
+        content((x, -1.4), text(weight: "bold", size: 10pt, str(i)), anchor: "north")
+      }
+
+      circle((0, 0), radius: 0.35, fill: rgb("#FFF9C4"), stroke: 1pt + rgb("#FBC02D"))
+      content((0, 1.5), text(size: 7pt, fill: rgb("#F57F17"))[空篮子 = 0], anchor: "south")
+    }),
+    caption: [数轴上的 0 到 5：0 表示“一个也没有”],
+  )
 ]
 
 #pitfall[

@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 乘法与除法：相同结构的打包与拆分 <tool:pf02-mul-div-structure>
 
@@ -18,6 +19,33 @@
 
 #discovery[
   $6 + 6 + 6 + 6 + 6$ 表示 5 个 6。
+
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let light = rgb("#E3F2FD")
+
+      // 5 rows × 6 columns grid (area model)
+      for row in range(5) {
+        for col in range(6) {
+          let x = col * 1.8
+          let y = row * 1.8
+          rect((x, y), (x + 1.6, y + 1.6), fill: light, stroke: 0.5pt + blue)
+        }
+      }
+
+      // Dimension labels
+      content((5.4, -0.8), text(weight: "bold", size: 9pt)[6 把], anchor: "north")
+      content((-1.2, 4.5), text(weight: "bold", size: 9pt)[5 排], anchor: "east")
+
+      // Result
+      content((5.4, 10), text(weight: "bold", size: 10pt)[$6 times 5 = 30$], anchor: "south")
+    }),
+    caption: [面积模型：5 排 × 6 把 = 30 把椅子],
+  )
 
   当同样的小组反复出现时，我们把它写成 $6 times 5 = 30$。这不是换了一道题，而是把重复结构打包了。
 
@@ -44,6 +72,32 @@
 #blueprint[
   - *乘法* 用来表示“若干个相同小组”的总量。
   - *除法* 用来把总量按相同结构拆开，可以是“平均每组多少”，也可以是“能分成几组”。
+  -
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let green = rgb("#4CAF50")
+      let orange = rgb("#FF9800")
+
+      // Total bar
+      rect((0, 3), (15, 5), fill: rgb("#FFF3E0"), stroke: 1pt + orange)
+      content((7.5, 4), text(weight: "bold", size: 10pt)[30])
+
+      // Split into 5 equal groups
+      for i in range(5) {
+        let x = i * 3
+        rect((x, 0), (x + 2.8, 2), fill: rgb("#C8E6C9"), stroke: 0.8pt + green)
+        content((x + 1.4, 1), text(weight: "bold", size: 9pt)[6])
+      }
+
+      // Arrow from total to groups
+      line((7.5, 2.8), (7.5, 2.2), stroke: 1pt + luma(120), mark: (end: ">"))
+      content((10, 2.5), text(size: 8pt, fill: luma(100))[$div 5$], anchor: "west")
+    }),
+    caption: [除法把 30 平均分成 5 组，每组 6],
+  )
+
   - 乘法与除法是互逆运算：若 $a times b = c$，则 $c div a = b$，也有 $c div b = a$。
 ]
 

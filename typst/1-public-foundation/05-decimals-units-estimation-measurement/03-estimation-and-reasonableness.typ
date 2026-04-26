@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 估算与合理性检查 <tool:pf05-estimation-reasonableness>
 
@@ -21,6 +22,41 @@
 
   - 抓整：$19.8 approx 20$，$30.4 approx 30$，所以和大约是 50
   - 抓熟悉基准：$198 times 6$ 接近 $200 times 6 = 1200$
+
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let green = rgb("#4CAF50")
+      let orange = rgb("#FF9800")
+
+      // Number line
+      line((-1, 0), (17, 0), stroke: 1.2pt + luma(80), mark: (end: ">"))
+
+      // Major ticks
+      for (x, lbl) in ((0, [0]), (5, [10]), (10, [20]), (15, [30])) {
+        line((x, -0.5), (x, 0.5), stroke: 1pt + luma(60))
+        content((x, -1.4), text(size: 9pt, lbl), anchor: "north")
+      }
+
+      // Mark 19.8 ≈ 20
+      let px1 = 9.9
+      circle((px1, 0), radius: 0.3, fill: orange, stroke: 0.8pt + orange)
+      content((px1, 1.5), text(fill: orange, size: 8pt)[19.8], anchor: "south")
+      line((px1, 0.5), (10, 0.5), stroke: (dash: "dashed", paint: green, thickness: 0.8pt), mark: (end: ">"))
+      content((10, 2), text(fill: green, size: 7pt)[$approx 20$], anchor: "south")
+
+      // Mark 30.4 ≈ 30
+      let px2 = 15.2
+      circle((px2, 0), radius: 0.3, fill: orange, stroke: 0.8pt + orange)
+      content((px2, -2), text(fill: orange, size: 8pt)[30.4], anchor: "north")
+      line((px2, -0.5), (15, -0.5), stroke: (dash: "dashed", paint: green, thickness: 0.8pt), mark: (end: ">"))
+      content((15, -2.5), text(fill: green, size: 7pt)[$approx 30$], anchor: "north")
+    }),
+    caption: [抓整估算：19.8 ≈ 20，30.4 ≈ 30，和大约是 50],
+  )
 
   估算后的结果不用完全一样，但应该靠近精确答案。
 
@@ -47,6 +83,34 @@
   - *估算* 是用接近的整值或熟悉基准，快速判断结果大约落在哪个范围。
   - *合理性检查* 常看三件事：单位对不对、数量级对不对、结果方向对不对。
   - 估算不是代替精算，而是给精算提供前后两道护栏。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let red = rgb("#F44336")
+      let green = rgb("#4CAF50")
+      let blue = rgb("#2196F3")
+
+      // Three check boxes
+      let checks = (
+        (0, [单位对不对？], [✓]),
+        (7, [数量级对不对？], [✓]),
+        (14, [方向对不对？], [✓]),
+      )
+
+      for (x, label, mark) in checks {
+        rect((x, 0), (x + 6, 3), fill: rgb("#E8F5E9"), stroke: 0.8pt + green, radius: 3pt)
+        content((x + 3, 2), text(weight: "bold", size: 8pt, label))
+        content((x + 3, 0.8), text(fill: green, size: 12pt, mark))
+      }
+
+      // Title
+      content((10, 4), text(weight: "bold", size: 9pt)[合理性三步检查], anchor: "south")
+    }),
+    caption: [合理性检查三步：单位、数量级、方向],
+  )
+
 ]
 
 #pitfall[

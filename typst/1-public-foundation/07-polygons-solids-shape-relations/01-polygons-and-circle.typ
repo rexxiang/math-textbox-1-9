@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 多边形与圆：用线段围起来，用曲线绕起来 <tool:pf06-polygons-and-circle>
 
@@ -25,7 +26,40 @@
 
   但如果手里的“围”不是直的线段，而是一条曲线，条件就不同了。最特别的一种：*到中心距离处处相等*的那条封闭曲线，就是*圆*。
 
-  所以“多边形”和“圆”是一对不同的封闭图形：
+  所以
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let green = rgb("#4CAF50")
+      let orange = rgb("#FF9800")
+      let red = rgb("#F44336")
+
+      // Triangle
+      let tri = ((0, 0), (3, 0), (1.5, 2.6))
+      line(..tri, close: true, fill: rgb("#BBDEFB"), stroke: 1pt + blue)
+      content((1.5, -1), text(size: 7pt)[三角形], anchor: "north")
+
+      // Square
+      let sq-x = 5
+      rect((sq-x, 0), (sq-x + 3, 3), fill: rgb("#C8E6C9"), stroke: 1pt + green)
+      content((sq-x + 1.5, -1), text(size: 7pt)[正方形], anchor: "north")
+
+      // Pentagon
+      let pent-pts = ((12.0, -0.2), (13.62, 0.97), (13.0, 2.88), (11.0, 2.88), (10.38, 0.97))
+      line(..pent-pts, close: true, fill: rgb("#FFF3E0"), stroke: 1pt + orange)
+      content((12, -1), text(size: 7pt)[五边形], anchor: "north")
+
+      // Hexagon
+      let hex-pts = ((18.7, 1.5), (17.85, 2.97), (16.15, 2.97), (15.3, 1.5), (16.15, 0.03), (17.85, 0.03))
+      line(..hex-pts, close: true, fill: rgb("#FFCDD2"), stroke: 1pt + red)
+      content((17, -1), text(size: 7pt)[六边形], anchor: "north")
+    }),
+    caption: [常见多边形：边数越多，形状越接近圆],
+  )
+
+  “多边形”和“圆”是一对不同的封闭图形：
 
   - 多边形：用*若干条线段*首尾相连；
   - 圆：用*一条曲线*绕起，且到中心距离处处相等。
@@ -48,6 +82,35 @@
     - 按边数命名：3 条 → 三角形，4 条 → 四边形，…，$n$ 条 → $n$ 边形。
     - 每个首尾相接处是一个*顶点*；两个顶点之间的那一段线段是一条*边*。
   - *圆*：到同一点（圆心）距离处处相等的点组成的封闭曲线。它围住的那块平面区域，也常叫做圆面。
+  -
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let red = rgb("#F44336")
+
+      // Circle
+      let cx = 6
+      let cy = 5
+      let r = 4
+      circle((cx, cy), radius: r, fill: rgb("#FFCDD220"), stroke: 1.5pt + red)
+
+      // Center point
+      circle((cx, cy), radius: 0.15, fill: red, stroke: 0.8pt + red)
+      content((cx + 0.5, cy + 0.5), text(fill: red, weight: "bold", size: 8pt)[O], anchor: "south-west")
+
+      // Radius line
+      let rx = cx + r * 0.866
+      let ry = cy + r * 0.5
+      line((cx, cy), (rx, ry), stroke: 1.2pt + red)
+      content(((cx + rx) / 2 + 0.3, (cy + ry) / 2 + 0.3), text(fill: red, size: 8pt)[$r$], anchor: "south-west")
+
+      // Label
+      content((cx, cy - r - 1.2), text(size: 8pt)[到圆心距离处处相等], anchor: "north")
+    }),
+    caption: [圆：所有到圆心 O 距离等于 $r$ 的点组成的曲线],
+  )
+
   - 多边形和圆都是*封闭平面图形*，但前者的边界由线段拼成，后者的边界是一条光滑曲线。
 ]
 

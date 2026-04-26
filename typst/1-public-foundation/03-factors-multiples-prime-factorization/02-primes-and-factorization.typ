@@ -100,6 +100,48 @@
   - *质数*：大于 1，且正因数只有 1 和自身两个。
   - *合数*：大于 1，且除了 1 和自身以外还有别的正因数。
   - *1 既不是质数也不是合数*。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let prime-fill = rgb("#C8E6C9")
+      let prime-stroke = rgb("#2E7D32")
+      let comp-fill = rgb("#FFCDD2")
+      let comp-stroke = rgb("#C62828")
+      let neither-fill = rgb("#E0E0E0")
+
+      // Number grid 1-20
+      for i in range(20) {
+        let row = calc.quo(i, 10)
+        let col = calc.rem(i, 10)
+        let n = i + 1
+        let x = col * 2.5
+        let y = (1 - row) * 2.5
+
+        let primes = (2, 3, 5, 7, 11, 13, 17, 19)
+        let is-prime = primes.contains(n)
+        let is-one = n == 1
+
+        let fill-c = if is-one { neither-fill } else if is-prime { prime-fill } else { comp-fill }
+        let stroke-c = if is-one { luma(120) } else if is-prime { prime-stroke } else { comp-stroke }
+
+        rect((x, y), (x + 2.2, y + 2.2), fill: fill-c, stroke: 0.8pt + stroke-c, radius: 2pt)
+        content((x + 1.1, y + 1.1), text(weight: "bold", size: 8pt, str(n)))
+      }
+
+      // Legend
+      let ly = -1.5
+      rect((0, ly), (1.2, ly + 1), fill: prime-fill, stroke: 0.6pt + prime-stroke, radius: 2pt)
+      content((1.6, ly + 0.5), text(size: 7pt)[\= 质数], anchor: "west")
+      rect((6, ly), (7.2, ly + 1), fill: comp-fill, stroke: 0.6pt + comp-stroke, radius: 2pt)
+      content((7.6, ly + 0.5), text(size: 7pt)[\= 合数], anchor: "west")
+      rect((13, ly), (14.2, ly + 1), fill: neither-fill, stroke: 0.6pt + luma(120), radius: 2pt)
+      content((14.6, ly + 0.5), text(size: 7pt)[\= 既不是质数也不是合数], anchor: "west")
+    }),
+    caption: [1 到 20 中的质数与合数一览],
+  )
+
   - *质因数分解*：把一个合数写成若干质数相乘的形式。
 ]
 

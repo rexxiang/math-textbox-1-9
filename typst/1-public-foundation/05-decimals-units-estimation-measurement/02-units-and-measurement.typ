@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 单位与测量：数值必须带尺子 <tool:pf05-units-measurement>
 
@@ -24,6 +25,34 @@
 
   数值变了，是因为尺子变了；量本身没有变。
 
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let green = rgb("#4CAF50")
+
+      // A segment measured in meters
+      line((0, 3), (12, 3), stroke: 2pt + blue)
+      circle((0, 3), radius: 0.2, fill: blue, stroke: 0.8pt + blue)
+      circle((12, 3), radius: 0.2, fill: blue, stroke: 0.8pt + blue)
+      content((6, 4), text(fill: blue, weight: "bold", size: 10pt)[1.2 米], anchor: "south")
+
+      // Same segment measured in centimeters
+      line((0, 0), (12, 0), stroke: 2pt + green)
+      circle((0, 0), radius: 0.2, fill: green, stroke: 0.8pt + green)
+      circle((12, 0), radius: 0.2, fill: green, stroke: 0.8pt + green)
+      content((6, -1), text(fill: green, weight: "bold", size: 10pt)[120 厘米], anchor: "north")
+
+      // Equals sign
+      content((14, 1.5), $=$, anchor: "center")
+      content((17, 1.5), text(size: 8pt)[同一段], anchor: "center")
+    }),
+    caption: [同一段长度：用米量得 1.2，用厘米量得 120],
+  )
+
+
+
   所以换单位时要守住一件事：*同一个量不变，只是单位换了。*
 ]
 
@@ -42,6 +71,36 @@
 #blueprint[
   - *测量* 是用某个单位去数一个量里有多少个这样的单位。
   - 测量结果必须写成“数值 + 单位”。
+  -
+  #figure(
+    cetz.canvas(length: 0.38cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+
+      // Unit conversion staircase
+      let units = ([千米], [米], [分米], [厘米], [毫米])
+      let multipliers = ([$times 1000$], [$times 10$], [$times 10$], [$times 10$])
+
+      for (i, u) in units.enumerate() {
+        let x = i * 5
+        let y = (4 - i) * 2
+        rect((x, y), (x + 4, y + 2), fill: rgb("#E3F2FD"), stroke: 0.8pt + blue, radius: 2pt)
+        content((x + 2, y + 1), text(weight: "bold", size: 8pt, u))
+
+        if i < 4 {
+          // Arrow to next step
+          let nx = (i + 1) * 5
+          let ny = (3 - i) * 2 + 1
+          line((x + 4.2, y + 0.5), (nx - 0.2, ny + 0.5), stroke: 0.8pt + luma(120), mark: (end: ">"))
+          content(((x + 4.2 + nx - 0.2) / 2, (y + 0.5 + ny + 0.5) / 2 + 0.8),
+                  text(size: 6pt, fill: luma(100), multipliers.at(i)), anchor: "south")
+        }
+      }
+    }),
+    caption: [长度单位阶梯：从千米到毫米，每步乘以 10（或 1000）],
+  )
+
   - *换单位* 时，量不变，只是单位变化；比较或相加前，要先统一单位。
 ]
 

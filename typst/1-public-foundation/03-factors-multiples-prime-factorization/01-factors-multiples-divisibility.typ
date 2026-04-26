@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 因数、倍数与整除线索 <tool:pf03-factors-multiples>
 
@@ -20,6 +21,39 @@
   $ 24 = 1 times 24 = 2 times 12 = 3 times 8 = 4 times 6 $
 
   这说明 1、2、3、4、6、8、12、24 都能整齐分进 24，它们就是 24 的因数。
+
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let light = rgb("#E3F2FD")
+
+      // Show factor pairs of 24 as rectangular arrays
+      let pairs = ((1, 24, 0), (2, 12, 5), (3, 8, 9), (4, 6, 12.5))
+
+      for (a, b, xoff) in pairs {
+        // Draw small rectangles as array a × b (scaled)
+        let w = calc.min(b, 12) * 0.35
+        let h = a * 0.9
+        rect((xoff, 0), (xoff + w, h), fill: light, stroke: 0.8pt + blue)
+
+        // Grid lines
+        for i in range(1, calc.min(b, 12)) {
+          line((xoff + i * 0.35, 0), (xoff + i * 0.35, h), stroke: 0.3pt + luma(180))
+        }
+        for j in range(1, a) {
+          line((xoff, j * 0.9), (xoff + w, j * 0.9), stroke: 0.3pt + luma(180))
+        }
+
+        content((xoff + w / 2, -0.8), text(size: 8pt, weight: "bold")[$#a times #b$], anchor: "north")
+      }
+
+      content((8, 5), text(size: 9pt)[都等于 24], anchor: "south")
+    }),
+    caption: [24 的因数对：$1 times 24$、$2 times 12$、$3 times 8$、$4 times 6$],
+  )
 
   反过来看，24 是这些数的整倍结果，所以 24 是它们的倍数。
 
@@ -45,6 +79,33 @@
 #blueprint[
   - 若 $a = b times c$，则 b、c 是 a 的*因数*，a 是 b、c 的*倍数*。
   - “能整齐分开”就是在看能否整除。
+  -
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let red = rgb("#F44336")
+
+      // Number line showing multiples of 6
+      line((-1, 0), (22, 0), stroke: 1.2pt + luma(80), mark: (end: ">"))
+
+      for i in range(6) {
+        let x = i * 4
+        line((x, -0.5), (x, 0.5), stroke: 1pt + luma(60))
+        content((x, -1.4), text(weight: "bold", size: 9pt, str(i * 6)), anchor: "north")
+        if i > 0 {
+          // Arc showing +6
+          bezier((x - 4, 0.4), (x, 0.4), (x - 2, 2.2),
+                 stroke: 1pt + blue, mark: (end: ">"))
+        }
+      }
+
+      content((10, 3), text(fill: blue, size: 8pt)[每次 +6], anchor: "south")
+    }),
+    caption: [6 的倍数在数轴上：0, 6, 12, 18, 24, 30……等间隔排列],
+  )
+
   - 常用整除线索：
     - 2：看末位是否为偶数
     - 5：看末位是否为 0 或 5

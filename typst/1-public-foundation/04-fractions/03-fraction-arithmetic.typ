@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 分数运算：在共同单位上加减，在结构里乘除 <tool:pf04-fraction-arithmetic>
 
@@ -25,6 +26,39 @@
 
   于是总和是 $11/12$。
 
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let red = rgb("#F44336")
+      let green = rgb("#4CAF50")
+
+      // Bar divided into 12 equal parts
+      let w = 18
+      let pw = w / 12
+
+      for i in range(12) {
+        let x = i * pw
+        let fill-c = if i < 3 { rgb("#BBDEFB") } else if i < 11 { rgb("#FFCDD2") } else { white }
+        rect((x, 0), (x + pw - 0.1, 2), fill: fill-c, stroke: 0.5pt + luma(150))
+      }
+
+      // Labels
+      content((1.5 * pw, -0.8), text(fill: blue, size: 8pt)[$3 / 12 = 1 / 4$], anchor: "north")
+      content((7 * pw, -0.8), text(fill: red, size: 8pt)[$8 / 12 = 2 / 3$], anchor: "north")
+
+      // Brace for total
+      line((0, 2.5), (11 * pw - 0.1, 2.5), stroke: 0.8pt + green)
+      line((0, 2.3), (0, 2.7), stroke: 0.8pt + green)
+      line((11 * pw - 0.1, 2.3), (11 * pw - 0.1, 2.7), stroke: 0.8pt + green)
+      content((5.5 * pw, 3.3), text(fill: green, weight: "bold", size: 9pt)[$11 / 12$], anchor: "south")
+    }),
+    caption: [通分后相加：$1 / 4 + 2 / 3 = 3 / 12 + 8 / 12 = 11 / 12$],
+  )
+
+
+
   再看乘法：$2/3 times 3/4$
 
   可以想成“取四分之三中的三分之二”，结果是把整体切成 12 份后取 6 份，所以是 $6/12 = 1/2$。
@@ -49,6 +83,52 @@
 
 #blueprint[
   - *分数加减法*：先通分成共同单位，再把分子相加减，分母保持共同单位不变。
+  -
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let orange = rgb("#FF9800")
+
+      // Area model for 2/3 × 3/4
+      let w = 12
+      let h = 9
+
+      // Outer rectangle
+      rect((0, 0), (w, h), stroke: 1pt + luma(100))
+
+      // Vertical lines: 4 equal parts (for 3/4)
+      for i in range(1, 4) {
+        line((i * w / 4, 0), (i * w / 4, h), stroke: 0.6pt + luma(150))
+      }
+
+      // Horizontal lines: 3 equal parts (for 2/3)
+      for i in range(1, 3) {
+        line((0, i * h / 3), (w, i * h / 3), stroke: 0.6pt + luma(150))
+      }
+
+      // Shade 3/4 region (first 3 columns) lightly
+      rect((0, 0), (3 * w / 4, h), fill: rgb("#FFF3E040"), stroke: none)
+
+      // Shade 2/3 region (bottom 2 rows) with overlap
+      for col in range(3) {
+        for row in range(2) {
+          rect((col * w / 4, row * h / 3), ((col + 1) * w / 4, (row + 1) * h / 3),
+               fill: rgb("#BBDEFB80"), stroke: none)
+        }
+      }
+
+      // Labels
+      content((w / 2, -1), text(size: 8pt)[$3 / 4$（宽）], anchor: "north")
+      content((-1.5, h / 2), text(size: 8pt)[$2 / 3$（高）], anchor: "east")
+
+      // Result
+      content((w / 2, h + 1), text(weight: "bold", size: 9pt)[涂色重叠 = $6 / 12 = 1 / 2$], anchor: "south")
+    }),
+    caption: [面积模型：$2 / 3 times 3 / 4$ 就是整体 12 格中涂色的 6 格],
+  )
+
   - *分数乘法*：可以看成“几分之几的几分之几”，结果用分子乘分子、分母乘分母。
   - *分数除法*：可以看成“里面有几个”，也可以整理成“乘以除数的倒数”。
 ]

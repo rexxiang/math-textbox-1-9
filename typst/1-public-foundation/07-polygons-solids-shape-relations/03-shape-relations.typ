@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 图形之间的关系：里外、相邻、相交、平行 <tool:pf06-shape-relations>
 
@@ -20,6 +21,35 @@
   - 图形*外部*：围外面的其余部分
 
   所以任意一点，都可以问：“这个点在图形的里、边上，还是外？”
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let green = rgb("#4CAF50")
+      let red = rgb("#F44336")
+
+      // A pentagon
+      let pts = ((8.0, 0.0), (12.76, 3.45), (10.94, 9.05), (5.06, 9.05), (3.24, 3.45))
+      line(..pts, close: true, fill: rgb("#E3F2FD40"), stroke: 1.5pt + blue)
+
+      // Interior point
+      circle((8, 5), radius: 0.25, fill: green, stroke: 1pt + green)
+      content((8, 5.8), text(fill: green, weight: "bold", size: 8pt)[内部], anchor: "south")
+
+      // Boundary point
+      circle((10.38, 1.73), radius: 0.25, fill: blue, stroke: 1pt + blue)
+      content((11.38, 1.73), text(fill: blue, weight: "bold", size: 8pt)[边界], anchor: "west")
+
+      // Exterior point
+      circle((14, 8), radius: 0.25, fill: red, stroke: 1pt + red)
+      content((14, 8.8), text(fill: red, weight: "bold", size: 8pt)[外部], anchor: "south")
+    }),
+    caption: [封闭图形把平面分成三部分：内部、边界、外部],
+  )
+
+
 
   接着看两个图形：
 
@@ -48,6 +78,32 @@
     + *相邻*：共享顶点或边，但不互相穿透。
     + *相交*：边界有公共部分，图形互相穿进对方。
     + *平行*（直观）：两条线方向一致，始终保持并排、永远不相遇。
+  -
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let red = rgb("#F44336")
+
+      // Two parallel lines
+      line((0, 0), (16, 0), stroke: 1.5pt + blue)
+      line((0, 4), (16, 4), stroke: 1.5pt + red)
+
+      // Labels
+      content((17, 0), text(fill: blue, size: 9pt)[$l_1$], anchor: "west")
+      content((17, 4), text(fill: red, size: 9pt)[$l_2$], anchor: "west")
+
+      // Parallel arrows
+      content((8, 2), text(size: 8pt)[始终等距，永不相交], anchor: "center")
+
+      // Equal distance marks
+      line((3, 0.3), (3, 3.7), stroke: (dash: "dashed", paint: luma(150), thickness: 0.5pt))
+      line((10, 0.3), (10, 3.7), stroke: (dash: "dashed", paint: luma(150), thickness: 0.5pt))
+    }),
+    caption: [平行的两条直线：方向一致，永不相遇],
+  )
+
   - 这些关系在这一节只需*直观判断*，正式的“平行判定”会在第 8 章里补上。
 ]
 

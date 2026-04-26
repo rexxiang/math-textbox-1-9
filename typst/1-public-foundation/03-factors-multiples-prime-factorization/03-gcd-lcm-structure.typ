@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/diagram-packages.typ": cetz
 
 === 最大公因数与最小公倍数 <tool:pf03-gcd-lcm>
 
@@ -29,6 +30,44 @@
 
   想找最小公倍数，就要让两个数的所有质因数都被装进去，而且够用就好，于是得到 $2^3 times 3 = 24$。
 
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let red = rgb("#F44336")
+      let purple = rgb("#9C27B0")
+
+      // Two overlapping circles (Venn diagram)
+      let cx1 = 5
+      let cx2 = 11
+      let cy = 5
+      let r = 5
+
+      circle((cx1, cy), radius: r, fill: rgb("#BBDEFB40"), stroke: 1.5pt + blue)
+      circle((cx2, cy), radius: r, fill: rgb("#FFCDD240"), stroke: 1.5pt + red)
+
+      // Labels
+      content((cx1, 10.5), text(weight: "bold", fill: blue, size: 9pt)[24 的质因数], anchor: "south")
+      content((cx2, 10.5), text(weight: "bold", fill: red, size: 9pt)[36 的质因数], anchor: "south")
+
+      // Left only: extra 2
+      content((2.5, 5), text(weight: "bold", size: 10pt)[2], anchor: "center")
+
+      // Overlap: 2² × 3 = 12 (GCD)
+      content((8, 6), text(weight: "bold", fill: purple, size: 10pt)[$2^2$], anchor: "center")
+      content((8, 4), text(weight: "bold", fill: purple, size: 10pt)[$3$], anchor: "center")
+
+      // Right only: extra 3
+      content((13.5, 5), text(weight: "bold", size: 10pt)[3], anchor: "center")
+
+      // GCD label
+      content((8, 1), text(fill: purple, size: 8pt)[重叠 = GCD = $2^2 times 3 = 12$], anchor: "north")
+    }),
+    caption: [韦恩图：24 和 36 共有的质因数部分就是最大公因数],
+  )
+
   所以：
 
   - GCD 看“共同拥有的最多能拿多少”
@@ -53,6 +92,52 @@
   - 用质因数分解求时：
     - GCD 取共同质因数的较小次幂
     - LCM 取出现过的所有质因数的较大次幂
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let red = rgb("#F44336")
+      let green = rgb("#4CAF50")
+
+      // Number line 0 to 30
+      line((-1, 0), (22, 0), stroke: 1.2pt + luma(80), mark: (end: ">"))
+
+      // Ticks every 6 (multiples of 6)
+      for i in range(6) {
+        let x = i * 4
+        let val = i * 6
+        line((x, -0.5), (x, 0.5), stroke: 0.8pt + luma(60))
+        content((x, -1.5), text(size: 8pt, str(val)), anchor: "north")
+        if val > 0 {
+          circle((x, 0.8), radius: 0.25, fill: blue, stroke: 0.5pt + blue)
+        }
+      }
+
+      // Multiples of 8 marks above
+      for i in range(4) {
+        let val = i * 8
+        let x = val * 4 / 6
+        if val > 0 {
+          circle((x, 1.8), radius: 0.25, fill: red, stroke: 0.5pt + red)
+          if val != 24 {
+            content((x, 2.6), text(size: 7pt, fill: red, str(val)), anchor: "south")
+          }
+        }
+      }
+
+      // Highlight LCM = 24
+      circle((16, 0), radius: 0.4, fill: green, stroke: 1.2pt + green)
+      content((16, 3.2), text(fill: green, weight: "bold", size: 9pt)[LCM = 24], anchor: "south")
+
+      // Legend
+      content((1, 3.5), text(size: 7pt, fill: blue)[● 6 的倍数], anchor: "west")
+      content((8, 3.5), text(size: 7pt, fill: red)[● 8 的倍数], anchor: "west")
+    }),
+    caption: [数轴上 6 和 8 的倍数：第一次同时出现在 24],
+  )
+
 ]
 
 #pitfall[
