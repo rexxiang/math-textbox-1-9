@@ -50,4 +50,3 @@
 #include "01-population-vs-sample.typ"
 #include "02-sampling-bias.typ"
 #include "03-estimation.typ"
-#include "99-review.typ"

@@ -26,4 +26,3 @@
 
 #include "01-data-checklist.typ"
 #include "02-data-mixed-self-test.typ"
-#include "99-review.typ"

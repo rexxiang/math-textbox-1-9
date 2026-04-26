@@ -16,7 +16,7 @@
     [度量与位置：周长面积体积、角、坐标], [#secref("pf07-perimeter-area")、#secref("pf07-volume")、#secref("pf07-angles")、#secref("pf08-coordinate-intuition")],
   )
 
-  这四条主干任何一条没站稳，进入共通共通桥梁（比、数轴、坐标、字母、方程、平方根）都会处处卡顿。
+  这四条主干任何一条没站稳，进入共通桥梁（比、数轴、坐标、字母、方程、平方根）都会处处卡顿。
 ]
 
 #tryit[
