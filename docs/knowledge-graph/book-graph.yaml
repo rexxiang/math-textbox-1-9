@@ -95,11 +95,19 @@ chapters:
     difficulty: 2
     mainline: true
 
-  - id: ch:points-lines-planes-basic-shapes
-    title_zh: 点·线·面·基本图形
-    title_en: Points, Lines, Planes & Basic Shapes
+  - id: ch:points-lines-segments
+    title_zh: 点·线·线段
+    title_en: Points, Lines & Segments
     part: 1-public-foundation
-    path: typst/1-public-foundation/06-points-lines-planes-basic-shapes
+    path: typst/1-public-foundation/06-points-lines-segments
+    difficulty: 2
+    mainline: true
+
+  - id: ch:polygons-solids-shape-relations
+    title_zh: 多边形·立体·图形关系
+    title_en: Polygons, Solids & Shape Relations
+    part: 1-public-foundation
+    path: typst/1-public-foundation/07-polygons-solids-shape-relations
     difficulty: 2
     mainline: true
 
@@ -107,7 +115,7 @@ chapters:
     title_zh: 周长·面积·体积·角
     title_en: Perimeter, Area, Volume & Angle
     part: 1-public-foundation
-    path: typst/1-public-foundation/07-perimeter-area-volume-angle
+    path: typst/1-public-foundation/08-perimeter-area-volume-angle
     difficulty: 2
     mainline: true
 
@@ -115,7 +123,7 @@ chapters:
     title_zh: 平行·三角形·基础几何
     title_en: Parallel, Triangles & Basic Geometry
     part: 1-public-foundation
-    path: typst/1-public-foundation/08-parallel-triangles-basic-geometry
+    path: typst/1-public-foundation/09-parallel-triangles-basic-geometry
     difficulty: 2
     mainline: true
 
@@ -123,7 +131,7 @@ chapters:
     title_zh: 基础就绪检测
     title_en: Foundation Readiness Check
     part: 1-public-foundation
-    path: typst/1-public-foundation/09-foundation-readiness-check
+    path: typst/1-public-foundation/10-foundation-readiness-check
     difficulty: 3
     mainline: true
 
@@ -217,11 +225,19 @@ chapters:
     difficulty: 4
     mainline: true
 
-  - id: ch:quadratics-and-inequalities
-    title_zh: 二次方程与不等式
-    title_en: Quadratics & Inequalities
+  - id: ch:quadratic-equations
+    title_zh: 一元二次方程
+    title_en: Quadratic Equations
     part: 3a-algebra-symbols
-    path: typst/3a-algebra-symbols/05-quadratics-and-inequalities
+    path: typst/3a-algebra-symbols/05-quadratic-equations
+    difficulty: 5
+    mainline: true
+
+  - id: ch:linear-inequalities
+    title_zh: 一元一次不等式
+    title_en: Linear Inequalities
+    part: 3a-algebra-symbols
+    path: typst/3a-algebra-symbols/06-linear-inequalities
     difficulty: 5
     mainline: true
 
@@ -229,7 +245,7 @@ chapters:
     title_zh: 代数小结
     title_en: Algebra Summary
     part: 3a-algebra-symbols
-    path: typst/3a-algebra-symbols/06-algebra-summary
+    path: typst/3a-algebra-symbols/07-algebra-summary
     difficulty: 5
     mainline: true
 

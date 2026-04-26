@@ -37,7 +37,7 @@
 - `2-common-bridges/07-bridge-readiness-contracts/` 是独立的一章，含 4 个分支准备清单（代数/几何/函数/数据）。
 - 每个清单含三部分：前置工具表（带 secref）→ 最常见误判 → 哪里不会回哪里 → 可以继续前进的信号 → 诊断题。
 - 答案与跨四分支综合小试集中在 `99-review.typ` 中，形成完整的自评闭环。
-- 此外，Part 1 末尾 `09-foundation-readiness-check/` 也是一个 readiness check，形成两级检查站：公共基础 → 桥梁、桥梁 → 分支。
+- 此外，Part 1 末尾 `10-foundation-readiness-check/` 也是一个 readiness check，形成两级检查站：公共基础 → 桥梁、桥梁 → 分支。
 
 ---
 
@@ -79,7 +79,7 @@
 
 证据（已达成部分）：
 - `4-capstone/02-cross-domain-problem-solving-modeling/` 是正式章节，含多步建模、跨域混合题、完整答卷示范三个子节。
-- 每个分支有独立的 summary 章（`06-algebra-summary/`、`06-geometry-summary/` 等），含跨章综合题。
+- 每个分支有独立的 summary 章（`07-algebra-summary/`、`06-geometry-summary/` 等），含跨章综合题。
 - 自学循环（先试再读）将 problem-solving mindset 贯穿全书。
 
 证据（未达成部分）：
@@ -234,7 +234,7 @@ Singapore 的 Math@Work 层专门用真实数据和情境出题。建议：
 三大 benchmark 系统中，**没有一个**把教学结构压缩到如此清晰的六阶段模板。AoPS 有 why-first 但结构松散；Beast Academy 有 comic 叙事但无固定模板；Singapore 有分层练习但 discovery 较弱。本书的六阶段是全书 99 个节文件一以贯之的结构，是最大的差异化优势。
 
 ### 2. 双重 readiness check 机制
-公共基础末尾 `09-foundation-readiness-check` + 桥梁末尾 `07-bridge-readiness-contracts` 构成两级检查站。三大 benchmark 中只有 Beast Academy 有显式 prerequisite check，但没有做到两级串联。
+公共基础末尾 `10-foundation-readiness-check` + 桥梁末尾 `07-bridge-readiness-contracts` 构成两级检查站。三大 benchmark 中只有 Beast Academy 有显式 prerequisite check，但没有做到两级串联。
 
 ### 3. 系统化的"哪里不会回哪里"查漏地图
 每个 readiness contract 和分支 overview 都带 `忘了可以回到` + secref 定向补缺表。这比三大 benchmark 的 prerequisite 声明更精确——不是"你需要先学 X"，而是"你在 Y 题卡住时回到 Z 节"。

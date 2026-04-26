@@ -61,7 +61,7 @@ description: Content-authoring conventions for the 1-9 grade Chinese math self-s
 **不适用六阶段链的章节**（按各自目的展开，不得硬套链条造假危机）：
 
 - Part 0 导读的所有章节
-- 公共基础总检（`1-public-foundation/09-foundation-readiness-check/`）
+- 公共基础总检（`1-public-foundation/10-foundation-readiness-check/`）
 - 共通桥梁 readiness contract（`2-common-bridges/07-bridge-readiness-contracts/`）
 - 各分支总结章
 - Part IV 终章综合

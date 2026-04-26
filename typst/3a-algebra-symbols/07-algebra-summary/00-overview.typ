@@ -5,7 +5,7 @@
 #blueprint[
   *难度*：★★★★☆ \
   *核心问题*：从桥梁章里“字母代替数”开始，一路走到一元二次方程和不等式——这条代数学习流程到底长什么样？哪些工具是“同一件事的不同写法”？如果中途某处卡住，该回哪一章？ \
-  *需要先会*：#secref("cb04-letters-represent-numbers")、#secref("ch:polynomials-like-terms-operations")、#secref("ch:distributive-identities-factorization")、#secref("ch:rational-expressions-operations-extraneous-roots")、#secref("ch:linear-equations-systems-modeling")、#secref("ch:quadratics-and-inequalities")。 \
+  *需要先会*：#secref("cb04-letters-represent-numbers")、#secref("ch:polynomials-like-terms-operations")、#secref("ch:distributive-identities-factorization")、#secref("ch:rational-expressions-operations-extraneous-roots")、#secref("ch:linear-equations-systems-modeling")、#secref("ch:quadratic-equations")、#secref("ch:linear-inequalities")。 \
   *本章在全书的位置*：代数*总结*——它不发明新工具，而是把全支的工具串起来看清逻辑依赖。 \
   *忘了可以回到*：本章 §3 会给出“代数学完后最常见的误读”与对应补缺节。
 ]

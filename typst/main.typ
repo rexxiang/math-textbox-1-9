@@ -47,14 +47,16 @@
 #include "1-public-foundation/04-fractions/99-review.typ"
 #include "1-public-foundation/05-decimals-units-estimation-measurement/00-overview.typ"
 #include "1-public-foundation/05-decimals-units-estimation-measurement/99-review.typ"
-#include "1-public-foundation/06-points-lines-planes-basic-shapes/00-overview.typ"
-#include "1-public-foundation/06-points-lines-planes-basic-shapes/99-review.typ"
-#include "1-public-foundation/07-perimeter-area-volume-angle/00-overview.typ"
-#include "1-public-foundation/07-perimeter-area-volume-angle/99-review.typ"
-#include "1-public-foundation/08-parallel-triangles-basic-geometry/00-overview.typ"
-#include "1-public-foundation/08-parallel-triangles-basic-geometry/99-review.typ"
-#include "1-public-foundation/09-foundation-readiness-check/00-overview.typ"
-#include "1-public-foundation/09-foundation-readiness-check/99-review.typ"
+#include "1-public-foundation/06-points-lines-segments/00-overview.typ"
+#include "1-public-foundation/06-points-lines-segments/99-review.typ"
+#include "1-public-foundation/07-polygons-solids-shape-relations/00-overview.typ"
+#include "1-public-foundation/07-polygons-solids-shape-relations/99-review.typ"
+#include "1-public-foundation/08-perimeter-area-volume-angle/00-overview.typ"
+#include "1-public-foundation/08-perimeter-area-volume-angle/99-review.typ"
+#include "1-public-foundation/09-parallel-triangles-basic-geometry/00-overview.typ"
+#include "1-public-foundation/09-parallel-triangles-basic-geometry/99-review.typ"
+#include "1-public-foundation/10-foundation-readiness-check/00-overview.typ"
+#include "1-public-foundation/10-foundation-readiness-check/99-review.typ"
 
 // 2-common-bridges
 = 共通桥梁
@@ -85,10 +87,12 @@
 #include "3a-algebra-symbols/03-rational-expressions-operations-extraneous-roots/99-review.typ"
 #include "3a-algebra-symbols/04-linear-equations-systems-modeling/00-overview.typ"
 #include "3a-algebra-symbols/04-linear-equations-systems-modeling/99-review.typ"
-#include "3a-algebra-symbols/05-quadratics-and-inequalities/00-overview.typ"
-#include "3a-algebra-symbols/05-quadratics-and-inequalities/99-review.typ"
-#include "3a-algebra-symbols/06-algebra-summary/00-overview.typ"
-#include "3a-algebra-symbols/06-algebra-summary/99-review.typ"
+#include "3a-algebra-symbols/05-quadratic-equations/00-overview.typ"
+#include "3a-algebra-symbols/05-quadratic-equations/99-review.typ"
+#include "3a-algebra-symbols/06-linear-inequalities/00-overview.typ"
+#include "3a-algebra-symbols/06-linear-inequalities/99-review.typ"
+#include "3a-algebra-symbols/07-algebra-summary/00-overview.typ"
+#include "3a-algebra-symbols/07-algebra-summary/99-review.typ"
 
 // 3b-geometry-proof
 = 几何与证明
