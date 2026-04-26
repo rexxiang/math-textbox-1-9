@@ -14,7 +14,7 @@
 ]
 
 #history-note[
-  把*规则*画成*曲线*的做法最早由 Descartes（#secref("ge05-coordinate-transforms") 提到过）在 $17$ 世纪成型。正是这一步让“图像”成为和“公式”“表格”并列的第三种函数面孔——也是物理学家、工程师最常使用的一张面孔。
+  把*规则*画成*曲线*的做法最早由 Descartes（Descartes 在 17 世纪建立的坐标系——见 #secref("cb03-rectangular-system")）在 $17$ 世纪成型。正是这一步让“图像”成为和“公式”“表格”并列的第三种函数面孔——也是物理学家、工程师最常使用的一张面孔。
 ]
 
 #discovery[

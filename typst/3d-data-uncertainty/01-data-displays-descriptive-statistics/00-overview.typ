@@ -5,9 +5,9 @@
 #blueprint[
   *难度*：★★★☆☆ \
   *核心问题*：我们已经会处理很多“有规律”的数——运算、方程、函数。但现实里常常拿到一把*杂乱*的数字（一次考试 $50$ 人的分数、一年每天的气温、一班同学的身高 ……）。面对这样一把数，应该怎样*整理*、怎样*画*、怎样用*一两个数字*概括它？什么时候画图会帮助我们看见真相，什么时候反而会骗我们？ \
-  *需要先会*：#secref("cb01-ratio-basics")（比例 / 百分比作为图表语言）、#secref("cb01-percent")（扇形图用到百分比）、#secref("cb03-rectangular-system")（折线图的坐标）、#secref("cb04-relationship-templates")（两列数据的概念）、#secref("fn01-table-as-function-view")（一张表能代表什么关系）。 \
+  *需要先会*：#secref("cb01-ratio-basics")（比例 / 百分比作为图表语言）、#secref("cb01-percent")（扇形图用到百分比）、#secref("cb03-rectangular-system")（折线图的坐标）、#secref("cb04-relationship-templates")（两列数据的概念）、一张表能代表什么关系（本分支会自行介绍）。 \
   *本章在全书的位置*：数据分支*入口*。这里还不算“统计学”——只是把数据“摆整齐”、“挑一两个数字概括”，为后续的频率分布、方差、概率、抽样搭好语言地基。 \
-  *忘了可以回到*：如果百分比或坐标系生疏，回 #secref("cb01-percent")、#secref("cb03-rectangular-system")；如果不记得什么叫“一张表是函数”，回 #secref("fn01-table-as-function-view")。
+  *忘了可以回到*：如果百分比或坐标系生疏，回 #secref("cb01-percent")、#secref("cb03-rectangular-system")；如果不记得什么叫“一张表是函数”，本章 §1 会从头讲。
 ]
 
 #side-hack[

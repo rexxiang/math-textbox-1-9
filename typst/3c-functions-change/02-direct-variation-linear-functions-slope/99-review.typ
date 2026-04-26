@@ -60,7 +60,7 @@
   - #secref("cb01-ratio-basics") / #secref("cb01-proportion")：正比例“同 $k$”就是“同比”的函数化表达。
   - #secref("cb03-rectangular-system") / #secref("cb03-plotting-transforming")：描点、平移；一次函数 $=$ 正比例平移 $b$。
   - #secref("cb05-solving-linear")：求 $y = k x + b$ 的零点就是解方程 $k x + b = 0$。
-  - #secref("ge02-similarity-aa-ratio")：直线上任两点构成的直角三角形两两相似——这是斜率“选点无关”的逻辑源头。
+  - 斜率“选点无关”的直觉：直线上任两点构成的直角三角形形状相同（同样的“宽高比”），所以 $Delta y / Delta x$ 不随选点改变——在 #secref("cb03-plotting-transforming") 的坐标平面中可以直接验证。
   - #secref("fn03-formula-as-function-view")：定义域的合法性——一次函数定义域默认为 $RR$。
   - 下一章衔接：把*除法* $1 / x$ 与*平方* $x^2$ 搬进函数公式，得到反比例与二次函数；它们的图像不再是直线。
 ]
@@ -69,7 +69,7 @@
   *☞ 高中桥 / 继续往前*
 
   - 点斜式 $y - y_0 = m (x - x_0)$、两点式 $(y - y_1) / (y_2 - y_1) = (x - x_1) / (x_2 - x_1)$、一般式 $A x + B y + C = 0$：高中用这三种等价写法把“直线方程”系统化。
-  - 斜率与*倾斜角* $alpha$：$m = tan alpha$（$alpha$ 是直线与 $x$-轴正方向的夹角）。这把 $tan$（#secref("ge04-special-right-triangles")）和斜率接上。
+  - 斜率与*倾斜角* $alpha$：$m = tan alpha$（$alpha$ 是直线与 $x$-轴正方向的夹角）。$tan$ 是高中三角函数的内容；到那时斜率与角度会正式对接。
   - 两直线*平行*：同 $k$、不同 $b$；两直线*垂直*：$k_1 k_2 = -1$（高中给出证明）。
   - 线性回归：现实数据不会正好落在一条直线上，高中 / 大学引入“最小二乘法”选出“最贴合”的那条直线。
 ]

@@ -104,7 +104,7 @@
   - #secref("pf04-fraction-arithmetic")、#secref("cb01-percent")、#secref("cb01-ratio-basics")：统计运算几乎全程用分数 $\/$ 比例 $\/$ 百分比。
   - #secref("pf05-decimals-conversion")：频率、概率常用小数表达。
   - #secref("dt03-center-and-spread")：均值不仅是描述工具，也是推断工具（$bar x$ 是 $mu$ 的点估计）。
-  - 函数分支 #secref("fn01-table-as-function-view")：数据表也是函数表——$(x, y)$ 对应 “样本 $->$ 统计量”。
+  - 数据表也是一种“输入 $->$ 输出”的对应——$(x, y)$ 对应“样本 $->$ 统计量”。
   - 代数分支：方差公式 $s^2 = bar(x^2) - bar x^2$ 是代数恒等式化简的经典例。
   - 终章：统计、代数、几何、函数四分支并用解真实世界问题。
 ]

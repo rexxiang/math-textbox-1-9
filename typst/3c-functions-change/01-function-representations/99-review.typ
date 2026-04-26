@@ -14,7 +14,7 @@
     [表作面孔 #secref("fn01-table-as-function-view")], [查看是否“同一输入对应不同输出”——有则不是函数。输出列允许重复。],
     [图作面孔 #secref("fn02-graph-as-function-view")], [*垂线检验*：任一铅垂线与图最多相交一次 $<=>$ 是函数。圆不是函数，抛物线是函数。],
     [公式作面孔 #secref("fn03-formula-as-function-view")], [$y = f(x)$；独立变量 $x$、因变量 $y$；默认定义域是让公式合法的全部实数。],
-    [定义域常见限制], [分母 $!= 0$（#secref("al03-rational-expression-structure")）；根号下 $>= 0$（#secref("cb06-square-and-square-root")）；现实约束（正数、整数等）。],
+    [定义域常见限制], [分母 $!= 0$（从 #secref("ch:fractions") 你已知除以 $0$ 无意义——含 $x$ 的分式同理）；根号下 $>= 0$（#secref("cb06-square-and-square-root")）；现实约束（正数、整数等）。],
     [函数记号 $f(x)$], [$f$ 是函数名；$f(x)$ 是“$f$ 在 $x$ 处的输出”，不是乘法。$f(a + b) != f(a) + f(b)$ 一般不成立。],
     [三面孔互译], [表 → 图：描点；公式 → 表：代入；图 → 公式：读几个特征点（后续章节展开）。],
   )
@@ -57,7 +57,7 @@
   - 坐标点、四象限、描点：#secref("cb03-rectangular-system")、#secref("cb03-plotting-transforming")。函数图像就是“所有 $(x, f(x))$ 描出来”的那条曲线。
   - 字母代替数、代数式：#secref("cb04-letters-represent-numbers")、#secref("cb04-expressions-and-like-terms")。函数公式本质是一条*带独立变量*的代数式 $+$ 一份定义域。
   - 方程的等式性质：#secref("cb05-equality-properties")。求“$f(x) = 0$ 对应什么 $x$”时要把方程技术拿过来用。
-  - 分式的合法性：#secref("al03-rational-expression-structure")。分母不能为 $0$ 这条规则直接决定分式函数的定义域。
+  - 分式的合法性：从 #secref("ch:fractions") 你已经知道分母不能为 $0$——含字母的分式也一样，哪些 $x$ 让分母变 $0$ 就必须排除出定义域。
   - 根号合法性：#secref("cb06-square-and-square-root")。$sqrt$ 下面必须 $>= 0$，决定含根号函数的定义域。
   - 下一章衔接：把独立变量与因变量的关系写成*最简单的*一类公式 $y = k x$、$y = k x + b$，它们的图像是直线。
 ]
