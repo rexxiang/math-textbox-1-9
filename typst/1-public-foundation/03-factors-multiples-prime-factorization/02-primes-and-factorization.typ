@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 质数、合数与质因数分解 <tool:pf03-primes-factorization>
@@ -6,15 +6,11 @@
 #vocab[质数 prime number][合数 composite number][质因数分解 prime factorization]
 
 #crisis[
-  12 可以拆成 $3 times 4$，还能继续拆成 $3 times 2 times 2$。
+  这是一个反直觉的事实：所有比 1 大的整数，不管多大，都可以用一小撮"拆不动"的数乘出来——而且拆法本质上只有一种。
 
-  可 7 怎么拆，好像都只能写成 $1 times 7$。
+  拿 12 试试：$3 times 4$ → $3 times 2 times 2$，拆到底了。可 7 怎么拆都只能写成 $1 times 7$。
 
   *有没有一些数像基本砖块，已经拆不动；而另一些数其实是由这些砖块拼起来的？*
-]
-
-#history-note[
-  古人很早就发现，先找到“拆不动的基本数”，再研究其他数怎么由它们组成，整数世界会清楚得多。
 ]
 
 #discovery[
@@ -93,14 +89,88 @@
 
   + 17 是质数还是合数？21 呢？
   + 把 18 和 60 做质因数分解。
-  + 为什么 1 不该被放进质数队伍？
+]
+
+#history-note[
+  约公元前 300 年，欧几里得（Euclid）在《几何原本》第九卷命题 20 中证明了“素数有无穷多个”——这是数学史上最早也最优美的证明之一。稍后，埃拉托斯特尼（Eratosthenes，约公元前 276–194 年）发明了“筛法”：把 2 的倍数划掉、3 的倍数划掉……层层筛过后剩下的就是素数。这两个工具至今仍是认识素数的起点。
+]
+
+#side-hack[
+  *重演埃拉托斯特尼筛法*
+
+  拿一张纸，把 $2$ 到 $50$ 的整数写成表格。然后：
+
+  + 保留 $2$，划掉所有 $2$ 的倍数（$4, 6, 8, \ldots$）。
+  + 找下一个未被划掉的数 $3$，划掉所有 $3$ 的倍数（$6, 9, 12, \ldots$，已划的跳过）。
+  + 继续：下一个未被划掉的是 $5$，划掉 $5$ 的倍数……
+  + 你需要筛到哪里才能保证 $50$ 以内的质数全被找到？（提示：想想 $sqrt(50)$ 约等于多少。）
+
+  写出你找到的所有 $50$ 以内的质数，数一数共几个。
+
+  #answer-cut[
+    只需筛到 $sqrt(50) approx 7.07$，即筛完 $7$ 的倍数后，剩下未被划掉的都是质数。$50$ 以内共有 $15$ 个质数：$2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47$。原理：若 $n <= 50$ 是合数，其最小质因数 $p <= sqrt(n) <= sqrt(50) < 8$，所以用 $7$ 以内的质数筛完就够了。
+  ]
 ]
 
 #blueprint[
   - *质数*：大于 1，且正因数只有 1 和自身两个。
   - *合数*：大于 1，且除了 1 和自身以外还有别的正因数。
   - *1 既不是质数也不是合数*。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let prime-fill = rgb("#C8E6C9")
+      let prime-stroke = rgb("#2E7D32")
+      let comp-fill = rgb("#FFCDD2")
+      let comp-stroke = rgb("#C62828")
+      let neither-fill = rgb("#E0E0E0")
+
+      // Number grid 1-20
+      for i in range(20) {
+        let row = calc.quo(i, 10)
+        let col = calc.rem(i, 10)
+        let n = i + 1
+        let x = col * 2.5
+        let y = (1 - row) * 2.5
+
+        let primes = (2, 3, 5, 7, 11, 13, 17, 19)
+        let is-prime = primes.contains(n)
+        let is-one = n == 1
+
+        let fill-c = if is-one { neither-fill } else if is-prime { prime-fill } else { comp-fill }
+        let stroke-c = if is-one { luma(120) } else if is-prime { prime-stroke } else { comp-stroke }
+
+        rect((x, y), (x + 2.2, y + 2.2), fill: fill-c, stroke: 0.8pt + stroke-c, radius: 2pt)
+        content((x + 1.1, y + 1.1), text(weight: "bold", size: 8pt, str(n)))
+      }
+
+      // Legend
+      let ly = -1.5
+      rect((0, ly), (1.2, ly + 1), fill: prime-fill, stroke: 0.6pt + prime-stroke, radius: 2pt)
+      content((1.6, ly + 0.5), text(size: 7pt)[\= 质数], anchor: "west")
+      rect((6, ly), (7.2, ly + 1), fill: comp-fill, stroke: 0.6pt + comp-stroke, radius: 2pt)
+      content((7.6, ly + 0.5), text(size: 7pt)[\= 合数], anchor: "west")
+      rect((13, ly), (14.2, ly + 1), fill: neither-fill, stroke: 0.6pt + luma(120), radius: 2pt)
+      content((14.6, ly + 0.5), text(size: 7pt)[\= 既不是质数也不是合数], anchor: "west")
+    }),
+    caption: [1 到 20 中的质数与合数一览],
+  )
+
   - *质因数分解*：把一个合数写成若干质数相乘的形式。
+]
+
+#blueprint[
+  *算术基本定理（mini blueprint）*
+
+  每一个大于 $1$ 的整数，都可以写成若干质数相乘；不计因子的写法顺序，这种分解*只有一种*。例如 $12 = 2 times 2 times 3$；调换顺序写成 $3 times 2 times 2$ 也是同一种分解。
+
+  *换种说法*：质数就是整数的"砖块"，每个合数都对应一份独一无二的"成分表"。
+
+  *为什么"$1$ 不算质数"在这里至关重要*：若把 $1$ 也算质数，那 $6 = 2 times 3 = 1 times 2 times 3 = 1 times 1 times 2 times 3 = ...$ 写法将无穷多，"唯一"就破了。
+
+  *后面会用到*：求最大公因数与最小公倍数（#secref("pf03-gcd-lcm")）；分式约分（#secref("ch:rational-expressions-operations-extraneous-roots")）。
 ]
 
 #pitfall[
@@ -119,6 +189,8 @@
   + 在 $1, 2, 3, 4, 6, 9, 11, 15$ 中，哪些是质数，哪些是合数，哪些两者都不是？
   + 把 18 做质因数分解。
   + 把 60 做质因数分解。
+  + 判断对错并改正："9 是质数，因为它是奇数。"
+  + 从 20 到 30 之间，找出所有质数。
 
   *应用*
 
@@ -130,13 +202,15 @@
   + 为什么说质数像“整数的砖块”？请结合 12 和 30 的分解来解释。
   + 试想：如果把 1 也算作质数，会给质因数分解带来什么混乱？
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
-  + 质数：2、3、11；合数：4、6、9、15；两者都不是：1。
-  + $18 = 2 times 3^2$。
-  + $60 = 2^2 times 3 times 5$。
-  + 因为 $28 = 4 times 7$，除了 1 和 28 还有别的因数。
-  + 它是合数。
-  + 因为很多合数都能一直拆到质数，例如 $12 = 2 times 2 times 3$，$30 = 2 times 3 times 5$，质数是最终停下来的基本块。
-  + 会让一个数有无限多种“分解”，比如 $6 = 2 times 3 = 1 times 2 times 3 = 1 times 1 times 2 times 3$，就失去清晰的标准形式。
+  #answer-cut[
+  + 质数：2、3、11；合数：4、6、9、15；两者都不是：1（质数定义：恰好有两个正因数）。
+  + $18 = 2 times 3^2$（短除法：$18 div 2 = 9$，$9 = 3 times 3$）。
+  + $60 = 2^2 times 3 times 5$（短除法：$60 div 2 = 30$，$30 div 2 = 15$，$15 div 3 = 5$）。
+  + 错；9 是合数，因为 $9 = 3 times 3$，除了 1 和 9 还有因数 3。奇数不一定是质数（质数 ≠ 奇数）。
+  + 23、29。（逐一检验：21 = 3 × 7，22 = 2 × 11，24 = 2³ × 3，25 = 5²，26 = 2 × 13，27 = 3³，28 = 2² × 7 都是合数）
+  + 因为 $28 = 4 times 7 = 2^2 times 7$，除了 1 和 28 还有别的因数（合数定义）。
+  + 它是合数（因为它有因数 1、2、4、7、14、28，正因数不只两个）。
+  + 质数是拆到底的基本砖块。$12 = 2 times 2 times 3$，$30 = 2 times 3 times 5$，不同的合数都由少数几种质数组合而成。质因数分解揭示了整数的“成分表”（算术基本定理的初步认识）。
+  + 如果 1 也算质数，分解就不唯一了：$6 = 2 times 3 = 1 times 2 times 3 = 1 times 1 times 2 times 3 dots.h$，会失去清晰标准形式（唯一分解定理要求排除 1）。
+  ]
 ]

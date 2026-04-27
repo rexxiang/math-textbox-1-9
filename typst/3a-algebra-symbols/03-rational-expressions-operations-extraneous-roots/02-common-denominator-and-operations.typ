@@ -1,4 +1,5 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/diagram-packages.typ": cetz
 
 === 通分、分式加减与乘除 <tool:al03-common-denominator-operations>
 
@@ -25,6 +26,36 @@
   + 把每个分母先因式分解；
   + 列出所有出现过的不同因式，每个因式*取最高次幂*；
   + 把它们乘起来。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#1565C0")
+      let green = rgb("#2E7D32")
+      let orange = rgb("#E65100")
+      let gray = luma(160)
+
+      // Step 1
+      rect((0, 8), (16, 10.5), fill: rgb("#E3F2FD"), stroke: 1.2pt + blue, radius: 4pt)
+      content((8, 9.25), text(size: 8pt, weight: "bold", fill: blue)[① 各分母因式分解])
+
+      // Arrow 1→2
+      line((8, 8), (8, 7), stroke: 1.2pt + gray, mark: (end: ">", fill: gray))
+
+      // Step 2
+      rect((0, 4.5), (16, 7), fill: rgb("#E8F5E9"), stroke: 1.2pt + green, radius: 4pt)
+      content((8, 5.75), text(size: 8pt, weight: "bold", fill: green)[② 列出所有不同因式，取最高次幂])
+
+      // Arrow 2→3
+      line((8, 4.5), (8, 3.5), stroke: 1.2pt + gray, mark: (end: ">", fill: gray))
+
+      // Step 3
+      rect((0, 1), (16, 3.5), fill: rgb("#FFF3E0"), stroke: 1.2pt + orange, radius: 4pt)
+      content((8, 2.25), text(size: 8pt, weight: "bold", fill: orange)[③ 相乘 → 最简公分母])
+    }),
+    caption: [求最简公分母的三步流程]
+  )
 
   *例*：$1/a + 1/b$。分母 $a, b$ 没有公共因式，最简公分母就是 $a b$：
 
@@ -58,6 +89,40 @@
 
   更简洁的做法：直接在相乘形式上约掉 $2$、$3$、$x$、$y$，得到 $(3 y)/2$。
 
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#1565C0")
+      let green = rgb("#2E7D32")
+      let red = rgb("#C62828")
+      let gray = luma(120)
+
+      // Left box: factored multiplication form
+      rect((0, 0), (16, 7), fill: rgb("#E3F2FD"), stroke: 1.2pt + blue, radius: 4pt)
+      content((8, 6.2), text(size: 7pt, weight: "bold", fill: blue)[相乘形式 — 先约再乘], anchor: "south")
+
+      // Fraction with cancellation marks
+      content((8, 4.0), text(size: 9pt)[
+        $frac(cancel(2) x dot cancel(3) dot 3 dot y dot cancel(y), cancel(3) y dot cancel(2) dot 2 dot cancel(x))$
+      ])
+
+      // Cancellation note
+      content((8, 1.8), text(size: 7pt, fill: gray)[约掉 $2$、$3$、$x$、$y$])
+
+      // Arrow between boxes
+      line((17, 3.5), (19, 3.5), stroke: 1.5pt + green, mark: (end: ">", fill: green))
+
+      // Right box: simplified result
+      rect((20, 1), (28, 6), fill: rgb("#E8F5E9"), stroke: 1.2pt + green, radius: 4pt)
+      content((24, 4.5), text(size: 8pt, weight: "bold", fill: green)[结果], anchor: "south")
+      content((24, 2.8), text(size: 11pt, weight: "bold")[
+        $frac(3 y, 2)$
+      ])
+    }),
+    caption: [先约后乘：在相乘形式上直接约掉公因式]
+  )
+
   除法就是乘以倒数：
 
   $ (x + 1)/(x - 2) div (x + 1)/(x + 3) = (x + 1)/(x - 2) dot (x + 3)/(x + 1) = (x + 3)/(x - 2) quad (x != -1) $
@@ -76,7 +141,6 @@
 
   + 合并：$1/a + 1/b$。
   + 合并：$2/(x - 1) - 1/(x + 1)$。
-  + 化简：$(2 x)/(3 y) dot (9 y^2)/(4 x)$。
 ]
 
 #blueprint[
@@ -150,13 +214,12 @@
   + 若 $a + b = 5, a b = 6$，求 $1/a + 1/b$ 的值。
   + 证明恒等式：对所有合法的 $x$，$1/x - 1/(x + 1) = 1/(x(x + 1))$；并用它计算 $1/(1 dot 2) + 1/(2 dot 3) + 1/(3 dot 4) + dots.c + 1/(9 dot 10)$。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
-  + $8/m$；$1/(2 x) + 1/(3 x) = 3/(6 x) + 2/(6 x) = 5/(6 x)$；$((a + 2) + (a - 2))/((a - 2)(a + 2)) = (2 a)/(a^2 - 4)$。
-  + $(a + 1)/a dot (a^2)/(a + 1) = a quad (a != 0, -1)$；$(3/x) div (6/x^2) = (3/x) dot (x^2/6) = x/2 quad (x != 0)$。
-  + $1/(x - 2) - 1/(x - 3) = ((x - 3) - (x - 2))/((x - 2)(x - 3)) = -1/((x - 2)(x - 3))$。
+  + $8/m$（同分母合并）；$1/(2 x) + 1/(3 x) = 3/(6 x) + 2/(6 x) = 5/(6 x)$（通分）；$((a + 2) + (a - 2))/((a - 2)(a + 2)) = (2 a)/(a^2 - 4)$（通分）。
+  + $(a + 1)/a dot (a^2)/(a + 1) = a quad (a != 0, -1)$（先约后乘）；$(3/x) div (6/x^2) = (3/x) dot (x^2/6) = x/2 quad (x != 0)$（除法变乘法）。
+  + $1/(x - 2) - 1/(x - 3) = ((x - 3) - (x - 2))/((x - 2)(x - 3)) = -1/((x - 2)(x - 3))$。（通分 + 分子合并）
 
   *应用*
   + 最简公分母 $(x - 1)(x + 1)$：$((x + 1) - (x - 1) + 2)/((x - 1)(x + 1)) = 4/((x - 1)(x + 1)) = 4/(x^2 - 1)$。
@@ -167,4 +230,5 @@
   + 最简公分母 $x(x - 1)(x + 1)$：$((x + 1) + (x - 1))/(x(x - 1)(x + 1)) = (2 x)/(x(x - 1)(x + 1)) = 2/((x - 1)(x + 1)) = 2/(x^2 - 1)$。
   + $1/a + 1/b = (a + b)/(a b) = 5/6$。
   + 证明：$1/x - 1/(x + 1) = ((x + 1) - x)/(x(x + 1)) = 1/(x(x + 1))$。带入连加：$sum_(k = 1)^9 1/(k(k + 1)) = sum_(k = 1)^9 (1/k - 1/(k + 1)) = 1 - 1/10 = 9/10$。
+  ]
 ]

@@ -1,0 +1,166 @@
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, answer-cut
+#import "../../lib/diagram-packages.typ": cetz
+
+=== 点与平面：两个没有“端”的几何原名 <tool:pf06-points-and-planes>
+
+#vocab[点 point][平面 plane]
+
+#crisis[
+  画一张学校平面图时，你想说两类完全不同的事：
+
+  - “这里——就这一颗地方，是我的座位。”
+  - “整张图纸铺开的这一整片，是操场所在的那一层。”
+
+  一个是*没有大小的一颗位置*；一个是*没有厚度、能往四周摊开的一整层*。
+
+  两个对象都没有“两端”，没法用“一条线段有多长”这种方式描述。
+
+  *我们需要先给这两个没有端的几何原名取好名字，后面所有图形都要用到它们。*
+]
+
+#discovery[
+  想象你正用一支非常细的笔在纸上点一下：
+
+  - 它留下的痕迹越小越接近*点*——它只表示“哪里”，不谈“多大”。
+  - 你写字的整张纸铺开的那一层，只要你愿意让它继续向四周扩开，就接近一个*平面*。
+
+  把这两个直觉连起来：
+
+  - 一个点可以“躺在”一个平面上；
+  - 同一个平面上可以躺下无限多个点；
+  - 但一个点本身没有长宽厚，所以谈“点多大”是没有意义的。
+
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let gray = luma(180)
+
+      // Parallelogram representing a plane
+      let p1 = (0, 0)
+      let p2 = (14, 0)
+      let p3 = (16, 4)
+      let p4 = (2, 4)
+      line(p1, p2, stroke: 0.8pt + gray)
+      line(p2, p3, stroke: 0.8pt + gray)
+      line(p3, p4, stroke: 0.8pt + gray)
+      line(p4, p1, stroke: 0.8pt + gray)
+
+      // Fill with light color
+      line(p1, p2, p3, p4, close: true, fill: rgb("#E3F2FD40"), stroke: none)
+
+      // Label plane
+      content((15, 0.5), text(fill: gray, style: "italic", size: 9pt)[$alpha$], anchor: "west")
+
+      // Points on the plane
+      circle((5, 1.5), radius: 0.2, fill: blue, stroke: 0.8pt + blue)
+      content((5, 2.3), text(fill: blue, weight: "bold", size: 9pt)[A], anchor: "south")
+
+      circle((9, 2), radius: 0.2, fill: blue, stroke: 0.8pt + blue)
+      content((9, 2.8), text(fill: blue, weight: "bold", size: 9pt)[B], anchor: "south")
+
+      circle((7, 1), radius: 0.2, fill: blue, stroke: 0.8pt + blue)
+      content((7, 0.2), text(fill: blue, weight: "bold", size: 9pt)[C], anchor: "north")
+
+      // A point NOT on the plane
+      circle((11, 5.5), radius: 0.2, fill: rgb("#F44336"), stroke: 0.8pt + rgb("#F44336"))
+      content((11, 6.3), text(fill: rgb("#F44336"), weight: "bold", size: 9pt)[D（不在平面上）], anchor: "south")
+    }),
+    caption: [平面 $alpha$ 上的三个点 A、B、C，以及不在平面上的点 D],
+  )
+
+  换句话说，点和平面是一对“没有端”的原名：一个收缩到极小、一个摊开到无穷大。
+]
+
+#side-hack[
+  区分它们的小口诀：*点回答“哪里”，平面回答“哪一层上”*。两者都不谈“多长”。
+]
+
+#tryit[
+  先自己试试：
+
+  + 在桌面上找一点，用尺子测它的“长度”——你会发现量不出来。为什么？
+  + 把桌面当作一个平面的样本。桌面的边缘是平面的边界吗？
+]
+
+#history-note[
+  约公元前 300 年，欧几里得（Euclid）在《几何原本》（_Elements_）第一卷开篇写下了 23 条定义，“点是没有部分的东西”排在第一条，“面是只有长度和宽度的东西”也在其中。几乎同一时期，中国的《墨经》（约公元前 400 年）也给出了类似的抽象描述：“端，体之无厚而最前者也”——用今天的话说，就是“点是没有大小、只标记位置的东西”。东西方不约而同地发现：几何必须从这些“不可再分的最基本对象”出发。
+]
+
+#blueprint[
+  - *点*：一个几何原名，表示位置，没有大小，不谈长度、面积、体积。
+  - *平面*：一个几何原名，没有厚度，向四周无限延伸，不由纸或桌面的边界封住。
+  -
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let orange = rgb("#FF9800")
+
+      // Point illustration
+      rect((0, 0), (7, 5), fill: rgb("#E3F2FD"), stroke: 0.8pt + blue, radius: 3pt)
+      content((3.5, 4), text(weight: "bold", size: 9pt, fill: blue)[点], anchor: "center")
+      content((3.5, 2.5), text(size: 7pt)[只有位置], anchor: "center")
+      content((3.5, 1.2), text(size: 7pt)[没有大小], anchor: "center")
+
+      // Plane illustration
+      rect((9, 0), (18, 5), fill: rgb("#FFF3E0"), stroke: 0.8pt + orange, radius: 3pt)
+      content((13.5, 4), text(weight: "bold", size: 9pt, fill: orange)[平面], anchor: "center")
+      content((13.5, 2.5), text(size: 7pt)[一整层], anchor: "center")
+      content((13.5, 1.2), text(size: 7pt)[没有厚度，向四周延伸], anchor: "center")
+    }),
+    caption: [点与平面：两个最基本的几何原名],
+  )
+
+  - *点与平面的关系*：一个点可以*在平面上*，也可以*不在平面上*；这是本书里最常用的一种“里/外”关系。
+]
+
+#pitfall[
+  *高频错误*
+
+  ✗ 把纸上画出的“黑圆点”当成几何的“点”，再问“这个点有多大”
+  → ✓ 画出来的是*点的示意图*；几何中的点只标位置，没有大小。
+
+  ✗ 说“这张纸就是一个平面”
+  → ✓ 纸是*平面的一小块样本*；真正的平面会继续向四周延伸下去。
+
+  ✗ 把“点在平面上”说成“点被平面压住了”
+  → ✓ “在……上”在几何里只是一种位置关系，没有物理压力的含义。
+]
+
+#mastery[
+  *基础*
+
+  + 下列哪些对象最接近几何意义上的点：一颗乒乓球、一颗芝麻、一粒灰尘、一个笔尖印下的墨迹？请从小到大排序后，说哪几个更像“点”。
+  + 下列哪些对象最接近几何意义上的平面：课本封面、操场跑道线、湖面、黑板？为什么“跑道线”不合格？
+  + 一个点在平面上，这意味着什么？
+  + 判断对错并改正："一个点足够小，所以它就是一颗灰尘。"
+  + 几何中的点和几何中的平面，哪一个有"大小"可以谈？哪一个有"厚度"可以谈？
+
+  *应用*
+
+  + 指出生活中 2 个看起来像“点”的现象，再指出 2 个看起来像“平面”的现象。
+  + 画一张草图：一个平面 $α$，在它上面画 3 个点 $A$、$B$、$C$，再画一个*不在这个平面上*的点 $D$ 示意。
+  + 为什么说“点没有大小”并不意味着“点不存在”？
+
+  *挑战 ☞ 选做*
+
+  + 如果一颗芝麻有一定体积，为什么几何里的“点”选择放弃它的体积？这对后面的数学有什么好处？
+  + 一个平面和它“所在的纸”有什么本质差别？举出至少 2 条。
+
+  #answer-cut[
+  + 从小到大约是：墨迹（最细）< 灰尘 < 芝麻 < 乒乓球；墨迹和灰尘更像"点"，但都不是严格意义的点。（点只标位置，没有大小）
+  + 课本封面、湖面、黑板的表面这三种都更像平面的样本；跑道线是*线*，不是一整面。（平面的定义：没有厚度、向四周无限延伸）
+  + 意味着这个点是平面里的一个位置；它和其他平面外的点分别处于"上"与"不在上"。（点与平面的位置关系）
+  + 错。灰尘虽然小，但仍然有体积；几何中的点*没有大小*，只表示位置。（点的定义）
+  + 两者都不能谈：点没有大小，平面没有厚度。（点和平面都是理想化的几何原名）
+  + 示例：针尖、星星看起来的位置 → 像点；湖面、黑板面 → 像平面。（生活中的几何样本）
+  + 图略；$D$ 要明显不在 $α$ 所在的这一层里。（点与平面的"在/不在"关系）
+  + "没有大小"是一个*理想化约定*，它让我们能谈"同一个位置"而不用追问"这个位置有多大"。（理想化的意义）
+  + 放弃体积之后，点只承担"位置"这一个职责——画图、报坐标、写关系都变得更稳定。（抽象的好处）
+  + 1) 纸有边界，平面没有；2) 纸有厚度，平面没有（至少在几何里）。还有：纸可以卷起来，平面在几何里默认是"平的"。（平面与实物的区别）
+  ]
+]

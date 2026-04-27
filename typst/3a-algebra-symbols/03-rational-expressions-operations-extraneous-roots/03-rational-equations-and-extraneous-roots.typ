@@ -1,4 +1,5 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/diagram-packages.typ": cetz
 
 === 分式方程与增根 <tool:al03-rational-equations-and-extraneous-roots>
 
@@ -18,10 +19,6 @@
   这个看似自相矛盾的现象，正是*增根*的诞生。本节的任务：搞清增根是怎么出现的；给出解分式方程的固定步骤；从此*验根*成为分式方程里*不能省略的一步*。
 ]
 
-#history-note[
-  “增根”这个词在中文教材中的含义非常精确：它不是算错造成的，而是*去分母*这个操作扩大了方程的有意义范围之后，整式方程“多出”来的、无法在原分式方程里代入的“解”。19 世纪的代数教材就已经用“extraneous root（外来根）”来专门指代这类副产品。
-]
-
 #discovery[
   *为什么会冒出增根？*
 
@@ -30,6 +27,56 @@
   你乘上 $(x - 1)$ 之后得到的整式方程 $2 = (x + 1) + (x - 1)$，对*任何* $x$ 都有意义——包括 $x = 1$。原方程不能取的值，新方程并不认识这条禁令。
 
   所以整式方程可能比原方程“多出”解——那些多出来的、只在整式方程里合法、但在原方程里让某个分母为零的值，就叫*增根*。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#1565C0")
+      let red = rgb("#C62828")
+      let orange = rgb("#E65100")
+      let gray = luma(160)
+
+      // Label: original equation domain
+      content((5, 4.5), text(size: 7pt, weight: "bold")[原方程定义域], anchor: "south")
+
+      // Main axis
+      line((-4.5, 0), (6.5, 0), stroke: 1pt + gray)
+
+      // Valid domain (blue line with gap at x=1)
+      line((-4.5, 0), (0.8, 0), stroke: 2pt + blue)
+      line((1.2, 0), (6.5, 0), stroke: 2pt + blue)
+
+      // Arrow tips
+      line((-4.5, 0.08), (-4.8, 0), stroke: 1pt + blue)
+      line((-4.5, -0.08), (-4.8, 0), stroke: 1pt + blue)
+      line((6.5, 0.08), (6.8, 0), stroke: 1pt + blue)
+      line((6.5, -0.08), (6.8, 0), stroke: 1pt + blue)
+
+      // Tick marks
+      for x in range(-4, 7) {
+        line((x, -0.2), (x, 0.2), stroke: 0.5pt + gray)
+        if x != 1 {
+          content((x, -0.6), text(size: 5pt)[#str(x)], anchor: "north")
+        }
+      }
+
+      // Excluded point: x = 1 (hollow circle + red X)
+      circle((1, 0), radius: 0.25, stroke: 1.8pt + red, fill: white)
+      content((1, 1.2), text(size: 8pt, fill: red, weight: "bold")[✗], anchor: "south")
+      content((1, -0.6), text(size: 6pt, fill: red, weight: "bold")[$1$], anchor: "north")
+
+      // Label pointing to the excluded point
+      content((1, 2.8), text(size: 7pt, fill: orange, weight: "bold")[增根 $x = 1$], anchor: "south")
+      line((1, 2.6), (1, 1.8), stroke: 0.8pt + orange, mark: (end: ">", fill: orange))
+
+      // Annotation: integer equation sees x=1
+      rect((3.5, 2.0), (8.5, 3.8), fill: rgb("#FFF3E0"), stroke: 0.8pt + orange, radius: 3pt)
+      content((6, 2.9), text(size: 6pt, fill: orange)[整式方程"看得见" $x = 1$], anchor: "center")
+      content((6, 2.3), text(size: 6pt, fill: orange)[但原方程在此无意义], anchor: "center")
+    }),
+    caption: [增根示意：$x = 1$ 让原方程分母为零，不在定义域内]
+  )
 
   换句话说：
 
@@ -40,7 +87,7 @@
   *解分式方程的标准流程*
 
   + *去分母*：两边同乘最简公分母（参考 #secref("al03-common-denominator-operations")），把分式方程变成整式方程。
-  + *解整式方程*：按 #secref("cb05-solving-linear") 的办法解出 $x$。
+  + *解整式方程*：按 #secref("cb06-solving-linear") 的办法解出 $x$。
   + *验根*：把每一个得到的解代入*原方程的每一个分母*。
     - 若有某个分母为零，该解是*增根*，*舍去*；
     - 若所有分母都不为零，该解就是原方程的解。
@@ -67,7 +114,10 @@
 
   + $3/x = 1/4$
   + $2/(x - 1) = (x + 1)/(x - 1) + 1$
-  + $1/x - 1/(x + 1) = 1/6$
+]
+
+#history-note[
+  “增根”这个词在中文教材中的含义非常精确：它不是算错造成的，而是*去分母*这个操作扩大了方程的有意义范围之后，整式方程“多出”来的、无法在原分式方程里代入的“解”。19 世纪初，法国数学家柯西（Augustin-Louis Cauchy, 1789–1857）等人在严格化代数解法的过程中，开始系统区分“合法的根”与“操作引入的假根”。英语术语 “extraneous root（外来根）”便由此固定下来，专门指代因变换操作而产生的副产品——正如欧拉（Euler）在 1748 年的《无穷分析引论》里已经注意到：对分式做代数变换时，必须回头检查分母是否为零。
 ]
 
 #blueprint[
@@ -78,8 +128,53 @@
   *工具二：解分式方程的三步流程*
 
   + *去分母*：两边同乘最简公分母，得到整式方程。
-  + *解整式方程*：按 #secref("cb05-solving-linear") / 第 5 章的方法解出未知量。
+  + *解整式方程*：按 #secref("cb06-solving-linear") / 第 5 章的方法解出未知量。
   + *验根*：把每个解代入*原方程的所有分母*；让任一分母为零的值是*增根*，舍去。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#1565C0")
+      let green = rgb("#2E7D32")
+      let orange = rgb("#E65100")
+      let red = rgb("#C62828")
+      let gray = luma(160)
+
+      // Step 1: 去分母
+      rect((0, 14), (14, 16.5), fill: rgb("#E3F2FD"), stroke: 1.2pt + blue, radius: 4pt)
+      content((7, 15.25), text(size: 8pt, weight: "bold", fill: blue)[① 去分母 → 整式方程])
+
+      // Arrow 1→2
+      line((7, 14), (7, 13), stroke: 1.2pt + gray, mark: (end: ">", fill: gray))
+
+      // Step 2: 解整式方程
+      rect((0, 10.5), (14, 13), fill: rgb("#E8F5E9"), stroke: 1.2pt + green, radius: 4pt)
+      content((7, 11.75), text(size: 8pt, weight: "bold", fill: green)[② 解整式方程 → 得到 $x = ?$])
+
+      // Arrow 2→3
+      line((7, 10.5), (7, 9.5), stroke: 1.2pt + gray, mark: (end: ">", fill: gray))
+
+      // Step 3: 验根
+      rect((0, 7), (14, 9.5), fill: rgb("#FFF3E0"), stroke: 1.2pt + orange, radius: 4pt)
+      content((7, 8.25), text(size: 8pt, weight: "bold", fill: orange)[③ 验根：代入各分母])
+
+      // Branch arrows
+      line((3.5, 7), (3.5, 6), stroke: 1.2pt + red, mark: (end: ">", fill: red))
+      line((10.5, 7), (10.5, 6), stroke: 1.2pt + green, mark: (end: ">", fill: green))
+
+      // Branch left: extraneous root
+      rect((-2, 3.5), (9, 6), fill: rgb("#FFEBEE"), stroke: 1.2pt + red, radius: 4pt)
+      content((3.5, 5.2), text(size: 7pt, weight: "bold", fill: red)[分母 = 0], anchor: "south")
+      content((3.5, 4.2), text(size: 7pt, fill: red)[→ 增根，舍去])
+
+      // Branch right: valid solution
+      rect((10, 3.5), (21, 6), fill: rgb("#E8F5E9"), stroke: 1.2pt + green, radius: 4pt)
+      content((15.5, 5.2), text(size: 7pt, weight: "bold", fill: green)[≠ 0], anchor: "south")
+      content((15.5, 4.2), text(size: 7pt, fill: green)[→ 真解 ✓])
+    }),
+    caption: [解分式方程的三步流程与验根分支]
+  )
 
   *例 1*：解 $3/x = 1/4$。\
   乘 $4 x$：$12 = x$。代回：$x = 12 != 0$。✓ 解为 $x = 12$。
@@ -133,13 +228,12 @@
   + 若关于 $x$ 的方程 $m/(x - 2) = 3/(x - 2) - 1$ 无解，求 $m$ 的值，并说明这是因为得到增根还是得到矛盾方程。
   + 解释：为什么“$(x - 1)/(x - 1) = 1$” 在 $x = 1$ 时不成立？它和分式方程里“增根”的来源是不是同一件事？
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
-  + $4/x = 1/3$ → $12 = x$，代回 $x = 12 != 0$ ✓。$x = 12$。
-  + $5/(x + 2) = 2/(x - 1)$ → $5(x - 1) = 2(x + 2)$，即 $3 x = 9$，$x = 3$。代回：$x + 2 = 5 != 0$、$x - 1 = 2 != 0$ ✓。
-  + $x/(x - 4) = 2$ → $x = 2(x - 4) = 2 x - 8$，即 $x = 8$。代回：$x - 4 = 4 != 0$ ✓。
+  + $4/x = 1/3$ → $12 = x$，代回 $x = 12 != 0$ ✓。$x = 12$。（去分母法）
+  + $5/(x + 2) = 2/(x - 1)$ → $5(x - 1) = 2(x + 2)$，即 $3 x = 9$，$x = 3$。代回：$x + 2 = 5 != 0$、$x - 1 = 2 != 0$ ✓。（去分母法）
+  + $x/(x - 4) = 2$ → $x = 2(x - 4) = 2 x - 8$，即 $x = 8$。代回：$x - 4 = 4 != 0$ ✓。（去分母法）
 
   *应用*
   + 设合做 $d$ 天：$d/12 + d/8 = 1$。公分母 $24$，$2 d + 3 d = 24$，$d = 24/5 = 4.8$ 天。代回分母 $12, 8$ 均非零 ✓。
@@ -150,4 +244,5 @@
   + 最简公分母 $(x - 3)(x + 3)$。两边同乘 $(x - 3)(x + 3)$：$(x + 3) + x(x - 3) = 6$，即 $x + 3 + x^2 - 3 x = 6$，$x^2 - 2 x - 3 = 0$，$(x - 3)(x + 1) = 0$，$x = 3$ 或 $x = -1$。代回：$x = 3$ 时 $x - 3 = 0$，增根，舍；$x = -1$ 时分母 $-4$ 与 $2$ 都非零 ✓。原方程解为 $x = -1$。
   + 乘 $(x - 2)$：$m = 3 - (x - 2)$，即 $x = 5 - m$。“方程无解”对应“这唯一的解是增根”，即 $5 - m = 2$，$m = 3$。说明：$m = 3$ 时整式方程仍有唯一解 $x = 2$，但它让原方程分母为零，*是增根*；所以原分式方程无解。
   + 分式 $(x - 1)/(x - 1)$ 在 $x = 1$ 时分子分母同为 $0$，分式本身无意义。约分看似得到常数 $1$，但“约分后的式子”扩大了原式的定义域——与分式方程里“去分母扩大定义域 → 得到增根”是*完全同源*的现象。
+  ]
 ]

@@ -1,17 +1,18 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 分式：结构、运算与增根 <ch:rational-expressions-operations-extraneous-roots>
 
-#blueprint[
+在计算器上按下 $1 div 0$，屏幕会跳出"Error"。除以零不只是让机器崩溃——当分母里出现字母的时候，某些看似合理的解会让分母变成零，把整个式子炸掉。这种"假解"叫增根，它是分式世界里最容易踩的坑。
+
+#chapter-nav[
   *难度*：★★★★☆ \
   *核心问题*：当分母里也出现字母时，“有意义的前提”“约分的法则”“解方程后为什么要验根”这三件事，各该怎么说清楚？ \
-  *需要先会*：#secref("pf04-fraction-equivalence")、#secref("pf04-fraction-arithmetic")、#secref("cb05-solving-linear")、#secref("al02-factorization-as-reverse")。 \
+  *需要先会*：#secref("pf04-fraction-equivalence")、#secref("pf04-fraction-arithmetic")、#secref("cb06-solving-linear")、#secref("al02-factorization-as-reverse")。 \
   *本章在全书的位置*：代数分支第三章——把小学的分数四则正式升级为“分母含字母的分式”，并第一次引入“增根”。 \
   *忘了可以回到*：若因式分解还不熟，请回 #secref("al02-factorization-as-reverse")；若分数四则还不稳，请回 #secref("pf04-fraction-arithmetic")。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + 先说清分式本身是什么：分母含字母的分数；它*什么时候有意义*？怎么化简？
   + 再把“通分 + 加减 + 乘除”一口气搞定，全都建立在分式基本性质之上。

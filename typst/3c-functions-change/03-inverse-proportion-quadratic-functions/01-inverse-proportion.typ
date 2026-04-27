@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 反比例函数：$y = k / x$ <tool:fn07-inverse-proportion>
@@ -19,10 +19,6 @@
   这里 $x$ 增加时 $y$ 反而减少，和正比例 / 一次函数完全相反。细看也有一条铁律：*$x times y = 12$，永远不变*——苹果总数不变。
 
   *这一类“两量乘积不变”的关系，该写成怎样的函数公式？图像长什么样？哪些日常情景属于它？*
-]
-
-#history-note[
-  反比例关系在古希腊阿基米德的杠杆原理里就已出现：*力臂 $times$ 力 $=$ 常数*。近代物理里更常见——波义耳定律 $P V = "常数"$（恒温时气体压强与体积成反比）、欧姆定律在电压固定时 $I R = U$ 等。它们都共享一个模板“两量乘积不变”。
 ]
 
 #discovery[
@@ -93,6 +89,34 @@
 
   图像有*两支*，分别位于第一、三象限（$k > 0$）或第二、四象限（$k < 0$）。每支都靠近 $x$ 轴和 $y$ 轴但*永不相交*——这两条轴叫*渐近线*。
 
+  #figure(
+    cetz.canvas(length: 0.5cm, {
+      import cetz.draw: *
+      line((-5, 0), (5, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -5), (0, 5), stroke: 0.4pt, mark: (end: ">"))
+      content((5.2, 0), $x$, anchor: "west")
+      content((0, 5.3), $y$, anchor: "south")
+      // branch II: y = -2/x for x in [-5, -0.5]
+      let samples1 = range(0, 45).map(i => {
+        let x = -5 + 0.1 * i
+        (x, -2.0 / x)
+      })
+      for i in range(0, samples1.len() - 1) {
+        line(samples1.at(i), samples1.at(i + 1), stroke: 0.7pt + rgb("#B71C1C"))
+      }
+      // branch IV: y = -2/x for x in [0.5, 5]
+      let samples2 = range(0, 45).map(i => {
+        let x = 0.5 + 0.1 * i
+        (x, -2.0 / x)
+      })
+      for i in range(0, samples2.len() - 1) {
+        line(samples2.at(i), samples2.at(i + 1), stroke: 0.7pt + rgb("#B71C1C"))
+      }
+      content((-3.5, -1.3), text(7pt)[$y = k / x$, $k < 0$])
+    }),
+    caption: [反比例函数（$k < 0$）的图像：两支双曲线分别位于第二、第四象限。]
+  )
+
   *与正比例的本质区别*
 
   #align(center, table(
@@ -117,7 +141,10 @@
       [$x$], [$2$], [$3$], [$6$], [$8$],
       [$y$], [$12$], [$8$], [$4$], [$3$],
     ))
-  + $y = -6 / x$ 的定义域是什么？列出 $x = -3, -1, 1, 2$ 的输出。它的图像在哪两个象限？
+]
+
+#history-note[
+  反比例关系在古希腊就已现身：约公元前 $250$ 年阿基米德（Archimedes）在《论平面图形的平衡》中写下杠杆原理——*力臂 $times$ 力 $=$ 常数*，支点越远的一侧用越小的力即可平衡。$1662$ 年波义耳（Robert Boyle）发表气体实验结果：恒温下气体压强与体积成反比，$P V = "常数"$——这就是波义耳定律，化学和物理课本里至今必学。两个时隔近两千年的发现共享同一个数学模板："两量乘积不变"。
 ]
 
 #blueprint[
@@ -131,6 +158,38 @@
   - $k > 0$：图像在第一、三象限。
   - $k < 0$：图像在第二、四象限。
   - 两条坐标轴是*渐近线*：图像无限靠近但不相交、不穿过原点。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      line((-6, 0), (6, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -5), (0, 5), stroke: 0.4pt, mark: (end: ">"))
+      content((6.2, 0), $x$, anchor: "west")
+      content((0, 5.3), $y$, anchor: "south")
+      // y = 2x (linear, dashed blue)
+      line((-2, -4), (2, 4), stroke: (paint: rgb("#1976D2"), thickness: 0.6pt, dash: "dashed"))
+      content((1.8, 4.2), text(7pt)[$y = 2 x$], anchor: "west")
+      // y = 2/x (hyperbola, solid red)
+      let s1 = range(0, 45).map(i => {
+        let x = 0.5 + 0.1 * i
+        (x, 2.0 / x)
+      })
+      for i in range(0, s1.len() - 1) {
+        line(s1.at(i), s1.at(i + 1), stroke: 0.7pt + rgb("#B71C1C"))
+      }
+      let s2 = range(0, 45).map(i => {
+        let x = -5 + 0.1 * i
+        (x, 2.0 / x)
+      })
+      for i in range(0, s2.len() - 1) {
+        line(s2.at(i), s2.at(i + 1), stroke: 0.7pt + rgb("#B71C1C"))
+      }
+      content((3.5, 1.2), text(7pt)[$y = 2 / x$])
+      circle((0, 0), radius: 0.1, fill: black)
+      content((0.4, -0.4), text(6pt)[$O$])
+    }),
+    caption: [正比例 $y = 2 x$（直线，过原点）与反比例 $y = 2 / x$（双曲线，不过原点）的图像对照。]
+  )
 
   *识别法（任一成立）*
 
@@ -195,21 +254,21 @@
       [$y$], [$6$], [$12$], [$-8$], [$-4.8$],
     ))
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
-  + (a) ✓ $k = 5$；(b) ✓ $k = -7$；(c) ✗（分母是 $x - 1$ 不是 $x$）；(d) ✗（多了 $+ 1$）；(e) $y = -8 / x$ ✓ $k = -8$。
-  + 表：$(-3, -2), (-1, -6), (-0.5, -12), (0.5, 12), (1, 6), (3, 2)$。$k = 6 > 0 =>$ 图像在第一、三象限。
-  + $k = x y = -2 times 10 = -20$，$y = -20 / x$。
+  + (a) ✓ $k = 5$；(b) ✓ $k = -7$（反比例定义：$y = k / x$）；(c) ✗（分母是 $x - 1$ 不是 $x$）；(d) ✗（多了 $+ 1$）；(e) $y = -8 / x$ ✓ $k = -8$（反比例定义：$y = k / x$）。
+  + 表：$(-3, -2), (-1, -6), (-0.5, -12), (0.5, 12), (1, 6), (3, 2)$。$k = 6 > 0 =>$ 图像在第一、三象限（$k > 0$ 象限判定）。
+  + $k = x y = -2 times 10 = -20$（$k = x y$），$y = -20 / x$。
 
   *应用*
-  + $t = 120 / v$。定义域 ${v | v > 0}$（速度为正）。
-  + *反比例函数* $P = 1 / V_0$，$k = 1$。
-  + $x y = 48 => y = 48 / x$。$4$ 人：$12$；$6$ 人：$8$；$8$ 人：$6$。
+  + $t = 120 / v$（反比例定义：$y = k / x$）。定义域 ${v | v > 0}$（定义域：$x != 0$，且速度为正）。
+  + *反比例函数* $P = 1 / V_0$，$k = 1$（$P V_0 = k$ 恒定 → 反比例）。
+  + $x y = 48 => y = 48 / x$（$k = x y$）。$4$ 人：$12$；$6$ 人：$8$；$8$ 人：$6$。
 
   *挑战 ☞ 选做*
-  + $k = -3 times 8 = -24$，$y = -24 / x$。$y = 2$：$x = -12$；$y = -4$：$x = 6$。
-  + 联立 $x = 6 / x => x^2 = 6 => x = plus.minus sqrt(6)$，对应 $y = plus.minus sqrt(6)$。两个交点 $(sqrt(6), sqrt(6))$ 与 $(-sqrt(6), -sqrt(6))$。
-  + 检查乘积：$(-4)(6) = -24$、$(-2)(12) = -24$、$(3)(-8) = -24$、$(5)(-4.8) = -24$——全 $= -24$。*是反比例*。$k = -24$，$y = -24 / x$。
+  + 先求 $k = -3 times 8 = -24$（$k = x y$），$y = -24 / x$。$y = 2$：$x = -24 / 2 = -12$；$y = -4$：$x = -24 / (-4) = 6$（代入反比例公式求 $x$）。
+  + 联立 $x = 6 / x => x^2 = 6 => x = plus.minus sqrt(6)$，对应 $y = plus.minus sqrt(6)$。两个交点 $(sqrt(6), sqrt(6))$ 与 $(-sqrt(6), -sqrt(6))$（联立方程法求交点）。
+  + 检查乘积：$(-4)(6) = -24$、$(-2)(12) = -24$、$(3)(-8) = -24$、$(5)(-4.8) = -24$——全 $= -24$（$k = x y$ 恒定 → 反比例）。$k = -24$，$y = -24 / x$。
+  ]
 ]

@@ -1,4 +1,5 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
+#import "../../lib/diagram-packages.typ": cetz
 
 === 有理数：把整数和分数都接回数轴 <tool:cb02-rational-numbers>
 
@@ -8,10 +9,6 @@
   加入负数后，数轴左边不再空白；但数轴上是不是只剩下“整数”这些点？$1/2$、$-3/4$、$0.7$ 要放哪儿？
 
   *我们需要把“整数”和“分数”合并起来，再一起放回这条数轴。*
-]
-
-#history-note[
-  “有理数” rational 来自拉丁语 ratio，意思就是“比”。它的身份证正是“能写成两个整数的比 $p / q$”。
 ]
 
 #discovery[
@@ -24,7 +21,45 @@
 
   $ QQ = { p / q : p in ZZ, q in ZZ, q != 0 } $
 
-  每个有理数都能稳定地对应数轴上一个点。比如 $-3 / 4$ 就是：从原点向左把一个单位分成 $4$ 份，取第 $3$ 份。
+  每个有理数都能稳定地对应数轴上一个点。比如
+  $ -3 / 4 $
+  就是：从原点向左把一个单位分成 $4$ 份，取第 $3$ 份。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      let ox = 10
+      let s = 4.0
+      // Axis
+      line((ox - 2.5 * s, 0), (ox + 2.8 * s, 0), stroke: 1.5pt + rgb("#333"), mark: (end: ">"))
+      // Integer ticks
+      for i in range(-2, 3) {
+        let tx = ox + i * s
+        line((tx, -0.4), (tx, 0.4), stroke: 1pt + rgb("#555"))
+        content((tx, -1.0), text(size: 7pt, weight: "bold")[#str(i)], anchor: "north")
+      }
+      // Fractional ticks between -1 and 0
+      for k in range(1, 4) {
+        let tx = ox + (-k / 4) * s
+        line((tx, -0.2), (tx, 0.2), stroke: 0.5pt + rgb("#AAA"))
+      }
+      // Mark -3/4
+      let frac-x = ox + (-3 / 4) * s
+      circle((frac-x, 0), radius: 0.25, fill: rgb("#C62828"), stroke: 1pt + rgb("#B71C1C"))
+      content((frac-x, 1.0), text(size: 7pt, weight: "bold", fill: rgb("#C62828"))[$-3/4$], anchor: "south")
+      // Mark 5/4
+      let frac2-x = ox + (5 / 4) * s
+      circle((frac2-x, 0), radius: 0.25, fill: rgb("#1565C0"), stroke: 1pt + rgb("#0D47A1"))
+      content((frac2-x, 1.0), text(size: 7pt, weight: "bold", fill: rgb("#1565C0"))[$5/4$], anchor: "south")
+      // Mark 0.5
+      let half-x = ox + 0.5 * s
+      circle((half-x, 0), radius: 0.25, fill: rgb("#2E7D32"), stroke: 1pt + rgb("#1B5E20"))
+      content((half-x, -1.8), text(size: 7pt, weight: "bold", fill: rgb("#2E7D32"))[$1/2$], anchor: "north")
+      // Origin
+      circle((ox, 0), radius: 0.2, fill: rgb("#333"), stroke: 1pt + rgb("#333"))
+    }),
+    caption: [有理数（分数）在数轴上的位置：把单位长度等分后精确定位],
+  )
 
   小数再“混入”也不是新东西——有限小数和循环小数都可以写成分数（#secref("pf05-decimals-conversion")），它们是同一家族的不同写法。
 
@@ -37,8 +72,11 @@
 
 #tryit[
   + 判断下列哪些是有理数：$-8$、$0$、$2/3$、$-0.25$、$5.1dot(2)$（即 $5.122 dots$，循环节为 $2$）。
-  + 在数轴上依次描出 $-1.5$、$-1/3$、$0$、$5/4$。
   + 写出两个在 $1/3$ 与 $1/2$ 之间的有理数。
+]
+
+#history-note[
+  "有理数"的英文 rational 来自拉丁语 ratio，意思就是"比"。古希腊数学家欧多克索斯（Eudoxus，约公元前 $370$ 年）在欧几里得《几何原本》第五卷的基础工作中，系统整理了"可公度量"的概念——两个量如果能用同一个单位度量，它们的比值就是一个有理数。有理数的身份证正是"能写成两个整数的比 $p / q$"。
 ]
 
 #blueprint[
@@ -47,13 +85,49 @@
   - *包含关系*：$ZZ subset.eq QQ$；每个整数都能写成分母为 $1$ 的分数。
   - *数轴上的对应*：每个有理数对应数轴上唯一一个点；但并不是数轴上每个点都对应有理数（这个反例留到第 6 章）。
   - *稠密性*：任意两个不同的有理数之间，都有无穷多个有理数。
+
+  #figure(
+    cetz.canvas(length: 0.5cm, {
+      import cetz.draw: *
+      // Nested rectangles for number sets
+      let w0 = 16
+      let h0 = 6
+      // Q (outermost)
+      rect((-w0 / 2, -h0 / 2), (w0 / 2, h0 / 2),
+           fill: rgb("#FFF9C4"), stroke: 1.2pt + rgb("#F9A825"), radius: 4pt)
+      content((w0 / 2 - 1.0, h0 / 2 - 0.6), text(size: 9pt, weight: "bold", fill: rgb("#F57F17"))[$QQ$], anchor: "north-east")
+      // Z
+      let w1 = 10
+      let h1 = 4
+      rect((-w1 / 2, -h1 / 2), (w1 / 2, h1 / 2),
+           fill: rgb("#E3F2FD"), stroke: 1.2pt + rgb("#1565C0"), radius: 4pt)
+      content((w1 / 2 - 1.0, h1 / 2 - 0.6), text(size: 9pt, weight: "bold", fill: rgb("#1565C0"))[$ZZ$], anchor: "north-east")
+      // N
+      let w2 = 5
+      let h2 = 2.2
+      rect((-w2 / 2, -h2 / 2), (w2 / 2, h2 / 2),
+           fill: rgb("#C8E6C9"), stroke: 1.2pt + rgb("#388E3C"), radius: 4pt)
+      content((0, 0), text(size: 9pt, weight: "bold", fill: rgb("#2E7D32"))[$NN$])
+      // Example members
+      content((-w1 / 2 + 1.5, 0), text(size: 7pt, fill: rgb("#1565C0"))[$-3$])
+      content((w0 / 2 - 1.5, 0), text(size: 7pt, fill: rgb("#F57F17"))[$2/3$])
+    }),
+    caption: [数集层级：$NN subset.eq ZZ subset.eq QQ$],
+  )
 ]
+
+#self-check[
+  $-2/3$ 在 $-1$ 的左边还是右边？说出你的依据，不要只靠“感觉”。
+]
+
 
 #pitfall[
   *高频错误*
 
   ✗ 以为循环小数不能写成分数
-  → ✓ 无限*循环*小数都能写成分数（如 $0.dot(3) = 1/3$）；不能写成分数的是非循环的无限小数。
+  → ✓ 无限*循环*小数都能写成分数，例如
+     $ 0.dot(3) = 1/3; $
+     不能写成分数的是非循环的无限小数。
 
   ✗ 以为“数轴上的所有点都对应有理数”
   → ✓ 数轴上确实处处是有理数，但也有点不对应有理数——那将是第 6 章（平方根）揭晓的故事。
@@ -68,6 +142,8 @@
   + 以下哪些是有理数？为什么？$-7$、$0$、$3/5$、$-0.8$、$1.dot(6)$。
   + 把 $-9/12$ 化到最简。
   + 在数轴上描出 $-2.5$、$-2/3$、$3/2$、$2.25$。
+  + 把 $0.dot(3)$（即 $0.333...$）写成分数。
+  + 判断：$-2/3$ 是整数还是有理数？
 
   *应用*
 
@@ -80,16 +156,18 @@
   + 证明：在任意两个不同的有理数之间，还能再塞入至少一个有理数（提示：取它们的平均数）。
   + 把 $0.dot(2) dot(7)$（即 $0.272727 dots$）写成分数。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
-  + 全部是有理数；$1.dot(6) = 5/3$。
-  + $-3/4$。
+  #answer-cut[
+  + 全部是有理数（都能写成 $p/q$ 形式）；$1.dot(6) = 5/3$。
+  + $-3/4$（$-9/12$ 的分子分母同除 $3$，等值分数化简）。
   + 图略：$-2.5 < -2/3 < 3/2 < 2.25$。
-  + 通分到 $12$：$-9/12 < -8/12 < -6/12$，即 $-3/4 < -2/3 < -1/2$。
+  + $0.dot(3) = 1/3$（无限循环小数可写为分数，属于有理数）。
+  + 有理数（$-2/3 = p/q$ 形式，$p = -2, q = 3$），不是整数。
+  + 通分到公分母 $12$：$-9/12 < -8/12 < -6/12$，即 $-3/4 < -2/3 < -1/2$（负数比大小：绝对值大的反而小）。
   + 例如 $-1.1$ 或 $-11/10$。
-  + 甲欠款更多（$|-123.5| > |-89.2|$）。
+  + 甲欠款更多（比较绝对值：$|-123.5| = 123.5 > |-89.2| = 89.2$，绝对值越大欠款越多）。
   + 平均数 $(a + b) / 2$ 仍是两个有理数的和差乘除结果，依旧是有理数，且严格落在 $a$ 和 $b$ 之间。
-  + $3/11$。
+  + $3/11$（设 $x = 0.dot(2)dot(7)$，$100 x = 27.dot(2)dot(7)$，$99 x = 27$，$x = 27/99 = 3/11$）。
+  ]
 ]
 
 #side-hack[

@@ -19,9 +19,9 @@
 
   症状：给了直角三角形两条边，要求第三条，但你写不出 $a^2 + b^2 = c^2$ 到底该怎么移项。
 
-  $ "ge04 勾股"(#secref("ge04-pythagorean")) "←" "cb06 平方根"(#secref("cb06-square-and-square-root")) "←" "pf02 运算律"(#secref("pf02-order-laws")) $
+  $ "ge04 勾股"(#secref("ge04-pythagorean")) "←" "cb06 平方根"(#secref("cb07-square-and-square-root")) "←" "pf02 运算律"(#secref("pf02-order-laws")) $
 
-  *建议*：先回 #secref("cb06-square-and-square-root")，把“$x^2 = 25 => x = 5$”手写十次，再回来做原题。大多数勾股题卡点其实在*平方根*，不在定理本身。
+  *建议*：先回 #secref("cb07-square-and-square-root")，把“$x^2 = 25 => x = 5$”手写十次，再回来做原题。大多数勾股题卡点其实在*平方根*，不在定理本身。
 ]
 
 #blueprint[
@@ -29,7 +29,7 @@
 
   症状：$x^2 + 6 x + 5 = 0$，老师让“配方”，但你看着 $6 x$ 不知道怎么补成完全平方。
 
-  $ "al05 求根"(#secref("al05-quadratic-solving")) "←" "al02 完全平方"(#secref("al02-special-identities")) "←" "al01 乘法"(#secref("al01-multiply-polynomials")) "←" "cb04 字母代数"(#secref("cb04-letters-represent-numbers")) $
+  $ "al05 求根"(#secref("al05-quadratic-solving")) "←" "al02 完全平方"(#secref("al02-special-identities")) "←" "al01 乘法"(#secref("al01-multiply-polynomials")) "←" "cb04 字母代数"(#secref("cb05-letters-represent-numbers")) $
 
   *建议*：回 #secref("al02-special-identities") 把 $(x + a)^2 = x^2 + 2 a x + a^2$ 正向展开三次，再*反向*从 $x^2 + 2 a x$ 补齐 $a^2$ 做三次。配方本质是“反用完全平方”。
 ]
@@ -69,9 +69,9 @@
 
   症状：题目长、信息杂，光是*设 $x$ 为什么*就让你动不了笔。
 
-  $ "al04 建模"(#secref("al04-modeling-word-problems")) "←" "cb04 关系模板"(#secref("cb04-relationship-templates")) "←" "pf02 运算顺序" $
+  $ "al04 建模"(#secref("al04-modeling-word-problems")) "←" "cb04 关系模板"(#secref("cb05-relationship-templates")) "←" "pf02 运算顺序" $
 
-  *建议*：回 #secref("cb04-relationship-templates") 的“总价 $=$ 单价 $times$ 数量”“行程 $=$ 速度 $times$ 时间”“工作 $=$ 效率 $times$ 时间”三张模板。大多数*设元卡点*都是因为你没把题目先套到一张关系模板上。
+  *建议*：回 #secref("cb05-relationship-templates") 的“总价 $=$ 单价 $times$ 数量”“行程 $=$ 速度 $times$ 时间”“工作 $=$ 效率 $times$ 时间”三张模板。大多数*设元卡点*都是因为你没把题目先套到一张关系模板上。
 ]
 
 #side-hack[

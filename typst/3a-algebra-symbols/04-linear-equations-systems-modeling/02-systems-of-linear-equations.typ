@@ -1,4 +1,5 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
+#import "../../lib/diagram-packages.typ": cetz
 
 === 二元一次方程组：代入与加减消元 <tool:al04-systems-linear>
 
@@ -14,10 +15,53 @@
   可是，单独一条 $x + y = 35$ 能被 $(1, 34)$、$(10, 25)$ 等无数组满足——单方程根本*锁不住*唯一解。
 
   只有把两个条件*同时*要求满足，答案才唯一。“多条件、多未知量”这个常见情景，靠一元一次方程是解决不了的——需要一套新的工具把它拎起来。
-]
 
-#history-note[
-  “方程组”在中国有非常古老的传统：《九章算术》（约公元 1 世纪）“方程”章就已经使用类似高斯消元的技术处理三元一次方程组——比欧洲早了约 1700 年。
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      // Axes
+      let ax-len = 18
+      let ay-len = 14
+      line((-1, 0), (ax-len, 0), stroke: 1pt + rgb("#424242"),
+           mark: (end: "stealth", fill: rgb("#424242"), scale: 0.5))
+      line((0, -1), (0, ay-len), stroke: 1pt + rgb("#424242"),
+           mark: (end: "stealth", fill: rgb("#424242"), scale: 0.5))
+      content((ax-len + 0.8, 0), text(size: 7pt)[$x$])
+      content((0.6, ay-len + 0.5), text(size: 7pt)[$y$])
+      content((-0.6, -0.6), text(size: 6pt)[$O$])
+
+      // Scale ticks
+      for i in range(1, 8) {
+        let v = i * 5
+        if v <= 45 {
+          line((v / 3, -0.3), (v / 3, 0.3), stroke: 0.5pt + rgb("#9E9E9E"))
+        }
+      }
+      for i in range(1, 8) {
+        let v = i * 5
+        if v <= 35 {
+          line((-0.3, v / 3), (0.3, v / 3), stroke: 0.5pt + rgb("#9E9E9E"))
+        }
+      }
+
+      // Line 1: x + y = 35, from (0,35) to (35,0)
+      // Scale: divide coords by 3 for display
+      line((0, 35/3), (35/3, 0), stroke: 1.5pt + rgb("#1565C0"))
+      content((35/3 + 1.5, 0.8), text(size: 6pt, fill: rgb("#1565C0"))[$x + y = 35$])
+
+      // Line 2: 2x + 4y = 94, from (0,23.5) to (47,0)
+      line((0, 23.5/3), (47/3, 0), stroke: 1.5pt + rgb("#C62828"))
+      content((47/3 + 0.5, 1.2), text(size: 6pt, fill: rgb("#C62828"))[$2 x + 4 y = 94$])
+
+      // Intersection point (23, 12) → display (23/3, 12/3)
+      let px = 23 / 3
+      let py = 12 / 3
+      circle((px, py), radius: 0.25, fill: rgb("#2E7D32"), stroke: 0.8pt + rgb("#1B5E20"))
+      content((px + 2.5, py + 0.8), text(size: 7pt, weight: "bold", fill: rgb("#2E7D32"))[解 $(23, 12)$])
+    }),
+    caption: [两条直线的交点就是方程组的解：同时满足两个条件的唯一一点],
+  )
 ]
 
 #discovery[
@@ -72,7 +116,10 @@
 
   + $cases(y = 2 x - 1, 3 x + 2 y = 12)$（建议代入）
   + $cases(x + y = 10, x - y = 4)$（建议加减）
-  + $cases(3 x + 4 y = 25, 2 x + 3 y = 18)$（系数不整，加减或代入都行）
+]
+
+#history-note[
+  《九章算术》（约公元 1 世纪）第八章“方程”中记载了“方程术”：把方程组各未知数的系数排成表格（纵横排列，形似现代矩阵），再逐列相消——这套做法和 18 世纪德国数学家高斯（Carl Friedrich Gauss, 1777–1855）系统化的“高斯消元法”本质相同，但早了约 1700 年。书中甚至出现了负数系数的处理（“正负术”），堪称线性代数思想的最早萌芽。
 ]
 
 #blueprint[
@@ -83,6 +130,42 @@
   + 按 #secref("al04-linear-one-variable") 解，再回代求另一个未知量。
 
   *例 1*：$cases(y = 2 x - 1, 3 x + 2 y = 12)$。代入第二个：$3 x + 2 (2 x - 1) = 12 => 7 x = 14 => x = 2$，回代 $y = 3$。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      // Equation ① box
+      let y1 = 6
+      rect((0, y1), (16, y1 + 3), fill: rgb("#E3F2FD"), stroke: 1pt + rgb("#1565C0"), radius: 3pt)
+      content((1.5, y1 + 1.5), text(size: 8pt, weight: "bold", fill: rgb("#1565C0"))[①], anchor: "west")
+      content((3.5, y1 + 1.5), text(size: 8pt)[$y = $], anchor: "west")
+      content((6.5, y1 + 1.5), text(size: 8pt, fill: rgb("#E65100"), weight: "bold")[$2 x$], anchor: "west")
+      content((9.5, y1 + 1.5), text(size: 8pt)[$- 1$], anchor: "west")
+
+      // Equation ② box
+      let y2 = 2
+      rect((0, y2), (16, y2 + 3), fill: rgb("#FFCDD2"), stroke: 1pt + rgb("#C62828"), radius: 3pt)
+      content((1.5, y2 + 1.5), text(size: 8pt, weight: "bold", fill: rgb("#C62828"))[②], anchor: "west")
+      content((3.5, y2 + 1.5), text(size: 8pt)[$3 x + $], anchor: "west")
+      content((7.5, y2 + 1.5), text(size: 8pt, fill: rgb("#E65100"), weight: "bold")[$2 y$], anchor: "west")
+      content((10.5, y2 + 1.5), text(size: 8pt)[$= 12$], anchor: "west")
+
+      // Arrow: substitute ① into ②
+      line((8, y1), (8, y2 + 3.3), stroke: 1.5pt + rgb("#E65100"),
+           mark: (end: "stealth", fill: rgb("#E65100"), scale: 0.6))
+      content((12, (y1 + y2 + 3) / 2), text(size: 7pt, fill: rgb("#E65100"), weight: "bold")[代入消元], anchor: "west")
+
+      // Result
+      let yr = -1.5
+      rect((2, yr), (14, yr + 2.5), fill: rgb("#C8E6C9"), stroke: 1pt + rgb("#2E7D32"), radius: 3pt)
+      content((8, yr + 1.25), text(size: 8pt, weight: "bold", fill: rgb("#1B5E20"))[$7 x = 14 => x = 2$])
+      line((8, y2), (8, yr + 2.8), stroke: 1.2pt + rgb("#2E7D32"),
+           mark: (end: "stealth", fill: rgb("#2E7D32"), scale: 0.6))
+    }),
+    caption: [代入消元：把①式的 $y$ 代入②式，消去 $y$，只剩一个未知量],
+  )
+
 
   *工具二：加减消元法*
 
@@ -100,6 +183,11 @@
   - 若某未知量系数相同或相反 → *加减*。
   - 都不明显 → 凑系数的最小公倍数后 *加减*；或者自问“哪条少抄几步”。
 ]
+
+#self-check[
+  代入法和加减消元法解出来的解一样吗？为什么？两种方法分别消掉了哪一个未知数？
+]
+
 
 #pitfall[
   *高频错误*
@@ -139,14 +227,13 @@
   + 讨论方程组 $cases(2 x + y = 5, 4 x + 2 y = k)$ 在不同 $k$ 下的解的个数（$k$ 是常数）。
   + 一个工程，甲独做 $12$ 天、乙独做 $18$ 天完成。两人合做 $d$ 天后，甲又独做 $4$ 天完成全部工作。求 $d$（提示：设甲、乙每天的工作量为 $u, v$，列方程组）。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
-  + $2 (3 y - 1) - 5 y = 1 => 6 y - 2 - 5 y = 1 => y = 3$，$x = 3 dot 3 - 1 = 8$。
-  + $2 x + (x + 3) = 12 => 3 x = 9 => x = 3$，$y = 6$。
-  + 相加：$2 x = 8 => x = 4$，$y = 3$。
-  + 相加：$7 x = 28 => x = 4$，回代 $12 + 2 y = 12 => y = 0$。
+  + $2 (3 y - 1) - 5 y = 1 => 6 y - 2 - 5 y = 1 => y = 3$，$x = 3 dot 3 - 1 = 8$。（代入消元）
+  + $2 x + (x + 3) = 12 => 3 x = 9 => x = 3$，$y = 6$。（代入消元）
+  + 相加：$2 x = 8 => x = 4$，$y = 3$。（加减消元）
+  + 相加：$7 x = 28 => x = 4$，回代 $12 + 2 y = 12 => y = 0$。（加减消元）
 
   *应用*
   + $cases(3 p + 2 n = 32, p + 3 n = 27)$。第二式 $times 3$ 再减第一式：$7 n = 49 => n = 7$，$p = 6$。笔 $6$ 元、笔记本 $7$ 元。
@@ -157,4 +244,5 @@
   + 代入 $(2, 3)$：$cases(2 a + 3 b = 1, 2 b + 3 a = 7)$。两式相加 $5 (a + b) = 8$，$a + b = 8 / 5$；两式相减 $a - b = 6$。解得 $a = 19 / 5$，$b = -11 / 5$。
   + 下式恰是上式的 $2$ 倍，故 $k = 10$ 时两方程同线 → *无穷多组解*；$k != 10$ 时两方程平行 → *无解*；不存在“唯一解”的情形。
   + $cases(12 u = 1, 18 v = 1)$ 给出 $u = 1/12$，$v = 1/18$。联立“$d$ 天合作 + 甲再做 $4$ 天完成”：$(u + v) d + 4 u = 1$，代入解得 $d = (1 - 4 u) / (u + v) = (1 - 1/3) / (1/12 + 1/18) = (2/3) / (5/36) = 24 / 5 = 4.8$ 天。
+  ]
 ]

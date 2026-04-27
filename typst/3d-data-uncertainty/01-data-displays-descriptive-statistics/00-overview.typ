@@ -1,17 +1,18 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 数据展示与描述统计：数据的第一张脸 <ch:data-displays-descriptive-statistics>
 
-#blueprint[
+"今天平均气温 22 度"——听起来挺舒适？可如果白天 40 度、夜里 4 度呢？一个"平均数"把两种截然不同的体验抹成了同一个数字。这一章的第一课就是：面对一堆数据，光报一个数字远远不够。
+
+#chapter-nav[
   *难度*：★★★☆☆ \
   *核心问题*：我们已经会处理很多“有规律”的数——运算、方程、函数。但现实里常常拿到一把*杂乱*的数字（一次考试 $50$ 人的分数、一年每天的气温、一班同学的身高 ……）。面对这样一把数，应该怎样*整理*、怎样*画*、怎样用*一两个数字*概括它？什么时候画图会帮助我们看见真相，什么时候反而会骗我们？ \
-  *需要先会*：#secref("cb01-ratio-basics")（比例 / 百分比作为图表语言）、#secref("cb01-percent")（扇形图用到百分比）、#secref("cb03-rectangular-system")（折线图的坐标）、#secref("cb04-relationship-templates")（两列数据的概念）、#secref("fn01-table-as-function-view")（一张表能代表什么关系）。 \
+  *需要先会*：#secref("cb01-ratio-basics")（比例 / 百分比作为图表语言）、#secref("cb01-percent")（扇形图用到百分比）、#secref("cb04-rectangular-system")（折线图的坐标）、#secref("cb05-relationship-templates")（两列数据的概念）、一张表能代表什么关系（本分支会自行介绍）。 \
   *本章在全书的位置*：数据分支*入口*。这里还不算“统计学”——只是把数据“摆整齐”、“挑一两个数字概括”，为后续的频率分布、方差、概率、抽样搭好语言地基。 \
-  *忘了可以回到*：如果百分比或坐标系生疏，回 #secref("cb01-percent")、#secref("cb03-rectangular-system")；如果不记得什么叫“一张表是函数”，回 #secref("fn01-table-as-function-view")。
+  *忘了可以回到*：如果百分比或坐标系生疏，回 #secref("cb01-percent")、#secref("cb04-rectangular-system")；如果不记得什么叫“一张表是函数”，本章 §1 会从头讲。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + §1 *整理数据的三张常用图*：条形图 / 折线图 / 扇形图。图形不是装饰——它是“整理过的数据”，不同问题要配不同的图。
   + §2 *从图里读数 & 识别误导图*：怎样从图里看出比例、趋势、对照？哪些常见花招（截断纵轴、等间距伪装、非等宽分类）会让人把小差距看成大差距？
@@ -22,7 +23,7 @@
   - 第 2 章：当数据条目更多时，频率分布表 + 直方图接管“整理”；极差不够用时，方差 / 标准差接管“spread”。
   - 第 3 章：从“已经收好的数据”转向*还没发生*的结果——样本空间、概率。
   - 第 4 章：当全体数据拿不到时，用样本去*估计*总体——抽样。
-  - 代数分支：平均数本质是一个加权和式（#secref("cb04-expressions-and-like-terms") 的代数式 $+$ 除法）。
+  - 代数分支：平均数本质是一个加权和式（#secref("cb05-expressions-and-like-terms") 的代数式 $+$ 除法）。
   - 函数分支：折线图本身就是把数据看作“时间 $->$ 值”的函数。
 ]
 

@@ -1,17 +1,14 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
+#import "../../lib/diagram-packages.typ": cetz
 
 === 比例：两个比相等 <tool:cb01-proportion>
 
 #vocab[比例 proportion][外项][内项][交叉相乘 cross multiplication]
 
 #crisis[
-  一张地图上，图上 $3$ 厘米代表实际 $120$ 千米。如果图上换成 $7$ 厘米，实际是多少？
+  古代航海者早就碰过这个难题：海图上 $3$ 厘米代表实际 $120$ 千米，如果图上量出 $7$ 厘米，实际距离是多少？命都押在这个数上，可不能靠猜。
 
-  如果每次都只能靠“再翻倍、再加一点”去猜，就太不稳定。*我们需要一种能直接算出那个缺的数的写法。*
-]
-
-#history-note[
-  古希腊人测金字塔高度，正是用“人和人影的比例 = 塔和塔影的比例”。比例这件工具，最早就是为了“不用爬上去也能算”。
+  如果每次都只能靠“再翻倍、再加一点”去凑，就太不稳定。*我们需要一种能直接算出那个缺的数的写法。*
 ]
 
 #discovery[
@@ -32,6 +29,84 @@
   外项是两端的两个数（$3$ 和 $x$），内项是中间的两个数（$120$ 和 $7$）。
 
   交叉相乘之所以成立，是因为等式两边同乘同一个量（#secref("pf02-order-laws")）并没有破坏等号。
+
+  #figure(
+    cetz.canvas(length: 0.5cm, {
+      import cetz.draw: *
+      // Four positions: a, b, c, d
+      let ax = 0
+      let bx = 4
+      let cx = 8
+      let dx = 12
+      let ty = 2.0
+      let by_ = -2.0
+
+      // Boxes for a : b = c : d
+      rect((ax - 1, ty - 0.8), (ax + 1, ty + 0.8),
+           fill: rgb("#E3F2FD"), stroke: 1pt + rgb("#1565C0"), radius: 3pt)
+      content((ax, ty), text(size: 10pt, weight: "bold", fill: rgb("#0D47A1"))[$a$])
+
+      rect((bx - 1, ty - 0.8), (bx + 1, ty + 0.8),
+           fill: rgb("#FFF9C4"), stroke: 1pt + rgb("#F9A825"), radius: 3pt)
+      content((bx, ty), text(size: 10pt, weight: "bold", fill: rgb("#F57F17"))[$b$])
+
+      content((cx / 2 - 2, ty), text(size: 12pt, weight: "bold")[$:$])
+      content((cx / 2 + 2, ty), text(size: 12pt, weight: "bold")[$=$])
+
+      rect((cx - 1, ty - 0.8), (cx + 1, ty + 0.8),
+           fill: rgb("#E8F5E9"), stroke: 1pt + rgb("#388E3C"), radius: 3pt)
+      content((cx, ty), text(size: 10pt, weight: "bold", fill: rgb("#2E7D32"))[$c$])
+
+      rect((dx - 1, ty - 0.8), (dx + 1, ty + 0.8),
+           fill: rgb("#FCE4EC"), stroke: 1pt + rgb("#C62828"), radius: 3pt)
+      content((dx, ty), text(size: 10pt, weight: "bold", fill: rgb("#C62828"))[$d$])
+
+      content(((cx + dx) / 2, ty), text(size: 12pt, weight: "bold")[$:$])
+
+      // Cross arrows
+      line((ax + 0.8, ty - 0.9), (dx - 0.8, by_ + 0.3),
+           stroke: 1.5pt + rgb("#1565C0"), mark: (end: ">"))
+      line((dx - 0.8, ty - 0.9), (ax + 0.8, by_ + 0.3),
+           stroke: 1.5pt + rgb("#C62828"), mark: (end: ">"))
+
+      // Result
+      content(((ax + dx) / 2, by_),
+        text(size: 10pt, weight: "bold")[$a d = b c$])
+      content(((ax + dx) / 2, by_ - 1.2),
+        text(size: 8pt, fill: rgb("#555"))[外项之积 $=$ 内项之积])
+    }),
+    caption: [交叉相乘：外项 $a$、$d$ 与内项 $b$、$c$ 交叉相乘],
+  )
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      // Map vs reality scale bar
+      let bar-y = 0
+      // Map bar
+      rect((0, bar-y), (6, bar-y + 1.2),
+           fill: rgb("#E3F2FD"), stroke: 1pt + rgb("#1565C0"))
+      content((3, bar-y + 0.6),
+        text(size: 8pt, weight: "bold", fill: rgb("#0D47A1"))[图上 3 cm])
+      // Reality bar
+      rect((0, bar-y - 2.2), (12, bar-y - 1.0),
+           fill: rgb("#FFF3E0"), stroke: 1pt + rgb("#E65100"))
+      content((6, bar-y - 1.6),
+        text(size: 8pt, weight: "bold", fill: rgb("#E65100"))[实际 120 km])
+      // Second pair
+      rect((14, bar-y), (28, bar-y + 1.2),
+           fill: rgb("#E3F2FD"), stroke: 1pt + rgb("#1565C0"))
+      content((21, bar-y + 0.6),
+        text(size: 8pt, weight: "bold", fill: rgb("#0D47A1"))[图上 7 cm])
+      rect((14, bar-y - 2.2), (42, bar-y - 1.0),
+           fill: rgb("#FFF3E0"), stroke: 1pt + rgb("#E65100"))
+      content((28, bar-y - 1.6),
+        text(size: 8pt, weight: "bold", fill: rgb("#E65100"))[实际 ? km])
+      // Equals
+      content((13, bar-y - 0.5), text(size: 14pt, weight: "bold")[$=$])
+    }),
+    caption: [同一比例尺下，图上长度与实际距离成比例],
+  )
 ]
 
 #side-hack[
@@ -40,8 +115,31 @@
 
 #tryit[
   + 解比例：$4 : 9 = x : 36$。
-  + 一辆车 $3$ 小时走 $165$ 千米，按同样速度 $8$ 小时能走多远？
   + $5$ 个工人做 $12$ 天完工。若改由 $6$ 个人做，需要几天？（反向比例）
+]
+
+#history-note[
+  约公元前 $585$ 年，古希腊数学家泰勒斯（Thales）用影子测出了埃及金字塔的高度：他在某个时刻测量自己的身高与影长之比，然后利用"人和人影的比例 = 塔和塔影的比例"直接算出塔高。这可能是人类有记载的最早一次比例应用——不用爬上去也能算。
+]
+
+#side-hack[
+  *重演泰勒斯测量金字塔*
+
+  传说约公元前 600 年，泰勒斯（Thales）用影子和比例测量了吉萨大金字塔的高度。方法如下：
+
+  在某时刻，一根 $1$ 米长的竹竿竖立时，影子长 $0.8$ 米。同时测量金字塔的影子长 $112$ 米（量到影子末端）。设金字塔底边边长中点到影子末端的距离已知，这里简化为直接用影子长。
+
+  + 竹竿高与影子长的比是多少？
+  + 设金字塔高 $h$ 米，写出比例方程。
+  + 解出 $h$。
+  + 思考：这个方法成立的前提条件是什么（关于太阳光和地面的角度）？
+
+  #answer-cut[
+    + 比 $= 1 : 0.8 = 5 : 4$（或比值 $1.25$）。
+    + 比例方程：$1 / 0.8 = h / 112$（同一时刻同一地点，影子与实物高度之比相同）。
+    + $h = 112 times (1/0.8) = 112 times 1.25 = 140$ 米（接近金字塔实际高度约 $138$ 米）。
+    + 前提：太阳光线近似平行（太阳足够远），且竹竿和金字塔都竖直。这保证了"物高 / 影长"的比值对同一时刻所有竖直物体相同。
+  ]
 ]
 
 #blueprint[
@@ -50,6 +148,16 @@
   - *解比例的套路*：找未知项 → 交叉相乘写成等式 → 用反向操作解出那个字母。
   - *同向 vs 反向*：同向时写 $a : b = c : d$；反向时写 $a times b = c times d$ 或改写成“单位量不变”的形式。
 ]
+
+#history-note[
+  *希帕蒂娅（Hypatia，约 360–415）*——亚历山大城的数学家与哲学家，她对丢番图（Diophantus）《算术》的注释保留了大量比与比例的计算技巧，成为后代学者学习分数运算的主要来源之一。她是有史料可考的最早女性数学家之一。
+]
+
+
+#self-check[
+  $3 : 5 = 9 : x$，你能不算出 $x$，先说出“内项之积等于外项之积”具体是哪两个数相乘等于哪两个数相乘吗？
+]
+
 
 #pitfall[
   *高频错误*
@@ -70,6 +178,8 @@
   + 解比例：$2 : 5 = x : 25$。
   + 解比例：$8 : 12 = 6 : y$。
   + 判断 $4 : 9$ 与 $20 : 45$ 是否成比例。
+  + 判断 $6 : 10$ 与 $9 : 15$ 是否成比例，并说明理由。
+  + 解比例：$x : 4 = 15 : 20$。
 
   *应用*
 
@@ -81,17 +191,21 @@
 
   + $12$ 个人修完一条路要 $15$ 天。若想提前 $3$ 天完工，至少需要几人？
   + $a : b = 2 : 3$，$b : c = 4 : 5$。求 $a : b : c$ 的最简整数比。
+  + *[找 Bug]*：阿米娜（Amina）写道："因为 $2 : 3 = 4 : 6$，所以 $2 + 4 : 3 + 6 = 6 : 9 = 2 : 3$，得出'比的前后项分别相加得到的新比仍等于原比'是普遍规律。"判断这条结论是否成立。如果不成立，请举一个反例。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
-  + $x = 10$。
-  + $y = 9$。
-  + 成比例，因为比值都是 $4/9$。
-  + $48$ 千米。
-  + $16$ 升。
-  + $1080$ 件。
-  + $15$ 人（$12 times 15 = 15 times 12$，即 $n times 12 = 180$）。
-  + $a : b : c = 8 : 12 : 15$。
+  #answer-cut[
+  + $x = 10$（交叉相乘：$9 x = 4 times 25 = 100$）。
+  + $y = 9$（交叉相乘：$8 y = 12 times 6 = 72$）。
+  + 成比例（比值都是 $4/9$，交叉相乘验证：$4 times 45 = 9 times 20 = 180$）。
+  + 成比例，比值都是 $3/5$（$6/10 = 3/5$，$9/15 = 3/5$）。
+  + $x = 3$（交叉相乘：$20 x = 60$，$x = 3$）。
+  + $48$ 千米（列比例 $5 : 20 = 12 : x$，交叉相乘 $5 x = 240$）。
+  + $16$ 升（$6 : 75 = x : 200$，交叉相乘 $75 x = 1200$）。
+  + $1080$ 件（效率不变，$4 times 720 / 4 = 180$ 件/台，$6 times 180 = 1080$）。
+  + $15$ 人（反向比例：$12 times 15 = n times 12$，$n = 180 / 12 = 15$）。
+  + $a : b : c = 8 : 12 : 15$（先统一中间项 $b$：$a : b = 2 : 3 = 8 : 12$，$b : c = 4 : 5 = 12 : 15$，合并得连比）。
+  + 不普遍成立。反例：$1 : 2 = 3 : 6$，但 $1 + 3 : 2 + 6 = 4 : 8 = 1 : 2$ ✓ 这例恰好成立。再试 $1 : 2 = 5 : 10$，$1 + 5 : 2 + 10 = 6 : 12 = 1 : 2$ ✓。这两个特殊例子误导了阿米娜——其实只要原比相同，加法后的比就一定相同。但若把"加同一个数"换成"前项加 $a$、后项加 $b$"（$a != b$），结论就不对：例如 $2 : 3$，前后各加 $1$ 得 $3 : 4 != 2 : 3$。结论：把"两个等比分别相加"误推为"加任意数都保持比"是错的——必须严格"两个比的对应项相加"才行，而且这等价于已知的*合分性质*，不是一般规律。
+  ]
 ]
 
 #side-hack[

@@ -1,0 +1,199 @@
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
+#import "../../lib/diagram-packages.typ": cetz
+
+=== 整式加减：去括号 + 合并同类项 <tool:al01-add-subtract-polynomials>
+
+#vocab[去括号 removing parentheses][整式加减 adding and subtracting polynomials]
+
+#crisis[
+  给你两段钢筋，长分别记作 $A = 4 x + 7$（米）和 $B = 2 x - 3$（米）。
+
+  - 首尾接起来，总长怎么写成一个整式？
+  - 从 $A$ 段里切掉一段，切走的长度正好是 $B$，剩下多少？
+  - 如果让 $C = -(A - B) + A$，$C$ 化简后会不会还和 $x$ 有关？
+
+  直接写就是 $(4x+7) + (2x-3)$、$(4x+7) - (2x-3)$、$-((4x+7)-(2x-3))+(4x+7)$。每次都得“打开括号 + 把同类的放一起”——但只要括号前面是减号，事故马上就来。
+
+  我们必须把*去括号*的规则弄得清清楚楚、不需要犹豫。
+]
+
+#discovery[
+  括号前是加号时，去括号后里面的每一项*原样搬出来*：
+
+  $ (4 x + 7) + (2 x - 3) = 4 x + 7 + 2 x - 3 $
+
+  这没有什么意外——“加一堆东西”等于“把每样都加一遍”。
+
+  括号前是减号时，你可以把那个减号想成 $-1$ 乘在整个括号上，再分配到每一项：
+
+  $ -(2 x - 3) = (-1)(2 x) + (-1)(-3) = -2 x + 3 $
+
+  结论：括号前带减号，去括号时*括号里的每一项都变号*，一个不能漏。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#1565C0")
+      let red = rgb("#C62828")
+      let green = rgb("#2E7D32")
+
+      // Plus sign case
+      content((7, 9), text(size: 9pt, weight: "bold")[括号前的符号决定变号规则], anchor: "south")
+
+      // + case
+      rect((0, 4.5), (13, 7.5), stroke: 1pt + blue, radius: 3pt)
+      content((1.5, 6.8), text(size: 8pt, fill: blue, weight: "bold")[＋（  ）])
+      content((6.5, 6), text(size: 8pt)[$+(2 x - 3) = +2 x - 3$])
+      content((6.5, 5.2), text(size: 7pt, fill: green)[每项符号不变 ✓])
+
+      // - case
+      rect((0, 0.5), (13, 3.5), stroke: 1pt + red, radius: 3pt)
+      content((1.5, 2.8), text(size: 8pt, fill: red, weight: "bold")[−（  ）])
+      content((6.5, 2), text(size: 8pt)[$-(2 x - 3) = -2 x + 3$])
+      content((6.5, 1.2), text(size: 7pt, fill: red)[每项都变号！])
+    }),
+    caption: [去括号规则：加号不变，减号全变],
+  )
+
+  一旦括号去干净，剩下的就是 #secref("cb05-expressions-and-like-terms") 里的老动作——合并同类项。整式加减的固定流程就成型了：
+
+  + 按加减把每个括号原样摊平（遇减号，每项变号）。
+  + 把同类项聚在一起。
+  + 合并同类项（系数加减，字母部分不动）。
+
+  这三步顺序可以颠倒吗？不行。先去括号是为了让“同类项”暴露出来；否则 $(4x+7) - (2x-3)$ 里被锁在括号里的 $-3$ 永远和外面的 $+7$ 相遇不上。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+
+      let gray = luma(100)
+      let blue = rgb("#1565C0")
+      let green = rgb("#2E7D32")
+      let orange = rgb("#E65100")
+
+      // Step 1
+      rect((0, 6), (8, 8), fill: rgb("#E3F2FD"), stroke: 1pt + blue, radius: 3pt)
+      content((4, 7), text(size: 8pt, weight: "bold", fill: blue)[① 去括号])
+
+      // Arrow
+      line((4, 5.8), (4, 5), stroke: 1pt + gray, mark: (end: ">"))
+
+      // Step 2
+      rect((0, 3), (8, 5), fill: rgb("#FFF3E0"), stroke: 1pt + orange, radius: 3pt)
+      content((4, 4), text(size: 8pt, weight: "bold", fill: orange)[② 聚同类项])
+
+      // Arrow
+      line((4, 2.8), (4, 2), stroke: 1pt + gray, mark: (end: ">"))
+
+      // Step 3
+      rect((0, 0), (8, 2), fill: rgb("#E8F5E9"), stroke: 1pt + green, radius: 3pt)
+      content((4, 1), text(size: 8pt, weight: "bold", fill: green)[③ 合并同类项])
+    }),
+    caption: [整式加减固定三步：顺序不可颠倒],
+  )
+]
+
+#side-hack[
+  实战小窍门：遇到括号前带减号，先把那个减号改写成“$+ (-1) times$”再分配，步骤虽然多一行，但几乎不可能错号。
+]
+
+#tryit[
+  按“去括号 → 合并”的两步流程自己算，再对照下面的方法总结。
+
+  + $(4 x + 7) + (2 x - 3)$
+  + $(4 x + 7) - (2 x - 3)$
+]
+
+#blueprint[
+  *工具一：去括号规则*
+
+  - 括号前是 $+$：去括号后，里面每一项*不变号*。
+  - 括号前是 $-$：去括号后，里面每一项*全部变号*。
+
+  口头版：“加号进来无影响，减号进来换戏服。”
+
+  *例 1*：$(4 x + 7) + (2 x - 3) = 4 x + 7 + 2 x - 3 = 6 x + 4$。
+
+  *例 2*：$(4 x + 7) - (2 x - 3) = 4 x + 7 - 2 x + 3 = 2 x + 10$。
+
+  *工具二：整式加减的标准三步*
+
+  + 去括号（严格按工具一）。
+  + 按字母骨架把同类项聚拢。
+  + 合并同类项（系数加减，字母部分保留）。
+
+  *例 3*：化简 $(3 a^2 - 2 a + 5) - (a^2 + 4 a - 1)$
+
+  $ &= 3 a^2 - 2 a + 5 - a^2 - 4 a + 1 \
+    &= (3 - 1) a^2 + (-2 - 4) a + (5 + 1) \
+    &= 2 a^2 - 6 a + 6 $
+
+  *例 4*：已知 $A = 3 x - 2 y$，$B = x + 4 y$。求 $2 A - B$。
+
+  $ 2 A - B &= 2(3 x - 2 y) - (x + 4 y) \
+            &= 6 x - 4 y - x - 4 y \
+            &= 5 x - 8 y $
+]
+
+#self-check[
+  $(2x^2 + 3x) - (x^2 - 5x)$ 第一步去括号时，$-(x^2 - 5x)$ 展开成什么？说出符号的处理规则。
+]
+
+
+#pitfall[
+  *高频错误*
+
+  ✗ 只把减号后括号里的第一项变号，其余照搬
+  → ✓ 减号要对*每一项*都变号。$(4x + 7) - (2x - 3) = 4x + 7 - 2x + 3$（别写成 $- 3$）。
+
+  ✗ 合并时把次数也相加
+  → ✓ 系数相加减，字母部分完全不变：$3 a^2 + 5 a^2 = 8 a^2$，而不是 $8 a^4$。
+
+  ✗ 没去括号就急着“挑同类项”
+  → ✓ 必须先把所有括号拆干净，让符号都站到它该在的位置上，再谈谁和谁合并。
+]
+
+#mastery[
+  *基础*
+
+  + 去括号并化简：
+    - $(5 m + 2 n) + (3 m - 7 n)$
+    - $(5 m + 2 n) - (3 m - 7 n)$
+    - $6 p - (2 p - 3 q) + (p + q)$
+  + 化简：$(a^2 + 3 a - 4) + (2 a^2 - a + 1)$。
+  + 化简：$(2 b^2 - b + 3) - (b^2 - 4 b + 5)$。
+
+  *应用*
+
+  + 设 $P = 2 x^2 + x - 3$，$Q = x^2 - 2 x + 5$。求 $P + Q$、$P - Q$、$2 P + 3 Q$。
+  + 一个长方形的长是 $(3 a + b)$，宽是 $(a - 2 b)$。先求它的周长。
+  + 从 $5 x - 4$ 里减去什么样的整式，结果是 $2 x + 3$？
+
+  *挑战 ☞ 选做*
+
+  + 已知 $A - B = 3 x^2 - 2 x + 1$，$A + B = 5 x^2 + 4 x - 3$，求 $A$ 和 $B$。
+  + 若 $(m x^2 + 3 x - 1) + (2 x^2 + n x + 4)$ 化简后与 $x$ 无关（即一次项系数为 $0$），求 $m$ 与 $n$ 满足的条件。
+  + 写出一个非零多项式 $M$，使得 $(2 x^2 - x + 1) + M$ 化简后得到常数项为 $0$ 的一次多项式。
+
+  #answer-cut[
+
+  *基础*
+  + $(5 m + 2 n) + (3 m - 7 n) = 8 m - 5 n$；
+    $(5 m + 2 n) - (3 m - 7 n) = 2 m + 9 n$；
+    $6 p - (2 p - 3 q) + (p + q) = 6 p - 2 p + 3 q + p + q = 5 p + 4 q$。（去括号 + 合并同类项）
+  + $3 a^2 + 2 a - 3$。（同类项合并）
+  + $b^2 + 3 b - 2$。（去括号规则 + 同类项合并）
+
+  *应用*
+  + $P + Q = 3 x^2 - x + 2$；$P - Q = x^2 + 3 x - 8$；$2 P + 3 Q = 2(2 x^2 + x - 3) + 3(x^2 - 2 x + 5) = 4 x^2 + 2 x - 6 + 3 x^2 - 6 x + 15 = 7 x^2 - 4 x + 9$。
+  + 周长 $= 2[(3 a + b) + (a - 2 b)] = 2(4 a - b) = 8 a - 2 b$。
+  + 设减去的整式为 $X$，由 $(5 x - 4) - X = 2 x + 3$ 得 $X = 3 x - 7$。
+
+  *挑战 ☞ 选做*
+  + 两式相加得 $2 A = 8 x^2 + 2 x - 2$，$A = 4 x^2 + x - 1$；两式相减得 $2 B = 2 x^2 + 6 x - 4$，$B = x^2 + 3 x - 2$。
+  + 一次项系数 $3 + n = 0$，故 $n = -3$；$m$ 可取任意数，因为 $m x^2 + 2 x^2 = (m+2) x^2$ 不影响一次项。
+  + 例如 $M = -2 x^2 + 2 x - 1$：原式 $+M$ 得 $x + 0$，常数项为 $0$ 的一次多项式。
+  ]
+]

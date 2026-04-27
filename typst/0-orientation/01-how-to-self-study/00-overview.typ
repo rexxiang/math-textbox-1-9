@@ -1,8 +1,8 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack
 
 == 怎样自学这本书 <ch:how-to-self-study>
 
-#blueprint[
+#chapter-nav[
   *核心问题*：怎样把"先试一试、暴露空白、补缺、再尝试"变成稳定的自学循环？ \
   *需要先会*：无 \
   *知识地图位置*：全书入口 \

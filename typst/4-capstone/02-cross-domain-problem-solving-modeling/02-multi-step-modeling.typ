@@ -6,7 +6,7 @@
   *五步法*
 
   + *读题*：把数据、图形、所求分开圈出。*单位*、*未知*、*已知*用不同符号标记。
-  + *设元*：用字母命名所有未知量。参考关系模板 #secref("cb04-relationship-templates")。
+  + *设元*：用字母命名所有未知量。参考关系模板 #secref("cb05-relationship-templates")。
   + *建关系*：把题目里的每一句话翻成一个等式或不等式，通常来自*几何定理*、*函数式*或*概率定义*。
   + *求解*：用代数工具解方程组或不等式（#secref("al04-linear-one-variable")、#secref("al04-systems-linear")、#secref("al05-quadratic-solving")）。
   + *回检*：代回原题验证*数值*与*物理合理性*。负数长度、超过 1 的概率等都是信号。

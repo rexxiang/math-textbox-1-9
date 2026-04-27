@@ -1,11 +1,9 @@
-#import "../../lib/theme-v2.typ": blueprint, mastery, secref
+#import "../../lib/chapter-kit.typ": blueprint, mastery, secref, knowledge-card
 
 == 本章回顾 <meta:number-line-negative-rational>
 
-#blueprint[
-  *知识速查卡*
-
-  #table(
+#knowledge-card(title: "知识速查卡")[
+    #table(
     columns: (1fr, 1fr),
     inset: 6pt,
     stroke: 0.4pt,
@@ -31,6 +29,10 @@
   + 把 $0.1dot(6)$（即 $0.1666...$）写成分数。
   + 若 $a < 0 < b$，比较 $|a - b|$ 与 $|a| + |b|$ 的大小。
   + 写出一个比 $-pi$ 大、又比 $-3$ 小的数。（提示：先把 $pi$ 看成约 $3.14$）
+  // 跨章回顾
+  + 一堆糖果，红色与黄色的比是 $3 : 7$，一共 $40$ 颗。红色有多少颗？如果吃掉 $5$ 颗红色，剩余红色占总剩余的百分之几？（回顾 #secref("cb01-ratio-basics") 与 #secref("cb01-percent")）
+  // 跨章回顾
+  + 小数 $2.5$ 在数轴上标在哪里？它可以写成分数吗？它属于 $QQ$ 吗？（回顾 #secref("pf05-decimals-conversion")）
 
   *参考答案*
 
@@ -44,6 +46,8 @@
   + $1/6$。
   + 两者相等：$|a - b| = b - a = |a| + |b|$。
   + 例如 $-3.1$ 或 $-31/10$。
+  + $12$ 颗（$40 times 3/10$）。吃掉 $5$ 颗后红色剩 $7$，总剩 $35$；$7/35 = 20%$（百分率公式）。
+  + $2.5$ 在 $2$ 与 $3$ 之间（数轴上 $2$ 右边半个单位）；$2.5 = 5/2$（有限小数化分数）；属于 $QQ$。
 ]
 
 #blueprint[
@@ -54,6 +58,8 @@
   - 回看 #secref("pf04-fraction-equivalence")：等值分数在新数域 $QQ$ 里照样成立。
 
   *☞ 高中桥*
+
+  _以下是预告，现在看不懂完全正常 — 等到高中再回来。_
 
   - 高中会把“距离 = 绝对值”推广成向量的模长，并研究绝对值不等式。
   - 无理数把 $QQ$ 补成 $RR$，是第 6 章（平方根）要启动的事，也将在高中实数完备性里被严肃处理。

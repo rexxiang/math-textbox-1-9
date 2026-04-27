@@ -1,8 +1,10 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 样本空间、概率与实验频率 <ch:sample-space-probability-experimental-frequency>
 
-#blueprint[
+同时掷两颗骰子，点数之和等于 7 和等于 12，哪个更容易出现？直觉可能告诉你"差不多"——但把所有可能的组合列出来，你会发现答案差得很远。这一章的主题就是：别猜，去数。
+
+#chapter-nav[
   *难度*：★★★★☆ \
   *核心问题*：目前为止处理的都是*已经发生*的数据。现在把问题转向*还没发生*的结果——抛一枚硬币会是正是反、抽一张扑克是什么花色、投两颗骰子得到几点。我们要回答：
   - 怎样把“所有可能的结果”*穷举*出来，避免漏数？
@@ -13,8 +15,7 @@
   *忘了可以回到*：百分比 / 比例基本功 $->$ #secref("cb01-percent")、#secref("cb01-ratio-basics")；频率概念 $->$ #secref("dt04-frequency-distributions")。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + §1 *样本空间 $Omega$*：随机试验、样本点、事件；枚举法与树状图。怎样保证“所有结果”都被数到、且*等可能*被列入讨论。
   + §2 *古典概率*：在“有限种等可能结果”这个最简前提下，$P(A) = |A| \/ |Omega|$；对立与互斥事件；$0 <= P <= 1$。

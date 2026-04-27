@@ -1,8 +1,8 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack
 
 == 符号、知识地图与查漏路线 <ch:symbols-invention-tree-repair-routes>
 
-#blueprint[
+#chapter-nav[
   *核心问题*：看到符号、知识地图和查漏提示时，我该怎样把它们变成自学导航，而不是装饰信息？ \
   *需要先会*：无 \
   *知识地图位置*：导读 / 导航系统 \

@@ -1,8 +1,10 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 抽样：从部分看整体 <ch:population-samples-estimation>
 
-#blueprint[
+厨师尝一勺汤就知道整锅的味道——前提是汤搅匀了。如果只舀了表面那层油，那一勺汤说的就不是整锅的故事。"从部分推断整体"这件事，关键不在于你看了多少，而在于你看的那部分是不是*有代表性*。
+
+#chapter-nav[
   *难度*：★★★★☆ \
 
   *核心问题*
@@ -25,8 +27,7 @@
   *忘了可以回到*：一次函数均值直觉 $->$ #secref("dt03-center-and-spread")；样本容量与随机波动 $->$ #secref("dt09-experimental-frequency")；比例 $->$ #secref("cb01-ratio-basics")。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + §1 *总体 vs 样本*：定义总体、个体、样本、样本容量；为什么必须抽样；样本与总体的*关系*（样本是总体的子集 $+$ 新鲜特征：依赖抽样方式）。
   + §2 *抽样方法与偏差*：*简单随机抽样* SRS 是基准；常见偏差来源——*方便样本 / 自选样本 / 无应答偏差*。
@@ -50,4 +51,3 @@
 #include "01-population-vs-sample.typ"
 #include "02-sampling-bias.typ"
 #include "03-estimation.typ"
-#include "99-review.typ"

@@ -1,4 +1,5 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/diagram-packages.typ": cetz
 
 === 分配律的双向使用 <tool:al02-distributive-rewrite>
 
@@ -18,15 +19,50 @@
   分配律其实是一条双向公路——一头叫“乘开”，另一头叫“提公因式”。这一节就要把这条公路两端都走熟。
 ]
 
-#history-note[
-  欧几里得《原本》第二卷已经在用“面积重排”来证明形如 $a(b + c) = a b + a c$ 的事实。分配律并不只是计算规则——它是“把一块面积拆成两块”或“把两块拼回一块”的代数版本。
-]
-
 #discovery[
   先把“乘开”和“提公因式”并排写出来：
 
   $ "乘开：" quad a (b + c) = a b + a c \
     "提公因式：" quad a b + a c = a (b + c) $
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue-fill = rgb("#BBDEFB")
+      let orange-fill = rgb("#FFE0B2")
+      let blue = rgb("#1565C0")
+      let orange = rgb("#E65100")
+
+      let h = 5
+      let w1 = 5
+      let w2 = 3.5
+
+      // Left part: area ab
+      rect((0, 0), (w1, h), fill: blue-fill, stroke: 0.8pt)
+      // Right part: area ac
+      rect((w1, 0), (w1 + w2, h), fill: orange-fill, stroke: 0.8pt)
+      // Outer boundary
+      rect((0, 0), (w1 + w2, h), stroke: 1.2pt)
+
+      // Dashed divider
+      line((w1, 0), (w1, h), stroke: (dash: "dashed", thickness: 0.6pt))
+
+      // Height label
+      content((-1.2, h / 2), text(size: 11pt)[$a$])
+      // Width labels
+      content((w1 / 2, h + 0.8), text(size: 11pt)[$b$])
+      content((w1 + w2 / 2, h + 0.8), text(size: 11pt)[$c$])
+
+      // Area labels inside
+      content((w1 / 2, h / 2), text(size: 11pt, fill: blue)[$a b$])
+      content((w1 + w2 / 2, h / 2), text(size: 11pt, fill: orange)[$a c$])
+
+      // Total width
+      content(((w1 + w2) / 2, -1), text(size: 10pt)[总面积 $= a(b + c)$])
+    }),
+    caption: [分配律的面积模型：高 $a$、宽 $b + c$ 的长方形，面积既是 $a(b+c)$，也是 $a b + a c$]
+  )
 
   两行是同一条规则，读法不同而已。
 
@@ -58,11 +94,16 @@
 ]
 
 #tryit[
-  不看后面，先自己做这三题：
+  不看后面，先自己做这两题：
 
-  + 乘开：$-2(3 a - 4 b + 1)$
   + 提公因式：$8 m^2 - 12 m$
   + 提公因式：$x(y + 2) + 5(y + 2)$
+]
+
+#history-note[
+  约公元前 300 年，欧几里得（Euclid）在《原本》第二卷命题 1 中，用矩形面积的分拆证明了 $a(b + c) = a b + a c$——这是分配律最早的严格论证。公元 820 年前后，波斯数学家花拉子密（al-Khwārizmī）在《代数学》中大量隐式运用同一法则来展开和化简方程。不过，“分配律”（_distributive_）这个正式名称要等到 1814 年才由法国军官数学家塞尔瓦（François-Joseph Servois）在一篇关于运算性质的论文中命名。
+
+  ☞ 历史接力 → 韦达 $1591$ 年大量使用分配律展开通用代数式，为今天的多项式运算奠基；代数分支完整展开见 #secref("al02-distributive-rewrite")。
 ]
 
 #blueprint[
@@ -90,6 +131,34 @@
   *例 4*（提负号）：$-6 x^2 + 9 x = -3 x (2 x - 3)$。
 
   提出负号能让括号里首项更干净；它改变每一项的符号，不改变值。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#1565C0")
+      let green = rgb("#2E7D32")
+      let light-blue = rgb("#E3F2FD")
+      let light-green = rgb("#E8F5E9")
+
+      // Left box: factored form
+      rect((0, 0), (7, 3), fill: light-blue, stroke: 0.8pt + blue, radius: 0.3)
+      content((3.5, 1.5), text(size: 11pt, fill: blue)[$a(b + c)$])
+
+      // Right box: expanded form
+      rect((12, 0), (19, 3), fill: light-green, stroke: 0.8pt + green, radius: 0.3)
+      content((15.5, 1.5), text(size: 11pt, fill: green)[$a b + a c$])
+
+      // Top arrow: expand (left → right)
+      line((7.2, 2.2), (11.8, 2.2), stroke: 0.8pt + blue, mark: (end: ">", fill: blue))
+      content((9.5, 2.9), text(size: 9pt, fill: blue)[展开（乘开）])
+
+      // Bottom arrow: factor (right → left)
+      line((11.8, 0.8), (7.2, 0.8), stroke: 0.8pt + green, mark: (end: ">", fill: green))
+      content((9.5, 0.1), text(size: 9pt, fill: green)[提公因式])
+    }),
+    caption: ["乘开"与"提公因式"是分配律的正反两个方向]
+  )
 ]
 
 #pitfall[
@@ -129,14 +198,14 @@
   + 因式分解 $x(a - b) + y(b - a)$（提示：$(b - a) = -(a - b)$）。
   + 若 $m a + m b + m c = 45$，且 $a + b + c = 9$，求 $m$ 的值。
   + 设 $A = 3 x (y + 2) + 5(y + 2)$，$B = (y + 2)(3 x + 5) - 4$。比较 $A$ 和 $B$，说明它们的关系。
+  + *估算 / 量级题*：用分配律估算 $99 times 101$，不用计算器，在 $5$ 秒内给出答案。写出你的思路（提示：把 $99$ 和 $101$ 都改写为 $100 plus.minus 1$）。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
-  + $-6 u + 15 v - 3$；$2 p + 3 q - 4$。
-  + $5 b (2 a - 3 b)$；$2 x (2 x^2 + x - 3)$。
-  + $(x - y)(a - b)$；$(p + 3)(2 m + 5)$。
+  + $-6 u + 15 v - 3$；$2 p + 3 q - 4$。（分配律展开）
+  + $5 b (2 a - 3 b)$；$2 x (2 x^2 + x - 3)$。（提公因式）
+  + $(x - y)(a - b)$；$(p + 3)(2 m + 5)$。（整式公因式提取）
 
   *应用*
   + $a^2 b - a b^2 = a b (a - b)$。几何意义：一个长 $a b$、宽 $(a - b)$ 的长方形面积——以 $a b$ 为基底，宽度则是 $a$ 与 $b$ 的差。
@@ -147,4 +216,6 @@
   + $x(a - b) + y(b - a) = x(a - b) - y(a - b) = (a - b)(x - y)$。
   + $m (a + b + c) = 45$，即 $9 m = 45$，$m = 5$。
   + $A = (y + 2)(3 x + 5)$；而 $B = (y + 2)(3 x + 5) - 4$，所以 $B = A - 4$，即 $A - B = 4$。
+  + $99 times 101 = (100 - 1)(100 + 1) = 100^2 - 1^2 = 10000 - 1 = 9999$。这正是平方差公式 $(a-b)(a+b) = a^2 - b^2$，一种分配律的直接应用。
+  ]
 ]

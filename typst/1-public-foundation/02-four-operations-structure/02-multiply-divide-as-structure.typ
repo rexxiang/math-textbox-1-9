@@ -1,23 +1,47 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, answer-cut
+#import "../../lib/diagram-packages.typ": cetz
 
 === 乘法与除法：相同结构的打包与拆分 <tool:pf02-mul-div-structure>
 
 #vocab[乘法 multiplication][除法 division][平均分 equal sharing]
 
 #crisis[
-  6 把椅子摆成一排，要摆 5 排，一共多少把？
+  你能不用加法，一口报出“6 把椅子摆 5 排，一共多少把”吗？
 
-  如果反过来，30 把椅子平均分成 5 排，每排又是多少把？
+  反过来，30 把椅子平均分成 5 排，每排多少把——你又能不能不一把一把地减？
 
   *当“同样的一组”不断重复时，我们是不是该有一种比反复加减更省力的写法？*
 ]
 
-#history-note[
-  乘法表之所以重要，是因为它把“同样大小的小组反复出现”的结构压缩成了一个更短的表达。
-]
-
 #discovery[
   $6 + 6 + 6 + 6 + 6$ 表示 5 个 6。
+
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#2196F3")
+      let light = rgb("#E3F2FD")
+
+      // 5 rows × 6 columns grid (area model)
+      for row in range(5) {
+        for col in range(6) {
+          let x = col * 1.8
+          let y = row * 1.8
+          rect((x, y), (x + 1.6, y + 1.6), fill: light, stroke: 0.5pt + blue)
+        }
+      }
+
+      // Dimension labels
+      content((5.4, -0.8), text(weight: "bold", size: 9pt)[6 把], anchor: "north")
+      content((-1.2, 4.5), text(weight: "bold", size: 9pt)[5 排], anchor: "east")
+
+      // Result
+      content((5.4, 10), text(weight: "bold", size: 10pt)[$6 times 5 = 30$], anchor: "south")
+    }),
+    caption: [面积模型：5 排 × 6 把 = 30 把椅子],
+  )
 
   当同样的小组反复出现时，我们把它写成 $6 times 5 = 30$。这不是换了一道题，而是把重复结构打包了。
 
@@ -38,12 +62,41 @@
 
   + 8 袋糖，每袋 4 颗，一共多少颗？
   + 32 颗糖平均分给 8 个小朋友，每人多少颗？
-  + 为什么这两题能互相对应？
+]
+
+#history-note[
+  目前已知最早的完整十进制乘法表，是 2002 年在湖南里耶出土的秦代竹简（约公元前 200 年），用“九九八十一”一路列到“二半而一”。更早的巴比伦泥板（约公元前 2000 年）则保存了大量六十进制乘法表。不同文明都发现了同一件事：把“同样大小的小组反复出现”的结构预先压缩成一张表，计算就能快得多。
 ]
 
 #blueprint[
   - *乘法* 用来表示“若干个相同小组”的总量。
   - *除法* 用来把总量按相同结构拆开，可以是“平均每组多少”，也可以是“能分成几组”。
+  -
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let green = rgb("#4CAF50")
+      let orange = rgb("#FF9800")
+
+      // Total bar
+      rect((0, 3), (15, 5), fill: rgb("#FFF3E0"), stroke: 1pt + orange)
+      content((7.5, 4), text(weight: "bold", size: 10pt)[30])
+
+      // Split into 5 equal groups
+      for i in range(5) {
+        let x = i * 3
+        rect((x, 0), (x + 2.8, 2), fill: rgb("#C8E6C9"), stroke: 0.8pt + green)
+        content((x + 1.4, 1), text(weight: "bold", size: 9pt)[6])
+      }
+
+      // Arrow from total to groups
+      line((7.5, 2.8), (7.5, 2.2), stroke: 1pt + luma(120), mark: (end: ">"))
+      content((10, 2.5), text(size: 8pt, fill: luma(100))[$div 5$], anchor: "west")
+    }),
+    caption: [除法把 30 平均分成 5 组，每组 6],
+  )
+
   - 乘法与除法是互逆运算：若 $a times b = c$，则 $c div a = b$，也有 $c div b = a$。
 ]
 
@@ -63,6 +116,8 @@
   + 写出“7 盒，每盒 9 个”对应的乘法式。
   + 写出“63 个球平均装进 7 盒”对应的除法式。
   + 说明两式为什么互相关联。
+  + 判断对错并改正："$20 div 4 = 5$ 表示把 20 平均分成 5 份。"
+  + 一个菜地有 4 行番茄，每行 8 株。不用逐一去数，一共有多少株？
 
   *应用*
 
@@ -74,13 +129,15 @@
   + “20 里面有几个 4”和“20 平均分成 4 份，每份多少”都写成除法，但它们问的问题为什么不完全一样？
   + 为什么说乘法比重复加法更像“看见了结构”？请用 25 个 4 的例子解释。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
-  + $7 times 9 = 63$。
-  + $63 div 7 = 9$。
-  + 因为它们说的是同一批 63 个球，只是一个从“组和每组”求总量，一个从“总量和组数”求每组。
-  + 72 人。
-  + 8 排。
-  + 前者在问能分成几个 4，后者在问每份大小；一个问组数，一个问每组数量。
-  + 因为 $4 + 4 + dots.h$ 写 25 次会很长，而 $25 times 4$ 直接看出了“25 个同样的 4 组”。
+  #answer-cut[
+  + $7 times 9 = 63$（乘法：相同小组打包）。
+  + $63 div 7 = 9$（除法：按同一结构拆开）。
+  + 因为它们说的是同一批 63 个球，只是一个从“组和每组”求总量，一个从“总量和组数”求每组（乘除互逆）。
+  + 不够准确；$20 div 4 = 5$ 表示把 20 平均分成 4 份，每份是 5，或者说 20 里面有 5 个 4（除法的两种理解）。
+  + $4 times 8 = 32$ 株（乘法：4 组 × 每组 8）。
+  + $12 times 6 = 72$ 人（乘法打包）。
+  + $72 div 9 = 8$ 排（除法拆分）。
+  + 前者在问 20 里面能分出几个 4（包含除），后者在问把 20 均分成 4 份后每份多大（等分除）；一个问组数，一个问每组数量（除法的两种含义）。
+  + 因为 $4 + 4 + dots.h$ 写 25 次很长，而 $25 times 4 = 100$ 直接看出“25 个同样的 4 组”，一步到位。这就是从重复加法中提取出“重复结构”的眼光（乘法的结构视角）。
+  ]
 ]

@@ -1,4 +1,5 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/diagram-packages.typ": cetz
 
 === 分式的结构与化简 <tool:al03-rational-expression-structure>
 
@@ -14,10 +15,6 @@
   这一节回答三件事：分式到底是什么？*什么时候有意义*？怎么化简到最简分式？
 ]
 
-#history-note[
-  “分式”这个词是从小学的“分数”直接扩出来的：把分母换成能变动的整式。古希腊人把比例当作独立的对象研究（所以叫 _ratio_ / _rational_），这也是“有理数”“有理式”共用 _rational_ 这个词根的原因。
-]
-
 #discovery[
   *分式的正式定义 + 分母的隐含条件*
 
@@ -30,6 +27,52 @@
   - $1/x$：要求 $x != 0$；
   - $(x + 1)/(x - 2)$：要求 $x - 2 != 0$，也就是 $x != 2$；
   - $1/((x - 1)(x + 3))$：要求 $x != 1$ 且 $x != -3$。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#1565C0")
+      let red = rgb("#C62828")
+      let gray = luma(160)
+
+      // Title
+      content((5, 3.2), text(size: 8pt, weight: "bold")[分式有意义的范围], anchor: "south")
+
+      // Main axis
+      line((-5.5, 0), (5.5, 0), stroke: 1pt + gray)
+
+      // Valid domain segments (blue)
+      line((-5.5, 0), (-3.15, 0), stroke: 2pt + blue)
+      line((-2.85, 0), (0.85, 0), stroke: 2pt + blue)
+      line((1.15, 0), (5.5, 0), stroke: 2pt + blue)
+
+      // Tick marks and labels
+      for x in range(-5, 6) {
+        line((x, -0.2), (x, 0.2), stroke: 0.6pt + gray)
+        if x != -3 and x != 1 {
+          content((x, -0.7), text(size: 6pt)[#str(x)], anchor: "north")
+        }
+      }
+
+      // Excluded point: x = -3
+      circle((-3, 0), radius: 0.2, stroke: 1.5pt + red, fill: white)
+      content((-3.3, 1.0), text(size: 7pt, fill: red)[✗], anchor: "south")
+      content((-3, -0.7), text(size: 6pt, fill: red, weight: "bold")[$-3$], anchor: "north")
+
+      // Excluded point: x = 1
+      circle((1, 0), radius: 0.2, stroke: 1.5pt + red, fill: white)
+      content((0.7, 1.0), text(size: 7pt, fill: red)[✗], anchor: "south")
+      content((1, -0.7), text(size: 6pt, fill: red, weight: "bold")[$1$], anchor: "north")
+
+      // Arrow tips
+      line((-5.5, 0.08), (-5.8, 0), stroke: 1pt + blue)
+      line((-5.5, -0.08), (-5.8, 0), stroke: 1pt + blue)
+      line((5.5, 0.08), (5.8, 0), stroke: 1pt + blue)
+      line((5.5, -0.08), (5.8, 0), stroke: 1pt + blue)
+    }),
+    caption: [分式 $1 slash ((x - 1)(x + 3))$ 的定义域：$x = -3$ 与 $x = 1$ 处被排除]
+  )
 
   这个“有意义的条件”不是装饰——它规定了分式在哪些值下才有意义。下一节通分和第 3 节解方程都要靠它。
 
@@ -55,6 +98,51 @@
 
   注意约分*只能约掉因式*，不能约掉“项”。$(x + 3)/(x + 5)$ 不能约掉 $x$——那会把加法当成乘法处理，是一个经典错误。
 
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let green = rgb("#2E7D32")
+      let red = rgb("#C62828")
+      let gray = luma(120)
+
+      // === Left box: correct factor cancellation ===
+      rect((0, 0), (14, 7), fill: rgb("#E8F5E9"), stroke: 1.2pt + green, radius: 4pt)
+      content((7, 6.3), text(size: 8pt, weight: "bold", fill: green)[因式可约 ✓], anchor: "south")
+
+      // Before simplification
+      content((7, 4.2), text(size: 9pt)[
+        $frac(cancel((x + 3)) dot (x - 1), cancel((x + 3)) dot (x + 2))$
+      ])
+
+      // Arrow
+      content((7, 2.6), text(size: 10pt, fill: green)[↓])
+
+      // After simplification
+      content((7, 1.5), text(size: 9pt, weight: "bold")[
+        $frac(x - 1, x + 2)$
+      ])
+
+      // === Right box: incorrect term cancellation ===
+      rect((16, 0), (30, 7), fill: rgb("#FFEBEE"), stroke: 1.2pt + red, radius: 4pt)
+      content((23, 6.3), text(size: 8pt, weight: "bold", fill: red)[项不可约 ✗], anchor: "south")
+
+      // The incorrect attempt
+      content((23, 4.2), text(size: 9pt)[
+        $frac(x + 3, x + 5)$
+      ])
+
+      // Diagonal strike-through with X
+      content((23, 2.6), text(size: 10pt, fill: red)[✗ 不能约 $x$])
+
+      // The wrong result
+      content((23, 1.2), text(size: 7pt, fill: gray)[
+        $frac(3, 5)$ ← 错误！
+      ])
+    }),
+    caption: [约分只能约掉公因式（左），不能约掉加法中的项（右）]
+  )
+
   约分之后的分式仍然带着原来的“有意义条件”。例如上例里 $x - 3$ 被约掉了，但 $x != 3$ 这个限制必须保留，否则分式的有意义范围会被悄悄扩大。
 ]
 
@@ -66,8 +154,11 @@
   动手做，做完再看下面的方法总结。
 
   + 写出 $(3 x - 6)/(x^2 - 4)$ 有意义的条件。
-  + 化简 $(4 a^2 b)/(6 a b^2)$。
   + 化简 $(x^2 + 4 x + 4)/(x^2 - 4)$。
+]
+
+#history-note[
+  “分式”这个词是从小学的“分数”直接扩出来的：把分母换成能变动的整式。1748 年，瑞士数学家欧拉（Leonhard Euler）在《无穷分析引论》（_Introductio in Analysin Infinitorum_）中系统地把分式当作独立的代数对象来化简、展开和变换，奠定了我们今天处理有理式的基本框架。_rational_ 这个词根来自拉丁语 _ratio_（比），古希腊人把比例当作独立的对象研究，所以“有理数”和“有理式”共享同一个词根。
 ]
 
 #blueprint[
@@ -140,13 +231,12 @@
   + 判断：$(a^2 + b^2)/(a + b)$ 能不能约分？请说明理由。
   + 一对正整数 $m, n$ 满足 $m + n = 12$。把 $1/m + 1/n$ 合并成一个最简分式（先不代入具体数值）；再代入 $m = 5, n = 7$，验证结果。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
-  + $y != 0$；$a != 4$；$x != -2$ 且 $x != 1$。
-  + $(15 m n)/(9 m^2) = (5 n)/(3 m) quad (m != 0)$；$(2(p - q))/(4(p - q)) = 1/2 quad (p != q)$。
-  + $(a(a + 1))/((a - 1)(a + 1)) = a/(a - 1) quad (a != plus.minus 1)$；$((x - 3)^2)/((x + 3)(x - 3)) = (x - 3)/(x + 3) quad (x != plus.minus 3)$。
+  + $y != 0$；$a != 4$；$x != -2$ 且 $x != 1$。（分母 $!= 0$）
+  + $(15 m n)/(9 m^2) = (5 n)/(3 m) quad (m != 0)$；$(2(p - q))/(4(p - q)) = 1/2 quad (p != q)$。（分式基本性质：约分）
+  + $(a(a + 1))/((a - 1)(a + 1)) = a/(a - 1) quad (a != plus.minus 1)$；$((x - 3)^2)/((x + 3)(x - 3)) = (x - 3)/(x + 3) quad (x != plus.minus 3)$。（因式分解 + 约分）
 
   *应用*
   + $1/a$（要求 $a != 0$）；$1/b$（要求 $b != 0$）；$1/a + 1/b$（要求 $a, b != 0$）。
@@ -157,4 +247,5 @@
   + $(x - 1)(x + 1)/(x^2 - k) = (x + 1)/(x - 1)$ 要求 $x^2 - k = (x - 1)^2$，展开对比得 $k = 2 x - 1$——这不是常数，无法使等式对所有 $x$ 成立。*所以答案是：不存在常数 $k$ 满足这个化简。* 若题意改为 $(x^2 - 1)/(x^2 - 2 x + 1)$ 可以化简为 $(x + 1)/(x - 1) quad (x != 1)$。
   + 不能。$a^2 + b^2$ 不能因式分解为含有 $(a + b)$ 的乘积（可验证 $(a + b)^2 = a^2 + 2 a b + b^2 != a^2 + b^2$），因此分子分母没有公因式。
   + $1/m + 1/n = (n + m)/(m n) = 12/(m n)$。代入 $m = 5, n = 7$：$1/5 + 1/7 = 12/35$，与公式一致。
+  ]
 ]

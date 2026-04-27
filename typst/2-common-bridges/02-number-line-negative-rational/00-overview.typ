@@ -1,8 +1,10 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 数轴、负数与有理数 <ch:number-line-negative-rational>
 
-#blueprint[
+想象你站在数轴的 $0$ 上，往右走三步是 $3$。那如果往左走三步呢？那个位置叫什么名字？为了给"左边"的数也发一张身份证，我们需要负数。一旦负数搬进数轴，原来"不够减"的问题就有了正式答案。
+
+#chapter-nav[
   *难度*：★★★☆☆ \
   *核心问题*：原点左边那一段空白里装着什么？把“负的量”塞进数轴以后，原来的算术会不会乱掉？ \
   *需要先会*：#secref("pf01-decimal-system")、#secref("pf02-add-subtract-undo")、#secref("pf04-fraction-equivalence")、#secref("pf05-decimals-conversion")。 \
@@ -10,8 +12,7 @@
   *忘了可以回到*：若“$3 - 5$”会觉得“不能减”，请先回 #secref("pf02-add-subtract-undo") 重新看“减法是撤销”。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + 先让数轴向左延伸出负数，看清楚“负号 $!=$ 减号”。
   + 再用相反数和绝对值，把“方向”和“远近”分开记。

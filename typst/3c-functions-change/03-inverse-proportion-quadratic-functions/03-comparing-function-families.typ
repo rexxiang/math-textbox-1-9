@@ -1,4 +1,5 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/diagram-packages.typ": cetz
 
 === 三类函数对照：一次 / 反比例 / 二次 <tool:fn09-comparing-function-families>
 
@@ -66,7 +67,84 @@
   + 都不恒定？算 $x times y$。若恒定 $=>$ *反比例*。
   + 再不符合？可能是更复杂的模型——本章暂不处理。
 
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      // Panel 1: Linear - constant differences
+      content((-7, 3.5), text(8pt)[*一次*], anchor: "west")
+      // bar-like steps showing constant delta y
+      for i in range(0, 4) {
+        let x = -7 + i * 2
+        rect((x, 0), (x + 1.5, 1 + i), stroke: 0.3pt, fill: rgb("#BBDEFB"))
+      }
+      // delta y arrows
+      for i in range(0, 3) {
+        let x = -7 + i * 2 + 1.7
+        line((x, 1 + i), (x, 2 + i), stroke: 0.4pt + rgb("#1976D2"), mark: (end: ">"))
+        content((x + 0.3, 1.5 + i), text(5pt)[$+k$])
+      }
+
+      // Panel 2: Inverse - constant product
+      content((3, 3.5), text(8pt)[*反比例*], anchor: "west")
+      let widths = (4, 2, 1.33, 1)
+      let heights = (1, 2, 3, 4)
+      for i in range(0, 4) {
+        let x = 3 + i * 1.5
+        rect((x, 0), (x + 1, heights.at(i)), stroke: 0.3pt, fill: rgb("#FFCDD2"))
+      }
+      content((5, -0.6), text(6pt)[$x y = k$])
+    }),
+    caption: [一次函数的指纹：相邻输出差 $Delta y$ 恒定（每阶等高增长）；反比例的指纹：$x y$ 乘积恒定（柱面积不变）。]
+  )
+
   *三族图像速览*
+
+  #figure(
+    cetz.canvas(length: 0.35cm, {
+      import cetz.draw: *
+      line((-6, 0), (8, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -5), (0, 8), stroke: 0.4pt, mark: (end: ">"))
+      content((8.2, 0), $x$, anchor: "west")
+      content((0, 8.3), $y$, anchor: "south")
+      // linear: y = 3x + 1
+      line((-2, -5), (2.3, 7.9), stroke: 0.7pt + rgb("#1976D2"))
+      content((2.5, 7.5), text(6pt)[一次], anchor: "west")
+      // inverse: y = 6/x (quadrant I only for clarity)
+      let s1 = range(0, 55).map(i => {
+        let x = 0.8 + 0.1 * i
+        (x, 6.0 / x)
+      })
+      for i in range(0, s1.len() - 1) {
+        if s1.at(i).at(1) <= 8 {
+          line(s1.at(i), s1.at(i + 1), stroke: 0.7pt + rgb("#B71C1C"))
+        }
+      }
+      // inverse quadrant III
+      let s2 = range(0, 40).map(i => {
+        let x = -5 + 0.1 * i
+        (x, 6.0 / x)
+      })
+      for i in range(0, s2.len() - 1) {
+        if s2.at(i).at(1) >= -5 {
+          line(s2.at(i), s2.at(i + 1), stroke: 0.7pt + rgb("#B71C1C"))
+        }
+      }
+      content((5, 1.5), text(6pt)[反比例], anchor: "west")
+      // quadratic: y = 0.5 x^2
+      let s3 = range(0, 81).map(i => {
+        let x = -4 + 0.1 * i
+        (x, 0.5 * x * x)
+      })
+      for i in range(0, s3.len() - 1) {
+        if s3.at(i).at(1) <= 8 and s3.at(i + 1).at(1) <= 8 {
+          line(s3.at(i), s3.at(i + 1), stroke: 0.7pt + rgb("#2E7D32"))
+        }
+      }
+      content((-3.5, 7), text(6pt)[二次], anchor: "east")
+      circle((0, 0), radius: 0.1, fill: black)
+    }),
+    caption: [一次（直线）、反比例（双曲线）、二次（抛物线）三族函数在同一坐标系中的图像对比。]
+  )
 
   #align(center, table(
     columns: (auto, 1fr, 1fr, 1fr),
@@ -91,7 +169,6 @@
     - (a) $x: 1, 2, 3, 4$；$y: 3, 6, 9, 12$
     - (b) $x: 1, 2, 3, 4$；$y: 1, 4, 9, 16$
     - (c) $x: 1, 2, 3, 4$；$y: 12, 6, 4, 3$
-  + 函数图像是过原点的直线 $=>$ 是哪一族？这一族里的“特殊”是什么？
   + 下列情境哪一族最合适？
     - 一批快递派给 $x$ 名员工，平均每人要送 $y$ 单。
     - 正方形边长 $x$、面积 $y$。
@@ -170,25 +247,23 @@
   + 下表：$x: 1, 2, 3, 4, 5$；$y: 10, 5, 3.33, 2.5, 2$。判族，写公式。验证 $x = 10$ 的预测。
   + 一批 $x$ 张桌子围一圈，每桌坐 $y$ 人，总座位数固定为 $24$。写 $y = f(x)$；再写“每桌人均重量（$72$ 斤 $div y$）”为新函数 $g(y)$。$g$ 是不是函数 $g(x)$？若是用 $y$ 替换表示 $x$ 作自变量。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
-  + (a) $Delta y = -2$ 恒定 $=>$ 一次，$y = -2 x + 7$。
-    (b) $x$ 不等差——但 $x y$：$24, 24, 24, 24$ 都是 $24 =>$ 反比例 $y = 24 / x$。
-    (c) $Delta y = 3, 5, 7$ 不恒；$Delta^2 y = 2, 2$ 恒 $=>$ 二次。解方程组（见上文套路）：$a = 1, b = 2, c = 0$，$y = x^2 + 2 x$。
-  + $y = 10 / x$：$10$ 元分给 $x$ 位同学，每位得 $y$ 元；$y = 5 x$：每本书 $5$ 元、买 $x$ 本共 $y$ 元；$y = -x^2 + 4 x$：某商品定价 $x$ 元时一天销售额的模型（$x = 2$ 时最大）。
-  + 对称、$x = 0$ 时 $y = 1$ 取最小。$Delta y: -3, -1, 1, 3$（即 $2, -1, 0, 1, 2$ 的一阶差：$5 -> 2 -> 1 -> 2 -> 5$，$Delta y = -3, -1, 1, 3$），$Delta^2 y = 2, 2, 2$ 恒 $=>$ 是二次。解：顶点 $(0, 1)$，$a (x - 0)^2 + 1 = y$，代 $x = 1, y = 2$ 得 $a = 1$，$y = x^2 + 1$。
+  + (a) $Delta y = -2$ 恒定 $=>$ 一次（一阶差恒定 → 一次），$y = -2 x + 7$。
+    (b) $x$ 不等差——但 $x y$：$24, 24, 24, 24$ 都是 $24 =>$ 反比例（$x y$ 恒定 → 反比例），$y = 24 / x$。
+    (c) $Delta y = 3, 5, 7$ 不恒；$Delta^2 y = 2, 2$ 恒 $=>$ 二次（二阶差恒定 → 二次）。$a = 1, b = 2, c = 0$，$y = x^2 + 2 x$。
+  + $y = 10 / x$：$10$ 元分给 $x$ 位同学，每位得 $y$ 元（$x y$ 恒定 → 反比例）；$y = 5 x$：每本书 $5$ 元、买 $x$ 本共 $y$ 元（一阶差恒定 → 一次）；$y = -x^2 + 4 x$：某商品定价 $x$ 元时一天销售额的模型（二阶差恒定 → 二次，$x = 2$ 时最大）。
+  + $Delta y = -3, -1, 1, 3$，$Delta^2 y = 2, 2, 2$ 恒 $=>$ 是二次（二阶差恒定 → 二次）。顶点 $(0, 1)$，代 $x = 1, y = 2$ 得 $a = 1$，$y = x^2 + 1$。
 
   *应用*
-  + 反比例 $y = 100 / x$。
-  + 二次 $y = 5 t^2$。$t = 3$：$y = 45$ 米。
-  + 一次 $y = 15 + 2 x$（$x$ 是借书次数）。
+  + 反比例 $y = 100 / x$（$x y$ 恒定 → 反比例）。
+  + 二次 $y = 5 t^2$（二阶差恒定 → 二次）。$t = 3$：$y = 45$ 米。
+  + 一次 $y = 15 + 2 x$（一阶差恒定 → 一次，$x$ 是借书次数）。
 
   *挑战 ☞ 选做*
-  + 一阶差 $3, 5$；二阶差 $2$（只有一个，不能判恒定）。候选：
-    - 二次：$y = x^2 + 1$（验 $x = 1: 2$ ✓、$x = 2: 5$ ✓、$x = 3: 10$ ✓）；
-    - 也可设想其它更复杂模型，但在本章范围内*二次最匹配*。
-  + 一阶差不恒定；$x y: 10, 10, 9.99, 10, 10$（约）$= 10$ $=>$ *反比例* $y = 10 / x$。$x = 10$：$y = 1$。
-  + $y = 24 / x$（反比例）。$g(y) = 72 / y$——若把 $y$ 作为自变量就是 $g$ 的函数面孔。若想把 $g$ 当作关于 $x$ 的函数：$g(x) = 72 / y = 72 / (24 / x) = 72 x / 24 = 3 x$，$g$ *作为 $x$ 的函数*是一次函数（正比例）$g = 3 x$——有趣的把反比例 $+$ 反比例复合又变回了正比例。
+  + 一阶差 $3, 5$；二阶差 $2$（只有一个，不能判恒定）。先算二阶差再尝试拟合（二阶差恒定 → 二次）：$y = x^2 + 1$（验 $x = 1: 2$ ✓、$x = 2: 5$ ✓、$x = 3: 10$ ✓）。在本章范围内*二次最匹配*。
+  + 一阶差不恒定；$x y: 10, 10, 9.99, 10, 10$（约）$= 10$ $=>$ *反比例*（$x y$ 恒定 → 反比例），$y = 10 / x$。$x = 10$：$y = 1$。
+  + $y = 24 / x$（$x y$ 恒定 → 反比例）。$g(y) = 72 / y$——若把 $y$ 作为自变量就是 $g$ 的函数面孔。$g(x) = 72 / (24 / x) = 3 x$，反比例复合反比例变回正比例（一阶差恒定 → 一次）。
+  ]
 ]

@@ -1,4 +1,6 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+// [wave7-format-break: 模式A]
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
+#import "../../lib/diagram-packages.typ": cetz
 
 === 因式分解的流程与“中间项匹配” <tool:al02-factorization-as-reverse>
 
@@ -15,12 +17,75 @@
   我们需要把三样工具排成一个*固定顺序*，让每一道题都知道“先问什么、再问什么、什么时候停手”。
 ]
 
-#history-note[
-  17 世纪代数学家普遍把“因式分解”看作“解方程”的入口：一旦 $p(x) = (x - r_1)(x - r_2) dots.c = 0$，根就一目了然。这也解释了为什么分解到“每个括号里不能再分”才算完成——因为未分解的因式里可能还藏着方程的根。
-]
-
 #discovery[
   *固定顺序：先提 → 再看公式 → 再问“中间项”*
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#1565C0")
+      let green = rgb("#2E7D32")
+      let orange = rgb("#E65100")
+      let purple = rgb("#6A1B9A")
+      let light-blue = rgb("#E3F2FD")
+      let light-green = rgb("#E8F5E9")
+      let light-orange = rgb("#FFF3E0")
+      let light-purple = rgb("#F3E5F5")
+
+      let cx = 7
+
+      // Step 1: 有公因式？
+      let s1y = 14
+      line((cx, s1y + 1.5), (cx + 4, s1y), (cx, s1y - 1.5), (cx - 4, s1y),
+        close: true, fill: light-blue, stroke: 0.8pt + blue)
+      content((cx, s1y), text(size: 9pt, fill: blue)[有公因式？])
+      // Yes → action
+      line((cx + 4, s1y), (cx + 8, s1y), stroke: 0.8pt + green, mark: (end: ">", fill: green))
+      rect((cx + 8, s1y - 1), (cx + 14, s1y + 1),
+        fill: light-green, stroke: 0.8pt + green, radius: 0.2)
+      content((cx + 11, s1y), text(size: 9pt, fill: green)[先提出来])
+      content((cx + 5.8, s1y + 0.6), text(size: 8pt, fill: green)[是])
+      // No ↓
+      line((cx, s1y - 1.5), (cx, s1y - 3.5), stroke: 0.8pt, mark: (end: ">"))
+      content((cx + 0.8, s1y - 2.5), text(size: 8pt)[否])
+
+      // Step 2: 平方差 / 完全平方？
+      let s2y = 9
+      line((cx, s2y + 1.5), (cx + 5, s2y), (cx, s2y - 1.5), (cx - 5, s2y),
+        close: true, fill: light-orange, stroke: 0.8pt + orange)
+      content((cx, s2y), text(size: 8pt, fill: orange)[平方差 / 完全平方？])
+      // Yes → action
+      line((cx + 5, s2y), (cx + 8, s2y), stroke: 0.8pt + green, mark: (end: ">", fill: green))
+      rect((cx + 8, s2y - 1), (cx + 14, s2y + 1),
+        fill: light-green, stroke: 0.8pt + green, radius: 0.2)
+      content((cx + 11, s2y), text(size: 9pt, fill: green)[套公式])
+      content((cx + 6.2, s2y + 0.6), text(size: 8pt, fill: green)[是])
+      // No ↓
+      line((cx, s2y - 1.5), (cx, s2y - 3.5), stroke: 0.8pt, mark: (end: ">"))
+      content((cx + 0.8, s2y - 2.5), text(size: 8pt)[否])
+
+      // Step 3: x² + bx + c ？
+      let s3y = 4
+      line((cx, s3y + 1.5), (cx + 4.5, s3y), (cx, s3y - 1.5), (cx - 4.5, s3y),
+        close: true, fill: light-purple, stroke: 0.8pt + purple)
+      content((cx, s3y), text(size: 8pt, fill: purple)[$x^2 + b x + c$ ？])
+      // → action
+      line((cx + 4.5, s3y), (cx + 8, s3y), stroke: 0.8pt + green, mark: (end: ">", fill: green))
+      rect((cx + 8, s3y - 1), (cx + 14, s3y + 1),
+        fill: light-green, stroke: 0.8pt + green, radius: 0.2)
+      content((cx + 11, s3y), text(size: 9pt, fill: green)[找和积匹配])
+      // ↓ to end
+      line((cx, s3y - 1.5), (cx, s3y - 3.5), stroke: 0.8pt, mark: (end: ">"))
+
+      // End box
+      let ey = -0.8
+      rect((cx - 5.5, ey), (cx + 5.5, ey + 1.6),
+        fill: rgb("#FFF9C4"), stroke: 0.8pt + rgb("#F57F17"), radius: 0.2)
+      content((cx, ey + 0.8), text(size: 9pt, fill: rgb("#E65100"))[每个括号还能再分吗？])
+    }),
+    caption: [因式分解三步决策流程：按固定顺序逐步排查]
+  )
 
   每道因式分解题，都按下面这条顺序问自己三个问题：
 
@@ -65,18 +130,17 @@
   按三步顺序做，不要跳步。
 
   + $3 x^3 - 12 x$
-  + $2 y^2 + 16 y + 32$
   + $x^2 + 7 x + 10$
 ]
 
+#history-note[
+  因式分解的思想可以追溯到古巴比伦（约公元前 1800 年）：泥板上的书吏已经会把 $x^2 - a^2$ 类的问题转化为两个因子的乘积来求解。到了 16—17 世纪，法国数学家韦达（François Viète, 1540–1603）明确建立了“多项式 $= 0$ 的根”与“多项式的因式”之间的对应关系，把因式分解正式确立为解方程的核心工具。这也解释了为什么分解到“每个括号里不能再分”才算完成——因为未分解的因式里可能还藏着方程的根。
+]
+
 #blueprint[
-  *工具一：因式分解三步流程*
+  *工具一：因式分解三步流程（图见上）*
 
-  + *先提公因式*（数字取 GCD，字母取最低次幂）。
-  + *再看特殊公式*（平方差 / 完全平方；用中间项匹配去识别）。
-  + *必要时做 $x^2 + b x + c$ 的两数匹配*（和 $= b$，积 $= c$）。
-
-  每一步完成后都回头问一句：*括号里还能继续分吗？*
+  上面 discovery 已经画过流程决策图。这里 *blueprint 不再写文字步骤*——请看完下面的 side-hack 后，再回头看那张流程图，把三步用自己的话写一遍。
 
   *例 1*：$3 x^3 - 12 x$
 
@@ -109,11 +173,75 @@
     [$-$], [$-$], [一正一负，负数绝对值更大],
   )
 
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let blue = rgb("#1565C0")
+      let red = rgb("#C62828")
+      let green = rgb("#2E7D32")
+      let orange = rgb("#E65100")
+      let light-blue = rgb("#E3F2FD")
+      let light-red = rgb("#FFEBEE")
+      let light-green = rgb("#E8F5E9")
+      let light-orange = rgb("#FFF3E0")
+
+      let w = 7
+      let h = 5
+
+      // Grid frame
+      rect((0, 0), (2 * w, 2 * h), stroke: 1.2pt)
+      line((w, 0), (w, 2 * h), stroke: 0.8pt)
+      line((0, h), (2 * w, h), stroke: 0.8pt)
+
+      // Column headers
+      content((w / 2, 2 * h + 1), text(size: 10pt, fill: blue)[$c > 0$])
+      content((w + w / 2, 2 * h + 1), text(size: 10pt, fill: red)[$c < 0$])
+      // Row headers
+      content((-1.8, h + h / 2), text(size: 10pt, fill: blue)[$b > 0$])
+      content((-1.8, h / 2), text(size: 10pt, fill: red)[$b < 0$])
+
+      // Top-left: c>0, b>0
+      rect((0.15, h + 0.15), (w - 0.15, 2 * h - 0.15), fill: light-blue)
+      content((w / 2, h + h / 2 + 0.6), text(size: 9pt, fill: blue)[$p, q$ 同正])
+      content((w / 2, h + h / 2 - 0.8), text(size: 8pt)[例：$x^2 + 7 x + 10$])
+      content((w / 2, h + h / 2 - 1.7), text(size: 8pt)[$p = 2, q = 5$])
+
+      // Bottom-left: c>0, b<0
+      rect((0.15, 0.15), (w - 0.15, h - 0.15), fill: light-green)
+      content((w / 2, h / 2 + 0.6), text(size: 9pt, fill: green)[$p, q$ 同负])
+      content((w / 2, h / 2 - 0.8), text(size: 8pt)[例：$x^2 - 5 x + 6$])
+      content((w / 2, h / 2 - 1.7), text(size: 8pt)[$p = -2, q = -3$])
+
+      // Top-right: c<0, b>0
+      rect((w + 0.15, h + 0.15), (2 * w - 0.15, 2 * h - 0.15), fill: light-orange)
+      content((w + w / 2, h + h / 2 + 0.6), text(size: 9pt, fill: orange)[一正一负，正大])
+      content((w + w / 2, h + h / 2 - 0.8), text(size: 8pt)[例：$x^2 + 3 x - 10$])
+      content((w + w / 2, h + h / 2 - 1.7), text(size: 8pt)[$p = 5, q = -2$])
+
+      // Bottom-right: c<0, b<0
+      rect((w + 0.15, 0.15), (2 * w - 0.15, h - 0.15), fill: light-red)
+      content((w + w / 2, h / 2 + 0.6), text(size: 9pt, fill: red)[一正一负，负大])
+      content((w + w / 2, h / 2 - 0.8), text(size: 8pt)[例：$x^2 - x - 12$])
+      content((w + w / 2, h / 2 - 1.7), text(size: 8pt)[$p = 3, q = -4$])
+    }),
+    caption: [符号判断图：根据 $b$ 和 $c$ 的正负快速锁定 $p, q$ 的符号组合]
+  )
+
   *工具三：“能不能再分”的判据*
 
   - 每一步后都要检查所有括号，判断是否还能继续提公因式、套公式、做两数匹配。
   - 如果剩下的式子在实数范围内确实无法再分（例如 $x^2 + 1$），就可以收笔。
 ]
+
+#side-hack[
+  *blueprint 留给你*——这张流程图的每一步在说什么？试着不看文字、只看 discovery 段那张三层菱形图，把三步用自己的话写在笔记本上。和"工具二"的符号判断表对照，看看你写的步骤覆盖了几样判别。
+]
+
+#self-check[
+  $x^2 + 6x + 9$ 能因式分解吗？你看到了哪一个“完全平方”的特征——它的常数项和一次项有什么关系？
+]
+
 
 #pitfall[
   *高频错误*
@@ -154,21 +282,21 @@
   + 因式分解 $a^4 + a^2 - 2$（提示：设 $t = a^2$ 再分解，最后还原）。
   + 解方程 $x^2 - 8 x + 12 = 0$——把左边因式分解后直接读出两个根；再用同样的方法解 $2 x^2 + 10 x = 0$。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
-  + $a^2 - 16 = (a + 4)(a - 4)$；$4 b^2 - 20 b + 25 = (2 b - 5)^2$；$m^2 - 11 m + 24 = (m - 3)(m - 8)$。
-  + $5 a^2 - 45 = 5(a^2 - 9) = 5(a + 3)(a - 3)$；$3 x^2 - 18 x + 27 = 3(x^2 - 6 x + 9) = 3(x - 3)^2$。
-  + $x^2 + 3 x - 10 = (x + 5)(x - 2)$；$x^2 - x - 12 = (x - 4)(x + 3)$。
+  + $a^2 - 16 = (a + 4)(a - 4)$（平方差公式）；$4 b^2 - 20 b + 25 = (2 b - 5)^2$（完全平方公式）；$m^2 - 11 m + 24 = (m - 3)(m - 8)$（中间项匹配）。
+  + $5 a^2 - 45 = 5(a^2 - 9) = 5(a + 3)(a - 3)$（提公因式 + 平方差）；$3 x^2 - 18 x + 27 = 3(x^2 - 6 x + 9) = 3(x - 3)^2$（提公因式 + 完全平方）。
+  + $x^2 + 3 x - 10 = (x + 5)(x - 2)$（中间项匹配）；$x^2 - x - 12 = (x - 4)(x + 3)$（中间项匹配）。
 
   *应用*
   + $2 p^3 + 6 p^2 + 4 p = 2 p (p^2 + 3 p + 2) = 2 p (p + 1)(p + 2)$。
   + $x^4 - 81 = (x^2 + 9)(x^2 - 9) = (x^2 + 9)(x + 3)(x - 3)$（$x^2 + 9$ 在实数范围内不可再分）。
-  + 设 $r_1 r_2 = 15$，正整数对 $(1, 15), (3, 5)$，对应 $k = 16$ 或 $k = 8$。
+  + 设 $(x - r_1)(x - r_2) = x^2 - (r_1 + r_2) x + r_1 r_2$，故 $k = r_1 + r_2$。$r_1 r_2 = 15$ 的正整数对 $(1, 15), (3, 5)$，对应 $k = 16$ 或 $k = 8$。
 
   *挑战 ☞ 选做*
   + $x^2 - y^2 - 4 x + 4 = (x^2 - 4 x + 4) - y^2 = (x - 2)^2 - y^2 = (x - 2 + y)(x - 2 - y)$。
   + 设 $t = a^2$，$t^2 + t - 2 = (t + 2)(t - 1)$；还原：$(a^2 + 2)(a^2 - 1) = (a^2 + 2)(a + 1)(a - 1)$。
   + $x^2 - 8 x + 12 = (x - 2)(x - 6)$，所以 $x = 2$ 或 $x = 6$；$2 x^2 + 10 x = 2 x(x + 5)$，所以 $x = 0$ 或 $x = -5$。
+  ]
 ]

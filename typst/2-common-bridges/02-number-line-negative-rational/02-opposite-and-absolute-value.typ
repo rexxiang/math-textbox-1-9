@@ -1,17 +1,15 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+// [wave7-mastery-variant: 双解法]
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
+#import "../../lib/diagram-packages.typ": cetz
 
 === 相反数与绝对值：方向与远近分开记 <tool:cb02-opposite-and-absolute>
 
 #vocab[相反数 opposite][绝对值 absolute value][距离 distance]
 
 #crisis[
-  $+7$ 和 $-7$ 在数轴上离原点一样远，只是方向相反。可我们经常要一起谈“它们在哪一边”*以及*“离原点多远”两件事。
+  $+7$ 和 $-7$，一个正一个负，看似截然不同——但它们到原点的距离竟然一模一样。这说明每个有符号的数同时携带两条信息：“往哪边”和“走多远”。
 
   如果一直靠语言解释，很快就乱。*我们要用两个独立的工具，把“方向”和“远近”分开写。*
-]
-
-#history-note[
-  把数看成“有方向 + 有大小”，这种思路以后还会反复出现。它之后会把代数、几何、物理的表述统一起来。
 ]
 
 #discovery[
@@ -21,6 +19,39 @@
   - $0$ 的相反数还是 $0$。
   - 一句话：相反数在数轴上关于原点对称，且它们之和为 $0$（$3 + (-3) = 0$）。
 
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      let ox = 10
+      let s = 2.0
+      // Axis
+      line((ox - 5 * s, 0), (ox + 5.3 * s, 0), stroke: 1.5pt + rgb("#333"), mark: (end: ">"))
+      for i in range(-4, 5) {
+        let tx = ox + i * s
+        line((tx, -0.3), (tx, 0.3), stroke: 0.8pt + rgb("#555"))
+        content((tx, -0.8), text(size: 6pt)[#str(i)], anchor: "north")
+      }
+      // Origin
+      circle((ox, 0), radius: 0.25, fill: rgb("#333"), stroke: 1pt + rgb("#333"))
+      content((ox, 0.8), text(size: 7pt, weight: "bold")[O], anchor: "south")
+      // Pair: +3 and -3
+      let p3 = ox + 3 * s
+      let m3 = ox - 3 * s
+      circle((p3, 0), radius: 0.25, fill: rgb("#1565C0"), stroke: 1pt + rgb("#0D47A1"))
+      circle((m3, 0), radius: 0.25, fill: rgb("#C62828"), stroke: 1pt + rgb("#B71C1C"))
+      content((p3, 1.5), text(size: 8pt, weight: "bold", fill: rgb("#1565C0"))[$+3$], anchor: "south")
+      content((m3, 1.5), text(size: 8pt, weight: "bold", fill: rgb("#C62828"))[$-3$], anchor: "south")
+      // Symmetry arrows
+      let arc-h = 2.5
+      bezier((m3, 1.0), (ox, arc-h + 0.5), ((m3 + ox) / 2, arc-h + 1.0),
+             stroke: (dash: "dashed", paint: rgb("#888"), thickness: 0.8pt))
+      bezier((p3, 1.0), (ox, arc-h + 0.5), ((p3 + ox) / 2, arc-h + 1.0),
+             stroke: (dash: "dashed", paint: rgb("#888"), thickness: 0.8pt))
+      content((ox, arc-h + 1.5), text(size: 7pt, fill: rgb("#555"))[关于原点对称], anchor: "south")
+    }),
+    caption: [$+3$ 与 $-3$ 是一对相反数，关于原点对称],
+  )
+
   只看远近、不看方向，就得到*绝对值*：
 
   $ |a| = cases(a\, a >= 0, -a\, a < 0) $
@@ -28,6 +59,32 @@
   几何意义：$|a|$ 就是 $a$ 到原点的距离。于是 $|-4| = 4$，$|4| = 4$，$|0| = 0$。
 
   两点 $a$、$b$ 在数轴上的距离也可以用绝对值表达：$|a - b|$。
+
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      let ox = 10
+      let s = 2.0
+      // Axis
+      line((ox - 5 * s, 0), (ox + 5.3 * s, 0), stroke: 1.5pt + rgb("#333"), mark: (end: ">"))
+      for i in range(-4, 5) {
+        let tx = ox + i * s
+        line((tx, -0.3), (tx, 0.3), stroke: 0.8pt + rgb("#555"))
+        content((tx, -0.8), text(size: 6pt)[#str(i)], anchor: "north")
+      }
+      circle((ox, 0), radius: 0.2, fill: rgb("#333"), stroke: 1pt + rgb("#333"))
+      // Point at -4: show |−4| = 4
+      let pt = ox - 4 * s
+      circle((pt, 0), radius: 0.25, fill: rgb("#E65100"), stroke: 1pt + rgb("#BF360C"))
+      content((pt, 1.2), text(size: 8pt, weight: "bold", fill: rgb("#E65100"))[$-4$], anchor: "south")
+      // Distance brace
+      line((pt, -1.5), (ox, -1.5), stroke: 1.2pt + rgb("#E65100"),
+           mark: (start: "|", end: "|"))
+      content(((pt + ox) / 2, -2.2),
+        text(size: 8pt, weight: "bold", fill: rgb("#E65100"))[$|{-4}| = 4$], anchor: "north")
+    }),
+    caption: [绝对值 $|-4| = 4$：$-4$ 到原点的距离是 $4$],
+  )
 ]
 
 #side-hack[
@@ -36,8 +93,11 @@
 
 #tryit[
   + 写出下列数的相反数：$6$、$-2/3$、$0$、$-1.4$。
-  + 计算：$|-5|$、$|7.2|$、$|-3/4|$、$|0|$。
   + 数轴上 $A = -3$、$B = 4$。求 $A B$ 的距离。
+]
+
+#history-note[
+  $1806$ 年，法国数学家阿尔让（Jean-Robert Argand）在一篇小册子里首次把复数画在平面上，每个数既有"大小"又有"方向"。这个思路后来被高斯（Gauss）发展壮大，最终催生了向量的概念——代数、几何、物理从此有了统一的表述语言。在实数轴上，"绝对值就是去掉方向只留大小"正是这条思路最简单的起点。
 ]
 
 #blueprint[
@@ -45,6 +105,11 @@
   - *绝对值*：$|a|$ 是 $a$ 到原点的距离；$|a| >= 0$，且 $|a| = 0$ 当且仅当 $a = 0$。
   - *两点距离*：数轴上两点 $a$、$b$ 之间的距离为 $|a - b|$。
 ]
+
+#self-check[
+  $|-7|$ 和 $-|7|$ 一样吗？把它们各自代表的意思用一句话说清楚。
+]
+
 
 #pitfall[
   *高频错误*
@@ -65,28 +130,37 @@
   + 写出 $-11$、$5.5$、$-3/8$、$0$ 的相反数。
   + 计算：$|-12|$、$|3.6|$、$|-1/5|$、$-|−9|$。
   + 判断：$|a|$ 可能等于 $-2$ 吗？为什么？
+  + 如果 $a$ 和 $b$ 互为相反数，那么 $a + b = ?$。
+  + 在数轴上，$|-6|$ 和 $|6|$ 都等于几？它们到原点的距离相同吗？
 
   *应用*
 
   + 数轴上 $A = -7$、$B = -1$、$C = 5$，求 $A B$、$B C$、$A C$。
-  + 已知 $|x| = 4$，写出 $x$ 的所有可能值。
-  + 甲、乙两辆车分别从同一停车位出发，甲向东开 $6$ 千米、乙向西开 $4$ 千米。用相反数描述两人的位移；两人的距离是多少？
+  + *双解法对比题*——已知 $|x - 3| = 5$，求 $x$ 的所有可能值。
+    - *方法 A（数轴上的距离解释）*：把 $|x - 3|$ 读作"$x$ 到 $3$ 的距离"。在数轴上找出所有"到 $3$ 的距离 $= 5$"的点，写出它们的坐标。
+    - *方法 B（代数分类讨论）*：根据绝对值定义分两种情况：(i) $x - 3 >= 0$ 时 $|x - 3| = x - 3 = 5$；(ii) $x - 3 < 0$ 时 $|x - 3| = -(x - 3) = 5$。各自解出 $x$。
+    - *比较*：两种方法的答案应当一致。请写出哪种更直观、哪种更"机械可靠"，并说明*若把题目改为* $|2 x - 3| = 5$，你更愿意先用哪一种？为什么？
 
   *挑战 ☞ 选做*
 
-  + 若 $a < 0$，化简 $|a| + a$。
-  + 已知 $|x - 3| = 5$，求 $x$ 的所有可能值。
+  + 若 $a < 0$, 化简 $|a| + a$。
+  + *[反例 / 解释]*：判断："对任意有理数 $a, b$，都有 $|a + b| = |a| + |b|$。" 这条等式总是成立吗？给出一个使等式不成立的具体反例（取 $a, b$ 为整数即可），并说明 $|a + b|$ 和 $|a| + |b|$ 之间一般是什么关系（提示：思考 $a, b$ 同号 vs 异号的情况）。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
-  + $11$、$-5.5$、$3/8$、$0$。
-  + $12$、$3.6$、$1/5$、$-9$。
-  + 不可能；绝对值一定非负。
-  + $A B = 6$，$B C = 6$，$A C = 12$。
-  + $x = 4$ 或 $x = -4$。
-  + 甲 $+6$、乙 $-4$；两人相距 $10$ 千米。
-  + $0$（因为 $a < 0$ 时 $|a| = -a$）。
-  + $x = 8$ 或 $x = -2$。
+  #answer-cut[
+  + $11$、$-5.5$、$3/8$、$0$（相反数 $=$ 符号取反，$0$ 的相反数仍是 $0$）。
+  + $12$、$3.6$、$1/5$、$-9$（绝对值定义：负数去负号，非负数不变；$-|{-9}| = -9$）。
+  + 不可能（绝对值定义：$|a| >= 0$，永远非负）。
+  + $a + b = 0$（相反数定义：和为零）。
+  + 都等于 $6$；相同（绝对值只看距离，不看方向）。
+  + $A B = |-7 - (-1)| = 6$，$B C = |-1 - 5| = 6$，$A C = |-7 - 5| = 12$（两点距离公式 $|a - b|$）。
+  + *双解法对比题*：
+    - 方法 A（数轴）：$|x - 3| = 5$ 表示"$x$ 到 $3$ 的距离 $= 5$"。从 $3$ 向右 $5$ 个单位得 $x = 8$；向左 $5$ 个单位得 $x = -2$。所以 $x = 8$ 或 $x = -2$。
+    - 方法 B（分类讨论）：(i) 若 $x - 3 >= 0$：$x - 3 = 5 => x = 8$，验证 $8 - 3 = 5 >= 0$ ✓。(ii) 若 $x - 3 < 0$：$-(x - 3) = 5 => x - 3 = -5 => x = -2$，验证 $-2 - 3 = -5 < 0$ ✓。所以 $x = 8$ 或 $x = -2$。
+    - 比较：两法结果一致。方法 A 直观快速，适合简单形式 $|x - a| = b$；方法 B 更机械可靠，遇到复杂情况（如 $|2 x - 3| = 5$）也能照搬。改成 $|2 x - 3| = 5$ 时方法 B 更稳：直接 $2 x - 3 = plus.minus 5$ 解出 $x = 4$ 或 $x = -1$；方法 A 也能用（"$2 x$ 到 $3$ 的距离 $= 5$，再除以 $2$ 得 $x$"），但要多一层换算。一般倾向：单层绝对值用 A，含系数或多层时用 B。
+  + 甲 $+6$ 千米、乙 $-4$ 千米（以出发点为原点、东为正）；距离 $= |6 - (-4)| = 10$ 千米。
+  + $0$（当 $a < 0$ 时 $|a| = -a$，所以 $|a| + a = -a + a = 0$，绝对值分类讨论）。
+  + 不总成立。反例：$a = 3, b = -5$，$|a + b| = |-2| = 2$，而 $|a| + |b| = 3 + 5 = 8$，$2 != 8$。一般规律：$|a + b| <= |a| + |b|$（三角不等式）；同号时取等号，异号时严格小于。直觉：同号相加距离累加；异号相加部分抵消。
+  ]
 ]
 
 #side-hack[

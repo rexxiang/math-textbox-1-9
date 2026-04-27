@@ -15,8 +15,8 @@
     [*高中新工具*], [*本书地基*], [*为什么衔接*],
     [*数列*：等差、等比、通项与求和], [#secref("fn05-linear-function")、#secref("fn10-additive-vs-multiplicative-growth")], [等差就是“加法增长”的离散版；等比就是“乘法增长”的离散版。],
     [*二项式定理*：$(a + b)^n$ 的展开], [#secref("al01-multiply-polynomials")、#secref("al02-special-identities")], [本书已学 $(a + b)^2$、$(a + b)(a - b)$；高中把它推到任意次幂。],
-    [*复数* $i^2 = -1$、加减乘除与极形式], [#secref("cb06-real-number-line")、#secref("al05-quadratic-solving") 的 $Delta < 0$ 情形], [当判别式 $Delta < 0$，本书里“方程无实根”；高中新开一类数让它总有根。],
-    [*指数 / 对数方程*：$a^x = b$、$log_a x = b$], [#secref("fn10-additive-vs-multiplicative-growth")、#secref("cb06-square-and-square-root")], [乘法增长的*反问题*——已知结果和倍率，问走了几步，就是对数。],
+    [*复数* $i^2 = -1$、加减乘除与极形式], [#secref("cb07-real-number-line")、#secref("al05-quadratic-solving") 的 $Delta < 0$ 情形], [当判别式 $Delta < 0$，本书里“方程无实根”；高中新开一类数让它总有根。],
+    [*指数 / 对数方程*：$a^x = b$、$log_a x = b$], [#secref("fn10-additive-vs-multiplicative-growth")、#secref("cb07-square-and-square-root")], [乘法增长的*反问题*——已知结果和倍率，问走了几步，就是对数。],
   )
 ]
 
@@ -29,9 +29,9 @@
     stroke: 0.4pt,
     align: left,
     [*高中新工具*], [*本书地基*], [*为什么衔接*],
-    [*向量*：带方向的量 & 坐标运算], [#secref("cb03-rectangular-system")、#secref("ge05-rigid-transforms")、#secref("cb01-ratio-basics")], [把平面变换、线段方向、比例统一成一种可加可乘的对象。],
+    [*向量*：带方向的量 & 坐标运算], [#secref("cb04-rectangular-system")、#secref("ge05-rigid-transforms")、#secref("cb01-ratio-basics")], [把平面变换、线段方向、比例统一成一种可加可乘的对象。],
     [*立体几何*：空间里的线、面、体], [#secref("ge05-orthographic-views")、#secref("pf06-simple-solids")、#secref("pf07-volume")], [本书三视图已搭好骨架；高中正式把平面几何的证明搬到空间。],
-    [*圆锥曲线*：椭圆、双曲线、抛物线], [#secref("fn08-quadratic-function")、#secref("ge03-circle-basics-inscribed")、#secref("cb03-rectangular-system")], [抛物线你已熟；高中把它放回锥的切截视角，再介绍椭圆、双曲线两兄弟。],
+    [*圆锥曲线*：椭圆、双曲线、抛物线], [#secref("fn08-quadratic-function")、#secref("ge03-circle-basics-inscribed")、#secref("cb04-rectangular-system")], [抛物线你已熟；高中把它放回锥的切截视角，再介绍椭圆、双曲线两兄弟。],
   )
 ]
 

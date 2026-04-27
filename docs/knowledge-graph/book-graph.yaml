@@ -95,11 +95,19 @@ chapters:
     difficulty: 2
     mainline: true
 
-  - id: ch:points-lines-planes-basic-shapes
-    title_zh: 点·线·面·基本图形
-    title_en: Points, Lines, Planes & Basic Shapes
+  - id: ch:points-lines-segments
+    title_zh: 点·线·线段
+    title_en: Points, Lines & Segments
     part: 1-public-foundation
-    path: typst/1-public-foundation/06-points-lines-planes-basic-shapes
+    path: typst/1-public-foundation/06-points-lines-segments
+    difficulty: 2
+    mainline: true
+
+  - id: ch:polygons-solids-shape-relations
+    title_zh: 多边形·立体·图形关系
+    title_en: Polygons, Solids & Shape Relations
+    part: 1-public-foundation
+    path: typst/1-public-foundation/07-polygons-solids-shape-relations
     difficulty: 2
     mainline: true
 
@@ -107,7 +115,7 @@ chapters:
     title_zh: 周长·面积·体积·角
     title_en: Perimeter, Area, Volume & Angle
     part: 1-public-foundation
-    path: typst/1-public-foundation/07-perimeter-area-volume-angle
+    path: typst/1-public-foundation/08-perimeter-area-volume-angle
     difficulty: 2
     mainline: true
 
@@ -115,7 +123,7 @@ chapters:
     title_zh: 平行·三角形·基础几何
     title_en: Parallel, Triangles & Basic Geometry
     part: 1-public-foundation
-    path: typst/1-public-foundation/08-parallel-triangles-basic-geometry
+    path: typst/1-public-foundation/09-parallel-triangles-basic-geometry
     difficulty: 2
     mainline: true
 
@@ -123,7 +131,7 @@ chapters:
     title_zh: 基础就绪检测
     title_en: Foundation Readiness Check
     part: 1-public-foundation
-    path: typst/1-public-foundation/09-foundation-readiness-check
+    path: typst/1-public-foundation/10-foundation-readiness-check
     difficulty: 3
     mainline: true
 
@@ -144,11 +152,19 @@ chapters:
     difficulty: 3
     mainline: true
 
+  - id: ch:rational-arithmetic
+    title_zh: 有理数四则运算
+    title_en: Rational Number Arithmetic
+    part: 2-common-bridges
+    path: typst/2-common-bridges/03-rational-arithmetic
+    difficulty: 3
+    mainline: true
+
   - id: ch:coordinate-position-plane
     title_zh: 坐标·位置·平面
     title_en: Coordinates, Position & Plane
     part: 2-common-bridges
-    path: typst/2-common-bridges/03-coordinate-position-plane
+    path: typst/2-common-bridges/04-coordinate-position-plane
     difficulty: 3
     mainline: true
 
@@ -156,7 +172,7 @@ chapters:
     title_zh: 字母·式子·关系模板
     title_en: Letters, Expressions & Relationship Templates
     part: 2-common-bridges
-    path: typst/2-common-bridges/04-letters-expressions-relationship-templates
+    path: typst/2-common-bridges/05-letters-expressions-relationship-templates
     difficulty: 3
     mainline: true
 
@@ -164,7 +180,7 @@ chapters:
     title_zh: 方程·平衡·逆运算
     title_en: Equations, Balance & Inverse Operations
     part: 2-common-bridges
-    path: typst/2-common-bridges/05-equation-balance-inverse-operations
+    path: typst/2-common-bridges/06-equation-balance-inverse-operations
     difficulty: 3
     mainline: true
 
@@ -172,7 +188,7 @@ chapters:
     title_zh: 平方根·无理数·数轴
     title_en: Square Roots, Irrationals & Number Line
     part: 2-common-bridges
-    path: typst/2-common-bridges/06-square-root-irrational-number-line
+    path: typst/2-common-bridges/07-square-root-irrational-number-line
     difficulty: 3
     mainline: true
 
@@ -180,7 +196,7 @@ chapters:
     title_zh: 桥梁就绪契约
     title_en: Bridge Readiness Contracts
     part: 2-common-bridges
-    path: typst/2-common-bridges/07-bridge-readiness-contracts
+    path: typst/2-common-bridges/08-bridge-readiness-contracts
     difficulty: 4
     mainline: true
 
@@ -217,11 +233,19 @@ chapters:
     difficulty: 4
     mainline: true
 
-  - id: ch:quadratics-and-inequalities
-    title_zh: 二次方程与不等式
-    title_en: Quadratics & Inequalities
+  - id: ch:quadratic-equations
+    title_zh: 一元二次方程
+    title_en: Quadratic Equations
     part: 3a-algebra-symbols
-    path: typst/3a-algebra-symbols/05-quadratics-and-inequalities
+    path: typst/3a-algebra-symbols/05-quadratic-equations
+    difficulty: 5
+    mainline: true
+
+  - id: ch:linear-inequalities
+    title_zh: 一元一次不等式
+    title_en: Linear Inequalities
+    part: 3a-algebra-symbols
+    path: typst/3a-algebra-symbols/06-linear-inequalities
     difficulty: 5
     mainline: true
 
@@ -229,16 +253,24 @@ chapters:
     title_zh: 代数小结
     title_en: Algebra Summary
     part: 3a-algebra-symbols
-    path: typst/3a-algebra-symbols/06-algebra-summary
+    path: typst/3a-algebra-symbols/07-algebra-summary
     difficulty: 5
     mainline: true
 
   # ── Part 3b: Geometry & Proof ──────────────────────────────────────────────
-  - id: ch:congruence-correspondence-proof-chains
-    title_zh: 全等·对应·证明链
-    title_en: Congruence, Correspondence & Proof Chains
+  - id: ch:congruence-and-basic-criteria
+    title_zh: 全等与基本判定
+    title_en: Congruence & Basic Criteria
     part: 3b-geometry-proof
-    path: typst/3b-geometry-proof/01-congruence-correspondence-proof-chains
+    path: typst/3b-geometry-proof/01-congruence-and-basic-criteria
+    difficulty: 4
+    mainline: true
+
+  - id: ch:advanced-criteria-and-proof-writing
+    title_zh: 判定深化与证明书写
+    title_en: Advanced Criteria & Proof Writing
+    part: 3b-geometry-proof
+    path: typst/3b-geometry-proof/02-advanced-criteria-and-proof-writing
     difficulty: 4
     mainline: true
 
@@ -246,15 +278,23 @@ chapters:
     title_zh: 相似·比例·平行线几何
     title_en: Similarity, Scale & Parallel Line Geometry
     part: 3b-geometry-proof
-    path: typst/3b-geometry-proof/02-similarity-scale-parallel-line-geometry
+    path: typst/3b-geometry-proof/03-similarity-scale-parallel-line-geometry
     difficulty: 4
     mainline: true
 
-  - id: ch:quadrilaterals-circles-structures
-    title_zh: 四边形·圆·结构
-    title_en: Quadrilaterals, Circles & Structures
+  - id: ch:quadrilateral-family
+    title_zh: 四边形家族
+    title_en: Quadrilateral Family
     part: 3b-geometry-proof
-    path: typst/3b-geometry-proof/03-quadrilaterals-circles-structures
+    path: typst/3b-geometry-proof/04-quadrilateral-family
+    difficulty: 4
+    mainline: true
+
+  - id: ch:circles-and-inscribed-circumscribed
+    title_zh: 圆与内接外切
+    title_en: Circles & Inscribed/Circumscribed
+    part: 3b-geometry-proof
+    path: typst/3b-geometry-proof/05-circles-and-inscribed-circumscribed
     difficulty: 4
     mainline: true
 
@@ -262,7 +302,7 @@ chapters:
     title_zh: 勾股定理·根式·三角比
     title_en: Pythagorean Theorem, Radicals & Trigonometric Ratios
     part: 3b-geometry-proof
-    path: typst/3b-geometry-proof/04-pythagorean-radicals-trigonometric-ratios
+    path: typst/3b-geometry-proof/06-pythagorean-radicals-trigonometric-ratios
     difficulty: 5
     mainline: true
 
@@ -270,7 +310,7 @@ chapters:
     title_zh: 变换·坐标几何·视图
     title_en: Transformations, Coordinate Geometry & Views
     part: 3b-geometry-proof
-    path: typst/3b-geometry-proof/05-transformations-coordinate-geometry-views
+    path: typst/3b-geometry-proof/07-transformations-coordinate-geometry-views
     difficulty: 5
     mainline: true
 
@@ -278,7 +318,7 @@ chapters:
     title_zh: 几何小结
     title_en: Geometry Summary
     part: 3b-geometry-proof
-    path: typst/3b-geometry-proof/06-geometry-summary
+    path: typst/3b-geometry-proof/08-geometry-summary
     difficulty: 5
     mainline: true
 
@@ -389,5 +429,830 @@ chapters:
     difficulty: 3
     mainline: true
 
-# nodes are populated in subsequent task iterations.
-nodes: []
+nodes:
+  - id: pf01-place-counting
+    type: knowledge-point
+    chapter: ch:number-place-value-decimal
+    path: typst/1-public-foundation/01-number-place-value-decimal/01-counting-and-quantity.typ
+    prerequisites: []
+  - id: pf01-digits-place-value
+    type: knowledge-point
+    chapter: ch:number-place-value-decimal
+    path: typst/1-public-foundation/01-number-place-value-decimal/02-digits-place-value.typ
+    prerequisites: [pf01-place-counting]
+  - id: pf01-decimal-system
+    type: knowledge-point
+    chapter: ch:number-place-value-decimal
+    path: typst/1-public-foundation/01-number-place-value-decimal/03-decimal-system.typ
+    prerequisites: [pf01-digits-place-value]
+  - id: pf02-add-subtract-undo
+    type: knowledge-point
+    chapter: ch:four-operations-structure
+    path: typst/1-public-foundation/02-four-operations-structure/01-add-subtract-as-undo.typ
+    prerequisites: [pf01-decimal-system]
+  - id: pf02-mul-div-structure
+    type: knowledge-point
+    chapter: ch:four-operations-structure
+    path: typst/1-public-foundation/02-four-operations-structure/02-multiply-divide-as-structure.typ
+    prerequisites: [pf02-add-subtract-undo]
+  - id: pf02-order-laws
+    type: knowledge-point
+    chapter: ch:four-operations-structure
+    path: typst/1-public-foundation/02-four-operations-structure/03-order-and-laws.typ
+    prerequisites: [pf02-mul-div-structure]
+  - id: pf03-factors-multiples
+    type: knowledge-point
+    chapter: ch:factors-multiples-prime-factorization
+    path: typst/1-public-foundation/03-factors-multiples-prime-factorization/01-factors-multiples-divisibility.typ
+    prerequisites: [pf02-mul-div-structure]
+  - id: pf03-primes-factorization
+    type: knowledge-point
+    chapter: ch:factors-multiples-prime-factorization
+    path: typst/1-public-foundation/03-factors-multiples-prime-factorization/02-primes-and-factorization.typ
+    prerequisites: [pf03-factors-multiples]
+  - id: pf03-gcd-lcm
+    type: knowledge-point
+    chapter: ch:factors-multiples-prime-factorization
+    path: typst/1-public-foundation/03-factors-multiples-prime-factorization/03-gcd-lcm-structure.typ
+    prerequisites: [pf03-primes-factorization]
+  - id: pf04-fraction-equivalence
+    type: knowledge-point
+    chapter: ch:fractions
+    path: typst/1-public-foundation/04-fractions/01-fraction-meaning-and-equivalence.typ
+    prerequisites: [pf02-mul-div-structure, pf03-gcd-lcm]
+  - id: pf04-fraction-comparison
+    type: knowledge-point
+    chapter: ch:fractions
+    path: typst/1-public-foundation/04-fractions/02-fraction-comparison.typ
+    prerequisites: [pf04-fraction-equivalence]
+  - id: pf04-fraction-arithmetic
+    type: knowledge-point
+    chapter: ch:fractions
+    path: typst/1-public-foundation/04-fractions/03-fraction-arithmetic.typ
+    prerequisites: [pf04-fraction-comparison]
+  - id: pf05-decimals-conversion
+    type: knowledge-point
+    chapter: ch:decimals-units-estimation-measurement
+    path: typst/1-public-foundation/05-decimals-units-estimation-measurement/01-decimals-and-conversion.typ
+    prerequisites: [pf01-decimal-system, pf04-fraction-equivalence]
+  - id: pf05-units-measurement
+    type: knowledge-point
+    chapter: ch:decimals-units-estimation-measurement
+    path: typst/1-public-foundation/05-decimals-units-estimation-measurement/02-units-and-measurement.typ
+    prerequisites: [pf05-decimals-conversion]
+  - id: pf05-estimation-reasonableness
+    type: knowledge-point
+    chapter: ch:decimals-units-estimation-measurement
+    path: typst/1-public-foundation/05-decimals-units-estimation-measurement/03-estimation-and-reasonableness.typ
+    prerequisites: [pf05-units-measurement]
+  - id: pf06-points-and-planes
+    type: knowledge-point
+    chapter: ch:points-lines-segments
+    path: typst/1-public-foundation/06-points-lines-segments/01-points-and-planes.typ
+    prerequisites: []
+  - id: pf06-lines-rays-segments
+    type: knowledge-point
+    chapter: ch:points-lines-segments
+    path: typst/1-public-foundation/06-points-lines-segments/02-lines-rays-segments.typ
+    prerequisites: [pf06-points-and-planes]
+  - id: pf06-polygons-and-circle
+    type: knowledge-point
+    chapter: ch:polygons-solids-shape-relations
+    path: typst/1-public-foundation/07-polygons-solids-shape-relations/01-polygons-and-circle.typ
+    prerequisites: [pf06-lines-rays-segments]
+  - id: pf06-simple-solids
+    type: knowledge-point
+    chapter: ch:polygons-solids-shape-relations
+    path: typst/1-public-foundation/07-polygons-solids-shape-relations/02-simple-solids.typ
+    prerequisites: [pf06-polygons-and-circle]
+  - id: pf06-shape-relations
+    type: knowledge-point
+    chapter: ch:polygons-solids-shape-relations
+    path: typst/1-public-foundation/07-polygons-solids-shape-relations/03-shape-relations.typ
+    prerequisites: [pf06-simple-solids]
+  - id: pf07-perimeter-area
+    type: knowledge-point
+    chapter: ch:perimeter-area-volume-angle
+    path: typst/1-public-foundation/08-perimeter-area-volume-angle/01-perimeter-and-area.typ
+    prerequisites: [pf06-polygons-and-circle, pf02-mul-div-structure]
+  - id: pf07-volume
+    type: knowledge-point
+    chapter: ch:perimeter-area-volume-angle
+    path: typst/1-public-foundation/08-perimeter-area-volume-angle/02-volume.typ
+    prerequisites: [pf06-simple-solids, pf07-perimeter-area]
+  - id: pf07-angles
+    type: knowledge-point
+    chapter: ch:perimeter-area-volume-angle
+    path: typst/1-public-foundation/08-perimeter-area-volume-angle/03-angles.typ
+    prerequisites: [pf06-lines-rays-segments]
+  - id: pf08-parallel-transversal
+    type: knowledge-point
+    chapter: ch:parallel-triangles-basic-geometry
+    path: typst/1-public-foundation/09-parallel-triangles-basic-geometry/01-parallel-and-transversal.typ
+    prerequisites: [pf06-lines-rays-segments, pf07-angles]
+  - id: pf08-triangles-angle-sum
+    type: knowledge-point
+    chapter: ch:parallel-triangles-basic-geometry
+    path: typst/1-public-foundation/09-parallel-triangles-basic-geometry/02-triangles-and-angle-sum.typ
+    prerequisites: [pf06-polygons-and-circle, pf07-angles, pf08-parallel-transversal]
+  - id: pf08-coordinate-intuition
+    type: knowledge-point
+    chapter: ch:parallel-triangles-basic-geometry
+    path: typst/1-public-foundation/09-parallel-triangles-basic-geometry/03-coordinate-intuition.typ
+    prerequisites: [pf06-lines-rays-segments, pf01-decimal-system]
+  - id: pf09-self-audit
+    type: chapter-meta
+    chapter: ch:foundation-readiness-check
+    path: typst/1-public-foundation/10-foundation-readiness-check/01-foundation-self-audit.typ
+    prerequisites:
+      - pf01-decimal-system
+      - pf02-order-laws
+      - pf03-gcd-lcm
+      - pf04-fraction-arithmetic
+      - pf05-estimation-reasonableness
+      - pf06-shape-relations
+      - pf07-angles
+      - pf08-triangles-angle-sum
+      - pf08-coordinate-intuition
+  - id: pf09-repair-routes
+    type: chapter-meta
+    chapter: ch:foundation-readiness-check
+    path: typst/1-public-foundation/10-foundation-readiness-check/02-repair-routes-into-bridges.typ
+    prerequisites: [pf09-self-audit]
+  - id: cb01-ratio-basics
+    type: knowledge-point
+    chapter: ch:ratio-proportion-percent
+    path: typst/2-common-bridges/01-ratio-proportion-percent/01-ratio-basics.typ
+    prerequisites:
+      - pf04-fraction-equivalence
+      - pf04-fraction-comparison
+      - pf04-fraction-arithmetic
+      - pf05-decimals-conversion
+  - id: cb01-proportion
+    type: knowledge-point
+    chapter: ch:ratio-proportion-percent
+    path: typst/2-common-bridges/01-ratio-proportion-percent/02-proportion-equal-ratios.typ
+    prerequisites: [cb01-ratio-basics]
+  - id: cb01-percent
+    type: knowledge-point
+    chapter: ch:ratio-proportion-percent
+    path: typst/2-common-bridges/01-ratio-proportion-percent/03-percent-scale-of-100.typ
+    prerequisites: [cb01-proportion]
+  - id: cb02-number-line-extends-left
+    type: knowledge-point
+    chapter: ch:number-line-negative-rational
+    path: typst/2-common-bridges/02-number-line-negative-rational/01-number-line-extends-left.typ
+    prerequisites: [pf01-decimal-system, pf02-add-subtract-undo, pf04-fraction-equivalence, pf05-decimals-conversion]
+  - id: cb02-opposite-and-absolute
+    type: knowledge-point
+    chapter: ch:number-line-negative-rational
+    path: typst/2-common-bridges/02-number-line-negative-rational/02-opposite-and-absolute-value.typ
+    prerequisites: [cb02-number-line-extends-left]
+  - id: cb02-rational-numbers
+    type: knowledge-point
+    chapter: ch:number-line-negative-rational
+    path: typst/2-common-bridges/02-number-line-negative-rational/03-rational-numbers-on-line.typ
+    prerequisites: [cb02-opposite-and-absolute]
+  - id: cb03-rational-addition
+    type: knowledge-point
+    chapter: ch:rational-arithmetic
+    path: typst/2-common-bridges/03-rational-arithmetic/01-rational-addition.typ
+    prerequisites: [cb02-rational-numbers, cb02-opposite-and-absolute]
+  - id: cb03-rational-subtraction
+    type: knowledge-point
+    chapter: ch:rational-arithmetic
+    path: typst/2-common-bridges/03-rational-arithmetic/02-rational-subtraction.typ
+    prerequisites: [cb03-rational-addition]
+  - id: cb03-rational-multiplication-division
+    type: knowledge-point
+    chapter: ch:rational-arithmetic
+    path: typst/2-common-bridges/03-rational-arithmetic/03-rational-multiplication-division.typ
+    prerequisites: [cb03-rational-addition]
+  - id: cb03-rational-laws
+    type: knowledge-point
+    chapter: ch:rational-arithmetic
+    path: typst/2-common-bridges/03-rational-arithmetic/04-laws-revisited.typ
+    prerequisites: [cb03-rational-multiplication-division, cb03-rational-subtraction]
+  - id: cb04-rectangular-system
+    type: knowledge-point
+    chapter: ch:coordinate-position-plane
+    path: typst/2-common-bridges/04-coordinate-position-plane/01-rectangular-system.typ
+    prerequisites: [pf08-coordinate-intuition, pf07-angles, pf06-points-and-planes]
+  - id: cb04-quadrants
+    type: knowledge-point
+    chapter: ch:coordinate-position-plane
+    path: typst/2-common-bridges/04-coordinate-position-plane/02-quadrants.typ
+    prerequisites: [cb04-rectangular-system, cb02-number-line-extends-left]
+  - id: cb04-plotting-transforming
+    type: knowledge-point
+    chapter: ch:coordinate-position-plane
+    path: typst/2-common-bridges/04-coordinate-position-plane/03-plotting-and-transforming.typ
+    prerequisites: [cb04-quadrants]
+  - id: cb05-letters-represent-numbers
+    type: knowledge-point
+    chapter: ch:letters-expressions-relationship-templates
+    path: typst/2-common-bridges/05-letters-expressions-relationship-templates/01-letters-represent-numbers.typ
+    prerequisites: [pf02-order-laws, pf02-mul-div-structure, pf02-add-subtract-undo, cb02-number-line-extends-left]
+  - id: cb05-expressions-and-like-terms
+    type: knowledge-point
+    chapter: ch:letters-expressions-relationship-templates
+    path: typst/2-common-bridges/05-letters-expressions-relationship-templates/02-expressions-and-like-terms.typ
+    prerequisites: [cb05-letters-represent-numbers]
+  - id: cb05-relationship-templates
+    type: knowledge-point
+    chapter: ch:letters-expressions-relationship-templates
+    path: typst/2-common-bridges/05-letters-expressions-relationship-templates/03-relationship-templates.typ
+    prerequisites: [cb05-expressions-and-like-terms]
+  - id: cb06-equation-as-balance
+    type: knowledge-point
+    chapter: ch:equation-balance-inverse-operations
+    path: typst/2-common-bridges/06-equation-balance-inverse-operations/01-equation-as-balance.typ
+    prerequisites: [pf02-order-laws, pf02-add-subtract-undo, cb05-letters-represent-numbers, cb02-opposite-and-absolute]
+  - id: cb06-equality-properties
+    type: knowledge-point
+    chapter: ch:equation-balance-inverse-operations
+    path: typst/2-common-bridges/06-equation-balance-inverse-operations/02-equality-properties.typ
+    prerequisites: [cb06-equation-as-balance]
+  - id: cb06-solving-linear
+    type: knowledge-point
+    chapter: ch:equation-balance-inverse-operations
+    path: typst/2-common-bridges/06-equation-balance-inverse-operations/03-solving-linear-one-variable.typ
+    prerequisites: [cb06-equality-properties]
+  - id: cb07-square-and-square-root
+    type: knowledge-point
+    chapter: ch:square-root-irrational-number-line
+    path: typst/2-common-bridges/07-square-root-irrational-number-line/01-square-and-square-root.typ
+    prerequisites: [pf07-perimeter-area, pf07-volume, cb02-rational-numbers, cb02-opposite-and-absolute]
+  - id: cb07-irrational-numbers
+    type: knowledge-point
+    chapter: ch:square-root-irrational-number-line
+    path: typst/2-common-bridges/07-square-root-irrational-number-line/02-irrational-numbers-exist.typ
+    prerequisites: [cb07-square-and-square-root]
+  - id: cb07-real-number-line
+    type: knowledge-point
+    chapter: ch:square-root-irrational-number-line
+    path: typst/2-common-bridges/07-square-root-irrational-number-line/03-real-number-line.typ
+    prerequisites: [cb07-irrational-numbers]
+  - id: meta-ready-for-algebra
+    type: chapter-meta
+    chapter: ch:bridge-readiness-contracts
+    path: typst/2-common-bridges/08-bridge-readiness-contracts/01-ready-for-algebra.typ
+    prerequisites:
+      - cb01-percent
+      - cb02-rational-numbers
+      - cb04-plotting-transforming
+      - cb05-relationship-templates
+      - cb06-solving-linear
+      - cb07-real-number-line
+  - id: meta-ready-for-geometry-proof
+    type: chapter-meta
+    chapter: ch:bridge-readiness-contracts
+    path: typst/2-common-bridges/08-bridge-readiness-contracts/02-ready-for-geometry-proof.typ
+    prerequisites:
+      - cb01-percent
+      - cb02-rational-numbers
+      - cb04-plotting-transforming
+      - cb05-relationship-templates
+      - cb06-solving-linear
+      - cb07-real-number-line
+  - id: meta-ready-for-functions
+    type: chapter-meta
+    chapter: ch:bridge-readiness-contracts
+    path: typst/2-common-bridges/08-bridge-readiness-contracts/03-ready-for-functions.typ
+    prerequisites:
+      - cb01-percent
+      - cb02-rational-numbers
+      - cb04-plotting-transforming
+      - cb05-relationship-templates
+      - cb06-solving-linear
+      - cb07-real-number-line
+  - id: meta-ready-for-data
+    type: chapter-meta
+    chapter: ch:bridge-readiness-contracts
+    path: typst/2-common-bridges/08-bridge-readiness-contracts/04-ready-for-data.typ
+    prerequisites:
+      - cb01-percent
+      - cb02-rational-numbers
+      - cb04-plotting-transforming
+      - cb05-relationship-templates
+      - cb06-solving-linear
+      - cb07-real-number-line
+  - id: al01-monomials-coefficient-degree
+    type: knowledge-point
+    chapter: ch:polynomials-like-terms-operations
+    path: typst/3a-algebra-symbols/01-polynomials-like-terms-operations/01-monomials-coefficient-degree.typ
+    prerequisites:
+      - pf02-order-laws
+      - cb05-letters-represent-numbers
+      - cb05-expressions-and-like-terms
+      - cb06-equality-properties
+  - id: al01-polynomials-and-degree
+    type: knowledge-point
+    chapter: ch:polynomials-like-terms-operations
+    path: typst/3a-algebra-symbols/01-polynomials-like-terms-operations/02-polynomials-and-degree.typ
+    prerequisites:
+      - al01-monomials-coefficient-degree
+  - id: al01-like-terms-and-combine
+    type: knowledge-point
+    chapter: ch:polynomials-like-terms-operations
+    path: typst/3a-algebra-symbols/01-polynomials-like-terms-operations/03-like-terms-and-combine.typ
+    prerequisites:
+      - al01-polynomials-and-degree
+  - id: al01-add-subtract-polynomials
+    type: knowledge-point
+    chapter: ch:polynomials-like-terms-operations
+    path: typst/3a-algebra-symbols/01-polynomials-like-terms-operations/04-add-subtract-polynomials.typ
+    prerequisites: [al01-like-terms-and-combine]
+  - id: al01-multiply-polynomials
+    type: knowledge-point
+    chapter: ch:polynomials-like-terms-operations
+    path: typst/3a-algebra-symbols/01-polynomials-like-terms-operations/05-multiply-simple-polynomials.typ
+    prerequisites: [al01-add-subtract-polynomials]
+  - id: al02-distributive-rewrite
+    type: knowledge-point
+    chapter: ch:distributive-identities-factorization
+    path: typst/3a-algebra-symbols/02-distributive-identities-factorization/01-distributive-rewrite.typ
+    prerequisites: [pf02-order-laws, pf03-gcd-lcm, al01-multiply-polynomials]
+  - id: al02-special-identities
+    type: knowledge-point
+    chapter: ch:distributive-identities-factorization
+    path: typst/3a-algebra-symbols/02-distributive-identities-factorization/02-special-identities.typ
+    prerequisites: [al02-distributive-rewrite]
+  - id: al02-factorization-as-reverse
+    type: knowledge-point
+    chapter: ch:distributive-identities-factorization
+    path: typst/3a-algebra-symbols/02-distributive-identities-factorization/03-factorization-as-reverse.typ
+    prerequisites: [al02-special-identities]
+  - id: al03-rational-expression-structure
+    type: knowledge-point
+    chapter: ch:rational-expressions-operations-extraneous-roots
+    path: typst/3a-algebra-symbols/03-rational-expressions-operations-extraneous-roots/01-rational-expression-structure.typ
+    prerequisites:
+      - pf04-fraction-equivalence
+      - pf04-fraction-arithmetic
+      - cb06-solving-linear
+      - al02-factorization-as-reverse
+  - id: al03-common-denominator-operations
+    type: knowledge-point
+    chapter: ch:rational-expressions-operations-extraneous-roots
+    path: typst/3a-algebra-symbols/03-rational-expressions-operations-extraneous-roots/02-common-denominator-and-operations.typ
+    prerequisites: [al03-rational-expression-structure]
+  - id: al03-rational-equations-and-extraneous-roots
+    type: knowledge-point
+    chapter: ch:rational-expressions-operations-extraneous-roots
+    path: typst/3a-algebra-symbols/03-rational-expressions-operations-extraneous-roots/03-rational-equations-and-extraneous-roots.typ
+    prerequisites: [al03-common-denominator-operations]
+  - id: al04-linear-one-variable
+    type: knowledge-point
+    chapter: ch:linear-equations-systems-modeling
+    path: typst/3a-algebra-symbols/04-linear-equations-systems-modeling/01-linear-equation-one-variable.typ
+    prerequisites:
+      - cb05-letters-represent-numbers
+      - cb06-equation-as-balance
+      - cb06-equality-properties
+      - cb06-solving-linear
+      - al01-add-subtract-polynomials
+  - id: al04-systems-linear
+    type: knowledge-point
+    chapter: ch:linear-equations-systems-modeling
+    path: typst/3a-algebra-symbols/04-linear-equations-systems-modeling/02-systems-of-linear-equations.typ
+    prerequisites: [al04-linear-one-variable]
+  - id: al04-modeling-word-problems
+    type: knowledge-point
+    chapter: ch:linear-equations-systems-modeling
+    path: typst/3a-algebra-symbols/04-linear-equations-systems-modeling/03-modeling-word-problems.typ
+    prerequisites: [al04-systems-linear]
+  - id: al05-quadratic-solving
+    type: knowledge-point
+    chapter: ch:quadratic-equations
+    path: typst/3a-algebra-symbols/05-quadratic-equations/01-quadratic-equations-by-factoring-and-formula.typ
+    prerequisites:
+      - al02-distributive-rewrite
+      - al02-special-identities
+      - al02-factorization-as-reverse
+      - al04-linear-one-variable
+      - cb07-square-and-square-root
+  - id: al05-vieta
+    type: knowledge-point
+    chapter: ch:quadratic-equations
+    path: typst/3a-algebra-symbols/05-quadratic-equations/02-quadratic-applications-and-vieta.typ
+    prerequisites: [al05-quadratic-solving]
+  - id: al05-linear-inequalities
+    type: knowledge-point
+    chapter: ch:linear-inequalities
+    path: typst/3a-algebra-symbols/06-linear-inequalities/01-linear-inequalities-and-absolute-value.typ
+    prerequisites: [al04-linear-one-variable, cb02-opposite-and-absolute]
+  - id: meta-al-invention-tree
+    type: chapter-meta
+    chapter: ch:algebra-summary
+    path: typst/3a-algebra-symbols/07-algebra-summary/01-invention-tree-of-algebra.typ
+    prerequisites:
+      - cb05-letters-represent-numbers
+      - al01-monomials-coefficient-degree
+      - al01-polynomials-and-degree
+      - al01-like-terms-and-combine
+      - al01-add-subtract-polynomials
+      - al01-multiply-polynomials
+      - al02-distributive-rewrite
+      - al02-special-identities
+      - al02-factorization-as-reverse
+      - al03-rational-expression-structure
+      - al03-common-denominator-operations
+      - al03-rational-equations-and-extraneous-roots
+      - al04-linear-one-variable
+      - al04-systems-linear
+      - al04-modeling-word-problems
+      - al05-quadratic-solving
+      - al05-vieta
+      - al05-linear-inequalities
+  - id: meta-al-synthesis-problems
+    type: chapter-meta
+    chapter: ch:algebra-summary
+    path: typst/3a-algebra-symbols/07-algebra-summary/02-cross-chapter-synthesis-problems.typ
+    prerequisites: [meta-al-invention-tree]
+  - id: meta-al-repair-routes
+    type: chapter-meta
+    chapter: ch:algebra-summary
+    path: typst/3a-algebra-symbols/07-algebra-summary/03-common-misreadings-and-repair-routes.typ
+    prerequisites: [meta-al-synthesis-problems]
+  - id: ge01-congruence-correspondence
+    type: knowledge-point
+    chapter: ch:congruence-and-basic-criteria
+    path: typst/3b-geometry-proof/01-congruence-and-basic-criteria/01-congruence-and-correspondence.typ
+    prerequisites: [pf06-polygons-and-circle, pf07-angles, pf08-parallel-transversal, pf08-triangles-angle-sum]
+  - id: ge01-sss-sas
+    type: knowledge-point
+    chapter: ch:congruence-and-basic-criteria
+    path: typst/3b-geometry-proof/01-congruence-and-basic-criteria/02-sss-sas-criteria.typ
+    prerequisites: [ge01-congruence-correspondence]
+  - id: ge01-asa-aas-ssa
+    type: knowledge-point
+    chapter: ch:advanced-criteria-and-proof-writing
+    path: typst/3b-geometry-proof/02-advanced-criteria-and-proof-writing/01-asa-aas-ssa-counterexample.typ
+    prerequisites: [ge01-congruence-correspondence, ge01-sss-sas, pf08-triangles-angle-sum]
+  - id: ge01-two-step-proof-chain
+    type: knowledge-point
+    chapter: ch:advanced-criteria-and-proof-writing
+    path: typst/3b-geometry-proof/02-advanced-criteria-and-proof-writing/02-two-step-proof-chain.typ
+    prerequisites: [ge01-asa-aas-ssa]
+  - id: ge02-parallel-line-angles
+    type: knowledge-point
+    chapter: ch:similarity-scale-parallel-line-geometry
+    path: typst/3b-geometry-proof/03-similarity-scale-parallel-line-geometry/01-parallel-lines-and-angle-lemmas.typ
+    prerequisites:
+      - pf08-parallel-transversal
+      - pf08-triangles-angle-sum
+      - cb01-ratio-basics
+      - ge01-congruence-correspondence
+      - ge01-sss-sas
+  - id: ge02-similarity-aa-ratio
+    type: knowledge-point
+    chapter: ch:similarity-scale-parallel-line-geometry
+    path: typst/3b-geometry-proof/03-similarity-scale-parallel-line-geometry/02-similarity-and-ratio.typ
+    prerequisites: [ge02-parallel-line-angles]
+  - id: ge02-scale-and-measurement
+    type: knowledge-point
+    chapter: ch:similarity-scale-parallel-line-geometry
+    path: typst/3b-geometry-proof/03-similarity-scale-parallel-line-geometry/03-scale-and-proportion-in-figures.typ
+    prerequisites: [ge02-similarity-aa-ratio]
+  - id: ge03-quadrilateral-family
+    type: knowledge-point
+    chapter: ch:quadrilateral-family
+    path: typst/3b-geometry-proof/04-quadrilateral-family/01-quadrilateral-family.typ
+    prerequisites:
+      - pf06-polygons-and-circle
+      - pf07-angles
+      - ge01-congruence-correspondence
+      - ge01-sss-sas
+      - ge02-parallel-line-angles
+      - ge02-similarity-aa-ratio
+  - id: ge03-circle-basics-inscribed
+    type: knowledge-point
+    chapter: ch:circles-and-inscribed-circumscribed
+    path: typst/3b-geometry-proof/05-circles-and-inscribed-circumscribed/01-circle-basics-and-angle-relations.typ
+    prerequisites:
+      - pf06-polygons-and-circle
+      - pf07-angles
+      - ge01-congruence-correspondence
+      - ge01-sss-sas
+      - ge03-quadrilateral-family
+  - id: ge03-inscribed-circumscribed
+    type: knowledge-point
+    chapter: ch:circles-and-inscribed-circumscribed
+    path: typst/3b-geometry-proof/05-circles-and-inscribed-circumscribed/02-inscribed-and-circumscribed.typ
+    prerequisites: [ge03-circle-basics-inscribed]
+  - id: ge04-pythagorean
+    type: knowledge-point
+    chapter: ch:pythagorean-radicals-trigonometric-ratios
+    path: typst/3b-geometry-proof/06-pythagorean-radicals-trigonometric-ratios/01-pythagorean-theorem-and-radical-lengths.typ
+    prerequisites:
+      - pf07-perimeter-area
+      - pf08-triangles-angle-sum
+      - ge01-sss-sas
+      - ge02-similarity-aa-ratio
+      - ge03-circle-basics-inscribed
+      - cb07-square-and-square-root
+  - id: ge04-special-right-triangles
+    type: knowledge-point
+    chapter: ch:pythagorean-radicals-trigonometric-ratios
+    path: typst/3b-geometry-proof/06-pythagorean-radicals-trigonometric-ratios/02-special-right-triangles-and-trig-ratios.typ
+    prerequisites: [ge04-pythagorean]
+  - id: ge04-elevation-slope
+    type: knowledge-point
+    chapter: ch:pythagorean-radicals-trigonometric-ratios
+    path: typst/3b-geometry-proof/06-pythagorean-radicals-trigonometric-ratios/03-applications-elevation-depression-and-slopes.typ
+    prerequisites: [ge04-special-right-triangles]
+  - id: ge05-rigid-transforms
+    type: knowledge-point
+    chapter: ch:transformations-coordinate-geometry-views
+    path: typst/3b-geometry-proof/07-transformations-coordinate-geometry-views/01-rigid-transformations-and-congruence.typ
+    prerequisites:
+      - cb04-rectangular-system
+      - cb04-plotting-transforming
+      - ge01-congruence-correspondence
+      - ge04-pythagorean
+  - id: ge05-coordinate-transforms
+    type: knowledge-point
+    chapter: ch:transformations-coordinate-geometry-views
+    path: typst/3b-geometry-proof/07-transformations-coordinate-geometry-views/02-coordinate-geometry-and-transformations.typ
+    prerequisites: [ge05-rigid-transforms]
+  - id: ge05-orthographic-views
+    type: knowledge-point
+    chapter: ch:transformations-coordinate-geometry-views
+    path: typst/3b-geometry-proof/07-transformations-coordinate-geometry-views/03-orthographic-views-of-solids.typ
+    prerequisites: [pf06-simple-solids, ge05-coordinate-transforms]
+  - id: meta-ge-invention-tree
+    type: chapter-meta
+    chapter: ch:geometry-summary
+    path: typst/3b-geometry-proof/08-geometry-summary/01-invention-tree-of-geometry.typ
+    prerequisites:
+      - ge01-congruence-correspondence
+      - ge01-sss-sas
+      - ge01-asa-aas-ssa
+      - ge01-two-step-proof-chain
+      - ge02-parallel-line-angles
+      - ge02-similarity-aa-ratio
+      - ge02-scale-and-measurement
+      - ge03-quadrilateral-family
+      - ge03-circle-basics-inscribed
+      - ge03-inscribed-circumscribed
+      - ge04-pythagorean
+      - ge04-special-right-triangles
+      - ge04-elevation-slope
+      - ge05-rigid-transforms
+      - ge05-coordinate-transforms
+      - ge05-orthographic-views
+  - id: meta-ge-synthesis-problems
+    type: chapter-meta
+    chapter: ch:geometry-summary
+    path: typst/3b-geometry-proof/08-geometry-summary/02-cross-chapter-synthesis-problems.typ
+    prerequisites: [meta-ge-invention-tree]
+  - id: meta-ge-repair-routes
+    type: chapter-meta
+    chapter: ch:geometry-summary
+    path: typst/3b-geometry-proof/08-geometry-summary/03-common-misreadings-and-repair-routes.typ
+    prerequisites: [meta-ge-synthesis-problems]
+  - id: fn01-table-as-function-view
+    type: knowledge-point
+    chapter: ch:function-representations
+    path: typst/3c-functions-change/01-function-representations/01-input-output-tables.typ
+    prerequisites:
+      - cb04-rectangular-system
+      - cb05-letters-represent-numbers
+      - cb05-expressions-and-like-terms
+      - cb06-equation-as-balance
+      - cb07-square-and-square-root
+  - id: fn02-graph-as-function-view
+    type: knowledge-point
+    chapter: ch:function-representations
+    path: typst/3c-functions-change/01-function-representations/02-graphs-and-correspondence.typ
+    prerequisites: [fn01-table-as-function-view]
+  - id: fn03-formula-as-function-view
+    type: knowledge-point
+    chapter: ch:function-representations
+    path: typst/3c-functions-change/01-function-representations/03-formulas-as-rules.typ
+    prerequisites: [fn02-graph-as-function-view]
+  - id: fn04-direct-variation
+    type: knowledge-point
+    chapter: ch:direct-variation-linear-functions-slope
+    path: typst/3c-functions-change/02-direct-variation-linear-functions-slope/01-direct-variation.typ
+    prerequisites:
+      - cb01-ratio-basics
+      - cb01-proportion
+      - cb04-rectangular-system
+      - cb05-expressions-and-like-terms
+      - cb06-solving-linear
+      - fn03-formula-as-function-view
+  - id: fn05-linear-function
+    type: knowledge-point
+    chapter: ch:direct-variation-linear-functions-slope
+    path: typst/3c-functions-change/02-direct-variation-linear-functions-slope/02-linear-functions.typ
+    prerequisites: [fn04-direct-variation]
+  - id: fn06-slope-as-rate
+    type: knowledge-point
+    chapter: ch:direct-variation-linear-functions-slope
+    path: typst/3c-functions-change/02-direct-variation-linear-functions-slope/03-slope-as-rate.typ
+    prerequisites: [fn05-linear-function]
+  - id: fn07-inverse-proportion
+    type: knowledge-point
+    chapter: ch:inverse-proportion-quadratic-functions
+    path: typst/3c-functions-change/03-inverse-proportion-quadratic-functions/01-inverse-proportion.typ
+    prerequisites: [fn05-linear-function, fn06-slope-as-rate, cb04-plotting-transforming]
+  - id: fn08-quadratic-function
+    type: knowledge-point
+    chapter: ch:inverse-proportion-quadratic-functions
+    path: typst/3c-functions-change/03-inverse-proportion-quadratic-functions/02-parabolas-and-quadratics.typ
+    prerequisites: [fn07-inverse-proportion]
+  - id: fn09-comparing-function-families
+    type: knowledge-point
+    chapter: ch:inverse-proportion-quadratic-functions
+    path: typst/3c-functions-change/03-inverse-proportion-quadratic-functions/03-comparing-function-families.typ
+    prerequisites: [fn08-quadratic-function]
+  - id: fn10-additive-vs-multiplicative-growth
+    type: knowledge-point
+    chapter: ch:growth-models-function-comparison
+    path: typst/3c-functions-change/04-growth-models-function-comparison/01-additive-vs-multiplicative-growth.typ
+    prerequisites:
+      - fn05-linear-function
+      - fn06-slope-as-rate
+      - fn07-inverse-proportion
+      - fn08-quadratic-function
+      - fn09-comparing-function-families
+  - id: fn11-model-choice
+    type: knowledge-point
+    chapter: ch:growth-models-function-comparison
+    path: typst/3c-functions-change/04-growth-models-function-comparison/02-model-choice.typ
+    prerequisites: [fn10-additive-vs-multiplicative-growth]
+  - id: fn12-function-comparison
+    type: knowledge-point
+    chapter: ch:growth-models-function-comparison
+    path: typst/3c-functions-change/04-growth-models-function-comparison/03-function-comparison.typ
+    prerequisites: [fn11-model-choice]
+  - id: meta-functions-checklist
+    type: chapter-meta
+    chapter: ch:functions-summary
+    path: typst/3c-functions-change/05-functions-summary/01-functions-checklist.typ
+    prerequisites:
+      - fn01-table-as-function-view
+      - fn02-graph-as-function-view
+      - fn03-formula-as-function-view
+      - fn04-direct-variation
+      - fn05-linear-function
+      - fn06-slope-as-rate
+      - fn07-inverse-proportion
+      - fn08-quadratic-function
+      - fn09-comparing-function-families
+      - fn10-additive-vs-multiplicative-growth
+      - fn11-model-choice
+      - fn12-function-comparison
+  - id: meta-functions-mixed-self-test
+    type: chapter-meta
+    chapter: ch:functions-summary
+    path: typst/3c-functions-change/05-functions-summary/02-functions-mixed-self-test.typ
+    prerequisites: [meta-functions-checklist]
+  - id: dt01-organizing-data
+    type: knowledge-point
+    chapter: ch:data-displays-descriptive-statistics
+    path: typst/3d-data-uncertainty/01-data-displays-descriptive-statistics/01-organizing-data.typ
+    prerequisites: [cb01-ratio-basics, cb01-percent, cb04-rectangular-system, cb05-relationship-templates]
+  - id: dt02-charts-and-readings
+    type: knowledge-point
+    chapter: ch:data-displays-descriptive-statistics
+    path: typst/3d-data-uncertainty/01-data-displays-descriptive-statistics/02-charts-and-readings.typ
+    prerequisites: [dt01-organizing-data]
+  - id: dt03-center-and-spread
+    type: knowledge-point
+    chapter: ch:data-displays-descriptive-statistics
+    path: typst/3d-data-uncertainty/01-data-displays-descriptive-statistics/03-center-and-spread.typ
+    prerequisites: [dt02-charts-and-readings]
+  - id: dt04-frequency-distributions
+    type: knowledge-point
+    chapter: ch:frequency-histograms-variance
+    path: typst/3d-data-uncertainty/02-frequency-histograms-variance/01-frequency-distributions.typ
+    prerequisites:
+      - dt01-organizing-data
+      - dt03-center-and-spread
+      - cb01-ratio-basics
+      - cb05-expressions-and-like-terms
+      - cb07-square-and-square-root
+  - id: dt05-histograms
+    type: knowledge-point
+    chapter: ch:frequency-histograms-variance
+    path: typst/3d-data-uncertainty/02-frequency-histograms-variance/02-histograms.typ
+    prerequisites: [dt04-frequency-distributions]
+  - id: dt06-variance
+    type: knowledge-point
+    chapter: ch:frequency-histograms-variance
+    path: typst/3d-data-uncertainty/02-frequency-histograms-variance/03-variance.typ
+    prerequisites: [dt05-histograms]
+  - id: dt07-sample-spaces
+    type: knowledge-point
+    chapter: ch:sample-space-probability-experimental-frequency
+    path: typst/3d-data-uncertainty/03-sample-space-probability-experimental-frequency/01-sample-spaces.typ
+    prerequisites: [cb01-ratio-basics, cb01-percent, dt04-frequency-distributions]
+  - id: dt08-probability-language
+    type: knowledge-point
+    chapter: ch:sample-space-probability-experimental-frequency
+    path: typst/3d-data-uncertainty/03-sample-space-probability-experimental-frequency/02-probability-language.typ
+    prerequisites: [dt07-sample-spaces]
+  - id: dt09-experimental-frequency
+    type: knowledge-point
+    chapter: ch:sample-space-probability-experimental-frequency
+    path: typst/3d-data-uncertainty/03-sample-space-probability-experimental-frequency/03-experimental-frequency.typ
+    prerequisites: [dt08-probability-language]
+  - id: dt10-population-vs-sample
+    type: knowledge-point
+    chapter: ch:population-samples-estimation
+    path: typst/3d-data-uncertainty/04-population-samples-estimation/01-population-vs-sample.typ
+    prerequisites: [cb01-ratio-basics, cb01-percent, dt04-frequency-distributions]
+  - id: dt11-sampling-bias
+    type: knowledge-point
+    chapter: ch:population-samples-estimation
+    path: typst/3d-data-uncertainty/04-population-samples-estimation/02-sampling-bias.typ
+    prerequisites: [dt10-population-vs-sample]
+  - id: dt12-estimation
+    type: knowledge-point
+    chapter: ch:population-samples-estimation
+    path: typst/3d-data-uncertainty/04-population-samples-estimation/03-estimation.typ
+    prerequisites: [dt11-sampling-bias]
+  - id: meta-data-checklist
+    type: chapter-meta
+    chapter: ch:data-summary
+    path: typst/3d-data-uncertainty/05-data-summary/01-data-checklist.typ
+    prerequisites:
+      - dt01-organizing-data
+      - dt02-charts-and-readings
+      - dt03-center-and-spread
+      - dt04-frequency-distributions
+      - dt05-histograms
+      - dt06-variance
+      - dt07-sample-spaces
+      - dt08-probability-language
+      - dt09-experimental-frequency
+      - dt10-population-vs-sample
+      - dt11-sampling-bias
+      - dt12-estimation
+  - id: meta-data-mixed-self-test
+    type: chapter-meta
+    chapter: ch:data-summary
+    path: typst/3d-data-uncertainty/05-data-summary/02-data-mixed-self-test.typ
+    prerequisites: [meta-data-checklist]
+  - id: cp01-shared-tools-crossref
+    type: chapter-meta
+    chapter: ch:shared-invention-tree-review
+    path: typst/4-capstone/01-shared-invention-tree-review/01-shared-tools-and-bridges.typ
+    prerequisites:
+      - pf02-order-laws
+      - pf04-fraction-arithmetic
+      - pf07-perimeter-area
+      - pf08-coordinate-intuition
+      - cb01-ratio-basics
+      - cb04-rectangular-system
+      - cb05-letters-represent-numbers
+      - cb06-equality-properties
+      - cb07-real-number-line
+  - id: cp02-repair-route-playbook
+    type: chapter-meta
+    chapter: ch:shared-invention-tree-review
+    path: typst/4-capstone/01-shared-invention-tree-review/02-repair-route-playbook.typ
+    prerequisites: [cp01-shared-tools-crossref]
+  - id: cp03-strategy-toolbox
+    type: chapter-meta
+    chapter: ch:cross-domain-problem-solving-modeling
+    path: typst/4-capstone/02-cross-domain-problem-solving-modeling/01-strategy-toolbox.typ
+    prerequisites:
+      - al04-modeling-word-problems
+      - al05-quadratic-solving
+      - ge04-pythagorean
+      - ge02-similarity-aa-ratio
+      - fn05-linear-function
+      - fn08-quadratic-function
+      - fn11-model-choice
+      - dt03-center-and-spread
+      - dt08-probability-language
+      - dt09-experimental-frequency
+  - id: cp03-multi-step-modeling
+    type: chapter-meta
+    chapter: ch:cross-domain-problem-solving-modeling
+    path: typst/4-capstone/02-cross-domain-problem-solving-modeling/02-multi-step-modeling.typ
+    prerequisites: [cp03-strategy-toolbox]
+  - id: cp04-cross-domain-mix
+    type: chapter-meta
+    chapter: ch:cross-domain-problem-solving-modeling
+    path: typst/4-capstone/02-cross-domain-problem-solving-modeling/03-geometry-algebra-data-mix.typ
+    prerequisites: [cp03-multi-step-modeling]
+  - id: cp05-full-solution-writeups
+    type: chapter-meta
+    chapter: ch:cross-domain-problem-solving-modeling
+    path: typst/4-capstone/02-cross-domain-problem-solving-modeling/04-full-solution-writeups.typ
+    prerequisites: [cp04-cross-domain-mix]
+  - id: cp06-after-grade-9
+    type: chapter-meta
+    chapter: ch:next-learning-map
+    path: typst/4-capstone/03-next-learning-map/01-after-grade-9-paths.typ
+    prerequisites: [cp05-full-solution-writeups]
+  - id: cp07-keep-studying
+    type: chapter-meta
+    chapter: ch:next-learning-map
+    path: typst/4-capstone/03-next-learning-map/02-how-to-keep-studying.typ
+    prerequisites: [cp06-after-grade-9]

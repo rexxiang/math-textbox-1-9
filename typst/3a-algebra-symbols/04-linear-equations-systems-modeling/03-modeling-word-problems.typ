@@ -1,4 +1,5 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/diagram-packages.typ": cetz
 
 === 建模：设元、译句与“答得合理” <tool:al04-modeling-word-problems>
 
@@ -16,16 +17,48 @@
   这一节不是要教你记住“行程问题 / 工程问题 / 配比问题”怎么做——那样你每遇到新情境都得重新学。真正需要学的是*同一条建模流程*，它对任何情境都适用。
 ]
 
-#history-note[
-  中国古代“鸡兔同笼”“百钱买百鸡”“浮萍夏涨”等题目都属于用方程解决实际情境——它们的共同结构是：先选定一个未知量，再*按原文句子的意思*写出等量关系。把情境剥到这层，方法就统一了。
-]
-
 #discovery[
   *建模三步：设元 → 译句 → 检验*
 
   + *设元*：选一个（或两个）*你能用式子表示其他量*的未知量，记作 $x$（或 $x, y$）。
   + *译句*：把原文里“是”“等于”“比…多”“比…少”“一共”“打折后付”等关键词，*一句一句*翻译成等式。题里有几句独立的等量关系，就能列出几条方程。
   + *检验合理性*：把解代入原文情境——答案的*量纲、正负、数量级*都必须讲得通。不合理的解（例如“宽 $= -5$ 厘米”）要*舍去*，而不是留着。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let bw = 8
+      let bh = 4
+      let gap = 3
+
+      // Box 1: 设元
+      rect((0, 0), (bw, bh), fill: rgb("#BBDEFB"), stroke: 1.2pt + rgb("#1565C0"), radius: 4pt)
+      content((bw / 2, bh - 1), text(size: 8pt, weight: "bold", fill: rgb("#0D47A1"))[设元])
+      content((bw / 2, 1.2), text(size: 6pt, fill: rgb("#1565C0"))[选未知量 $x$])
+
+      // Arrow 1→2
+      line((bw + 0.3, bh / 2), (bw + gap - 0.3, bh / 2), stroke: 1pt + rgb("#757575"),
+           mark: (end: "stealth", fill: rgb("#757575"), scale: 0.5))
+
+      // Box 2: 译句
+      let x2 = bw + gap
+      rect((x2, 0), (x2 + bw, bh), fill: rgb("#FFE0B2"), stroke: 1.2pt + rgb("#E65100"), radius: 4pt)
+      content((x2 + bw / 2, bh - 1), text(size: 8pt, weight: "bold", fill: rgb("#E65100"))[译句])
+      content((x2 + bw / 2, 1.2), text(size: 6pt, fill: rgb("#E65100"))[文字 → 等式])
+
+      // Arrow 2→3
+      line((x2 + bw + 0.3, bh / 2), (x2 + bw + gap - 0.3, bh / 2), stroke: 1pt + rgb("#757575"),
+           mark: (end: "stealth", fill: rgb("#757575"), scale: 0.5))
+
+      // Box 3: 检验
+      let x3 = x2 + bw + gap
+      rect((x3, 0), (x3 + bw, bh), fill: rgb("#C8E6C9"), stroke: 1.2pt + rgb("#2E7D32"), radius: 4pt)
+      content((x3 + bw / 2, bh - 1), text(size: 8pt, weight: "bold", fill: rgb("#2E7D32"))[检验])
+      content((x3 + bw / 2, 1.2), text(size: 6pt, fill: rgb("#2E7D32"))[合理？✓])
+    }),
+    caption: [建模三步流程：设元、译句、检验合理性],
+  )
 
   *译句的关键是“等量关系”*
 
@@ -64,6 +97,46 @@
     [价格 / 利润], [设原价 $x$ 或数量 $n$], [折后价 / 成本 / 利润 $=$ 约束条件],
   )
 
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let total-w = 30
+      let bar-h = 3
+
+      // Total distance bar (outline)
+      rect((0, 0), (total-w, bar-h), stroke: 1.2pt + rgb("#424242"), radius: 2pt)
+
+      // Car distance from left: 80t portion
+      // 80/(80+70) * 30 = 16
+      let car-w = 16
+      rect((0, 0), (car-w, bar-h), fill: rgb("#BBDEFB"), stroke: 1pt + rgb("#1565C0"), radius: 2pt)
+      content((car-w / 2, bar-h / 2), text(size: 7pt, weight: "bold", fill: rgb("#0D47A1"))[汽车 $80 t$])
+
+      // Motorcycle distance from right: 70t portion
+      let moto-w = total-w - car-w
+      rect((car-w, 0), (total-w, bar-h), fill: rgb("#FFCDD2"), stroke: 1pt + rgb("#C62828"), radius: 2pt)
+      content((car-w + moto-w / 2, bar-h / 2), text(size: 7pt, weight: "bold", fill: rgb("#B71C1C"))[摩托 $70 t$])
+
+      // Meeting point marker
+      line((car-w, -0.5), (car-w, bar-h + 0.5), stroke: 1.5pt + rgb("#2E7D32"))
+      content((car-w, bar-h + 1.5), text(size: 7pt, fill: rgb("#2E7D32"), weight: "bold")[相遇])
+
+      // Arrow left side
+      line((0.5, -1.5), (car-w - 0.5, -1.5), stroke: 0.8pt + rgb("#1565C0"),
+           mark: (end: "stealth", fill: rgb("#1565C0"), scale: 0.4))
+      // Arrow right side
+      line((total-w - 0.5, -1.5), (car-w + 0.5, -1.5), stroke: 0.8pt + rgb("#C62828"),
+           mark: (end: "stealth", fill: rgb("#C62828"), scale: 0.4))
+
+      // Total label
+      content((total-w / 2, -3), text(size: 7pt, weight: "bold")[全程 $300$ 千米])
+      line((0, -2.5), (total-w, -2.5), stroke: 0.6pt + rgb("#757575"),
+           mark: (start: "|", end: "|", scale: 0.4))
+    }),
+    caption: [行程问题的线段图：汽车与摩托车相向而行，两段路程之和 $= 300$ 千米],
+  )
+
   表里列的是不同情境的“变奏”——但拆开看都是*设元 + 译句 + 检验*同一条流程。不要为每种情境记死一套步骤。
 ]
 
@@ -76,7 +149,10 @@
 
   + 甲、乙两地相距 $300$ 千米，一辆汽车从甲出发以 $80$ 千米/时前进，另一辆摩托车从乙同时出发相向，速度 $70$ 千米/时。几小时后相遇？
   + 一件工作，甲独做 $15$ 天完成、乙独做 $10$ 天完成。两人合做几天完成？
-  + 一瓶饮料按浓缩液 $:$ 水 $= 1 : 4$ 调配。想配成 $500$ 毫升。浓缩液用几毫升？
+]
+
+#history-note[
+  用方程为实际问题建模的传统极为悠久。“鸡兔同笼”最早见于《孙子算经》（约公元 3—5 世纪），“百钱买百鸡”出自南北朝张丘建《张丘建算经》（约公元 5 世纪）。在西方，古埃及莱因德纸草书（约公元前 1650 年）的“aha 问题”同样是先给情境、再找等量关系。这些跨越千年和大洲的题目有一个共同结构：先选定一个未知量，再*按原文句子的意思*写出等量关系——把情境剥到这层，方法就统一了。
 ]
 
 #blueprint[
@@ -133,7 +209,7 @@
 
   + 甲有苹果 $120$ 个、乙有 $60$ 个。甲每天卖 $15$ 个、乙每天卖 $5$ 个。几天后两人的苹果数相等？
   + 某商品成本 $20$ 元。为保证利润不低于 $15%$，售价最少定多少？（请用方程/不等式思维，按本节建模流程写完设元、等量关系与检验。）
-  + 小王比小李大 $4$ 岁。$5$ 年后小王的年龄是小李的 $3/2$ 倍。两人今年各几岁？
+  + Priya比小李大 $4$ 岁。$5$ 年后Priya的年龄是Luca的 $3/2$ 倍。两人今年各几岁？
 
   *挑战 ☞ 选做*
 
@@ -141,20 +217,20 @@
   + 某顺水行船的速度比静水速度大 $3$ 千米/时；顺水 $30$ 千米与逆水 $18$ 千米用时相等。求船在静水中的速度。
   + 一个班有 $a$ 名男生、$b$ 名女生，男生和女生分别平均考了 $80$ 与 $76$ 分，全班平均 $78$ 分。用比例法（无需具体数字）说明男生人数与女生人数的关系。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
-  + 设这个数 $x$：$3 x = 2 x + 14 => x = 14$。
-  + 设女生 $x$：$x + (x + 5) = 45 => x = 20$。男生 $25$、女生 $20$。
-  + 设个位 $x$，十位 $2 x$：$10 dot 2 x + x - (10 x + 2 x) = 36$？不对，方向反了。原数为 $10 dot 2 x + x = 21 x$，新数 $10 x + 2 x = 12 x$，题目说“新数比原数小 $36$”：$21 x - 12 x = 36 => x = 4$。原数 $84$。检验：新数 $48 = 84 - 36$ ✓。
+  + 设这个数 $x$：$3 x = 2 x + 14 => x = 14$。（设元 + 移项）
+  + 设女生 $x$：$x + (x + 5) = 45 => x = 20$。男生 $25$、女生 $20$。（设元 + 译句）
+  + 设个位 $x$，十位 $2 x$：$10 dot 2 x + x - (10 x + 2 x) = 36$？不对，方向反了。原数为 $10 dot 2 x + x = 21 x$，新数 $10 x + 2 x = 12 x$，题目说“新数比原数小 $36$”：$21 x - 12 x = 36 => x = 4$。原数 $84$。检验：新数 $48 = 84 - 36$ ✓。（设元 + 译句 + 检验）
   *应用*
   + 设 $d$ 天后相等：$120 - 15 d = 60 - 5 d => 60 = 10 d => d = 6$ 天。
   + 设售价 $x$ 元：$x >= 20 times 1.15 = 23$。最少 $23$ 元。（设元 + 等量关系 + 检验：非负、单位合理。）
-  + 设小李今年 $x$ 岁、小王 $x + 4$ 岁。$x + 4 + 5 = 3 / 2 dot (x + 5) => x + 9 = 3 x / 2 + 15 / 2 => x / 2 = 3 / 2 => x = 3$。小李 $3$ 岁，小王 $7$ 岁。
+  + 设小李今年 $x$ 岁、Priya $x + 4$ 岁。$x + 4 + 5 = 3 / 2 dot (x + 5) => x + 9 = 3 x / 2 + 15 / 2 => x / 2 = 3 / 2 => x = 3$。小李 $3$ 岁，Priya $7$ 岁。
 
   *挑战 ☞ 选做*
   + $(L + 500) / v = 30$，$(L + 1300) / v = 70$；相减：$800 / v = 40 => v = 20$ 米/秒 $= 72$ 千米/时；$L = 100$ 米。
   + 设静水速 $v$：$30 / (v + 3) = 18 / (v - 3)$，交叉相乘 $30 (v - 3) = 18 (v + 3)$，$12 v = 144$，$v = 12$ 千米/时。检验 $v plus.minus 3 > 0$ ✓。
   + 全班平均 $(80 a + 76 b) / (a + b) = 78 => 80 a + 76 b = 78 (a + b) => 2 a = 2 b => a = b$，即男生、女生人数相等。
+  ]
 ]

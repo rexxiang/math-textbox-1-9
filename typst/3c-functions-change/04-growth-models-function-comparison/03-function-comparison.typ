@@ -1,4 +1,5 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/diagram-packages.typ": cetz
 
 === 函数家族的长期较量 <tool:fn12-function-comparison>
 
@@ -38,6 +39,51 @@
   - $x = 5$：$2^x = 32 > x^2 = 25$，乘法增长已经追平二次；之后越拉越大。
   - $x = 20$：$2^x approx 10^6$，$x^2 = 400$——乘法增长对二次领先 $2500$ 倍以上。
 
+  #figure(
+    cetz.canvas(length: 0.35cm, {
+      import cetz.draw: *
+      line((-1, 0), (12, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -2), (0, 12), stroke: 0.4pt, mark: (end: ">"))
+      content((12.3, 0), $x$, anchor: "west")
+      content((0, 12.3), $y$, anchor: "south")
+      // inverse: y = 10/x (red, fading)
+      let inv = range(0, 80).map(i => {
+        let x = 1 + 0.12 * i
+        (x, 10.0 / x)
+      })
+      for i in range(0, inv.len() - 1) {
+        line(inv.at(i), inv.at(i + 1), stroke: 0.5pt + rgb("#E53935"))
+      }
+      content((8, 1.5), text(6pt)[反比例 $10 / x$])
+      // linear: y = x (blue)
+      line((0, 0), (10, 10), stroke: 0.6pt + rgb("#1976D2"))
+      content((9, 10.5), text(6pt)[线性 $x$], anchor: "west")
+      // quadratic: y = 0.1 x^2 (green)
+      let quad = range(0, 101).map(i => {
+        let x = 0.1 * i
+        (x, 0.1 * x * x)
+      })
+      for i in range(0, quad.len() - 1) {
+        if quad.at(i).at(1) <= 12 and quad.at(i + 1).at(1) <= 12 {
+          line(quad.at(i), quad.at(i + 1), stroke: 0.6pt + rgb("#2E7D32"))
+        }
+      }
+      content((10, 11), text(6pt)[二次 $0.1 x^2$])
+      // exponential: y = 1.3^x (orange, rises fast)
+      let expo = range(0, 91).map(i => {
+        let x = 0.1 * i
+        (x, calc.pow(1.35, x))
+      })
+      for i in range(0, expo.len() - 1) {
+        if expo.at(i).at(1) <= 12 and expo.at(i + 1).at(1) <= 12 {
+          line(expo.at(i), expo.at(i + 1), stroke: 0.7pt + rgb("#FF6F00"))
+        }
+      }
+      content((6, 8), text(6pt)[乘法 $1.35^x$], anchor: "west")
+    }),
+    caption: [四族函数的长期竞赛：反比例趋于 $0$，线性稳步上升，二次加速上升，乘法增长最终冲天。]
+  )
+
   *长期排序（$x$ 足够大时）*
 
   对正的 $x$：
@@ -56,6 +102,37 @@
   - 二次：先平缓、再越来越陡向右上翘起；
   - 乘法增长（$r > 1$）：几乎贴着 $x$ 轴一段后*突然冲天*——就是前一节见到的那种“先贴地后翘起”。
 
+  #figure(
+    cetz.canvas(length: 0.35cm, {
+      import cetz.draw: *
+      line((-1, 0), (14, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -1), (0, 12), stroke: 0.4pt, mark: (end: ">"))
+      content((14.3, 0), $x$, anchor: "west")
+      content((0, 12.3), $y$, anchor: "south")
+      // y = x (linear, blue)
+      line((0, 0), (11, 11), stroke: 0.6pt + rgb("#1976D2"))
+      content((11.2, 11), text(6pt)[$y = x$], anchor: "west")
+      // y = 0.1 x^2 (quadratic, green)
+      let quad = range(0, 111).map(i => {
+        let x = 0.1 * i
+        (x, 0.1 * x * x)
+      })
+      for i in range(0, quad.len() - 1) {
+        if quad.at(i).at(1) <= 12 and quad.at(i + 1).at(1) <= 12 {
+          line(quad.at(i), quad.at(i + 1), stroke: 0.6pt + rgb("#2E7D32"))
+        }
+      }
+      content((10.5, 11.5), text(6pt)[$y = 0.1 x^2$], anchor: "west")
+      // crossover point at x=10
+      circle((10, 10), radius: 0.2, fill: rgb("#FF9800"))
+      content((10, 10.8), text(6pt)[交叉点 $x = 10$], anchor: "south")
+      // region labels
+      content((5, 6), text(6pt, fill: rgb("#1976D2"))[线性领先])
+      content((11.5, 8), text(6pt, fill: rgb("#2E7D32"))[二次反超], anchor: "west")
+    }),
+    caption: [$y = x$（线性）在 $x < 10$ 时领先 $y = 0.1 x^2$（二次），但 $x = 10$ 处追平，之后二次*永远*超过线性——这是"族等级"的威力。]
+  )
+
   在任何足够远的区间内，*“翘得最厉害的”永远是乘法增长*。
 ]
 
@@ -67,7 +144,6 @@
 
 #tryit[
   + 找出 $y = x^2$ 和 $y = 3 x + 10$ 在 $x > 0$ 时的*首个整数交点及其后*的“超越”$x$ 值（从 $x = 1, 2, 3, ...$ 找）。
-  + 把 $y = 100 x, y = x^2, y = 2^x$ 在 $x = 1, 2, ..., 10$ 列一张表，指出 “$x^2$ 超过 $100 x$” 以及 “$2^x$ 超过 $x^2$” 各发生在 $x = ?$。
   + 反比例 $y = 100 / x$ 在 $x$ 分别为 $1, 10, 100, 1000$ 时 $y$ 各是多少？$x$ 越大 $y$ 怎么变？
 ]
 
@@ -125,21 +201,21 @@
   + 在同一坐标系里画 $y = x^2$ 和 $y = 2^x$，标注它们的两个交点横坐标（整数点），并说明为什么 $2^x$ 最终超过 $x^2$。
   + 比较 $y_1 = 10^6 x$ 与 $y_2 = x^2$。*起初*谁大？什么时候追平？追平后谁主导？用这个例子说明“系数大小 $!=$ 族等级”。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
-  + 二次（进一步还有乘法增长，$r > 1$）。
-  + 取 $x = 1001$：$y_2 = 1001^2 = 1002001 > y_1 = 1001 times 1000 = 1001000$，成立。
-  + 表：$x | x^2 | 2^x$：$1 | 1 | 2$；$2 | 4 | 4$；$3 | 9 | 8$；$4 | 16 | 16$；$5 | 25 | 32$；$6 | 36 | 64$；$7 | 49 | 128$；$8 | 64 | 256$；$9 | 81 | 512$；$10 | 100 | 1024$。$x = 5$ 起 $2^x > x^2$ 并此后稳定领先。
+  + 二次（进一步还有乘法增长，$r > 1$）（族等级：反比例 ≪ 线性 ≪ 二次 ≪ 乘法）。
+  + 取 $x = 1001$：$y_2 = 1001^2 > y_1 = 1001000$（二次族等级高于线性，$x$ 足够大时必超）。
+  + 表：$x = 5$ 起 $2^x > x^2$ 并此后稳定领先（长期排序定理：乘法 ≫ 二次）。
 
   *应用*
-  + 相邻比 $32 / 16 = 2, 64 / 32 = 2$——*乘法增长，$r = 2$* $=>$ *M3* $y = 2^x$。（代入 $x = 4$: $2^4 = 16$ ✓）
-  + $x = 101 =>$ $y = 100 / 101 < 1$。
-  + 前者 $t = 0: 10$，$t = 1: 12$，$t = 2: 14.4$，$t = 3: 17.28$，$t = 4: 20.74$，$t = 5: 24.88$，$t = 6: 29.86$，$t = 7: 35.83$，$t = 8: 42.998$。后者 $t = 0: 10, 15, 20, 25, 30, 35, 40, 45, 50$。$t = 7$ 前者 $approx 35.83$，后者 $45$——后者仍领先；$t = 8$：前者 $approx 43$，后者 $50$；$t = 9$：前者 $approx 51.6$，后者 $55$；$t = 10$：前者 $approx 61.9$，后者 $60$——*$t = 10$ 前者首次反超*。
+  + 相邻比 $32 / 16 = 2, 64 / 32 = 2$——*乘法增长，$r = 2$* $=>$ *M3* $y = 2^x$（相邻比恒定 → 乘法增长）。代入 $x = 4$: $2^4 = 16$ ✓。
+  + $x = 101 =>$ $y = 100 / 101 < 1$（反比例趋于 $0$，族等级最低）。
+  + 列表对照，$t = 10$ 前者 $approx 61.9$，后者 $60$——*$t = 10$ 前者首次反超*（长期排序定理：乘法增长终将超过线性）。
 
   *挑战 ☞ 选做*
-  + 若 $x > k$，则 $x^2 = x times x > k times x = y_1$。故取 $x_0 = k$ 即可。
-  + 整数交点 $x = 2, x = 4$（$2^2 = 4 = 2 times 2, 2^4 = 16 = 4^2$）。$x > 4$ 以后 $2^x$ 每加 $1$ 乘 $2$，$x^2$ 每加 $1$ 只是 $(x + 1) / x times$ 倍（$< 2$），乘法自然超前。
-  + 起初（$x < 10^6$）$y_1$ 大；$x = 10^6$ 追平；之后 $y_2$ 超过 $y_1$ 并*持续拉大*。系数 $10^6$ 再大，*族等级*（线性）也赢不过二次。
+  + 若 $x > k$，则 $x^2 > k x = y_1$，取 $x_0 = k$ 即可（长期排序定理：二次族等级高于线性）。
+  + 整数交点 $x = 2, x = 4$。$x > 4$ 以后 $2^x$ 每加 $1$ 乘 $2$，$x^2$ 每加 $1$ 倍率 $< 2$，乘法自然超前（长期排序定理：乘法 ≫ 二次）。
+  + 起初（$x < 10^6$）$y_1$ 大；$x = 10^6$ 追平；之后 $y_2$ 超过 $y_1$ 并*持续拉大*。系数 $10^6$ 再大，*族等级*（线性）也赢不过二次（系数大小 $!=$ 族等级）。
+  ]
 ]

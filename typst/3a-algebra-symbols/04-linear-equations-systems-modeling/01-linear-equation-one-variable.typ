@@ -1,11 +1,12 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
+#import "../../lib/diagram-packages.typ": cetz
 
 === 一元一次方程的标准五步 <tool:al04-linear-one-variable>
 
 #vocab[去分母 clearing denominators][去括号 distribution][移项 transposition][合并同类项 combining like terms][系数化 1 normalizing leading coefficient]
 
 #crisis[
-  在桥梁章 #secref("cb05-solving-linear") 里，你已经能够稳稳地处理 $2 x + 3 = 11$ 这类题目。但一旦方程里同时出现括号、分母，并且未知量在两边同时出现，口算"倒推"就开始慌：
+  在桥梁章 #secref("cb06-solving-linear") 里，你已经能够稳稳地处理 $2 x + 3 = 11$ 这类题目。但一旦方程里同时出现括号、分母，并且未知量在两边同时出现，口算"倒推"就开始慌：
 
   $ frac(x - 1, 2) - frac(x + 3, 6) = 1 $
 
@@ -14,52 +15,133 @@
   本节的任务：把“该先做什么”这件事*机械化*——给出一套适用于任意一元一次方程的固定流程；让每一步都清清楚楚地对应一条*等式性质*。
 ]
 
-#history-note[
-  “代数”（Algebra）这个词来自花拉子密（约公元 820 年）所著的 _Al-Jabr_，原意正是“把一边的项*挪到*另一边”——也就是今天所说的“移项”。“算法”（Algorithm）一词则源自他的名字。一个人同时命名了两个现代概念。
-]
-
 #discovery[
-  *每一步都能对应一条等式性质*
+  *拿一道反例题练手*
 
-  一元一次方程的标准形是
+  目标方程：
 
-  $ a x + b = c quad (a != 0), $
+  $ frac(x - 1, 2) - frac(x + 3, 6) = 1. $
 
-  通解是 $x = (c - b) / a$。但现实里的方程不会这么干净——括号、分母、两边混合是常态。所以我们把“解”拆成五个动作，每一步都可以用桥梁章 #secref("cb05-equality-properties") 的等式性质解释它为什么*不会破坏平衡*。
+  乍一看，每个动作都"合法"——能移项、能去括号、能合并。可顺序错了，就走进死胡同。让我们试几条不同的顺序，亲眼看*顺序为什么不能乱*。
 
-  #table(
-    columns: (0.5fr, 1.2fr, 1.3fr),
-    inset: 6pt,
-    stroke: 0.4pt,
-    [*步骤*], [*做什么*], [*背后靠哪条等式性质*],
-    [1. 去分母], [两边同乘分母的最小公倍数], [两边同乘非零数 → 等式保持],
-    [2. 去括号], [用分配律展开括号], [括号内外展开本身不是等式动作，它是左右两侧各自的化简],
-    [3. 移项], [含未知量移到一边、常数移到另一边（*变号*）], [两边同加/同减 → 等式保持],
-    [4. 合并同类项], [每一侧内部把同类项写到一起], [左右两侧各自化简，不动等号],
-    [5. 系数化 1], [两边同除 $a$（$a != 0$）], [两边同除非零数 → 等式保持],
+  *尝试 $1$：先移项*
+
+  "先把 $1$ 移到左边吧。"
+
+  $ frac(x - 1, 2) - frac(x + 3, 6) - 1 = 0. $
+
+  *卡住*：左边是三项，其中两项还带分母。要继续*合并*这三项就必须先通分；可一通分立刻把方程拉回了"去分母"的步骤——*移项没有让方程更简单，反而绕了一圈*。
+
+  *尝试 $2$：先去括号*
+
+  "把括号展开！"——可仔细看：
+
+  $ frac(x - 1, 2) - frac(x + 3, 6) = 1. $
+
+  这里的"括号"$(x - 1)$、$(x + 3)$ 是被分数线*整体除*的。如果直接按分配律往里展开，会写成
+  $ frac(x, 2) - frac(1, 2) - frac(x, 6) - frac(3, 6) = 1, $
+  ——*分母还在*，分式更多了。*括号要想被有效"打开"，必须先让它脱离分母*。
+
+  *尝试 $3$：先去分母*
+
+  分母是 $2$ 和 $6$，最小公倍数是 $6$。两边同乘 $6$（这是等式性质：两边同乘非零数，等号保持）：
+
+  $ 6 dot frac(x - 1, 2) - 6 dot frac(x + 3, 6) = 6 dot 1. $
+
+  分母被约掉了：
+
+  $ 3(x - 1) - (x + 3) = 6. $
+
+  *现在*括号摆在明面上，可以*去括号*了：
+
+  $ 3 x - 3 - x - 3 = 6. $
+
+  接下来左边有同类项，可以*合并*：
+
+  $ 2 x - 6 = 6. $
+
+  现在左右两边都很干净，可以*移项*：
+
+  $ 2 x = 12. $
+
+  最后*系数化 1*——两边同除以 $2$：
+
+  $ x = 6. $
+
+  代回原式：左边 $= (6-1)\/2 - (6+3)\/6 = 5\/2 - 3\/2 = 1$ ✓。
+
+  *从死路看出顺序的逻辑*
+
+  把上面三次尝试摆在一起，规律就显出来了：
+
+  + *分母不去 $->$ 括号开不出来*：分母把括号"包"住，分配律无法穿过分数线。所以*去分母在第一步*。
+  + *括号不开 $->$ 同类项合不了*：含 $x$ 的项藏在括号里，没展开就识别不出谁是同类。所以*去括号紧跟其后*。
+  + *合并不做 $->$ 移项白费*：左右两边都还有多个 $x$ 项，挪过去也是一团；只有合并完，才知道"含 $x$ 的项"和"常数项"各在哪边。
+  + *移项之后系数化 1*：等到方程化成了 $a x = c$ 的标准形，最后一步两边同除即可。
+
+  这就是*五步法*的来历——每一步都*解锁了下一步*。顺序不是约定俗成，是被逻辑依赖关系强制锁死的。详细的五步表和它背后的等式性质，下面 #blueprint 完整给出。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      // === Top balance: 2x + 3 = 11 ===
+      let ful-x = 14
+      let ful-y = 0
+      // Fulcrum triangle
+      line((ful-x - 1.2, ful-y), (ful-x + 1.2, ful-y), (ful-x, ful-y + 1.5), close: true,
+           fill: rgb("#BDBDBD"), stroke: 0.8pt + rgb("#616161"))
+      // Beam
+      line((ful-x - 10, ful-y + 1.5), (ful-x + 10, ful-y + 1.5), stroke: 1.5pt + rgb("#424242"))
+      // Left pan: 2x block
+      rect((ful-x - 9.5, ful-y + 1.5), (ful-x - 5, ful-y + 4.2),
+           fill: rgb("#BBDEFB"), stroke: 1pt + rgb("#1565C0"), radius: 3pt)
+      content((ful-x - 7.25, ful-y + 2.85), text(size: 9pt, weight: "bold", fill: rgb("#0D47A1"))[$2 x$])
+      // Left pan: +3 block
+      rect((ful-x - 4.5, ful-y + 1.5), (ful-x - 1.5, ful-y + 4.2),
+           fill: rgb("#C8E6C9"), stroke: 1pt + rgb("#2E7D32"), radius: 3pt)
+      content((ful-x - 3, ful-y + 2.85), text(size: 9pt, weight: "bold", fill: rgb("#1B5E20"))[$3$])
+      // Right pan: 11 block
+      rect((ful-x + 2.5, ful-y + 1.5), (ful-x + 8, ful-y + 4.2),
+           fill: rgb("#FFCDD2"), stroke: 1pt + rgb("#C62828"), radius: 3pt)
+      content((ful-x + 5.25, ful-y + 2.85), text(size: 9pt, weight: "bold", fill: rgb("#B71C1C"))[$11$])
+      // Equals at fulcrum
+      content((ful-x, ful-y + 5), text(size: 10pt, weight: "bold")[$2 x + 3 = 11$])
+
+      // Arrow down
+      line((ful-x, ful-y - 0.5), (ful-x, ful-y - 2.5), stroke: 1.2pt + rgb("#757575"),
+           mark: (end: "stealth", fill: rgb("#757575"), scale: 0.6))
+      content((ful-x + 5, ful-y - 1.5), text(size: 7pt, fill: rgb("#616161"))[两边同减 $3$（移项）])
+
+      // === Bottom balance: 2x = 8 ===
+      let by = -8
+      // Fulcrum
+      line((ful-x - 1.2, by), (ful-x + 1.2, by), (ful-x, by + 1.5), close: true,
+           fill: rgb("#BDBDBD"), stroke: 0.8pt + rgb("#616161"))
+      // Beam
+      line((ful-x - 10, by + 1.5), (ful-x + 10, by + 1.5), stroke: 1.5pt + rgb("#424242"))
+      // Left pan: 2x only
+      rect((ful-x - 8, by + 1.5), (ful-x - 3.5, by + 4.2),
+           fill: rgb("#BBDEFB"), stroke: 1pt + rgb("#1565C0"), radius: 3pt)
+      content((ful-x - 5.75, by + 2.85), text(size: 9pt, weight: "bold", fill: rgb("#0D47A1"))[$2 x$])
+      // Right pan: 8
+      rect((ful-x + 3.5, by + 1.5), (ful-x + 8, by + 4.2),
+           fill: rgb("#FFCDD2"), stroke: 1pt + rgb("#C62828"), radius: 3pt)
+      content((ful-x + 5.75, by + 2.85), text(size: 9pt, weight: "bold", fill: rgb("#B71C1C"))[$8$])
+      // Label
+      content((ful-x, by + 5), text(size: 10pt, weight: "bold")[$2 x = 8$])
+    }),
+    caption: [天平演示"移项"：两边同减 $3$，左边只剩 $2 x$，右边变为 $8$],
   )
 
-  五步中真正“动等号”的只有 1、3、5；2、4 是每一侧内部的等值改写。搞清这一点，就不会再把移项和合并同类项混为一谈。
-
-  *例*：解 $frac(x - 1, 2) - frac(x + 3, 6) = 1$。
-
-  步骤 1（去分母，两边同乘 $6$）：$3(x - 1) - (x + 3) = 6$。\
-  步骤 2（去括号）：$3 x - 3 - x - 3 = 6$。\
-  步骤 3+4（移项并合并）：$2 x = 12$。\
-  步骤 5（系数化 1）：$x = 6$。
-
-  *代回检验不是“只有分式方程才做”*
-
-  很多同学以为只有分式方程（#secref("al03-rational-equations-and-extraneous-roots")）才需要验根——其实不然。*代回原方程*是确认你上面 5 步里没有抄错号、没漏乘项的最可靠方式。分式方程额外多一条“还要验分母非零”，但普通一元一次方程也值得花 10 秒回代。
-
-  *退化情况：什么时候不是“唯一解”？*
+  *退化情况：什么时候不是"唯一解"？*
 
   五步走完后，如果得到的是：
 
   - $0 dot x = 0$（或 $k = k$）：对任何 $x$ 都成立——方程*有无穷多解*，是恒等式。
   - $0 dot x = c$（$c != 0$）：对任何 $x$ 都不成立——*无解*。
 
-  这两种情况不是“算错”，而是原题本身就不是一个能锁死解的方程。如果在应用题里遇到，往往说明*题目条件少了一个*或*题目条件自相矛盾*。
+  这两种情况不是"算错"，而是原题本身就不是一个能锁死解的方程。在应用题里遇到，往往说明*题目条件少了一个*或*题目条件自相矛盾*。
 ]
 
 #side-hack[
@@ -69,9 +151,14 @@
 #tryit[
   先不要看下面的方法总结，按五步自己写：
 
-  + 解 $5 x + 3 = 2 x - 9$（没有分母也没有括号）。
   + 解 $3 (2 x - 1) = 4 (x + 2)$（只有括号）。
   + 解 $frac(3 x - 1, 2) - frac(x + 2, 3) = 2$（分母和括号都有）。
+]
+
+#history-note[
+  解一元一次方程的历史远比“代数”这个词更古老。约公元前 1650 年的古埃及莱因德纸草书（Rhind Papyrus）中就记载了一系列“aha 问题”——“aha”就是未知数，书吏用“假设-检验-调整”的方法来解形如 $x + x\/7 = 19$ 的方程。而“代数”（Algebra）这个词来自波斯数学家花拉子密（al-Khwārizmī，约 780–850）在约公元 820 年所著的 _Al-Kitāb al-Mukhtaṣar fī Ḥisāb al-Jabr wal-Muqābala_，“al-jabr”原意正是“把一边的项*挪到*另一边”——也就是今天所说的“移项”。“算法”（Algorithm）一词则源自他名字的拉丁转写。在中国，《九章算术》（约公元 1 世纪）也系统地用“合分”“损益”来处理一次方程问题。
+
+  ☞ 历史接力 → 莱因德纸草书的"aha"单步问题在花拉子米手中演变为通用方程解法；五步流程的完整推广见分式方程和二次方程章节。
 ]
 
 #blueprint[
@@ -84,6 +171,47 @@
   + *系数化 1*：两边同除未知量的系数（系数 $!= 0$）。
 
   每题做完，*代回原方程检验*：把算出来的值塞回等号两边，看是否相等。
+
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+
+      let box-h = 3
+      let box-w = 5.5
+      let gap = 1.8
+      let y0 = 0
+      let colors = (
+        rgb("#1565C0"), rgb("#E65100"), rgb("#2E7D32"), rgb("#6A1B9A"), rgb("#C62828"),
+      )
+      let fills = (
+        rgb("#BBDEFB"), rgb("#FFE0B2"), rgb("#C8E6C9"), rgb("#E1BEE7"), rgb("#FFCDD2"),
+      )
+      let labels = ("① 去分母", "② 去括号", "③ 移项", "④ 合并", "⑤ 系数化1")
+
+      for i in range(5) {
+        let x0 = i * (box-w + gap)
+        rect((x0, y0), (x0 + box-w, y0 + box-h),
+             fill: fills.at(i), stroke: 1.2pt + colors.at(i), radius: 4pt)
+        content((x0 + box-w / 2, y0 + box-h / 2),
+                text(size: 7pt, weight: "bold", fill: colors.at(i))[#labels.at(i)])
+        if i < 4 {
+          let ax = x0 + box-w + 0.2
+          line((ax, y0 + box-h / 2), (ax + gap - 0.4, y0 + box-h / 2),
+               stroke: 1pt + rgb("#757575"),
+               mark: (end: "stealth", fill: rgb("#757575"), scale: 0.5))
+        }
+      }
+
+      // Return arrow: "代回检验"
+      let total-w = 5 * box-w + 4 * gap
+      let arr-y = y0 - 1.5
+      line((total-w, y0 - 0.2), (total-w, arr-y), (0, arr-y), (0, y0 - 0.2),
+           stroke: 1pt + rgb("#D84315"),
+           mark: (end: "stealth", fill: rgb("#D84315"), scale: 0.5))
+      content((total-w / 2, arr-y - 0.8), text(size: 7pt, fill: rgb("#D84315"), weight: "bold")[代回检验])
+    }),
+    caption: [一元一次方程五步流程：从去分母到系数化 1，最后代回检验],
+  )
 
   *例 A*：$5 x + 3 = 2 x - 9$ → 移项合并：$3 x = -12$ → 系数化 1：$x = -4$。代回：$5 dot (-4) + 3 = -17$，$2 dot (-4) - 9 = -17$ ✓。
 
@@ -102,6 +230,11 @@
 
   在应用题里遇到这两种情况，要停下来检查自己的设元与“等量关系”是否出了问题。
 ]
+
+#self-check[
+  解方程 $5x - 3 = 2x + 9$ 时，“移项”实际上做了什么？说出它和“等式两边同时加减”的关系。
+]
+
 
 #pitfall[
   *高频错误*
@@ -139,13 +272,12 @@
   + 解关于 $x$ 的方程 $3 (x - m) = 2 x + m$（$m$ 是常数），并写出解关于 $m$ 的表达式。
   + 解 $frac(x, 0.7) - frac(0.17 - 0.2 x, 0.03) = 1$。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
-  + $2 x = 12$，$x = 6$。
-  + $2 x - 6 = x + 4 => x = 10$。
-  + 两边乘 $12$：$4 (x + 2) = 3 (2 x - 1) => 4 x + 8 = 6 x - 3 => -2 x = -11 => x = 11 / 2$。
+  + $2 x = 12$，$x = 6$。（移项 + 系数化 1）
+  + $2 x - 6 = x + 4 => x = 10$。（去括号 + 移项）
+  + 两边乘 $12$：$4 (x + 2) = 3 (2 x - 1) => 4 x + 8 = 6 x - 3 => -2 x = -11 => x = 11 / 2$。（去分母 + 去括号 + 移项）
 
   *应用*
   + 两边乘 $6$：$2 (2 x - 1) - 3 (x - 2) = 6 => 4 x - 2 - 3 x + 6 = 6 => x + 4 = 6 => x = 2$。
@@ -156,4 +288,5 @@
   + $k != 1$：$x = 3 / (k - 1)$，唯一解；$k = 1$：化为 $0 dot x = 3$，形如“$0 = 3$”，是*矛盾*——*无解*，不是恒等式。
   + 去括号：$3 x - 3 m = 2 x + m => x = 4 m$。
   + 两边乘 $2.1$（即 $21/10$）：$3 x - 70 (0.17 - 0.2 x) = 2.1 => 3 x - 11.9 + 14 x = 2.1 => 17 x = 14 => x = 14 / 17$。
+  ]
 ]

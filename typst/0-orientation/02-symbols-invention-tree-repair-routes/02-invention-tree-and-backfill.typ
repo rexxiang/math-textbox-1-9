@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, tryit
+#import "../../lib/diagram-packages.typ": cetz, fletcher
 
 === 知识地图与查漏路线
 
@@ -33,6 +34,31 @@
 
 第一次读这一行时，先记下来，不需要全部理解。等读完整章再回来看，通常会清晰很多。
 
+每章的知识点节都按*同一条六阶段发明链*组织，如图 @fig-invention-chain 所示——卡住时也可以沿虚线回补到上一阶段：
+
+#figure(
+  {
+    import fletcher: diagram, node, edge
+    diagram(
+      node-stroke: 0.8pt,
+      spacing: (3.5em, 2em),
+      node((0,0), [*crisis*\ 遇到困境], shape: rect, fill: rgb("#FFEBEE")),
+      node((1,0), [*discovery*\ 探索发现], shape: rect, fill: rgb("#FFF8E1")),
+      node((2,0), [*tryit*\ 动手试试], shape: rect, fill: rgb("#E8F5E9")),
+      node((3,0), [*blueprint*\ 划重点], shape: rect, fill: rgb("#E3F2FD")),
+      node((4,0), [*pitfall*\ 易错提醒], shape: rect, fill: rgb("#FCE4EC")),
+      node((5,0), [*mastery*\ 练一练], shape: rect, fill: rgb("#F3E5F5")),
+      edge((0,0), (1,0), "->"),
+      edge((1,0), (2,0), "->"),
+      edge((2,0), (3,0), "->"),
+      edge((3,0), (4,0), "->"),
+      edge((4,0), (5,0), "->"),
+      edge((5,0), (0,0), "--", bend: 40deg, label: [回补]),
+    )
+  },
+  caption: [六阶段发明链：crisis $->$ discovery $->$ tryit $->$ blueprint $->$ pitfall $->$ mastery（虚线：卡住时回补路径）],
+) <fig-invention-chain>
+
 ==== 卡住时怎样顺着地图补缺
 
 当你在某一章卡住，不知道该回哪里时，按下面这条路径走：
@@ -58,3 +84,67 @@
 #tryit[
   打开目录，找到一章你还没读过的章节，读它"这节的方法"框里的"需要先会的知识"和"知识地图位置"。你能在全书结构图里找到这章的位置吗？它依赖的前面学过的知识，你有多少已经学过了？
 ]
+
+
+==== 数学发明时间轴
+
+数学工具是一代代人接力发明的。下面的时间轴把本书涉及的几个关键历史节点排列出来，帮你感受这些工具从哪里来、又怎样一步步连接到下一代。
+
+#figure(
+  cetz.canvas(length: 0.5cm, {
+    import cetz.draw: *
+
+    // Vertical timeline axis
+    let top = 28
+    let bot = 0
+    let x-axis = 6
+    line((x-axis, bot), (x-axis, top), stroke: 0.8pt + rgb("#444"))
+
+    // 9 milestones (year, year-label, description, color)
+    let ancient = rgb("#8E5A2A")    // 古代（前 1650 — 250）
+    let medieval = rgb("#1E6091")   // 中世纪（820）
+    let early-modern = rgb("#2E7D32") // 近代早期（1591 — 1748）
+    let modern = rgb("#6A1B9A")     // 近代（1812）
+
+    let entries = (
+      (26, "约前 1650 年", "莱因德纸草书：古埃及分数与方程", ancient),
+      (23, "约前 300 年", "欧几里得《几何原本》：几何公理体系", ancient),
+      (20, "约前 100 年", "《九章算术》：分数、方程组、勾股", ancient),
+      (17, "约 250 年", "丢番图《算术》：最早的符号代数", ancient),
+      (14, "约 820 年", "花拉子米《代数学》：系统化一次/二次方程", medieval),
+      (11, "1591 年", "韦达《分析方法入门》：字母代数与通用公式", early-modern),
+      (8,  "1637 年", "笛卡儿《几何学》：坐标系，代数与几何融合", early-modern),
+      (5,  "1694 / 1748 年", "莱布尼茨与欧拉：函数概念与 $f(x)$ 记号", early-modern),
+      (2,  "1812 年", "拉普拉斯《概率分析理论》：古典概率公式定型", modern),
+    )
+
+    for (y, year, desc, c) in entries {
+      // dot
+      circle((x-axis, y), radius: 0.2, fill: c, stroke: 0.6pt + c)
+      // small horizontal tick
+      line((x-axis - 0.5, y), (x-axis + 0.5, y), stroke: 0.6pt + c)
+      // year label on left
+      content((x-axis - 0.8, y), text(size: 7pt, weight: "bold", fill: c)[#year], anchor: "east")
+      // description on right
+      content((x-axis + 0.8, y), text(size: 7pt, fill: rgb("#222"))[#desc], anchor: "west")
+    }
+
+    // legend at bottom
+    let lx = 0.5
+    let ly = -2
+    rect((lx, ly - 0.3), (lx + 30, ly + 1.0), stroke: 0.3pt + rgb("#999"), fill: rgb("#FAFAFA"))
+    let lcols = (
+      (ancient, "古代"),
+      (medieval, "中世纪"),
+      (early-modern, "近代早期"),
+      (modern, "近代"),
+    )
+    for (i, item) in lcols.enumerate() {
+      let (col, name) = item
+      let cx = lx + 1 + i * 7
+      circle((cx, ly + 0.4), radius: 0.18, fill: col, stroke: none)
+      content((cx + 0.7, ly + 0.4), text(size: 6pt, fill: rgb("#333"))[#name], anchor: "west")
+    }
+  }),
+  caption: [数学发明时间轴：本书涉及的九个历史节点],
+)

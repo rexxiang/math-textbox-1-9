@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 数轴向左延伸：负数登场 <tool:cb02-number-line-extends-left>
@@ -11,10 +11,6 @@
   在旧的算术里，“$3 - 5$”会让人说“不能减”。但生活里它分明存在。*我们需要把数轴向原点左边延伸，让这些“比零还小”的量有一个正式位置。*
 ]
 
-#history-note[
-  中国汉代《九章算术》就已经用“正”“负”区分账本上的借与还。欧洲直到 $17$ 世纪仍有人把负数叫做“荒谬之数”——那时大家还没看清它只是数轴的另一边。
-]
-
 #discovery[
   在数轴上任取一点作*原点* $O$，约定一个向右的正方向和一个单位长度。原点右边是*正数*，原点左边便是*负数*，它们都用同一把尺子。
 
@@ -23,10 +19,38 @@
 
   $0$ 既不是正数也不是负数，它正好落在原点。
 
+  如图 @fig-thermometer-as-number-line 所示。
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      let ox = 8
+      let s = 2.0
+      // Vertical thermometer
+      rect((ox - 1.2, -6 * s), (ox + 1.2, 6 * s),
+           fill: rgb("#F5F5F5"), stroke: 1pt + rgb("#999"))
+      // Temperature scale
+      for i in range(-5, 6) {
+        let ty = i * s
+        line((ox - 1.2, ty), (ox + 1.2, ty), stroke: 0.4pt + rgb("#CCC"))
+        let clr = if i < 0 { rgb("#1565C0") } else if i > 0 { rgb("#C62828") } else { rgb("#333") }
+        content((ox + 1.8, ty), text(size: 6pt, fill: clr)[#str(i)°C], anchor: "west")
+      }
+      // Fill: below zero = blue, above zero = red
+      rect((ox - 0.8, -5 * s), (ox + 0.8, 0), fill: rgb("#BBDEFB"), stroke: none)
+      rect((ox - 0.8, 0), (ox + 0.8, 3 * s), fill: rgb("#FFCDD2"), stroke: none)
+      // Mercury level at 3°C
+      line((ox - 1.2, 3 * s), (ox + 1.2, 3 * s), stroke: 1.5pt + rgb("#C62828"))
+      content((ox - 2.0, 3 * s), text(size: 7pt, weight: "bold", fill: rgb("#C62828"))[当前], anchor: "east")
+      // Zero line
+      line((ox - 1.5, 0), (ox + 1.5, 0), stroke: 1.2pt + rgb("#333"))
+      content((ox - 2.0, 0), text(size: 7pt, weight: "bold")[0°C], anchor: "east")
+    }),
+    caption: [温度计就是竖着放的数轴：零上为正、零下为负],
+  ) <fig-thermometer-as-number-line>
+
   把 $3 - 5$ 放回数轴：从 $3$ 向左走 $5$ 步，落在 $-2$。原来的减法并没有坏——只是落点可以在原点左边。
 
-  于是*负号是方向，减号是操作*，它们长得像只是历史巧合。
-
+  如图 @fig-subtraction-on-number-line 所示。
   #figure(
     cetz.canvas(length: 0.4cm, {
       import cetz.draw: *
@@ -93,8 +117,10 @@
         text(size: 7pt, weight: "bold", fill: rgb("#E53935"))[终点 −2], anchor: "north")
     }),
     caption: [$3 - 5 = -2$：从 3 向左走 5 步，落在 $-2$],
-  )
+  ) <fig-subtraction-on-number-line>
 ]
+
+于是*负号是方向，减号是操作*，它们长得像只是历史巧合。
 
 #side-hack[
   温度计是天然的数轴：$0 degree$C 就是原点，零上读正，零下读负。看到“$-5 degree$C 比 $-1 degree$C 更冷”时，立刻对应到“$-5$ 在数轴上更靠左”。
@@ -103,7 +129,12 @@
 #tryit[
   + 在同一条数轴上标出：$-4$、$-1.5$、$0$、$2$、$7 / 2$。
   + 哪个大？请用“哪个更靠右”解释：$-2$ 与 $-5$；$-0.3$ 与 $-0.03$。
-  + 写出三个位于 $-3$ 与 $0$ 之间的有理数。
+]
+
+#history-note[
+  中国《九章算术》（约公元前 $1$ 世纪）就已经用红色算筹表示正数、黑色算筹表示负数来处理盈亏问题。$628$ 年，印度数学家婆罗摩笈多（Brahmagupta）在《婆罗摩历算书》中首次明确写出负数的加减乘除运算规则。然而欧洲直到 $17$ 世纪仍有人把负数叫做"荒谬之数"——笛卡儿就曾称方程的负数根为"假根"。
+
+  ☞ 历史接力 → 负数的接受历程延续了千年；中国《九章算术》已用红黑算筹表示正负，欧洲直到 $17$ 世纪才系统承认负数为合法的数。
 ]
 
 #blueprint[
@@ -111,7 +142,39 @@
   - *正数 / 负数 / 零*：原点右边为正、左边为负、原点为 $0$；$0$ 不分正负。
   - *方向符号* $+ / -$：写在数的前面表示“向哪走”，不是减法；为了看得清，负数常写成 $(-3)$ 这种形式。
   - *比较大小*：数轴上“右大左小”。
+  如图 @fig-compare-on-number-line 所示。
+  #figure(
+    cetz.canvas(length: 0.4cm, {
+      import cetz.draw: *
+      let ox = 10
+      let s = 2.5
+      // Axis
+      line((ox - 4 * s, 0), (ox + 4.3 * s, 0), stroke: 1.5pt + rgb("#333"), mark: (end: ">"))
+      // Ticks
+      for i in range(-3, 4) {
+        let tx = ox + i * s
+        line((tx, -0.3), (tx, 0.3), stroke: 0.8pt + rgb("#555"))
+        content((tx, -0.8), text(size: 7pt)[#str(i)], anchor: "north")
+      }
+      // Highlight: -2 < 1 because -2 is to the left
+      let a = ox + (-2) * s
+      let b = ox + 1 * s
+      circle((a, 0), radius: 0.3, fill: rgb("#E53935"), stroke: 1pt + rgb("#B71C1C"))
+      circle((b, 0), radius: 0.3, fill: rgb("#1565C0"), stroke: 1pt + rgb("#0D47A1"))
+      content((a, 1.2), text(size: 8pt, weight: "bold", fill: rgb("#E53935"))[$-2$], anchor: "south")
+      content((b, 1.2), text(size: 8pt, weight: "bold", fill: rgb("#1565C0"))[$1$], anchor: "south")
+      // Arrow showing "left < right"
+      line((a + 0.5, 1.8), (b - 0.5, 1.8), stroke: 1pt + rgb("#555"), mark: (end: ">"))
+      content(((a + b) / 2, 2.5), text(size: 7pt, fill: rgb("#555"))[左小右大], anchor: "south")
+    }),
+    caption: [数轴上比较大小：$-2$ 在 $1$ 左边，所以 $-2 < 1$],
+  ) <fig-compare-on-number-line>
 ]
+
+#self-check[
+  在数轴上，$-3$ 在 $-5$ 的左边还是右边？你判断时依靠的是“距离”还是“方向”？
+]
+
 
 #pitfall[
   *高频错误*
@@ -132,6 +195,8 @@
   + 把下列数按从小到大排：$2$、$-3$、$0$、$-1/2$、$1.5$。
   + $-7$ 与 $-9$ 哪个大？为什么？
   + 判断：$0 > -0.01$。
+  + 判断对错：$-3$ 的绝对值是 $-3$。
+  + 写出一个比 $-10$ 大但仍为负数的整数。
 
   *应用*
 
@@ -144,16 +209,18 @@
   + 数轴上 $A$ 点对应 $-6$，$B$ 点对应 $2$。线段 $A B$ 的中点对应哪个数？
   + 给出数轴上两个不同的点 $P$、$Q$，$P$ 比 $Q$ 大。问：它们的位置关系、方向差是什么？
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
-  + $-3 < -1/2 < 0 < 1.5 < 2$。
+  #answer-cut[
+  + $-3 < -1/2 < 0 < 1.5 < 2$（数轴上"右大左小"原则）。
   + $-7 > -9$，因为 $-7$ 更靠右（离原点更近）。
-  + 正确：$0$ 在 $-0.01$ 右边。
-  + 昨天 $+250$，今天 $-180$。
-  + $5 degree$C。
-  + 经过 $7$ 层（$5 - (-2) = 7$）。
-  + 中点对应 $-2$（$(-6 + 2) / 2 = -2$）。
+  + 正确（$0$ 在 $-0.01$ 右边，$0$ 不是负数）。
+  + 错误：$|-3| = 3$（绝对值定义：到原点的距离，一定非负）。
+  + 例如 $-9$、$-5$、$-1$ 等（任何满足 $-10 < x < 0$ 且 $x in ZZ$ 的整数）。
+  + 昨天 $+250$ 元（正数表示盈利），今天 $-180$ 元（负数表示亏损）。
+  + $5 degree$C（$-4 + 9 = 5$，负数加正数 $=$ 从 $-4$ 向右走 $9$ 步）。
+  + 经过 $7$ 层（用减法求距离：$5 - (-2) = 5 + 2 = 7$）。
+  + 中点对应 $-2$（中点公式：$(-6 + 2) / 2 = -4 / 2 = -2$）。
   + $P$ 在 $Q$ 的右侧；$P - Q > 0$。
+  ]
 ]
 
 #side-hack[

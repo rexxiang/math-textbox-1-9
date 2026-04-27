@@ -1,20 +1,21 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 频率分布、直方图与方差 <ch:frequency-histograms-variance>
 
-#blueprint[
+甲班和乙班的平均分都是 85，极差也都是 30——看起来一模一样。可甲班人人都在 70 到 100 之间，乙班却是一半 50 分、一半 100 分。同样的平均、同样的极差，背后藏着完全不同的故事。这一章要发明新的工具，把这种差别看出来。
+
+#chapter-nav[
   *难度*：★★★★☆ \
   *核心问题*：上一章在*小规模*数据（几十个数）里用“图 + center + 极差”已经够用了。但当数据量更大（$50$~$1000$ 个数）、同时取值又连续（身高、时长、温度），三个问题会接二连三冒出来：
   - 一份“$50$ 个身高”怎么整理成一张*结构清晰*的表？
   - 怎么用一张*条条紧贴*的图看出“密集在哪一档、稀疏在哪一档”？
   - 甲乙两班平均都 $85$ 分、极差也都是 $30$ 分——但甲班靠近中间、乙班分到两头，*极差分不出来*的时候，下一把尺子是什么？ \
-  *需要先会*：#secref("dt01-organizing-data")（条形图和它的局限）、#secref("dt03-center-and-spread")（平均数、极差）、#secref("cb01-ratio-basics")（比例 / 百分比作为“频率”）、#secref("cb04-expressions-and-like-terms")（代数式运算）、#secref("cb06-square-and-square-root")（平方与开方）。 \
+  *需要先会*：#secref("dt01-organizing-data")（条形图和它的局限）、#secref("dt03-center-and-spread")（平均数、极差）、#secref("cb01-ratio-basics")（比例 / 百分比作为“频率”）、#secref("cb05-expressions-and-like-terms")（代数式运算）、#secref("cb07-square-and-square-root")（平方与开方）。 \
   *本章在全书的位置*：数据分支*基础进阶*。第 $1$ 章发明了“整理 + center + spread”最朴素的一版；本章在*整理*环节加入*频率分布表*和*直方图*（适合大样本 & 连续量），在*spread*环节加入*方差 / 标准差*（比极差信息密度高一层）。 \
   *忘了可以回到*：百分比基本功不稳 $->$ #secref("cb01-percent")；对 center 与 spread 的作用搞混 $->$ #secref("dt03-center-and-spread")。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + §1 *频率分布表*：把原始数据按*区间*分档；数清每档的*频数*（个数）和*频率*（占比）。引入“组距”“组数”这两个分组自由度。
   + §2 *频率分布直方图*：区间连续、条紧贴；纵轴 $=$ *频率 / 组距*（即“频率密度”的观念）。解释它和条形图的本质差别。
