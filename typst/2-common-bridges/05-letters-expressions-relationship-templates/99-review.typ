@@ -1,11 +1,9 @@
-#import "../../lib/theme-v2.typ": blueprint, mastery, secref
+#import "../../lib/chapter-kit.typ": blueprint, mastery, secref, knowledge-card
 
 == 本章回顾 <meta:letters-expressions-relationship-templates>
 
-#blueprint[
-  *知识速查卡*
-
-  #table(
+#knowledge-card(title: "知识速查卡")[
+    #table(
     columns: (1fr, 1fr),
     inset: 6pt,
     stroke: 0.4pt,

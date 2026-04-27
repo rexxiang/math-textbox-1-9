@@ -1,5 +1,6 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
+#import "../../lib/geometry-helpers.typ": equal-angle
 
 === ASA、AAS 与 SSA 反例：哪些判定能成、哪条不行 <tool:ge01-asa-aas-ssa>
 
@@ -109,9 +110,9 @@
       content((-0.3, -0.2), $A$)
       content((3.8, -0.2), $B$)
       content((1.0, 2.25), $C$)
-      // angle arcs at A and B
-      arc(A, start: 0deg, stop: 59deg, radius: 0.55, stroke: 0.5pt + rgb("#B71C1C"))
-      arc(B, start: 180deg, stop: 180deg - 41deg, radius: 0.55, stroke: 0.5pt + rgb("#B71C1C"))
+      // angle arcs at A and B (using equal-angle helper)
+      equal-angle(A, B, C, n: 1, radius: 0.55, stroke: 0.5pt + rgb("#B71C1C"))
+      equal-angle(B, C, A, n: 1, radius: 0.55, stroke: 0.5pt + rgb("#B71C1C"))
       // side AB highlighted
       line(A, B, stroke: 0.8pt + rgb("#1976D2"))
       content((1.75, -0.35), text(8pt, fill: rgb("#1976D2"))[$A B$])
@@ -123,9 +124,9 @@
       content((5.2, -0.2), $D$)
       content((9.3, -0.2), $E$)
       content((6.5, 2.25), $F$)
-      // angle arcs at D and E
-      arc(D, start: 0deg, stop: 59deg, radius: 0.55, stroke: 0.5pt + rgb("#B71C1C"))
-      arc(E, start: 180deg, stop: 180deg - 41deg, radius: 0.55, stroke: 0.5pt + rgb("#B71C1C"))
+      // angle arcs at D and E (using equal-angle helper)
+      equal-angle(D, E, F, n: 1, radius: 0.55, stroke: 0.5pt + rgb("#B71C1C"))
+      equal-angle(E, F, D, n: 1, radius: 0.55, stroke: 0.5pt + rgb("#B71C1C"))
       // side DE highlighted
       line(D, E, stroke: 0.8pt + rgb("#1976D2"))
       content((7.25, -0.35), text(8pt, fill: rgb("#1976D2"))[$D E$])

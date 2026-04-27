@@ -16,6 +16,7 @@
 
   $ a^2 = a times a $
 
+  如图 @fig-square-area-and-side 所示。
   #figure(
     cetz.canvas(length: 0.45cm, {
       import cetz.draw: *
@@ -35,7 +36,7 @@
       content((ax + 1.5, s / 2 - 1.5), text(size: 7pt, fill: rgb("#C62828"))[开方], anchor: "west")
     }),
     caption: [正方形：已知边长 $a$ 求面积是*平方*，已知面积求边长是*开方*],
-  )
+  ) <fig-square-area-and-side>
 
   *平方根*：若 $x^2 = a$，就把 $x$ 叫做 $a$ 的一个平方根。
 
@@ -69,6 +70,7 @@
   - *算术平方根*：$sqrt(a)$ 规定取非负；$a < 0$ 时 $sqrt(a)$ 在实数范围内无定义。
   - *基本关系*：$(sqrt(a))^2 = a$（$a >= 0$）；$sqrt(a^2) = |a|$（对所有实数 $a$，请注意带绝对值）。
 
+  如图 @fig-perfect-squares-on-line 所示。
   #figure(
     cetz.canvas(length: 0.4cm, {
       import cetz.draw: *
@@ -96,7 +98,7 @@
       circle((ox, 0), radius: 0.2, fill: rgb("#333"), stroke: 1pt + rgb("#333"))
     }),
     caption: [完全平方数的算术平方根落在整数位置上],
-  )
+  ) <fig-perfect-squares-on-line>
 ]
 
 #self-check[

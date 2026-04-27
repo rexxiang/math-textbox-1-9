@@ -29,6 +29,7 @@
 
   只要拿到 $(x, y)$，先读符号——两正在第一，左上两异号在第二，两负在第三，右下再一次异号在第四——就能立刻说出位置。
 
+  如图 @fig-four-quadrants-signs 所示。
   #figure(
     cetz.canvas(length: 0.5cm, {
       import cetz.draw: *
@@ -57,7 +58,7 @@
       content((-0.5, -0.5), text(size: 7pt, weight: "bold")[O])
     }),
     caption: [四象限与符号规律：逆时针从右上编号],
-  )
+  ) <fig-four-quadrants-signs>
 ]
 
 #side-hack[
@@ -84,6 +85,7 @@
     - 关于 $x$ 轴对称：$(x, y) -> (x, -y)$；
     - 关于 $y$ 轴对称：$(x, y) -> (-x, y)$。
 
+  如图 @fig-axis-reflections 所示。
   #figure(
     cetz.canvas(length: 0.5cm, {
       import cetz.draw: *
@@ -110,7 +112,7 @@
       content((-0.5, -0.5), text(size: 7pt, weight: "bold")[O])
     }),
     caption: [$A(3, 2)$ 关于 $x$ 轴对称得 $A'(3, -2)$，关于 $y$ 轴对称得 $A''(-3, 2)$],
-  )
+  ) <fig-axis-reflections>
 ]
 
 #self-check[

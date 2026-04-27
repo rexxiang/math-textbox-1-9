@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check, proof-step
 #import "../../lib/diagram-packages.typ": cetz
 
 === 平行线与三类角关系 <tool:ge02-parallel-line-angles>
@@ -30,6 +30,7 @@
 
   两条直线 $ell_1$、$ell_2$ 被第三条直线 $t$ 所截，交点分别为 $P$、$Q$。这条 $t$ 就叫*截线* transversal。截线在两个交点处一共产生 $8$ 个角。按位置分，它们可以两两分类，得到*三个家族*：
 
+  如图 @fig-transversal-eight-angles 所示。
   #figure(
     cetz.canvas(length: 1cm, {
       import cetz.draw: *
@@ -57,7 +58,7 @@
       content((1.95, 0.25), text(8pt)[7])
     }),
     caption: [两平行线 $ell_1 parallel ell_2$ 被截线 $t$ 在 $P$、$Q$ 相交，产生 $8$ 个角。]
-  )
+  ) <fig-transversal-eight-angles>
 
   - *同位角*：在截线同一侧、各自相对被截线处于同一侧——如 $angle 2$ 与 $angle 6$、$angle 3$ 与 $angle 7$。
   - *内错角*：在截线两侧、都在两条平行线*内部*——如 $angle 4$ 与 $angle 6$、$angle 3$ 与 $angle 5$。
@@ -146,6 +147,7 @@
     [同旁内角], [截线同一侧、都在内部（C 形）], [互补，即 $= 180 degree$],
   )
 
+  如图 @fig-z-and-c-shapes 所示。
   #figure(
     cetz.canvas(length: 1cm, {
       import cetz.draw: *
@@ -167,7 +169,7 @@
       content((7.8, 1), text(9pt, fill: rgb("#388E3C"))[C])
     }),
     caption: [Z 形记忆内错角（相等），C 形记忆同旁内角（互补）。]
-  )
+  ) <fig-z-and-c-shapes>
 
   *工具二：平行 $<=>$ 角关系（双向）*
 
@@ -198,7 +200,13 @@
 
   *例 2*（反用）：已知图中 $angle A B C = angle B C D$（$B C$ 作为截线，$A B$ 与 $C D$ 是被截的两条直线），其中 $angle A B C$ 与 $angle B C D$ 是内错角。求证 $A B parallel C D$。
 
-  证：$angle A B C = angle B C D$（已知），这两个角是 $A B$、$C D$ 被 $B C$ 所截产生的一对内错角，由“内错角相等 $=>$ 两直线平行”，所以 $A B parallel C D$。
+  证：
+
+  #proof-step(
+    ($angle A B C = angle B C D$, [已知]),
+    ([$angle A B C$、$angle B C D$ 是内错角], [$A B$、$C D$ 被 $B C$ 所截]),
+    ($A B parallel C D$, [内错角相等 $=>$ 两直线平行]),
+  )
 ]
 
 #self-check[

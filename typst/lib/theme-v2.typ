@@ -185,7 +185,7 @@
     inset: (left: 10pt, right: 4pt, top: 6pt, bottom: 6pt),
     fill: none,
   )[
-    #text(size: 9pt, weight: "bold", fill: rgb("#B71C1C"))[遇到的问题]
+    #text(size: 9pt, weight: "bold", fill: rgb("#B71C1C"))[[!] 遇到的问题]
     #linebreak()
     #body
   ]
@@ -370,4 +370,46 @@
     #linebreak()
     #text(size: 9.5pt)[#body]
   ]
+}
+
+// ── 知识速查卡（99-review 速查用）──────────────────────────────
+// 白底深蓝边框 + 大标题 + 紧凑正文
+// 用法：#knowledge-card(title: "本节核心概念")[#table(...) 或文本]
+#let knowledge-card(title: "知识速查", body) = {
+  block(
+    width: 100%,
+    above: 1.2em,
+    below: 1.0em,
+    stroke: (paint: rgb("#0D47A1"), thickness: 1.5pt),
+    radius: 3pt,
+    inset: 0pt,
+    clip: true,
+  )[
+    #block(
+      width: 100%,
+      fill: rgb("#0D47A1"),
+      inset: (x: 10pt, y: 5pt),
+    )[#text(weight: "bold", fill: white, size: 10pt)[#title]]
+    #block(
+      width: 100%,
+      fill: white,
+      inset: (x: 10pt, y: 9pt),
+    )[#body]
+  ]
+}
+
+// ── 两栏证明（几何证明书写用）──────────────────────────────────
+// 参数：成对的 (陈述, 理由) 字符串或内容
+// 用法：#proof-step("AB = AC", "已知")("∠BAD = ∠CAD", "AD 平分 ∠BAC（已知）")
+// 或传入列表：#proof-step(("AB = AC", "已知"), ("∠BAD = ∠CAD", "平分角"))
+#let proof-step(..pairs) = {
+  let rows = pairs.pos()
+  table(
+    columns: (2fr, 2fr),
+    inset: 6pt,
+    stroke: 0.4pt,
+    fill: (col, row) => if row == 0 { rgb("#E3F2FD") } else { none },
+    [*陈述（得到什么）*], [*理由（凭什么）*],
+    ..rows.map(p => (p.at(0), p.at(1))).flatten(),
+  )
 }

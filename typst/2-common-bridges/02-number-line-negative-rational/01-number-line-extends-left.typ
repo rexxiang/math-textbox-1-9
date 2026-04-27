@@ -19,6 +19,7 @@
 
   $0$ 既不是正数也不是负数，它正好落在原点。
 
+  如图 @fig-thermometer-as-number-line 所示。
   #figure(
     cetz.canvas(length: 0.4cm, {
       import cetz.draw: *
@@ -45,10 +46,11 @@
       content((ox - 2.0, 0), text(size: 7pt, weight: "bold")[0°C], anchor: "east")
     }),
     caption: [温度计就是竖着放的数轴：零上为正、零下为负],
-  )
+  ) <fig-thermometer-as-number-line>
 
   把 $3 - 5$ 放回数轴：从 $3$ 向左走 $5$ 步，落在 $-2$。原来的减法并没有坏——只是落点可以在原点左边。
 
+  如图 @fig-subtraction-on-number-line 所示。
   #figure(
     cetz.canvas(length: 0.4cm, {
       import cetz.draw: *
@@ -115,7 +117,7 @@
         text(size: 7pt, weight: "bold", fill: rgb("#E53935"))[终点 −2], anchor: "north")
     }),
     caption: [$3 - 5 = -2$：从 3 向左走 5 步，落在 $-2$],
-  )
+  ) <fig-subtraction-on-number-line>
 ]
 
 于是*负号是方向，减号是操作*，它们长得像只是历史巧合。
@@ -140,6 +142,7 @@
   - *正数 / 负数 / 零*：原点右边为正、左边为负、原点为 $0$；$0$ 不分正负。
   - *方向符号* $+ / -$：写在数的前面表示“向哪走”，不是减法；为了看得清，负数常写成 $(-3)$ 这种形式。
   - *比较大小*：数轴上“右大左小”。
+  如图 @fig-compare-on-number-line 所示。
   #figure(
     cetz.canvas(length: 0.4cm, {
       import cetz.draw: *
@@ -165,7 +168,7 @@
       content(((a + b) / 2, 2.5), text(size: 7pt, fill: rgb("#555"))[左小右大], anchor: "south")
     }),
     caption: [数轴上比较大小：$-2$ 在 $1$ 左边，所以 $-2 < 1$],
-  )
+  ) <fig-compare-on-number-line>
 ]
 
 #self-check[

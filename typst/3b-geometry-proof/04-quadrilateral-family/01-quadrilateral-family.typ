@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check, proof-step
 #import "../../lib/diagram-packages.typ": cetz
 
 === 四边形家族：从一般到正方形 <tool:ge03-quadrilateral-family>
@@ -27,6 +27,7 @@
 
   这四条性质都可以通过连对角线 $+$ 全等三角形（SSS 或 ASA）读出。
 
+  如图 @fig-parallelogram-properties 所示。
   #figure(
     cetz.canvas(length: 1cm, {
       import cetz.draw: *
@@ -60,7 +61,7 @@
       content((1.4, 1.85), text(7pt)[$||$])
     }),
     caption: [平行四边形 $square A B C D$：对边平行且相等，对角线互相平分于 $O$（$O A = O C$, $O B = O D$）。]
-  )
+  ) <fig-parallelogram-properties>
 
   *判定（逆定理）*：满足下列任意一条 $=>$ 四边形是平行四边形：
 
@@ -83,6 +84,7 @@
       同时具备矩形与菱形的*所有*性质：四角直角 $+$ 四边相等 $+$ 对角线相等、互相垂直、互相平分、还平分对角。],
   )
 
+  如图 @fig-rect-rhombus-square 所示。
   #figure(
     cetz.canvas(length: 0.8cm, {
       import cetz.draw: *
@@ -121,7 +123,7 @@
       content((12, -0.45), text(8pt)[正方形])
     }),
     caption: [三种特殊平行四边形：矩形（直角）、菱形（对角线垂直）、正方形（兼具两者）。]
-  )
+  ) <fig-rect-rhombus-square>
 
   *第 3 层（侧枝）：梯形*
 
@@ -188,7 +190,14 @@
 
   *例*：在 $square A B C D$ 中，$A C$ 与 $B D$ 相交于 $O$，且 $O A = O C$、$O B = O D$、$A C = B D$。证明它是矩形。
 
-  *证*：由“对角线互相平分” $=>$ $square A B C D$ 是平行四边形；再加“对角线相等” $=>$ 是矩形（判定之二）。
+  *证*：
+
+  #proof-step(
+    ([$O A = O C$ 且 $O B = O D$], [对角线互相平分]),
+    ([$square A B C D$ 是平行四边形], [对角线互相平分 $=>$ 平行四边形]),
+    ([$A C = B D$], [已知]),
+    ([$square A B C D$ 是矩形], [平行四边形 $+$ 对角线相等 $=>$ 矩形]),
+  )
 ]
 
 #self-check[

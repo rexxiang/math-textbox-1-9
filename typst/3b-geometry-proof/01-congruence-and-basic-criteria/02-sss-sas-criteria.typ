@@ -1,5 +1,6 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, answer-cut, self-check
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, answer-cut, self-check, proof-step
 #import "../../lib/diagram-packages.typ": cetz
+#import "../../lib/geometry-helpers.typ": equal-angle
 
 === SSS 与 SAS：两条最基本的判定法 <tool:ge01-sss-sas>
 
@@ -49,6 +50,7 @@
     [`SAS`], [两条对应边*及其夹角*分别相等], [两杆一开口，第三边被逼出来],
   )
 
+  如图 @fig-sss-criterion 所示。
   #figure(
     cetz.canvas(length: 1cm, {
       import cetz.draw: *
@@ -80,7 +82,7 @@
       content((4, -0.7), text(8pt)[SSS：三条对应边分别相等])
     }),
     caption: [SSS 判定：三条对应边分别相等 $arrow.r.double$ 全等。]
-  )
+  ) <fig-sss-criterion>
 
   *一个警告先挂在这里*
 
@@ -134,6 +136,7 @@
 
   （$angle A$ 必须是*边 $A B$ 与 $A C$ 的夹角*，$angle D$ 同理）则 $triangle A B C tilde.eq triangle D E F$。
 
+  如图 @fig-sas-criterion 所示。
   #figure(
     cetz.canvas(length: 1cm, {
       import cetz.draw: *
@@ -147,8 +150,8 @@
       content((-0.3, -0.2), $A$)
       content((3.5, -0.2), $B$)
       content((0.6, 2.25), $C$)
-      // angle arc at A
-      arc(A, start: 0deg, stop: 68deg, radius: 0.6, stroke: 0.5pt + rgb("#B71C1C"))
+      // angle arc at A (using equal-angle helper)
+      equal-angle(A, B, C, n: 1, radius: 0.6, stroke: 0.5pt + rgb("#B71C1C"))
       // Triangle DEF
       let D = (5, 0)
       let E = (8.2, 0)
@@ -159,8 +162,8 @@
       content((4.7, -0.2), $D$)
       content((8.5, -0.2), $E$)
       content((5.6, 2.25), $F$)
-      // angle arc at D
-      arc(D, start: 0deg, stop: 68deg, radius: 0.6, stroke: 0.5pt + rgb("#B71C1C"))
+      // angle arc at D (using equal-angle helper)
+      equal-angle(D, E, F, n: 1, radius: 0.6, stroke: 0.5pt + rgb("#B71C1C"))
       // labels
       content((1.6, -0.3), text(7pt)[$|$])
       content((6.6, -0.3), text(7pt)[$|$])
@@ -169,25 +172,29 @@
       content((4, -0.7), text(8pt)[SAS：两边及其*夹角*分别相等])
     }),
     caption: [SAS 判定：两条对应边*及其夹角*（红色弧）分别相等 $arrow.r.double$ 全等。]
-  )
+  ) <fig-sas-criterion>
 
   *例 1（SSS）*：$triangle A B C$ 中，$A D$ 是底边 $B C$ 上的中线，且 $A B = A C$。求证 $triangle A B D tilde.eq triangle A C D$。
 
   证：在 $triangle A B D$ 与 $triangle A C D$ 中，
-  - $A B = A C$（已知）
-  - $B D = C D$（$D$ 是中点）
-  - $A D = A D$（公共边）
 
-  故 $triangle A B D tilde.eq triangle A C D$（`SSS`）。
+  #proof-step(
+    ($A B = A C$, [已知]),
+    ($B D = C D$, [$D$ 是中点]),
+    ($A D = A D$, [公共边]),
+    ($triangle A B D tilde.eq triangle A C D$, [`SSS`]),
+  )
 
   *例 2（SAS）*：$A D$ 是 $triangle A B C$ 的中线，延长 $A D$ 至 $E$ 使 $D E = A D$。求证 $triangle A B D tilde.eq triangle E C D$。
 
   证：在 $triangle A B D$ 与 $triangle E C D$ 中，
-  - $B D = C D$（$D$ 是中点）
-  - $angle A D B = angle E D C$（对顶角）
-  - $A D = E D$（所作）
 
-  故 $triangle A B D tilde.eq triangle E C D$（`SAS`）。
+  #proof-step(
+    ($B D = C D$, [$D$ 是中点]),
+    ($angle A D B = angle E D C$, [对顶角]),
+    ($A D = E D$, [所作]),
+    ($triangle A B D tilde.eq triangle E C D$, [`SAS`]),
+  )
 
   *使用顺序建议*
 

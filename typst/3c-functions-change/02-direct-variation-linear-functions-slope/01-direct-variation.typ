@@ -77,6 +77,7 @@
 
   *它的图像族*
 
+  如图 @fig-direct-variation-pos-neg 所示。
   #figure(
     cetz.canvas(length: 0.45cm, {
       import cetz.draw: *
@@ -94,10 +95,11 @@
       content((0.3, -0.4), text(7pt)[$O$])
     }),
     caption: [正比例函数图像：两条*过原点*的直线。$k > 0$ 斜向右上，$k < 0$ 斜向右下。]
-  )
+  ) <fig-direct-variation-pos-neg>
 
   $k$ 越大、直线越陡：
 
+  如图 @fig-direct-variation-slopes 所示。
   #figure(
     cetz.canvas(length: 0.4cm, {
       import cetz.draw: *
@@ -116,7 +118,7 @@
       circle((0, 0), radius: 0.12, fill: black)
     }),
     caption: [$k$ 越大，直线越陡。$k > 0$ 在一、三象限，$k < 0$ 在二、四象限。所有正比例直线都过原点。]
-  )
+  ) <fig-direct-variation-slopes>
 
   *公式 $->$ 图的速写*：只要找两个点——原点 $O = (0, 0)$ 和 $(1, k)$，连成直线即可。
 
@@ -170,6 +172,7 @@
   - $F = 60$ 牛时 $L = ?$：$L = 60 / 20 = 3$ 厘米。
   - 图像：过原点的直线，斜向右上。
 
+  如图 @fig-spring-direct-variation 所示。
   #figure(
     cetz.canvas(length: 0.4cm, {
       import cetz.draw: *
@@ -196,7 +199,7 @@
       content((2, 5), text(7pt)[$F = 20 L$], anchor: "west")
     }),
     caption: [弹簧伸长量 $L$（厘米）与受力 $F$（牛）的正比例关系：过原点直线，$k = 20$。]
-  )
+  ) <fig-spring-direct-variation>
 
 ]
 

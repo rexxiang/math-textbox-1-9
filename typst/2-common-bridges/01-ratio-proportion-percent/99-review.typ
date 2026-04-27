@@ -1,12 +1,9 @@
-#import "../../lib/theme-v2.typ": blueprint, mastery, secref
-#import "../../lib/chapter-kit.typ": diagnostic-table, answer-cut
+#import "../../lib/chapter-kit.typ": blueprint, mastery, secref, diagnostic-table, answer-cut, knowledge-card
 
 == 本章回顾 <meta:ratio-proportion-percent>
 
-#blueprint[
-  *知识速查卡*
-
-  #table(
+#knowledge-card(title: "知识速查卡")[
+    #table(
     columns: (1fr, 1fr),
     inset: 6pt,
     stroke: 0.4pt,

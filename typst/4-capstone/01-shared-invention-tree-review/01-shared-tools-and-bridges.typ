@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/diagram-packages.typ": fletcher
 
 === 公共基础与共通桥梁的跨分支复用 <tool:cp01-shared-tools-crossref>
 
@@ -17,6 +18,27 @@
 方程描述的是*静止的约束*。可现实总在变化：水位随时间上涨、温度随海拔下降、价格随产量起伏。当我们关心的是*"输入变了，输出怎么跟着变"*时，工具又被迫升级一次——这就是*函数*（#secref("fn01-table-as-function-view")）。莱布尼茨、欧拉给"那条随曲线变化的量"起名 $f(x)$，狄利克雷把它锁死为"每个输入唯一对应一个输出"——人类终于能用一行符号统一处理"变化"这件事。
 
 分数 $->$ 比 $->$ 方程 $->$ 函数，这四个工具就是数千年来定量思维的脊梁。从尼罗河的丈量绳到现代物理的微分方程，所有更高级的数学都生在这条主轴之上。能读到这里的你，已经在几周里重走了人类走了几千年的路；接下来，代数、几何、函数、数据这四条分支，会带你看到这条主轴在各自方向上能开出多远。
+
+如图 @fig-main-chain 所示，这条主链可以用一张接力图概括：
+
+#figure(
+  {
+    import fletcher: diagram, node, edge
+    diagram(
+      node-stroke: 0.8pt,
+      node-fill: rgb("#E3F2FD"),
+      spacing: (4em, 2em),
+      node((0,0), [*分数*\ #text(size: 8pt)[§pf04]], shape: rect),
+      node((1,0), [*比*\ #text(size: 8pt)[§cb01]], shape: rect),
+      node((2,0), [*方程*\ #text(size: 8pt)[§cb06]], shape: rect),
+      node((3,0), [*函数*\ #text(size: 8pt)[§fn01]], shape: rect),
+      edge((0,0), (1,0), "->", label: [部分/整体]),
+      edge((1,0), (2,0), "->", label: [约束化]),
+      edge((2,0), (3,0), "->", label: [动态化]),
+    )
+  },
+  caption: [主链接力：分数 $->$ 比 $->$ 方程 $->$ 函数（括号内为对应章节）],
+) <fig-main-chain>
 
 #blueprint[
   *跨分支复用清单（节选）*

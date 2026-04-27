@@ -1,5 +1,5 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, tryit
-#import "../../lib/diagram-packages.typ": cetz
+#import "../../lib/diagram-packages.typ": cetz, fletcher
 
 === 知识地图与查漏路线
 
@@ -33,6 +33,31 @@
 - 学完后，你可以走向哪些下一步
 
 第一次读这一行时，先记下来，不需要全部理解。等读完整章再回来看，通常会清晰很多。
+
+每章的知识点节都按*同一条六阶段发明链*组织，如图 @fig-invention-chain 所示——卡住时也可以沿虚线回补到上一阶段：
+
+#figure(
+  {
+    import fletcher: diagram, node, edge
+    diagram(
+      node-stroke: 0.8pt,
+      spacing: (3.5em, 2em),
+      node((0,0), [*crisis*\ 遇到困境], shape: rect, fill: rgb("#FFEBEE")),
+      node((1,0), [*discovery*\ 探索发现], shape: rect, fill: rgb("#FFF8E1")),
+      node((2,0), [*tryit*\ 动手试试], shape: rect, fill: rgb("#E8F5E9")),
+      node((3,0), [*blueprint*\ 划重点], shape: rect, fill: rgb("#E3F2FD")),
+      node((4,0), [*pitfall*\ 易错提醒], shape: rect, fill: rgb("#FCE4EC")),
+      node((5,0), [*mastery*\ 练一练], shape: rect, fill: rgb("#F3E5F5")),
+      edge((0,0), (1,0), "->"),
+      edge((1,0), (2,0), "->"),
+      edge((2,0), (3,0), "->"),
+      edge((3,0), (4,0), "->"),
+      edge((4,0), (5,0), "->"),
+      edge((5,0), (0,0), "--", bend: 40deg, label: [回补]),
+    )
+  },
+  caption: [六阶段发明链：crisis $->$ discovery $->$ tryit $->$ blueprint $->$ pitfall $->$ mastery（虚线：卡住时回补路径）],
+) <fig-invention-chain>
 
 ==== 卡住时怎样顺着地图补缺
 

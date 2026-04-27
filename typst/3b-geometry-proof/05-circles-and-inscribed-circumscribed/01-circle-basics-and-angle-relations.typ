@@ -12,6 +12,7 @@
 ]
 
 #discovery[
+  如图 @fig-thales-diameter-right-angle 所示。
   #figure(
     cetz.canvas(length: 1cm, {
       import cetz.draw: *
@@ -38,7 +39,7 @@
       line((0, 0), C, stroke: 0.3pt + luma(160))
     }),
     caption: [同一条直径 $A B$ 所对的圆周角 $angle A C B$、$angle A D B$ 都是直角（Thales）。]
-  )
+  ) <fig-thales-diameter-right-angle>
 
   *核心对象*
 
@@ -66,6 +67,7 @@
 
   $ angle A C B = 1 / 2 angle A O B. $
 
+  如图 @fig-inscribed-angle-half-central 所示。
   #figure(
     cetz.canvas(length: 1cm, {
       import cetz.draw: *
@@ -92,7 +94,7 @@
       content((0.15, 1.7), text(7pt, fill: rgb("#1976D2"))[$alpha$])
     }),
     caption: [圆周角 $angle A C B = alpha$ 恰好是同弧圆心角 $angle A O B = 2 alpha$ 的一半。]
-  )
+  ) <fig-inscribed-angle-half-central>
 
   *证明思路*（圆心在角内的情形）：连 $O C$。$O A = O C$（半径）$=>$ $triangle O A C$ 等腰，$angle O A C = angle O C A$；外角 $angle A O D = 2 angle O C A$（其中 $D$ 是 $O C$ 延长交 $A$ 侧的辅助点），对 $B$ 侧同理。把两段加起来即得。另外两种位置关系（圆心在角外或角的一条边上）由等腰三角形外角重复同一套推理。
 

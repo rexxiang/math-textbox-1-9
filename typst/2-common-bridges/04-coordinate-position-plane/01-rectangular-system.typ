@@ -93,6 +93,7 @@
   - *有序数对* $(x, y)$：横坐标在前，纵坐标在后；交换顺序一般得到不同的点。
   - *轴上的点*：$y = 0 <=> $ 点在 $x$ 轴上；$x = 0 <=> $ 点在 $y$ 轴上；原点 $O = (0, 0)$ 是两轴唯一的交点。
 
+  如图 @fig-ordered-pair-not-symmetric 所示。
   #figure(
     cetz.canvas(length: 0.5cm, {
       import cetz.draw: *
@@ -126,8 +127,9 @@
       content((-0.5, -0.5), text(size: 7pt, weight: "bold")[O], anchor: "north-east")
     }),
     caption: [$(3, 5)$ 与 $(5, 3)$ 是不同的点——顺序不能交换],
-  )
+  ) <fig-ordered-pair-not-symmetric>
 
+  如图 @fig-rectangular-coordinate-system 所示。
   #figure(
     cetz.canvas(length: 0.55cm, {
       import cetz.draw: *
@@ -200,7 +202,7 @@
       content((-0.6, -0.6), text(size: 7pt, weight: "bold")[O], anchor: "north-east")
     }),
     caption: [平面直角坐标系：每个点有唯一的 $(x, y)$ 身份证],
-  )
+  ) <fig-rectangular-coordinate-system>
 ]
 
 #self-check[

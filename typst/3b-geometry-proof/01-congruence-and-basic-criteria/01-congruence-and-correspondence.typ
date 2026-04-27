@@ -64,6 +64,7 @@
 
   这就是几何证明里"全等"两个字的真正份量——它不是审美意义的"一模一样"，而是*一张固定的顶点对照表*，可以稳定地为下一步推理提供具体等式。
 
+  如图 @fig-congruence-correspondence 所示。
   #figure(
     cetz.canvas(length: 1cm, {
       import cetz.draw: *
@@ -92,7 +93,7 @@
       content((7.0, -0.35), text(7pt)[$||$])
     }),
     caption: [$triangle A B C tilde.eq triangle D E F$：字母顺序决定对应关系——$A arrow.r D$、$B arrow.r E$、$C arrow.r F$。]
-  )
+  ) <fig-congruence-correspondence>
 ]
 
 #lab[
@@ -146,6 +147,7 @@
   记号 $tilde.eq$ 同时表达了“形状一样”“大小一样”两件事。
 
 
+  如图 @fig-congruence-overlap 所示。
   #figure(
     cetz.canvas(length: 1cm, {
       import cetz.draw: *
@@ -169,7 +171,7 @@
       content((1.75, -0.6), text(8pt)[全等 $=$ 能完全重合])
     }),
     caption: [全等的直觉：两个三角形能严丝合缝地叠在一起。]
-  )
+  ) <fig-congruence-overlap>
 
 
   *工具二：对应关系随字母顺序走*

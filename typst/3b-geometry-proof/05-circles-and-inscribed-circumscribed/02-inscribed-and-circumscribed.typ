@@ -12,6 +12,7 @@
 ]
 
 #discovery[
+  如图 @fig-circumscribed-circle 所示。
   #figure(
     cetz.canvas(length: 1cm, {
       import cetz.draw: *
@@ -32,7 +33,7 @@
       content((O.at(0) + 0.25, O.at(1) - 0.2), $O$)
     }),
     caption: [$triangle A B C$ 的外接圆：圆心 $O$ 是三条边中垂线的交点，$O A = O B = O C$。]
-  )
+  ) <fig-circumscribed-circle>
 
   *“内接 / 外接”的两种视角*
 
@@ -57,6 +58,7 @@
   - 以 $I$ 为圆心、$r$ 为半径的圆与三条边都相切——这就是*内切圆*。
   - $I$ 叫*内心*，一定在三角形内部。
 
+  如图 @fig-inscribed-circle 所示。
   #figure(
     cetz.canvas(length: 1cm, {
       import cetz.draw: *
@@ -83,7 +85,7 @@
       content((0.5, -0.85), text(7pt, fill: rgb("#388E3C"))[$r$])
     }),
     caption: [三角形的内切圆：三条内角平分线交于内心 $I$，$I$ 到三边的垂直距离都等于 $r$。]
-  )
+  ) <fig-inscribed-circle>
 
   （为什么两种“三线共点”成立？——都可由“到两条线（或两点）等距的点的轨迹”这一基本结果推出，第 1 章的全等 $+$ 轨迹思想已经足够。）
 

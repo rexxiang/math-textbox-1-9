@@ -16,6 +16,7 @@
 #discovery[
   *一张拼图说明一切*
 
+  如图 @fig-pythagorean-square-decomposition 所示。
   #figure(
     cetz.canvas(length: 1cm, {
       import cetz.draw: *
@@ -40,7 +41,7 @@
       content(((b + s) / 2 + 0.3, b / 2 + 0.25), $c$)
     }),
     caption: [边长 $a + b$ 的大正方形 $=$ 四个直角三角形（两直角边 $a$、$b$，斜边 $c$）$+$ 中间一个边长 $c$ 的正方形。]
-  )
+  ) <fig-pythagorean-square-decomposition>
 
   *两种方式算同一块面积*
 
@@ -111,6 +112,7 @@
   - 求斜边：$c = sqrt(a^2 + b^2)$。
   - 求直角边：$a = sqrt(c^2 - b^2)$（必须 $c > b$，否则题设有问题）。
 
+  如图 @fig-right-triangle-pythagorean 所示。
   #figure(
     cetz.canvas(length: 1cm, {
       import cetz.draw: *
@@ -133,7 +135,7 @@
       content((2, -1.1), text(9pt)[$a^2 + b^2 = c^2$])
     }),
     caption: [直角三角形三边关系：两直角边 $a$、$b$ 的平方和等于斜边 $c$ 的平方。]
-  )
+  ) <fig-right-triangle-pythagorean>
 
   *工具二：勾股逆定理*
 

@@ -1,5 +1,6 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
-#import "../../lib/diagram-packages.typ": cetz
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check, proof-step
+#import "../../lib/diagram-packages.typ": cetz, fletcher
+#import "../../lib/geometry-helpers.typ": equal-angle
 
 === 证明链的书写：已知 → 推出 → 结论 <tool:ge01-two-step-proof-chain>
 
@@ -34,18 +35,15 @@
 
   举例：证 $triangle A B D tilde.eq triangle A C D$，其中 $A D$ 平分 $angle B A C$，$A B = A C$。
 
-  #table(
-    columns: (2fr, 2fr),
-    inset: 6pt,
-    stroke: 0.4pt,
-    [*陈述（我得到什么）*], [*理由（凭什么）*],
-    [$A B = A C$], [已知],
-    [$angle B A D = angle C A D$], [$A D$ 平分 $angle B A C$（已知）],
-    [$A D = A D$], [公共边],
-    [$triangle A B D tilde.eq triangle A C D$], [`SAS` 判定（#secref("ge01-sss-sas"))],
-    [$B D = C D$], [全等对应边相等（#secref("ge01-congruence-correspondence"))],
+  #proof-step(
+    ($A B = A C$, [已知]),
+    ($angle B A D = angle C A D$, [$A D$ 平分 $angle B A C$（已知）]),
+    ($A D = A D$, [公共边]),
+    ($triangle A B D tilde.eq triangle A C D$, [`SAS` 判定（#secref("ge01-sss-sas")）]),
+    ($B D = C D$, [全等对应边相等（#secref("ge01-congruence-correspondence")）]),
   )
 
+  如图 @fig-isosceles-bisector-config 所示。
   #figure(
     cetz.canvas(length: 1cm, {
       import cetz.draw: *
@@ -67,12 +65,12 @@
       // Equal side marks
       content((0.8, 1.7), text(7pt)[$|$])
       content((3.2, 1.7), text(7pt)[$|$])
-      // Angle bisector marks
-      arc(A, start: -90deg + 27deg, stop: -90deg, radius: 0.45, stroke: 0.4pt + rgb("#B71C1C"))
-      arc(A, start: -90deg, stop: -90deg - 27deg, radius: 0.45, stroke: 0.4pt + rgb("#B71C1C"))
+      // Angle bisector marks (equal-angle on both sides of AD)
+      equal-angle(A, B, D, n: 1, radius: 0.45, stroke: 0.4pt + rgb("#B71C1C"))
+      equal-angle(A, D, C, n: 1, radius: 0.45, stroke: 0.4pt + rgb("#B71C1C"))
     }),
     caption: [等腰 $triangle A B C$（$A B = A C$），$A D$ 平分 $angle B A C$——典型的"先全等、后对应"证明配置。]
-  )
+  ) <fig-isosceles-bisector-config>
 
   注意几个细节：
 
@@ -123,7 +121,23 @@
 
   $ "已知" arrow "(一步一步的)推出" arrow "结论". $
 
-  每“一步”都必须写出：*我在用的条件*$+$*我得到的结论*$+$*这一步的理由*。
+  每“一步”都必须写出：*我在用的条件*$+$*我得到的结论*$+$*这一步的理由*。整条骨架可以画成图 @fig-proof-structure：
+
+  #figure(
+    {
+      import fletcher: diagram, node, edge
+      diagram(
+        node-stroke: 0.8pt,
+        spacing: (5em, 2.5em),
+        node((0,0), [*已知条件*], shape: rect, fill: rgb("#FFF9C4")),
+        node((1,0), [*中间结论*], shape: rect, fill: rgb("#E8F5E9")),
+        node((2,0), [*最终结论*], shape: rect, fill: rgb("#E3F2FD")),
+        edge((0,0), (1,0), "->", label: [判定法\ (SSS/SAS/…)]),
+        edge((1,0), (2,0), "->", label: [全等对应\ 边/角相等]),
+      )
+    },
+    caption: [两步证明结构：已知条件 →（判定法）→ 全等 →（对应）→ 结论],
+  ) <fig-proof-structure>
 
   *工具二：标准两栏格式*
 
@@ -148,6 +162,7 @@
   + *第 2 步*：用“对应元素相等”拿到结论。
 
 
+  如图 @fig-two-triangles-shared-vertex 所示。
   #figure(
     cetz.canvas(length: 1cm, {
       import cetz.draw: *
@@ -180,26 +195,22 @@
       circle(O, radius: 0.06, fill: black, stroke: none)
     }),
     caption: [两三角形共顶点 $O$：常见的“对顶角 $+$ 两对等边”构型——第 1 步证 $triangle A B O tilde.eq triangle C D O$，第 2 步取对应边 / 角。]
-  )
+  ) <fig-two-triangles-shared-vertex>
 
   *完整范例*：已知 $A B = A C$，$angle 1 = angle 2$（即 $A D$ 平分 $angle B A C$），$D$ 在 $B C$ 上。求证 $B D = C D$ 且 $A D perp B C$。
 
   证明：
 
-  #table(
-    columns: (2fr, 2fr),
-    inset: 6pt,
-    stroke: 0.4pt,
-    [*陈述*], [*理由*],
-    [$A B = A C$], [已知],
-    [$angle B A D = angle C A D$], [$A D$ 平分 $angle B A C$（已知）],
-    [$A D = A D$], [公共边],
-    [$triangle A B D tilde.eq triangle A C D$], [`SAS`],
-    [$B D = C D$], [全等对应边相等],
-    [$angle A D B = angle A D C$], [全等对应角相等],
-    [$angle A D B + angle A D C = 180 degree$], [邻补角],
-    [$angle A D B = 90 degree$], [由前两行联立],
-    [$A D perp B C$], [垂直的定义],
+  #proof-step(
+    ($A B = A C$, [已知]),
+    ($angle B A D = angle C A D$, [$A D$ 平分 $angle B A C$（已知）]),
+    ($A D = A D$, [公共边]),
+    ($triangle A B D tilde.eq triangle A C D$, [`SAS`]),
+    ($B D = C D$, [全等对应边相等]),
+    ($angle A D B = angle A D C$, [全等对应角相等]),
+    ($angle A D B + angle A D C = 180 degree$, [邻补角]),
+    ($angle A D B = 90 degree$, [由前两行联立]),
+    ($A D perp B C$, [垂直的定义]),
   )
 
   证毕。

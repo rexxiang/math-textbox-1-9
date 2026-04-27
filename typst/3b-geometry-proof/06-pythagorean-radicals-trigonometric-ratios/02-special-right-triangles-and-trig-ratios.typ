@@ -20,6 +20,7 @@
 
   *三边比（$45$–$45$–$90$）*：$1 : 1 : sqrt(2)$。
 
+  如图 @fig-isosceles-right-triangle-45 所示。
   #figure(
     cetz.canvas(length: 1cm, {
       import cetz.draw: *
@@ -43,10 +44,11 @@
       content((0.35, 2.2), text(8pt)[$45 degree$])
     }),
     caption: [$45 degree$–$45 degree$–$90 degree$ 三角形：两直角边相等，斜边 $= sqrt(2)$ 倍直角边。]
-  )
+  ) <fig-isosceles-right-triangle-45>
 
   *第二族：$30$–$60$–$90$ 三角形*
 
+  如图 @fig-right-triangle-30-60-90 所示。
   #figure(
     cetz.canvas(length: 1cm, {
       import cetz.draw: *
@@ -67,7 +69,7 @@
       content((2.3, 1.7), [$2 sqrt(3)$])
     }),
     caption: [边长 $4$ 的等边三角形沿高切成两半，每半是 $30$–$60$–$90$ 三角形。]
-  )
+  ) <fig-right-triangle-30-60-90>
 
   把边长 $2$ 的*等边三角形*（三个 $60 degree$）从一个顶点作高：这条高同时也是中线，把对边平分成两段 $= 1$；切出的两个小三角形就是 $30$–$60$–$90$。
 
