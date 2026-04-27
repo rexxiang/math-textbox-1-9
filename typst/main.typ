@@ -151,3 +151,9 @@
 #include "4-capstone/02-cross-domain-problem-solving-modeling/99-review.typ"
 #include "4-capstone/03-next-learning-map/00-overview.typ"
 #include "4-capstone/03-next-learning-map/99-review.typ"
+
+// 附录
+= 附录
+#include "appendices/glossary.typ"
+#include "appendices/formula-sheet.typ"
+#include "appendices/symbol-table.typ"
