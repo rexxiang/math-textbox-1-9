@@ -1,10 +1,10 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 变换·坐标几何·视图 <ch:transformations-coordinate-geometry-views>
 
 把一张照片左右翻转，画面反过来了——但任意两点之间的距离一点没变。平移、旋转也是如此：图形的位置变了，形状和大小却纹丝不动。这类"动了但没变"的操作到底有什么共同规律？这一章就来回答这个问题。
 
-#blueprint[
+#chapter-nav[
   *难度*：★★★★☆ \
   *核心问题*：把一个图形整体地*移动 / 翻转 / 旋转*，它到底有哪些东西不变？把这套操作放进坐标系里，能不能用一条简单的公式把“图形变了”写清楚？立体的东西呢——画在纸上的“三个小图”怎么还原回立体？ \
   *需要先会*：#secref("cb03-rectangular-system")、#secref("cb03-plotting-transforming")、#secref("pf06-simple-solids")、#secref("ge01-congruence-correspondence")、#secref("ge04-pythagorean")。 \
@@ -12,8 +12,7 @@
   *忘了可以回到*：坐标平面与四象限请回 #secref("cb03-quadrants")；立体图形的基本认识请回 #secref("pf06-simple-solids")。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + §1 把*平移 / 旋转 / 反射*当作同一个家族看：它们都是*保距*变换（任意两点之间的距离在变换前后不变），于是自动*保角*、*保面积*；三种变换各有自己的“特征参数”。
   + §2 把坐标平面请回来：两点间距离 $= sqrt((Delta x)^2 + (Delta y)^2)$（勾股在坐标系的直译），中点 $= $ 坐标平均；三种刚体变换用坐标公式重写——平移加向量、关于原点旋转 $90 degree$ 是 $(x, y) -> (-y, x)$、关于 $x$-轴反射是 $(x, y) -> (x, -y)$。

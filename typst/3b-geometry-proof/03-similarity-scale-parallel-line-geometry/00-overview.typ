@@ -1,10 +1,10 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 相似·放缩·平行线几何 <ch:similarity-scale-parallel-line-geometry>
 
 把一张照片放大 200%，形状没变，尺寸翻倍——这种"同形不同大"的关系，日常里随处可见。可是，怎样用数学把"形状一样"精确地写下来？放大后面积是原来的几倍？这一章就从这个问题出发。
 
-#blueprint[
+#chapter-nav[
   *难度*：★★★★☆ \
   *核心问题*：如果第 1 章的“全等”说的是*完全重合*，那么“同形状、不同大小”该怎么写成证明语言？平行线与相似之间是什么关系？相似比怎么从“边比”推到“面积比、体积比”？ \
   *需要先会*：#secref("pf08-parallel-transversal")、#secref("pf08-triangles-angle-sum")、#secref("cb01-ratio-basics")、#secref("ge01-congruence-correspondence")、#secref("ge01-sss-sas")。 \
@@ -12,8 +12,7 @@
   *忘了可以回到*：平行线相关的同位 / 内错 / 同旁内角请回 #secref("pf08-parallel-transversal")；比的化简、反比与合比请回 #secref("cb01-ratio-basics")。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + 把“平行线 $+$ 截线”的角关系压到三条引理（同位 / 内错 / 同旁内角），把它们练成“证平行 $<=>$ 证等角”的双向桥。
   + 在这之上发明*相似三角形的语言 $+$ AA 判定 $+$ 对应边比 $= k$*，一次把“形一样大小可缩”这件事讲透（SSS / SAS 相似不在本章单独立目，本书只把 AA 当首选判据）。

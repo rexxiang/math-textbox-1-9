@@ -1,10 +1,10 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 共同知识地图回顾 <ch:shared-invention-tree-review>
 
 还记得你发明的第一个工具吗？——数数。从那一刻起，工具树一路生长：加减乘除、分数、方程、函数、证明……现在回头看，这棵树已经长得相当茂盛了。这一章的任务，是帮你站在高处把整棵树看清楚。
 
-#blueprint[
+#chapter-nav[
   *难度*：★★★☆☆ \
   *核心问题*：学到这里，全书的工具（公共基础 + 共通桥梁 + 四大分支）已经全部就位。如果把它们画在一张大图上，哪些是*多个分支反复用到*的、哪些只属于某一支？当你做题做到一半卡住，怎样沿这张图*补缺*回最近一个还稳的地方？ \
   *需要先会*：公共基础全部（如 #secref("pf02-order-laws")、#secref("pf04-fraction-arithmetic")、#secref("pf07-perimeter-area")、#secref("pf08-coordinate-intuition")）、共通桥梁全部（如 #secref("cb01-ratio-basics")、#secref("cb03-rectangular-system")、#secref("cb04-letters-represent-numbers")、#secref("cb05-equality-properties")、#secref("cb06-real-number-line")）、四大分支的学习流程（代数、几何、函数、数据）。 \
@@ -12,8 +12,7 @@
   *忘了可以回到*：每一条正文都带章节编号指回首次引入的章节；卡住时沿着链条往上一层补缺即可。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + §1 *公共基础与共通桥梁的跨分支复用*：一张“谁在哪里用到了我”的大表，让你看见像“字母代替数”这种工具是如何渗透进四个分支的。
   + §2 *查漏指引手册*：给出 6 条样板补缺线——从“你在某题上卡住”倒推到“回到哪一节重读”。

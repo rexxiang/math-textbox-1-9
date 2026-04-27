@@ -1,10 +1,10 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 反比例 · 二次函数 <ch:inverse-proportion-quadratic-functions>
 
 一块披萨分给越多人，每人拿到的就越少——但这种"越多越少"并不是一条直线。还有喷泉的水流：先升后降，轨迹是一条弧。这一章要认识两种弯曲的函数，它们的图像告诉你：不是所有变化都走直线。
 
-#blueprint[
+#chapter-nav[
   *难度*：★★★★★ \
   *核心问题*：除了“每加 $1$ 单位 $x$ 加固定量”的直线一族外，还有两类非常常见的函数：*乘积不变*（反比例 $y = k / x$）和*左右对称、先升后降或先降后升*（二次 $y = a x^2 + b x + c$）。它们的公式、图像、数据指纹各是什么？拿到一张数据表如何快速判断它出自哪一族？ \
   *需要先会*：完全平方公式与配方法（本章 §2 有速成）、分母不能为零的直觉（#secref("ch:fractions") 已建立）、平移与坐标变换的直觉（#secref("cb03-plotting-transforming")，本章 §2 有速成）、#secref("fn05-linear-function")（一次函数）、#secref("fn06-slope-as-rate")（斜率 / 变化率）。 \
@@ -12,8 +12,7 @@
   *忘了可以回到*：配方法推不动 $->$ 回看本章 §2 开头的工具速成；分式合法性弱 $->$ #secref("ch:fractions")；不会识别三族“数据指纹”先回上一章 #secref("fn06-slope-as-rate") 熟悉一阶差与斜率的直觉。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + §1 *反比例函数* $y = k / x$：从“$12$ 个苹果分给 $x$ 人”出发，抽象出“乘积不变”的关系；图像是两支双曲线，定义域必须挖掉 $x = 0$。
   + §2 *二次函数 / 抛物线*：从“喷泉 / 抛石”先升后降开始。先给最朴素的 $y = x^2$，再引入 $a$（开口方向与胖瘦）、$(h, k)$（顶点式 $y = a (x - h)^2 + k$）、最后用*配方法*（本章自带速成）把一般式 $y = a x^2 + b x + c$ 与顶点式打通，并推出对称轴 $x = -b / (2 a)$。

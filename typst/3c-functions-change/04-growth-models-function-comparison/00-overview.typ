@@ -1,10 +1,10 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 增长模型与函数比较 <ch:growth-models-function-comparison>
 
 一条谣言这样传播：1 个人告诉 2 个人，那 2 个人各再告诉 2 个人……另一种传播方式是每天固定多 2 个人知道。起步时差别不大，但用不了多久，前一种方式就会把后一种远远甩开。加法增长和乘法增长之间的差距，比你想象的要惊人得多。
 
-#blueprint[
+#chapter-nav[
   *难度*：★★★★★ \
   *核心问题*：本分支到现在已经学过了线性、反比例、二次三类*代数*函数族。现实里还有另一种非常常见的节奏——*每加 $1$ 单位 $x$，$y$ 乘同一倍数*（乘法增长）——它短期看不出厉害，长期却*碾压*前面几族。本章回答两件事：（1）怎么识别加法 / 乘法两种增长？（2）拿到一张陌生表 / 一张陌生图，怎样在四族里挑出最合适的那个？*长期*它们又有怎样稳定的*级别排序*？ \
   *需要先会*：#secref("fn05-linear-function")（线性族）、#secref("fn06-slope-as-rate")（斜率 / 变化率）、#secref("fn07-inverse-proportion")（反比例族）、#secref("fn08-quadratic-function")（二次族）、#secref("fn09-comparing-function-families")（一阶 / 二阶差与乘积的数据指纹）。 \
@@ -12,8 +12,7 @@
   *忘了可以回到*：相邻差 / 比 / 二阶差的计算不稳 $->$ #secref("fn09-comparing-function-families")；顶点式与配方法 $->$ #secref("fn08-quadratic-function")；反比例定义域 $->$ #secref("fn07-inverse-proportion")。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + §1 *加法 vs. 乘法增长*：每加 $1$ 单位 $x$——加同一常数（线性）vs. 乘同一倍率（乘法增长）。用表和图直接对比两者的节奏差距，给出*相邻比恒定*这条新指纹。
   + §2 *模型选择流程*：面对任意一张等距 $x$ 的表，按“差 $->$ 积 $->$ 比 $->$ 二阶差”的顺序，稳准落到四族之一（或诚实地说“都不像”）。

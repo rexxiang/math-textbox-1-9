@@ -1,10 +1,10 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 一元一次不等式 <ch:linear-inequalities>
 
 生活里到处都是"不精确"的限制："体重不超过 $50$ 千克""至少需要 $60$ 分才及格""预算最多 $200$ 元"。这些说法里没有等号，只有"大于、小于、不超过"。把这些日常语言翻译成数学，就需要把等式性质松动一下——但小心，有一条性质会在你乘以负数时悄悄反转方向。
 
-#blueprint[
+#chapter-nav[
   *难度*：★★★★★ \
   *核心问题*：等号换成了 $<, >, <=, >=$，等式性质还能用吗？哪一条性质坏掉了？$|x|$ 又怎样翻译成不等式？ \
   *需要先会*：#secref("al04-linear-one-variable")、#secref("cb02-opposite-and-absolute")。 \
@@ -12,8 +12,7 @@
   *忘了可以回到*：若一元一次方程的五步法还不稳，请回 #secref("al04-linear-one-variable")；若"$|x|$"的直观不清楚，请回 #secref("cb02-opposite-and-absolute")。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + 先把等式性质搬到不等式——加减、乘正数 → 方向不变；乘除*负数* → 方向*反转*。
   + 用这些性质解一元一次不等式与不等式组，在数轴上画解集。

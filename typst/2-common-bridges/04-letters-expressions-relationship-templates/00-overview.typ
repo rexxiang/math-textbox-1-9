@@ -1,10 +1,10 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 字母、代数式与关系模板 <ch:letters-expressions-relationship-templates>
 
 "某个数加上 $5$，结果是 $12$"——每次遇到这类题，你都得重新读一遍题目、重新算一遍。但如果把"某个数"换成字母 $x$，写成 $x + 5 = 12$，这条规则就被固定下来了，换什么数都能直接套用。字母不是故弄玄虚，而是帮你一劳永逸地记住一条规则。
 
-#blueprint[
+#chapter-nav[
   *难度*：★★★☆☆ \
   *核心问题*：一旦用字母代替具体数，我就不只在算一次题，而是写下一条随时可以重算的*规则*。怎样准确地写出、读懂这条规则？ \
   *需要先会*：#secref("pf02-order-laws")、#secref("pf02-mul-div-structure")、#secref("pf02-add-subtract-undo")、#secref("cb02-number-line-extends-left")（允许系数为负）。 \
@@ -12,8 +12,7 @@
   *忘了可以回到*：若运算律用得不稳，请回 #secref("pf02-order-laws")。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + 先看清“字母只是一个未定的数”，它遵守和具体数完全一样的运算律。
   + 然后学会写代数式、识别同类项，做一点简单的化简（正式整式加减以后再学）。

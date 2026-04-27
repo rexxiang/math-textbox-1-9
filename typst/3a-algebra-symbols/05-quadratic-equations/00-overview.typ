@@ -1,10 +1,10 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 一元二次方程 <ch:quadratic-equations>
 
 把一颗球向上抛出，它划过一道弧线，最终落回地面。球的高度随时间变化的关系恰好是一条含 $x^2$ 的等式。"球什么时候落地？"翻译成数学就是"这个二次方程的根是多少？"一次方程的老办法不够用了——我们需要新武器。
 
-#blueprint[
+#chapter-nav[
   *难度*：★★★★★ \
   *核心问题*：当未知量出现*平方*时，一元一次方程的五步不够用。怎样稳定地解任意 $a x^2 + b x + c = 0$？一旦会解，能不能反过来从"想要的根"构造方程？ \
   *需要先会*：#secref("al02-distributive-rewrite")、#secref("al02-special-identities")、#secref("al02-factorization-as-reverse")、#secref("al04-linear-one-variable")、#secref("cb06-square-and-square-root")。 \
@@ -12,8 +12,7 @@
   *忘了可以回到*：若因式分解不稳，请回 #secref("al02-factorization-as-reverse")；若"$sqrt$"的意义还不清楚，请回 #secref("cb06-square-and-square-root")。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + 先用*配方法*处理一元二次方程——把 $x^2 + b x + c = 0$ 硬生生补成 $(x + m)^2 = k$ 再开方。这是"求根公式"的动机。
   + 再把配方结果*打包*成求根公式 $x = frac(- b plus.minus sqrt(b^2 - 4 a c), 2 a)$；判别式 $Delta$ 的符号决定实数根的个数。

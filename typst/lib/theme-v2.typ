@@ -109,7 +109,45 @@
 }
 #let secrange(from, to) = [#secref(from)--#secref(to)]
 
-// ── 四段学习流程函数（对话框式：边框 + 标题栏浅色背景，正文白底）────
+// ── 章首导航卡（轻量：左侧竖线 + 极浅底色，不使用全包围边框）─────
+
+#let chapter-nav(body) = {
+  block(
+    width: 100%,
+    above: 0.6em,
+    below: 0.9em,
+    stroke: (left: (thickness: 3pt, paint: rgb("#1565C0"))),
+    inset: (left: 12pt, right: 8pt, top: 7pt, bottom: 7pt),
+    fill: rgb("#F5F8FE"),
+  )[
+    #text(size: 8.5pt, weight: "bold", fill: rgb("#0D47A1"))[本章概览]
+    #v(3pt)
+    #body
+  ]
+}
+
+// ── 本章路线卡（仅顶部细线 + 小标签，无边框无背景）──────────────
+
+#let chapter-route(body) = {
+  block(
+    width: 100%,
+    above: 0.6em,
+    below: 0.9em,
+    inset: (top: 6pt, bottom: 2pt, left: 0pt, right: 0pt),
+    fill: none,
+  )[
+    #line(length: 100%, stroke: 0.5pt + luma(210))
+    #v(3pt)
+    #text(size: 8.5pt, weight: "bold", fill: luma(130))[本章路线]
+    #v(2pt)
+    #body
+  ]
+}
+
+// ── 四段学习流程函数 ─────────────────────────────────────────────
+//
+// blueprint / mastery 保持全包围边框（视觉最重，作为锚点）。
+// crisis / discovery / pitfall 弱化为左边条样式，让探索阶段"轻"过来。
 
 #let invention-box(title, border-color, head-bg, head-fg, body) = {
   block(
@@ -138,17 +176,35 @@
   ]
 }
 
-#let crisis(body) = invention-box(
-  [遇到的问题],
-  rgb("#C62828"), rgb("#FFCDD2"), rgb("#B71C1C"),
-  body,
-)
+#let crisis(body) = {
+  block(
+    width: 100%,
+    above: 0.8em,
+    below: 0.6em,
+    stroke: (left: (thickness: 3pt, paint: rgb("#C62828"))),
+    inset: (left: 10pt, right: 4pt, top: 5pt, bottom: 5pt),
+    fill: none,
+  )[
+    #text(size: 9pt, weight: "bold", fill: rgb("#B71C1C"))[遇到的问题]
+    #linebreak()
+    #body
+  ]
+}
 
-#let discovery(body) = invention-box(
-  [想一想],
-  rgb("#EF6C00"), rgb("#FFE0B2"), rgb("#E65100"),
-  body,
-)
+#let discovery(body) = {
+  block(
+    width: 100%,
+    above: 0.6em,
+    below: 0.6em,
+    stroke: (left: (thickness: 3pt, paint: rgb("#EF6C00"))),
+    inset: (left: 10pt, right: 4pt, top: 5pt, bottom: 5pt),
+    fill: none,
+  )[
+    #text(size: 9pt, weight: "bold", fill: rgb("#E65100"))[想一想]
+    #linebreak()
+    #body
+  ]
+}
 
 #let blueprint(body) = invention-box(
   [划重点],
@@ -208,28 +264,20 @@
   ]
 }
 
-// ── 常见陷阱（blueprint 后的高频错误专栏，红黄警示色）──────────────
+// ── 常见陷阱（左边条 + 浅黄底，保留警示感但去除全包围边框）────────
 
 #let pitfall(body) = {
   block(
     width: 100%,
-    radius: 3pt,
-    clip: true,
-    stroke: (paint: rgb("#C62828"), thickness: 1.5pt),
-    inset: 0pt,
     above: 0.8em,
-    below: 0.8em,
+    below: 0.6em,
+    stroke: (left: (thickness: 3pt, paint: rgb("#C62828"))),
+    inset: (left: 10pt, right: 8pt, top: 6pt, bottom: 6pt),
+    fill: rgb("#FFFDE7"),
   )[
-    #block(
-      width: 100%,
-      fill: rgb("#FFECB3"),
-      inset: (x: 10pt, y: 5pt),
-    )[#text(weight: "bold", fill: rgb("#B71C1C"), size: 10pt)[常见陷阱]]
-    #block(
-      width: 100%,
-      fill: rgb("#FFFDE7"),
-      inset: (x: 10pt, y: 9pt),
-    )[#body]
+    #text(size: 9pt, weight: "bold", fill: rgb("#B71C1C"))[常见陷阱]
+    #linebreak()
+    #body
   ]
 }
 

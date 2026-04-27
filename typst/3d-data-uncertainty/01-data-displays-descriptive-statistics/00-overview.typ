@@ -1,10 +1,10 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 数据展示与描述统计：数据的第一张脸 <ch:data-displays-descriptive-statistics>
 
 "今天平均气温 22 度"——听起来挺舒适？可如果白天 40 度、夜里 4 度呢？一个"平均数"把两种截然不同的体验抹成了同一个数字。这一章的第一课就是：面对一堆数据，光报一个数字远远不够。
 
-#blueprint[
+#chapter-nav[
   *难度*：★★★☆☆ \
   *核心问题*：我们已经会处理很多“有规律”的数——运算、方程、函数。但现实里常常拿到一把*杂乱*的数字（一次考试 $50$ 人的分数、一年每天的气温、一班同学的身高 ……）。面对这样一把数，应该怎样*整理*、怎样*画*、怎样用*一两个数字*概括它？什么时候画图会帮助我们看见真相，什么时候反而会骗我们？ \
   *需要先会*：#secref("cb01-ratio-basics")（比例 / 百分比作为图表语言）、#secref("cb01-percent")（扇形图用到百分比）、#secref("cb03-rectangular-system")（折线图的坐标）、#secref("cb04-relationship-templates")（两列数据的概念）、一张表能代表什么关系（本分支会自行介绍）。 \
@@ -12,8 +12,7 @@
   *忘了可以回到*：如果百分比或坐标系生疏，回 #secref("cb01-percent")、#secref("cb03-rectangular-system")；如果不记得什么叫“一张表是函数”，本章 §1 会从头讲。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + §1 *整理数据的三张常用图*：条形图 / 折线图 / 扇形图。图形不是装饰——它是“整理过的数据”，不同问题要配不同的图。
   + §2 *从图里读数 & 识别误导图*：怎样从图里看出比例、趋势、对照？哪些常见花招（截断纵轴、等间距伪装、非等宽分类）会让人把小差距看成大差距？

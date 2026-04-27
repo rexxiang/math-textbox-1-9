@@ -1,10 +1,10 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 全等与基本判定 <ch:congruence-and-basic-criteria>
 
 两块拼图摆在桌上，你能不用重叠的方式判断它们是不是完全一样的吗？光靠眼睛看，总觉得"差不多"——但"差不多"在数学里可不算数。这一章要做的，就是把"看起来一样"变成一套可以写下来、一步步验证的语言。
 
-#blueprint[
+#chapter-nav[
   *难度*：★★★★☆ \
   *核心问题*：当我们说两个三角形"一样"时，到底在说什么？怎样把这种"一样"写成可以一步步验证的语言？"三边相等"和"两边夹角"分别为什么够用？ \
   *需要先会*：#secref("pf06-polygons-and-circle")、#secref("pf07-angles")、#secref("pf08-parallel-transversal")、#secref("pf08-triangles-angle-sum")。 \
@@ -12,8 +12,7 @@
   *忘了可以回到*：若"平行线被截线产生什么角关系"还不稳，请回 #secref("pf08-parallel-transversal")；若"三角形内角和"忘了，请回 #secref("pf08-triangles-angle-sum")。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + 先把"全等"从"看起来一样"压成*对应边、对应角一一相等*这套可写下来的语言，并明确字母顺序决定对应表。
   + 再发明两条核心判定法：SSS（三边对应相等）和 SAS（两边及夹角对应相等）。

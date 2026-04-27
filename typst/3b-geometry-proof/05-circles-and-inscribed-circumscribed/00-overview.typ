@@ -1,10 +1,10 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 圆与内接外切 <ch:circles-and-inscribed-circumscribed>
 
 车轮为什么必须是圆的？试着想象骑一辆方形轮子的自行车——每转一下都会颠簸一次。圆之所以特别，是因为它到中心的距离处处相等。这一章要把"圆"从一个直觉图形变成一个有可证明结构的数学对象。
 
-#blueprint[
+#chapter-nav[
   *难度*：★★★★☆ \
   *核心问题*：圆除了"很圆"之外，到底有什么可以拿来做证明的结构？"圆心角"和"圆周角"之间是什么数值关系？"内接"和"外切"又意味着什么？ \
   *需要先会*：#secref("pf06-polygons-and-circle")、#secref("pf07-angles")、#secref("ge01-congruence-correspondence")、#secref("ge01-sss-sas")、#secref("ge03-quadrilateral-family")。 \
@@ -12,8 +12,7 @@
   *忘了可以回到*：圆的基本认识请回 #secref("pf06-polygons-and-circle")；角的度量请回 #secref("pf07-angles")。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + 把圆立成一套语言：圆心 / 半径 / 弦 / 弧；两类角（圆心角、圆周角）由*圆周角定理*挂钩；Thales 定理把"直径 $+$ 圆周角"锁死成 $90 degree$。
   + 把"谁在外谁外接"做成通用视角：三角形外心 $=$ 中垂线交点、内心 $=$ 角平分线交点；正多边形的内接圆与外接圆同心，边长、$R$、$r$ 由 $R^2 = r^2 + (a slash 2)^2$ 串起来。

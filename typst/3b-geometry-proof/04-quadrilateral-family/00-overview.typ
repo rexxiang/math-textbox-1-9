@@ -1,10 +1,10 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 四边形家族 <ch:quadrilateral-family>
 
 正方形是不是矩形？矩形是不是平行四边形？如果你觉得"当然不是"，这一章的家族树可能会让你大吃一惊。四边形之间的关系，比你想的更像一棵有分支、有继承的族谱——每多加一条约束，就多长出一串新性质。
 
-#blueprint[
+#chapter-nav[
   *难度*：★★★★☆ \
   *核心问题*：四边形家族怎么从"平行四边形"一路加条件走到"正方形"？梯形又在哪个位置？ \
   *需要先会*：#secref("pf06-polygons-and-circle")、#secref("pf07-angles")、#secref("ge01-congruence-correspondence")、#secref("ge01-sss-sas")、#secref("ge02-parallel-line-angles")、#secref("ge02-similarity-aa-ratio")。 \
@@ -12,8 +12,7 @@
   *忘了可以回到*：多边形内角和请回 #secref("pf06-polygons-and-circle")；角的度量请回 #secref("pf07-angles")。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + 把四边形梳成一棵*继承树*：一般四边形 → 平行四边形 →（矩形 / 菱形）→ 正方形；侧枝另出梯形 / 等腰梯形。每加一条约束就多一串性质。
 

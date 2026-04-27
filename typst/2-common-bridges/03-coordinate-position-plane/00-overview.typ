@@ -1,10 +1,10 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 平面直角坐标系与四象限 <ch:coordinate-position-plane>
 
 你的手机怎么知道你此刻站在地球上的哪个点？答案是两个数——经度和纬度。只要约定好一个原点和两条互相垂直的方向，平面上的每个点都能用一对数精确描述。这套规则叫做平面直角坐标系，它是地图、导航、函数图象共同的底层语言。
 
-#blueprint[
+#chapter-nav[
   *难度*：★★★☆☆ \
   *核心问题*：怎样给平面上每一个点都发一张独一无二的“身份证”，让它既能被画出来，又能被方程使用？ \
   *需要先会*：#secref("pf08-coordinate-intuition")（坐标直觉）、#secref("pf07-angles")、#secref("pf06-points-and-planes")。 \
@@ -12,8 +12,7 @@
   *忘了可以回到*：若读写 $(x, y)$ 时还会犹豫顺序，先回 #secref("pf08-coordinate-intuition")。
 ]
 
-#side-hack[
-  *本章路线*
+#chapter-route[
 
   + 先把原来“两条数轴”正式定义成平面直角坐标系，明确原点和两轴方向。
   + 再把平面分成四个区域，用四象限命名；学会只看符号就能说“点在哪一块”。

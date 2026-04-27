@@ -1,10 +1,10 @@
-#import "../../lib/theme-v2.typ": blueprint, side-hack, secref
+#import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
 == 桥梁准备清单：进入四条分支之前的自检 <meta:bridge-readiness-contracts>
 
 登山向导在出发前会逐一检查你的绳索、冰爪和头灯——不是为了为难你，而是确保上了陡坡不会因为一个小疏漏而被迫折返。这一章就是你的"装备检查站"：前面六座桥上学到的工具，哪些已经牢靠，哪些还松动？确认清楚了，再选择你的分支路线。
 
-#blueprint[
+#chapter-nav[
   *难度*：★★★☆☆ \
   *目的*：确认自己已经备齐*进入任一条分支*所需的桥梁知识。 \
   *需要先会*：本章不教新工具，只检查你已掌握的公共基础与桥梁（本部 1–6 章）知识。 \
