@@ -18,20 +18,20 @@
     let n = nums.pos()
     if n.len() <= 2 { numbering("1.1", ..n) }
   })
-  set par(justify: true, leading: 0.85em, spacing: 1.5em)
+  set par(justify: true, leading: 0.85em, spacing: 1.6em)
   // Part（一级）：强制分页 + 大标题
   show heading.where(level: 1): it => {
     pagebreak(weak: true)
-    block(above: 0em, below: 1.5em, it)
+    block(above: 0em, below: 1.8em, it)
   }
   // Chapter（二级）：强制分页
   show heading.where(level: 2): it => {
     pagebreak(weak: true)
-    block(above: 0em, below: 1em, it)
+    block(above: 0em, below: 1.2em, it)
   }
   // Section（三级）和 Subsection（四级）：仅留间距
-  show heading.where(level: 3): set block(above: 2em, below: 1em)
-  show heading.where(level: 4): set block(above: 1.5em, below: 0.8em)
+  show heading.where(level: 3): set block(above: 2.5em, below: 1.2em)
+  show heading.where(level: 4): set block(above: 2em, below: 1em)
   body
 }
 
@@ -114,14 +114,14 @@
 #let chapter-nav(body) = {
   block(
     width: 100%,
-    above: 0.6em,
-    below: 0.9em,
+    above: 1.0em,
+    below: 1.2em,
     stroke: (left: (thickness: 3pt, paint: rgb("#1565C0"))),
-    inset: (left: 12pt, right: 8pt, top: 7pt, bottom: 7pt),
+    inset: (left: 12pt, right: 8pt, top: 9pt, bottom: 9pt),
     fill: rgb("#F5F8FE"),
   )[
     #text(size: 8.5pt, weight: "bold", fill: rgb("#0D47A1"))[本章概览]
-    #v(3pt)
+    #v(4pt)
     #body
   ]
 }
@@ -131,15 +131,15 @@
 #let chapter-route(body) = {
   block(
     width: 100%,
-    above: 0.6em,
-    below: 0.9em,
-    inset: (top: 6pt, bottom: 2pt, left: 0pt, right: 0pt),
+    above: 0.8em,
+    below: 1.2em,
+    inset: (top: 8pt, bottom: 4pt, left: 0pt, right: 0pt),
     fill: none,
   )[
     #line(length: 100%, stroke: 0.5pt + luma(210))
-    #v(3pt)
+    #v(4pt)
     #text(size: 8.5pt, weight: "bold", fill: luma(130))[本章路线]
-    #v(2pt)
+    #v(3pt)
     #body
   ]
 }
@@ -156,8 +156,8 @@
     clip: true,
     stroke: (paint: border-color, thickness: 1pt),
     inset: 0pt,
-    above: 0.8em,
-    below: 0.8em,
+    above: 1.4em,
+    below: 1.2em,
   )[
     #grid(
       columns: (1fr,),
@@ -179,10 +179,10 @@
 #let crisis(body) = {
   block(
     width: 100%,
-    above: 0.8em,
-    below: 0.6em,
+    above: 1.2em,
+    below: 1.0em,
     stroke: (left: (thickness: 3pt, paint: rgb("#C62828"))),
-    inset: (left: 10pt, right: 4pt, top: 5pt, bottom: 5pt),
+    inset: (left: 10pt, right: 4pt, top: 6pt, bottom: 6pt),
     fill: none,
   )[
     #text(size: 9pt, weight: "bold", fill: rgb("#B71C1C"))[遇到的问题]
@@ -194,10 +194,10 @@
 #let discovery(body) = {
   block(
     width: 100%,
-    above: 0.6em,
-    below: 0.6em,
+    above: 1.2em,
+    below: 1.0em,
     stroke: (left: (thickness: 3pt, paint: rgb("#EF6C00"))),
-    inset: (left: 10pt, right: 4pt, top: 5pt, bottom: 5pt),
+    inset: (left: 10pt, right: 4pt, top: 6pt, bottom: 6pt),
     fill: none,
   )[
     #text(size: 9pt, weight: "bold", fill: rgb("#E65100"))[想一想]
@@ -223,10 +223,10 @@
 #let side-note(label-text, border-color, label-color, body) = {
   block(
     width: 100%,
-    above: 4pt,
-    below: 8pt,
+    above: 0.8em,
+    below: 1.0em,
     stroke: (left: (thickness: 3pt, paint: border-color)),
-    inset: (left: 10pt, right: 0pt, top: 4pt, bottom: 4pt),
+    inset: (left: 10pt, right: 0pt, top: 5pt, bottom: 5pt),
     fill: none,
   )[
     #text(size: 9pt, weight: "bold", fill: label-color)[#label-text]
@@ -248,8 +248,8 @@
     clip: true,
     stroke: (paint: rgb("#1565C0"), thickness: 1pt, dash: "dashed"),
     inset: 0pt,
-    above: 0.8em,
-    below: 0.5em,
+    above: 1.4em,
+    below: 1.0em,
   )[
     #block(
       width: 100%,
@@ -269,10 +269,10 @@
 #let pitfall(body) = {
   block(
     width: 100%,
-    above: 0.8em,
-    below: 0.6em,
+    above: 1.2em,
+    below: 1.0em,
     stroke: (left: (thickness: 3pt, paint: rgb("#C62828"))),
-    inset: (left: 10pt, right: 8pt, top: 6pt, bottom: 6pt),
+    inset: (left: 10pt, right: 8pt, top: 7pt, bottom: 7pt),
     fill: rgb("#FFFDE7"),
   )[
     #text(size: 9pt, weight: "bold", fill: rgb("#B71C1C"))[常见陷阱]
@@ -290,8 +290,8 @@
     clip: true,
     stroke: (paint: rgb("#6A1B9A"), thickness: 1pt),
     inset: 0pt,
-    above: 0.8em,
-    below: 0.8em,
+    above: 1.4em,
+    below: 1.2em,
   )[
     #block(
       width: 100%,
@@ -304,4 +304,17 @@
       inset: (x: 10pt, y: 9pt),
     )[#body]
   ]
+}
+
+// ── 章首三段模板（chapter-nav + chapter-route + 可选自检）────────────
+// 将章首的三个固定结构块封装为一个函数，方便统一维护。
+// 用法：
+//   #chapter-overview(route: [+ 步骤...], selfcheck: [入章自检...])[概览内容]
+//   #chapter-overview(route: [...])[ 无自检时省略 selfcheck 参数 ]
+#let chapter-overview(route: [], selfcheck: none, body) = {
+  chapter-nav(body)
+  chapter-route(route)
+  if selfcheck != none {
+    side-hack(selfcheck)
+  }
 }
