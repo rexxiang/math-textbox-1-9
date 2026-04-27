@@ -1,3 +1,4 @@
+// [wave7-format-break: 模式C]
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check, proof-step
 #import "../../lib/diagram-packages.typ": cetz
 
@@ -225,43 +226,42 @@
 ]
 
 #mastery[
+  *帮晨晨找错*——下面是同学晨晨在做四边形题时的解题过程，他在判定条件、性质应用、家族继承上踩了不少坑。请你逐题指出他错在哪一步、为什么错，并写出正确的判定 / 算法。
+
   *基础*
 
-  + $square A B C D$ 是平行四边形，$angle A = 70 degree$。求其余三个角。
-
-  + 矩形的两条对角线长 $10$ 厘米。若 $A B = 6$ 厘米，求 $B C$。
-
-  + 菱形对角线长分别为 $6$ 和 $8$。求菱形的边长与面积。
+  + 晨晨判断"四边形 $A B C D$ 中 $A B parallel C D$，所以它是平行四边形"——对吗？
+  + 晨晨证明"$square A B C D$ 中 $A B = C D$、$A D = B C$，因为对角线*相等*，所以它是矩形"。请找出错误并改正。
+  + 晨晨说："对角线互相*垂直*的平行四边形是矩形"——这条判定对吗？
+  + 晨晨说："四边相等的四边形一定是正方形"——他漏了什么？
 
   *应用*
 
-  + 在 $square A B C D$ 中，$A C$ 与 $B D$ 相交于 $O$，且 $O A = O C$、$O B = O D$、$A C perp B D$。证明 $square A B C D$ 是菱形。
-
-  + 如图（或想象）：等腰梯形 $A B C D$ 中 $A B parallel C D$、$A D = B C$。证明 $angle A = angle B$。
-
-  + $square A B C D$ 中，$A B = 8$、$A D = 5$、$angle A = 60 degree$。求对角线 $B D$ 的长。（提示：在 $triangle A B D$ 中自 $D$ 作 $A B$ 上的高 $D H$，$triangle A D H$ 是 30-60-90 三角形，再用勾股。）
+  + 晨晨算菱形对角线长 $6$ 和 $8$ 的边长：「对角线就是边的两倍长，所以边长 $= 6 div 2 = 3$。」请指出他错把哪条性质用反了，并写出正确的边长。
+  + 矩形对角线长 $10$，$A B = 6$。晨晨说："对角线和一条边相加等于另一条边，所以 $B C = 10 - 6 = 4$。"请指出他错把哪条结论替换成了哪条，并写出正确的 $B C$。
 
   *挑战 ☞ 选做*
 
-  + 正方形 $A B C D$ 中，$E$、$F$ 分别是 $A B$、$B C$ 的中点。证明 $triangle D A E tilde.eq triangle D C F$，并由此得 $D E = D F$。
-
-  + 证明：若一个平行四边形的一条对角线平分一组对角，则它是菱形。
-
-  + 四边形 $A B C D$ 的四条边长依次为 $a$、$b$、$a$、$b$，且两条对角线相等。判断它是什么图形并给出简要理由。
+  + 晨晨说："正方形是矩形，但*不是*菱形——因为菱形对角线必须不等长，而正方形对角线相等。"请用四边形继承树解释他错在哪儿——他把"独有性质"和"必要条件"搞混了哪一步？给出正方形与菱形之间正确的继承关系。
+  + 晨晨说："等腰梯形对角线相等；反过来，对角线相等的四边形都是等腰梯形。"请举一个反例（具体的图形）证明他逆用错了；并写出"对角线相等"这个结论*在不同四边形里*都意味着什么。
 
   #answer-cut[
 
   *基础*
-  + $angle A = angle C = 70 degree$；$angle B = angle D = 110 degree$（平行四边形性质）。
-  + 矩形对角线相等且 $A C = B D = 10$（矩形性质）；在 $triangle A B C$ 中，$A C^2 = A B^2 + B C^2$（勾股定理），$100 = 36 + B C^2 => B C = 8$。
-  + 菱形对角线互相垂直平分（菱形性质），每边 $= sqrt(3^2 + 4^2) = 5$（勾股定理）；面积 $= 1 slash 2 times 6 times 8 = 24$。
+  + 错。仅一组对边平行不足以判定平行四边形，那是*梯形*。判定平行四边形需要两组对边都平行，或一组对边*平行且相等*，或两组对边分别相等等五条之一。
+  + 错在判定条件。已知"两组对边分别相等"得到的是*平行四边形*，不是矩形。再加"对角线相等"才能升级到矩形——而题目里没有给出对角线相等。正确结论：$square A B C D$ 是平行四边形（不能判定矩形）。
+  + 不对，反了。对角线*相等* $=>$ 矩形；对角线*互相垂直* $=>$ 菱形。晨晨把矩形和菱形的对角线判定颠倒了。
+  + 漏了"加一个直角"。四边相等只能判定*菱形*；菱形再加一个直角（或对角线相等）才升级为正方形。
 
   *应用*
-  + 由“对角线互相平分”得平行四边形；再加“对角线互相垂直”得菱形（判定之二）。
-  + 作 $D E perp A B$、$C F perp A B$，垂足为 $E$、$F$。由 $A B parallel C D$ 得 $D E = C F$（两条等高的平行线段）；$A D = B C$（已知），于是在直角三角形 $triangle A D E$、$triangle B C F$ 中，由直角三角形三边关系（☞ 正式证明见后面章节）$A E = sqrt(A D^2 - D E^2) = sqrt(B C^2 - C F^2) = B F$。由 `SSS`（$A D = B C$、$D E = C F$、$A E = B F$）得 $triangle A D E tilde.eq triangle B C F$，对应角 $angle A = angle B$。
-  + 自 $D$ 作 $A B$ 上的高 $D H$，垂足 $H$。$triangle A D H$ 中 $angle A = 60 degree$、$angle A H D = 90 degree$，是 30-60-90 三角形：$A H = A D slash 2 = 5 slash 2$，$D H = (5 sqrt(3)) slash 2$。$H B = A B - A H = 8 - 5 slash 2 = 11 slash 2$。在直角三角形 $triangle B H D$ 中 $B D^2 = H B^2 + D H^2 = 121 slash 4 + 75 slash 4 = 49$，故 $B D = 7$。
-  + 在 $triangle D A E$ 与 $triangle D C F$ 中：$D A = D C$（正方形边）、$angle A = angle C = 90 degree$、$A E = A B slash 2 = B C slash 2 = C F$。由 `SAS` 得 $triangle D A E tilde.eq triangle D C F$，对应边 $D E = D F$。
-  + 设 $angle B A C = angle D A C$，在 $triangle A B C$ 与 $triangle A D C$ 中，$A C$ 公共、$angle B A C = angle D A C$、$angle B C A = angle D C A$（由 $A B parallel C D$ 的内错角）。由 ASA 得 $triangle A B C tilde.eq triangle A D C$，故 $A B = A D$；平行四边形 $+$ 邻边相等 $=>$ 菱形。
-  + $A B = C D = a$、$B C = D A = b$，“对边分别相等”$=>$ 平行四边形；再加对角线相等 $=>$ 矩形。
+  + 晨晨把对角线长当成了边长。菱形对角线*互相垂直平分*，半对角线分别是 $3$ 和 $4$，由勾股定理：边长 $= sqrt(3^2 + 4^2) = 5$，不是 $3$。
+  + 错把"勾股关系"替换成了"线性差"。矩形里 $A C^2 = A B^2 + B C^2$（勾股定理），$10^2 = 6^2 + B C^2$，$B C^2 = 64$，$B C = 8$，不是 $4$。
+
+  *挑战 ☞ 选做*
+  + 错在"独有 $!=$ 必要"。正方形*同时是矩形又是菱形*——它继承菱形的*所有*性质。"对角线垂直"是菱形的独有判定（充分），不是"判定为菱形必须满足的额外条件"。继承树正确读法："正方形 $arrow$ 矩形且 $arrow$ 菱形"——独有性质往子类越走越多，*不是越走越少*。
+  + 反例：矩形（非正方形）的对角线也相等，但它不是等腰梯形（它是平行四边形）。再举：正方形对角线也相等，也不是等腰梯形。所以"对角线相等"在不同图形里意味着不同：
+    - *矩形 / 正方形*：对角线相等是它们的*独有性质*。
+    - *等腰梯形*：对角线相等也是其性质，但前提是*它本来就是梯形*（只有一组对边平行）。
+    晨晨的逆用漏掉了"先确认它是梯形"这一前提。"对角线相等"独立于其他条件时不能反推一种特定四边形。
   ]
 ]

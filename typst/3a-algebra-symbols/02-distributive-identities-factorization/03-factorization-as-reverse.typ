@@ -1,3 +1,4 @@
+// [wave7-format-break: 模式A]
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
@@ -137,13 +138,9 @@
 ]
 
 #blueprint[
-  *工具一：因式分解三步流程*
+  *工具一：因式分解三步流程（图见上）*
 
-  + *先提公因式*（数字取 GCD，字母取最低次幂）。
-  + *再看特殊公式*（平方差 / 完全平方；用中间项匹配去识别）。
-  + *必要时做 $x^2 + b x + c$ 的两数匹配*（和 $= b$，积 $= c$）。
-
-  每一步完成后都回头问一句：*括号里还能继续分吗？*
+  上面 discovery 已经画过流程决策图。这里 *blueprint 不再写文字步骤*——请看完下面的 side-hack 后，再回头看那张流程图，把三步用自己的话写一遍。
 
   *例 1*：$3 x^3 - 12 x$
 
@@ -235,6 +232,10 @@
 
   - 每一步后都要检查所有括号，判断是否还能继续提公因式、套公式、做两数匹配。
   - 如果剩下的式子在实数范围内确实无法再分（例如 $x^2 + 1$），就可以收笔。
+]
+
+#side-hack[
+  *blueprint 留给你*——这张流程图的每一步在说什么？试着不看文字、只看 discovery 段那张三层菱形图，把三步用自己的话写在笔记本上。和"工具二"的符号判断表对照，看看你写的步骤覆盖了几样判别。
 ]
 
 #self-check[

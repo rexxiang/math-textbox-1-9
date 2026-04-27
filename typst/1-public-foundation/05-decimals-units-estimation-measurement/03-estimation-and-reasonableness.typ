@@ -1,3 +1,4 @@
+// [wave7-format-break: 模式A]
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, lab, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
@@ -97,9 +98,7 @@
 ]
 
 #blueprint[
-  - *估算* 是用接近的整值或熟悉基准，快速判断结果大约落在哪个范围。
-  - *合理性检查* 常看三件事：单位对不对、数量级对不对、结果方向对不对。
-  - 估算不是代替精算，而是给精算提供前后两道护栏。
+  这一节的 blueprint 暂时空着——*留给你来写*。
 
   #figure(
     cetz.canvas(length: 0.4cm, {
@@ -128,6 +127,10 @@
     caption: [合理性检查三步：单位、数量级、方向],
   )
 
+]
+
+#side-hack[
+  blueprint 留给你来写——根据 discovery 和 tryit，你觉得估算有几步？把它们用自己的话写在笔记本上。再回头对照上面那张"合理性三步检查"的图，看看你写的步骤覆盖了几样。
 ]
 
 #pitfall[

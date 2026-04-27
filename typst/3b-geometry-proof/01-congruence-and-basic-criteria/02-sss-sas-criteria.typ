@@ -1,3 +1,4 @@
+// [wave7-mastery-variant: 双解法]
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, answer-cut, self-check, proof-step
 #import "../../lib/diagram-packages.typ": cetz
 #import "../../lib/geometry-helpers.typ": equal-angle
@@ -235,7 +236,10 @@
 
   *应用*
 
-  + 等腰 $triangle A B C$ 中 $A B = A C$。作 $angle A$ 的平分线交 $B C$ 于 $D$。求证：$triangle A B D tilde.eq triangle A C D$，并由此得 $angle B = angle C$。
+  + *双解法对比题*——等腰 $triangle A B C$ 中 $A B = A C$。作 $angle A$ 的平分线交 $B C$ 于 $D$。求证 $angle B = angle C$。
+    - *方法 A（用 SAS）*：在 $triangle A B D$ 与 $triangle A C D$ 中：$A B = A C$（已知）、$angle B A D = angle C A D$（角平分线）、$A D = A D$（公共边）。由 SAS 得 $triangle A B D tilde.eq triangle A C D$，故 $angle B = angle C$。请把这条证明完整写出来。
+    - *方法 B（用 SSS）*：先用别的途径论证 $B D = C D$（提示：作辅助延长 $A D$，或先承认 $A D$ 同时是中线，进入 SSS）。再在 $triangle A B D$ 与 $triangle A C D$ 中：$A B = A C$、$A D = A D$、$B D = C D$。由 SSS 得 $triangle A B D tilde.eq triangle A C D$，故 $angle B = angle C$。请把这条证明完整写出来。
+    - *比较*：两种方法都得到结论 $angle B = angle C$。请回答：哪种方法用到的"已知条件"更直接？SAS 路线为什么比 SSS 路线更省事？SSS 路线*为什么需要先额外证明 $B D = C D$*？这一对比说明：合理选择判定法可以减少辅助证明的工作量。
 
   + 正方形 $A B C D$ 中，$E$、$F$ 分别是 $B C$、$C D$ 的中点。求证：$A E = A F$。（提示：找一对全等三角形；看清夹角。）
 
@@ -252,7 +256,10 @@
   + 可以（SAS），$angle B$ 是 $A B$ 与 $B C$ 的夹角。
 
   *应用*
-  + 在 $triangle A B D$ 与 $triangle A C D$ 中：$A B = A C$（已知）、$angle B A D = angle C A D$（$A D$ 是角平分线）、$A D = A D$（公共边）。由 `SAS` 得 $triangle A B D tilde.eq triangle A C D$，故对应角 $angle B = angle C$。
+  + *双解法对比题*：
+    - 方法 A（SAS）：在 $triangle A B D$ 与 $triangle A C D$ 中：$A B = A C$（已知）、$angle B A D = angle C A D$（$A D$ 是 $angle A$ 的平分线）、$A D = A D$（公共边）。由 SAS 得 $triangle A B D tilde.eq triangle A C D$，对应角 $angle B = angle C$。
+    - 方法 B（SSS）：先证 $B D = C D$。一种途径：注意 $A D$ 是等腰三角形 $A B C$ 的角平分线，根据等腰三角形"三线合一"性质，$A D$ 同时是 $B C$ 边上的中线（即 $B D = C D$；这一性质可在初等几何中独立证明）。然后在 $triangle A B D$ 与 $triangle A C D$ 中：$A B = A C$（已知）、$A D = A D$（公共边）、$B D = C D$（已证）。由 SSS 得 $triangle A B D tilde.eq triangle A C D$，对应角 $angle B = angle C$。
+    - 比较：两法都得到 $angle B = angle C$。方法 A 更直接——题目已给的"角平分线"恰好是 SAS 中的*夹角*条件，三件事（两边和夹角）一次到位。方法 B 要绕一步：题目没有直接给 $B D = C D$，必须借助"三线合一"先证它，工作量更大。这表明：*已知条件刚好是哪条判定法所需，就用哪条*；硬套不需要的判定会平添辅助证明。
   + 在 $triangle A B E$ 与 $triangle A D F$ 中：$A B = A D$（正方形边）、$B E = D F$（都是边的一半）、$angle A B E = angle A D F = 90 degree$（$angle A B E$ 是 $A B, B E$ 的夹角）。由 `SAS` 得 $triangle A B E tilde.eq triangle A D F$，故 $A E = A F$。
 
   *挑战 ☞ 选做*
