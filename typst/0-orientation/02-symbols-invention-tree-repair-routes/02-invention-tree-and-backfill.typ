@@ -1,4 +1,5 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, tryit
+#import "../../lib/diagram-packages.typ": cetz
 
 === 知识地图与查漏路线
 
@@ -58,3 +59,67 @@
 #tryit[
   打开目录，找到一章你还没读过的章节，读它"这节的方法"框里的"需要先会的知识"和"知识地图位置"。你能在全书结构图里找到这章的位置吗？它依赖的前面学过的知识，你有多少已经学过了？
 ]
+
+
+==== 数学发明时间轴
+
+数学工具是一代代人接力发明的。下面的时间轴把本书涉及的几个关键历史节点排列出来，帮你感受这些工具从哪里来、又怎样一步步连接到下一代。
+
+#figure(
+  cetz.canvas(length: 0.5cm, {
+    import cetz.draw: *
+
+    // Vertical timeline axis
+    let top = 28
+    let bot = 0
+    let x-axis = 6
+    line((x-axis, bot), (x-axis, top), stroke: 0.8pt + rgb("#444"))
+
+    // 9 milestones (year, year-label, description, color)
+    let ancient = rgb("#8E5A2A")    // 古代（前 1650 — 250）
+    let medieval = rgb("#1E6091")   // 中世纪（820）
+    let early-modern = rgb("#2E7D32") // 近代早期（1591 — 1748）
+    let modern = rgb("#6A1B9A")     // 近代（1812）
+
+    let entries = (
+      (26, "约前 1650 年", "莱因德纸草书：古埃及分数与方程", ancient),
+      (23, "约前 300 年", "欧几里得《几何原本》：几何公理体系", ancient),
+      (20, "约前 100 年", "《九章算术》：分数、方程组、勾股", ancient),
+      (17, "约 250 年", "丢番图《算术》：最早的符号代数", ancient),
+      (14, "约 820 年", "花拉子米《代数学》：系统化一次/二次方程", medieval),
+      (11, "1591 年", "韦达《分析方法入门》：字母代数与通用公式", early-modern),
+      (8,  "1637 年", "笛卡儿《几何学》：坐标系，代数与几何融合", early-modern),
+      (5,  "1694 / 1748 年", "莱布尼茨与欧拉：函数概念与 $f(x)$ 记号", early-modern),
+      (2,  "1812 年", "拉普拉斯《概率分析理论》：古典概率公式定型", modern),
+    )
+
+    for (y, year, desc, c) in entries {
+      // dot
+      circle((x-axis, y), radius: 0.2, fill: c, stroke: 0.6pt + c)
+      // small horizontal tick
+      line((x-axis - 0.5, y), (x-axis + 0.5, y), stroke: 0.6pt + c)
+      // year label on left
+      content((x-axis - 0.8, y), text(size: 7pt, weight: "bold", fill: c)[#year], anchor: "east")
+      // description on right
+      content((x-axis + 0.8, y), text(size: 7pt, fill: rgb("#222"))[#desc], anchor: "west")
+    }
+
+    // legend at bottom
+    let lx = 0.5
+    let ly = -2
+    rect((lx, ly - 0.3), (lx + 30, ly + 1.0), stroke: 0.3pt + rgb("#999"), fill: rgb("#FAFAFA"))
+    let lcols = (
+      (ancient, "古代"),
+      (medieval, "中世纪"),
+      (early-modern, "近代早期"),
+      (modern, "近代"),
+    )
+    for (i, item) in lcols.enumerate() {
+      let (col, name) = item
+      let cx = lx + 1 + i * 7
+      circle((cx, ly + 0.4), radius: 0.18, fill: col, stroke: none)
+      content((cx + 0.7, ly + 0.4), text(size: 6pt, fill: rgb("#333"))[#name], anchor: "west")
+    }
+  }),
+  caption: [数学发明时间轴：本书涉及的九个历史节点],
+)
