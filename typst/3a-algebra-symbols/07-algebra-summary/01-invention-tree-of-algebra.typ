@@ -7,7 +7,7 @@
 
   整个代数脉络由一条主干生长：
 
-  + *字母代替数*（#secref("cb04-letters-represent-numbers")）：把“待定的数”写成记号，运算规则原样保留。
+  + *字母代替数*（#secref("cb05-letters-represent-numbers")）：把“待定的数”写成记号，运算规则原样保留。
   + *代数式与同类项*（#secref("al01-terms-like")、#secref("al01-add-subtract-polynomials")、#secref("al01-multiply-polynomials")）：字母与数的“加减乘”组合怎样化简？
   + *乘法公式与因式分解*（#secref("al02-distributive-rewrite")、#secref("al02-special-identities")、#secref("al02-factorization-as-reverse")）：分配律正用 → 乘开；反用 → 提公因式与识别公式。
   + *分式*（#secref("al03-rational-expression-structure")、#secref("al03-common-denominator-operations")）：允许“除以未知量”——需要约分 / 通分 / 验分母非零。
@@ -27,7 +27,7 @@
     inset: 6pt,
     stroke: 0.4pt,
     [*工具*], [*被发明的理由*], [*下一步带来什么*],
-    [字母代替数 #secref("cb04-letters-represent-numbers")], [想写“任意一个数”时，数字不够用], [让“运算律”可以普适陈述],
+    [字母代替数 #secref("cb05-letters-represent-numbers")], [想写“任意一个数”时，数字不够用], [让“运算律”可以普适陈述],
     [代数式 / 同类项 #secref("al01-terms-like")], [要像整数那样做“加减”，得先有“同类”概念], [去括号、合并成为基本动作],
     [整式乘法 #secref("al01-multiply-polynomials")], [面积、计数、体积模型都需要“乘开”], [平方差、完全平方公式自然露面],
     [分配律双向 #secref("al02-distributive-rewrite")], [公路两侧都能走：展开 + 提公因式], [因式分解的第一步],

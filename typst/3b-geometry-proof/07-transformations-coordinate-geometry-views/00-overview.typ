@@ -7,9 +7,9 @@
 #chapter-nav[
   *难度*：★★★★☆ \
   *核心问题*：把一个图形整体地*移动 / 翻转 / 旋转*，它到底有哪些东西不变？把这套操作放进坐标系里，能不能用一条简单的公式把“图形变了”写清楚？立体的东西呢——画在纸上的“三个小图”怎么还原回立体？ \
-  *需要先会*：#secref("cb03-rectangular-system")、#secref("cb03-plotting-transforming")、#secref("pf06-simple-solids")、#secref("ge01-congruence-correspondence")、#secref("ge04-pythagorean")。 \
+  *需要先会*：#secref("cb04-rectangular-system")、#secref("cb04-plotting-transforming")、#secref("pf06-simple-solids")、#secref("ge01-congruence-correspondence")、#secref("ge04-pythagorean")。 \
   *本章在全书的位置*：几何分支第 $7$ 章——把前四章积累的“全等、相似、勾股”放到*坐标*与*变换*这两种坐标化语言里，并补全“平面 $<->$ 立体”的投影。 \
-  *忘了可以回到*：坐标平面与四象限请回 #secref("cb03-quadrants")；立体图形的基本认识请回 #secref("pf06-simple-solids")。
+  *忘了可以回到*：坐标平面与四象限请回 #secref("cb04-quadrants")；立体图形的基本认识请回 #secref("pf06-simple-solids")。
 ]
 
 #chapter-route[

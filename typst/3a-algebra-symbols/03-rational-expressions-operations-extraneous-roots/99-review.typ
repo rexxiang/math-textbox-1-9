@@ -63,7 +63,7 @@
   - 回看 #secref("pf04-fraction-equivalence")：分式基本性质其实就是分数基本性质——把“数字”换成“整式”而已。
   - 回看 #secref("pf04-fraction-arithmetic")：通分、加减、乘除的套路同源。
   - 回看 #secref("al02-factorization-as-reverse")：本章所有约分、通分的关键前置，都是“能不能把分子分母再因式分解”。
-  - 回看 #secref("cb05-solving-linear")：解分式方程先把它化回整式方程再套这一节的解法。
+  - 回看 #secref("cb06-solving-linear")：解分式方程先把它化回整式方程再套这一节的解法。
   - 衔接 #secref("ch:polynomials-like-terms-operations")：分子分母的所有运算都要依赖那里的整式加减乘法。
 
   *☞ 高中桥*

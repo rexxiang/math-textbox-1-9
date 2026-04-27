@@ -14,8 +14,8 @@
     [加减与乘除互为撤销], [#secref("pf02-add-subtract-undo")、#secref("pf02-mul-div-structure")],
     [分数、小数、百分数三合一], [#secref("pf04-fraction-arithmetic")、#secref("pf05-decimals-conversion")、#secref("cb01-percent")],
     [数轴 + 负数 + 相反数 / 绝对值], [#secref("cb02-number-line-extends-left")、#secref("cb02-opposite-and-absolute")],
-    [字母代替数、合并同类项、关系模板], [#secref("cb04-letters-represent-numbers")、#secref("cb04-expressions-and-like-terms")、#secref("cb04-relationship-templates")],
-    [方程的意义、等式性质、反向操作解一元一次方程], [#secref("cb05-equation-as-balance")、#secref("cb05-equality-properties")、#secref("cb05-solving-linear")],
+    [字母代替数、合并同类项、关系模板], [#secref("cb05-letters-represent-numbers")、#secref("cb05-expressions-and-like-terms")、#secref("cb05-relationship-templates")],
+    [方程的意义、等式性质、反向操作解一元一次方程], [#secref("cb06-equation-as-balance")、#secref("cb06-equality-properties")、#secref("cb06-solving-linear")],
     [比例与百分数的应用题设置], [#secref("cb01-ratio-basics")、#secref("cb01-proportion")、#secref("cb01-percent")],
   )
 ]
@@ -38,11 +38,11 @@
     inset: 6pt,
     stroke: 0.4pt,
     [*卡在哪一类题*], [*忘了可以回到*],
-    [写不出“某数的 $k$ 倍加 $b$”这种代数式], [#secref("cb04-letters-represent-numbers")],
-    [代数式化简老是出错], [#secref("cb04-expressions-and-like-terms")],
-    [列应用题找不到关系], [#secref("cb04-relationship-templates")、#secref("cb01-ratio-basics")],
-    [不会从等式性质推出解的步骤], [#secref("cb05-equality-properties")],
-    [解方程前几步没问题，最后系数约分算错], [#secref("cb05-solving-linear")、#secref("pf04-fraction-arithmetic")],
+    [写不出“某数的 $k$ 倍加 $b$”这种代数式], [#secref("cb05-letters-represent-numbers")],
+    [代数式化简老是出错], [#secref("cb05-expressions-and-like-terms")],
+    [列应用题找不到关系], [#secref("cb05-relationship-templates")、#secref("cb01-ratio-basics")],
+    [不会从等式性质推出解的步骤], [#secref("cb06-equality-properties")],
+    [解方程前几步没问题，最后系数约分算错], [#secref("cb06-solving-linear")、#secref("pf04-fraction-arithmetic")],
     [负号处理常出错], [#secref("cb02-number-line-extends-left")、#secref("cb02-opposite-and-absolute")],
   )
 ]

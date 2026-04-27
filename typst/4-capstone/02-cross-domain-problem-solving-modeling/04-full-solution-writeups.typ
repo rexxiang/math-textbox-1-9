@@ -23,7 +23,7 @@
 
   设原乙车间人数为 $y$ 人，则原甲车间人数为 $36 - y$ 人。
 
-  由题意：$(36 - y) + 2 = 2 (y - 2)$（#secref("al04-modeling-word-problems")、#secref("cb05-equation-as-balance")）。
+  由题意：$(36 - y) + 2 = 2 (y - 2)$（#secref("al04-modeling-word-problems")、#secref("cb06-equation-as-balance")）。
 
   化简：$38 - y = 2 y - 4 => 3 y = 42 => y = 14$。
 

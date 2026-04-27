@@ -85,7 +85,7 @@
 
   + 哪两条是直角边？哪一条是斜边？
   + 需要求哪条？如果求斜边，用 $c = sqrt(a^2 + b^2)$；如果求某条直角边，用 $a = sqrt(c^2 - b^2)$（必须 $c > b$）。
-  + 如果结果含根号，记得先看能不能化简（$sqrt(8) = 2 sqrt(2)$、$sqrt(12) = 2 sqrt(3)$……回到 #secref("cb06-square-and-square-root")）。
+  + 如果结果含根号，记得先看能不能化简（$sqrt(8) = 2 sqrt(2)$、$sqrt(12) = 2 sqrt(3)$……回到 #secref("cb07-square-and-square-root")）。
 ]
 
 #tryit[

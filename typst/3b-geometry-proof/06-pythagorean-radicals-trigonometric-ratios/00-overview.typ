@@ -7,9 +7,9 @@
 #chapter-nav[
   *难度*：★★★★★ \
   *核心问题*：直角三角形的三条边到底有什么“能算”的规律？边长必须是整数吗——$sqrt(2)$、$sqrt(3)$ 这类无理长度从哪冒出来？对于 $30 degree$、$45 degree$、$60 degree$ 这几个“常用角”，要不要每次都重算？ \
-  *需要先会*：#secref("pf07-perimeter-area")、#secref("pf08-triangles-angle-sum")、#secref("ge01-sss-sas")、#secref("ge02-similarity-aa-ratio")、#secref("ge03-circle-basics-inscribed")、#secref("cb06-square-and-square-root")。 \
+  *需要先会*：#secref("pf07-perimeter-area")、#secref("pf08-triangles-angle-sum")、#secref("ge01-sss-sas")、#secref("ge02-similarity-aa-ratio")、#secref("ge03-circle-basics-inscribed")、#secref("cb07-square-and-square-root")。 \
   *本章在全书的位置*：几何分支第 $6$ 章——把“直角 + 相似”落成一条可计算的边长公式（勾股定理），再把它定格到两族*特殊直角三角形*上，得出 $30 degree$/$45 degree$/$60 degree$ 的三角比。 \
-  *忘了可以回到*：平方根与根式化简请回 #secref("cb06-square-and-square-root")；相似判定请回 #secref("ge02-similarity-aa-ratio")。
+  *忘了可以回到*：平方根与根式化简请回 #secref("cb07-square-and-square-root")；相似判定请回 #secref("ge02-similarity-aa-ratio")。
 ]
 
 #chapter-route[

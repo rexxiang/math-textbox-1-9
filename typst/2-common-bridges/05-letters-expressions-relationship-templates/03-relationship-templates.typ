@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
-=== 关系模板：把常见情景写成能反复套用的公式 <tool:cb04-relationship-templates>
+=== 关系模板：把常见情景写成能反复套用的公式 <tool:cb05-relationship-templates>
 
 #vocab[公式 formula][周长模板][面积模板][距离—速度—时间]
 

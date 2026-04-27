@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
-=== 把无理数放回数轴：$RR$ 的完整性 <tool:cb06-real-number-line>
+=== 把无理数放回数轴：$RR$ 的完整性 <tool:cb07-real-number-line>
 
 #vocab[实数 $RR$][连续 continuous][完备 complete]
 

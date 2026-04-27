@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
-=== 字母代替数：规则代替一次计算 <tool:cb04-letters-represent-numbers>
+=== 字母代替数：规则代替一次计算 <tool:cb05-letters-represent-numbers>
 
 #vocab[变量 variable][常量 constant][代数式 algebraic expression][系数 coefficient]
 
@@ -68,6 +68,23 @@
   - *变量*：可以代表不同数的字母；*常量*：固定不变的数。
   - *系数*：代数式中字母前面的数字部分；$-3 x$ 的系数是 $-3$，不是 $3$。
   - *代入求值*：把变量换成具体数，按运算顺序（#secref("pf02-order-laws")）计算。
+
+  #side-hack[
+    *字母在式子里其实有三种角色*——同样是 $x$，扮演的"工作"不一样：
+
+    #table(
+      columns: (auto, 1fr, 1fr),
+      inset: 6pt,
+      stroke: 0.4pt,
+      align: left,
+      [*角色*], [*意思*], [*典型场景*],
+      [*变量*], [可以取一组值，关心"如何随取值变化"], [$y = 6 x$ 中的 $x$（每个 $x$ 都对应一个 $y$）],
+      [*未知数*], [一个还不知道、需要解出来的具体值], [$3 x + 5 = 17$ 中的 $x$（解后得到唯一值 $4$）],
+      [*参数*], [题目里"暂时固定的常数"，不同题目里取值不同], [$y = k x$ 中的 $k$（先固定 $k$，再让 $x$ 变化）],
+    )
+
+    *记忆口诀*：变量在变，未知数等着被解出来，参数在题目里站岗不动。本章先用"变量"，#secref("ch:equation-balance-inverse-operations") 引入"未知数"，函数分支 #secref("ch:function-representations") 才用到"参数"。
+  ]
 
   #figure(
     cetz.canvas(length: 0.45cm, {

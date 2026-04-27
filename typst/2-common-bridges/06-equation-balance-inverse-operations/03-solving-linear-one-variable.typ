@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
-=== 反向操作解一元一次方程（简单系数）<tool:cb05-solving-linear>
+=== 反向操作解一元一次方程（简单系数）<tool:cb06-solving-linear>
 
 #vocab[反向操作 inverse operation][一元一次方程 linear equation in one variable]
 
@@ -64,7 +64,7 @@
 
   最后要养成“代回检验”的习惯：把 $x = 4$ 代回 $2 times 4 + 3 = 11$，成立。
 
-  如果两边各有一堆同类项，可以先在各自那一边合并（#secref("cb04-expressions-and-like-terms")），再开始反向操作；如果未知量同时出现在两边，可以先移项，把未知量挪到一边、常数挪到另一边。
+  如果两边各有一堆同类项，可以先在各自那一边合并（#secref("cb05-expressions-and-like-terms")），再开始反向操作；如果未知量同时出现在两边，可以先移项，把未知量挪到一边、常数挪到另一边。
 ]
 
 #side-hack[

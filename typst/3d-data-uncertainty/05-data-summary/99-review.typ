@@ -116,7 +116,7 @@
 
   + 某班 $40$ 人数学考试成绩的平均分为 $75$，后来发现有两人成绩录入错误——一个多记了 $8$ 分，一个少记了 $12$ 分。改正后的真实平均分是多少？（#secref("pf02-add-subtract-undo") + #secref("dt03-center-and-spread")）
   + 调查某社区 $200$ 户的月用电量，抽出 $50$ 户后发现平均用电 $180$ 度，据此估计全社区总用电量。这里的"总体"和"样本"分别是什么？估计结果可靠性取决于什么？（#secref("dt10-population-vs-sample")）
-  + 一个袋子里有红球 $x$ 个、白球 $6$ 个。随机摸一个球，红球的概率为 $2/5$。列方程求 $x$（#secref("cb05-equality-properties") + #secref("dt08-probability-language")）。
+  + 一个袋子里有红球 $x$ 个、白球 $6$ 个。随机摸一个球，红球的概率为 $2/5$。列方程求 $x$（#secref("cb06-equality-properties") + #secref("dt08-probability-language")）。
   + 某工厂每天抽检 $100$ 个零件，$10$ 天的不合格数分别为 $3, 5, 2, 4, 6, 3, 5, 4, 3, 5$。将不合格率按 $[0%, 2%), [2%, 4%), [4%, 6%), [6%, 8%)$ 分档做频率分布表，再估计"某一天不合格率 $< 4%$"的概率。（#secref("dt04-frequency-distributions") + #secref("dt08-probability-language") + #secref("dt12-estimation")） // 跨章回顾
   + 甲乙两位射手各射 $6$ 发，成绩（环）：甲 $8, 9, 9, 10, 9, 9$；乙 $6, 10, 7, 10, 8, 10$。分别求均值和方差，判断谁更稳定。若派一人参加团体赛（追求稳定），推荐谁？（#secref("dt03-center-and-spread") + #secref("dt06-variance")） // 跨章回顾
 ]

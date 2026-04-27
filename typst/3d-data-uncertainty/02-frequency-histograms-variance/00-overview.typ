@@ -10,7 +10,7 @@
   - 一份“$50$ 个身高”怎么整理成一张*结构清晰*的表？
   - 怎么用一张*条条紧贴*的图看出“密集在哪一档、稀疏在哪一档”？
   - 甲乙两班平均都 $85$ 分、极差也都是 $30$ 分——但甲班靠近中间、乙班分到两头，*极差分不出来*的时候，下一把尺子是什么？ \
-  *需要先会*：#secref("dt01-organizing-data")（条形图和它的局限）、#secref("dt03-center-and-spread")（平均数、极差）、#secref("cb01-ratio-basics")（比例 / 百分比作为“频率”）、#secref("cb04-expressions-and-like-terms")（代数式运算）、#secref("cb06-square-and-square-root")（平方与开方）。 \
+  *需要先会*：#secref("dt01-organizing-data")（条形图和它的局限）、#secref("dt03-center-and-spread")（平均数、极差）、#secref("cb01-ratio-basics")（比例 / 百分比作为“频率”）、#secref("cb05-expressions-and-like-terms")（代数式运算）、#secref("cb07-square-and-square-root")（平方与开方）。 \
   *本章在全书的位置*：数据分支*基础进阶*。第 $1$ 章发明了“整理 + center + spread”最朴素的一版；本章在*整理*环节加入*频率分布表*和*直方图*（适合大样本 & 连续量），在*spread*环节加入*方差 / 标准差*（比极差信息密度高一层）。 \
   *忘了可以回到*：百分比基本功不稳 $->$ #secref("cb01-percent")；对 center 与 spread 的作用搞混 $->$ #secref("dt03-center-and-spread")。
 ]

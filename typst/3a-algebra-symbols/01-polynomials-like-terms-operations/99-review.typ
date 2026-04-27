@@ -35,7 +35,7 @@
   // 跨章回顾
   + 把分数 $3/4$ 和 $5/6$ 的运算规则（通分后相加）类比到多项式 $(3x + 1)/(4)$ 和 $(x - 2)/(6)$ 的加法，写出通分后的结果。
   // 跨章回顾
-  + 利用等式性质（#secref("cb05-equality-properties")），从 $2x + 3 = 11$ 出发，逐步解出 $x$，并指出每一步用了哪条等式性质。
+  + 利用等式性质（#secref("cb06-equality-properties")），从 $2x + 3 = 11$ 出发，逐步解出 $x$，并指出每一步用了哪条等式性质。
 
   *参考答案*
 
@@ -57,8 +57,8 @@
   *巩固复习*
 
   - 回看 #secref("pf02-order-laws")：分配律是所有整式乘法的根。
-  - 回看 #secref("cb04-expressions-and-like-terms")：前面给“项/同类项”搭好了骨架，本章只是把骨架压实。
-  - 回看 #secref("cb05-equality-properties")：当整式出现在方程里，两边同时整理必须守住等式平衡。
+  - 回看 #secref("cb05-expressions-and-like-terms")：前面给“项/同类项”搭好了骨架，本章只是把骨架压实。
+  - 回看 #secref("cb06-equality-properties")：当整式出现在方程里，两边同时整理必须守住等式平衡。
   - 衔接 #secref("ch:distributive-identities-factorization")：本章的乘法展开正是下一章“公式 $+$ 因式分解”的原料。
 
   *☞ 高中桥*

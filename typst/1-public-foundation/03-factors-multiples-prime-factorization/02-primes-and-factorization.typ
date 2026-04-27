@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 质数、合数与质因数分解 <tool:pf03-primes-factorization>
@@ -142,6 +142,18 @@
   )
 
   - *质因数分解*：把一个合数写成若干质数相乘的形式。
+]
+
+#blueprint[
+  *算术基本定理（mini blueprint）*
+
+  每一个大于 $1$ 的整数，都可以写成若干质数相乘；不计因子的写法顺序，这种分解*只有一种*。例如 $12 = 2 times 2 times 3$；调换顺序写成 $3 times 2 times 2$ 也是同一种分解。
+
+  *换种说法*：质数就是整数的"砖块"，每个合数都对应一份独一无二的"成分表"。
+
+  *为什么"$1$ 不算质数"在这里至关重要*：若把 $1$ 也算质数，那 $6 = 2 times 3 = 1 times 2 times 3 = 1 times 1 times 2 times 3 = ...$ 写法将无穷多，"唯一"就破了。
+
+  *后面会用到*：求最大公因数与最小公倍数（#secref("pf03-gcd-lcm")）；分式约分（#secref("ch:rational-expressions-operations-extraneous-roots")）。
 ]
 
 #pitfall[

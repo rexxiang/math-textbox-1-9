@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
-=== 等式性质：保持天平平衡 <tool:cb05-equality-properties>
+=== 等式性质：保持天平平衡 <tool:cb06-equality-properties>
 
 #vocab[等式性质 properties of equality][同加同减][同乘同除]
 
@@ -121,7 +121,7 @@
     - 两边同乘同一个数：$a c = b c$；
     - 两边同除同一个非零数：$a / c = b / c$（$c != 0$）。
   - *推论：移项变号*。把等式一边的某项移到另一边时，符号相反。
-  - *合法变形集合*：加减乘除同一个数 $+$ 在等式两侧各自合并同类项（#secref("cb04-expressions-and-like-terms")）。其他“化简”都必须可以归约到这几条。
+  - *合法变形集合*：加减乘除同一个数 $+$ 在等式两侧各自合并同类项（#secref("cb05-expressions-and-like-terms")）。其他“化简”都必须可以归约到这几条。
 ]
 
 #pitfall[

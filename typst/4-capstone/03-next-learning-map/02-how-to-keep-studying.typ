@@ -50,8 +50,8 @@
 
   数学的难度不是线性攀升，而是*台阶式*——每一个台阶往往对应*一种新的抽象*：
 
-  - 从数到字母（#secref("cb04-letters-represent-numbers")）。
-  - 从字母到方程（#secref("cb05-equation-as-balance")）。
+  - 从数到字母（#secref("cb05-letters-represent-numbers")）。
+  - 从字母到方程（#secref("cb06-equation-as-balance")）。
   - 从方程到函数（#secref("fn03-formula-as-function-view")）。
   - 从函数到变化率与积累（高中的导数与积分）。
 

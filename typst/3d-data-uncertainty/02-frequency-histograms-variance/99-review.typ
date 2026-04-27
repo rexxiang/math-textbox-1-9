@@ -75,8 +75,8 @@
   - #secref("dt01-organizing-data")、#secref("dt02-charts-and-readings")：条形图 vs. 直方图的分界在“横轴连续不连续”。
   - #secref("dt03-center-and-spread")：本章 spread 从极差升级到方差；$s$ 取代极差成为正式报告用量。
   - #secref("cb01-ratio-basics")、#secref("cb01-percent")：频率本身就是占比——$p_k$ 可以用小数也可以用百分比读。
-  - #secref("cb04-expressions-and-like-terms")：方差公式是“一堆偏差平方的平均”——本质是带 $sum$ 的代数式。
-  - #secref("cb06-square-and-square-root")：$s = sqrt(s^2)$——用开方把方差的平方单位还原。
+  - #secref("cb05-expressions-and-like-terms")：方差公式是“一堆偏差平方的平均”——本质是带 $sum$ 的代数式。
+  - #secref("cb07-square-and-square-root")：$s = sqrt(s^2)$——用开方把方差的平方单位还原。
   - 下一章预告：从“整理已经发生的数据”转到“预测还没发生的结果”——样本空间、概率、实验频率。
 ]
 

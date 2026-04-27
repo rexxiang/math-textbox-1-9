@@ -7,9 +7,9 @@
 #chapter-nav[
   *难度*：★★★☆☆ \
   *核心问题*：一条“含字母的等式”到底是什么？怎样一步步把那个字母“请出来”？ \
-  *需要先会*：#secref("pf02-order-laws")、#secref("pf02-add-subtract-undo")、#secref("cb04-letters-represent-numbers")、#secref("cb02-opposite-and-absolute")。 \
+  *需要先会*：#secref("pf02-order-laws")、#secref("pf02-add-subtract-undo")、#secref("cb05-letters-represent-numbers")、#secref("cb02-opposite-and-absolute")。 \
   *本章在全书的位置*：共通桥梁 / 从“代数式”走到“方程”：让字母变成待解的未知量。 \
-  *忘了可以回到*：若“字母代替数”还不顺，回 #secref("cb04-letters-represent-numbers")。
+  *忘了可以回到*：若“字母代替数”还不顺，回 #secref("cb05-letters-represent-numbers")。
 ]
 
 #chapter-route[

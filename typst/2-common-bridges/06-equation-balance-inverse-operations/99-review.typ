@@ -31,7 +31,7 @@
   + 若 $x = -3$ 是方程 $2 x + m = 5$ 的解，求 $m$。
   + 在等式 $a = b + 5$ 两边同时乘 $2$，再同时减 $7$，最终结果是什么？
   // 跨章回顾
-  + 一块长方形菜地的长是宽的 $2$ 倍，周长是 $36$ 米。列方程求长和宽。（回顾关系模板 #secref("cb04-relationship-templates")）
+  + 一块长方形菜地的长是宽的 $2$ 倍，周长是 $36$ 米。列方程求长和宽。（回顾关系模板 #secref("cb05-relationship-templates")）
   // 跨章回顾
   + 甲乙两人从同一点出发，甲向东走 $x$ 米、乙向西走 $2x - 5$ 米后，两人相距 $31$ 米。列方程求 $x$，并在数轴上标出两人的位置。（回顾数轴与负数 #secref("cb02-number-line-extends-left")）
 
@@ -56,7 +56,7 @@
 
   - 回看 #secref("pf02-order-laws")：等式性质是运算律的“在等式中”的再表述。
   - 回看 #secref("pf02-add-subtract-undo")：加减互为撤销，正是“反向操作”的直观原型。
-  - 回看 #secref("cb04-letters-represent-numbers")：字母代替数的约定，让方程这种写法成为可能。
+  - 回看 #secref("cb05-letters-represent-numbers")：字母代替数的约定，让方程这种写法成为可能。
 
   *☞ 高中桥*
 

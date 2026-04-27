@@ -13,10 +13,10 @@
     [点、线、平面、基本图形与图形关系], [#secref("pf06-points-and-planes")、#secref("pf06-lines-rays-segments")、#secref("pf06-polygons-and-circle")、#secref("pf06-shape-relations")],
     [周长、面积、体积的度量语言], [#secref("pf07-perimeter-area")、#secref("pf07-volume")],
     [角、平行线与横截线、三角形内角和], [#secref("pf07-angles")、#secref("pf08-parallel-transversal")、#secref("pf08-triangles-angle-sum")],
-    [坐标与位置、四象限、平移与对称], [#secref("pf08-coordinate-intuition")、#secref("cb03-rectangular-system")、#secref("cb03-quadrants")、#secref("cb03-plotting-transforming")],
+    [坐标与位置、四象限、平移与对称], [#secref("pf08-coordinate-intuition")、#secref("cb04-rectangular-system")、#secref("cb04-quadrants")、#secref("cb04-plotting-transforming")],
     [比、比例（为相似打基础）], [#secref("cb01-ratio-basics")、#secref("cb01-proportion")],
-    [平方、平方根、勾股式结果读法], [#secref("cb06-square-and-square-root")、#secref("cb06-real-number-line")],
-    [等式性质（用于设未知量 + 列方程）], [#secref("cb05-equality-properties")],
+    [平方、平方根、勾股式结果读法], [#secref("cb07-square-and-square-root")、#secref("cb07-real-number-line")],
+    [等式性质（用于设未知量 + 列方程）], [#secref("cb06-equality-properties")],
   )
 ]
 
@@ -40,10 +40,10 @@
     [*卡在哪一类题*], [*忘了可以回到*],
     [辨角类型错], [#secref("pf08-parallel-transversal")],
     [三角形内角和算错], [#secref("pf08-triangles-angle-sum")],
-    [坐标读写 / 平移方向错], [#secref("cb03-rectangular-system")、#secref("cb03-plotting-transforming")],
+    [坐标读写 / 平移方向错], [#secref("cb04-rectangular-system")、#secref("cb04-plotting-transforming")],
     [不会判断哪段用比例], [#secref("cb01-ratio-basics")、#secref("cb01-proportion")],
     [面积 / 体积公式混用 / 漏单位], [#secref("pf07-perimeter-area")、#secref("pf07-volume")],
-    [平方根意义不清], [#secref("cb06-square-and-square-root")],
+    [平方根意义不清], [#secref("cb07-square-and-square-root")],
   )
 ]
 

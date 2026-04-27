@@ -6,7 +6,7 @@
 #vocab[去分母 clearing denominators][去括号 distribution][移项 transposition][合并同类项 combining like terms][系数化 1 normalizing leading coefficient]
 
 #crisis[
-  在桥梁章 #secref("cb05-solving-linear") 里，你已经能够稳稳地处理 $2 x + 3 = 11$ 这类题目。但一旦方程里同时出现括号、分母，并且未知量在两边同时出现，口算"倒推"就开始慌：
+  在桥梁章 #secref("cb06-solving-linear") 里，你已经能够稳稳地处理 $2 x + 3 = 11$ 这类题目。但一旦方程里同时出现括号、分母，并且未知量在两边同时出现，口算"倒推"就开始慌：
 
   $ frac(x - 1, 2) - frac(x + 3, 6) = 1 $
 
@@ -22,7 +22,7 @@
 
   $ a x + b = c quad (a != 0), $
 
-  通解是 $x = (c - b) / a$。但现实里的方程不会这么干净——括号、分母、两边混合是常态。所以我们把“解”拆成五个动作，每一步都可以用桥梁章 #secref("cb05-equality-properties") 的等式性质解释它为什么*不会破坏平衡*。
+  通解是 $x = (c - b) / a$。但现实里的方程不会这么干净——括号、分母、两边混合是常态。所以我们把“解”拆成五个动作，每一步都可以用桥梁章 #secref("cb06-equality-properties") 的等式性质解释它为什么*不会破坏平衡*。
 
   #table(
     columns: (0.5fr, 1.2fr, 1.3fr),

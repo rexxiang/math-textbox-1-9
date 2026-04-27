@@ -58,8 +58,8 @@
 #blueprint[
   *巩固复习*
 
-  - 回看 #secref("cb05-equality-properties")：五步流程中每一个“同加 / 同减 / 同乘 / 同除”都对应桥上的一条等式性质。
-  - 回看 #secref("cb05-solving-linear")：本章是“桥上简单系数方程”的扩展——多了分母、括号、两边未知量与退化情形。
+  - 回看 #secref("cb06-equality-properties")：五步流程中每一个“同加 / 同减 / 同乘 / 同除”都对应桥上的一条等式性质。
+  - 回看 #secref("cb06-solving-linear")：本章是“桥上简单系数方程”的扩展——多了分母、括号、两边未知量与退化情形。
   - 回看 #secref("al01-add-subtract-polynomials")：合并同类项的功夫在这里直接复用。
   - 衔接 #secref("al03-rational-equations-and-extraneous-roots")：分式方程在五步的基础上再加“验根”一步，注意和本章的“代回检验”是两件事。
   - 衔接 #secref("ch:quadratic-equations")：一元二次方程的解法是本章五步的升级（去分母/去括号仍在用），只是求解那一步换成配方或求根公式。

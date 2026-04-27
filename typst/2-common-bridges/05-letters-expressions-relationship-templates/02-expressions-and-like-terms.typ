@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
-=== 代数式与合并同类项 <tool:cb04-expressions-and-like-terms>
+=== 代数式与合并同类项 <tool:cb05-expressions-and-like-terms>
 
 #vocab[项 term][同类项 like terms][合并同类项 combining like terms]
 

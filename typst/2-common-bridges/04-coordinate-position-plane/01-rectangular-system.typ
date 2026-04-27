@@ -1,7 +1,7 @@
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
-=== 平面直角坐标系：给每个点发身份证 <tool:cb03-rectangular-system>
+=== 平面直角坐标系：给每个点发身份证 <tool:cb04-rectangular-system>
 
 #vocab[平面直角坐标系 rectangular coordinate system][$x$ 轴][$y$ 轴][原点][有序数对]
 

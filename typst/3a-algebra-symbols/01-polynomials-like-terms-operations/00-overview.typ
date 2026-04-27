@@ -7,9 +7,9 @@ $3$ 个苹果加 $2$ 个苹果，当然是 $5$ 个苹果。但 $3$ 个苹果加 
 #chapter-nav[
   *难度*：★★★★☆ \
   *核心问题*：当一整块“含字母的式子”要被当作“整数的升级版”来加减、乘开、整理时，我们需要哪些明确的规则？ \
-  *需要先会*：#secref("pf02-order-laws")、#secref("cb04-letters-represent-numbers")、#secref("cb04-expressions-and-like-terms")、#secref("cb05-equality-properties")。 \
+  *需要先会*：#secref("pf02-order-laws")、#secref("cb05-letters-represent-numbers")、#secref("cb05-expressions-and-like-terms")、#secref("cb06-equality-properties")。 \
   *本章在全书的位置*：代数分支第一章——把桥梁里学过的“字母代替数”正式升级为“可运算的整式”。 \
-  *忘了可以回到*：如果“项”“同类项”还不稳，请回到 #secref("cb04-expressions-and-like-terms") 打底；若分配律不熟，回 #secref("pf02-order-laws")。
+  *忘了可以回到*：如果“项”“同类项”还不稳，请回到 #secref("cb05-expressions-and-like-terms") 打底；若分配律不熟，回 #secref("pf02-order-laws")。
 ]
 
 #chapter-route[

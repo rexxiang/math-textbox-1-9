@@ -10,12 +10,12 @@
     inset: 6pt,
     stroke: 0.4pt,
     [*工具*], [*出处*],
-    [代数式、代入求值、关系模板], [#secref("cb04-letters-represent-numbers")、#secref("cb04-relationship-templates")],
+    [代数式、代入求值、关系模板], [#secref("cb05-letters-represent-numbers")、#secref("cb05-relationship-templates")],
     [比、比例、百分数（正比例思想的来源）], [#secref("cb01-ratio-basics")、#secref("cb01-proportion")、#secref("cb01-percent")],
     [数轴、负数、有理数], [#secref("cb02-number-line-extends-left")、#secref("cb02-rational-numbers")],
-    [平面直角坐标系与四象限、描点读点、平移对称], [#secref("cb03-rectangular-system")、#secref("cb03-quadrants")、#secref("cb03-plotting-transforming")],
-    [方程意义与反向操作解法], [#secref("cb05-equation-as-balance")、#secref("cb05-solving-linear")],
-    [平方、平方根、实数直觉（为二次函数打地基）], [#secref("cb06-square-and-square-root")、#secref("cb06-real-number-line")],
+    [平面直角坐标系与四象限、描点读点、平移对称], [#secref("cb04-rectangular-system")、#secref("cb04-quadrants")、#secref("cb04-plotting-transforming")],
+    [方程意义与反向操作解法], [#secref("cb06-equation-as-balance")、#secref("cb06-solving-linear")],
+    [平方、平方根、实数直觉（为二次函数打地基）], [#secref("cb07-square-and-square-root")、#secref("cb07-real-number-line")],
   )
 ]
 
@@ -37,12 +37,12 @@
     inset: 6pt,
     stroke: 0.4pt,
     [*卡在哪一类题*], [*忘了可以回到*],
-    [不会把生活情景写成代数式], [#secref("cb04-letters-represent-numbers")、#secref("cb04-relationship-templates")],
-    [描点老是坐标颠倒 / 判错象限], [#secref("cb03-rectangular-system")、#secref("cb03-quadrants")],
+    [不会把生活情景写成代数式], [#secref("cb05-letters-represent-numbers")、#secref("cb05-relationship-templates")],
+    [描点老是坐标颠倒 / 判错象限], [#secref("cb04-rectangular-system")、#secref("cb04-quadrants")],
     [同向 / 反向比例判错], [#secref("cb01-proportion")],
-    [代入求值时符号错], [#secref("cb02-opposite-and-absolute")、#secref("cb04-letters-represent-numbers")],
-    [读不出 $f(x) = c$ 是方程], [#secref("cb05-equation-as-balance")、#secref("cb05-solving-linear")],
-    [平方根表达式算不稳], [#secref("cb06-square-and-square-root")],
+    [代入求值时符号错], [#secref("cb02-opposite-and-absolute")、#secref("cb05-letters-represent-numbers")],
+    [读不出 $f(x) = c$ 是方程], [#secref("cb06-equation-as-balance")、#secref("cb06-solving-linear")],
+    [平方根表达式算不稳], [#secref("cb07-square-and-square-root")],
   )
 ]
 

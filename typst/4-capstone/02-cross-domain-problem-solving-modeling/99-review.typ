@@ -26,7 +26,7 @@
   - 几何：#secref("ge04-pythagorean")、#secref("ge04-special-right-triangles")。
   - 函数：#secref("fn05-linear-function")、#secref("fn06-slope-as-rate")、#secref("fn08-quadratic-function")、#secref("fn11-model-choice")。
   - 数据 / 概率：#secref("dt04-frequency-distributions")、#secref("dt07-sample-spaces")、#secref("dt08-probability-language")、#secref("dt09-experimental-frequency")。
-  - 地基：#secref("cb04-letters-represent-numbers")、#secref("cb05-equation-as-balance")、#secref("cb06-square-and-square-root")、#secref("pf07-perimeter-area")、#secref("pf04-fraction-arithmetic")。
+  - 地基：#secref("cb05-letters-represent-numbers")、#secref("cb06-equation-as-balance")、#secref("cb07-square-and-square-root")、#secref("pf07-perimeter-area")、#secref("pf04-fraction-arithmetic")。
 ]
 
 #blueprint[
@@ -36,7 +36,7 @@
   + 一个等腰三角形的底边长 $10$ cm，腰长 $13$ cm。
     - (a) 求底边上的高（#secref("ge04-pythagorean")）。
     - (b) 求三角形面积（#secref("pf07-perimeter-area")）。
-    - (c) 以底边中点为原点、底边所在直线为 $x$ 轴建立坐标系，写出三个顶点的坐标（#secref("cb03-rectangular-system")）。
+    - (c) 以底边中点为原点、底边所在直线为 $x$ 轴建立坐标系，写出三个顶点的坐标（#secref("cb04-rectangular-system")）。
     - (d) 用两点距离公式验证两腰确实相等。
 
   // 跨章回顾

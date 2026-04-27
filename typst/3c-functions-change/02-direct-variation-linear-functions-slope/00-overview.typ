@@ -7,9 +7,9 @@
 #chapter-nav[
   *难度*：★★★★☆ \
   *核心问题*：生活里最常见的变化是“每加 $1$ 单位输入，输出就加固定量”——这类关系到底长什么样的公式、什么样的图像、什么样的数据表？怎样把这条“每单位变化”抽象为*斜率*这个数？一条直线的公式、两点、图、表四者之间如何互相翻译？ \
-  *需要先会*：#secref("cb01-ratio-basics")、#secref("cb01-proportion")（比与比例）、#secref("cb03-rectangular-system")（坐标平面）、#secref("cb04-expressions-and-like-terms")（代数式）、#secref("cb05-solving-linear")（一次方程）、#secref("fn03-formula-as-function-view")（函数公式与定义域）。 \
+  *需要先会*：#secref("cb01-ratio-basics")、#secref("cb01-proportion")（比与比例）、#secref("cb04-rectangular-system")（坐标平面）、#secref("cb05-expressions-and-like-terms")（代数式）、#secref("cb06-solving-linear")（一次方程）、#secref("fn03-formula-as-function-view")（函数公式与定义域）。 \
   *本章在全书的位置*：函数分支*第一类具体函数族*——正比例 $y = k x$ 是最朴素的版本，一次函数 $y = k x + b$ 加上常数项起点，*斜率*则把这两家公式里控制“陡度”的那个数严格定义为“每加 $1$ 单位 $x$，$y$ 变化量”。 \
-  *忘了可以回到*：比与比例卡住 $->$ #secref("cb01-ratio-basics")；画点、读图卡住 $->$ #secref("cb03-plotting-transforming")；把 $y = k x + b$ 解出 $x$ 卡住 $->$ #secref("cb05-solving-linear")。
+  *忘了可以回到*：比与比例卡住 $->$ #secref("cb01-ratio-basics")；画点、读图卡住 $->$ #secref("cb04-plotting-transforming")；把 $y = k x + b$ 解出 $x$ 卡住 $->$ #secref("cb06-solving-linear")。
 ]
 
 #chapter-route[
@@ -22,7 +22,7 @@
 
   - 第 3 章：反比例 $y = k / x$（不再是直线）与二次 $y = a x^2 + b x + c$（抛物线）。它们的图像都不是直线——和本章的“直线一族”形成显著对比。
   - 第 4 章：把“每加 $1$ 单位加同一个数”（加法增长 $=$ 线性）与“每加 $1$ 单位乘同一个数”（乘法增长）并列，看谁长期跑得快。
-  - 代数分支：用 #secref("cb05-solving-linear") 解 $k x + b = 0$ 就是求*一次函数的零点*。
+  - 代数分支：用 #secref("cb06-solving-linear") 解 $k x + b = 0$ 就是求*一次函数的零点*。
   - 几何分支：一次函数图像的斜率 $k$ 与倾斜角 $alpha$ 之间有 $k = tan alpha$ 的关系——高中阶段会用到。
 ]
 

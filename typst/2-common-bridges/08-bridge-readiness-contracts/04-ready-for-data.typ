@@ -13,9 +13,9 @@
     [四则运算、运算律、分数 / 小数互化], [#secref("pf02-order-laws")、#secref("pf04-fraction-arithmetic")、#secref("pf05-decimals-conversion")],
     [比、比例、百分数（频率、比率的基础）], [#secref("cb01-ratio-basics")、#secref("cb01-proportion")、#secref("cb01-percent")],
     [数轴与正负号（处理偏差值）], [#secref("cb02-number-line-extends-left")、#secref("cb02-opposite-and-absolute")],
-    [平面直角坐标系（画散点图、折线图）], [#secref("cb03-rectangular-system")、#secref("cb03-plotting-transforming")],
-    [用字母表示数、代数式求值（写均值公式）], [#secref("cb04-letters-represent-numbers")、#secref("cb04-expressions-and-like-terms")],
-    [估算与合理性检查], [#secref("pf05-estimation-reasonableness")、#secref("cb06-real-number-line")],
+    [平面直角坐标系（画散点图、折线图）], [#secref("cb04-rectangular-system")、#secref("cb04-plotting-transforming")],
+    [用字母表示数、代数式求值（写均值公式）], [#secref("cb05-letters-represent-numbers")、#secref("cb05-expressions-and-like-terms")],
+    [估算与合理性检查], [#secref("pf05-estimation-reasonableness")、#secref("cb07-real-number-line")],
   )
 ]
 
@@ -38,8 +38,8 @@
     stroke: 0.4pt,
     [*卡在哪一类题*], [*忘了可以回到*],
     [比 / 频率 / 百分比之间译不过来], [#secref("cb01-ratio-basics")、#secref("cb01-percent")],
-    [读散点图 / 折线图老失误], [#secref("cb03-rectangular-system")、#secref("cb03-plotting-transforming")],
-    [写不出“均值 $=$ 总和 $div$ 个数”代数式], [#secref("cb04-letters-represent-numbers")、#secref("cb04-relationship-templates")],
+    [读散点图 / 折线图老失误], [#secref("cb04-rectangular-system")、#secref("cb04-plotting-transforming")],
+    [写不出“均值 $=$ 总和 $div$ 个数”代数式], [#secref("cb05-letters-represent-numbers")、#secref("cb05-relationship-templates")],
     [负数偏差算错绝对值], [#secref("cb02-opposite-and-absolute")],
     [小数 / 分数互化不稳], [#secref("pf04-fraction-arithmetic")、#secref("pf05-decimals-conversion")],
   )

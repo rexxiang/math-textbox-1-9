@@ -15,7 +15,7 @@
     [把乘法展开和因式分解当作两件独立的事], [分配律是一条双向公路], [#secref("al02-distributive-rewrite")、#secref("al02-factorization-as-reverse")],
     [分式约分后忘了保留“分母不为零”的限制], [分式的有意义条件], [#secref("al03-rational-expression-structure")],
     [解分式方程不验根], [“去分母扩大定义域”这件事没内化], [#secref("al03-rational-equations-and-extraneous-roots")],
-    [解一次方程时移项不变号 / 系数化 1 漏除一项], [等式性质与五步流程], [#secref("al04-linear-one-variable")、#secref("cb05-equality-properties")],
+    [解一次方程时移项不变号 / 系数化 1 漏除一项], [等式性质与五步流程], [#secref("al04-linear-one-variable")、#secref("cb06-equality-properties")],
     [建模时凭直觉套公式，不显式写“设元 + 等量关系”], [建模三步流程没内化], [#secref("al04-modeling-word-problems")],
     [解二次方程时开方漏写 $plus.minus$、或把 $b$ 的负号带错], [求根公式来自配方法 + 开方时的两个方向], [#secref("al05-quadratic-solving")],
     [用韦达定理却不先检查 $Delta >= 0$], [韦达的使用前提], [#secref("al05-vieta")],

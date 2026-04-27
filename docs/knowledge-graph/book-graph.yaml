@@ -152,11 +152,19 @@ chapters:
     difficulty: 3
     mainline: true
 
+  - id: ch:rational-arithmetic
+    title_zh: 有理数四则运算
+    title_en: Rational Number Arithmetic
+    part: 2-common-bridges
+    path: typst/2-common-bridges/03-rational-arithmetic
+    difficulty: 3
+    mainline: true
+
   - id: ch:coordinate-position-plane
     title_zh: 坐标·位置·平面
     title_en: Coordinates, Position & Plane
     part: 2-common-bridges
-    path: typst/2-common-bridges/03-coordinate-position-plane
+    path: typst/2-common-bridges/04-coordinate-position-plane
     difficulty: 3
     mainline: true
 
@@ -164,7 +172,7 @@ chapters:
     title_zh: 字母·式子·关系模板
     title_en: Letters, Expressions & Relationship Templates
     part: 2-common-bridges
-    path: typst/2-common-bridges/04-letters-expressions-relationship-templates
+    path: typst/2-common-bridges/05-letters-expressions-relationship-templates
     difficulty: 3
     mainline: true
 
@@ -172,7 +180,7 @@ chapters:
     title_zh: 方程·平衡·逆运算
     title_en: Equations, Balance & Inverse Operations
     part: 2-common-bridges
-    path: typst/2-common-bridges/05-equation-balance-inverse-operations
+    path: typst/2-common-bridges/06-equation-balance-inverse-operations
     difficulty: 3
     mainline: true
 
@@ -180,7 +188,7 @@ chapters:
     title_zh: 平方根·无理数·数轴
     title_en: Square Roots, Irrationals & Number Line
     part: 2-common-bridges
-    path: typst/2-common-bridges/06-square-root-irrational-number-line
+    path: typst/2-common-bridges/07-square-root-irrational-number-line
     difficulty: 3
     mainline: true
 
@@ -188,7 +196,7 @@ chapters:
     title_zh: 桥梁就绪契约
     title_en: Bridge Readiness Contracts
     part: 2-common-bridges
-    path: typst/2-common-bridges/07-bridge-readiness-contracts
+    path: typst/2-common-bridges/08-bridge-readiness-contracts
     difficulty: 4
     mainline: true
 
@@ -605,119 +613,139 @@ nodes:
     chapter: ch:number-line-negative-rational
     path: typst/2-common-bridges/02-number-line-negative-rational/03-rational-numbers-on-line.typ
     prerequisites: [cb02-opposite-and-absolute]
-  - id: cb03-rectangular-system
+  - id: cb03-rational-addition
+    type: knowledge-point
+    chapter: ch:rational-arithmetic
+    path: typst/2-common-bridges/03-rational-arithmetic/01-rational-addition.typ
+    prerequisites: [cb02-rational-numbers, cb02-opposite-and-absolute]
+  - id: cb03-rational-subtraction
+    type: knowledge-point
+    chapter: ch:rational-arithmetic
+    path: typst/2-common-bridges/03-rational-arithmetic/02-rational-subtraction.typ
+    prerequisites: [cb03-rational-addition]
+  - id: cb03-rational-multiplication-division
+    type: knowledge-point
+    chapter: ch:rational-arithmetic
+    path: typst/2-common-bridges/03-rational-arithmetic/03-rational-multiplication-division.typ
+    prerequisites: [cb03-rational-addition]
+  - id: cb03-rational-laws
+    type: knowledge-point
+    chapter: ch:rational-arithmetic
+    path: typst/2-common-bridges/03-rational-arithmetic/04-laws-revisited.typ
+    prerequisites: [cb03-rational-multiplication-division, cb03-rational-subtraction]
+  - id: cb04-rectangular-system
     type: knowledge-point
     chapter: ch:coordinate-position-plane
-    path: typst/2-common-bridges/03-coordinate-position-plane/01-rectangular-system.typ
+    path: typst/2-common-bridges/04-coordinate-position-plane/01-rectangular-system.typ
     prerequisites: [pf08-coordinate-intuition, pf07-angles, pf06-points-and-planes]
-  - id: cb03-quadrants
+  - id: cb04-quadrants
     type: knowledge-point
     chapter: ch:coordinate-position-plane
-    path: typst/2-common-bridges/03-coordinate-position-plane/02-quadrants.typ
-    prerequisites: [cb03-rectangular-system, cb02-number-line-extends-left]
-  - id: cb03-plotting-transforming
+    path: typst/2-common-bridges/04-coordinate-position-plane/02-quadrants.typ
+    prerequisites: [cb04-rectangular-system, cb02-number-line-extends-left]
+  - id: cb04-plotting-transforming
     type: knowledge-point
     chapter: ch:coordinate-position-plane
-    path: typst/2-common-bridges/03-coordinate-position-plane/03-plotting-and-transforming.typ
-    prerequisites: [cb03-quadrants]
-  - id: cb04-letters-represent-numbers
+    path: typst/2-common-bridges/04-coordinate-position-plane/03-plotting-and-transforming.typ
+    prerequisites: [cb04-quadrants]
+  - id: cb05-letters-represent-numbers
     type: knowledge-point
     chapter: ch:letters-expressions-relationship-templates
-    path: typst/2-common-bridges/04-letters-expressions-relationship-templates/01-letters-represent-numbers.typ
+    path: typst/2-common-bridges/05-letters-expressions-relationship-templates/01-letters-represent-numbers.typ
     prerequisites: [pf02-order-laws, pf02-mul-div-structure, pf02-add-subtract-undo, cb02-number-line-extends-left]
-  - id: cb04-expressions-and-like-terms
+  - id: cb05-expressions-and-like-terms
     type: knowledge-point
     chapter: ch:letters-expressions-relationship-templates
-    path: typst/2-common-bridges/04-letters-expressions-relationship-templates/02-expressions-and-like-terms.typ
-    prerequisites: [cb04-letters-represent-numbers]
-  - id: cb04-relationship-templates
+    path: typst/2-common-bridges/05-letters-expressions-relationship-templates/02-expressions-and-like-terms.typ
+    prerequisites: [cb05-letters-represent-numbers]
+  - id: cb05-relationship-templates
     type: knowledge-point
     chapter: ch:letters-expressions-relationship-templates
-    path: typst/2-common-bridges/04-letters-expressions-relationship-templates/03-relationship-templates.typ
-    prerequisites: [cb04-expressions-and-like-terms]
-  - id: cb05-equation-as-balance
+    path: typst/2-common-bridges/05-letters-expressions-relationship-templates/03-relationship-templates.typ
+    prerequisites: [cb05-expressions-and-like-terms]
+  - id: cb06-equation-as-balance
     type: knowledge-point
     chapter: ch:equation-balance-inverse-operations
-    path: typst/2-common-bridges/05-equation-balance-inverse-operations/01-equation-as-balance.typ
-    prerequisites: [pf02-order-laws, pf02-add-subtract-undo, cb04-letters-represent-numbers, cb02-opposite-and-absolute]
-  - id: cb05-equality-properties
+    path: typst/2-common-bridges/06-equation-balance-inverse-operations/01-equation-as-balance.typ
+    prerequisites: [pf02-order-laws, pf02-add-subtract-undo, cb05-letters-represent-numbers, cb02-opposite-and-absolute]
+  - id: cb06-equality-properties
     type: knowledge-point
     chapter: ch:equation-balance-inverse-operations
-    path: typst/2-common-bridges/05-equation-balance-inverse-operations/02-equality-properties.typ
-    prerequisites: [cb05-equation-as-balance]
-  - id: cb05-solving-linear
+    path: typst/2-common-bridges/06-equation-balance-inverse-operations/02-equality-properties.typ
+    prerequisites: [cb06-equation-as-balance]
+  - id: cb06-solving-linear
     type: knowledge-point
     chapter: ch:equation-balance-inverse-operations
-    path: typst/2-common-bridges/05-equation-balance-inverse-operations/03-solving-linear-one-variable.typ
-    prerequisites: [cb05-equality-properties]
-  - id: cb06-square-and-square-root
+    path: typst/2-common-bridges/06-equation-balance-inverse-operations/03-solving-linear-one-variable.typ
+    prerequisites: [cb06-equality-properties]
+  - id: cb07-square-and-square-root
     type: knowledge-point
     chapter: ch:square-root-irrational-number-line
-    path: typst/2-common-bridges/06-square-root-irrational-number-line/01-square-and-square-root.typ
+    path: typst/2-common-bridges/07-square-root-irrational-number-line/01-square-and-square-root.typ
     prerequisites: [pf07-perimeter-area, pf07-volume, cb02-rational-numbers, cb02-opposite-and-absolute]
-  - id: cb06-irrational-numbers
+  - id: cb07-irrational-numbers
     type: knowledge-point
     chapter: ch:square-root-irrational-number-line
-    path: typst/2-common-bridges/06-square-root-irrational-number-line/02-irrational-numbers-exist.typ
-    prerequisites: [cb06-square-and-square-root]
-  - id: cb06-real-number-line
+    path: typst/2-common-bridges/07-square-root-irrational-number-line/02-irrational-numbers-exist.typ
+    prerequisites: [cb07-square-and-square-root]
+  - id: cb07-real-number-line
     type: knowledge-point
     chapter: ch:square-root-irrational-number-line
-    path: typst/2-common-bridges/06-square-root-irrational-number-line/03-real-number-line.typ
-    prerequisites: [cb06-irrational-numbers]
+    path: typst/2-common-bridges/07-square-root-irrational-number-line/03-real-number-line.typ
+    prerequisites: [cb07-irrational-numbers]
   - id: meta-ready-for-algebra
     type: chapter-meta
     chapter: ch:bridge-readiness-contracts
-    path: typst/2-common-bridges/07-bridge-readiness-contracts/01-ready-for-algebra.typ
+    path: typst/2-common-bridges/08-bridge-readiness-contracts/01-ready-for-algebra.typ
     prerequisites:
       - cb01-percent
       - cb02-rational-numbers
-      - cb03-plotting-transforming
-      - cb04-relationship-templates
-      - cb05-solving-linear
-      - cb06-real-number-line
+      - cb04-plotting-transforming
+      - cb05-relationship-templates
+      - cb06-solving-linear
+      - cb07-real-number-line
   - id: meta-ready-for-geometry-proof
     type: chapter-meta
     chapter: ch:bridge-readiness-contracts
-    path: typst/2-common-bridges/07-bridge-readiness-contracts/02-ready-for-geometry-proof.typ
+    path: typst/2-common-bridges/08-bridge-readiness-contracts/02-ready-for-geometry-proof.typ
     prerequisites:
       - cb01-percent
       - cb02-rational-numbers
-      - cb03-plotting-transforming
-      - cb04-relationship-templates
-      - cb05-solving-linear
-      - cb06-real-number-line
+      - cb04-plotting-transforming
+      - cb05-relationship-templates
+      - cb06-solving-linear
+      - cb07-real-number-line
   - id: meta-ready-for-functions
     type: chapter-meta
     chapter: ch:bridge-readiness-contracts
-    path: typst/2-common-bridges/07-bridge-readiness-contracts/03-ready-for-functions.typ
+    path: typst/2-common-bridges/08-bridge-readiness-contracts/03-ready-for-functions.typ
     prerequisites:
       - cb01-percent
       - cb02-rational-numbers
-      - cb03-plotting-transforming
-      - cb04-relationship-templates
-      - cb05-solving-linear
-      - cb06-real-number-line
+      - cb04-plotting-transforming
+      - cb05-relationship-templates
+      - cb06-solving-linear
+      - cb07-real-number-line
   - id: meta-ready-for-data
     type: chapter-meta
     chapter: ch:bridge-readiness-contracts
-    path: typst/2-common-bridges/07-bridge-readiness-contracts/04-ready-for-data.typ
+    path: typst/2-common-bridges/08-bridge-readiness-contracts/04-ready-for-data.typ
     prerequisites:
       - cb01-percent
       - cb02-rational-numbers
-      - cb03-plotting-transforming
-      - cb04-relationship-templates
-      - cb05-solving-linear
-      - cb06-real-number-line
+      - cb04-plotting-transforming
+      - cb05-relationship-templates
+      - cb06-solving-linear
+      - cb07-real-number-line
   - id: al01-terms-like
     type: knowledge-point
     chapter: ch:polynomials-like-terms-operations
     path: typst/3a-algebra-symbols/01-polynomials-like-terms-operations/01-terms-coefficients-like-terms.typ
     prerequisites:
       - pf02-order-laws
-      - cb04-letters-represent-numbers
-      - cb04-expressions-and-like-terms
-      - cb05-equality-properties
+      - cb05-letters-represent-numbers
+      - cb05-expressions-and-like-terms
+      - cb06-equality-properties
   - id: al01-add-subtract-polynomials
     type: knowledge-point
     chapter: ch:polynomials-like-terms-operations
@@ -750,7 +778,7 @@ nodes:
     prerequisites:
       - pf04-fraction-equivalence
       - pf04-fraction-arithmetic
-      - cb05-solving-linear
+      - cb06-solving-linear
       - al02-factorization-as-reverse
   - id: al03-common-denominator-operations
     type: knowledge-point
@@ -767,10 +795,10 @@ nodes:
     chapter: ch:linear-equations-systems-modeling
     path: typst/3a-algebra-symbols/04-linear-equations-systems-modeling/01-linear-equation-one-variable.typ
     prerequisites:
-      - cb04-letters-represent-numbers
-      - cb05-equation-as-balance
-      - cb05-equality-properties
-      - cb05-solving-linear
+      - cb05-letters-represent-numbers
+      - cb06-equation-as-balance
+      - cb06-equality-properties
+      - cb06-solving-linear
       - al01-add-subtract-polynomials
   - id: al04-systems-linear
     type: knowledge-point
@@ -791,7 +819,7 @@ nodes:
       - al02-special-identities
       - al02-factorization-as-reverse
       - al04-linear-one-variable
-      - cb06-square-and-square-root
+      - cb07-square-and-square-root
   - id: al05-vieta
     type: knowledge-point
     chapter: ch:quadratic-equations
@@ -807,7 +835,7 @@ nodes:
     chapter: ch:algebra-summary
     path: typst/3a-algebra-symbols/07-algebra-summary/01-invention-tree-of-algebra.typ
     prerequisites:
-      - cb04-letters-represent-numbers
+      - cb05-letters-represent-numbers
       - al01-terms-like
       - al01-add-subtract-polynomials
       - al01-multiply-polynomials
@@ -909,7 +937,7 @@ nodes:
       - ge01-sss-sas
       - ge02-similarity-aa-ratio
       - ge03-circle-basics-inscribed
-      - cb06-square-and-square-root
+      - cb07-square-and-square-root
   - id: ge04-special-right-triangles
     type: knowledge-point
     chapter: ch:pythagorean-radicals-trigonometric-ratios
@@ -925,8 +953,8 @@ nodes:
     chapter: ch:transformations-coordinate-geometry-views
     path: typst/3b-geometry-proof/07-transformations-coordinate-geometry-views/01-rigid-transformations-and-congruence.typ
     prerequisites:
-      - cb03-rectangular-system
-      - cb03-plotting-transforming
+      - cb04-rectangular-system
+      - cb04-plotting-transforming
       - ge01-congruence-correspondence
       - ge04-pythagorean
   - id: ge05-coordinate-transforms
@@ -975,11 +1003,11 @@ nodes:
     chapter: ch:function-representations
     path: typst/3c-functions-change/01-function-representations/01-input-output-tables.typ
     prerequisites:
-      - cb03-rectangular-system
-      - cb04-letters-represent-numbers
-      - cb04-expressions-and-like-terms
-      - cb05-equation-as-balance
-      - cb06-square-and-square-root
+      - cb04-rectangular-system
+      - cb05-letters-represent-numbers
+      - cb05-expressions-and-like-terms
+      - cb06-equation-as-balance
+      - cb07-square-and-square-root
   - id: fn02-graph-as-function-view
     type: knowledge-point
     chapter: ch:function-representations
@@ -997,9 +1025,9 @@ nodes:
     prerequisites:
       - cb01-ratio-basics
       - cb01-proportion
-      - cb03-rectangular-system
-      - cb04-expressions-and-like-terms
-      - cb05-solving-linear
+      - cb04-rectangular-system
+      - cb05-expressions-and-like-terms
+      - cb06-solving-linear
       - fn03-formula-as-function-view
   - id: fn05-linear-function
     type: knowledge-point
@@ -1015,7 +1043,7 @@ nodes:
     type: knowledge-point
     chapter: ch:inverse-proportion-quadratic-functions
     path: typst/3c-functions-change/03-inverse-proportion-quadratic-functions/01-inverse-proportion.typ
-    prerequisites: [fn05-linear-function, fn06-slope-as-rate, cb03-plotting-transforming]
+    prerequisites: [fn05-linear-function, fn06-slope-as-rate, cb04-plotting-transforming]
   - id: fn08-quadratic-function
     type: knowledge-point
     chapter: ch:inverse-proportion-quadratic-functions
@@ -1072,7 +1100,7 @@ nodes:
     type: knowledge-point
     chapter: ch:data-displays-descriptive-statistics
     path: typst/3d-data-uncertainty/01-data-displays-descriptive-statistics/01-organizing-data.typ
-    prerequisites: [cb01-ratio-basics, cb01-percent, cb03-rectangular-system, cb04-relationship-templates]
+    prerequisites: [cb01-ratio-basics, cb01-percent, cb04-rectangular-system, cb05-relationship-templates]
   - id: dt02-charts-and-readings
     type: knowledge-point
     chapter: ch:data-displays-descriptive-statistics
@@ -1091,8 +1119,8 @@ nodes:
       - dt01-organizing-data
       - dt03-center-and-spread
       - cb01-ratio-basics
-      - cb04-expressions-and-like-terms
-      - cb06-square-and-square-root
+      - cb05-expressions-and-like-terms
+      - cb07-square-and-square-root
   - id: dt05-histograms
     type: knowledge-point
     chapter: ch:frequency-histograms-variance
@@ -1165,10 +1193,10 @@ nodes:
       - pf07-perimeter-area
       - pf08-coordinate-intuition
       - cb01-ratio-basics
-      - cb03-rectangular-system
-      - cb04-letters-represent-numbers
-      - cb05-equality-properties
-      - cb06-real-number-line
+      - cb04-rectangular-system
+      - cb05-letters-represent-numbers
+      - cb06-equality-properties
+      - cb07-real-number-line
   - id: cp02-repair-route-playbook
     type: chapter-meta
     chapter: ch:shared-invention-tree-review

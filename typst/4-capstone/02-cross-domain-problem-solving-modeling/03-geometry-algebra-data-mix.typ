@@ -9,14 +9,14 @@
 
   题目：直角三角形中，一锐角 $theta$ 满足 $tan theta = 3 / 4$，斜边 $25$。求两条直角边。
 
-  *为何该用*：“$tan theta = 3 / 4$”意味着对边与邻边的*比*固定为 $3 : 4$（#secref("ge04-special-right-triangles")）。给比就该设字母（#secref("cb04-letters-represent-numbers")）而不是直接求角度。
+  *为何该用*：“$tan theta = 3 / 4$”意味着对边与邻边的*比*固定为 $3 : 4$（#secref("ge04-special-right-triangles")）。给比就该设字母（#secref("cb05-letters-represent-numbers")）而不是直接求角度。
 
   *解*：设对边 $= 3 k$、邻边 $= 4 k$（$k > 0$）。由勾股（#secref("ge04-pythagorean")）：
   $ (3 k)^2 + (4 k)^2 = 25^2 => 9 k^2 + 16 k^2 = 625 => 25 k^2 = 625 => k^2 = 25 => k = 5. $
 
   对边 $= 15$、邻边 $= 20$。*回检*：$15^2 + 20^2 = 225 + 400 = 625 = 25^2$ ✓；$15 / 20 = 3 / 4 = tan theta$ ✓。
 
-  *使用知识链*：#secref("ge04-special-right-triangles") $->$ #secref("ge04-pythagorean") $->$ #secref("al05-quadratic-solving")（仅开方一步）$->$ #secref("cb06-square-and-square-root")。
+  *使用知识链*：#secref("ge04-special-right-triangles") $->$ #secref("ge04-pythagorean") $->$ #secref("al05-quadratic-solving")（仅开方一步）$->$ #secref("cb07-square-and-square-root")。
 ]
 
 #blueprint[
@@ -82,7 +82,7 @@
 
   *回检*：$1^2 - 4 + 3 = 0$ ✓；$9 - 12 + 3 = 0$ ✓。
 
-  *使用知识链*：#secref("al05-quadratic-solving") $=$ #secref("fn08-quadratic-function")（方程 $<->$ 函数零点）；#secref("al02-factorization-as-reverse")；#secref("cb05-equation-as-balance")。
+  *使用知识链*：#secref("al05-quadratic-solving") $=$ #secref("fn08-quadratic-function")（方程 $<->$ 函数零点）；#secref("al02-factorization-as-reverse")；#secref("cb06-equation-as-balance")。
 ]
 
 #side-hack[

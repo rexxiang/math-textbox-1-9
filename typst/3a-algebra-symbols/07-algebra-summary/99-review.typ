@@ -38,7 +38,7 @@
 
   #line(length: 100%, stroke: 0.3pt + luma(200))
 
-  五条都打勾，接下来可以选择进入函数与变化（#secref("cb03-rectangular-system") 打底）、几何与证明，或数据与不确定性——这部分学到的知识会在三条主线里反复出现。
+  五条都打勾，接下来可以选择进入函数与变化（#secref("cb04-rectangular-system") 打底）、几何与证明，或数据与不确定性——这部分学到的知识会在三条主线里反复出现。
 ]
 
 #side-hack[

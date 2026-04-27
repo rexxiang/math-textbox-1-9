@@ -7,7 +7,7 @@
 #chapter-nav[
   *难度*：★★★☆☆ \
   *核心问题*：学到这里，全书的工具（公共基础 + 共通桥梁 + 四大分支）已经全部就位。如果把它们画在一张大图上，哪些是*多个分支反复用到*的、哪些只属于某一支？当你做题做到一半卡住，怎样沿这张图*补缺*回最近一个还稳的地方？ \
-  *需要先会*：公共基础全部（如 #secref("pf02-order-laws")、#secref("pf04-fraction-arithmetic")、#secref("pf07-perimeter-area")、#secref("pf08-coordinate-intuition")）、共通桥梁全部（如 #secref("cb01-ratio-basics")、#secref("cb03-rectangular-system")、#secref("cb04-letters-represent-numbers")、#secref("cb05-equality-properties")、#secref("cb06-real-number-line")）、四大分支的学习流程（代数、几何、函数、数据）。 \
+  *需要先会*：公共基础全部（如 #secref("pf02-order-laws")、#secref("pf04-fraction-arithmetic")、#secref("pf07-perimeter-area")、#secref("pf08-coordinate-intuition")）、共通桥梁全部（如 #secref("cb01-ratio-basics")、#secref("cb04-rectangular-system")、#secref("cb05-letters-represent-numbers")、#secref("cb06-equality-properties")、#secref("cb07-real-number-line")）、四大分支的学习流程（代数、几何、函数、数据）。 \
   *本章在全书的位置*：全书综合入口——本章*不发明*任何新工具，只负责把四支工具*连成网*，方便你在任何一题前先确认“我手里该有哪些工具”。 \
   *忘了可以回到*：每一条正文都带章节编号指回首次引入的章节；卡住时沿着链条往上一层补缺即可。
 ]

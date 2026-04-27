@@ -36,7 +36,7 @@
   // 跨章回顾
   + 利用相似三角形（#secref("ge02-similarity-aa-ratio")）解释：为什么在直角三角形中，斜边上的高把三角形分成的两个小三角形都与原三角形相似？
   // 跨章回顾
-  + 化简根式 $sqrt(12) + sqrt(27) - sqrt(48)$（#secref("cb06-square-and-square-root")），然后说明结果是否为有理数。
+  + 化简根式 $sqrt(12) + sqrt(27) - sqrt(48)$（#secref("cb07-square-and-square-root")），然后说明结果是否为有理数。
   + 小红解题：一个直角三角形两直角边分别为 $3$ 和 $4$，她说斜边为 $3 + 4 = 7$。她的做法对吗？找出错误并用勾股定理给出正确答案。
 
   *参考答案*
@@ -59,7 +59,7 @@
 
   - 回看 #secref("ge02-similarity-aa-ratio")：两个*锐角相等*的直角三角形必然相似，这正是“$sin alpha$、$cos alpha$、$tan alpha$ 只依赖 $alpha$”这件事的逻辑源头。
   - 回看 #secref("ge03-circle-basics-inscribed")：直径所对的圆周角 $= 90 degree$，所以弦 $+$ 直径总能拼出直角三角形并使用勾股。
-  - 回看 #secref("cb06-square-and-square-root")：$sqrt(8) = 2 sqrt(2)$、$sqrt(12) = 2 sqrt(3)$ 等化简是本章答题的基本功。
+  - 回看 #secref("cb07-square-and-square-root")：$sqrt(8) = 2 sqrt(2)$、$sqrt(12) = 2 sqrt(3)$ 等化简是本章答题的基本功。
   - 衔接下一章：两点距离公式 $sqrt((x_2 - x_1)^2 + (y_2 - y_1)^2)$ 就是坐标系里的勾股定理。
 ]
 

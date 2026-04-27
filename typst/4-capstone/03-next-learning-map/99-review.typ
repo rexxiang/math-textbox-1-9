@@ -25,9 +25,9 @@
 
   如果你打算很快进高中，下列 10 节是最值得提前再确认*一遍*的（每节 $10$–$20$ 分钟）：
 
-  + #secref("cb04-letters-represent-numbers")
-  + #secref("cb05-equation-as-balance")
-  + #secref("cb06-real-number-line")
+  + #secref("cb05-letters-represent-numbers")
+  + #secref("cb06-equation-as-balance")
+  + #secref("cb07-real-number-line")
   + #secref("al02-special-identities")
   + #secref("al05-quadratic-solving")
   + #secref("ge04-pythagorean")
@@ -47,12 +47,12 @@
     - (a) 求 $A$、$B$ 的坐标（#secref("al05-quadratic-solving")）。
     - (b) 求顶点 $C$ 的坐标（#secref("fn08-quadratic-function")）。
     - (c) 求 $triangle A B C$ 的面积（#secref("pf07-perimeter-area")）。
-    - (d) 判断 $triangle A B C$ 是否为等腰三角形，并用两点距离公式验证（#secref("cb03-rectangular-system")）。
+    - (d) 判断 $triangle A B C$ 是否为等腰三角形，并用两点距离公式验证（#secref("cb04-rectangular-system")）。
 
   // 跨章回顾
   + 甲、乙两人从同一地点出发，甲向东走 $8$ km，乙向北走 $6$ km。
     - (a) 求两人之间的直线距离（#secref("ge04-pythagorean")）。
-    - (b) 以出发点为原点，东为 $x$ 正方向、北为 $y$ 正方向，写出甲、乙的坐标，并用两点距离公式验证 (a) 的结果（#secref("cb03-rectangular-system")）。
+    - (b) 以出发点为原点，东为 $x$ 正方向、北为 $y$ 正方向，写出甲、乙的坐标，并用两点距离公式验证 (a) 的结果（#secref("cb04-rectangular-system")）。
     - (c) 若甲的速度为 $4$ km/h、乙的速度为 $3$ km/h，写出两人出发 $t$ 小时后各自离出发点的距离函数，并求出发多少小时后两人相距恰好 $10$ km（#secref("fn05-linear-function")）。
 
   // 估算判断题

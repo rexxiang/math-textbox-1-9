@@ -71,9 +71,9 @@
   *巩固复习*
 
   - #secref("cb01-ratio-basics") / #secref("cb01-proportion")：正比例“同 $k$”就是“同比”的函数化表达。
-  - #secref("cb03-rectangular-system") / #secref("cb03-plotting-transforming")：描点、平移；一次函数 $=$ 正比例平移 $b$。
-  - #secref("cb05-solving-linear")：求 $y = k x + b$ 的零点就是解方程 $k x + b = 0$。
-  - 斜率“选点无关”的直觉：直线上任两点构成的直角三角形形状相同（同样的“宽高比”），所以 $Delta y / Delta x$ 不随选点改变——在 #secref("cb03-plotting-transforming") 的坐标平面中可以直接验证。
+  - #secref("cb04-rectangular-system") / #secref("cb04-plotting-transforming")：描点、平移；一次函数 $=$ 正比例平移 $b$。
+  - #secref("cb06-solving-linear")：求 $y = k x + b$ 的零点就是解方程 $k x + b = 0$。
+  - 斜率“选点无关”的直觉：直线上任两点构成的直角三角形形状相同（同样的“宽高比”），所以 $Delta y / Delta x$ 不随选点改变——在 #secref("cb04-plotting-transforming") 的坐标平面中可以直接验证。
   - #secref("fn03-formula-as-function-view")：定义域的合法性——一次函数定义域默认为 $RR$。
   - 下一章衔接：把*除法* $1 / x$ 与*平方* $x^2$ 搬进函数公式，得到反比例与二次函数；它们的图像不再是直线。
 ]

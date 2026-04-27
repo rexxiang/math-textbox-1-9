@@ -6,10 +6,10 @@
 
 #chapter-nav[
   *难度*：★★★★☆ \
-  *核心问题*：桥梁章里解过最简单的一元一次方程（#secref("cb05-solving-linear")）。当式子里同时出现括号、分母、双边未知量，以及真实情境里的“请你自己设元”时，怎样稳稳地走完“建模—求解—检验”全链？ \
-  *需要先会*：#secref("cb04-letters-represent-numbers")、#secref("cb05-equation-as-balance")、#secref("cb05-equality-properties")、#secref("cb05-solving-linear")、#secref("al01-add-subtract-polynomials")。 \
+  *核心问题*：桥梁章里解过最简单的一元一次方程（#secref("cb06-solving-linear")）。当式子里同时出现括号、分母、双边未知量，以及真实情境里的“请你自己设元”时，怎样稳稳地走完“建模—求解—检验”全链？ \
+  *需要先会*：#secref("cb05-letters-represent-numbers")、#secref("cb06-equation-as-balance")、#secref("cb06-equality-properties")、#secref("cb06-solving-linear")、#secref("al01-add-subtract-polynomials")。 \
   *本章在全书的位置*：代数分支第 4 章——把“字母→代数式→方程”的路线开到应用。既复用桥上的等式性质，也为第 5 章一元二次方程、第 6 章代数总结做准备。 \
-  *忘了可以回到*：若“把字母当数算”不顺，请回 #secref("cb04-letters-represent-numbers")；若等式性质记不住，请回 #secref("cb05-equality-properties")。
+  *忘了可以回到*：若“把字母当数算”不顺，请回 #secref("cb05-letters-represent-numbers")；若等式性质记不住，请回 #secref("cb06-equality-properties")。
 ]
 
 #chapter-route[

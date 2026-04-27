@@ -28,7 +28,7 @@
     [*工具*], [*做什么*], [*关键公式 / 要点*],
     [频率分布 #secref("dt04-frequency-distributions")], [分组 $+$ 计频率], [组距 $h$；$f_i = n_i / n$；$sum f_i = 1$],
     [直方图 #secref("dt05-histograms")], [分布的图像表达], [y 轴 $=$ 频率 / 组距（频率密度）；面积 $=$ 频率],
-    [方差与标准差 #secref("dt06-variance")], [围绕均值的离散度], [$s^2 = 1 / n sum (x_i - bar x)^2$；$s = sqrt(s^2)$],
+    [方差 #secref("dt06-variance")], [围绕均值的离散度], [$s^2 = 1 / n sum (x_i - bar x)^2$（标准差 $s = sqrt(s^2)$ 留到高中正式定义）],
   )
 ]
 
