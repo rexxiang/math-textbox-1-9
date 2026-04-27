@@ -17,7 +17,7 @@
 ]
 
 #history-note[
-  $1891$ 年 Karl Pearson 在《*On the dissection of asymmetrical frequency-curves*》中首次用 “histogram” 一词描述“以条形表达频率密度”的图示。从那时起，“连续分档 + 条紧贴 + 高度 $=$ 密度”就成为直方图的标准形式，作为“发现数据形状”的主力工具。
+  $1895$ 年皮尔逊（Karl Pearson）在伦敦大学学院的统计学讲座中首次使用 "histogram" 一词来描述"以条形表达频率密度"的图示。他选了希腊词 _histos_（"竖立的东西"）加上 _gramma_（"图画"），暗示"用竖条画数据"。从那时起，"连续分档 $+$ 条紧贴 $+$ 高度 $=$ 密度"就成为直方图的标准形式，作为"发现数据形状"的主力工具。
 ]
 
 #discovery[
