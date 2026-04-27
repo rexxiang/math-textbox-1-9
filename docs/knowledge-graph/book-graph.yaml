@@ -737,24 +737,36 @@ nodes:
       - cb05-relationship-templates
       - cb06-solving-linear
       - cb07-real-number-line
-  - id: al01-terms-like
+  - id: al01-monomials-coefficient-degree
     type: knowledge-point
     chapter: ch:polynomials-like-terms-operations
-    path: typst/3a-algebra-symbols/01-polynomials-like-terms-operations/01-terms-coefficients-like-terms.typ
+    path: typst/3a-algebra-symbols/01-polynomials-like-terms-operations/01-monomials-coefficient-degree.typ
     prerequisites:
       - pf02-order-laws
       - cb05-letters-represent-numbers
       - cb05-expressions-and-like-terms
       - cb06-equality-properties
+  - id: al01-polynomials-and-degree
+    type: knowledge-point
+    chapter: ch:polynomials-like-terms-operations
+    path: typst/3a-algebra-symbols/01-polynomials-like-terms-operations/02-polynomials-and-degree.typ
+    prerequisites:
+      - al01-monomials-coefficient-degree
+  - id: al01-like-terms-and-combine
+    type: knowledge-point
+    chapter: ch:polynomials-like-terms-operations
+    path: typst/3a-algebra-symbols/01-polynomials-like-terms-operations/03-like-terms-and-combine.typ
+    prerequisites:
+      - al01-polynomials-and-degree
   - id: al01-add-subtract-polynomials
     type: knowledge-point
     chapter: ch:polynomials-like-terms-operations
-    path: typst/3a-algebra-symbols/01-polynomials-like-terms-operations/02-add-subtract-polynomials.typ
-    prerequisites: [al01-terms-like]
+    path: typst/3a-algebra-symbols/01-polynomials-like-terms-operations/04-add-subtract-polynomials.typ
+    prerequisites: [al01-like-terms-and-combine]
   - id: al01-multiply-polynomials
     type: knowledge-point
     chapter: ch:polynomials-like-terms-operations
-    path: typst/3a-algebra-symbols/01-polynomials-like-terms-operations/03-multiply-simple-polynomials.typ
+    path: typst/3a-algebra-symbols/01-polynomials-like-terms-operations/05-multiply-simple-polynomials.typ
     prerequisites: [al01-add-subtract-polynomials]
   - id: al02-distributive-rewrite
     type: knowledge-point
@@ -836,7 +848,9 @@ nodes:
     path: typst/3a-algebra-symbols/07-algebra-summary/01-invention-tree-of-algebra.typ
     prerequisites:
       - cb05-letters-represent-numbers
-      - al01-terms-like
+      - al01-monomials-coefficient-degree
+      - al01-polynomials-and-degree
+      - al01-like-terms-and-combine
       - al01-add-subtract-polynomials
       - al01-multiply-polynomials
       - al02-distributive-rewrite

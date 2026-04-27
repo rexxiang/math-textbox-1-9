@@ -10,7 +10,7 @@
     inset: 6pt,
     stroke: 0.4pt,
     [*误读*], [*背后是哪条概念没稳*], [*忘了可以回到*],
-    [合并同类项时只看系数，忘了“字母部分必须相同”], [“同类项”的定义], [#secref("al01-terms-like")],
+    [合并同类项时只看系数，忘了“字母部分必须相同”], [“同类项”的定义], [#secref("al01-like-terms-and-combine")],
     [去括号时减号后的项忘了变号], [分配律正用里的符号规则], [#secref("al01-add-subtract-polynomials")、#secref("al02-distributive-rewrite")],
     [把乘法展开和因式分解当作两件独立的事], [分配律是一条双向公路], [#secref("al02-distributive-rewrite")、#secref("al02-factorization-as-reverse")],
     [分式约分后忘了保留“分母不为零”的限制], [分式的有意义条件], [#secref("al03-rational-expression-structure")],
