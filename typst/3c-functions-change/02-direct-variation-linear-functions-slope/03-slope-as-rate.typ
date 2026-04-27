@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 斜率：把“每加 $1$ 单位 $x$，$y$ 变多少”写成数 <tool:fn06-slope-as-rate>
@@ -180,6 +180,11 @@
 
   *解*：$m = (9 - 1) / (6 - 2) = 8 / 4 = 2$。用点斜“还原” $b$：$y = 2 x + b$，代入 $(2, 1)$ 得 $1 = 4 + b => b = -3$，故 $y = 2 x - 3$。$x = 10$：$y = 17$。
 ]
+
+#self-check[
+  斜率 $k = (Delta y) / (Delta x)$ 表达的是“$x$ 每增加 $1$，$y$ 增加多少”。如果 $k = -2$，$x$ 增加 $1$ 时 $y$ 怎么变？
+]
+
 
 #pitfall[
   *高频错误*

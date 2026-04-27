@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 反向操作解一元一次方程（简单系数）<tool:cb06-solving-linear>
@@ -111,6 +111,11 @@
   )
 ]
 
+#self-check[
+  解 $3x - 4 = 11$ 时，你会先做哪一步？为什么不是先除以 $3$？
+]
+
+
 #pitfall[
   *高频错误*
 
@@ -137,7 +142,7 @@
 
   + 解：$3 x - 7 = 2 x + 5$。
   + 解：$5 (x - 2) = 3 x + 4$。
-  + 一本书每本 $p$ 元，小红买 $4$ 本付 $90$ 元，找回 $6$ 元。列方程求 $p$。
+  + 一本书每本 $p$ 元，Luca买 $4$ 本付 $90$ 元，找回 $6$ 元。列方程求 $p$。
 
   *挑战 ☞ 选做*
 

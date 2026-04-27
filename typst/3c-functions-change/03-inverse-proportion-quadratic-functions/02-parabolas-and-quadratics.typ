@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 抛物线：二次函数 $y = a x^2 + b x + c$ <tool:fn08-quadratic-function>
@@ -280,6 +280,11 @@
   - $a < 0$ 开口朝下 $=>$ 顶点为*最大值*点，最大值 $= 9$。
   - 顶点式：$y = -(x - 2)^2 + 9$。
 ]
+
+#self-check[
+  $y = a x^2$ 中，$a > 0$ 和 $a < 0$ 的图象有什么本质区别？开口方向是由谁决定的？
+]
+
 
 #pitfall[
   *高频错误*

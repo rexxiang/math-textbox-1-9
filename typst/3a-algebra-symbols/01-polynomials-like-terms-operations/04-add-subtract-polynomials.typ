@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 整式加减：去括号 + 合并同类项 <tool:al01-add-subtract-polynomials>
@@ -136,6 +136,11 @@
             &= 6 x - 4 y - x - 4 y \
             &= 5 x - 8 y $
 ]
+
+#self-check[
+  $(2x^2 + 3x) - (x^2 - 5x)$ 第一步去括号时，$-(x^2 - 5x)$ 展开成什么？说出符号的处理规则。
+]
+
 
 #pitfall[
   *高频错误*

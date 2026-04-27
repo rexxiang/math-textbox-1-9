@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 因式分解的流程与“中间项匹配” <tool:al02-factorization-as-reverse>
@@ -236,6 +236,11 @@
   - 每一步后都要检查所有括号，判断是否还能继续提公因式、套公式、做两数匹配。
   - 如果剩下的式子在实数范围内确实无法再分（例如 $x^2 + 1$），就可以收笔。
 ]
+
+#self-check[
+  $x^2 + 6x + 9$ 能因式分解吗？你看到了哪一个“完全平方”的特征——它的常数项和一次项有什么关系？
+]
+
 
 #pitfall[
   *高频错误*

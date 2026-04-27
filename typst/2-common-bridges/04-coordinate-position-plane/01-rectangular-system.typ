@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 平面直角坐标系：给每个点发身份证 <tool:cb04-rectangular-system>
@@ -202,6 +202,11 @@
     caption: [平面直角坐标系：每个点有唯一的 $(x, y)$ 身份证],
   )
 ]
+
+#self-check[
+  在平面直角坐标系里，点 $(0, -3)$ 在哪根轴上？为什么它不属于任何象限？
+]
+
 
 #pitfall[
   *高频错误*

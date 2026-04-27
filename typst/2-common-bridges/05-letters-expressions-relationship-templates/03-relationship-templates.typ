@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 关系模板：把常见情景写成能反复套用的公式 <tool:cb05-relationship-templates>
@@ -116,6 +116,11 @@
     caption: [速度—时间—路程三角：遮住 $s$ 则 $s = v t$，遮住 $v$ 则 $v = s / t$],
   )
 ]
+
+#self-check[
+  看到“比某数多 $5$”，你会把它写成 $x + 5$ 还是 $5 + x$？两种写法等价吗？
+]
+
 
 #pitfall[
   *高频错误*

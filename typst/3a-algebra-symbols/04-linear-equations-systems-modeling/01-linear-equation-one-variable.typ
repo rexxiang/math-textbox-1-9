@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 一元一次方程的标准五步 <tool:al04-linear-one-variable>
@@ -228,6 +228,11 @@
 
   在应用题里遇到这两种情况，要停下来检查自己的设元与“等量关系”是否出了问题。
 ]
+
+#self-check[
+  解方程 $5x - 3 = 2x + 9$ 时，“移项”实际上做了什么？说出它和“等式两边同时加减”的关系。
+]
+
 
 #pitfall[
   *高频错误*

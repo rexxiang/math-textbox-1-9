@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 平方差与完全平方：两条公式，正反两用 <tool:al02-special-identities>
@@ -181,6 +181,16 @@
 
   “首末开平方、倍数验中间、符号看中间项。”
 ]
+
+#history-note[
+  *艾米·诺特（Emmy Noether，1882–1935）*——她系统化地把多项式恒等式和因式分解纳入现代抽象代数框架，证明了“诺特环”的基本定理。许多我们今天视为“中学代数基础”的结构性思想，都与她奠定的代数语言有关。据说她在讲课时会随手把黑板上的计算步骤重组成更一般的结构，让同学们先看到具体、再看到背后的普遍性——和我们这本书的思路如出一辙。
+]
+
+
+#self-check[
+  $(a + b)^2$ 和 $a^2 + b^2$ 一样吗？把中间漏掉的那一项写出来，并说说它代表什么。
+]
+
 
 #pitfall[
   *高频错误*

@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 样本空间：把所有可能结果数清楚 <tool:dt07-sample-spaces>
@@ -168,6 +168,11 @@
   - 掷 $n$ 颗骰子：$|Omega| = 6^n$。
   - 连续抽 $r$ 张牌（*放回*抽取）：$|Omega| = 52^r$。
 ]
+
+#self-check[
+  抛两枚硬币的样本空间是 $\{0, 1, 2\}$（正面个数）还是有序对 $\{(“正”,“正”), …\}$？哪一个划分是“等可能”的？
+]
+
 
 #pitfall[
   *高频错误*

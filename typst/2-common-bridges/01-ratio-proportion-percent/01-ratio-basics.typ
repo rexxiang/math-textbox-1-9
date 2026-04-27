@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 比：两个量相比的写法 <tool:cb01-ratio-basics>
@@ -114,6 +114,11 @@
     caption: [化简比：$6 : 9$ 前后同除以 $3$，得最简比 $2 : 3$],
   )
 ]
+
+#self-check[
+  在继续之前：把 $4 : 10$ 化成最简比是多少？说出你用的是“同除以一个非零数”还是“同乘”。
+]
+
 
 #pitfall[
   *高频错误*

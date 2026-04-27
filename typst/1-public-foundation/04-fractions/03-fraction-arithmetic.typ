@@ -6,7 +6,7 @@
 #vocab[分数加减 fraction addition and subtraction][分数乘法 fraction multiplication][分数除法 fraction division]
 
 #crisis[
-  现场还原：小明吃了披萨的 $1/4$，小红吃了 $2/3$，有人把分子分母直接相加，报出答案 $3/7$。
+  现场还原：小明吃了披萨的 $1/4$，赵磊吃了 $2/3$，有人把分子分母直接相加，报出答案 $3/7$。
 
   可 $3/7$ 竟然比 $2/3$ 还小——加了东西反而变少？这个“答案”一定哪里搞错了。
 

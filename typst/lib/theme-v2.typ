@@ -353,3 +353,21 @@
     side-hack(selfcheck)
   }
 }
+
+// ── 元认知自检（discovery 中段或 blueprint 之后插入）──────────────
+// 渲染：浅靛色左边框 + 无底色，紧凑。
+// 用法：#self-check[你能说出……是什么意思吗？]
+#let self-check(body) = {
+  block(
+    width: 100%,
+    above: 1.0em,
+    below: 0.8em,
+    stroke: (left: (thickness: 3pt, paint: rgb("#3949AB"))),
+    inset: (left: 10pt, right: 4pt, top: 5pt, bottom: 5pt),
+    fill: rgb("#EEF0FB"),
+  )[
+    #text(size: 9pt, weight: "bold", fill: rgb("#283593"))[✎ 自检一下]
+    #linebreak()
+    #text(size: 9.5pt)[#body]
+  ]
+}

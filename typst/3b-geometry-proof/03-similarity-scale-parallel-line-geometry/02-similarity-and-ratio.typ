@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 相似的含义：AA 判定与相似比 <tool:ge02-similarity-aa-ratio>
@@ -197,6 +197,11 @@
 
   解：由 $triangle A D E tilde triangle A B C$，相似比 $k = A D slash A B = 4 slash 10 = 2 slash 5$。所以 $D E = k times B C = 2 slash 5 times 15 = 6$。
 ]
+
+#self-check[
+  相似三角形的对应边成比例——这个“比”指的是同一对三角形的所有对应边的比都相等，还是只有一对？
+]
+
 
 #pitfall[
   *高频错误*

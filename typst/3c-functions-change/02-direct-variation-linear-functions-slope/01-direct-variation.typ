@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 正比例函数：$y = k x$ <tool:fn04-direct-variation>
@@ -199,6 +199,11 @@
   )
 
 ]
+
+#self-check[
+  正比例函数 $y = k x$ 必须经过哪一个点？为什么 $b = 0$ 是它和一般一次函数的关键差别？
+]
+
 
 #pitfall[
   *高频错误*

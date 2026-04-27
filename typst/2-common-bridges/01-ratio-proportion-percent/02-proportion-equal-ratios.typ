@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 比例：两个比相等 <tool:cb01-proportion>
@@ -148,6 +148,16 @@
   - *解比例的套路*：找未知项 → 交叉相乘写成等式 → 用反向操作解出那个字母。
   - *同向 vs 反向*：同向时写 $a : b = c : d$；反向时写 $a times b = c times d$ 或改写成“单位量不变”的形式。
 ]
+
+#history-note[
+  *希帕蒂娅（Hypatia，约 360–415）*——亚历山大城的数学家与哲学家，她对丢番图（Diophantus）《算术》的注释保留了大量比与比例的计算技巧，成为后代学者学习分数运算的主要来源之一。她是有史料可考的最早女性数学家之一。
+]
+
+
+#self-check[
+  $3 : 5 = 9 : x$，你能不算出 $x$，先说出“内项之积等于外项之积”具体是哪两个数相乘等于哪两个数相乘吗？
+]
+
 
 #pitfall[
   *高频错误*

@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 方程即天平 <tool:cb06-equation-as-balance>
@@ -26,7 +26,7 @@
 
   + 一箱苹果，小明先取走 $8$ 个，再取走剩下的一半，最终还剩 $6$ 个。问原来有多少个苹果？
   + 一根绳子对折后比原来短了 $15$ 厘米，对折后的长度是多少？
-  + 小华存了 $3$ 周的零花钱，每周同样多，加上家长额外给的 $10$ 元，共 $46$ 元。每周零花钱是多少？
+  + Priya存了 $3$ 周的零花钱，每周同样多，加上家长额外给的 $10$ 元，共 $46$ 元。每周零花钱是多少？
 
   描述时注意：你会不会觉得"如果有个符号代表那个未知的数就好了"？
 
@@ -163,6 +163,11 @@
     caption: [方程就是一架天平：两边一样重；对两边做相同的操作，天平仍然平衡],
   )
 ]
+
+#self-check[
+  方程 $2x + 3 = 11$ 像一台天平，等号两边各代表什么？你能说出两边到底“各放了什么”吗？
+]
+
 
 #pitfall[
   *高频错误*

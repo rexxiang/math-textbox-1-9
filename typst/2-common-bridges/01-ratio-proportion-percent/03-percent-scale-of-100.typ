@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 百分数：把比的尺子统一成 100 <tool:cb01-percent>
@@ -93,6 +93,11 @@
     - 百分数 → 小数：小数点向左移两位，去掉 $%$。
   - *基本关系*：比较量 $=$ 基数 $times$ 百分率；三者知二求一。
 ]
+
+#self-check[
+  $25%$ 和分数 $1/4$ 是同一个数吗？用一句话说出“百分号”在这里到底承担了什么角色。
+]
+
 
 #pitfall[
   *高频错误*

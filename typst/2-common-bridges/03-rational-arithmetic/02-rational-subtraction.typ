@@ -1,4 +1,4 @@
-#import "../../lib/chapter-kit.typ": crisis, discovery, blueprint, mastery, tryit, pitfall, history-note, side-hack, vocab, secref, answer-cut
+#import "../../lib/chapter-kit.typ": crisis, discovery, blueprint, mastery, tryit, pitfall, history-note, side-hack, vocab, secref, answer-cut, self-check
 
 === 有理数减法：减去一个数 = 加它的相反数 <tool:cb03-rational-subtraction>
 
@@ -60,6 +60,11 @@
 
   *例 4*：连续运算 $5 - 8 - (-3) = 5 + (-8) + 3 = 0$。
 ]
+
+#self-check[
+  $5 - (-2)$ 你会把它改写成什么样的加法？说出“减去一个数 = 加上它的相反数”具体在这道题里怎么用。
+]
+
 
 #pitfall[
   ✗ $-3 - 5 = -3 + 5 = 2$（把"减正 $5$"错当成"减负 $5$"）

@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 等式性质：保持天平平衡 <tool:cb06-equality-properties>
@@ -123,6 +123,11 @@
   - *推论：移项变号*。把等式一边的某项移到另一边时，符号相反。
   - *合法变形集合*：加减乘除同一个数 $+$ 在等式两侧各自合并同类项（#secref("cb05-expressions-and-like-terms")）。其他“化简”都必须可以归约到这几条。
 ]
+
+#self-check[
+  等式两边同时除以 $0$ 行不行？为什么“同时乘”和“同时除”在 $0$ 这里待遇不同？
+]
+
 
 #pitfall[
   *高频错误*

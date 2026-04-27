@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 二元一次方程组：代入与加减消元 <tool:al04-systems-linear>
@@ -183,6 +183,11 @@
   - 若某未知量系数相同或相反 → *加减*。
   - 都不明显 → 凑系数的最小公倍数后 *加减*；或者自问“哪条少抄几步”。
 ]
+
+#self-check[
+  代入法和加减消元法解出来的解一样吗？为什么？两种方法分别消掉了哪一个未知数？
+]
+
 
 #pitfall[
   *高频错误*

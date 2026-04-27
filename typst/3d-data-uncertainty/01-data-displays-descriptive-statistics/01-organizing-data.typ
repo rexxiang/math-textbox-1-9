@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 整理数据的三张常用图：条形图 / 折线图 / 扇形图 <tool:dt01-organizing-data>
@@ -141,6 +141,11 @@
   + *问题是“每一部分占整体多少”吗？* 是 → 扇形图。
   + *问题是“谁比谁多”“大小对比”吗？* 是 → 条形图。
 ]
+
+#self-check[
+  原始数据和整理后的频数表，哪一个适合用来回答“最常出现的值是什么”？为什么？
+]
+
 
 #pitfall[
   *高频错误*

@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 把无理数放回数轴：$RR$ 的完整性 <tool:cb07-real-number-line>
@@ -120,6 +120,11 @@
     caption: [数集层级：$NN subset.eq ZZ subset.eq QQ subset.eq RR$],
   )
 ]
+
+#self-check[
+  数轴上每一个点都对应一个实数，每一个实数都对应数轴上的一个点。这两句话能合成一句吗？说说“一一对应”在这里的意思。
+]
+
 
 #pitfall[
   *高频错误*

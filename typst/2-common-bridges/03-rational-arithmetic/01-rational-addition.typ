@@ -1,4 +1,4 @@
-#import "../../lib/chapter-kit.typ": crisis, discovery, blueprint, mastery, tryit, pitfall, history-note, side-hack, vocab, secref, answer-cut
+#import "../../lib/chapter-kit.typ": crisis, discovery, blueprint, mastery, tryit, pitfall, history-note, side-hack, vocab, secref, answer-cut, self-check
 
 === 有理数加法：数轴跳跃与借贷两种看法 <tool:cb03-rational-addition>
 
@@ -69,6 +69,11 @@
 
   *例 3*（互为相反数）：$7 + (-7) = 0$。
 ]
+
+#self-check[
+  $(-3) + 5$ 和 $(-3) + (-5)$ 的符号判断思路一样吗？说出“同号”和“异号”两条法则的关键差别。
+]
+
 
 #history-note[
   "有理数"这个词来自拉丁语 _rationalis_，原意是"可以用比率表示的"——每个有理数都能写成两个整数之比 $p/q$。中国古代的《九章算术》（约公元 1 世纪）已经熟练使用正负数，书中称"正算""负算"，并有"同名相除，异名相益"的加法规则——"名"指符号，"相益"指绝对值相加，与今天的规则完全一致。比欧洲对负数的正式接受早了约一千五百年。

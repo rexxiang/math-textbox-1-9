@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 图像：函数的第二张面孔 <tool:fn02-graph-as-function-view>
@@ -184,6 +184,11 @@
   )
 
 ]
+
+#self-check[
+  如何用“竖直线检验”判断一条曲线是否是函数图象？说出它背后的逻辑——为什么竖直线只能交一次？
+]
+
 
 #pitfall[
   *高频错误*

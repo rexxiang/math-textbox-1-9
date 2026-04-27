@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 全等的含义与对应关系 <tool:ge01-congruence-correspondence>
@@ -205,6 +205,11 @@
 
   解：由字母顺序读出对应：$A <-> C$、$B <-> D$、$C <-> A$。所以对应边 $A B = C D$、$B C = D A$。公共边 $A C$ 自己对自己，这一条是自动满足的。
 ]
+
+#self-check[
+  两个三角形全等，写成 $triangle A B C tilde.eq triangle D E F$ 时，$A$ 一定对应 $D$ 吗？说出“对应”在这里的严格意义。
+]
+
 
 #pitfall[
   *高频错误*

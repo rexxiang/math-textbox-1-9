@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === SSS 与 SAS：两条最基本的判定法 <tool:ge01-sss-sas>
@@ -196,6 +196,11 @@
   + 若是*两边一角* → *先查这个角是不是两条边的夹角*；是就 `SAS`，不是就别急着下结论（下一节的 SSA 反例在等你）。
   + 公共边、对顶角、等腰底角、垂直产生的直角都是常见“免费条件”，记得把它们也列进条件清单。
 ]
+
+#self-check[
+  用 SAS 判全等时，那个角必须是哪两条边的“夹角”？如果不是夹角，结论还成立吗？
+]
+
 
 #pitfall[
   *高频错误*

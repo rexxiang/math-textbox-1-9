@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 无理数：$sqrt(2)$ 不能写成分数 <tool:cb07-irrational-numbers>
@@ -119,6 +119,11 @@
     caption: [夹逼法定位 $sqrt(2)$：它在 $1.4$ 与 $1.5$ 之间],
   )
 ]
+
+#self-check[
+  $sqrt(2)$ 不能写成两个整数的比——这件事是“我们没找到”还是“已经被证明不可能”？两者差别很大。
+]
+
 
 #pitfall[
   *高频错误*

@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 证明链的书写：已知 → 推出 → 结论 <tool:ge01-two-step-proof-chain>
@@ -206,6 +206,11 @@
 
   这就是一条教科书式的*两步证明*：前半段凑 SAS 得全等，后半段借全等把“要证的两件事”一次拿下来。
 ]
+
+#self-check[
+  写两步证明时，每一步的“理由”必须是定理还是已知条件？你能说出二者的差别吗？
+]
+
 
 #pitfall[
   *高频错误*

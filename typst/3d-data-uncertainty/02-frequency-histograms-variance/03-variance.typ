@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 方差与标准差：比极差更细的一把尺子 <tool:dt06-variance>
@@ -194,6 +194,11 @@
     [怀疑有极端点时验证], [同时报极差和 $s$；极差被极端点拉扯，$s$ 被整组影响较温和],
   )
 ]
+
+#self-check[
+  方差越大，意味着数据“分散”还是“集中”？说出方差公式里“减去平均值再平方”的目的。
+]
+
 
 #pitfall[
   *高频错误*

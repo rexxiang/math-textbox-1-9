@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 有理数：把整数和分数都接回数轴 <tool:cb02-rational-numbers>
@@ -113,6 +113,11 @@
     caption: [数集层级：$NN subset.eq ZZ subset.eq QQ$],
   )
 ]
+
+#self-check[
+  $-2/3$ 在 $-1$ 的左边还是右边？说出你的依据，不要只靠“感觉”。
+]
+
 
 #pitfall[
   *高频错误*

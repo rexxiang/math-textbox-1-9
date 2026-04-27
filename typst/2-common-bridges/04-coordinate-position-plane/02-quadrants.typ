@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 四象限：平面被两条轴分成的四块 <tool:cb04-quadrants>
@@ -112,6 +112,11 @@
     caption: [$A(3, 2)$ 关于 $x$ 轴对称得 $A'(3, -2)$，关于 $y$ 轴对称得 $A''(-3, 2)$],
   )
 ]
+
+#self-check[
+  点 $(-2, 5)$ 在哪个象限？把判断口诀用你自己的话说一遍——横正纵正、横负纵正、……
+]
+
 
 #pitfall[
   *高频错误*

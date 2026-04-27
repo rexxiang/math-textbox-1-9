@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 输入 / 输出表：函数的第一张面孔 <tool:fn01-table-as-function-view>
@@ -157,6 +157,11 @@
 
   *解*：所有输入两两不同；每个输入都配了唯一输出；输出列 $1$ 重复（$-1, 1$ 都对应 $1$）但这是合法的。*是函数*。（规则不难猜：输出 $=$ 输入的平方。）
 ]
+
+#self-check[
+  在输入输出表里，同一个输入能不能对应两个不同的输出？为什么这是“函数”的关键限制？
+]
+
 
 #pitfall[
   *高频错误*

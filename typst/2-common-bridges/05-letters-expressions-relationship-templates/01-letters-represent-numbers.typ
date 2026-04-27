@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 字母代替数：规则代替一次计算 <tool:cb05-letters-represent-numbers>
@@ -143,6 +143,11 @@
     caption: [代入求值：把 $n = 7$ 代入公式 $6 n$，输出 $42$],
   )
 ]
+
+#self-check[
+  在表达式 $3n + 2$ 里，$n$ 代表的是某一个具体的数，还是“任何”一个数？两种理解会让你解题方式有什么不同？
+]
+
 
 #pitfall[
   *高频错误*

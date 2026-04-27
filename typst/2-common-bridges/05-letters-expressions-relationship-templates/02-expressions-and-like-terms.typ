@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 代数式与合并同类项 <tool:cb05-expressions-and-like-terms>
@@ -119,17 +119,38 @@
   )
 ]
 
+#self-check[
+  $3x$ 与 $3x^2$ 是同类项吗？说出你的判断依据，注意“次数”和“字母”两条都要看。
+]
+
+
 #pitfall[
-  *高频错误*
+  看看这段展开计算：
 
-  ✗ 把 $3 x + 2 y$ 合并成 $5 x y$
-  → ✓ 它们不是同类项，根本不能合并。
+  #block(inset: (left: 12pt))[
+    化简 $2(x + 3y) - (x - y)$。
 
-  ✗ 合并时忘了符号
-  → ✓ 符号属于它后面的项：$5 a - 3 a = 2 a$，不是 $8 a$。
+    第 1 行：$= 2x + 3y - x - y$ $quad$ （“2 只乘了 $x$，没乘 $3y$；后面的负号只撤掉了 $x$”）
 
-  ✗ 把 $x$ 和 $x^2$ 当成同类项
-  → ✓ 指数不同就不是同类项。
+    第 2 行：$= x + 2y$
+  ]
+
+  ✎ 第 1 行有两处错误，你能都指出来吗？
+
+  #block(width: 100%, fill: rgb("#FFFDE7"), radius: 2pt, inset: 8pt)[
+    *错处 1*：$2(x + 3y)$ 展开应乘到括号里每一项：$2x + 6y$，不是 $2x + 3y$。
+
+    *错处 2*：$-(x - y)$ 展开应把负号分别作用于每一项：$-x + y$，不是 $-x - y$。
+
+    *正确推导*：
+    $ 2(x + 3y) - (x - y) = 2x + 6y - x + y = x + 7y $
+  ]
+
+  另外两条：
+
+  ✗ $3x + 2y$ 合并成 $5 x y$ → ✓ 字母部分不同，不是同类项，不能合并
+
+  ✗ 合并时忘了符号：$5a - 3a = 8a$ → ✓ 是 $2a$（符号属于它后面的项）
 ]
 
 #mastery[

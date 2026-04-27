@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 相反数与绝对值：方向与远近分开记 <tool:cb02-opposite-and-absolute>
@@ -104,6 +104,11 @@
   - *绝对值*：$|a|$ 是 $a$ 到原点的距离；$|a| >= 0$，且 $|a| = 0$ 当且仅当 $a = 0$。
   - *两点距离*：数轴上两点 $a$、$b$ 之间的距离为 $|a - b|$。
 ]
+
+#self-check[
+  $|-7|$ 和 $-|7|$ 一样吗？把它们各自代表的意思用一句话说清楚。
+]
+
 
 #pitfall[
   *高频错误*

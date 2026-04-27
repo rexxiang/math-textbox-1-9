@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === ASA、AAS 与 SSA 反例：哪些判定能成、哪条不行 <tool:ge01-asa-aas-ssa>
@@ -164,20 +164,37 @@
   + 公共边、对顶角、等腰底角、垂直产生的直角仍然是常见“免费条件”，别漏记。
 ]
 
+#self-check[
+  为什么 SSA 不能作为全等判定？用一句话说出“双解”的几何直觉。
+]
+
+
 #pitfall[
-  *高频错误*
+  看看下面这段推理：
 
-  ✗ 看到“两角相等”就断全等
-  → ✓ 两角只能证*形状相同*（相似），不能证*大小相同*（全等）。必须再配一条对应边——见 #secref("ge02-similarity-aa-ratio")。
+  #block(inset: (left: 12pt))[
+    已知 $triangle A B C$ 与 $triangle D E F$，$A B = D E = 5$，$B C = E F = 7$，$angle A = angle D = 40 degree$。
 
-  ✗ 把 `AAS` 里的那条边跟“任意一条对应边”划等号
-  → ✓ AAS 的那条边必须是其中一角的*对边*（或换个说法：随便挑一条对应边都行，因为两角已确定全形状，关键是“边要对应”）。真正要防的是把非对应位置的边当对应边。
+    第 1 行：“两边和一个非夹角都相等，类比 SAS。”
 
-  ✗ 两边一非夹角凑上 SSA，却误写 `SAS`
-  → ✓ `SAS` 的 `A` 必须在两条边*中间*。SSA 下存在双解反例，不是判定法；遇到时要主动寻找别的条件。
+    第 2 行：$therefore triangle A B C tilde.eq triangle D E F$（用 SSA）
+  ]
 
-  ✗ 用 `AAA` 当判据
-  → ✓ 三角都相等只说明*形状相同*，不代表*大小相同*；这是相似。
+  ✎ 哪一步错了？为什么 SSA 不能作为全等判定法？
+
+  #block(width: 100%, fill: rgb("#FFFDE7"), radius: 2pt, inset: 8pt)[
+    *错处*：第 2 行。SSA（两边一非夹角）*不是*全等判定法。给定 $A B = D E$、$B C = E F$、$angle A = angle D$，实际上可以同时存在*两个不全等*的三角形满足这三个条件（双解情况）。
+
+    *直觉*：想象以 $B$ 为圆心、半径 $B C = 7$ 画弧，弧可以与直线（从 $A$ 以角 $40 degree$ 出发）交于*两点*或一点——所以三角形不是唯一的。
+
+    *正确策略*：遇到两边一非夹角，需要先判断是否满足额外条件（如第三边最长时才退化为唯一），或改用其他判定法。
+  ]
+
+  其余：
+
+  ✗ “两角相等”即断全等 → ✓ 两角相等只能说*形状相似*，还需配一条对应边
+
+  ✗ AAA 判全等 → ✓ AAA 只能说形状相同（相似），大小未定
 ]
 
 #mastery[

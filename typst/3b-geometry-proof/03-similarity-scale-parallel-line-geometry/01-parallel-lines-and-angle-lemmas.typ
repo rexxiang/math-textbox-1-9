@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 平行线与三类角关系 <tool:ge02-parallel-line-angles>
@@ -14,7 +14,7 @@
 
   老师的批改：*✗ 没有依据。哪条定理保证了 $angle 1 = angle 5$？*
 
-  小华愣住了——他*视觉上*确信平行线被截就有等角，可一旦要写下"凭什么"就卡了：
+  Carlos愣住了——他*视觉上*确信平行线被截就有等角，可一旦要写下"凭什么"就卡了：
 
   - 两条平行线被截线截出 $8$ 个角。其中*哪些*角必然相等？*哪些*角必然互补？*哪些*相互之间没有任何固定关系？
   - 同样是"$angle 1$ 和 $angle 5$"这个组合，老师为什么说应当写"同位角相等"，而不是"内错角相等"？这两类角在图中怎么区分？
@@ -101,7 +101,7 @@
 
   *反向也成立*：每一条都可以反过来用——给出"角相等 / 互补"的条件，就能反推出"两线平行"。这把"证两线平行"变成了几何证明里第二大型的出口（第一大型出口是"证两三角形全等"）：*拎出一对合适的角，让它们在题目条件里落成"相等 / 互补"*，平行就证完了。
 
-  小华那行作业的正确写法是：
+  Carlos那行作业的正确写法是：
 
   > "因为 $ell_1 parallel ell_2$（已知），$angle 1$ 与 $angle 5$ 是同位角（位置判定），所以 $angle 1 = angle 5$（*平行 $=>$ 同位角相等*）。"
 
@@ -200,6 +200,11 @@
 
   证：$angle A B C = angle B C D$（已知），这两个角是 $A B$、$C D$ 被 $B C$ 所截产生的一对内错角，由“内错角相等 $=>$ 两直线平行”，所以 $A B parallel C D$。
 ]
+
+#self-check[
+  两直线平行，被第三条直线截，“同位角相等”和“内错角相等”分别看的是哪一对角？画个简图指给自己看。
+]
+
 
 #pitfall[
   *高频错误*

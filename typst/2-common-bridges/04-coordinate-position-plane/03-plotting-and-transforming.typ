@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 画点、读点与简单变换 <tool:cb04-plotting-transforming>
@@ -114,6 +114,11 @@
     - 关于 $x$ 轴：$(x, y) -> (x, -y)$；
     - 关于 $y$ 轴：$(x, y) -> (-x, y)$。
 ]
+
+#self-check[
+  把点 $(3, 2)$ 沿 $y$ 轴对称后变成什么？你是在改变 $x$ 还是 $y$ 的符号？
+]
+
 
 #pitfall[
   *高频错误*

@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 四边形家族：从一般到正方形 <tool:ge03-quadrilateral-family>
@@ -190,6 +190,11 @@
 
   *证*：由“对角线互相平分” $=>$ $square A B C D$ 是平行四边形；再加“对角线相等” $=>$ 是矩形（判定之二）。
 ]
+
+#self-check[
+  正方形是矩形吗？是菱形吗？把“四边形家族”的包含关系用一句话讲清楚。
+]
+
 
 #pitfall[
   *高频错误*

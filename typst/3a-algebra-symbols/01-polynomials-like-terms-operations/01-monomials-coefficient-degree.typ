@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 单项式、系数与次数 <tool:al01-monomials-coefficient-degree>
@@ -100,6 +100,11 @@
 
   *例 3*：$9$ 的系数是 $9$，次数是 $0$。
 ]
+
+#self-check[
+  单项式 $-3x^2 y$ 的系数是 $3$ 还是 $-3$？次数是 $2$ 还是 $3$？两条都要答对。
+]
+
 
 #history-note[
   "系数"这个词来自拉丁语 _coefficiens_，意为"共同产生效果的"。17 世纪法国数学家韦达（François Viète）最早系统地把字母分成"已知量"（他用辅音字母）和"未知量"（元音字母），并把固定的倍数因子和未知量的幂次分开看待——这正是现代"系数"概念的原型。"次数"（degree）则强调了一个代数式中变量的"层次高低"，它在后来的多项式理论和微积分中都是核心概念。

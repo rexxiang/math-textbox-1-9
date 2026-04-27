@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 频率分布表：把一把数据排成结构 <tool:dt04-frequency-distributions>
@@ -158,6 +158,11 @@
   + 逐项打勾数频数；算频率 $=$ 频数 $\/ n$。
   + *检查*：$sum f_k = n$、$sum p_k = 1$、各档宽度 $= w$ ✓。
 ]
+
+#self-check[
+  频数和频率有什么区别？同一组数据，能不能让两个不同区间有相同的频率却有不同的频数？
+]
+
 
 #pitfall[
   *高频错误*

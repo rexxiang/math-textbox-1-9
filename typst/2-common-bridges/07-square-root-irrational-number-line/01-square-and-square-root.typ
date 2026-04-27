@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 平方、平方根与算术平方根 <tool:cb07-square-and-square-root>
@@ -99,17 +99,39 @@
   )
 ]
 
+#self-check[
+  $sqrt(9)$ 等于 $3$ 还是 $plus.minus 3$？说出“算术平方根”和“平方根”两个说法的区别。
+]
+
+
 #pitfall[
-  *高频错误*
+  看看小泽这段解题：
 
-  ✗ 写成 $sqrt(9) = plus.minus 3$
-  → ✓ $sqrt(9) = 3$；两个平方根是 $plus.minus 3$，但 $sqrt(\ )$ 本身只取非负。
+  #block(inset: (left: 12pt))[
+    已知 $a = -3$，求 $sqrt(a^2)$ 的值。
 
-  ✗ 对 $a < 0$ 写 $sqrt(a) = -sqrt(-a)$
-  → ✓ 实数范围内 $sqrt(a)$ 根本无定义；这一步在虚数范围才有意义。
+    第 1 行：$a^2 = (-3)^2 = 9$ $quad$ ✓
 
-  ✗ 把 $sqrt(a^2)$ 直接写成 $a$
-  → ✓ $sqrt(a^2) = |a|$；若 $a = -3$，$sqrt((-3)^2) = 3$ 而不是 $-3$。
+    第 2 行：$sqrt(a^2) = a$ $quad$ （“根号和平方抵消”）
+
+    第 3 行：$therefore sqrt(a^2) = a = -3$
+  ]
+
+  ✎ 你能指出哪一行错了，错在哪里？
+
+  #block(width: 100%, fill: rgb("#FFFDE7"), radius: 2pt, inset: 8pt)[
+    *错处*：第 2 行。$sqrt(a^2) = a$ 只在 $a >= 0$ 时成立；$a < 0$ 时结果是 $-a$（正数），正确写法是 $sqrt(a^2) = |a|$。
+
+    *正确推导*：$sqrt(a^2) = sqrt(9) = 3 = |-3| = |a|$。$quad$ ✓
+
+    记住：$sqrt(square)$ 表示*算术平方根*，结果永远非负，不可能是 $-3$。
+  ]
+
+  另外两条常见错误一并标注：
+
+  ✗ $sqrt(9) = plus.minus 3$ → ✓ $sqrt(9) = 3$（正值），两个平方根才是 $plus.minus 3$
+
+  ✗ 实数范围内写 $sqrt(-4)$ → ✓ 负数在实数内无平方根，写 $sqrt(-4)$ 需加说明“此处超出实数范围”
 ]
 
 #mastery[

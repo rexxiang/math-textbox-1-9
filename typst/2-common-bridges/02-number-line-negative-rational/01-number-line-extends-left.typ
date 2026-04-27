@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 数轴向左延伸：负数登场 <tool:cb02-number-line-extends-left>
@@ -167,6 +167,11 @@
     caption: [数轴上比较大小：$-2$ 在 $1$ 左边，所以 $-2 < 1$],
   )
 ]
+
+#self-check[
+  在数轴上，$-3$ 在 $-5$ 的左边还是右边？你判断时依靠的是“距离”还是“方向”？
+]
+
 
 #pitfall[
   *高频错误*
