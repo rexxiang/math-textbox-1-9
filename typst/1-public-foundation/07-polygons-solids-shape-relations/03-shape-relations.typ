@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 图形之间的关系：里外、相邻、相交、平行 <tool:pf06-shape-relations>
@@ -142,8 +142,7 @@
   + 一个凹多边形内部的形状很“弯”。请用“射线穿过边界几次”的方法，自己找一个容易误判内外的点，说明怎样判对。
   + “两条线段永远不相交”和“两条线段平行”是不是同一回事？想一想反例。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
   + 图略；三点位置不同即可。（封闭图形把平面分成内部、边界、外部三部分）
   + 相邻——共享一条边界，不互相穿透。（相邻的定义）
   + 平行——上下两条长边方向一致，延长后永不相遇。（平行的直观定义）
@@ -154,4 +153,5 @@
   + 逐个判断：课桌对边（方向一致、等距）→ 平行；黑板和讲台前沿（通常方向一致）→ 平行；墙脚线与地板对角线（方向不同、会相遇）→ 相交。
   + 示例略。方法：在凹处选一点，画射线向外发射。如果穿过边界*奇数*次 → 在内部；*偶数*次 → 在外部。凹多边形的凹处容易目测出错，射线法更可靠。
   + 不一定是同一回事。反例：画两条方向不同但都很短的线段，它们可能永远不相交（因为不够长碰不到），但方向不同所以不平行。平行 = 方向一致 + 延长也不相交，缺一不可。
+  ]
 ]

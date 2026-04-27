@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 公式：函数的第三张面孔 <tool:fn03-formula-as-function-view>
@@ -11,10 +11,6 @@
   从 #secref("cb04-letters-represent-numbers") 起，我们已经让字母代替数了，从 #secref("cb05-equation-as-balance") 起等号两边能互相变形。*现在我们要用同样的字母语言写下函数的对应规则*——让一条公式代替一整张查询表、代替一整条手绘曲线。
 
   可是新的麻烦也出现了：$y = 1 / x$ 里 $x = 0$ 不能代入；$y = sqrt(x)$ 里 $x < 0$ 不能代入。公式不像表能自带“输入范围”——我们得自己把*允许取的 $x$*（定义域）说清楚。
-]
-
-#history-note[
-  $1748$ 年欧拉（Leonhard Euler）出版《无穷分析引论》（_Introductio in analysin infinitorum_），第一次系统地把函数写成公式表达式，并推广了沿用至今的 $f(x)$ 记号。在此之前，"函数"只是一个模糊的几何概念；欧拉让它变成了可以运算、可以展开、可以组合的代数对象。从那之后，*函数 $=$ 一条公式 $+$ 一份定义域*成为主流写法，直到 $1837$ 年狄利克雷（Dirichlet）把定义拓宽到"不一定有公式"的对应关系。
 ]
 
 #discovery[
@@ -121,6 +117,10 @@
   + 写出函数“把输入 $x$ 减去 $3$ 再平方”的公式，并算 $f(5)$、$f(3)$、$f(0)$。
 ]
 
+#history-note[
+  $1748$ 年欧拉（Leonhard Euler）出版《无穷分析引论》（_Introductio in analysin infinitorum_），第一次系统地把函数写成公式表达式，并推广了沿用至今的 $f(x)$ 记号。在此之前，"函数"只是一个模糊的几何概念；欧拉让它变成了可以运算、可以展开、可以组合的代数对象。从那之后，*函数 $=$ 一条公式 $+$ 一份定义域*成为主流写法，直到 $1837$ 年狄利克雷（Dirichlet）把定义拓宽到"不一定有公式"的对应关系。
+]
+
 #blueprint[
   *工具：公式作为函数的规则*
 
@@ -182,8 +182,7 @@
     - 乙：$f(x) = x^2$，定义域 $RR$。
     他们定义的是“同一个函数”吗？说明理由。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + $f(0) = -2$，$f(1) = 1$，$f(-2) = -8$，$f(1 / 3) = 1 - 2 = -1$。（代入求值：$f(x) = 3 x - 2$）
@@ -200,4 +199,5 @@
     说明：$f$ 每次“$x$ 增加 $1$”时，$f$ 的变化量随 $x$ 线性增加——提示 $f$ 不是一次函数（一次函数的变化量应当是常数）。（先展开 $f(x+1)$，再作差化简，比较变化量是否为常数）
   + 定义域 ${x | x != 5}$。$f(x) = 0$ 要求分子 $x + 3 = 0$ 且分母不为 $0$，故 $x = -3$。（分母 $x - 5 != 0$ 定义域；令分子为 $0$ 求零点）
   + *不同*。函数由“公式 $+$ 定义域”共同决定：定义域不同就是不同函数。甲的 $f$ 只接收非负输入（图像是抛物线右半支），乙的 $f$ 全实数都接收（图像是完整抛物线）。（函数 $=$ 公式 $+$ 定义域，二者缺一不可）
+  ]
 ]

@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 仰角·俯角·坡度的实际测量 <tool:ge04-elevation-slope>
@@ -9,10 +9,6 @@
   要测一座塔的高度，没法爬上去拿尺子量。要知道一段山坡“陡不陡”，光靠眼睛看不够客观。工程师、测量员、也包括真正的登山者，都需要把“从某处看上去的角度”换算成“真实的距离或高度”。
 
   *怎么把“在地面观察到的一个角”加上“一条测得的水平距离”，转成真正要求的高度或坡长？*
-]
-
-#history-note[
-  中国古代的《九章算术》（成书约前 1 世纪）第九章"勾股"收录了 24 道测高测远问题。三国时期数学家刘徽（约 225–295 年）在为《九章》作注时，进一步写出了《海岛算经》，用"重差术"——在两个不同地点各测一次仰角，就能算出海岛的高度和距离——这比欧洲的三角测量早了一千多年。在地上量一段，仰头测一个角，就能得到塔、山、河对岸建筑的高度或距离——数学第一次成为"可以帮人看到自己看不到的地方"的工具。
 ]
 
 #discovery[
@@ -110,6 +106,10 @@
   + 从一楼窗口水平向外看一处凹坑，俯角 $30 degree$，视线长（从窗口到凹坑）$= 12$ 米。求窗口高出凹坑的铅直距离。
 ]
 
+#history-note[
+  中国古代的《九章算术》（成书约前 1 世纪）第九章"勾股"收录了 24 道测高测远问题。三国时期数学家刘徽（约 225–295 年）在为《九章》作注时，进一步写出了《海岛算经》，用"重差术"——在两个不同地点各测一次仰角，就能算出海岛的高度和距离——这比欧洲的三角测量早了一千多年。在地上量一段，仰头测一个角，就能得到塔、山、河对岸建筑的高度或距离——数学第一次成为"可以帮人看到自己看不到的地方"的工具。
+]
+
 #blueprint[
   *工具一：仰角与俯角*
 
@@ -174,8 +174,7 @@
   + 一位测量员先在 $A$ 处测得山顶仰角 $30 degree$；他*向山脚方向走 $50$ 米*到 $B$ 处，再测得山顶仰角 $60 degree$。设山高 $h$。求 $h$。
   + 一段土坝高 $4$ 米、坡角 $45 degree$。求它的坡长与水平*底脚*宽度。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + 塔高 $= 20 tan 45 degree = 20$ 米（仰角/俯角模型）。
@@ -191,4 +190,5 @@
   + 俯角 $= 45 degree$、铅直 $= 40 =>$ 水平距离 $= 40 slash tan 45 degree = 40$ 米。
   + 山顶正下方在地面投影点设为 $F$；$A$、$B$ 都在 $F$ 的同侧水平线上，$A$ 远、$B$ 近。由仰角定义：$A F = h slash tan 30 degree = h sqrt(3)$，$B F = h slash tan 60 degree = h slash sqrt(3) = h sqrt(3) slash 3$。由 $A B = A F - B F$：$50 = h sqrt(3) - h sqrt(3) slash 3 = (2 sqrt(3) slash 3) h => h = 50 dot 3 slash (2 sqrt(3)) = 75 slash sqrt(3) = 25 sqrt(3)$ 米。
   + 坡角 $45 degree$、铅直 $4 =>$ 水平 $= 4$、坡长 $= 4 sqrt(2)$。故坡长 $= 4 sqrt(2)$ 米，底脚水平宽度 $= 4$ 米。
+  ]
 ]

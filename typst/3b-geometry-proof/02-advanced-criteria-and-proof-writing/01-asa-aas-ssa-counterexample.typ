@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === ASA、AAS 与 SSA 反例：哪些判定能成、哪条不行 <tool:ge01-asa-aas-ssa>
@@ -12,10 +12,6 @@
   - *两边一非夹角*：两条边加一个不是夹角的角。看起来和 SAS 差不多，可真能判全等吗？
 
   这一节一次性处理这两件事：*判定法家族还剩两条——ASA 和 AAS；另外还得说清楚 SSA 为什么不算数*。
-]
-
-#history-note[
-  约前 300 年，欧几里得（Euclid）在《几何原本》命题 I.26 中证明了 `ASA`：若两个三角形有两个角和夹边分别相等，则它们全等。他没有单独写 `AAS`——因为*一旦两个角给定，第三个角就被 $180 degree$ 自动锁死*，`AAS` 只是 `ASA` 的直接推论。近代初中教材普遍把 `AAS` 单列为独立工具，方便学生套用。SSA 之所以落选，不是"还没人证出来"，而是*真的存在反例*——本节中段给出一个只需一次的干净反例。
 ]
 
 #discovery[
@@ -89,6 +85,10 @@
 
   + $triangle X Y Z$ 与 $triangle M N O$：$angle X = angle M$、$angle Y = angle N$、$Y Z = N O$。
   + $triangle P Q R$ 与 $triangle S T U$：$P Q = S T = 6$、$Q R = T U = 4$、$angle P = angle S = 40 degree$（$angle P$ 不是 $P Q, Q R$ 的夹角）。
+]
+
+#history-note[
+  约前 300 年，欧几里得（Euclid）在《几何原本》命题 I.26 中证明了 `ASA`：若两个三角形有两个角和夹边分别相等，则它们全等。他没有单独写 `AAS`——因为*一旦两个角给定，第三个角就被 $180 degree$ 自动锁死*，`AAS` 只是 `ASA` 的直接推论。近代初中教材普遍把 `AAS` 单列为独立工具，方便学生套用。SSA 之所以落选，不是"还没人证出来"，而是*真的存在反例*——本节中段给出一个只需一次的干净反例。
 ]
 
 #blueprint[
@@ -207,8 +207,7 @@
 
   + 直角三角形里"斜边（直角对面最长的那条边）$+$ 一条直角边"（HL）就能判全等——请用本节的工具把它翻译成 `AAS`（或想一想：在直角三角形里，知道斜边和一直角边，为什么另一直角边也唯一确定？）。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + `ASA` ✓（$A B$ 是 $angle A, angle B$ 的夹边）；`AAS` ✓（$B C$ 是 $angle A$ 的对边）；不能，只是 `AAA`，属相似；不够——这里 $angle A$ 不是 $A B, B C$ 的夹角，落进 SSA 反例区。
@@ -223,4 +222,5 @@
   + “两边一角”在*夹角*下给的是 SAS（可判），在*非夹角*下给的是 SSA（不可判）——判与不判只差一字，省了就错了。
   + 补 $A C = D F$（同一个顶点 $A / D$ 出发的另一条边）得 `SAS`；或补 $angle B = angle E$ 得 `ASA`。选 $B C = E F$ 是不够的——那会让三项变成 $A B$、$B C$ 两边加 $angle A$（$angle A$ 是 $A B$ 的对角而不是夹角），落入 SSA 反例区。
   + 在两个直角三角形中，直角对应相等（$90 degree = 90 degree$），斜边与一条直角边给出；两角（一个直角 $+$ 一个由斜边与已知直角边决定的底角）相等，再配那条给定的直角边即 `AAS`。等价地，由勾股把第三边算出来，再 `SSS` 也行。
+  ]
 ]

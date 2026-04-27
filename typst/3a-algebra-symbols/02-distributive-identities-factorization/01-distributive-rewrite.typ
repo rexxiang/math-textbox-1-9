@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 分配律的双向使用 <tool:al02-distributive-rewrite>
@@ -17,10 +17,6 @@
   - 你看到 $x (y - 3) + 4 (y - 3)$，这里的 $(y - 3)$ 能不能被“拎”出来？
 
   分配律其实是一条双向公路——一头叫“乘开”，另一头叫“提公因式”。这一节就要把这条公路两端都走熟。
-]
-
-#history-note[
-  约公元前 300 年，欧几里得（Euclid）在《原本》第二卷命题 1 中，用矩形面积的分拆证明了 $a(b + c) = a b + a c$——这是分配律最早的严格论证。公元 820 年前后，波斯数学家花拉子密（al-Khwārizmī）在《代数学》中大量隐式运用同一法则来展开和化简方程。不过，“分配律”（_distributive_）这个正式名称要等到 1814 年才由法国军官数学家塞尔瓦（François-Joseph Servois）在一篇关于运算性质的论文中命名。
 ]
 
 #discovery[
@@ -102,6 +98,10 @@
 
   + 提公因式：$8 m^2 - 12 m$
   + 提公因式：$x(y + 2) + 5(y + 2)$
+]
+
+#history-note[
+  约公元前 300 年，欧几里得（Euclid）在《原本》第二卷命题 1 中，用矩形面积的分拆证明了 $a(b + c) = a b + a c$——这是分配律最早的严格论证。公元 820 年前后，波斯数学家花拉子密（al-Khwārizmī）在《代数学》中大量隐式运用同一法则来展开和化简方程。不过，“分配律”（_distributive_）这个正式名称要等到 1814 年才由法国军官数学家塞尔瓦（François-Joseph Servois）在一篇关于运算性质的论文中命名。
 ]
 
 #blueprint[
@@ -197,8 +197,7 @@
   + 若 $m a + m b + m c = 45$，且 $a + b + c = 9$，求 $m$ 的值。
   + 设 $A = 3 x (y + 2) + 5(y + 2)$，$B = (y + 2)(3 x + 5) - 4$。比较 $A$ 和 $B$，说明它们的关系。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + $-6 u + 15 v - 3$；$2 p + 3 q - 4$。（分配律展开）
@@ -214,4 +213,5 @@
   + $x(a - b) + y(b - a) = x(a - b) - y(a - b) = (a - b)(x - y)$。
   + $m (a + b + c) = 45$，即 $9 m = 45$，$m = 5$。
   + $A = (y + 2)(3 x + 5)$；而 $B = (y + 2)(3 x + 5) - 4$，所以 $B = A - 4$，即 $A - B = 4$。
+  ]
 ]

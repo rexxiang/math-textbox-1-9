@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 一元一次方程的标准五步 <tool:al04-linear-one-variable>
@@ -13,10 +13,6 @@
   这里既有分数，又有需要合并的项。*不同题的步骤顺序应该一样*，否则每题都得想一遍要先干什么，很容易出错。
 
   本节的任务：把“该先做什么”这件事*机械化*——给出一套适用于任意一元一次方程的固定流程；让每一步都清清楚楚地对应一条*等式性质*。
-]
-
-#history-note[
-  解一元一次方程的历史远比“代数”这个词更古老。约公元前 1650 年的古埃及莱因德纸草书（Rhind Papyrus）中就记载了一系列“aha 问题”——“aha”就是未知数，书吏用“假设-检验-调整”的方法来解形如 $x + x\/7 = 19$ 的方程。而“代数”（Algebra）这个词来自波斯数学家花拉子密（al-Khwārizmī，约 780–850）在约公元 820 年所著的 _Al-Kitāb al-Mukhtaṣar fī Ḥisāb al-Jabr wal-Muqābala_，“al-jabr”原意正是“把一边的项*挪到*另一边”——也就是今天所说的“移项”。“算法”（Algorithm）一词则源自他名字的拉丁转写。在中国，《九章算术》（约公元 1 世纪）也系统地用“合分”“损益”来处理一次方程问题。
 ]
 
 #discovery[
@@ -127,6 +123,10 @@
   + 解 $frac(3 x - 1, 2) - frac(x + 2, 3) = 2$（分母和括号都有）。
 ]
 
+#history-note[
+  解一元一次方程的历史远比“代数”这个词更古老。约公元前 1650 年的古埃及莱因德纸草书（Rhind Papyrus）中就记载了一系列“aha 问题”——“aha”就是未知数，书吏用“假设-检验-调整”的方法来解形如 $x + x\/7 = 19$ 的方程。而“代数”（Algebra）这个词来自波斯数学家花拉子密（al-Khwārizmī，约 780–850）在约公元 820 年所著的 _Al-Kitāb al-Mukhtaṣar fī Ḥisāb al-Jabr wal-Muqābala_，“al-jabr”原意正是“把一边的项*挪到*另一边”——也就是今天所说的“移项”。“算法”（Algorithm）一词则源自他名字的拉丁转写。在中国，《九章算术》（约公元 1 世纪）也系统地用“合分”“损益”来处理一次方程问题。
+]
+
 #blueprint[
   *工具一：解一元一次方程的标准五步*
 
@@ -233,8 +233,7 @@
   + 解关于 $x$ 的方程 $3 (x - m) = 2 x + m$（$m$ 是常数），并写出解关于 $m$ 的表达式。
   + 解 $frac(x, 0.7) - frac(0.17 - 0.2 x, 0.03) = 1$。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + $2 x = 12$，$x = 6$。（移项 + 系数化 1）
@@ -250,4 +249,5 @@
   + $k != 1$：$x = 3 / (k - 1)$，唯一解；$k = 1$：化为 $0 dot x = 3$，形如“$0 = 3$”，是*矛盾*——*无解*，不是恒等式。
   + 去括号：$3 x - 3 m = 2 x + m => x = 4 m$。
   + 两边乘 $2.1$（即 $21/10$）：$3 x - 70 (0.17 - 0.2 x) = 2.1 => 3 x - 11.9 + 14 x = 2.1 => 17 x = 14 => x = 14 / 17$。
+  ]
 ]

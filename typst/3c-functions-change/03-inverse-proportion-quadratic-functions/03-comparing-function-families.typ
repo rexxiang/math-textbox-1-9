@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 三类函数对照：一次 / 反比例 / 二次 <tool:fn09-comparing-function-families>
@@ -247,8 +247,7 @@
   + 下表：$x: 1, 2, 3, 4, 5$；$y: 10, 5, 3.33, 2.5, 2$。判族，写公式。验证 $x = 10$ 的预测。
   + 一批 $x$ 张桌子围一圈，每桌坐 $y$ 人，总座位数固定为 $24$。写 $y = f(x)$；再写“每桌人均重量（$72$ 斤 $div y$）”为新函数 $g(y)$。$g$ 是不是函数 $g(x)$？若是用 $y$ 替换表示 $x$ 作自变量。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + (a) $Delta y = -2$ 恒定 $=>$ 一次（一阶差恒定 → 一次），$y = -2 x + 7$。
@@ -266,4 +265,5 @@
   + 一阶差 $3, 5$；二阶差 $2$（只有一个，不能判恒定）。先算二阶差再尝试拟合（二阶差恒定 → 二次）：$y = x^2 + 1$（验 $x = 1: 2$ ✓、$x = 2: 5$ ✓、$x = 3: 10$ ✓）。在本章范围内*二次最匹配*。
   + 一阶差不恒定；$x y: 10, 10, 9.99, 10, 10$（约）$= 10$ $=>$ *反比例*（$x y$ 恒定 → 反比例），$y = 10 / x$。$x = 10$：$y = 1$。
   + $y = 24 / x$（$x y$ 恒定 → 反比例）。$g(y) = 72 / y$——若把 $y$ 作为自变量就是 $g$ 的函数面孔。$g(x) = 72 / (24 / x) = 3 x$，反比例复合反比例变回正比例（一阶差恒定 → 一次）。
+  ]
 ]

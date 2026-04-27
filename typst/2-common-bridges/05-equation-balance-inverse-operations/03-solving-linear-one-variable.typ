@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 反向操作解一元一次方程（简单系数）<tool:cb05-solving-linear>
@@ -11,8 +11,9 @@
   *我们把等式性质串成一条“反向操作”流程：谁包着 $x$，就从最外面一步步拆掉它。*
 ]
 
-#history-note[
-  约 $820$ 年，花拉子米（al-Khwārizmī）在《代数学》中把解方程的核心操作归纳为"al-jabr"（把减去的项移到另一边变加）和"al-muqābala"（合并同类项）。这两步本质上就是"反向操作"：加的反面是减，乘的反面是除。中国《九章算术》中的"盈不足"术也用类似的正反对消思想来求解线性问题。
+#tryit[
+  + 解方程：$x + 7 = 15$。
+  + 解方程：$5 x - 4 = 11$。
 ]
 
 #discovery[
@@ -70,9 +71,8 @@
   “洋葱剥皮法”：先看最外层是什么动作（$+$ 还是 $times$），就先撤销它；和代入求值时“先算括号内”正好相反。
 ]
 
-#tryit[
-  + 解方程：$x + 7 = 15$。
-  + 解方程：$5 x - 4 = 11$。
+#history-note[
+  约 $820$ 年，花拉子米（al-Khwārizmī）在《代数学》中把解方程的核心操作归纳为"al-jabr"（把减去的项移到另一边变加）和"al-muqābala"（合并同类项）。这两步本质上就是"反向操作"：加的反面是减，乘的反面是除。中国《九章算术》中的"盈不足"术也用类似的正反对消思想来求解线性问题。
 ]
 
 #blueprint[
@@ -144,8 +144,7 @@
   + 解：$(x - 3) / 2 + 1 = 4$。
   + 已知 $x = -1$ 是方程 $k x + 3 = 2 x - 7$ 的解，求 $k$。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
   + $x = 13$（反向操作：两边同加 $9$，撤销 $-9$）。
   + $x = 5$（反向操作：两边同除以 $4$，撤销 $times 4$）。
   + $x = 4$（先撤 $+1$：$2x = 8$；再撤 $times 2$：$x = 4$。代回：$2 times 4 + 1 = 9$ ✓）。
@@ -156,6 +155,7 @@
   + 方程：$4p = 90 - 6 = 84$（总价模板 + 等式性质），$p = 21$ 元。代回：$4 times 21 + 6 = 90$ ✓。
   + 反向操作三层剥皮：先撤 $+1$（两边 $-1$）：$(x-3)/2 = 3$；再撤 $div 2$（两边 $times 2$）：$x - 3 = 6$；最后撤 $-3$（两边 $+3$）：$x = 9$。代回：$(9-3)/2 + 1 = 4$ ✓。
   + 把 $x = -1$ 代入：$-k + 3 = 2(-1) - 7 = -9$。移项：$-k = -12$，$k = 12$（代入法 + 反向操作）。
+  ]
 ]
 
 #side-hack[

@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 体积：用单位立方体堆出来 <tool:pf07-volume>
@@ -178,8 +178,7 @@
   + 一个长方体的长、宽、高分别是 $a$、$b$、$c$ 厘米。如果把三条边都变成原来的 2 倍，体积会变成原来的几倍？从“堆多少块立方体”的角度解释。
   + 一个圆柱的底面积是 $S$，高是 $h$，体积是多少？这是用了本节哪条通用关系？
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
   + $10 times 6 times 4 = 240$ 立方厘米。（长方体体积 $= $ 长 $times$ 宽 $times$ 高）
   + $3^3 = 27$ 立方分米 $= 27$ 升。（正方体体积 $=$ 边长³；$1$ 立方分米 $= 1$ 升）
   + $25 times 8 = 200$ 立方厘米。（体积 $= $ 底面积 $times$ 高）
@@ -190,4 +189,5 @@
   + 每条边切一半：$2 div 2 = 1$ 分米。每个小正方体体积 $= 1^3 = 1$ 立方分米。验证：$8 times 1 = 8 = 2^3$ ✓。
   + 新体积 $= 2a times 2b times 2c = 8 times (a times b times c) = 8 times$ 原体积。从“堆块”角度看：每条边上的块数翻倍，三个方向都翻倍，所以总块数 $= 2 times 2 times 2 = 8$ 倍。
   + 体积 $= S times h$。依据：本节的通用关系“体积 = 底面积 × 高”，对圆柱同样适用——先铺一层（底面积 $S$），再堆 $h$ 层高。
+  ]
 ]

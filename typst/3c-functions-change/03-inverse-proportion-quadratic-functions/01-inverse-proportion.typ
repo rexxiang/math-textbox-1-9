@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 反比例函数：$y = k / x$ <tool:fn07-inverse-proportion>
@@ -19,10 +19,6 @@
   这里 $x$ 增加时 $y$ 反而减少，和正比例 / 一次函数完全相反。细看也有一条铁律：*$x times y = 12$，永远不变*——苹果总数不变。
 
   *这一类“两量乘积不变”的关系，该写成怎样的函数公式？图像长什么样？哪些日常情景属于它？*
-]
-
-#history-note[
-  反比例关系在古希腊就已现身：约公元前 $250$ 年阿基米德（Archimedes）在《论平面图形的平衡》中写下杠杆原理——*力臂 $times$ 力 $=$ 常数*，支点越远的一侧用越小的力即可平衡。$1662$ 年波义耳（Robert Boyle）发表气体实验结果：恒温下气体压强与体积成反比，$P V = "常数"$——这就是波义耳定律，化学和物理课本里至今必学。两个时隔近两千年的发现共享同一个数学模板："两量乘积不变"。
 ]
 
 #discovery[
@@ -147,6 +143,10 @@
     ))
 ]
 
+#history-note[
+  反比例关系在古希腊就已现身：约公元前 $250$ 年阿基米德（Archimedes）在《论平面图形的平衡》中写下杠杆原理——*力臂 $times$ 力 $=$ 常数*，支点越远的一侧用越小的力即可平衡。$1662$ 年波义耳（Robert Boyle）发表气体实验结果：恒温下气体压强与体积成反比，$P V = "常数"$——这就是波义耳定律，化学和物理课本里至今必学。两个时隔近两千年的发现共享同一个数学模板："两量乘积不变"。
+]
+
 #blueprint[
   *工具：反比例函数 $y = k / x$*
 
@@ -254,8 +254,7 @@
       [$y$], [$6$], [$12$], [$-8$], [$-4.8$],
     ))
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + (a) ✓ $k = 5$；(b) ✓ $k = -7$（反比例定义：$y = k / x$）；(c) ✗（分母是 $x - 1$ 不是 $x$）；(d) ✗（多了 $+ 1$）；(e) $y = -8 / x$ ✓ $k = -8$（反比例定义：$y = k / x$）。
@@ -271,4 +270,5 @@
   + 先求 $k = -3 times 8 = -24$（$k = x y$），$y = -24 / x$。$y = 2$：$x = -24 / 2 = -12$；$y = -4$：$x = -24 / (-4) = 6$（代入反比例公式求 $x$）。
   + 联立 $x = 6 / x => x^2 = 6 => x = plus.minus sqrt(6)$，对应 $y = plus.minus sqrt(6)$。两个交点 $(sqrt(6), sqrt(6))$ 与 $(-sqrt(6), -sqrt(6))$（联立方程法求交点）。
   + 检查乘积：$(-4)(6) = -24$、$(-2)(12) = -24$、$(3)(-8) = -24$、$(5)(-4.8) = -24$——全 $= -24$（$k = x y$ 恒定 → 反比例）。$k = -24$，$y = -24 / x$。
+  ]
 ]

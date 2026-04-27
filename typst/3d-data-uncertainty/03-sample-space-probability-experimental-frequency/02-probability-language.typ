@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 古典概率：把可能性量化到 $[0, 1]$ <tool:dt08-probability-language>
@@ -22,8 +22,9 @@
   *本节把上述直觉整理成正式语言：古典概率公式，加上对立 / 互斥两条最常用的规则，一次性把*有限等可能*情况下的概率方法建立起来。*
 ]
 
-#history-note[
-  *古典概率*的数学语言由拉普拉斯（Pierre-Simon Laplace）在 $1812$ 年的《概率分析理论》（_Théorie analytique des probabilités_）中总结定型："某事件的概率等于对该事件有利的结果数与所有可能结果数之比，前提是各结果等可能"。这句话正好点明了*古典*概率的核心前提——"有限 $+$ 等可能"。跳出这个前提（无穷样本空间、非等可能结果等）需要更一般的公理化概率，那是 $1933$ 年柯尔莫哥洛夫（Andrey Kolmogorov）在《概率论基础》中建立的贡献。
+#tryit[
+  + 投一颗骰子。$P("奇数")$、$P("$>= 3$")$、$P("$ = 7$")$、$P("$<= 6$")$ 分别是多少？
+  + 抛两枚硬币。$P("恰 1 次正面")$、$P("至少 1 次正面")$、$P("没有正面")$ 分别是多少？
 ]
 
 #discovery[
@@ -134,9 +135,8 @@
   $A$ 和 $A^c$ 互斥（没有共同样本点）且*并起来等于 $Omega$*。所以 $P(A) + P(A^c) = P(A union A^c) = P(Omega) = 1$。两条规则在 $A^c$ 这个特例下重合。
 ]
 
-#tryit[
-  + 投一颗骰子。$P("奇数")$、$P("$>= 3$")$、$P("$ = 7$")$、$P("$<= 6$")$ 分别是多少？
-  + 抛两枚硬币。$P("恰 1 次正面")$、$P("至少 1 次正面")$、$P("没有正面")$ 分别是多少？
+#history-note[
+  *古典概率*的数学语言由拉普拉斯（Pierre-Simon Laplace）在 $1812$ 年的《概率分析理论》（_Théorie analytique des probabilités_）中总结定型："某事件的概率等于对该事件有利的结果数与所有可能结果数之比，前提是各结果等可能"。这句话正好点明了*古典*概率的核心前提——"有限 $+$ 等可能"。跳出这个前提（无穷样本空间、非等可能结果等）需要更一般的公理化概率，那是 $1933$ 年柯尔莫哥洛夫（Andrey Kolmogorov）在《概率论基础》中建立的贡献。
 ]
 
 #blueprint[
@@ -218,8 +218,7 @@
   + 三人各独立抛一枚硬币，求 $P("恰有 2 人掷出正面")$。用树状图或直接枚举样本空间说明。
   + 在*等可能*样本空间中，证明：对任意事件 $A, B$，$P(A union B) <= P(A) + P(B)$。什么时候取等？
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + $Omega = \{H H, H T, T H, T T\}$。$"两面相同" = \{H H, T T\}$，$P = 2 \/ 4 = 1 \/ 2$（古典概型 $P(A) = |A| \/ |Omega|$）。
@@ -235,4 +234,5 @@
   + (a) $P("特等") = 1 \/ 100$；“中任一奖”$= 10 \/ 100 = 1 \/ 10$。(b) 不放回 $2$ 次抽：$|Omega| = 100 times 99$；“两次都没中”$=$ 两次都从 $90$ 张无奖票里选 $=> 90 times 89$；概率 $= (90 times 89) \/ (100 times 99) = 8010 \/ 9900 = 801 \/ 990 = 89 \/ 110$。
   + 抛 $3$ 枚硬币 $|Omega| = 8$。“恰 $2$ 次正面”$= \{H H T, H T H, T H H\}$，$|A| = 3 =>$ $P = 3 \/ 8$（古典概型 $P(A) = |A| \/ |Omega|$）。
   + 加法公式 $P(A union B) = P(A) + P(B) - P(A inter B) <= P(A) + P(B)$，因为 $P(A inter B) >= 0$。取等当且仅当 $A inter B = emptyset$（互斥事件）。
+  ]
 ]

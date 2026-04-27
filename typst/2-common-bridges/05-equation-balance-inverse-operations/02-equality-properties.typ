@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 等式性质：保持天平平衡 <tool:cb05-equality-properties>
@@ -9,10 +9,6 @@
   方程是个天平。想把未知量“请出来”，你得一步步变形，但每一步都*不能破坏平衡*。到底什么样的变形是合法的？
 
   *我们要把“合法变形”归纳成四条明确可查的等式性质。*
-]
-
-#history-note[
-  约公元前 $300$ 年，欧几里得（Euclid）在《几何原本》开篇列出的"公理"中，第二条正是"等量加等量，其和相等"，第三条是"等量减等量，其差相等"。这些朴素的约定写下来之后两千多年从未被推翻，正是今天等式性质的老祖宗。
 ]
 
 #discovery[
@@ -115,6 +111,10 @@
   + 在等式 $3 x = 21$ 两边同时除以 $3$，写出变形结果。
 ]
 
+#history-note[
+  约公元前 $300$ 年，欧几里得（Euclid）在《几何原本》开篇列出的"公理"中，第二条正是"等量加等量，其和相等"，第三条是"等量减等量，其差相等"。这些朴素的约定写下来之后两千多年从未被推翻，正是今天等式性质的老祖宗。
+]
+
 #blueprint[
   - *四条基本性质*（$a = b$）：
     - 两边同加同减同一个数：$a plus.minus c = b plus.minus c$；
@@ -157,8 +157,7 @@
   + 说明为什么“等式两边不能同乘 $0$ 再做比较”。
   + 已知 $a = b + 3$，$b = 5$，利用等式性质推出 $a + 7$ 的值。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
   + $a - 9 = b - 9$（等式性质：两边同减 $9$）。
   + $x = 4$（等式性质：两边同除以 $5$，$20 div 5 = 4$）。
   + $x = -13$（移项变号：$+13$ 移到右边变 $-13$）。
@@ -169,6 +168,7 @@
   + $y = 21$（等式两边同乘 $3$：$7 times 3 = 21$）。
   + 两边同乘 $0$ 后都变成 $0$，原信息丢失；而“由 $0 = 0$ 推回原等式”并不合法。
   + 步骤：$b = 5$ 代入 $a = b + 3$ 得 $a = 8$。再用等式性质：$a = 8$ 两边同加 $7$，得 $a + 7 = 15$。
+  ]
 ]
 
 #side-hack[

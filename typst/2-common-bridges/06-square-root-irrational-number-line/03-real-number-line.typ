@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 把无理数放回数轴：$RR$ 的完整性 <tool:cb06-real-number-line>
@@ -9,10 +9,6 @@
   $sqrt(2)$ 不是有理数。那它到底在数轴上的什么位置？有理数已经在数轴上“稠密”铺了，按说不该再有空位——可 $sqrt(2)$ 确实需要一个精确位置。
 
   *这节要回答：$QQ$ 在数轴上其实留了无数个洞；把无理数填进去后，才得到完整的实数轴。*
-]
-
-#history-note[
-  $1872$ 年，德国数学家戴德金（Richard Dedekind）发表了《连续性与无理数》，用"戴德金分割"严格定义了实数的连续性。同年，康托尔（Georg Cantor）用柯西序列给出了另一种等价的构造。在此之前，数学家们凭直觉使用实数已有两千多年，但"数轴上没有缝"这件事直到 $19$ 世纪才真正被证明。中学里我们先用直觉描述它：实数轴是一条没有"缝"的直线。
 ]
 
 #discovery[
@@ -76,6 +72,10 @@
 #tryit[
   + 估算 $sqrt(2)$ 到小数点后两位，并在数轴上标出大致位置。
   + 在区间 $(3, 4)$ 内分别写出一个有理数和一个无理数。
+]
+
+#history-note[
+  $1872$ 年，德国数学家戴德金（Richard Dedekind）发表了《连续性与无理数》，用"戴德金分割"严格定义了实数的连续性。同年，康托尔（Georg Cantor）用柯西序列给出了另一种等价的构造。在此之前，数学家们凭直觉使用实数已有两千多年，但"数轴上没有缝"这件事直到 $19$ 世纪才真正被证明。中学里我们先用直觉描述它：实数轴是一条没有"缝"的直线。
 ]
 
 #blueprint[
@@ -154,8 +154,7 @@
   + 证明：$sqrt(2) + 3$ 是无理数（思路：假设它是有理数，推回 $sqrt(2)$）。
   + 在数轴上作出长度为 $sqrt(5)$ 的线段——给出构造思路。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
   + $5 in NN$（自然数）；$-7 in ZZ$（整数但非自然数）；$2/3 in QQ$（有理数但非整数）；$sqrt(10) in RR without QQ$（无理数）；$0 in NN$（自然数）。
   + 正确（有限小数和无限循环小数都是有理数，可写成 $p/q$ 形式）。
   + $sqrt(5)$（$5$ 非完全平方数）和 $pi$（无限不循环小数）是无理数；$sqrt(4) = 2$ 和 $3.14$（有限小数）是有理数。
@@ -166,6 +165,7 @@
   + $sqrt(18) = sqrt(9 times 2) = 3sqrt(2)$；$sqrt(50) = sqrt(25 times 2) = 5sqrt(2)$（化简根号：提取最大完全平方因数）。
   + 反证法：假设 $sqrt(2) + 3 = r$（$r$ 为有理数），则 $sqrt(2) = r - 3$。有理数减有理数仍为有理数，故 $sqrt(2)$ 为有理数，与已证结论矛盾。
   + 用两条直角边长为 $1$、$2$ 的直角三角形，直角对面那条最长边的长度恰好是 $sqrt(5)$；用圆规把它搬到数轴。
+  ]
 ]
 
 #side-hack[

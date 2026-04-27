@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 代数式与合并同类项 <tool:cb04-expressions-and-like-terms>
@@ -11,8 +11,9 @@
   如果每次都要现推一遍分配律，就会又慢又容易出错。*我们需要一个能一眼看出“谁能合并、谁不能合并”的判别法。*
 ]
 
-#history-note[
-  约 $820$ 年，波斯数学家花拉子米（al-Khwārizmī）在《代数学》（_Al-jabr_）中把方程化简归结为两步操作："al-jabr"（补项）和"al-muqābala"（消项合并）。其中"al-muqābala"就是把方程两边的同类项合并——用今天的话说，$3x + 2x$ 合并成 $5x$，正是花拉子米一千多年前已经在做的事。
+#tryit[
+  + 指出 $7 a - 3 b + a + 5 b^2$ 中有哪些同类项。
+  + 判断 $2 x y$ 与 $2 y x$ 是否同类项，并说明理由。
 ]
 
 #discovery[
@@ -74,9 +75,8 @@
   合并同类项的本质就是分配律反着用：$3 x + 2 x = (3 + 2) x$。先找出公共“字母标签”，再把系数收到一起。
 ]
 
-#tryit[
-  + 指出 $7 a - 3 b + a + 5 b^2$ 中有哪些同类项。
-  + 判断 $2 x y$ 与 $2 y x$ 是否同类项，并说明理由。
+#history-note[
+  约 $820$ 年，波斯数学家花拉子米（al-Khwārizmī）在《代数学》（_Al-jabr_）中把方程化简归结为两步操作："al-jabr"（补项）和"al-muqābala"（消项合并）。其中"al-muqābala"就是把方程两边的同类项合并——用今天的话说，$3x + 2x$ 合并成 $5x$，正是花拉子米一千多年前已经在做的事。
 ]
 
 #blueprint[
@@ -152,8 +152,7 @@
   + 化简：$-(a - 2 b) + 3 (a + b)$。
   + 若 $3 x + k y$ 与 $-2 x + 5 y$ 的“同类项系数之和”都是 $1$（即 $x$ 的系数加起来等于 $1$、$y$ 的系数加起来等于 $1$），求 $k$。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
   + $8 a$ 与 $-3 a$（都是 $a$ 的一次项）；$5$ 与 $-2$（都是常数项）。$b$ 没有同类项。
   + $3 x + 3$（$5 x - 2 x = 3 x$，合并同类项；$+3$ 是常数项，无可合并项）。
   + $4 y$（$-4 + 1 + 7 = 4$，系数相加，字母不变）。
@@ -164,6 +163,7 @@
   + 周长 $= 2 (a + (a + 3)) = 4 a + 6$ 厘米。
   + 先去括号：$-(a - 2b) = -a + 2b$，$3(a + b) = 3a + 3b$。合并：$a$ 类 $-1 + 3 = 2$，$b$ 类 $2 + 3 = 5$。结果 $2a + 5b$。
   + $x$ 的系数：$3 + (-2) = 1 "，满足"$；$y$ 的系数 $k + 5 = 1$，所以 $k = -4$。
+  ]
 ]
 
 #side-hack[

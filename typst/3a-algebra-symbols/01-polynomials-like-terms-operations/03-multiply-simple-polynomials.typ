@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 整式乘法：三种搭配一次打通 <tool:al01-multiply-polynomials>
@@ -223,8 +223,7 @@
   + 若 $(x + a)(x + b) = x^2 + 5 x + 6$，求所有可能的 $(a, b)$。
   + 用 $(a + b)(c + d)$ 的展开规则解释“两位数乘两位数”的竖式是怎么来的——用 $(10 u + v)(10 s + t)$ 说明即可。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + $-20 m^5$；$-2 a^3 b^3$。（指数相加法则）
@@ -240,4 +239,5 @@
   + $(x + y)(x - y) = x^2 - y^2$；$(x^2 - y^2)(x^2 + y^2) = x^4 - y^4$。
   + $a + b = 5$，$a b = 6$，所以 $(a, b) = (2, 3)$ 或 $(3, 2)$。
   + $(10 u + v)(10 s + t) = 100 u s + 10 u t + 10 v s + v t$。四项正好对应竖式里的四部分：百位 $u s$、两个十位 $u t$ 与 $v s$、个位 $v t$——把它们按位对齐相加，就是竖式乘法。
+  ]
 ]

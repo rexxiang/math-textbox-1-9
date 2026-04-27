@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 质数、合数与质因数分解 <tool:pf03-primes-factorization>
@@ -11,10 +11,6 @@
   拿 12 试试：$3 times 4$ → $3 times 2 times 2$，拆到底了。可 7 怎么拆都只能写成 $1 times 7$。
 
   *有没有一些数像基本砖块，已经拆不动；而另一些数其实是由这些砖块拼起来的？*
-]
-
-#history-note[
-  约公元前 300 年，欧几里得（Euclid）在《几何原本》第九卷命题 20 中证明了“素数有无穷多个”——这是数学史上最早也最优美的证明之一。稍后，埃拉托斯特尼（Eratosthenes，约公元前 276–194 年）发明了“筛法”：把 2 的倍数划掉、3 的倍数划掉……层层筛过后剩下的就是素数。这两个工具至今仍是认识素数的起点。
 ]
 
 #discovery[
@@ -95,6 +91,10 @@
   + 把 18 和 60 做质因数分解。
 ]
 
+#history-note[
+  约公元前 300 年，欧几里得（Euclid）在《几何原本》第九卷命题 20 中证明了“素数有无穷多个”——这是数学史上最早也最优美的证明之一。稍后，埃拉托斯特尼（Eratosthenes，约公元前 276–194 年）发明了“筛法”：把 2 的倍数划掉、3 的倍数划掉……层层筛过后剩下的就是素数。这两个工具至今仍是认识素数的起点。
+]
+
 #blueprint[
   - *质数*：大于 1，且正因数只有 1 和自身两个。
   - *合数*：大于 1，且除了 1 和自身以外还有别的正因数。
@@ -173,8 +173,7 @@
   + 为什么说质数像“整数的砖块”？请结合 12 和 30 的分解来解释。
   + 试想：如果把 1 也算作质数，会给质因数分解带来什么混乱？
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
   + 质数：2、3、11；合数：4、6、9、15；两者都不是：1（质数定义：恰好有两个正因数）。
   + $18 = 2 times 3^2$（短除法：$18 div 2 = 9$，$9 = 3 times 3$）。
   + $60 = 2^2 times 3 times 5$（短除法：$60 div 2 = 30$，$30 div 2 = 15$，$15 div 3 = 5$）。
@@ -184,4 +183,5 @@
   + 它是合数（因为它有因数 1、2、4、7、14、28，正因数不只两个）。
   + 质数是拆到底的基本砖块。$12 = 2 times 2 times 3$，$30 = 2 times 3 times 5$，不同的合数都由少数几种质数组合而成。质因数分解揭示了整数的“成分表”（算术基本定理的初步认识）。
   + 如果 1 也算质数，分解就不唯一了：$6 = 2 times 3 = 1 times 2 times 3 = 1 times 1 times 2 times 3 dots.h$，会失去清晰标准形式（唯一分解定理要求排除 1）。
+  ]
 ]

@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 全等的含义与对应关系 <tool:ge01-congruence-correspondence>
@@ -11,10 +11,6 @@
   几何要做的，是把“完全重合”这件事从“图感”升级成可以*写下来、可以传给别人、可以一步步追溯*的语言。
 
   *两个三角形什么时候算“完全一样”？“一样”又必须精确到什么程度，才能放进后面的证明里用？*
-]
-
-#history-note[
-  希腊语里"全等"的词根意思是"吻合"——欧几里得（Euclid，约前 300 年）在《几何原本》第一卷里，正是用"把一个三角形搬到另一个上面，看能否严丝合缝"的方式来定义全等的（他称之为"叠合法"）。这个朴素的想法后来成了两千多年里所有几何证明的起点。在 #secref("pf06-polygons-and-circle") 你已经学过多边形怎么按边数分类；这一节把"分类"再往前推一步：同样是三角形，什么时候能说它们是*同一个三角形的另一份副本*。
 ]
 
 #discovery[
@@ -112,6 +108,10 @@
 
   + 若 $triangle P Q R tilde.eq triangle X Y Z$，写出三对对应边与三对对应角。
   + 若 $triangle A B C tilde.eq triangle D E F$ 且 $angle A = 35 degree$、$angle B = 65 degree$，求 $angle F$。
+]
+
+#history-note[
+  希腊语里"全等"的词根意思是"吻合"——欧几里得（Euclid，约前 300 年）在《几何原本》第一卷里，正是用"把一个三角形搬到另一个上面，看能否严丝合缝"的方式来定义全等的（他称之为"叠合法"）。这个朴素的想法后来成了两千多年里所有几何证明的起点。在 #secref("pf06-polygons-and-circle") 你已经学过多边形怎么按边数分类；这一节把"分类"再往前推一步：同样是三角形，什么时候能说它们是*同一个三角形的另一份副本*。
 ]
 
 #blueprint[
@@ -219,8 +219,7 @@
   + 已知 $triangle A B C tilde.eq triangle A' B' C'$，点 $M$、$M'$ 分别是 $B C$、$B' C'$ 的中点。能不能得出 $A M = A' M'$？写下你的理由。
   + 有人把 $triangle A B C tilde.eq triangle D E F$ 的九条结论压缩成一句话“三对对应边、三对对应角都相等”。请解释：为什么“对应”这两个字不能省。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + 顶点：$A <-> L$、$B <-> M$、$C <-> N$。边：$A B = L M$、$B C = M N$、$A C = L N$。角：$angle A = angle L$、$angle B = angle M$、$angle C = angle N$。（全等对应）
@@ -236,4 +235,5 @@
   + 能。设第一次对应 $A <-> D$、$B <-> E$、$C <-> F$，第二次 $D <-> G$、$E <-> H$、$F <-> I$。把两张对应表串起来得 $A <-> G$、$B <-> H$、$C <-> I$，且各条边角都沿链条传递相等，所以 $triangle A B C tilde.eq triangle G H I$。
   + 能。对应关系里 $B C$ 对应 $B' C'$，所以它们的中点也对应（$M <-> M'$），而 $A M$ 与 $A' M'$ 是两侧“顶点到对应中点”的线段，由对应关系的整体性它们相等。（严格证明要再用一次全等判定，下一节就给出工具。）
   + 因为“相等”可以随便挑一对，但“对应相等”要求*一张固定的表*把左右两边的边、角一一配对。没有“对应”两字，就可能只抓到了“都有一条长 $5$ 的边”，而这条边在两个三角形里的位置根本不同，结论立刻失效。
+  ]
 ]

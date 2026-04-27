@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 无理数：$sqrt(2)$ 不能写成分数 <tool:cb06-irrational-numbers>
@@ -9,10 +9,6 @@
   $sqrt(2)$ 这种记号我们已经能写、能用了。但它到底是“有理数”还是“有理数之外的新东西”？
 
   你试着找 $p / q$ 使它的平方等于 $2$：计算器里 $1.414^2 = 1.999396$，再精确一点 $1.41421356^2 approx 2.0000000013$——总是差一点。*我们要证明：$sqrt(2)$ 不可能等于任何分数。*
-]
-
-#history-note[
-  约公元前 $5$ 世纪，毕达哥拉斯（Pythagoras）学派的弟子希帕索斯（Hippasus）发现正方形对角线与边长不可公度——用今天的话说，$sqrt(2)$ 不能写成两个整数的比。据传这个发现让学派震惊不已，因为它打破了"万物皆整数之比"的信仰。有一个古老传说称希帕索斯因泄露此秘密而被抛入大海，虽然传说未必可靠，但这确实是人类第一次明确意识到：有理数不足以铺满整条数轴。
 ]
 
 #discovery[
@@ -60,6 +56,10 @@
 #tryit[
   + 下列哪些一定是无理数？$2.3$；$1/7$；$sqrt(16)$；$sqrt(10)$；$pi$；$0.1010010001 dots$（每段 $0$ 的个数递增，不循环）。
   + 判断：$sqrt(3) + 1$ 是不是无理数？（直觉上“一个有理数加一个无理数”会怎样？）
+]
+
+#history-note[
+  约公元前 $5$ 世纪，毕达哥拉斯（Pythagoras）学派的弟子希帕索斯（Hippasus）发现正方形对角线与边长不可公度——用今天的话说，$sqrt(2)$ 不能写成两个整数的比。据传这个发现让学派震惊不已，因为它打破了"万物皆整数之比"的信仰。有一个古老传说称希帕索斯因泄露此秘密而被抛入大海，虽然传说未必可靠，但这确实是人类第一次明确意识到：有理数不足以铺满整条数轴。
 ]
 
 #blueprint[
@@ -133,8 +133,7 @@
   + 证明：若 $a$ 是有理数、$b$ 是无理数，则 $a + b$ 是无理数。（用反证法）
   + 判断：$pi - pi$、$sqrt(2) times sqrt(2)$ 分别是什么数？它们都是有理数吗？
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
   + $-sqrt(2)$（$2$ 非完全平方）和 $0.12345678dots$（不循环）是无理数；$3/5$（分数）、$sqrt(100) = 10$（完全平方）、$1.dot(6) = 5/3$（循环小数）都是有理数。
   + 例如 $sqrt(5)$、$pi$、$sqrt(7) - 1$（举一即可）。
   + 错。$sqrt(2) + sqrt(3)$ 是无理数（可用反证法证明：若为有理数 $r$，则 $(r - sqrt(2))^2 = 3$ 推出 $sqrt(2)$ 为有理数，矛盾）。
@@ -145,6 +144,7 @@
   + 例如 $sqrt(2) / 2$ 或 $pi / 4$。
   + 反证法：假设 $a + b = r$（$r$ 为有理数）。则 $b = r - a$。有理数的加减仍为有理数，所以 $b$ 为有理数，与 $b$ 是无理数矛盾。故 $a + b$ 必为无理数。
   + $pi - pi = 0$ 是有理数；$sqrt(2) times sqrt(2) = 2$ 也是有理数。
+  ]
 ]
 
 #side-hack[

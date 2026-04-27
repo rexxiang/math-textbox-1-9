@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 四边形家族：从一般到正方形 <tool:ge03-quadrilateral-family>
@@ -9,10 +9,6 @@
   小学画过正方形、长方形、菱形、平行四边形、梯形，像一组互不相关的图形卡片。可进了初中，这些名称突然都和*性质、判定*、*对角线*、*证明*连在一起：“证明一个四边形是矩形”到底要证什么？“正方形”就是“又矩又菱”吗？
 
   *这章要做的，是把四边形家族梳成一棵*继承树*：从最一般的平行四边形出发，每加一条约束多出一类；每个子类*继承*上层的全部性质，再带上自己独有的性质。这样题目要什么判据就到哪一层取。*
-]
-
-#history-note[
-  约前 300 年，欧几里得（Euclid）在《几何原本》第一卷命题 I.34–I.36 中，用全等三角形系统证明了平行四边形的对边相等、对角相等、对角线互相平分等性质。在中国，先秦时期的《墨经》（约前 4 世纪）已有对矩形"矩"的讨论——墨家把直角作为定义矩形的核心要素。矩形、菱形、正方形从平行四边形"特殊化"的思路，近代教材延续至今：先立最一般的概念，再用约束切出子类。
 ]
 
 #discovery[
@@ -156,6 +152,10 @@
   + 已知某平行四边形对角线互相平分且相等，但没垂直。它是什么特殊四边形？
 ]
 
+#history-note[
+  约前 300 年，欧几里得（Euclid）在《几何原本》第一卷命题 I.34–I.36 中，用全等三角形系统证明了平行四边形的对边相等、对角相等、对角线互相平分等性质。在中国，先秦时期的《墨经》（约前 4 世纪）已有对矩形"矩"的讨论——墨家把直角作为定义矩形的核心要素。矩形、菱形、正方形从平行四边形"特殊化"的思路，近代教材延续至今：先立最一般的概念，再用约束切出子类。
+]
+
 #blueprint[
   *工具一：平行四边形的性质 $+$ 判定（五 $+$ 五）*
 
@@ -235,8 +235,7 @@
 
   + 四边形 $A B C D$ 的四条边长依次为 $a$、$b$、$a$、$b$，且两条对角线相等。判断它是什么图形并给出简要理由。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + $angle A = angle C = 70 degree$；$angle B = angle D = 110 degree$（平行四边形性质）。
@@ -250,4 +249,5 @@
   + 在 $triangle D A E$ 与 $triangle D C F$ 中：$D A = D C$（正方形边）、$angle A = angle C = 90 degree$、$A E = A B slash 2 = B C slash 2 = C F$。由 `SAS` 得 $triangle D A E tilde.eq triangle D C F$，对应边 $D E = D F$。
   + 设 $angle B A C = angle D A C$，在 $triangle A B C$ 与 $triangle A D C$ 中，$A C$ 公共、$angle B A C = angle D A C$、$angle B C A = angle D C A$（由 $A B parallel C D$ 的内错角）。由 ASA 得 $triangle A B C tilde.eq triangle A D C$，故 $A B = A D$；平行四边形 $+$ 邻边相等 $=>$ 菱形。
   + $A B = C D = a$、$B C = D A = b$，“对边分别相等”$=>$ 平行四边形；再加对角线相等 $=>$ 矩形。
+  ]
 ]

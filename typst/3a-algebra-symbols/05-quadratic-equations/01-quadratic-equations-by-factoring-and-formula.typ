@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 一元二次方程：配方法 → 求根公式 <tool:al05-quadratic-solving>
@@ -19,10 +19,6 @@
   两因式之一为零。可是像 $x^2 + x - 7 = 0$ 这种的右边 $-7$ 不好拆。
 
   我们需要一个*对所有* $a x^2 + b x + c = 0$ 都奏效的解法。本节的路线是：先发明*配方法*（把左边硬补成一个平方），再把它打包成*求根公式*。
-]
-
-#history-note[
-  早在约公元前 1800 年的古巴比伦泥板（如现存于耶鲁大学的 YBC 6967 号泥板）上，书吏就已经用“把式子补成完全平方”的方法来解二次问题。约公元 820 年，花拉子密（al-Khwārizmī）在《代数学》中用几何正方形拼接来演示配方法，给出了六种标准类型的二次方程的完整解法。16 世纪，意大利数学家卡尔达诺（Girolamo Cardano, 1501–1576）在《大术》（_Ars Magna_, 1545）中把求根公式推广到了三次方程。我们今天使用的统一求根公式 $x = (-b plus.minus sqrt(b^2 - 4a c)) / (2a)$，本质上就是把这一跨越三千年的配方直觉写成了一条代数式。
 ]
 
 #discovery[
@@ -178,6 +174,10 @@
   + 解 $2 x^2 - 3 x - 2 = 0$（求根公式）。
 ]
 
+#history-note[
+  早在约公元前 1800 年的古巴比伦泥板（如现存于耶鲁大学的 YBC 6967 号泥板）上，书吏就已经用“把式子补成完全平方”的方法来解二次问题。约公元 820 年，花拉子密（al-Khwārizmī）在《代数学》中用几何正方形拼接来演示配方法，给出了六种标准类型的二次方程的完整解法。16 世纪，意大利数学家卡尔达诺（Girolamo Cardano, 1501–1576）在《大术》（_Ars Magna_, 1545）中把求根公式推广到了三次方程。我们今天使用的统一求根公式 $x = (-b plus.minus sqrt(b^2 - 4a c)) / (2a)$，本质上就是把这一跨越三千年的配方直觉写成了一条代数式。
+]
+
 #blueprint[
   *工具一：配方法*
 
@@ -253,8 +253,7 @@
   + 若方程 $x^2 - 2 k x + (k^2 - 1) = 0$ 有两个相等的实根，求 $k$。
   + 求所有使 $(m - 2) x^2 + 4 x + 1 = 0$ 有两个不相等实根的 $m$ 的范围（$m$ 是实数）。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + $x - 3 = plus.minus 5 => x = 8, -2$（开方法）；$x = plus.minus 3 / 2$（开方法）；$(x + 6)(x - 2) = 0 => x = -6, 2$（因式分解法）。
@@ -270,4 +269,5 @@
   + 两边除 $3$：$x^2 + 8/3 x - 1 = 0 => x^2 + 8/3 x = 1$。补 $(4/3)^2 = 16 / 9$：$(x + 4/3)^2 = 25 / 9$，$x + 4/3 = plus.minus 5/3$，$x = 1/3$ 或 $-3$。
   + 两根相等 $<=>$ $Delta = 0$。$Delta = (2 k)^2 - 4 (k^2 - 1) = 4$，与 $k$ 无关，恒等于 $4 > 0$。因此*不存在*使两根相等的 $k$。
   + 要求是“二次方程”，先得 $m != 2$，然后 $Delta = 16 - 4 (m - 2) > 0 => m < 6$。合起来 $m < 6$ 且 $m != 2$。
+  ]
 ]

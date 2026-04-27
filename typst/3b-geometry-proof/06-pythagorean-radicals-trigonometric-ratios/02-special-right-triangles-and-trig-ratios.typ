@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 特殊直角三角形与三角比 <tool:ge04-special-right-triangles>
@@ -9,10 +9,6 @@
   勾股定理给出“斜边 $=$ 两直角边平方和再开方”。可只要两直角边长度任换一组，就得再开一次方。有没有两族*形状完全固定*的直角三角形——它们的三边比例一劳永逸？这样一来，只要知道*一条边 + 一个角*，其余两条边就能直接按比例写出来。
 
   *当 $angle B = 30 degree$ 或 $45 degree$ 时，直角三角形的三边到底按什么固定比例分布？*
-]
-
-#history-note[
-  $30 degree$、$45 degree$、$60 degree$ 是古典几何里最早被彻底量清楚的三个角。约前 150 年，古希腊天文学家喜帕恰斯（Hipparchus）编制了已知最早的"弦表"——本质上就是三角函数表的前身——用来计算天体位置。约公元 500 年，印度数学家阿耶波多（Aryabhata）引入了"jya"（正弦的前身），把弦的概念改为半弦，奠定了现代三角函数的基础。在没有计算器的年代，仅这三个特殊角的三角比就足够支撑大量天文与测量工作。
 ]
 
 #discovery[
@@ -120,6 +116,10 @@
   + 不算三角函数表，直接由特殊直角三角形算：$sin 30 degree$、$tan 45 degree$、$cos 60 degree$ 各是多少？
 ]
 
+#history-note[
+  $30 degree$、$45 degree$、$60 degree$ 是古典几何里最早被彻底量清楚的三个角。约前 150 年，古希腊天文学家喜帕恰斯（Hipparchus）编制了已知最早的"弦表"——本质上就是三角函数表的前身——用来计算天体位置。约公元 500 年，印度数学家阿耶波多（Aryabhata）引入了"jya"（正弦的前身），把弦的概念改为半弦，奠定了现代三角函数的基础。在没有计算器的年代，仅这三个特殊角的三角比就足够支撑大量天文与测量工作。
+]
+
 #blueprint[
   *工具一：$45$–$45$–$90$*
 
@@ -185,8 +185,7 @@
   + 等边三角形边长 $= 6$。求它的高与面积。
   + 在矩形 $A B C D$ 中，$A B = 3$、$B C = 3 sqrt(3)$。设对角线 $A C$ 与 $A B$ 的夹角 $= alpha$。求 $tan alpha$、并由此判断 $alpha$ 的度数。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + 斜边 $= 7 sqrt(2)$（45-45-90 三角形）。
@@ -202,4 +201,5 @@
   + $angle A = 30 degree$ 的邻边是 $A C = 6$（对 $60 degree$ 的长直角边）。由 $30$–$60$–$90$ 边比 $1 : sqrt(3) : 2$，设短直角边 $= k$，则 $k sqrt(3) = 6 => k = 2 sqrt(3)$。于是 $B C$（对 $30 degree$）$= 2 sqrt(3)$，$A B$（斜边）$= 2 k = 4 sqrt(3)$。
   + 高 $= (sqrt(3) slash 2) times 6 = 3 sqrt(3)$；面积 $= 1 slash 2 times 6 times 3 sqrt(3) = 9 sqrt(3)$。
   + $tan alpha = B C slash A B = 3 sqrt(3) slash 3 = sqrt(3)$，故 $alpha = 60 degree$。
+  ]
 ]

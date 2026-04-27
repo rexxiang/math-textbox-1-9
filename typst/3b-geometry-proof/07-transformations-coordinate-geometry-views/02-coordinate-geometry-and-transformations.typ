@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 坐标几何与变换的坐标公式 <tool:ge05-coordinate-transforms>
@@ -11,10 +11,6 @@
   同样，“两点间距离”、“两点中点”这些日常几何操作，若都能落成*坐标四则 $+$ 根号*的公式，几何和代数就真正能互相借力。
 
   *如何把图形的距离、中点、三类刚体变换，都写成关于坐标 $(x, y)$ 的显式公式？*
-]
-
-#history-note[
-  1637 年，法国数学家笛卡儿（René Descartes，1596–1650 年）在《方法论》附录《几何学》中，第一次系统地用坐标把几何问题翻译成代数方程——让*点*变成*数对*，让*曲线*变成*方程*。几乎同时，费马（Pierre de Fermat，1601–1665 年）也独立发展出了坐标方法。这一步让几何计算第一次有了可机械化的*符号语言*，也是后来解析几何、线性代数、计算机图形学的共同起点。
 ]
 
 #discovery[
@@ -123,6 +119,10 @@
   + 把点 $(3, -1)$ 按向量 $(−2, 4)$ 平移，像的坐标是什么？
 ]
 
+#history-note[
+  1637 年，法国数学家笛卡儿（René Descartes，1596–1650 年）在《方法论》附录《几何学》中，第一次系统地用坐标把几何问题翻译成代数方程——让*点*变成*数对*，让*曲线*变成*方程*。几乎同时，费马（Pierre de Fermat，1601–1665 年）也独立发展出了坐标方法。这一步让几何计算第一次有了可机械化的*符号语言*，也是后来解析几何、线性代数、计算机图形学的共同起点。
+]
+
 #blueprint[
   *工具一：两点距离公式*
 
@@ -196,8 +196,7 @@
   + $A(-2, 3)$、$B(4, -5)$。求线段 $A B$ 的长度与中点坐标。
   + $A(1, 1)$、$B(4, 1)$、$C(4, 5)$。判断 $triangle A B C$ 是不是直角三角形；并求它的面积。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + $A B = sqrt(3^2 + 4^2) = 5$（两点距离公式）。
@@ -213,4 +212,5 @@
   + 关于 $y$-轴反射：$(x, y) -> (-x, y)$。再关于 $x$-轴反射：$(-x, y) -> (-x, -y)$。与“绕原点 $180 degree$ 旋转”$(x, y) -> (-x, -y)$ 完全一致。
   + $A B = sqrt((4 - (-2))^2 + (-5 - 3)^2) = sqrt(36 + 64) = sqrt(100) = 10$。中点 $= ((-2 + 4) slash 2, (3 + (-5)) slash 2) = (1, -1)$。
   + $A B = 3$、$B C = 4$、$A C = sqrt(9 + 16) = 5$。$3^2 + 4^2 = 5^2$（勾股逆定理）$=>$ 直角三角形，直角在 $B$。面积 $= 1 slash 2 times 3 times 4 = 6$。
+  ]
 ]

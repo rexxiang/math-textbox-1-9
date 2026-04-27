@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 相似的含义：AA 判定与相似比 <tool:ge02-similarity-aa-ratio>
@@ -9,10 +9,6 @@
   全等太严格了：它要求两个三角形能*完全重合*，一点放大或缩小都不允许。可现实里面对的往往是*同形不同大*——地图上的小房子和真实大小的房子、手机屏幕上的人脸和真实的人脸。它们不全等，却又“是同一个东西的两个大小”。
 
   *能不能把这种“同形不同大”写成可用的几何语言？它和全等有什么关系，又有没有一条最省力的判定法？*
-]
-
-#history-note[
-  约前 600 年，泰勒斯（Thales）站在埃及金字塔旁，等到自己的影子和身高一样长的那一刻，量出金字塔影子的长度——于是得到了塔高。这是有记载的最早一次"相似三角形"实战应用。后来欧几里得（Euclid，约前 300 年）在《几何原本》第六卷把相似理论系统化，建立了比例线段与相似三角形的完整判定体系。从几何基础（#secref("pf06-polygons-and-circle")）到代数的比例（#secref("cb01-ratio-basics")），"比"这个工具一直在等一个正式入口；本节就是。
 ]
 
 #discovery[
@@ -153,6 +149,10 @@
   + 两相似三角形中，对应边之比是 $5 : 2$。一个三角形的一条边长 $8$，对应另一三角形这条边长多少？（先说清“哪个三角形的 $8$”。）
 ]
 
+#history-note[
+  约前 600 年，泰勒斯（Thales）站在埃及金字塔旁，等到自己的影子和身高一样长的那一刻，量出金字塔影子的长度——于是得到了塔高。这是有记载的最早一次"相似三角形"实战应用。后来欧几里得（Euclid，约前 300 年）在《几何原本》第六卷把相似理论系统化，建立了比例线段与相似三角形的完整判定体系。从几何基础（#secref("pf06-polygons-and-circle")）到代数的比例（#secref("cb01-ratio-basics")），"比"这个工具一直在等一个正式入口；本节就是。
+]
+
 #blueprint[
   *工具一：相似三角形的定义*
 
@@ -246,8 +246,7 @@
 
   + 解释：为什么 AA 就够，却不能用“两对应边成比例”这一个条件当作“SS 判定”？
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + `AA` ✓；`AA` ✓（由 $angle A = angle D$ 与 $angle C = angle F$，第三角 $angle B = angle E$ 自动相等）；不够（只有一对角相等，形状还没锁死）；两对角虽相等，但对应顺序错位——不能直接写 $triangle A B C tilde triangle D E F$，需要改写成 $triangle A B C tilde triangle E D F$ 才是合法的相似关系。
@@ -263,4 +262,5 @@
   + 设 $A M$、$D N$ 为 $triangle A B C$、$triangle D E F$ 中 $B C$、$E F$ 边上的中线。由相似 $B M slash E N = B C slash E F slash 2 slash 2 = k$；且 $A B slash D E = k$；$angle B = angle E$。由“相似 SAS”（夹角等 $+$ 两边成比例）或直接由三角形全体相似知 $A M slash D N = k$。高与角平分线同理。
   + 在 $triangle A B C$ 与 $triangle A C D$ 中：$angle A$ 公共，$angle A B C = angle A C D$（已知）。由 AA 得 $triangle A B C tilde triangle A C D$。
   + 两边成比例不锁形状：例如 $3 - 4 - 5$ 与 $4 - 5 - 6$ 两边成不同比例却“都从 $3, 4, 5$ 打头、$4, 5$ 打头”可以拼成不同形状。只有把*夹角*或*比例的第三边*也带进来，或者一开始就用两角相等来锁，才能保证相似。
+  ]
 ]

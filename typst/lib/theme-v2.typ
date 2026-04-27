@@ -281,6 +281,41 @@
   ]
 }
 
+// ── 参考答案分隔（在 mastery 内部使用，给"先做后翻"以强视觉屏障）──
+//
+// 用法：把题目放在 mastery 外层，把"参考答案：…"包进 #answer-cut[…]：
+//   #mastery[
+//     ...题目...
+//     #answer-cut[
+//       + 答案 1
+//       + 答案 2
+//     ]
+//   ]
+// 渲染效果：红色虚线分隔 + "↓ 做完后再翻 ↓" 警示条 + 浅灰底答案区。
+// 目的：自学读者目光下滑时被红条拦截，不直接读到答案。
+
+#let answer-cut(body) = {
+  v(1.0em)
+  block(
+    width: 100%,
+    above: 0.4em,
+    below: 0.4em,
+    stroke: (top: (thickness: 0.8pt, paint: rgb("#C62828"), dash: "dashed")),
+    inset: (top: 6pt, bottom: 0pt, left: 0pt, right: 0pt),
+    fill: none,
+  )[
+    #align(center, text(size: 8.5pt, weight: "bold", fill: rgb("#B71C1C"))[↓ 做完再往下翻 · 参考答案 ↓])
+  ]
+  block(
+    width: 100%,
+    above: 0.2em,
+    below: 0.6em,
+    fill: rgb("#FAFAFA"),
+    inset: (x: 8pt, y: 6pt),
+    radius: 2pt,
+  )[#text(size: 9.5pt, fill: luma(60))[#body]]
+}
+
 // ── 动手试试（动手探究活动，紫色边框）────────────────────────────
 
 #let lab(body) = {

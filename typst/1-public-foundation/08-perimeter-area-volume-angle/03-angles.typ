@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 角：两条射线之间的旋转量 <tool:pf07-angles>
@@ -172,8 +172,7 @@
   + 如果把圆分成 6 等份，每一份圆心角是多少度？分成 8 等份呢？
   + “用两条边画得很长，角就一定很大”——这句话错在哪？用“角是旋转量”这个角度反驳。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
   + 锐角 $45°$、$10°$；直角 $90°$；钝角 $135°$；平角 $180°$。（锐角 $< 90°$，直角 $= 90°$，钝角 $90°$–$180°$ 之间，平角 $= 180°$）
   + 图略；大致张开程度区分开即可。（用量角器或纸角辅助画角）
   + 不会变；角只看两条射线之间张开多大，与边画多长无关。（角是旋转量，不是长度）
@@ -184,4 +183,5 @@
   + 一条直线上 $O$ 点两侧组成平角 $180°$。已知一侧 $40°$，另一侧 $= 180° - 40° = 140°$。（平角 = $180°$）
   + 6 等份：$360° div 6 = 60°$（正六边形的圆心角）。8 等份：$360° div 8 = 45°$。推理：一整圈 $= 360°$，均分即可。
   + 反驳：角是旋转量，衡量的是两条射线之间的“张开程度”。边画长只是把射线画远了一些，并没有改变旋转量。所以边再长，角的度数不变。
+  ]
 ]

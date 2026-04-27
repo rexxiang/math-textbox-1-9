@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 圆的基础与圆周角定理 <tool:ge03-circle-basics-inscribed>
@@ -9,10 +9,6 @@
   圆是一个*没有顶点*的图形。三角形用三个顶点、三条边就能说完，圆却要用“所有到一点等距的点”这样一个*无穷多点*的条件。那么*圆里的角到底该怎么度量*？同一条弧对应的角，站在圆心看和站在圆上看，读出来的是同一个数吗？
 
   *本节要把圆从“一个很圆的形状”升级为一套可以做证明的语言——定义圆心、半径、弦、弧；把同一段弧对应的两类角（圆心角、圆周角）连接起来；并在最后拿到 Thales 定理这块放之四海的敲门砖。*
-]
-
-#history-note[
-  泰勒斯（Thales，约前 624–546 年）据说是第一个用严格论证证明"*半圆上的圆周角必为直角*"的人——这后来被称作 *Thales 定理*，是古希腊几何第一个被明确记录下来的"定理"。约前 300 年，欧几里得（Euclid）在《几何原本》第三卷进一步系统研究了圆的性质，证明了圆周角等于同弧圆心角的一半（命题 III.20）。而在中国，祖冲之（429–500 年）将圆周率精确计算到小数点后第七位（$3.1415926$ 到 $3.1415927$ 之间），这一纪录在世界上保持了近千年。
 ]
 
 #discovery[
@@ -139,6 +135,10 @@
   + $A B$ 是圆 $O$ 的直径，$C$ 在圆上。已知 $angle B A C = 35 degree$。求 $angle A C B$ 与 $angle A B C$。
 ]
 
+#history-note[
+  泰勒斯（Thales，约前 624–546 年）据说是第一个用严格论证证明"*半圆上的圆周角必为直角*"的人——这后来被称作 *Thales 定理*，是古希腊几何第一个被明确记录下来的"定理"。约前 300 年，欧几里得（Euclid）在《几何原本》第三卷进一步系统研究了圆的性质，证明了圆周角等于同弧圆心角的一半（命题 III.20）。而在中国，祖冲之（429–500 年）将圆周率精确计算到小数点后第七位（$3.1415926$ 到 $3.1415927$ 之间），这一纪录在世界上保持了近千年。
+]
+
 #blueprint[
   *工具一：圆与相关元素的定义*
 
@@ -216,8 +216,7 @@
 
   + 在半径 $= r$ 的圆上，任取三个不共线的点 $A$、$B$、$C$。证明：三角形 $A B C$ 的外接圆唯一且半径 $= r$。（与下一节“外接圆”做铺垫。）
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + $65 degree$（圆周角定理）。
@@ -231,4 +230,5 @@
   + 由 $angle A C B = angle A D B$ 及 $C$、$D$ 同侧，设 $A B$ 与 $C$ 决定的圆为 $omega$；若 $D$ 不在 $omega$ 上，则 $angle A D B$ 与 $angle A C B$ 的比较可由 $D$ 在 $omega$ 内或外的判别给出矛盾（经典“圆周角大小与弦外点关系”）。
   + $angle B A C = 30 degree$、$angle C A D = 50 degree$、$angle B A D = 80 degree$。
   + 三点不共线 $=>$ 可作 $A B$、$B C$ 的中垂线，它们的交点 $O'$ 到三点等距 $=>$ 唯一圆过三点。若要求半径 $= r$，须 $A$、$B$、$C$ 本来就在半径 $r$ 的圆上，外接圆即该圆。（为下节外接圆作铺垫。）
+  ]
 ]

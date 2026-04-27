@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 模型选择：看表、看图、选函数 <tool:fn11-model-choice>
@@ -214,8 +214,7 @@
   + 给你一个连续三组 $x$ 等间距表：$x = 1, 2, 3, 4, 5, 6$；$y = 2, 5, 10, 17, 26, 37$。用流程找出它属于哪族，并写出公式 $y = f(x)$。
   + 表 $x: 1, 2, 3, 4$；$y: 2, 4, 8, 16$——既可能是 $y = 2^x$（乘法），也可能是 $y$ 随 $x$ 按 $"某规则"$ 的其他表达。用相邻比检验 $=>$ 偏向乘法。再*追加一点* $x = 5, y = ?$，如果是 $32$ $=>$ 乘法；如果是 $20$ $=>$ 反而是 $y = x^2 - x + 2$ 之类。*想说明*什么？——流程只有*在有足够多数据点时*才稳。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + $Delta y$ 恒 $= 4 =>$ *线性*（$Delta y$ 恒定 → 线性），$k = 4, b = 0 =>$ $y = 4 x$。
@@ -231,4 +230,5 @@
   + $Delta^2 y: 2, 2, 2$ 恒 $=>$ 二次确认（二阶差恒定 → 二次）。$a = 1$，$b = 0$，$c = 0 =>$ $y = x^2$。表 R 只改了 $y(0)$ 和 $y(1)$ 两项就不再恒——一个偏离点就能击碎模型。
   + 差→积→比→二阶差四步法：$Delta^2 y: 2, 2, 2, 2$ 恒 $=>$ *二次*。$a = 1$，$b = 0$，$c = 1 =>$ $y = x^2 + 1$。
   + 用已给 $4$ 点算相邻比恒 $= 2$，结论*偏向*乘法增长（相邻比恒定 → 乘法）。但仅 $4$ 点不能排除其他多项式。若补 $x = 5$ 得 $32$ $=>$ 支持 $y = 2^x$；若得其他值则不是。*流程只有点够多时才稳*。
+  ]
 ]

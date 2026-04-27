@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 运算顺序与运算律：让结构不走样 <tool:pf02-order-laws>
@@ -11,10 +11,6 @@
   如果同一道题能算出两个答案，式子就没法沟通了。
 
   *我们需要规则，不是为了死记顺序，而是为了保护式子原本表示的结构。*
-]
-
-#history-note[
-  欧几里得（Euclid，约公元前 300 年）在《几何原本》第二卷中用几何图形展示了分配律——把一个矩形拆成两部分再分别算面积。两千多年后的 1814 年，法国数学家塞尔瓦（François Servois）第一次给“交换律”和“分配律”起了正式名字。这些运算律让心算时的“换顺序、凑整、提出来”有了严格的依据。
 ]
 
 #discovery[
@@ -73,6 +69,10 @@
 
   + 计算 $24 - 8 div 4 + 3 times 2$。
   + 把 $7 times 9 + 7$ 改写成一个乘法式。
+]
+
+#history-note[
+  欧几里得（Euclid，约公元前 300 年）在《几何原本》第二卷中用几何图形展示了分配律——把一个矩形拆成两部分再分别算面积。两千多年后的 1814 年，法国数学家塞尔瓦（François Servois）第一次给“交换律”和“分配律”起了正式名字。这些运算律让心算时的“换顺序、凑整、提出来”有了严格的依据。
 ]
 
 #blueprint[
@@ -148,8 +148,7 @@
   + 解释为什么 $3 + 4 times 5$ 和 $(3 + 4) times 5$ 不是同一个问题。
   + 如果把 $8 times 27 + 2 times 27$ 看成“10 个 27”，这一步到底用了什么结构眼光？
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
   + 先乘除后加减：$12 div 3 = 4$，$5 times 2 = 10$，再算 $30 - 4 + 10 = 36$（运算顺序：先乘除后加减）。
   + $(36 + 64) + 25 = 100 + 25 = 125$（加法交换律 + 结合律）。
   + $9 times (8 + 2) = 9 times 10 = 90$（分配律逆用：提公因数）。
@@ -159,4 +158,5 @@
   + 两个项里都有因数 7，可以用分配律逆用提出来：$(19 + 1) times 7 = 20 times 7 = 140$（分配律）。
   + 前者是 $3 +$ “5 个 4”$= 3 + 20 = 23$，后者是“3 加 4”后再取 5 组 $= 7 times 5 = 35$。结构不同，所以结果不同（运算顺序改变了式子的含义）。
   + 用了分配律反过来提公因数：$8 times 27 + 2 times 27 = (8 + 2) times 27 = 10 times 27 = 270$。看见了两组同样大小的 27 可以先合并组数（分配律逆用）。
+  ]
 ]

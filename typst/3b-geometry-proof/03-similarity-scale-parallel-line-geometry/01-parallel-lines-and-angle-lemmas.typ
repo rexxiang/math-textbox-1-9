@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 平行线与三类角关系 <tool:ge02-parallel-line-angles>
@@ -11,10 +11,6 @@
   *为什么“平行”这件事能稳定地产生一组特定的等角、补角？这三种角关系（同位 / 内错 / 同旁内）到底说的是同一件事还是三件事？反过来，能不能拿这些角关系当“证平行”的工具用？*
 
   这节要一次把这三件事拼到同一张图里说清。
-]
-
-#history-note[
-  约前 300 年，欧几里得（Euclid）在《几何原本》中列出了著名的第五公设："若两直线与同一条截线相交，且同旁内角之和小于两个直角，则两直线在那一侧必相交。"这条公设后来引发了两千年的争论——直到 1829 年，俄国数学家罗巴切夫斯基（Lobachevsky）证明它*不能*从其余公设推出，由此打开了非欧几何的大门。现代初中教材把第五公设"翻译"成我们熟悉的"两直线平行 $<=>$ 同位角相等"，三类角关系就是同一件事的三种装扮。
 ]
 
 #discovery[
@@ -101,6 +97,10 @@
 
   + 图中 $ell_1 parallel ell_2$，若 $angle 1 = 72 degree$（在 $ell_1$ 上截线同一侧外部）。求它在 $ell_2$ 上的*同位角*、*内错角*、*同旁内角*各是多少？
   + 已知两直线被第三条直线所截，同旁内角和为 $160 degree$。这两条直线*是否*平行？为什么？
+]
+
+#history-note[
+  约前 300 年，欧几里得（Euclid）在《几何原本》中列出了著名的第五公设："若两直线与同一条截线相交，且同旁内角之和小于两个直角，则两直线在那一侧必相交。"这条公设后来引发了两千年的争论——直到 1829 年，俄国数学家罗巴切夫斯基（Lobachevsky）证明它*不能*从其余公设推出，由此打开了非欧几何的大门。现代初中教材把第五公设"翻译"成我们熟悉的"两直线平行 $<=>$ 同位角相等"，三类角关系就是同一件事的三种装扮。
 ]
 
 #blueprint[
@@ -222,8 +222,7 @@
 
   + 反过来问：如果你手上只有“内错角相等”这一条判据，能不能推出“同位角相等”“同旁内角互补”？
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + 相等（同位角相等）/ 相等（内错角相等）/ 互补（同旁内角互补）；平行 / 平行。
@@ -239,4 +238,5 @@
   + 设原题中同旁内角 $angle 1$、$angle 2$ 满足 $angle 1 + angle 2 = 180 degree$。取 $angle 2$ 的邻补角 $angle 2'$，则 $angle 2' = 180 degree - angle 2 = angle 1$。$angle 1$ 与 $angle 2'$ 恰好是一对内错角，相等 $=>$ 两直线平行。
   + 不能。第一条截线上同位角相等说明的仍然是同一对关系；但“两直线平行”是一种*对一切截线都同样成立*的性质——若不同截线得到的结论矛盾，题目本身或测量就有问题。具体而言，如果 $t_1$ 给出的同位角相等属实，则 $ell_1 parallel ell_2$；再由 $ell_1 parallel ell_2$ 应当推出 $t_2$ 上同位角也相等。两者矛盾即说明至少有一处数据错了。
   + 能。给定内错角 $angle 4 = angle 6$，同位角 $angle 2 = angle 4$（对顶），故 $angle 2 = angle 6$（同位）。同理同旁内角 $angle 3$ 满足 $angle 3 + angle 4 = 180 degree$（邻补），由 $angle 4 = angle 6$ 得 $angle 3 + angle 6 = 180 degree$（同旁内角互补）。
+  ]
 ]

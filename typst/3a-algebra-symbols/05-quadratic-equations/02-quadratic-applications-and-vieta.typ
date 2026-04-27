@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 韦达定理：从“解”反问“系数” <tool:al05-vieta>
@@ -17,10 +17,6 @@
   + 一个二次方程不开方、也不因式分解，能不能判断它是否有两个正根？
 
   这些问题都可以绕过“先把 $x$ 解出来”。本节就来揭开这条捷径：*根与系数的关系*，俗称*韦达定理*。
-]
-
-#history-note[
-  法国数学家韦达（François Viète, 1540–1603）在 1591 年出版的《分析方法入门》（_In Artem Analyticem Isagoge_）中，首次系统地用字母同时表示已知量和未知量，并由此发现：对于 $x^2 + b x + c = 0$ 的两根 $r_1, r_2$，必有 $r_1 + r_2 = -b$、$r_1 r_2 = c$。这组被后人称为“韦达定理”（Vieta’s formulas）的关系，标志着代数学从“逐题求解”升格为“讨论一般规律”——你不需要真的解出根，就能知道根之间的关系。
 ]
 
 #discovery[
@@ -160,6 +156,10 @@
   + 构造以 $5, -1$ 为两根的二次方程（首项系数取 $1$）。
 ]
 
+#history-note[
+  法国数学家韦达（François Viète, 1540–1603）在 1591 年出版的《分析方法入门》（_In Artem Analyticem Isagoge_）中，首次系统地用字母同时表示已知量和未知量，并由此发现：对于 $x^2 + b x + c = 0$ 的两根 $r_1, r_2$，必有 $r_1 + r_2 = -b$、$r_1 r_2 = c$。这组被后人称为“韦达定理”（Vieta’s formulas）的关系，标志着代数学从“逐题求解”升格为“讨论一般规律”——你不需要真的解出根，就能知道根之间的关系。
+]
+
 #blueprint[
   *工具一：韦达定理*
 
@@ -226,8 +226,7 @@
   + 方程 $x^2 - (m + 2) x + 2 m = 0$ 的两根 $x_1, x_2$ 满足 $x_1^2 + x_2^2 = 8$，求 $m$。
   + 证明：若 $a, b, c$ 为正数，则方程 $a x^2 + b x + c = 0$ 的两个实根（若存在）都是负数。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + $5, 6$；$- 3/2, - 1/2$；$- 7, 10$。（韦达定理：$x_1 + x_2 = -b\/a$，$x_1 x_2 = c\/a$）
@@ -242,4 +241,5 @@
   + $1/x_1 + 1/x_2 = (x_1 + x_2) / (x_1 x_2) = 6 / m = 3 => m = 2$；验 $Delta = 36 - 8 = 28 > 0$ ✓。
   + $x_1 + x_2 = m + 2$，$x_1 x_2 = 2 m$。$x_1^2 + x_2^2 = (m + 2)^2 - 4 m = m^2 + 4 = 8 => m^2 = 4 => m = plus.minus 2$；再验 $Delta = (m + 2)^2 - 8 m = (m - 2)^2 >= 0$ 恒成立 ✓，两解都取。
   + 若 $a, b, c$ 均正且 $Delta >= 0$，则 $x_1 + x_2 = - b / a < 0$ 且 $x_1 x_2 = c / a > 0$。两数和为负、积为正 → 两数*同负*。
+  ]
 ]

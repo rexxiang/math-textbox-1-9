@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 通分、分式加减与乘除 <tool:al03-common-denominator-operations>
@@ -214,8 +214,7 @@
   + 若 $a + b = 5, a b = 6$，求 $1/a + 1/b$ 的值。
   + 证明恒等式：对所有合法的 $x$，$1/x - 1/(x + 1) = 1/(x(x + 1))$；并用它计算 $1/(1 dot 2) + 1/(2 dot 3) + 1/(3 dot 4) + dots.c + 1/(9 dot 10)$。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + $8/m$（同分母合并）；$1/(2 x) + 1/(3 x) = 3/(6 x) + 2/(6 x) = 5/(6 x)$（通分）；$((a + 2) + (a - 2))/((a - 2)(a + 2)) = (2 a)/(a^2 - 4)$（通分）。
@@ -231,4 +230,5 @@
   + 最简公分母 $x(x - 1)(x + 1)$：$((x + 1) + (x - 1))/(x(x - 1)(x + 1)) = (2 x)/(x(x - 1)(x + 1)) = 2/((x - 1)(x + 1)) = 2/(x^2 - 1)$。
   + $1/a + 1/b = (a + b)/(a b) = 5/6$。
   + 证明：$1/x - 1/(x + 1) = ((x + 1) - x)/(x(x + 1)) = 1/(x(x + 1))$。带入连加：$sum_(k = 1)^9 1/(k(k + 1)) = sum_(k = 1)^9 (1/k - 1/(k + 1)) = 1 - 1/10 = 9/10$。
+  ]
 ]

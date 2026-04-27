@@ -14,5 +14,5 @@
 //   #import "../../lib/chapter-kit.typ": chapter-overview, secref
 //   #chapter-overview(route: [+ ...], selfcheck: [...])[概览内容]
 
-#import "theme-v2.typ": chapter-nav, chapter-route, chapter-overview, crisis, discovery, blueprint, mastery, tryit, pitfall, history-note, side-hack, vocab, lab, secref, secrange
+#import "theme-v2.typ": chapter-nav, chapter-route, chapter-overview, crisis, discovery, blueprint, mastery, tryit, pitfall, history-note, side-hack, vocab, lab, secref, secrange, answer-cut
 #import "diagram-packages.typ": cetz

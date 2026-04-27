@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === SSS 与 SAS：两条最基本的判定法 <tool:ge01-sss-sas>
@@ -11,10 +11,6 @@
   自然就想偷懒：*能不能只核几项就下结论？* 一条肯定不够，两条也压不死形状，那*三条*信息够不够？选哪三条？
 
   这一节先从最扎实的两条开始：*只比三条边* 的 `SSS`，和*两边加它们的夹角* 的 `SAS`。下一节再把两角一边的情形补齐，并交代"两边一角"里那条会翻车的路线——SSA。
-]
-
-#history-note[
-  约前 300 年，欧几里得（Euclid）在《几何原本》第一卷把 SAS 定为第 4 条公设（即命题 I.4，他认为"夹角相等、两边相等则三角形叠合"是不证自明的），而 SSS 则作为命题 I.8 被严格证出。不同公理体系下哪一条当公理、哪一条当定理可以互换，但"三条信息就能锁死三角形"这件事非常稳固——本节就从这两条最干净的判定法开始。
 ]
 
 #discovery[
@@ -115,6 +111,10 @@
 
   + $triangle A B C$ 与 $triangle D E F$：$A B = D E = 5$、$B C = E F = 4$、$A C = D F = 6$。
   + $triangle P Q R$ 与 $triangle S T U$：$P Q = S T$、$angle Q = angle T$、$Q R = T U$。
+]
+
+#history-note[
+  约前 300 年，欧几里得（Euclid）在《几何原本》第一卷把 SAS 定为第 4 条公设（即命题 I.4，他认为"夹角相等、两边相等则三角形叠合"是不证自明的），而 SSS 则作为命题 I.8 被严格证出。不同公理体系下哪一条当公理、哪一条当定理可以互换，但"三条信息就能锁死三角形"这件事非常稳固——本节就从这两条最干净的判定法开始。
 ]
 
 #blueprint[
@@ -233,8 +233,7 @@
 
   + 为什么 SSS 不需要给出任何角度就能锁死全等？用“三根绳子的围法”直觉给出一段一句话解释。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + `SSS` ✓；`SAS` ✓（$angle A$ 是 $A B, A C$ 的夹角）；`SAS` ✓（$angle B$ 是 $A B, B C$ 的夹角）；不够（$angle A$ 不是 $A B, B C$ 的夹角，落在 SSA 区，见下一节）。
@@ -247,4 +246,5 @@
   *挑战 ☞ 选做*
   + 补 $B C = E F$ 得 SSS——纯测量、不依赖角度，适合角度难量的题；补 $angle A = angle D$ 得 SAS——只要能读出夹角就非常快。补 $angle B = angle E$ 不行：$angle B$ 既不是 $A B, A C$ 的夹角，也不是 $A B, B C$ 的夹角对应方关系，落进 SSA 风险区（下一节详解）。
   + 三段确定长度的“硬杆”首尾铰接，角度都不能自由调——杆子一围起来，形状就只有一种，连同所有三个内角一起被自动固定。
+  ]
 ]

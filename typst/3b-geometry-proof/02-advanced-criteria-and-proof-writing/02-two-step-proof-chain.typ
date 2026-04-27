@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 证明链的书写：已知 → 推出 → 结论 <tool:ge01-two-step-proof-chain>
@@ -11,10 +11,6 @@
   几何证明的字样看起来像一堆“因为……所以……”的复读，但它的内核其实非常直接：*从已知出发，用定义 / 判定 / 定理 / 公理，一步一步推出结论*。每一步都必须能在前面的条件或者几何常识里*找到理由*——写不出理由的一步就是漏洞。
 
   *这一节要把“证明”的写法压成一张固定格式：上栏是已知与推导，下栏是每一步的“为什么”。一旦这个骨架写对，两步证明就稳住了。*
-]
-
-#history-note[
-  "证明"这件事最早可追溯到泰勒斯（Thales，约前 624–546 年）——这位古希腊米利都人据说是第一个给几何命题做出演绎论证的人。约前 300 年，欧几里得（Euclid）在《几何原本》里把这套方法体系化：从 5 条公设和 5 条公理出发，用 465 个命题搭起一条无断点的推理链，每一步都必须在前面的陈述、公设或已证定理里有依据。今天各版初中教科书的"两栏证明"（陈述 / 理由）正是这套传统的缩影。它逼着初学者把"心里过得去"升级成"写在纸上挑不出毛病"。
 ]
 
 #discovery[
@@ -114,6 +110,10 @@
 
   + 已知 $A B = A C$，$A D perp B C$ 于 $D$。要证：$B D = C D$。先列“要证 / 已知 / 中间桥”，再选判定法。
   + 已知 $A B parallel C D$，$O$ 为 $A D$ 与 $B C$ 的交点。要证：若 $A O = D O$，则 $B O = C O$。先列三栏草稿。
+]
+
+#history-note[
+  "证明"这件事最早可追溯到泰勒斯（Thales，约前 624–546 年）——这位古希腊米利都人据说是第一个给几何命题做出演绎论证的人。约前 300 年，欧几里得（Euclid）在《几何原本》里把这套方法体系化：从 5 条公设和 5 条公理出发，用 465 个命题搭起一条无断点的推理链，每一步都必须在前面的陈述、公设或已证定理里有依据。今天各版初中教科书的"两栏证明"（陈述 / 理由）正是这套传统的缩影。它逼着初学者把"心里过得去"升级成"写在纸上挑不出毛病"。
 ]
 
 #blueprint[
@@ -254,8 +254,7 @@
 
   + 说明：为什么“证两线平行”常常也能套“先全等、后对应”这条两步模版？（提示：平行性常由内错角相等 / 同位角相等来推出，而这些角相等又常源自全等。）
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + 陈述 / 理由：$A B = C D$ / 已知；$A B parallel C D$ / 已知；$angle A B O = angle C D O$ / 两直线平行，内错角相等（$B D$ 截 $A B$、$C D$）；$angle B A O = angle D C O$ / 同理（$A C$ 截）；$triangle A B O tilde.eq triangle C D O$ / `AAS`（$angle A B O$、$A B$、$angle B A O$ 与对应三项）。或更直接 `ASA`：$angle A B O$、$A B$（对应 $C D$）、$angle B A O$。
@@ -274,4 +273,5 @@
   + 陈述：$angle O M P = angle O N P = 90 degree$（垂直定义）；$P M = P N$（已知）；$O P = O P$（公共边）。在直角三角形 $triangle O M P$、$triangle O N P$ 中由直角三角形三边关系（☞ 正式证明见勾股定理章节）：$O M = sqrt(O P^2 - P M^2) = sqrt(O P^2 - P N^2) = O N$；再由 `SSS`（$O P$、$P M = P N$、$O M = O N$）得 $triangle O P M tilde.eq triangle O P N$，对应角 $angle M O P = angle N O P$，所以 $O P$ 平分 $angle A O B$。
   + 在 $triangle A P R$ 与 $triangle B Q P$ 中：$A P = B Q$（已知）、$angle A = angle B = 60 degree$（正三角形）、$A R = A C - C R = A B - A P = B P$（由 $A B = A C$ 与已知长度等式）；`SAS` 得 $triangle A P R tilde.eq triangle B Q P$，故 $P R = Q P$。同理 $Q P = R Q$，于是 $triangle P Q R$ 三边相等，是正三角形。
   + 因为“两线平行”等价于“被第三线所截时同位角 / 内错角相等”，而这种“两角相等”往往正是一对全等三角形的对应角结论。所以真实发生的路径是：先拼一对全等三角形 → 读出对应角相等 → 由同位 / 内错角相等判定平行。两步模版照用。
+  ]
 ]

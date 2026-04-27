@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 整式加减：去括号 + 合并同类项 <tool:al01-add-subtract-polynomials>
@@ -172,8 +172,7 @@
   + 若 $(m x^2 + 3 x - 1) + (2 x^2 + n x + 4)$ 化简后与 $x$ 无关（即一次项系数为 $0$），求 $m$ 与 $n$ 满足的条件。
   + 写出一个非零多项式 $M$，使得 $(2 x^2 - x + 1) + M$ 化简后得到常数项为 $0$ 的一次多项式。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + $(5 m + 2 n) + (3 m - 7 n) = 8 m - 5 n$；
@@ -191,4 +190,5 @@
   + 两式相加得 $2 A = 8 x^2 + 2 x - 2$，$A = 4 x^2 + x - 1$；两式相减得 $2 B = 2 x^2 + 6 x - 4$，$B = x^2 + 3 x - 2$。
   + 一次项系数 $3 + n = 0$，故 $n = -3$；$m$ 可取任意数，因为 $m x^2 + 2 x^2 = (m+2) x^2$ 不影响一次项。
   + 例如 $M = -2 x^2 + 2 x - 1$：原式 $+M$ 得 $x + 0$，常数项为 $0$ 的一次多项式。
+  ]
 ]

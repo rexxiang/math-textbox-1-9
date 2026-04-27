@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 分式的结构与化简 <tool:al03-rational-expression-structure>
@@ -13,10 +13,6 @@
   - $(x^2 - 9)/(x^2 - 6 x + 9)$ 能不能像 $6/9$ 那样“约掉”公因式？
 
   这一节回答三件事：分式到底是什么？*什么时候有意义*？怎么化简到最简分式？
-]
-
-#history-note[
-  “分式”这个词是从小学的“分数”直接扩出来的：把分母换成能变动的整式。1748 年，瑞士数学家欧拉（Leonhard Euler）在《无穷分析引论》（_Introductio in Analysin Infinitorum_）中系统地把分式当作独立的代数对象来化简、展开和变换，奠定了我们今天处理有理式的基本框架。_rational_ 这个词根来自拉丁语 _ratio_（比），古希腊人把比例当作独立的对象研究，所以“有理数”和“有理式”共享同一个词根。
 ]
 
 #discovery[
@@ -161,6 +157,10 @@
   + 化简 $(x^2 + 4 x + 4)/(x^2 - 4)$。
 ]
 
+#history-note[
+  “分式”这个词是从小学的“分数”直接扩出来的：把分母换成能变动的整式。1748 年，瑞士数学家欧拉（Leonhard Euler）在《无穷分析引论》（_Introductio in Analysin Infinitorum_）中系统地把分式当作独立的代数对象来化简、展开和变换，奠定了我们今天处理有理式的基本框架。_rational_ 这个词根来自拉丁语 _ratio_（比），古希腊人把比例当作独立的对象研究，所以“有理数”和“有理式”共享同一个词根。
+]
+
 #blueprint[
   *工具一：分式及其“有意义条件”*
 
@@ -231,8 +231,7 @@
   + 判断：$(a^2 + b^2)/(a + b)$ 能不能约分？请说明理由。
   + 一对正整数 $m, n$ 满足 $m + n = 12$。把 $1/m + 1/n$ 合并成一个最简分式（先不代入具体数值）；再代入 $m = 5, n = 7$，验证结果。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + $y != 0$；$a != 4$；$x != -2$ 且 $x != 1$。（分母 $!= 0$）
@@ -248,4 +247,5 @@
   + $(x - 1)(x + 1)/(x^2 - k) = (x + 1)/(x - 1)$ 要求 $x^2 - k = (x - 1)^2$，展开对比得 $k = 2 x - 1$——这不是常数，无法使等式对所有 $x$ 成立。*所以答案是：不存在常数 $k$ 满足这个化简。* 若题意改为 $(x^2 - 1)/(x^2 - 2 x + 1)$ 可以化简为 $(x + 1)/(x - 1) quad (x != 1)$。
   + 不能。$a^2 + b^2$ 不能因式分解为含有 $(a + b)$ 的乘积（可验证 $(a + b)^2 = a^2 + 2 a b + b^2 != a^2 + b^2$），因此分子分母没有公因式。
   + $1/m + 1/n = (n + m)/(m n) = 12/(m n)$。代入 $m = 5, n = 7$：$1/5 + 1/7 = 12/35$，与公式一致。
+  ]
 ]

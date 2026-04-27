@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 函数家族的长期较量 <tool:fn12-function-comparison>
@@ -201,8 +201,7 @@
   + 在同一坐标系里画 $y = x^2$ 和 $y = 2^x$，标注它们的两个交点横坐标（整数点），并说明为什么 $2^x$ 最终超过 $x^2$。
   + 比较 $y_1 = 10^6 x$ 与 $y_2 = x^2$。*起初*谁大？什么时候追平？追平后谁主导？用这个例子说明“系数大小 $!=$ 族等级”。
 
-  #line(length: 100%, stroke: 0.3pt + luma(200))
-  _参考答案：_
+  #answer-cut[
 
   *基础*
   + 二次（进一步还有乘法增长，$r > 1$）（族等级：反比例 ≪ 线性 ≪ 二次 ≪ 乘法）。
@@ -218,4 +217,5 @@
   + 若 $x > k$，则 $x^2 > k x = y_1$，取 $x_0 = k$ 即可（长期排序定理：二次族等级高于线性）。
   + 整数交点 $x = 2, x = 4$。$x > 4$ 以后 $2^x$ 每加 $1$ 乘 $2$，$x^2$ 每加 $1$ 倍率 $< 2$，乘法自然超前（长期排序定理：乘法 ≫ 二次）。
   + 起初（$x < 10^6$）$y_1$ 大；$x = 10^6$ 追平；之后 $y_2$ 超过 $y_1$ 并*持续拉大*。系数 $10^6$ 再大，*族等级*（线性）也赢不过二次（系数大小 $!=$ 族等级）。
+  ]
 ]
