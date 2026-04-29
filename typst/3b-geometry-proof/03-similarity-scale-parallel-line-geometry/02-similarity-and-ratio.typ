@@ -281,6 +281,17 @@
 
   + 证明：若 $triangle A B C tilde triangle D E F$，它们对应的*中线*、*高*、*角平分线*也成同一比例 $k$。（提示：用 AA 判定在一对对应子三角形上。）
 
+    #side-hack[
+      *思路骨架*（卡住了再看下面的步骤）：
+
+      + 第 1 步：以"中线"为例——设 $A M$、$D N$ 分别是 $B C$、$E F$ 上的中线，目标是证 $A M slash D N = k$。
+      + 第 2 步：在两个*子三角形* $triangle A B M$ 与 $triangle D E N$ 中找等量：由相似得 $angle B = angle E$；由"中线"得 $B M = B C / 2$、$E N = E F / 2$，所以 $B M / E N = B C / E F = k$。
+      + 第 3 步：用"两边成比例 $+$ 夹角相等"（相似 SAS）得到 $triangle A B M tilde triangle D E N$，从而 $A M / D N = k$。
+      + 第 4 步：高、角平分线照同样套路——把"高"换成"垂线段"、"角平分线"换成"角平分线段"，分别在子三角形上重复 AA 或相似 SAS。
+
+      再回到上面的题目，按这个流程走一遍：
+    ]
+
   + 在 $triangle A B C$ 中，$angle A B C = angle A C D$，其中 $D$ 在 $A B$ 上。求证 $triangle A B C tilde triangle A C D$。（提示：公共角 $+$ 一对等角。）
 
   + 解释：为什么 AA 就够，却不能用“两对应边成比例”这一个条件当作“SS 判定”？

@@ -18,6 +18,8 @@
     [平方、平方根、实数直觉（为二次函数打地基）], [#secref("cb07-square-and-square-root")、#secref("cb07-real-number-line")],
     [完全平方与配方法（求二次顶点：$x^2 + 6 x + 5 -> (x + 3)^2 - 4$）], [#secref("tool:al02-special-identities")、#secref("tool:al02-factorization-as-reverse")（3c-3 顶点式推导直接用，是函数支唯一进入前需要的代数支工具）],
   )
+
+  *对函数分支特别关键的是*：坐标作图与正比例直观——$y = k x$ 的"过原点直线"和"$k$ 是斜率"必须做到看一眼就能在脑海中画出图。函数支的整条主线（一次 $arrow.r$ 反比例 $arrow.r$ 二次 $arrow.r$ 增长模型）都是在这两件事上反复堆叠。
 ]
 
 #blueprint[
@@ -36,6 +38,8 @@
     [平方根表达式算不稳], [#secref("cb07-square-and-square-root")],
     [二次顶点 $x^2 + 6 x + 5$ 凑不出 $(x + 3)^2 - 4$], [#secref("tool:al02-special-identities")、#secref("tool:al02-factorization-as-reverse")],
   )
+
+  *进入函数分支前最常见的误判*是：看到 $y = f(x)$ 这种写法就当成"两个独立的变量在乱跳"，忘了函数本质上是"一条规则把 $x$ 唯一对应到 $y$"。$f(x) = c$ 是方程而不是新概念——读到这一步若还分不清"求函数值"与"解方程"，先回 #secref("cb06-equation-as-balance") 把方程意义补稳。
 ]
 
 #tryit[

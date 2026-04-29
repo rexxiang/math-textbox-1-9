@@ -18,6 +18,17 @@
   + §3 *跨分支同源工具对照*：相似 ↔ 一次函数 ↔ 比例、勾股 ↔ 距离公式 ↔ 方差结构、方程 ↔ 函数零点 ↔ 概率事件——五组同源工具一次摆清。
 ]
 
+#side-hack[
+  *☞ 4 分支总结的综合题入口*
+
+  如果你想在进入终章前把每个分支的工具系统地复习一遍，先做下面 4 套综合题：
+
+  - 代数：#secref("meta:al-synthesis-problems")
+  - 几何：#secref("meta:ge-synthesis-problems")
+  - 函数：#secref("meta:fn-synthesis-problems")
+  - 数据：#secref("meta:dt-synthesis-problems")
+]
+
 #include "01-shared-tools-and-bridges.typ"
 #include "02-four-branch-invention-trees.typ"
 #include "03-cross-branch-bridges.typ"

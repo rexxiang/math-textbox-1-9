@@ -18,6 +18,8 @@
     [方程的意义、等式性质、反向操作解一元一次方程], [#secref("cb06-equation-as-balance")、#secref("cb06-equality-properties")、#secref("cb06-solving-linear")],
     [比例与百分数的应用题设置], [#secref("cb01-ratio-basics")、#secref("cb01-proportion")、#secref("cb01-percent")],
   )
+
+  *对代数分支特别关键的是*：字母运算（同类项、分配律展开）、等式性质（移项变号、两边同乘 / 同除）以及 #secref("ch:square-root-irrational-number-line") 里的平方根——它们是后续整式、因式分解、分式与二次方程的最直接前置。
 ]
 
 #blueprint[
@@ -35,6 +37,8 @@
     [解方程前几步没问题，最后系数约分算错], [#secref("cb06-solving-linear")、#secref("pf04-fraction-arithmetic")],
     [负号处理常出错], [#secref("cb02-number-line-extends-left")、#secref("cb02-opposite-and-absolute")],
   )
+
+  *进入代数分支前最常见的误判*是：把字母当"数本身"而不是"占位符"——见到 $a + b$ 就想立刻"算成一个数"。代数分支要求你能在不知具体值的情况下变形 $a + b$、$(x + 2)^2$ 这类式子；如果还卡在"非要算出数"的执念里，先回 #secref("cb05-letters-represent-numbers") 重练。
 ]
 
 #tryit[

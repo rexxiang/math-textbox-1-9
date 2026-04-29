@@ -19,6 +19,8 @@
     [等式性质（用于设未知量 + 列方程）], [#secref("cb06-equality-properties")],
     [根式四则与化简（化简 $sqrt(2) / sqrt(8) / sqrt(a^2 + b^2)$ 等）], [#secref("ch:square-root-irrational-number-line")（3b-6 勾股 + 三角比章会就地复习常用化简，但若 $sqrt(\ )$ 写法本身陌生，先回这里）],
   )
+
+  *对几何证明分支特别关键的是*：坐标系语言（点、向量式的位置关系、平移 / 对称）以及 #secref("cb04-plotting-transforming") 里的图形变换直觉——后续相似、勾股与圆都靠"位置可读、变换可控"展开；不熟坐标的同学很容易"几何会、解析卡"。
 ]
 
 #blueprint[
@@ -37,6 +39,8 @@
     [平方根意义不清], [#secref("cb07-square-and-square-root")],
     [$sqrt(2)/sqrt(8)$ 这类化简卡住], [#secref("ch:square-root-irrational-number-line")],
   )
+
+  *进入几何证明分支前最常见的误判*是：把图形当孤立形状看，忘了用平面位置语言（"在……上 / 之间 / 同侧 / 对边"）以及对应顶点顺序——证明里的"$triangle A B C tilde.eq triangle D E F$"不是装饰，字母顺序就是对应关系本身。如果读题时还在反复重画图找位置，先回 #secref("cb04-rectangular-system") 与 #secref("pf08-coordinate-intuition") 把"位置语言"刷顺。
 ]
 
 #tryit[

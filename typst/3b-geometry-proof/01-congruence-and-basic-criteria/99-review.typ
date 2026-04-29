@@ -64,6 +64,16 @@
 
   + *反例构造*：构造（描述或画出）两个三角形，使它们满足"两边对应相等 + 一个非夹角相等（SSA）"但不全等。说明为什么 SSA 不能判全等。
   + *找 Bug*：贝拉（Bella）在证明中写道："设 $triangle A B C tilde.eq triangle B C A$，所以 $A B = B C$"。找出这个推理的错误，并说明 $triangle A B C tilde.eq triangle B C A$ 实际上对三角形意味着什么。
+
+  *串章大题*——这道题需要把整章工具串起来用：
+
+  在 $triangle A B C$ 中，$A B = A C$（等腰），$M$ 是 $B C$ 的中点；连接 $A M$。
+
+  + 写出 $triangle A B M$ 与 $triangle A C M$ 之间的对应顶点：$A <-> ?$、$B <-> ?$、$M <-> ?$。
+  + 用 SSS 判据证明 $triangle A B M tilde.eq triangle A C M$（写出三对相等的边及理由）。
+  + 由全等读出对应角与对应位置：先得 $angle B = angle C$（等腰三角形的两底角相等）；再得 $angle A M B = angle A M C$，结合 $angle A M B + angle A M C = 180 degree$（$B$、$M$、$C$ 共线）推出 $A M perp B C$。
+
+  （思路提示见末尾参考答案；先别看答案，自己尝试。）
 ]
 
 ==== 参考答案
@@ -82,6 +92,12 @@
 + 反例（文字描述）：在 $triangle A B C$ 中取 $A B = 5, B C = 4, angle A = 30 degree$。用这三个条件可以画出两个不同形状的三角形（一个锐角一个钝角），它们满足 SSA 却不全等。这说明 SSA 条件有"二义性"。
 + 贝拉错误：$tilde.eq$ 两侧字母对应顺序代表对应关系：$triangle A B C tilde.eq triangle B C A$ 意味着 $A$ 对应 $B$，$B$ 对应 $C$，$C$ 对应 $A$，即对应边是 $A B = B C, B C = C A, C A = A B$——三边两两相等，说明三角形是等边三角形，而不是只有 $A B = B C$。贝拉漏读了全部对应关系。
 + 作顶角 $angle A$ 的平分线 $A D$（$D$ 在 $B C$ 上）。$triangle A B D$ 与 $triangle A C D$：$A B = A C$（已知），$A D = A D$（公共边），$angle B A D = angle C A D$（平分角）$->$ SAS 全等。故 $angle B = angle C = (180° - 80°)/2 = 50°$。（参见 #secref("ge01-sss-sas") 与 #secref("pf08-triangles-angle-sum")）
+
+*串章大题参考解答*
+
++ 对应顶点：$A <-> A$、$B <-> C$、$M <-> M$（即 $triangle A B M tilde.eq triangle A C M$）。
++ 在 $triangle A B M$ 与 $triangle A C M$ 中：$A B = A C$（已知）、$B M = C M$（$M$ 是 $B C$ 中点）、$A M = A M$（公共边）；由 SSS 得 $triangle A B M tilde.eq triangle A C M$。
++ 由全等得 $angle B = angle C$（对应角，即等腰三角形两底角相等）。又得 $angle A M B = angle A M C$（对应角）；由 $B$、$M$、$C$ 共线，$angle A M B + angle A M C = 180 degree$，所以 $angle A M B = angle A M C = 90 degree$，即 $A M perp B C$。整章工具：对应顶点 $+$ SSS $+$ 由全等读对应元素。
 
 #blueprint[
   *巩固复习*
