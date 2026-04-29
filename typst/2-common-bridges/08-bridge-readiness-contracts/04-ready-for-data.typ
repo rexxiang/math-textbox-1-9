@@ -16,6 +16,7 @@
     [平面直角坐标系（画散点图、折线图）], [#secref("cb04-rectangular-system")、#secref("cb04-plotting-transforming")],
     [用字母表示数、代数式求值（写均值公式）], [#secref("cb05-letters-represent-numbers")、#secref("cb05-expressions-and-like-terms")],
     [估算与合理性检查], [#secref("pf05-estimation-reasonableness")],
+    [关系模板（看到两列 $x = 1, 2, 3$ 与 $y = 10, 20, 30$ 直觉发现 $y = 10 x$）], [#secref("tool:cb05-relationship-templates")（3d-1 入章自检题第 2 题用到——"读两列数据猜规律"是数据章读图前的最低门槛）],
   )
 ]
 
@@ -32,6 +33,7 @@
     [写不出“均值 $=$ 总和 $div$ 个数”代数式], [#secref("cb05-letters-represent-numbers")、#secref("cb05-relationship-templates")],
     [负数偏差算错绝对值], [#secref("cb02-opposite-and-absolute")],
     [小数 / 分数互化不稳], [#secref("pf04-fraction-arithmetic")、#secref("pf05-decimals-conversion")],
+    [看两列数据猜不出关系式], [#secref("tool:cb05-relationship-templates")],
   )
 ]
 

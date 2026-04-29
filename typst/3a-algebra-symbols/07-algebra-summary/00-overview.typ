@@ -18,6 +18,10 @@
   + §3 梳理代数学完之后最常见的*误读*与对应的*哪里不会回哪里*——不是重刷全章，而是精确回到某一节。
 ]
 
+#side-hack[
+  *关于 §5 与 §6 的顺序*：一元二次方程（#secref("ch:quadratic-equations")）和一元一次不等式（#secref("ch:linear-inequalities")）相互独立，没有先后必备依赖——两章都只用到 §1–§4 的工具，互相之间不引用。本书按"先方程后不等式"的常见课标顺序排列，但你完全可以反过来读，或者跳着挑一章先做完再回来。
+]
+
 #include "01-invention-tree-of-algebra.typ"
 #include "02-cross-chapter-synthesis-problems.typ"
 #include "03-common-misreadings-and-repair-routes.typ"

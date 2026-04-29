@@ -16,6 +16,7 @@
     [平面直角坐标系与四象限、描点读点、平移对称], [#secref("cb04-rectangular-system")、#secref("cb04-quadrants")、#secref("cb04-plotting-transforming")],
     [方程意义与反向操作解法], [#secref("cb06-equation-as-balance")、#secref("cb06-solving-linear")],
     [平方、平方根、实数直觉（为二次函数打地基）], [#secref("cb07-square-and-square-root")、#secref("cb07-real-number-line")],
+    [完全平方与配方法（求二次顶点：$x^2 + 6 x + 5 -> (x + 3)^2 - 4$）], [#secref("tool:al02-special-identities")、#secref("tool:al02-factorization-as-reverse")（3c-3 顶点式推导直接用，是函数支唯一进入前需要的代数支工具）],
   )
 ]
 
@@ -33,6 +34,7 @@
     [代入求值时符号错], [#secref("cb02-opposite-and-absolute")、#secref("cb05-letters-represent-numbers")],
     [读不出 $f(x) = c$ 是方程], [#secref("cb06-equation-as-balance")、#secref("cb06-solving-linear")],
     [平方根表达式算不稳], [#secref("cb07-square-and-square-root")],
+    [二次顶点 $x^2 + 6 x + 5$ 凑不出 $(x + 3)^2 - 4$], [#secref("tool:al02-special-identities")、#secref("tool:al02-factorization-as-reverse")],
   )
 ]
 

@@ -17,6 +17,7 @@
     [比、比例（为相似打基础）], [#secref("cb01-ratio-basics")、#secref("cb01-proportion")],
     [平方、平方根、勾股式结果读法], [#secref("cb07-square-and-square-root")、#secref("cb07-real-number-line")],
     [等式性质（用于设未知量 + 列方程）], [#secref("cb06-equality-properties")],
+    [根式四则与化简（化简 $sqrt(2) / sqrt(8) / sqrt(a^2 + b^2)$ 等）], [#secref("ch:square-root-irrational-number-line")（3b-6 勾股 + 三角比章会就地复习常用化简，但若 $sqrt(\ )$ 写法本身陌生，先回这里）],
   )
 ]
 
@@ -34,6 +35,7 @@
     [不会判断哪段用比例], [#secref("cb01-ratio-basics")、#secref("cb01-proportion")],
     [面积 / 体积公式混用 / 漏单位], [#secref("pf07-perimeter-area")、#secref("pf07-volume")],
     [平方根意义不清], [#secref("cb07-square-and-square-root")],
+    [$sqrt(2)/sqrt(8)$ 这类化简卡住], [#secref("ch:square-root-irrational-number-line")],
   )
 ]
 

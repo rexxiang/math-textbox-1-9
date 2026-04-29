@@ -45,6 +45,7 @@ chapters:
     path: typst/0-orientation/01-how-to-self-study
     difficulty: 1
     mainline: true
+    kind: orientation
 
   - id: ch:symbols-invention-tree-repair-routes
     title_zh: 符号·发明树·修复路线
@@ -53,6 +54,16 @@ chapters:
     path: typst/0-orientation/02-symbols-invention-tree-repair-routes
     difficulty: 1
     mainline: true
+    kind: orientation
+
+  - id: ch:book-map-and-routes
+    title_zh: 全书地图与推荐路线
+    title_en: Book Map & Recommended Routes
+    part: 0-orientation
+    path: typst/0-orientation/03-book-map-and-routes
+    difficulty: 1
+    mainline: true
+    kind: orientation
 
   # ── Part 1: Public Foundation ──────────────────────────────────────────────
   - id: ch:number-place-value-decimal
@@ -134,6 +145,7 @@ chapters:
     path: typst/1-public-foundation/10-foundation-readiness-check
     difficulty: 3
     mainline: true
+    kind: readiness
 
   # ── Part 2: Common Bridges ─────────────────────────────────────────────────
   - id: ch:ratio-proportion-percent
@@ -199,6 +211,7 @@ chapters:
     path: typst/2-common-bridges/08-bridge-readiness-contracts
     difficulty: 4
     mainline: true
+    kind: readiness
 
   # ── Part 3a: Algebra & Symbols ─────────────────────────────────────────────
   - id: ch:polynomials-like-terms-operations
@@ -256,6 +269,7 @@ chapters:
     path: typst/3a-algebra-symbols/07-algebra-summary
     difficulty: 5
     mainline: true
+    kind: summary
 
   # ── Part 3b: Geometry & Proof ──────────────────────────────────────────────
   - id: ch:congruence-and-basic-criteria
@@ -321,6 +335,7 @@ chapters:
     path: typst/3b-geometry-proof/08-geometry-summary
     difficulty: 5
     mainline: true
+    kind: summary
 
   # ── Part 3c: Functions & Change ────────────────────────────────────────────
   - id: ch:function-representations
@@ -362,6 +377,7 @@ chapters:
     path: typst/3c-functions-change/05-functions-summary
     difficulty: 5
     mainline: true
+    kind: summary
 
   # ── Part 3d: Data & Uncertainty ────────────────────────────────────────────
   - id: ch:data-displays-descriptive-statistics
@@ -403,6 +419,7 @@ chapters:
     path: typst/3d-data-uncertainty/05-data-summary
     difficulty: 5
     mainline: true
+    kind: summary
 
   # ── Part 4: Capstone ───────────────────────────────────────────────────────
   - id: ch:shared-invention-tree-review
@@ -412,6 +429,7 @@ chapters:
     path: typst/4-capstone/01-shared-invention-tree-review
     difficulty: 3
     mainline: true
+    kind: capstone
 
   - id: ch:cross-domain-problem-solving-modeling
     title_zh: 跨领域解题与建模
@@ -420,6 +438,7 @@ chapters:
     path: typst/4-capstone/02-cross-domain-problem-solving-modeling
     difficulty: 5
     mainline: true
+    kind: capstone
 
   - id: ch:next-learning-map
     title_zh: 下一阶段学习地图
@@ -428,6 +447,7 @@ chapters:
     path: typst/4-capstone/03-next-learning-map
     difficulty: 3
     mainline: true
+    kind: capstone
 
 nodes:
   - id: pf01-place-counting

@@ -16,4 +16,4 @@
   + §1 *如何继续自学*：本书结束后，一个自学者如何把*节奏、补缺、资源、卡住时的应对*组织成一套可持续的日常。
 ]
 
-#include "02-how-to-keep-studying.typ"
+#include "01-how-to-keep-studying.typ"
