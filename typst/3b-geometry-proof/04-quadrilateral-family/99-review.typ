@@ -43,18 +43,19 @@
   // 跨章回顾
   + 矩形长 $a$ 厘米、宽 $b$ 厘米，对角线 $= sqrt(a^2 + b^2)$（回顾 #secref("ge04-pythagorean") 勾股定理）。若 $a + b = 14$ cm、对角线 $= 10$ cm，先用完全平方公式（回顾 #secref("al02-special-identities")）由 $(a + b)^2 = a^2 + 2 a b + b^2$ 求出 $a b$，再列一元二次方程（回顾 #secref("al05-quadratic-solving")）求 $a$ 和 $b$。
 
-  *参考答案*
-
-  + 是（两对角相等判定）；不是（两个条件独立，不足以判定）；是（对角线互相平分判定）；是（一组对边平行且相等判定）。
-  + 对角线 $= sqrt(9 + 16) = 5$。矩形对角线互相平分且相等 $=>$ 交点到四顶点都 $= 5 slash 2$。
-  + $angle A = 60 degree$，$triangle A B D$ 是等边（$A B = A D$、$angle A = 60 degree$），故 $B D = 6$（这是较短对角线）。
-  + 平行四边形 $+$ 对角线相等 $=>$ 矩形。
-  + 错（矩形不一定四边相等）；对（正方形是邻边相等的矩形）；对（菱形是四边相等的平行四边形）。
-  + 作高后底边多出的部分 $= (10 - 4) slash 2 = 3$，高 $= sqrt(5^2 - 3^2) = sqrt(16) = 4$。
-  + 设平行四边形 $A B C D$，对角线 $A C$ 与 $B D$ 交于 $O$。在 $triangle A O B$ 与 $triangle C O D$ 中：$A B = C D$（平行四边形对边相等）；$angle O A B = angle O C D$（$A B parallel C D$，内错角）；$angle A O B = angle C O D$（对顶角）。由 ASA 得 $triangle A O B tilde.eq triangle C O D$，故 $O A = O C$、$O B = O D$——即对角线互相平分。
-  + 平行四边形对角相等，所以对角也是 $70 degree$；邻角互补，$180 degree - 70 degree = 110 degree$。四个角为 $70 degree$、$110 degree$、$70 degree$、$110 degree$。
-  + $a + b = 14$，$a^2 + b^2 = 100$。由完全平方公式 $(a + b)^2 = a^2 + 2 a b + b^2 = 196$，得 $2 a b = 196 - 100 = 96$，$a b = 48$。联立 $a + b = 14$、$a b = 48$，由韦达定理 $a, b$ 是一元二次方程 $t^2 - 14 t + 48 = 0$ 的两根；分解 $(t - 6)(t - 8) = 0$，得 $t = 6$ 或 $t = 8$。故 $a = 8, b = 6$（或反之）。验算：$sqrt(64 + 36) = 10$ ✓。（参见 #secref("ge04-pythagorean")、#secref("al02-special-identities") 与 #secref("al05-quadratic-solving")）
 ]
+
+==== 参考答案
+
++ 是（两对角相等判定）；不是（两个条件独立，不足以判定）；是（对角线互相平分判定）；是（一组对边平行且相等判定）。
++ 对角线 $= sqrt(9 + 16) = 5$。矩形对角线互相平分且相等 $=>$ 交点到四顶点都 $= 5 slash 2$。
++ $angle A = 60 degree$，$triangle A B D$ 是等边（$A B = A D$、$angle A = 60 degree$），故 $B D = 6$（这是较短对角线）。
++ 平行四边形 $+$ 对角线相等 $=>$ 矩形。
++ 错（矩形不一定四边相等）；对（正方形是邻边相等的矩形）；对（菱形是四边相等的平行四边形）。
++ 作高后底边多出的部分 $= (10 - 4) slash 2 = 3$，高 $= sqrt(5^2 - 3^2) = sqrt(16) = 4$。
++ 设平行四边形 $A B C D$，对角线 $A C$ 与 $B D$ 交于 $O$。在 $triangle A O B$ 与 $triangle C O D$ 中：$A B = C D$（平行四边形对边相等）；$angle O A B = angle O C D$（$A B parallel C D$，内错角）；$angle A O B = angle C O D$（对顶角）。由 ASA 得 $triangle A O B tilde.eq triangle C O D$，故 $O A = O C$、$O B = O D$——即对角线互相平分。
++ 平行四边形对角相等，所以对角也是 $70 degree$；邻角互补，$180 degree - 70 degree = 110 degree$。四个角为 $70 degree$、$110 degree$、$70 degree$、$110 degree$。
++ $a + b = 14$，$a^2 + b^2 = 100$。由完全平方公式 $(a + b)^2 = a^2 + 2 a b + b^2 = 196$，得 $2 a b = 196 - 100 = 96$，$a b = 48$。联立 $a + b = 14$、$a b = 48$，由韦达定理 $a, b$ 是一元二次方程 $t^2 - 14 t + 48 = 0$ 的两根；分解 $(t - 6)(t - 8) = 0$，得 $t = 6$ 或 $t = 8$。故 $a = 8, b = 6$（或反之）。验算：$sqrt(64 + 36) = 10$ ✓。（参见 #secref("ge04-pythagorean")、#secref("al02-special-identities") 与 #secref("al05-quadratic-solving")）
 
 #blueprint[
   *巩固复习*
