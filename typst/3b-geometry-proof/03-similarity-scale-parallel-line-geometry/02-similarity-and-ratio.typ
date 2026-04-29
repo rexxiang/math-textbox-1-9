@@ -235,6 +235,11 @@
 #mastery[
   *基础*
 
+  + 相似记号 $tilde$ 读作什么？
+  + 若 $triangle A B C tilde triangle D E F$，对应边比 $A B \/ D E$ 与 $B C \/ E F$ 是否相等？
+  + "AA" 是哪三个字的简写？它要求几对什么相等？
+  + 相似比 $k = 2$ 时，$triangle A B C$ 的边长是 $triangle D E F$ 对应边长的几倍？
+
   + 判断下列哪些条件能推出 $triangle A B C tilde triangle D E F$，写出判据（若不能，说明原因）：
     - $angle A = angle D$、$angle B = angle E$
     - $angle A = angle D$、$angle C = angle F$
@@ -268,12 +273,16 @@
 #answer-cut[
 
   *基础*
+  + 读作"相似于"。
+  + 相等（相似定义：对应边成比例，比值都 $= k$）。
+  + Angle-Angle 的简写；要求两对对应角相等。
+  + $2$ 倍。
   + `AA` ✓；`AA` ✓（由 $angle A = angle D$ 与 $angle C = angle F$，第三角 $angle B = angle E$ 自动相等）；不够（只有一对角相等，形状还没锁死）；两对角虽相等，但对应顺序错位——不能直接写 $triangle A B C tilde triangle D E F$，需要改写成 $triangle A B C tilde triangle E D F$ 才是合法的相似关系。
   + $A B = 2 times 3 = 6$、$B C = 2 times 4 = 8$、$A C = 2 times 5 = 10$（相似比）。
   + 由 $A D slash A B = 6 slash 10 = 3 slash 5$ 得 $D E = 3 slash 5 times 15 = 9$（平行线截比例）。
 
   *应用*
-  + 设 $triangle A B C$ 中 $D E parallel B C$，$D in A B$、$E in A C$。由 $D E parallel B C$ 得 $angle A D E = angle A B C$（同位角，见 #secref("ge02-parallel-line-angles"));$angle A$ 公共。由 AA 得 $triangle A D E tilde triangle A B C$。
+  + 设 $triangle A B C$ 中 $D E parallel B C$，$D in A B$、$E in A C$。由 $D E parallel B C$ 得 $angle A D E = angle A B C$（同位角，见 #secref("ge02-parallel-line-angles") ）；$angle A$ 公共。由 AA 得 $triangle A D E tilde triangle A B C$。
   + 在 $triangle A B D$ 与 $triangle C B A$ 中：$angle B$ 公共，$angle A D B = angle C A B = 90 degree$。由 AA 得 $triangle A B D tilde triangle C B A$。同理 $angle C$ 公共、直角相等 $=>$ $triangle A B D tilde triangle C A D$。
   + 由相似边成比例 $(2 x + 1) slash (x + 4) = (3 x - 2) slash (2 x)$。交叉相乘 $2 x (2 x + 1) = (x + 4)(3 x - 2)$，即 $4 x^2 + 2 x = 3 x^2 + 10 x - 8$，得 $x^2 - 8 x + 8 = 0$，$x = 4 plus.minus 2 sqrt(2)$。代回可检验，取正值 $x = 4 + 2 sqrt(2)$ 或 $4 - 2 sqrt(2)$。相似比 $k = A B slash D E = (2 x + 1) slash (x + 4)$。
 

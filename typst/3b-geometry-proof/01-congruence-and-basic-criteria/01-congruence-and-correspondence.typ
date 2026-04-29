@@ -232,6 +232,11 @@
 #mastery[
   *基础*
 
+  + 全等记号 $tilde.eq$ 读作什么？
+  + 若 $triangle A B C tilde.eq triangle D E F$，与 $A B$ 对应的边是哪一条？
+  + 若 $triangle A B C tilde.eq triangle D E F$，与 $angle B$ 对应的角是哪一个？
+  + 用一句话说明"全等"与"相似"的区别。
+
   + 若 $triangle A B C tilde.eq triangle L M N$，分别写出三对对应顶点、对应边、对应角。
   + 若 $triangle A B C tilde.eq triangle D E F$，$angle A = 72 degree$、$angle C = 28 degree$，求 $angle E$。
   + 若 $triangle P Q R tilde.eq triangle S T U$，$P Q = 9$、$Q R = 12$、$P R = 15$，写出 $triangle S T U$ 的三边长。
@@ -254,6 +259,10 @@
   #answer-cut[
 
   *基础*
+  + 读作"全等于"。
+  + $D E$（按 $A <-> D$、$B <-> E$ 的对应顺序）。
+  + $angle E$。
+  + 全等：形状*和*大小都相同；相似：只要求形状相同，大小可以不同。
   + 顶点：$A <-> L$、$B <-> M$、$C <-> N$。边：$A B = L M$、$B C = M N$、$A C = L N$。角：$angle A = angle L$、$angle B = angle M$、$angle C = angle N$。（全等对应）
   + $angle B = 180 degree - 72 degree - 28 degree = 80 degree$（三角形内角和）；由对应角 $angle E = angle B = 80 degree$（全等对应）。
   + $S T = 9$、$T U = 12$、$S U = 15$（全等对应边）。
