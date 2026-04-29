@@ -26,6 +26,12 @@
   + 一个三角形的三个内角之和是多少度？
 ]
 
+#side-hack[
+  *☞ 上一章吃力？*
+
+  如果你做 #secref("ch:similarity-scale-parallel-line-geometry") 的相似比 / AA 判定题感觉吃力——尤其"对应边之比恒定"这一直觉没立稳——先回去把 #secref("ge02-similarity-aa-ratio") 的相似比与对应边比例再走 $2$ 道题，本章 §2 推 $30 degree$/$45 degree$/$60 degree$ 的边长比就直接复用这套技能。
+]
+
 #include "01-pythagorean-theorem-and-radical-lengths.typ"
 #include "02-special-right-triangles-and-trig-ratios.typ"
 #include "03-applications-elevation-depression-and-slopes.typ"

@@ -34,9 +34,9 @@
   + 两位数各位数字之和为 $11$；交换后新数比原数大 $9$。求原数。
   + 一件工作，甲独做 $20$ 天、乙独做 $30$ 天完成。两人合做 $d$ 天后甲离开，乙再独做 $5$ 天完成。求 $d$。
   // 跨章回顾
-  + 用整式加减（#secref("al01-add-subtract-polynomials")）化简 $(3x + 2) - (x - 4)$，然后解方程 $(3x + 2) - (x - 4) = 12$。
+  + 用整式加减（#secref("al01-add-subtract-polynomials")）化简 $(3x + 2) - (x - 4)$，然后解方程 $(3x + 2) - (x - 4) = 12$。（涉及 #secref("al01-add-subtract-polynomials") + #secref("al04-linear-one-variable")）
   // 跨章回顾
-  + 比例 $x : y = 2 : 5$ 且 $x + y = 35$（#secref("cb01-ratio-basics")）。用方程组求 $x, y$。
+  + 比例 $x : y = 2 : 5$ 且 $x + y = 35$（#secref("cb01-ratio-basics")）。用方程组求 $x, y$。（涉及 #secref("cb01-ratio-basics") + #secref("al04-systems-linear")）
   + 用*两种不同方法*解方程组 $cases(2x + y = 7, x - y = 2)$：先用加减消元，再用代入消元。比较两种做法的步骤数，说一说哪种更简洁。
   // 跨章回顾
   + 一个三角形的三个内角度数（单位 $degree$）之间满足：第二个角是第一个的 $2$ 倍，第三个比第一个大 $30$。设第一个角为 $x$，根据三角形内角和 $= 180 degree$（回顾 #secref("pf08-triangles-angle-sum")）列一元一次方程（本章 #secref("al04-linear-one-variable")）求 $x$，再写出三个内角并判断三角形的形状（按角分类）。

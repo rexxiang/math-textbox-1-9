@@ -20,9 +20,9 @@
 #side-hack[
   *入章自检*——以下几道小题只用前面章节学过的知识。如果卡住，请先回到上面"需要先会"的链接补一补。
 
-  + 若 $triangle A B C tilde.eq triangle D E F$，且 $A B = D E$、$B C = E F$、$A C = D F$，这用的是哪条判定法？
-  + 一个三角形两个角分别是 $40 degree$ 和 $80 degree$，第三个角是多少？
-  + $triangle A B C tilde.eq triangle D E F$ 的字母顺序告诉你哪些对应关系？
+  + 已知 $triangle A B C$ 与 $triangle D E F$ 满足 $A B = D E = 5$、$B C = E F = 7$、$angle A = angle D$。能直接由 SAS 判 $triangle A B C tilde.eq triangle D E F$ 吗？为什么？（提示：SAS 里的"夹角"是哪两条边的夹角？）
+  + 若两个三角形的三条边分别为 $3, 4, 5$ 和 $3, 4, 5$，它们一定全等吗？是哪条判定法？这条判定法对*所有*三组边都成立吗，还是要再加条件？
+  + 一个三角形已知*两个角*分别是 $40 degree$ 和 $80 degree$，但*没给任何边*。这样能确定它的形状（差一个全等关系）吗？能确定它的大小吗？
 ]
 
 #include "01-asa-aas-ssa-counterexample.typ"

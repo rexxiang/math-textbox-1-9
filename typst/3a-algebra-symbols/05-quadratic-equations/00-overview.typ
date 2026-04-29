@@ -26,5 +26,11 @@
   + $sqrt(25) = ?$
 ]
 
+#side-hack[
+  *☞ 上一章吃力？*
+
+  如果你做 #secref("ch:linear-equations-systems-modeling") 的应用题感觉吃力——尤其在"设元 → 译句成式"那一步老卡壳——先回去把 #secref("al04-modeling-word-problems") 的*设元五步路*再走 $2$ 道题，本章用配方法、求根公式时仍要用同一套"设量 → 列等式 → 验证"流程，只是把一次方程换成二次。
+]
+
 #include "01-quadratic-equations-by-factoring-and-formula.typ"
 #include "02-quadratic-applications-and-vieta.typ"

@@ -35,7 +35,7 @@
   + 两个相似三角形面积比 $9 : 49$。求它们的相似比与周长比。
   + 一个立方体金属块熔铸成相似的小立方体，每条棱是原来的 $1 slash 4$。问可以熔出多少个小立方体？
   // 跨章回顾
-  + 两三角形全等（#secref("ge01-congruence-correspondence")）是相似比 $= 1$ 的特殊情况。已知 $triangle A B C tilde triangle D E F$，且对应边之比为 $1 : 1$，说明为什么它们一定全等。
+  + 两三角形全等（#secref("ge01-congruence-correspondence")）是相似比 $= 1$ 的特殊情况。已知 $triangle A B C tilde triangle D E F$，且对应边之比为 $1 : 1$，说明为什么它们一定全等。（涉及 #secref("ge01-congruence-correspondence") + #secref("ge02-similarity-aa-ratio")）
   // 跨章回顾
   + 利用比和比例的基本性质（#secref("cb01-ratio-basics")），化简比 $12 : 8 : 20$ 为最简整数比，然后说明一个三角形三边之比为 $3 : 2 : 5$ 是否可能构成三角形。
   + 在 $triangle A B C$ 中，$D E parallel B C$，$A D = 2, D B = 4, A E = 3$。求 $E C$。用两种方法：(1) 平行线截比例定理；(2) 相似三角形对应边成比例。比较两种做法。
