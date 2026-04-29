@@ -36,6 +36,8 @@
   // 跨章回顾
   + 先用三角形内角和（#secref("pf08-triangles-angle-sum")）求出缺失角，再用 ASA 判据证明两三角形全等：在 $triangle A B C$ 和 $triangle D E F$ 中，$angle A = angle D = 40 degree$、$A B = D E$、$angle B = angle E = 80 degree$。
   + 找一个反例说明"SSA"（两边和一个非夹角相等）*不能*判定两三角形全等。画出或描述两个满足 SSA 条件但不全等的三角形。
+  // 跨章回顾
+  + 已知 $triangle A B C$ 中 $angle C = 90 degree$、$A C = 5$ cm、$B C = 12$ cm（这是经典的 $5$-$12$-$13$ 直角三角形组合，可先记下斜边 $A B = 13$ cm；回顾 #secref("pf08-triangles-angle-sum") 直角三角形内角关系）。再有 $triangle D E F$ 满足 $angle F = 90 degree$、$D F = 5$ cm、$E F = 12$ cm。用 SAS 判据（本章 #secref("ge01-asa-aas-ssa")，SAS 详见 #secref("ge01-sss-sas")）证明 $triangle A B C tilde.eq triangle D E F$，再用直角三角形面积公式（回顾 #secref("pf07-perimeter-area")）求其面积。
 
   *参考答案*
 
@@ -49,8 +51,8 @@
   + $A B = A C$（已知）；$B D = C D$（$D$ 为中点）；$A D = A D$（公共边）。三边对应相等，由 SSS 得 $triangle A B D tilde.eq triangle A C D$。
   + $angle C = 180 degree - 40 degree - 80 degree = 60 degree = angle F$。现在 $angle A = angle D$、$A B = D E$、$angle B = angle E$，由 ASA 得 $triangle A B C tilde.eq triangle D E F$。
   + 取 $triangle_1$：$A B = 5, B C = 3, angle A = 30 degree$；$triangle_2$：$A' B' = 5, B' C' = 3, angle A' = 30 degree$，但 $B C$ 对应的角可以是锐角或钝角（以 $B$ 为圆心、$3$ 为半径画弧，弧与另一边有两个交点），所以存在两种不全等的三角形。这就是"SSA 歧义"——非夹角不能锁定三角形形状。
+  + 在 $triangle A B C$ 与 $triangle D E F$ 中：$angle C = angle F = 90 degree$、$A C = D F = 5$、$B C = E F = 12$，由 SAS（夹角相等的两边对应相等）得 $triangle A B C tilde.eq triangle D E F$。直角三角形面积 $= 1/2 times A C times B C = 1/2 times 5 times 12 = 30$ 平方厘米。（参见 #secref("ge01-sss-sas") 与 #secref("pf07-perimeter-area")）
 ]
-
 #blueprint[
   *巩固复习*
 

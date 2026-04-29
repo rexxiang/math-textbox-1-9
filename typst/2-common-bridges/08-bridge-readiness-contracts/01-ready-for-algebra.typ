@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, tryit, secref
 
-=== 通往代数分支的准备清单 <meta:ready-for-algebra>
+=== 通往代数分支的入口准备 <meta:ready-for-algebra>
 
 #blueprint[
   *前面学过的知识*
@@ -21,16 +21,6 @@
 ]
 
 #blueprint[
-  *最常见的误判*
-
-  - 把字母运算的结果当成“新运算”，忘记它只是用字母写出的算术。
-  - 合并同类项时忽略负号或指数：$2 x$ 和 $x^2$ 可以合并？不行。
-  - 解方程只做单边的变形，破坏了平衡。
-  - 移项时忘了变号，或把系数和常数项混在一边。
-  - 应用题把“比 : 比例 : 百分数”当成三件互不相关的事，而不是同一关系的三种写法。
-]
-
-#blueprint[
   *哪里不会回哪里*
 
   #table(
@@ -45,16 +35,6 @@
     [解方程前几步没问题，最后系数约分算错], [#secref("cb06-solving-linear")、#secref("pf04-fraction-arithmetic")],
     [负号处理常出错], [#secref("cb02-number-line-extends-left")、#secref("cb02-opposite-and-absolute")],
   )
-]
-
-#blueprint[
-  *可以继续前进的信号*
-
-  - 能把 $2 x + 3 = 7$ 分步反向解出 $x = 2$，并说出每步用到了哪条等式性质。
-  - 能把 $3 (2 x - 1) + 4 = x + 12$ 化成标准形再解出来，自动代回检验。
-  - 能把“小明比Amara多 $3$ 岁，两人年龄和 $25$”立即翻译成方程并求解。
-  - 会区分“部分 : 部分”和“部分 : 整体”的比，不会把应用题的基数搞错。
-  - 遇到负系数或负常数不紧张，能保持符号一致性。
 ]
 
 #tryit[

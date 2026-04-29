@@ -65,6 +65,75 @@
   *读这张表的方式*：哪一行打了多个 ✓，说明那个工具是*跨分支的公共基础设施*——卡在任何一支里都可能因为它没稳住而卡住。
 ]
 
+主链只是脊梁的"接力棒"。如果把全书每个关键工具都摆在桌面上，再画出谁靠谁吃饭，得到的不是一条直线，而是一张三层的依赖网。下面这张图把*公共基础（绿）→ 共通桥梁（蓝）→ 分支主线（橙）*三层平铺，绿色一行在最下方、橙色一行在最上方；箭头一律自下层指向上层，表示"上层那件工具是踩在下层这件工具上的"。
+
+#figure(
+  scale(x: 92%, y: 92%, reflow: true, {
+    import fletcher: diagram, node, edge
+    let cF = rgb("#E8F5E9")
+    let cB = rgb("#E3F2FD")
+    let cT = rgb("#FFF3E0")
+    let lab(name, code) = text(size: 8pt)[*#name* #h(0.2em) #text(size: 6.5pt, fill: rgb("#555"))[§#code]]
+    diagram(
+      node-stroke: 0.6pt,
+      node-inset: 4pt,
+      spacing: (1.0em, 2.4em),
+      // Foundation layer (y=2, bottom): 5 nodes spread across cols 0..6
+      node((0,2), lab("自然数", "pf01"), shape: rect, fill: cF),
+      node((1,2), lab("四则律", "pf02"), shape: rect, fill: cF),
+      node((3,2), lab("分数", "pf04"), shape: rect, fill: cF),
+      node((5,2), lab("周长面积", "pf07"), shape: rect, fill: cF),
+      node((6,2), lab("角三角形", "pf08"), shape: rect, fill: cF),
+      // Bridge layer (y=1, middle): 6 nodes
+      node((0,1), lab("数轴", "cb02"), shape: rect, fill: cB),
+      node((1,1), lab("比例", "cb01"), shape: rect, fill: cB),
+      node((2,1), lab("字母代数", "cb05"), shape: rect, fill: cB),
+      node((3,1), lab("方程", "cb06"), shape: rect, fill: cB),
+      node((5,1), lab("坐标系", "cb04"), shape: rect, fill: cB),
+      node((6,1), lab("平方根", "cb07"), shape: rect, fill: cB),
+      // Branch layer (y=0, top): 6 nodes
+      node((0,0), lab("方差", "dt06"), shape: rect, fill: cT),
+      node((2,0), lab("求根公式", "al05"), shape: rect, fill: cT),
+      node((3,0), lab("斜率", "fn06"), shape: rect, fill: cT),
+      node((4,0), lab("二次函数", "fn08"), shape: rect, fill: cT),
+      node((5,0), lab("相似", "ge02"), shape: rect, fill: cT),
+      node((6,0), lab("勾股定理", "ge04"), shape: rect, fill: cT),
+      // Foundation -> Bridge
+      edge((0,2), (0,1), "->"),       // 自然数 -> 数轴
+      edge((1,2), (2,1), "->"),       // 四则 -> 字母
+      edge((1,2), (3,1), "->"),       // 四则 -> 方程
+      edge((1,2), (6,1), "->"),       // 四则 -> 平方根
+      edge((3,2), (1,1), "->"),       // 分数 -> 比例
+      edge((6,2), (5,1), "->"),       // 角三角形 -> 坐标系
+      // Bridge -> Bridge
+      edge((0,1), (5,1), "->"),       // 数轴 -> 坐标系
+      edge((2,1), (3,1), "->"),       // 字母 -> 方程
+      edge((1,1), (3,1), "->"),       // 比例 -> 方程
+      // Bridge -> Branch
+      edge((3,1), (2,0), "->"),       // 方程 -> 求根公式
+      edge((6,1), (2,0), "->"),       // 平方根 -> 求根公式
+      edge((6,1), (6,0), "->"),       // 平方根 -> 勾股
+      edge((1,1), (5,0), "->"),       // 比例 -> 相似
+      edge((5,1), (3,0), "->"),       // 坐标系 -> 斜率
+      edge((1,1), (3,0), "->"),       // 比例 -> 斜率
+      edge((6,1), (4,0), "->"),       // 平方根 -> 二次函数
+      edge((5,1), (4,0), "->"),       // 坐标系 -> 二次函数
+      // Branch -> Branch
+      edge((2,0), (4,0), "->"),       // 求根公式 -> 二次函数
+      // Foundation -> Branch (skip-level)
+      edge((3,2), (0,0), "->"),       // 分数 -> 方差
+      edge((6,2), (5,0), "->"),       // 角三角形 -> 相似
+      edge((1,2), (6,0), "->"),       // 四则 -> 勾股
+      edge((5,2), (4,0), "->"),       // 周长面积 -> 二次函数（面积型）
+    )
+  }),
+  caption: [全书工具依赖 DAG：公共基础（绿，底层）→ 共通桥梁（蓝，中层）→ 分支主线（橙，顶层），箭头表示"上层工具依赖下层工具"。],
+) <fig-tool-dag>
+
+#side-hack[
+  *看图三问*：① 哪个底层节点*射出的箭头最多*？它就是全书最被反复倚重的公共基础——卡在它上面，会同时拖住好几支分支。② 哪个分支工具*接收的箭头最多*？它就是综合度最高的"集大成"工具——一旦学起来吃力，多半是它依赖的某条前置链没接稳。③ 哪条桥梁*同时给两支以上分支供货*？它就是真正的"枢纽桥梁"，值得在分支推进前再回头确认一遍。带着这三个问题再扫一遍图 @fig-tool-dag，比硬记每条箭头有用得多。
+]
+
 #blueprint[
   *四支分支的“核心新工具”与它依赖的前面学过的知识*
 

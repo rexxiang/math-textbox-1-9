@@ -14,6 +14,12 @@
   *这一节要把“证明”的写法压成一张固定格式：上栏是已知与推导，下栏是每一步的“为什么”。一旦这个骨架写对，两步证明就稳住了。*
 ]
 
+#tryit[
+  先动手试试，下面再读。
+
+  + 已知 $A B = A C$，$A D perp B C$ 于 $D$。要证：$B D = C D$。先不写正式证明——用自己的话列出：①你掌握了哪些条件；②要证的结论是什么；③你猜需要什么"中间桥梁"把条件和结论连起来。
+]
+
 #discovery[
   *一条证明链的最小骨架*
 
@@ -111,7 +117,7 @@
 ]
 
 #history-note[
-  "证明"这件事最早可追溯到泰勒斯（Thales，约前 624–546 年）——这位古希腊米利都人据说是第一个给几何命题做出演绎论证的人。约前 300 年，欧几里得（Euclid）在《几何原本》里把这套方法体系化：从 5 条公设和 5 条公理出发，用 465 个命题搭起一条无断点的推理链，每一步都必须在前面的陈述、公设或已证定理里有依据。今天各版初中教科书的"两栏证明"（陈述 / 理由）正是这套传统的缩影。它逼着初学者把"心里过得去"升级成"写在纸上挑不出毛病"。
+  约前 $624$—$546$ 年的米利都人泰勒斯（Thales）面对一个朴素却新鲜的疑问：几何里"看着对"为什么还不算数？据说他是第一个为几何命题给出演绎论证的人——不靠图直觉，只用前面已经认可的事实推下一步。约前 $300$ 年，欧几里得（Euclid）在《几何原本》里把这套方法推到极致：从 $5$ 条公设和 $5$ 条公理出发，用 $465$ 个命题搭起一条无断点的推理链，每一步都必须在前面的陈述、公设或已证定理里有依据。今天各版初中教科书的"两栏证明"（陈述 / 理由）正是这套传统的缩影。它逼着初学者把"心里过得去"升级成"写在纸上挑不出毛病"。
 ]
 
 #blueprint[
@@ -268,7 +274,10 @@
 
   + 已知 $triangle A B C$ 为正三角形，在 $A B$、$B C$、$C A$ 上分别取点 $P$、$Q$、$R$ 使 $A P = B Q = C R$。求证 $triangle P Q R$ 也是正三角形。（只需构思“一次全等多次复用”的证明链，两栏写出一对全等即可。）
 
-  + 说明：为什么“证两线平行”常常也能套“先全等、后对应”这条两步模版？（提示：平行性常由内错角相等 / 同位角相等来推出，而这些角相等又常源自全等。）
+  + 说明：为什么"证两线平行"常常也能套"先全等、后对应"这条两步模版？（提示：平行性常由内错角相等 / 同位角相等来推出，而这些角相等又常源自全等。）
+  + *[反直觉]* 同学小翼写："$A B = C D$、$angle A = angle C$，所以 $triangle A B X tilde.eq triangle C D X$（`SSA`）"。请举一个反例（SSA 不构成全等的标准反例），说明她漏掉了哪一步必要条件，再修正成正确的两步证明模版。
+  + *[跨知识点]* 已知 $triangle A B C$ 中 $A B = A C$，$D$ 在 $B C$ 上且 $angle B A D = angle C A D$。证 $A D perp B C$。要求两步模版完整写出，并指出最后一步用到了 #secref("tool:pf07-angles") 中"邻补角相等 → 直角"的角度结论。
+  + *[构造题]* 构造一个题目（写出"已知 + 求证"），使解题过程必须用两次全等：第一次先证 $triangle X Y Z tilde.eq triangle U V W$ 得到一对边相等，再用这对边 + 其它已知证 $triangle dots tilde.eq triangle dots$ 得最终结论。给出题目 + 大纲式证明。
 
   #answer-cut[
 
@@ -288,6 +297,9 @@
   *挑战 ☞ 选做*
   + 陈述：$angle O M P = angle O N P = 90 degree$（垂直定义）；$P M = P N$（已知）；$O P = O P$（公共边）。在直角三角形 $triangle O M P$、$triangle O N P$ 中由直角三角形三边关系（☞ 正式证明见勾股定理章节）：$O M = sqrt(O P^2 - P M^2) = sqrt(O P^2 - P N^2) = O N$；再由 `SSS`（$O P$、$P M = P N$、$O M = O N$）得 $triangle O P M tilde.eq triangle O P N$，对应角 $angle M O P = angle N O P$，所以 $O P$ 平分 $angle A O B$。
   + 在 $triangle A P R$ 与 $triangle B Q P$ 中：$A P = B Q$（已知）、$angle A = angle B = 60 degree$（正三角形）、$A R = A C - C R = A B - A P = B P$（由 $A B = A C$ 与已知长度等式）；`SAS` 得 $triangle A P R tilde.eq triangle B Q P$，故 $P R = Q P$。同理 $Q P = R Q$，于是 $triangle P Q R$ 三边相等，是正三角形。
-  + 因为“两线平行”等价于“被第三线所截时同位角 / 内错角相等”，而这种“两角相等”往往正是一对全等三角形的对应角结论。所以真实发生的路径是：先拼一对全等三角形 → 读出对应角相等 → 由同位 / 内错角相等判定平行。两步模版照用。
+  + 因为"两线平行"等价于"被第三线所截时同位角 / 内错角相等"，而这种"两角相等"往往正是一对全等三角形的对应角结论。所以真实发生的路径是：先拼一对全等三角形 → 读出对应角相等 → 由同位 / 内错角相等判定平行。两步模版照用。
+  + 反例：以 $A$ 为圆心、半径 $5$ 画弧交一条射线于两点 $B_1, B_2$，则 $triangle A B_1 X$ 与 $triangle A B_2 X$ 都满足 "$A X$ 公共边 + $A B_1 = A B_2 = 5$ + $angle A X B_1 = angle A X B_2$"（同一个角），但两个三角形*不全等*——这是 SSA 的经典反例（"两边和其中一边的对角"对应相等不能推全等，因为另一条对应边的位置可能落在不同的位置）。修正方法：要么再加一条对应边凑成 SSS / SAS，要么把"未给定对应的角"换成两条边的*夹角*成为 SAS。
+  + 陈述 / 理由：$A B = A C$（已知）；$angle B A D = angle C A D$（已知）；$A D = A D$（公共边）；$triangle A B D tilde.eq triangle A C D$（`SAS`）；由对应角 $angle A D B = angle A D C$。又 $angle A D B + angle A D C = 180°$（$B, D, C$ 共线，邻补角和 $= 180°$，呼应 #secref("tool:pf07-angles")），所以 $2 angle A D B = 180°$，$angle A D B = 90°$，即 $A D perp B C$。
+  + 题目：已知正方形 $A B C D$，$E$、$F$ 分别为 $B C$、$C D$ 的中点，$A E$ 与 $D F$ 交于 $G$。求证 $A E perp D F$。 大纲：第一次全等——$triangle A B E tilde.eq triangle D C F$（`SAS`：$A B = D C$、$angle B = angle C = 90°$、$B E = C F$），得对应角 $angle B A E = angle C D F$。第二次推理：在 $triangle A G D$ 中，$angle G A D + angle A D G = (90° - angle B A E) + angle C D F = 90°$（因为 $angle B A E = angle C D F$ 互相抵消），所以 $angle A G D = 90°$，即 $A E perp D F$（用了"两角和 $90°$ 推第三角 $90°$"，呼应 #secref("tool:pf08-triangles-angle-sum")）。
   ]
 ]

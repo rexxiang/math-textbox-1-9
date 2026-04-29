@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, tryit, secref
 
-=== 通往数据分支的准备清单 <meta:ready-for-data>
+=== 通往数据分支的入口准备 <meta:ready-for-data>
 
 #blueprint[
   *前面学过的知识*
@@ -15,18 +15,8 @@
     [数轴与正负号（处理偏差值）], [#secref("cb02-number-line-extends-left")、#secref("cb02-opposite-and-absolute")],
     [平面直角坐标系（画散点图、折线图）], [#secref("cb04-rectangular-system")、#secref("cb04-plotting-transforming")],
     [用字母表示数、代数式求值（写均值公式）], [#secref("cb05-letters-represent-numbers")、#secref("cb05-expressions-and-like-terms")],
-    [估算与合理性检查], [#secref("pf05-estimation-reasonableness")、#secref("cb07-real-number-line")],
+    [估算与合理性检查], [#secref("pf05-estimation-reasonableness")],
   )
-]
-
-#blueprint[
-  *最常见的误判*
-
-  - 把“百分数”当成一个抽象数字，忘记它背后的基数。
-  - 读图时不看坐标轴的单位与刻度，随手读数。
-  - 把“频率 $=$ 频数 $div$ 总数”写错顺序，或漏掉“$times 100%$”。
-  - 算偏差时忽略负号，或把“偏差”和“绝对偏差”混为一谈。
-  - 把“样本”和“总体”当成一回事，看到样本结果就直接声称总体。
 ]
 
 #blueprint[
@@ -43,15 +33,6 @@
     [负数偏差算错绝对值], [#secref("cb02-opposite-and-absolute")],
     [小数 / 分数互化不稳], [#secref("pf04-fraction-arithmetic")、#secref("pf05-decimals-conversion")],
   )
-]
-
-#blueprint[
-  *可以继续前进的信号*
-
-  - 能用字母写出“$n$ 个数据的均值 $bar(x) = (x_1 + x_2 + dots + x_n) / n$”。
-  - 看到“全校 $1200$ 人里男生占 $54%$”能立刻算出男生人数，并口头解释 $54%$ 的基数是谁。
-  - 能在一张折线图上指出哪段在上升、哪段在下降，并用坐标读出峰值。
-  - 看到“样本均值”和“总体均值”能意识到它们可能不同。
 ]
 
 #tryit[

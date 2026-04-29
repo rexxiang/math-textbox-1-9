@@ -7,9 +7,8 @@
 #chapter-nav[
   *难度*：★☆☆☆☆ \
   *核心问题*：认识了点、线、线段之后，用它们围出来的封闭图形和"抬起来"的立体各叫什么名字？图形之间的位置关系怎样描述？ \
-  *前置直觉*：能区分点、直线、射线、线段（#secref("ch:points-lines-segments")）。 \
-  *知识地图位置*：公共基础 / 形状下篇 \
-  *忘了可以回到*：如果"线段"和"射线"还分不清，请先回到 #secref("ch:points-lines-segments")。
+  *需要先会*：能区分点、直线、射线、线段（#secref("ch:points-lines-segments")）。 \
+  *知识地图位置*：公共基础 / 形状下篇
 ]
 
 #chapter-route[

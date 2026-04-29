@@ -15,7 +15,21 @@
   这一节一次性处理这两件事：*判定法家族还剩两条——ASA 和 AAS；另外还得说清楚 SSA 为什么不算数*。
 ]
 
+#tryit[
+  先动手试试，下面再读。
+
+  $triangle X Y Z$ 与 $triangle M N O$：$angle X = angle M$、$angle Y = angle N$、$Y Z = N O$。
+]
+
 #discovery[
+  *先用旧工具试试。* 上一节 SAS 规则是"两边加*夹角*"。现在换一种：已知两边 $A B = 7$、$B C = 5$，加上角 $angle A = 30°$——这个角不在两边中间，而是 $A B$ 一侧的角。感觉信息量和 SAS 差不多，应该也能锁死三角形。
+
+  试着推下去——
+
+  以 $A$ 为端点作与 $A B$ 成 $30°$ 的射线；$C$ 必须在这条射线上，同时距 $B$ 恰好 $5$，即 $C$ 在以 $B$ 为圆心、半径 $5$ 的圆上。这个圆与射线相交——出现了*两个*交点 $C_1$ 和 $C_2$，两个完全不同的三角形 $triangle A B C_1$ 和 $triangle A B C_2$ 都满足同一组 SSA 条件。
+
+  *这里卡住了。* 两边加一个非夹角的组合*不能锁死三角形*——同一组条件可以对应两种不同形状，判定全等就无从下手。我们需要清楚地划定：在"两角一边"的各种组合里，哪种能稳稳判定全等、哪种不行。
+
   *两角一边：`ASA` 与 `AAS`*
 
   手边有两个已知角和一条已知边——能锁死三角形吗？先把“两个角”这件事拆干净：三角形三个内角之和恒为 $180 degree$（见 #secref("pf08-triangles-angle-sum")）。*一旦两个角定了，第三个角自动定下来*——三个内角全部锁死，三角形的*形状*就定了。
@@ -82,10 +96,7 @@
 ]
 
 #tryit[
-  先写出能用的判定法缩写；若不够，标“信息不足”：
-
-  + $triangle X Y Z$ 与 $triangle M N O$：$angle X = angle M$、$angle Y = angle N$、$Y Z = N O$。
-  + $triangle P Q R$ 与 $triangle S T U$：$P Q = S T = 6$、$Q R = T U = 4$、$angle P = angle S = 40 degree$（$angle P$ 不是 $P Q, Q R$ 的夹角）。
+  写出能用的判定法缩写；若不够，标"信息不足"：$triangle P Q R$ 与 $triangle S T U$，$P Q = S T = 6$、$Q R = T U = 4$、$angle P = angle S = 40 degree$（$angle P$ 不是 $P Q, Q R$ 的夹角）。
 ]
 
 #history-note[
@@ -225,6 +236,12 @@
 
   + 直角三角形里"斜边（直角对面最长的那条边）$+$ 一条直角边"（HL）就能判全等——请用本节的工具把它翻译成 `AAS`（或想一想：在直角三角形里，知道斜边和一直角边，为什么另一直角边也唯一确定？）。
 
+  + *[反例 + 构造]*：构造两个三角形 $triangle A B C$ 与 $triangle A' B' C'$，满足 $angle A = angle A' = 30 degree$、$A B = A' B' = 8$、$B C = B' C' = 5$（即 SSA 条件），但两者*不全等*。给出你两组 $A C$ 的具体长度（精度可到一位小数），并简述这就是为什么"SSA 不可判"。
+
+  + *[跨知识点]*：`HL` 在本节翻成 `AAS`。如果改用 #secref("ch:pythagorean-radicals-trigonometric-ratios") 的勾股定理：已知斜边 $c$ 与一条直角边 $a$，则另一条直角边 $b = sqrt(c^2 - a^2)$ *唯一确定*。请用这一点直接说明：在直角三角形中，"斜边 $+$ 一条直角边"等价于 `SSS`。再给出一组 $c = 13$、$a = 5$ 的具体数据验证。
+
+  + *[找 Bug]*：小华看到题：在 $triangle A B C$ 与 $triangle A' B' C'$ 中，$A B = A' B'$，$angle A = angle A'$，$angle C = angle C'$。她写"`SAS`"。她错在哪里？正确的判定是什么？给出一句话修正。
+
   #answer-cut[
 
   *基础*
@@ -240,5 +257,8 @@
   + “两边一角”在*夹角*下给的是 SAS（可判），在*非夹角*下给的是 SSA（不可判）——判与不判只差一字，省了就错了。
   + 补 $A C = D F$（同一个顶点 $A / D$ 出发的另一条边）得 `SAS`；或补 $angle B = angle E$ 得 `ASA`。选 $B C = E F$ 是不够的——那会让三项变成 $A B$、$B C$ 两边加 $angle A$（$angle A$ 是 $A B$ 的对角而不是夹角），落入 SSA 反例区。
   + 在两个直角三角形中，直角对应相等（$90 degree = 90 degree$），斜边与一条直角边给出；两角（一个直角 $+$ 一个由斜边与已知直角边决定的底角）相等，再配那条给定的直角边即 `AAS`。等价地，由勾股把第三边算出来，再 `SSS` 也行。
+  + $A C$ 的两个解由余弦定理或几何作图：$5^2 = 8^2 + b^2 - 2 dot 8 dot b dot cos 30 degree$，即 $b^2 - 8 sqrt(3) b + 39 = 0$，$b = (8 sqrt(3) plus.minus sqrt(192 - 156))/2 = (8 sqrt(3) plus.minus 6)/2 = 4 sqrt(3) plus.minus 3 approx 9.93$ 或 $3.93$。两个三角形边长都满足 $A B = 8$、$angle A = 30 degree$、$B C = 5$，但 $A C$ 不同——形状不同，故 SSA 不可判。
+  + 由勾股 $b = sqrt(c^2 - a^2)$ 唯一确定，故已知 $(c, a)$ 即知 $(a, b, c)$ 三边——三边对应相等就是 `SSS`，所以 `HL` 等价于 `SSS`。验证 $c = 13$、$a = 5$：$b = sqrt(169 - 25) = sqrt(144) = 12$，三边 $(5, 12, 13)$ 唯一。
+  + 错。条件是"一边 $+$ 两角"——`AAS`（$A B$ 是 $angle C$ 的对边）或 `ASA`（若 $angle A$、$A B$、$angle B$）。`SAS` 必须是"两边 $+$ 它们的夹角"，根本不是这个题给的格式；正确判定为 `AAS`。
   ]
 ]

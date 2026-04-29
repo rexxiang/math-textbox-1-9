@@ -35,7 +35,8 @@
   + 用全等三角形（#secref("ge01-sss-sas")）证明：圆的同一条弦的两条半径与弦组成的三角形是等腰三角形。
   // 跨章回顾
   + 在圆中，若弦 $A B$ 经过圆心，则 $angle A C B = 90 degree$（泰勒斯定理）。利用三角形内角和（#secref("pf08-triangles-angle-sum")）求当 $angle C A B = 35 degree$ 时 $angle A B C$ 的度数。
-  + 不用精确计算，判断：一个半径为 $5$ 的圆的内接正三角形的边长是否大于 $8$？说明理由。
+  + 不用精确计算，判断：一个半径为 $5$ 的圆的内接正三角形的边长是否大于 $8$？说明理由。  // 跨章回顾
+  + 已知圆的半径 $r$ cm，面积 $= pi r^2$，周长 $= 2 pi r$（回顾 #secref("pf07-perimeter-area") 圆的公式）。若圆的面积等于周长的 $5$ 倍（$pi r^2 = 5 times 2 pi r$），用一元方程（回顾 #secref("al04-linear-one-variable")）求 $r$。
 
   *参考答案*
 
@@ -49,6 +50,7 @@
   + 设弦为 $A B$，圆心为 $O$，则 $O A = O B = R$（都是半径）。$triangle O A B$ 中 $O A = O B$，所以它是等腰三角形。
   + $angle A C B = 90 degree$（泰勒斯定理）；$angle C A B + angle A B C = 90 degree$（三角形内角和）；$angle A B C = 90 degree - 35 degree = 55 degree$。
   + 内接正三角形边长 $= R sqrt(3) = 5 sqrt(3) approx 5 times 1.732 = 8.66 > 8$。所以边长大于 $8$。估算时只需知道 $sqrt(3) approx 1.73$。
+  + $pi r^2 = 10 pi r$；除以 $pi r$（$r > 0$）得 $r = 10$ cm。（参见 #secref("pf07-perimeter-area") 与 #secref("al04-linear-one-variable")）
 ]
 
 #blueprint[

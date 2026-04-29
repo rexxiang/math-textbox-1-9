@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, tryit, secref
 
-=== 通往函数分支的准备清单 <meta:ready-for-functions>
+=== 通往函数分支的入口准备 <meta:ready-for-functions>
 
 #blueprint[
   *前面学过的知识*
@@ -20,16 +20,6 @@
 ]
 
 #blueprint[
-  *最常见的误判*
-
-  - 把 $f(x)$ 看成“$f$ 乘以 $x$”，而不是“把 $x$ 代入某条规则”。
-  - 画图时描错点：横纵坐标颠倒，或 $y$ 轴方向弄反。
-  - 把“$y = k x$”的比例常数当成了纯数字，忘记它实际是一个比。
-  - 在“同向比例—正比例函数”“反向比例—反比例函数”之间建立不了对应。
-  - 看到 $f(x) = 0$ 无从下手，没意识到它就是一条方程。
-]
-
-#blueprint[
   *哪里不会回哪里*
 
   #table(
@@ -44,15 +34,6 @@
     [读不出 $f(x) = c$ 是方程], [#secref("cb06-equation-as-balance")、#secref("cb06-solving-linear")],
     [平方根表达式算不稳], [#secref("cb07-square-and-square-root")],
   )
-]
-
-#blueprint[
-  *可以继续前进的信号*
-
-  - 能说清楚“函数”是“每个 $x$ 都有唯一的 $y$”这种规则，而不是一张图。
-  - 看到 $y = 3 x$ 能立刻描至少 $3$ 个点并大致画出图象。
-  - 能把 $2 x + 5 = 11$ 的解读成“函数 $y = 2 x + 5$ 取 $11$ 时的 $x$”。
-  - 能在坐标系中判断 $y = -x + 2$ 的图象大致经过哪几个象限。
 ]
 
 #tryit[

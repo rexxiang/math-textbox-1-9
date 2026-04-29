@@ -37,7 +37,8 @@
   + 利用相似三角形（#secref("ge02-similarity-aa-ratio")）解释：为什么在直角三角形中，斜边上的高把三角形分成的两个小三角形都与原三角形相似？
   // 跨章回顾
   + 化简根式 $sqrt(12) + sqrt(27) - sqrt(48)$（#secref("cb07-square-and-square-root")），然后说明结果是否为有理数。
-  + Fatima解题：一个直角三角形两直角边分别为 $3$ 和 $4$，她说斜边为 $3 + 4 = 7$。她的做法对吗？找出错误并用勾股定理给出正确答案。
+  + Fatima解题：一个直角三角形两直角边分别为 $3$ 和 $4$，她说斜边为 $3 + 4 = 7$。她的做法对吗？找出错误并用勾股定理给出正确答案。  // 跨章回顾
+  + 在直角三角形中，两直角边长之比 $= 3 : 4$（回顾 #secref("cb01-ratio-basics") 比例运算）。若斜边为 $15$ cm，用勾股定理（本章 #secref("ge04-pythagorean")）求两直角边长。
 
   *参考答案*
 
@@ -52,6 +53,7 @@
   + 设直角三角形 $A B C$，$angle C = 90 degree$，斜边 $A B$ 上的高 $C H$ 落在 $H$ 处。在 $triangle A C H$ 与 $triangle A B C$ 中：$angle A$ 公共、$angle A H C = angle A C B = 90 degree$，由 AA 得 $triangle A C H tilde triangle A B C$。同理 $triangle B C H tilde triangle B A C$（$angle B$ 公共 $+$ 直角）。
   + $sqrt(12) = 2 sqrt(3)$，$sqrt(27) = 3 sqrt(3)$，$sqrt(48) = 4 sqrt(3)$。故 $2 sqrt(3) + 3 sqrt(3) - 4 sqrt(3) = sqrt(3)$。$sqrt(3)$ 是无理数，不是有理数。
   + 错误。勾股定理：$c = sqrt(3^2 + 4^2) = sqrt(25) = 5$，不是 $3 + 4 = 7$。直角三角形的斜边是两直角边的*平方和再开方*，不是直接相加。
+  + 设两直角边 $3k$ 和 $4k$。$(3k)^2 + (4k)^2 = 15^2$；$9k^2 + 16k^2 = 225$；$25k^2 = 225$；$k = 3$。两直角边 $9$ cm 和 $12$ cm。验算：$9^2 + 12^2 = 81 + 144 = 225 = 15^2$ ✓。（参见 #secref("ge04-pythagorean") 与 #secref("cb01-ratio-basics")）
 ]
 
 #blueprint[

@@ -159,3 +159,4 @@
 #include "appendices/glossary.typ"
 #include "appendices/formula-sheet.typ"
 #include "appendices/symbol-table.typ"
+#include "appendices/future-bridges.typ"

@@ -18,7 +18,7 @@ parts:
     title_zh: 公共基础
     title_en: Public Foundation
   - id: 2-common-bridges
-    title_zh: 共同桥梁
+    title_zh: 共通桥梁
     title_en: Common Bridges
   - id: 3a-algebra-symbols
     title_zh: 代数与符号
@@ -1211,11 +1211,6 @@ nodes:
       - cb05-letters-represent-numbers
       - cb06-equality-properties
       - cb07-real-number-line
-  - id: cp02-repair-route-playbook
-    type: chapter-meta
-    chapter: ch:shared-invention-tree-review
-    path: typst/4-capstone/01-shared-invention-tree-review/02-repair-route-playbook.typ
-    prerequisites: [cp01-shared-tools-crossref]
   - id: cp03-strategy-toolbox
     type: chapter-meta
     chapter: ch:cross-domain-problem-solving-modeling
@@ -1246,13 +1241,8 @@ nodes:
     chapter: ch:cross-domain-problem-solving-modeling
     path: typst/4-capstone/02-cross-domain-problem-solving-modeling/04-full-solution-writeups.typ
     prerequisites: [cp04-cross-domain-mix]
-  - id: cp06-after-grade-9
-    type: chapter-meta
-    chapter: ch:next-learning-map
-    path: typst/4-capstone/03-next-learning-map/01-after-grade-9-paths.typ
-    prerequisites: [cp05-full-solution-writeups]
   - id: cp07-keep-studying
     type: chapter-meta
     chapter: ch:next-learning-map
     path: typst/4-capstone/03-next-learning-map/02-how-to-keep-studying.typ
-    prerequisites: [cp06-after-grade-9]
+    prerequisites: [cp05-full-solution-writeups]

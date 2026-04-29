@@ -1,4 +1,4 @@
-#import "../../lib/chapter-kit.typ": blueprint, mastery, secref, knowledge-card
+#import "../../lib/theme-v2.typ": blueprint, mastery, secref, knowledge-card
 
 == 本章回顾 <meta:letters-expressions-relationship-templates>
 
@@ -32,6 +32,8 @@
   + 在坐标系中，点 $P(2a, a - 3)$ 在 $x$ 轴上。求 $a$ 的值，并写出 $P$ 的坐标。（回顾坐标系中轴上的点的特征）
   // 跨章回顾
   + 甲乙两人分一笔 $m$ 元的奖金，按比 $3 : 2$ 分配。用代数式写出甲、乙各得多少元。当 $m = 500$ 时代入求值。（回顾比与代数式结合）
+  // 跨章回顾
+  + 一袋大米重 $m$ 千克，取出 $2/5$ 后（回顾 #secref("pf04-fraction-arithmetic") 分数乘法），用代数式（本章 #secref("cb05-letters-represent-numbers")）表示剩余大米的重量；当 $m = 25$ 时求具体值。
 
   *参考答案*
 
@@ -47,6 +49,7 @@
   + 时数 $= N / n$；代入得 $30$ 小时。
   + 在 $x$ 轴上则纵坐标 $= 0$：$a - 3 = 0$，$a = 3$。$P = (6, 0)$（代入 $2a = 6$，坐标系与方程结合）。
   + 甲得 $3m/5$ 元，乙得 $2m/5$ 元（总份 $3+2=5$，按比分配模板）。$m = 500$ 时：甲 $300$ 元、乙 $200$ 元。
+  + 剩余 $= m - 2/5 m = 3/5 m$ 千克；$m = 25$ 时，$3/5 times 25 = 15$ 千克。（参见 #secref("pf04-fraction-arithmetic") 与 #secref("cb05-letters-represent-numbers")）
 ]
 
 #blueprint[

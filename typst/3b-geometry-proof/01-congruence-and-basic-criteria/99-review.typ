@@ -32,6 +32,8 @@
   + 在 $triangle A B C$ 中，$angle A = 50 degree$、$angle B = 70 degree$。先用三角形内角和（#secref("pf08-triangles-angle-sum")）求 $angle C$，再判断：若另一个三角形也有 $angle A' = 50 degree$、$angle B' = 70 degree$，两三角形一定全等吗？为什么？
   // 跨章回顾
   + 已知 $A B parallel C D$（#secref("pf08-parallel-transversal")），被截线 $E F$ 分别交 $A B, C D$ 于 $E, F$，且 $angle A E F = 65 degree$。求 $angle E F D$ 的度数。
+  // 跨章回顾
+  + 在等腰三角形 $A B C$ 中，$A B = A C$，顶角 $angle A = 80 degree$。作顶角平分线 $A D$（$D$ 在 $B C$ 上），用 SAS 全等判据（本章 #secref("ge01-sss-sas")）证明 $triangle A B D tilde.eq triangle A C D$，再用三角形内角和（回顾 #secref("pf08-triangles-angle-sum")）求底角 $angle B$、$angle C$ 的度数。
 
   *[选择题（多选）]* 下列条件中，能判定 $triangle A B C tilde.eq triangle D E F$ 的是（多选）（）
 
@@ -74,6 +76,7 @@
   + 选择题（单选）答案：B。找反例是判断 SSA 不足以判全等的方法：例如钝角三角形与锐角三角形可能满足 SSA 但不全等。
   + 反例（文字描述）：在 $triangle A B C$ 中取 $A B = 5, B C = 4, angle A = 30 degree$。用这三个条件可以画出两个不同形状的三角形（一个锐角一个钝角），它们满足 SSA 却不全等。这说明 SSA 条件有"二义性"。
   + 贝拉错误：$tilde.eq$ 两侧字母对应顺序代表对应关系：$triangle A B C tilde.eq triangle B C A$ 意味着 $A$ 对应 $B$，$B$ 对应 $C$，$C$ 对应 $A$，即对应边是 $A B = B C, B C = C A, C A = A B$——三边两两相等，说明三角形是等边三角形，而不是只有 $A B = B C$。贝拉漏读了全部对应关系。
+  + 作顶角 $angle A$ 的平分线 $A D$（$D$ 在 $B C$ 上）。$triangle A B D$ 与 $triangle A C D$：$A B = A C$（已知），$A D = A D$（公共边），$angle B A D = angle C A D$（平分角）$->$ SAS 全等。故 $angle B = angle C = (180° - 80°)/2 = 50°$。（参见 #secref("ge01-sss-sas") 与 #secref("pf08-triangles-angle-sum")）
 ]
 
 #blueprint[

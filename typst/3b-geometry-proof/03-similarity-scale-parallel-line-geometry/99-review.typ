@@ -1,4 +1,4 @@
-#import "../../lib/chapter-kit.typ": blueprint, mastery, secref, knowledge-card
+#import "../../lib/theme-v2.typ": blueprint, mastery, secref, knowledge-card
 
 == 本章回顾 <meta:similarity-scale-parallel-line-geometry>
 
@@ -39,6 +39,8 @@
   // 跨章回顾
   + 利用比和比例的基本性质（#secref("cb01-ratio-basics")），化简比 $12 : 8 : 20$ 为最简整数比，然后说明一个三角形三边之比为 $3 : 2 : 5$ 是否可能构成三角形。
   + 在 $triangle A B C$ 中，$D E parallel B C$，$A D = 2, D B = 4, A E = 3$。求 $E C$。用两种方法：(1) 平行线截比例定理；(2) 相似三角形对应边成比例。比较两种做法。
+  // 跨章回顾
+  + 在坐标系中（回顾 #secref("cb04-rectangular-system")），$triangle A B C$ 顶点 $A(0,0)$，$B(3,0)$，$C(0,4)$；$triangle D E F$ 顶点 $D(0,0)$，$E(6,0)$，$F(0,8)$。用 AA 判据（本章 #secref("ge02-similarity-aa-ratio")）说明 $triangle A B C tilde triangle D E F$，并求相似比及 $A B : D E$（回顾 #secref("cb01-proportion")）。
 
   *参考答案*
 
@@ -55,6 +57,7 @@
   + 相似比 $= 1$ 意味着对应边长度全部相等（每条边比值为 $1 : 1$）；再加上三角对应相等（相似保证），三对边与三对角全部对应相等，恰好就是全等的定义。
   + $12 : 8 : 20$ 各除以公因数 $4$ 得 $3 : 2 : 5$。但最短两边之和 $3 + 2 = 5$ 等于（不大于）最长边，违反三角形三边关系"任意两边之和*大于*第三边"——所以*不能*构成三角形。
   + *方法 1*（平行线截比例）：$A D / D B = A E / E C$，即 $2/4 = 3/(E C)$，$E C = 6$。*方法 2*（相似比）：$triangle A D E tilde triangle A B C$（AA），相似比 $A D / A B = 2/6 = 1/3$，$A E / A C = 1/3$，$A C = 9$，$E C = 9 - 3 = 6$。两种方法结果一致，方法 1 更直接。
+  + $triangle A B C$ 和 $triangle D E F$ 均有 $angle A = angle D = 90°$（坐标轴直角），$angle B = angle E$（两直角三角形另外两个锐角对应相等）。AA 成立，$triangle A B C tilde triangle D E F$。相似比 $A B : D E = 3 : 6 = 1 : 2$；用比例验算：$A C : D F = 4 : 8 = 1 : 2$ ✓。（参见 #secref("ge02-similarity-aa-ratio") 与 #secref("cb01-proportion")）
 ]
 
 #blueprint[

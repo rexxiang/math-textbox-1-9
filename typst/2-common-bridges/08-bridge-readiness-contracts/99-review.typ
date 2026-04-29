@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, mastery, tryit, secref
 
-== 本章回顾：四分支准备清单的答案汇总 <meta:bridge-readiness-contracts-review>
+== 本章回顾：四分支入口准备的答案汇总 <meta:bridge-readiness-contracts-review>
 
 #blueprint[
   本节把 #secref("meta:ready-for-algebra")、#secref("meta:ready-for-geometry-proof")、#secref("meta:ready-for-functions")、#secref("meta:ready-for-data") 四节的自测诊断答案集中给出。最后再附上一题*跨四分支综合小试*，用于确认你已经可以顺畅地在四条分支之间切换。

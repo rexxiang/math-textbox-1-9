@@ -1,4 +1,4 @@
-#import "../../lib/chapter-kit.typ": blueprint, mastery, secref, knowledge-card
+#import "../../lib/theme-v2.typ": blueprint, mastery, secref, knowledge-card
 
 == 本章回顾 <meta:number-line-negative-rational>
 
@@ -33,6 +33,8 @@
   + 一堆糖果，红色与黄色的比是 $3 : 7$，一共 $40$ 颗。红色有多少颗？如果吃掉 $5$ 颗红色，剩余红色占总剩余的百分之几？（回顾 #secref("cb01-ratio-basics") 与 #secref("cb01-percent")）
   // 跨章回顾
   + 小数 $2.5$ 在数轴上标在哪里？它可以写成分数吗？它属于 $QQ$ 吗？（回顾 #secref("pf05-decimals-conversion")）
+  // 跨章回顾
+  + 甲地气温 $-6°C$，乙地气温 $+4°C$（数轴 #secref("cb02-number-line-extends-left")）。两地温度差是多少？若要两地平均温度相等，各需调节多少度？计算时请利用比例思想（回顾 #secref("cb01-ratio-basics")）说明调节量的对称性。
 
   *参考答案*
 
@@ -48,6 +50,7 @@
   + 例如 $-3.1$ 或 $-31/10$。
   + $12$ 颗（$40 times 3/10$）。吃掉 $5$ 颗后红色剩 $7$，总剩 $35$；$7/35 = 20%$（百分率公式）。
   + $2.5$ 在 $2$ 与 $3$ 之间（数轴上 $2$ 右边半个单位）；$2.5 = 5/2$（有限小数化分数）；属于 $QQ$。
+  + 温度差 $= 4 - (-6) = 10°C$。平均温度 $= (-6 + 4) / 2 = -1°C$；甲需升 $5°C$，乙需降 $5°C$。调节量对称：两地到均值 $-1$ 的距离各为 $5°C$，恰好符合"两端到均值距离相等"的对称比 $1:1$。
 ]
 
 #blueprint[
