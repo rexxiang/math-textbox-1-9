@@ -60,24 +60,24 @@
 
   + *反例构造*：构造（描述或画出）两个三角形，使它们满足"两边对应相等 + 一个非夹角相等（SSA）"但不全等。说明为什么 SSA 不能判全等。
   + *找 Bug*：贝拉（Bella）在证明中写道："设 $triangle A B C tilde.eq triangle B C A$，所以 $A B = B C$"。找出这个推理的错误，并说明 $triangle A B C tilde.eq triangle B C A$ 实际上对三角形意味着什么。
-
-  *参考答案*
-
-  + $angle E = angle B = 180 degree - 50 degree - 70 degree = 60 degree$；$D E = A B = 6$。
-  + `SAS`（$angle B$ 是 $A B$、$B C$ 的夹角）；`SSS`（三边对应相等）；不行（AAA，只相似不全等）。
-  + 陈述 / 理由：$B D = C D$（中点）；$A D = E D$（所作）；$angle A D B = angle E D C$（对顶角）；$triangle A B D tilde.eq triangle E C D$（`SAS`）；$A B = E C$（对应边），即 $A B = C E$。
-  + $A B = A C$（已知）；$A D = A D$（公共边）；$angle A D B = angle A D C = 90 degree$（$A D perp B C$）；由 HL 或 SAS 得 $triangle A B D tilde.eq triangle A C D$。更简单的路线：由等腰三角形底边上的高即中线得 $B D = C D$，再由 SSS 得全等。
-  + 必须 $A C = B C$（等腰），即以 $A B$ 为底边的等腰三角形。
-  + 任意三角形和它的放大版（比如把三边都乘以 $2$）三个角全一样，但大小不同，不全等。
-  + $angle C = 180 degree - 50 degree - 70 degree = 60 degree$。另一个三角形虽然三角对应相等（AAA），但大小可以不同，所以*不一定*全等——只能说它们*相似*。
-  + $A B parallel C D$，$angle A E F$ 与 $angle E F D$ 是内错角，所以 $angle E F D = angle A E F = 65 degree$。
-  + 选择题（多选）答案：A（SAS，$angle B$ 是夹角）、C（SSS）。B 是 AAA（只能相似）；D 是 SSA（夹角未知，非夹角不够判全等）。
-  + 选择题（单选）答案：D。$P Q$ 对应 $X Y$，而不对应 $Y Z$；$P Q = X Y$ ✓ 必然正确；$P Q = Y Z$ 不一定。
-  + 选择题（单选）答案：B。找反例是判断 SSA 不足以判全等的方法：例如钝角三角形与锐角三角形可能满足 SSA 但不全等。
-  + 反例（文字描述）：在 $triangle A B C$ 中取 $A B = 5, B C = 4, angle A = 30 degree$。用这三个条件可以画出两个不同形状的三角形（一个锐角一个钝角），它们满足 SSA 却不全等。这说明 SSA 条件有"二义性"。
-  + 贝拉错误：$tilde.eq$ 两侧字母对应顺序代表对应关系：$triangle A B C tilde.eq triangle B C A$ 意味着 $A$ 对应 $B$，$B$ 对应 $C$，$C$ 对应 $A$，即对应边是 $A B = B C, B C = C A, C A = A B$——三边两两相等，说明三角形是等边三角形，而不是只有 $A B = B C$。贝拉漏读了全部对应关系。
-  + 作顶角 $angle A$ 的平分线 $A D$（$D$ 在 $B C$ 上）。$triangle A B D$ 与 $triangle A C D$：$A B = A C$（已知），$A D = A D$（公共边），$angle B A D = angle C A D$（平分角）$->$ SAS 全等。故 $angle B = angle C = (180° - 80°)/2 = 50°$。（参见 #secref("ge01-sss-sas") 与 #secref("pf08-triangles-angle-sum")）
 ]
+
+==== 参考答案
+
++ $angle E = angle B = 180 degree - 50 degree - 70 degree = 60 degree$；$D E = A B = 6$。
++ `SAS`（$angle B$ 是 $A B$、$B C$ 的夹角）；`SSS`（三边对应相等）；不行（AAA，只相似不全等）。
++ 陈述 / 理由：$B D = C D$（中点）；$A D = E D$（所作）；$angle A D B = angle E D C$（对顶角）；$triangle A B D tilde.eq triangle E C D$（`SAS`）；$A B = E C$（对应边），即 $A B = C E$。
++ $A B = A C$（已知）；$A D = A D$（公共边）；$angle A D B = angle A D C = 90 degree$（$A D perp B C$）；由 HL 或 SAS 得 $triangle A B D tilde.eq triangle A C D$。更简单的路线：由等腰三角形底边上的高即中线得 $B D = C D$，再由 SSS 得全等。
++ 必须 $A C = B C$（等腰），即以 $A B$ 为底边的等腰三角形。
++ 任意三角形和它的放大版（比如把三边都乘以 $2$）三个角全一样，但大小不同，不全等。
++ $angle C = 180 degree - 50 degree - 70 degree = 60 degree$。另一个三角形虽然三角对应相等（AAA），但大小可以不同，所以*不一定*全等——只能说它们*相似*。
++ $A B parallel C D$，$angle A E F$ 与 $angle E F D$ 是内错角，所以 $angle E F D = angle A E F = 65 degree$。
++ 选择题（多选）答案：A（SAS，$angle B$ 是夹角）、C（SSS）。B 是 AAA（只能相似）；D 是 SSA（夹角未知，非夹角不够判全等）。
++ 选择题（单选）答案：D。$P Q$ 对应 $X Y$，而不对应 $Y Z$；$P Q = X Y$ ✓ 必然正确；$P Q = Y Z$ 不一定。
++ 选择题（单选）答案：B。找反例是判断 SSA 不足以判全等的方法：例如钝角三角形与锐角三角形可能满足 SSA 但不全等。
++ 反例（文字描述）：在 $triangle A B C$ 中取 $A B = 5, B C = 4, angle A = 30 degree$。用这三个条件可以画出两个不同形状的三角形（一个锐角一个钝角），它们满足 SSA 却不全等。这说明 SSA 条件有"二义性"。
++ 贝拉错误：$tilde.eq$ 两侧字母对应顺序代表对应关系：$triangle A B C tilde.eq triangle B C A$ 意味着 $A$ 对应 $B$，$B$ 对应 $C$，$C$ 对应 $A$，即对应边是 $A B = B C, B C = C A, C A = A B$——三边两两相等，说明三角形是等边三角形，而不是只有 $A B = B C$。贝拉漏读了全部对应关系。
++ 作顶角 $angle A$ 的平分线 $A D$（$D$ 在 $B C$ 上）。$triangle A B D$ 与 $triangle A C D$：$A B = A C$（已知），$A D = A D$（公共边），$angle B A D = angle C A D$（平分角）$->$ SAS 全等。故 $angle B = angle C = (180° - 80°)/2 = 50°$。（参见 #secref("ge01-sss-sas") 与 #secref("pf08-triangles-angle-sum")）
 
 #blueprint[
   *巩固复习*

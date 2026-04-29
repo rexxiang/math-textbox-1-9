@@ -41,24 +41,24 @@
   + 在 $triangle A B C$ 中，$D E parallel B C$，$A D = 2, D B = 4, A E = 3$。求 $E C$。用两种方法：(1) 平行线截比例定理；(2) 相似三角形对应边成比例。比较两种做法。
   // 跨章回顾
   + 在坐标系中（回顾 #secref("cb04-rectangular-system")），$triangle A B C$ 顶点 $A(0,0)$，$B(3,0)$，$C(0,4)$；$triangle D E F$ 顶点 $D(0,0)$，$E(6,0)$，$F(0,8)$。用 AA 判据（本章 #secref("ge02-similarity-aa-ratio")）说明 $triangle A B C tilde triangle D E F$，并求相似比及 $A B : D E$（回顾 #secref("cb01-proportion")）。
-
-  *参考答案*
-
-  + 同位角 $= 72 degree$、内错角 $= 72 degree$、同旁内角 $= 108 degree$、邻补角 $= 108 degree$（另两个对顶角分别为 $72 degree$ 与 $108 degree$）。
-  + 设两同旁内角度数为 $2 k degree$ 与 $3 k degree$；由同旁内角互补 $2 k + 3 k = 180$，得 $k = 36$，两角为 $72 degree$ 与 $108 degree$。
-  + `AA` ✓；不够（只一对角相等，形状未锁）；两对角相等但对应关系错位——若重排字母写作 $triangle A B C tilde triangle E D F$ 则合法，直接写 $triangle A B C tilde triangle D E F$ 不对。
-  + 周长比 $= 3 slash 5$，故 $triangle A' B' C'$ 周长 $= 18 times 5 slash 3 = 30$；面积比 $= 9 slash 25$，故面积 $= 12 times 25 slash 9 = 100 slash 3$。
-  + 图面积 $20$ 平方厘米；$k^2 = 40000^2 = 1.6 times 10^9$；实际面积 $= 3.2 times 10^{10}$ 平方厘米 $= 3.2$ 平方千米。
-  + $frac(h, 1.2) = frac(12, 1.6) => h = 9$ 米。
-  + $D E parallel B C => triangle A D E tilde triangle A B C$（AA）；$A D slash A B = 2 slash 5$，故 $D E slash B C = 2 slash 5$；面积比 $= 4 slash 25$。
-  + 三角形内角和 $= 180 degree$，两角定了第三角也定了；形状一旦定，三边的比就随之唯一（相当于把一个三角形缩放到另一个的大小），所以 AA 已足以判相似。
-  + 相似比 $= sqrt(9 slash 49) = 3 slash 7$；周长比亦 $= 3 slash 7$。
-  + 体积比 $= (1 slash 4)^3 = 1 slash 64$，原体积 $= $ 单位体积，故可熔 $64$ 个小立方体。
-  + 相似比 $= 1$ 意味着对应边长度全部相等（每条边比值为 $1 : 1$）；再加上三角对应相等（相似保证），三对边与三对角全部对应相等，恰好就是全等的定义。
-  + $12 : 8 : 20$ 各除以公因数 $4$ 得 $3 : 2 : 5$。但最短两边之和 $3 + 2 = 5$ 等于（不大于）最长边，违反三角形三边关系"任意两边之和*大于*第三边"——所以*不能*构成三角形。
-  + *方法 1*（平行线截比例）：$A D / D B = A E / E C$，即 $2/4 = 3/(E C)$，$E C = 6$。*方法 2*（相似比）：$triangle A D E tilde triangle A B C$（AA），相似比 $A D / A B = 2/6 = 1/3$，$A E / A C = 1/3$，$A C = 9$，$E C = 9 - 3 = 6$。两种方法结果一致，方法 1 更直接。
-  + $triangle A B C$ 和 $triangle D E F$ 均有 $angle A = angle D = 90°$（坐标轴直角），$angle B = angle E$（两直角三角形另外两个锐角对应相等）。AA 成立，$triangle A B C tilde triangle D E F$。相似比 $A B : D E = 3 : 6 = 1 : 2$；用比例验算：$A C : D F = 4 : 8 = 1 : 2$ ✓。（参见 #secref("ge02-similarity-aa-ratio") 与 #secref("cb01-proportion")）
 ]
+
+==== 参考答案
+
++ 同位角 $= 72 degree$、内错角 $= 72 degree$、同旁内角 $= 108 degree$、邻补角 $= 108 degree$（另两个对顶角分别为 $72 degree$ 与 $108 degree$）。
++ 设两同旁内角度数为 $2 k degree$ 与 $3 k degree$；由同旁内角互补 $2 k + 3 k = 180$，得 $k = 36$，两角为 $72 degree$ 与 $108 degree$。
++ `AA` ✓；不够（只一对角相等，形状未锁）；两对角相等但对应关系错位——若重排字母写作 $triangle A B C tilde triangle E D F$ 则合法，直接写 $triangle A B C tilde triangle D E F$ 不对。
++ 周长比 $= 3 slash 5$，故 $triangle A' B' C'$ 周长 $= 18 times 5 slash 3 = 30$；面积比 $= 9 slash 25$，故面积 $= 12 times 25 slash 9 = 100 slash 3$。
++ 图面积 $20$ 平方厘米；$k^2 = 40000^2 = 1.6 times 10^9$；实际面积 $= 3.2 times 10^{10}$ 平方厘米 $= 3.2$ 平方千米。
++ $frac(h, 1.2) = frac(12, 1.6) => h = 9$ 米。
++ $D E parallel B C => triangle A D E tilde triangle A B C$（AA）；$A D slash A B = 2 slash 5$，故 $D E slash B C = 2 slash 5$；面积比 $= 4 slash 25$。
++ 三角形内角和 $= 180 degree$，两角定了第三角也定了；形状一旦定，三边的比就随之唯一（相当于把一个三角形缩放到另一个的大小），所以 AA 已足以判相似。
++ 相似比 $= sqrt(9 slash 49) = 3 slash 7$；周长比亦 $= 3 slash 7$。
++ 体积比 $= (1 slash 4)^3 = 1 slash 64$，原体积 $= $ 单位体积，故可熔 $64$ 个小立方体。
++ 相似比 $= 1$ 意味着对应边长度全部相等（每条边比值为 $1 : 1$）；再加上三角对应相等（相似保证），三对边与三对角全部对应相等，恰好就是全等的定义。
++ $12 : 8 : 20$ 各除以公因数 $4$ 得 $3 : 2 : 5$。但最短两边之和 $3 + 2 = 5$ 等于（不大于）最长边，违反三角形三边关系"任意两边之和*大于*第三边"——所以*不能*构成三角形。
++ *方法 1*（平行线截比例）：$A D / D B = A E / E C$，即 $2/4 = 3/(E C)$，$E C = 6$。*方法 2*（相似比）：$triangle A D E tilde triangle A B C$（AA），相似比 $A D / A B = 2/6 = 1/3$，$A E / A C = 1/3$，$A C = 9$，$E C = 9 - 3 = 6$。两种方法结果一致，方法 1 更直接。
++ $triangle A B C$ 和 $triangle D E F$ 均有 $angle A = angle D = 90°$（坐标轴直角），$angle B = angle E$（两直角三角形另外两个锐角对应相等）。AA 成立，$triangle A B C tilde triangle D E F$。相似比 $A B : D E = 3 : 6 = 1 : 2$；用比例验算：$A C : D F = 4 : 8 = 1 : 2$ ✓。（参见 #secref("ge02-similarity-aa-ratio") 与 #secref("cb01-proportion")）
 
 #blueprint[
   *巩固复习*

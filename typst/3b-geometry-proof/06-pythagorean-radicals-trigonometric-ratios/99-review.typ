@@ -39,22 +39,22 @@
   + 化简根式 $sqrt(12) + sqrt(27) - sqrt(48)$（#secref("cb07-square-and-square-root")），然后说明结果是否为有理数。
   + Fatima解题：一个直角三角形两直角边分别为 $3$ 和 $4$，她说斜边为 $3 + 4 = 7$。她的做法对吗？找出错误并用勾股定理给出正确答案。  // 跨章回顾
   + 在直角三角形中，两直角边长之比 $= 3 : 4$（回顾 #secref("cb01-ratio-basics") 比例运算）。若斜边为 $15$ cm，用勾股定理（本章 #secref("ge04-pythagorean")）求两直角边长。
-
-  *参考答案*
-
-  + 斜边 $= sqrt(64 + 225) = sqrt(289) = 17$。
-  + $5 + 7 = 12$ $=>$ $(sqrt(5))^2 + (sqrt(7))^2 = (sqrt(12))^2$，成立 $=>$ 是直角三角形，直角对着 $sqrt(12)$。
-  + 对角线 $= 4 sqrt(2)$。
-  + $angle A = 60 degree$ 的对边是 $B C$，为长直角边；斜边 $= 2 k => k = 5$。故 $A C$（对 $30 degree$ 的短直角边）$= 5$，$B C$（对 $60 degree$ 的长直角边）$= 5 sqrt(3)$。
-  + $1 slash 2 + sqrt(3) dot (1 slash 2) = 1 slash 2 + sqrt(3) slash 2 = (1 + sqrt(3)) slash 2$。
-  + 树高 $= 15 tan 30 degree = 15 dot sqrt(3) slash 3 = 5 sqrt(3)$ 米。
-  + 坡度 $1 : sqrt(3) =>$ $tan beta = sqrt(3) slash 3 =>$ $beta = 30 degree$。铅直 $= 12 sin 30 degree = 6$ 米。
-  + $h = (sqrt(3) slash 2) dot 10 = 5 sqrt(3)$；$S = 1 slash 2 dot 10 dot 5 sqrt(3) = 25 sqrt(3)$。
-  + 设直角三角形 $A B C$，$angle C = 90 degree$，斜边 $A B$ 上的高 $C H$ 落在 $H$ 处。在 $triangle A C H$ 与 $triangle A B C$ 中：$angle A$ 公共、$angle A H C = angle A C B = 90 degree$，由 AA 得 $triangle A C H tilde triangle A B C$。同理 $triangle B C H tilde triangle B A C$（$angle B$ 公共 $+$ 直角）。
-  + $sqrt(12) = 2 sqrt(3)$，$sqrt(27) = 3 sqrt(3)$，$sqrt(48) = 4 sqrt(3)$。故 $2 sqrt(3) + 3 sqrt(3) - 4 sqrt(3) = sqrt(3)$。$sqrt(3)$ 是无理数，不是有理数。
-  + 错误。勾股定理：$c = sqrt(3^2 + 4^2) = sqrt(25) = 5$，不是 $3 + 4 = 7$。直角三角形的斜边是两直角边的*平方和再开方*，不是直接相加。
-  + 设两直角边 $3k$ 和 $4k$。$(3k)^2 + (4k)^2 = 15^2$；$9k^2 + 16k^2 = 225$；$25k^2 = 225$；$k = 3$。两直角边 $9$ cm 和 $12$ cm。验算：$9^2 + 12^2 = 81 + 144 = 225 = 15^2$ ✓。（参见 #secref("ge04-pythagorean") 与 #secref("cb01-ratio-basics")）
 ]
+
+==== 参考答案
+
++ 斜边 $= sqrt(64 + 225) = sqrt(289) = 17$。
++ $5 + 7 = 12$ $=>$ $(sqrt(5))^2 + (sqrt(7))^2 = (sqrt(12))^2$，成立 $=>$ 是直角三角形，直角对着 $sqrt(12)$。
++ 对角线 $= 4 sqrt(2)$。
++ $angle A = 60 degree$ 的对边是 $B C$，为长直角边；斜边 $= 2 k => k = 5$。故 $A C$（对 $30 degree$ 的短直角边）$= 5$，$B C$（对 $60 degree$ 的长直角边）$= 5 sqrt(3)$。
++ $1 slash 2 + sqrt(3) dot (1 slash 2) = 1 slash 2 + sqrt(3) slash 2 = (1 + sqrt(3)) slash 2$。
++ 树高 $= 15 tan 30 degree = 15 dot sqrt(3) slash 3 = 5 sqrt(3)$ 米。
++ 坡度 $1 : sqrt(3) =>$ $tan beta = sqrt(3) slash 3 =>$ $beta = 30 degree$。铅直 $= 12 sin 30 degree = 6$ 米。
++ $h = (sqrt(3) slash 2) dot 10 = 5 sqrt(3)$；$S = 1 slash 2 dot 10 dot 5 sqrt(3) = 25 sqrt(3)$。
++ 设直角三角形 $A B C$，$angle C = 90 degree$，斜边 $A B$ 上的高 $C H$ 落在 $H$ 处。在 $triangle A C H$ 与 $triangle A B C$ 中：$angle A$ 公共、$angle A H C = angle A C B = 90 degree$，由 AA 得 $triangle A C H tilde triangle A B C$。同理 $triangle B C H tilde triangle B A C$（$angle B$ 公共 $+$ 直角）。
++ $sqrt(12) = 2 sqrt(3)$，$sqrt(27) = 3 sqrt(3)$，$sqrt(48) = 4 sqrt(3)$。故 $2 sqrt(3) + 3 sqrt(3) - 4 sqrt(3) = sqrt(3)$。$sqrt(3)$ 是无理数，不是有理数。
++ 错误。勾股定理：$c = sqrt(3^2 + 4^2) = sqrt(25) = 5$，不是 $3 + 4 = 7$。直角三角形的斜边是两直角边的*平方和再开方*，不是直接相加。
++ 设两直角边 $3k$ 和 $4k$。$(3k)^2 + (4k)^2 = 15^2$；$9k^2 + 16k^2 = 225$；$25k^2 = 225$；$k = 3$。两直角边 $9$ cm 和 $12$ cm。验算：$9^2 + 12^2 = 81 + 144 = 225 = 15^2$ ✓。（参见 #secref("ge04-pythagorean") 与 #secref("cb01-ratio-basics")）
 
 #blueprint[
   *巩固复习*
