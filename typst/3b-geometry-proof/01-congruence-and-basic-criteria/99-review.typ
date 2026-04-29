@@ -56,7 +56,7 @@
   - C. SSA 和 SAS 等价
   - D. 只需要验证特定数值
 
-  *挑战 ☞ 选做*
+  *挑战*
 
   + *反例构造*：构造（描述或画出）两个三角形，使它们满足"两边对应相等 + 一个非夹角相等（SSA）"但不全等。说明为什么 SSA 不能判全等。
   + *找 Bug*：贝拉（Bella）在证明中写道："设 $triangle A B C tilde.eq triangle B C A$，所以 $A B = B C$"。找出这个推理的错误，并说明 $triangle A B C tilde.eq triangle B C A$ 实际上对三角形意味着什么。

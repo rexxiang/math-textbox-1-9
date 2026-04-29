@@ -12,8 +12,6 @@
 ]
 
 #tryit[
-  先动手试试，下面再读。
-
   $triangle A B C$ 与 $triangle D E F$ 中 $angle A = angle D = 70 degree$、$angle B = angle E = 55 degree$。能否断定两三角形相似？写出判据名。
 ]
 
@@ -255,7 +253,7 @@
 
   + 如果 $triangle A B C tilde triangle D E F$ 且 $A B = 2 x + 1$、$D E = x + 4$、$A C = 3 x - 2$，$D F = 2 x$。求 $x$ 与相似比。
 
-  *挑战 ☞ 选做*
+  *挑战*
 
   + 证明：若 $triangle A B C tilde triangle D E F$，它们对应的*中线*、*高*、*角平分线*也成同一比例 $k$。（提示：用 AA 判定在一对对应子三角形上。）
 
@@ -279,7 +277,7 @@
   + 在 $triangle A B D$ 与 $triangle C B A$ 中：$angle B$ 公共，$angle A D B = angle C A B = 90 degree$。由 AA 得 $triangle A B D tilde triangle C B A$。同理 $angle C$ 公共、直角相等 $=>$ $triangle A B D tilde triangle C A D$。
   + 由相似边成比例 $(2 x + 1) slash (x + 4) = (3 x - 2) slash (2 x)$。交叉相乘 $2 x (2 x + 1) = (x + 4)(3 x - 2)$，即 $4 x^2 + 2 x = 3 x^2 + 10 x - 8$，得 $x^2 - 8 x + 8 = 0$，$x = 4 plus.minus 2 sqrt(2)$。代回可检验，取正值 $x = 4 + 2 sqrt(2)$ 或 $4 - 2 sqrt(2)$。相似比 $k = A B slash D E = (2 x + 1) slash (x + 4)$。
 
-  *挑战 ☞ 选做*
+  *挑战*
   + 设 $A M$、$D N$ 为 $triangle A B C$、$triangle D E F$ 中 $B C$、$E F$ 边上的中线。由相似 $B M slash E N = B C slash E F slash 2 slash 2 = k$；且 $A B slash D E = k$；$angle B = angle E$。由“相似 SAS”（夹角等 $+$ 两边成比例）或直接由三角形全体相似知 $A M slash D N = k$。高与角平分线同理。
   + 在 $triangle A B C$ 与 $triangle A C D$ 中：$angle A$ 公共，$angle A B C = angle A C D$（已知）。由 AA 得 $triangle A B C tilde triangle A C D$。
   + 两边成比例不锁形状：例如 $3 - 4 - 5$ 与 $4 - 5 - 6$ 两边成不同比例却“都从 $3, 4, 5$ 打头、$4, 5$ 打头”可以拼成不同形状。只有把*夹角*或*比例的第三边*也带进来，或者一开始就用两角相等来锁，才能保证相似。

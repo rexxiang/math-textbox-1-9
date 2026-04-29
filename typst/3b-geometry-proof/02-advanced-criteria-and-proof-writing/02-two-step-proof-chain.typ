@@ -15,8 +15,6 @@
 ]
 
 #tryit[
-  先动手试试，下面再读。
-
   + 已知 $A B = A C$，$A D perp B C$ 于 $D$。要证：$B D = C D$。先不写正式证明——用自己的话列出：①你掌握了哪些条件；②要证的结论是什么；③你猜需要什么"中间桥梁"把条件和结论连起来。
 ]
 
@@ -268,7 +266,7 @@
 
   + 已知 $triangle A B C$ 与 $triangle A' B' C'$ 中，$A B = A' B'$，$angle B = angle B'$，$angle C = angle C'$。求证 $A C = A' C'$。（写两栏证明。）
 
-  *挑战 ☞ 选做*
+  *挑战*
 
   + 点 $P$ 在 $angle A O B$ 的内部，过 $P$ 向 $O A$、$O B$ 作垂线，垂足为 $M$、$N$。若 $P M = P N$，求证 $O P$ 平分 $angle A O B$。（提示：先证 $triangle O P M tilde.eq triangle O P N$。）
 
@@ -294,7 +292,7 @@
   + 连 $A C$。陈述：$A B = C D$（已知）；$A B parallel C D => angle B A C = angle D C A$（内错角，$A C$ 是截线）；$A C = C A$（公共边）；$triangle A B C tilde.eq triangle C D A$（`SAS`）；由对应角 $angle B C A = angle D A C$；所以 $A D parallel B C$（内错角相等 $=>$ 两直线平行）。
   + 陈述：$angle B = angle B'$（已知）；$angle C = angle C'$（已知）；$A B = A' B'$（已知）；$triangle A B C tilde.eq triangle A' B' C'$（`AAS`：两角和 $angle B$ 的对边 $A C$ / $A' C'$ 之*另一对应*——注意 $A B$ 是 $angle C$ 的对边）；$A C = A' C'$（对应边）。
 
-  *挑战 ☞ 选做*
+  *挑战*
   + 陈述：$angle O M P = angle O N P = 90 degree$（垂直定义）；$P M = P N$（已知）；$O P = O P$（公共边）。在直角三角形 $triangle O M P$、$triangle O N P$ 中由直角三角形三边关系（☞ 正式证明见勾股定理章节）：$O M = sqrt(O P^2 - P M^2) = sqrt(O P^2 - P N^2) = O N$；再由 `SSS`（$O P$、$P M = P N$、$O M = O N$）得 $triangle O P M tilde.eq triangle O P N$，对应角 $angle M O P = angle N O P$，所以 $O P$ 平分 $angle A O B$。
   + 在 $triangle A P R$ 与 $triangle B Q P$ 中：$A P = B Q$（已知）、$angle A = angle B = 60 degree$（正三角形）、$A R = A C - C R = A B - A P = B P$（由 $A B = A C$ 与已知长度等式）；`SAS` 得 $triangle A P R tilde.eq triangle B Q P$，故 $P R = Q P$。同理 $Q P = R Q$，于是 $triangle P Q R$ 三边相等，是正三角形。
   + 因为"两线平行"等价于"被第三线所截时同位角 / 内错角相等"，而这种"两角相等"往往正是一对全等三角形的对应角结论。所以真实发生的路径是：先拼一对全等三角形 → 读出对应角相等 → 由同位 / 内错角相等判定平行。两步模版照用。

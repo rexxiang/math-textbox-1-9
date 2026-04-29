@@ -16,8 +16,6 @@
 ]
 
 #tryit[
-  先动手试试，下面再读。
-
   $triangle A B C$ 与 $triangle D E F$：$A B = D E = 5$、$B C = E F = 4$、$A C = D F = 6$。
 ]
 
@@ -254,7 +252,7 @@
 
   + 正方形 $A B C D$ 中，$E$、$F$ 分别是 $B C$、$C D$ 的中点。求证：$A E = A F$。（提示：找一对全等三角形；看清夹角。）
 
-  *挑战 ☞ 选做*
+  *挑战*
 
   + 已知 $triangle A B C$ 与 $triangle D E F$ 中 $A B = D E$、$A C = D F$，再补一项让结论成立。你会补 $B C = E F$（SSS）还是 $angle A = angle D$（SAS）？两者各有什么优势？能不能补 $angle B = angle E$？为什么不行？
 
@@ -278,7 +276,7 @@
     - 比较：两法都得到 $angle B = angle C$。方法 A 更直接——题目已给的"角平分线"恰好是 SAS 中的*夹角*条件，三件事（两边和夹角）一次到位。方法 B 要绕一步：题目没有直接给 $B D = C D$，必须借助"三线合一"先证它，工作量更大。这表明：*已知条件刚好是哪条判定法所需，就用哪条*；硬套不需要的判定会平添辅助证明。
   + 在 $triangle A B E$ 与 $triangle A D F$ 中：$A B = A D$（正方形边）、$B E = D F$（都是边的一半）、$angle A B E = angle A D F = 90 degree$（$angle A B E$ 是 $A B, B E$ 的夹角）。由 `SAS` 得 $triangle A B E tilde.eq triangle A D F$，故 $A E = A F$。
 
-  *挑战 ☞ 选做*
+  *挑战*
   + 补 $B C = E F$ 得 SSS——纯测量、不依赖角度，适合角度难量的题；补 $angle A = angle D$ 得 SAS——只要能读出夹角就非常快。补 $angle B = angle E$ 不行：$angle B$ 既不是 $A B, A C$ 的夹角，也不是 $A B, B C$ 的夹角对应方关系，落进 SSA 风险区（下一节详解）。
   + 三段确定长度的“硬杆”首尾铰接，角度都不能自由调——杆子一围起来，形状就只有一种，连同所有三个内角一起被自动固定。
   + *[反直觉]*：给定 $a$（角）、$b$、$c$（两边，$b$ 为已知角的对边）。若 $c > b$ 画出的三角形唯一；若 $c < b$ 则可能有两个不同的三角形；若 $c = b$ 则退化。关键：已知角*不在两边之间*，无法"夹住"形状（SSA 不唯一性）。

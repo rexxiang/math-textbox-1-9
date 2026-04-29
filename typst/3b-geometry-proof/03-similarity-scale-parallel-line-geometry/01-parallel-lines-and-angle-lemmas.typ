@@ -26,8 +26,6 @@
 ]
 
 #tryit[
-  先动手试试，下面再读。
-
   图中 $ell_1 parallel ell_2$，若 $angle 1 = 72 degree$（在 $ell_1$ 上截线同一侧外部）。求它在 $ell_2$ 上的*同位角*、*内错角*、*同旁内角*各是多少？
 ]
 
@@ -256,7 +254,7 @@
 
   + 直线 $ell$ 与两条平行线 $A B$、$C D$ 分别相交于 $F$、$G$。沿 $A B$ 看，$A$ 在 $F$ 左侧；沿 $C D$ 看，$C$ 在 $G$ 左侧；$F$、$G$ 都落在 $ell$ 上。若 $angle A F G = 108 degree$，求 $angle C G F$ 与 $angle D G F$。
 
-  *挑战 ☞ 选做*
+  *挑战*
 
   + 已知 $angle 1 + angle 2 = 180 degree$（一对同旁内角），求证用*内错角*这条路径也能完成相同的证明（即写出一条“由内错角相等推平行”的证明链）。
 
@@ -279,7 +277,7 @@
   + 由 $angle A B C + angle B C D = 180 degree$（同旁内角互补）$=>$ $A B parallel C D$（同旁内角互补 $=>$ 两直线平行）。
   + 由 $A B parallel C D$ 被 $ell$ 所截：$angle A F G$ 与 $angle D G F$ 都是两平行线之间的内角，分处 $ell$ 两侧，是一对*内错角*，故 $angle D G F = angle A F G = 108 degree$；$angle C G F$ 与 $angle D G F$ 在 $C D$ 上构成邻补角，故 $angle C G F = 180 degree - 108 degree = 72 degree$。
 
-  *挑战 ☞ 选做*
+  *挑战*
   + 设原题中同旁内角 $angle 1$、$angle 2$ 满足 $angle 1 + angle 2 = 180 degree$。取 $angle 2$ 的邻补角 $angle 2'$，则 $angle 2' = 180 degree - angle 2 = angle 1$。$angle 1$ 与 $angle 2'$ 恰好是一对内错角，相等 $=>$ 两直线平行。
   + 不能。第一条截线上同位角相等说明的仍然是同一对关系；但“两直线平行”是一种*对一切截线都同样成立*的性质——若不同截线得到的结论矛盾，题目本身或测量就有问题。具体而言，如果 $t_1$ 给出的同位角相等属实，则 $ell_1 parallel ell_2$；再由 $ell_1 parallel ell_2$ 应当推出 $t_2$ 上同位角也相等。两者矛盾即说明至少有一处数据错了。
   + 能。给定内错角 $angle 4 = angle 6$，同位角 $angle 2 = angle 4$（对顶），故 $angle 2 = angle 6$（同位）。同理同旁内角 $angle 3$ 满足 $angle 3 + angle 4 = 180 degree$（邻补），由 $angle 4 = angle 6$ 得 $angle 3 + angle 6 = 180 degree$（同旁内角互补）。
