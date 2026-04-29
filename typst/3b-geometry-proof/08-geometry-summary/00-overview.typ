@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
-== 几何总结 <ch:geometry-summary>
+== 几何总结 <meta:geometry-summary>
 
 想象把前面七章发明的所有证明工具——全等判定、相似比、圆周角定理、勾股定理、坐标公式——统统摆上同一张工作台。这一章不再发明新工具，而是帮你看清它们之间的逻辑线：谁依赖谁、谁在什么场景下登场。
 

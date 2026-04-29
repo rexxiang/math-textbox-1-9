@@ -50,7 +50,7 @@
 
   - 回看 #secref("al04-linear-one-variable")：解不等式的前四步完全照搬五步法——差别只在"乘除负数时方向反转"。
   - 回看 #secref("cb02-opposite-and-absolute")：$|x|$ 的定义在数轴第二章就做过；本章只是把它推广到不等式。
-  - 衔接 #secref("ch:algebra-summary")：下一章会把本章的工具串到整条代数知识地图里做一次总览。
+  - 衔接 #secref("meta:algebra-summary")：下一章会把本章的工具串到整条代数知识地图里做一次总览。
 
   *☞ 继续往前*
 

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
-== 共同知识地图回顾 <ch:shared-invention-tree-review>
+== 共同知识地图回顾 <meta:shared-invention-tree-review>
 
 还记得你发明的第一个工具吗？——数数。从那一刻起，工具树一路生长：加减乘除、分数、方程、函数、证明……现在回头看，这棵树已经长得相当茂盛了。这一章的任务，是帮你站在高处把整棵树看清楚。
 

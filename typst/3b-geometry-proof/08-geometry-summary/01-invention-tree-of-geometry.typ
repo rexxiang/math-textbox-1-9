@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": blueprint, side-hack, secref
 
-=== 几何分支的知识地图 <tool:ge-invention-tree>
+=== 几何分支的知识地图 <meta:ge-invention-tree>
 
 #blueprint[
   *主干：从“图形直观”到“坐标化 & 变换”*

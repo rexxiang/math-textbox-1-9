@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
-== 跨领域解题与建模 <ch:cross-domain-problem-solving-modeling>
+== 跨领域解题与建模 <meta:cross-domain-problem-solving-modeling>
 
 真实世界的问题不会贴着标签告诉你"请用代数"或"请用几何"。一道关于操场扩建的题，可能同时需要面积公式、一次方程和预算数据。从这一章开始，你要自己决定：该从工具箱里拿出哪几样。
 

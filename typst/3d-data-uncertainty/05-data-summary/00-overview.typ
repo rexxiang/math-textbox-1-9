@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
-== 数据分支总结 <ch:data-summary>
+== 数据分支总结 <meta:data-summary>
 
 从条形图到概率，从平均数到抽样——你已经拥有了一整套处理"杂乱数字"的工具。这一章把它们摊开在同一张桌上：哪个管整理、哪个管概括、哪个管预测、哪个管推断，一目了然。
 

@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
-== 代数总结 <ch:algebra-summary>
+== 代数总结 <meta:algebra-summary>
 
 到这里，你的代数工具箱已经装满了：字母、代数式、方程、因式分解、分式、二次方程、不等式……一件件摊开在桌上，看看哪些工具其实是同一招的不同面孔，哪些之间有严格的先后顺序。这一章不学新东西，而是帮你把所有工具理成一张清晰的地图。
 

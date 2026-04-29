@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": tryit, secref
 
-=== 数据分支混合自测 <tool:data-mixed-self-test>
+=== 数据分支混合自测 <meta:data-mixed-self-test>
 
 #tryit[
   以下 $8$ 道题每题都标注了它*用到了哪些知识链*。遇到卡壳的地方，立刻回相应章节复习。

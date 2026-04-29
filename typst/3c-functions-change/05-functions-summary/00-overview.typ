@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
-== 函数总结 <ch:functions-summary>
+== 函数总结 <meta:functions-summary>
 
 正比例、一次、反比例、二次，加上乘法增长的影子——你已经认识了好几位"函数家族"的成员。现在退后一步，把镜头拉远：这些成员之间有什么共同骨架？拿到一张陌生的数据表，你该按什么流程挑出最合适的那一位？
 

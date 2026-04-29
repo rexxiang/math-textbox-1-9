@@ -80,20 +80,10 @@
 
 // id 形式:
 //   tool-id:  "a01-natural-number" → label("tool:a01-natural-number")
-//   meta 节号: "5.1" → label("meta:...") 由使用方保证存在
-// 两类均动态取 Typst 自动章节号，显示如 §1.3
-#let _meta-label = (
-  "5.1": "meta:foundation-check",
-  "5.2": "meta:branch-entry-recaps",
-  "6.7": "meta:c-foundation-summary",
-  "7.7": "meta:d-foundation-summary",
-  "8.3": "meta:e-foundation-summary",
-  "9.5": "meta:f-foundation-summary",
-)
+//   带前缀:    "ch:..." / "meta:..." / "tool:..." 直接用作 label
+// 动态取 Typst 自动章节号，显示如 §1.3
 #let secref(id) = context {
-  let lbl = if id in _meta-label {
-    label(_meta-label.at(id))
-  } else if id.starts-with("ch:") or id.starts-with("meta:") or id.starts-with("tool:") {
+  let lbl = if id.starts-with("ch:") or id.starts-with("meta:") or id.starts-with("tool:") {
     label(id)
   } else {
     label("tool:" + id)

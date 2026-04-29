@@ -1,6 +1,6 @@
 #import "../../lib/theme-v2.typ": chapter-nav, chapter-route, side-hack, secref
 
-== 下一阶段学习地图 <ch:next-learning-map>
+== 下一阶段学习地图 <meta:next-learning-map>
 
 这本书到这里就要合上了，但数学的路远没有到头。12 条高中桥的名称速查见附录。
 
