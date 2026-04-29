@@ -1,4 +1,3 @@
-// [wave7-mastery-variant: 推广反推]
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 

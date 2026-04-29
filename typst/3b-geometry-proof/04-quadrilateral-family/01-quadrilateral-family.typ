@@ -1,4 +1,3 @@
-// [wave7-format-break: 模式C]
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check, proof-step
 #import "../../lib/diagram-packages.typ": cetz
 

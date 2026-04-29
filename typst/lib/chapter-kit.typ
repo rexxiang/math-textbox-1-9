@@ -14,4 +14,4 @@
 #import "theme-v2.typ": chapter-nav, chapter-route, crisis, discovery, blueprint, mastery, tryit, pitfall, history-note, side-hack, vocab, lab, secref, secrange, answer-cut, self-check, knowledge-card, proof-step
 #import "diagram-packages.typ": cetz
 #import "components.typ": diagnostic-table
-#import "geometry-helpers.typ": equal-angle, draw-number-line, draw-coord-plane
+#import "geometry-helpers.typ": equal-angle

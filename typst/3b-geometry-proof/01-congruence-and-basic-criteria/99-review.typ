@@ -67,7 +67,7 @@
 + $angle E = angle B = 180 degree - 50 degree - 70 degree = 60 degree$；$D E = A B = 6$。
 + `SAS`（$angle B$ 是 $A B$、$B C$ 的夹角）；`SSS`（三边对应相等）；不行（AAA，只相似不全等）。
 + 陈述 / 理由：$B D = C D$（中点）；$A D = E D$（所作）；$angle A D B = angle E D C$（对顶角）；$triangle A B D tilde.eq triangle E C D$（`SAS`）；$A B = E C$（对应边），即 $A B = C E$。
-+ $A B = A C$（已知）；$A D = A D$（公共边）；$angle A D B = angle A D C = 90 degree$（$A D perp B C$）；由 HL 或 SAS 得 $triangle A B D tilde.eq triangle A C D$。更简单的路线：由等腰三角形底边上的高即中线得 $B D = C D$，再由 SSS 得全等。
++ $A B = A C$（已知）；$A D = A D$（公共边）；$angle A D B = angle A D C = 90 degree$（$A D perp B C$）；由 SAS 得 $triangle A B D tilde.eq triangle A C D$。更简单的路线：由等腰三角形底边上的高即中线得 $B D = C D$，再由 SSS 得全等。
 + 必须 $A C = B C$（等腰），即以 $A B$ 为底边的等腰三角形。
 + 任意三角形和它的放大版（比如把三边都乘以 $2$）三个角全一样，但大小不同，不全等。
 + $angle C = 180 degree - 50 degree - 70 degree = 60 degree$。另一个三角形虽然三角对应相等（AAA），但大小可以不同，所以*不一定*全等——只能说它们*相似*。

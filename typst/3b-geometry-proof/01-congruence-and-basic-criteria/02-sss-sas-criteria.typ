@@ -1,4 +1,3 @@
-// [wave7-mastery-variant: 双解法]
 #import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, answer-cut, self-check, proof-step
 #import "../../lib/diagram-packages.typ": cetz
 #import "../../lib/geometry-helpers.typ": equal-angle

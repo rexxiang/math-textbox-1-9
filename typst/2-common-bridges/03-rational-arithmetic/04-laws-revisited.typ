@@ -1,4 +1,3 @@
-// [wave7-format-break: 模式B]
 #import "../../lib/chapter-kit.typ": crisis, discovery, blueprint, mastery, tryit, pitfall, history-note, side-hack, vocab, secref, answer-cut
 
 === 运算律的复用：交换、结合、分配在带负数后还成立吗 <tool:cb03-rational-laws>
