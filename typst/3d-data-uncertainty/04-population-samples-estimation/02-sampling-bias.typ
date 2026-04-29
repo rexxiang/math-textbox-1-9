@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": vocab, crisis, history-note, discovery, tryit, blueprint, pitfall, mastery, answer-cut
+#import "../../lib/theme-v2.typ": vocab, crisis, history-note, discovery, tryit, blueprint, pitfall, mastery, answer-cut, side-hack
 #import "../../lib/diagram-packages.typ": cetz
 
 === 怎样抽样才不偏？ <tool:dt11-sampling-bias>
@@ -118,6 +118,16 @@
 
 #history-note[
   $1936$ 年美国总统大选，《*Literary Digest*》杂志寄出 $1000$ 万张调查问卷，回收 $240$ 万份，预测兰登（Alf Landon）将以 $57 percent$ 对 $43 percent$ 大胜罗斯福（Franklin D. Roosevelt）。结果罗斯福以 $62 percent$ 对 $37 percent$ 压倒性胜选——史上最著名的抽样翻车。问题出在：样本来源是杂志订户、电话簿、车主名单——*全是当时的中产以上阶层*；同时只有愿意填的人回寄——*严重自选偏差*。同一时间，年轻的盖洛普（George Gallup）仅用 $5$ 万份*随机抽样*就准确预测了罗斯福胜利。这件事让"*小心抽样*"成为统计学的第一课——*再大的 $n$ 也抵不上一次有偏抽样*。
+]
+
+#side-hack[
+  *读到数据新闻，先问三句*——
+
+  + *样本是怎么选的？*（在哪里、什么渠道、谁同意参加）——选样渠道决定了它代表谁。
+  + *样本能代表谁？*（不是"全国人民"，可能只是"用了这个 App 的城市青年"）——明确总体。
+  + *没回答的人去哪儿了？*（不回应率高吗？没回应的可能恰好是关键人群）——无回应偏差最容易被忽视。
+
+  ☞ 三问没问清，新闻里的百分比再大也只是这一群样本的数字，不是总体的。
 ]
 
 #blueprint[
