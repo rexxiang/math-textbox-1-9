@@ -43,7 +43,7 @@
     [圆周角定理 #secref("ge03-circle-basics-inscribed")], [圆心角、圆周角要一条主定理串起来], [弦、弧、角的换算全靠它],
     [外接 / 内切圆 #secref("ge03-inscribed-circumscribed")], [“谁在外谁在内”要一个通用视角], [正多边形的 $R$、$r$、边长统一],
     [勾股定理 #secref("ge04-pythagorean")], [直角三角形三边要一条通用式], [根号边长合法化],
-    [$30$/$45$/$60$ 三角比 #secref("ge04-special-right-triangles")], [特殊角边比一劳永逸], [$sin$/$cos$/$tan$ 登场],
+    [$30$/$45$/$60$ 三角比 #secref("ge04-special-right-triangles")], [特殊角的边比一次定下来直接用], [$sin$/$cos$/$tan$ 登场],
     [仰角 / 俯角 / 坡度 #secref("ge04-elevation-slope")], [实际测量要“角 + 水平距离”换算高度], [几何真正走进生活],
     [刚体变换族 #secref("ge05-rigid-transforms")], [“全等”需要一个运动学解释], [平移 / 旋转 / 反射同属保距],
     [坐标几何 & 变换公式 #secref("ge05-coordinate-transforms")], [几何要嵌进代数], [距离、中点、变换全公式化],

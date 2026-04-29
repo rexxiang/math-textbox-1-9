@@ -48,9 +48,10 @@
 **锚点约定**：
 
 - 章级锚点：`<ch:slug>`（例 `<ch:fractions>` / `<ch:ratio-proportion-percent>`）
-- 知识点锚点：`<kp:slug>`（例 `<kp:decimal-system>` / `<kp:fraction-arithmetic>`）
+- 知识点锚点：`<tool:slug>`（例 `<tool:decimal-system>` / `<tool:fraction-arithmetic>`）
 - meta 锚点：`<meta:slug>`（例 `<meta:foundation-readiness-check>` / `<meta:bridge-readiness>`）
-- 交叉引用统一使用 `#secref("kp:...")` / `#secref("ch:...")` / `#secref("meta:...")`
+- 交叉引用统一使用 `#secref("tool:...")` / `#secref("ch:...")` / `#secref("meta:...")`
+- （历史命名 `kp:` 已废弃，新章节统一用 `tool:`）
 
 ## 构建
 
