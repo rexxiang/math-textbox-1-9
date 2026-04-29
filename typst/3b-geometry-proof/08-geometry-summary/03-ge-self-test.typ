@@ -23,6 +23,8 @@
     (c) $triangle A' B' C'$ 与 $triangle A B C$ 的面积是否相等？为什么？（#secref("ge05-coordinate-transforms")、#secref("ge05-rigid-transforms")）
 ]
 
+#line(length: 100%, stroke: 0.3pt + luma(200))
+
 #side-hack[
   *参考答案*
 

@@ -11,7 +11,8 @@
 ]
 
 #tryit[
-  *综合题 1*（知识链：#secref("al02-factorization-as-reverse") + #secref("al05-quadratic-solving")）
+  *综合题 1* \
+  涉及章节：#secref("al02-factorization-as-reverse") + #secref("al05-quadratic-solving")
 
   解方程 $x^4 - 5 x^2 + 4 = 0$。
 
@@ -19,7 +20,8 @@
 
   ---
 
-  *综合题 2*（知识链：#secref("al03-rational-equations-and-extraneous-roots") + #secref("al05-quadratic-solving")）
+  *综合题 2* \
+  涉及章节：#secref("al03-rational-equations-and-extraneous-roots") + #secref("al05-quadratic-solving")
 
   解方程 $frac(1, x - 3) + frac(x, x + 3) = frac(6, x^2 - 9)$。
 
@@ -27,7 +29,8 @@
 
   ---
 
-  *综合题 3*（知识链：#secref("al04-modeling-word-problems") + #secref("al04-systems-linear") + #secref("al05-linear-inequalities")）
+  *综合题 3* \
+  涉及章节：#secref("al04-modeling-word-problems") + #secref("al04-systems-linear") + #secref("al05-linear-inequalities")
 
   某工厂一次生产 $A$、$B$ 两种产品。每件 $A$ 的利润 $50$ 元、每件 $B$ 的利润 $30$ 元。因原料限制，每天最多生产 $80$ 件；因工时限制，每天 $A$ 的产量最多是 $B$ 的 $2$ 倍。设每天生产 $A$ 种 $x$ 件、$B$ 种 $y$ 件。
 
@@ -37,7 +40,8 @@
 
   ---
 
-  *综合题 4*（知识链：#secref("al02-special-identities") + #secref("al05-vieta")）
+  *综合题 4* \
+  涉及章节：#secref("al02-special-identities") + #secref("al05-vieta")
 
   已知方程 $2 x^2 - 5 x + 3 = 0$ 的两根为 $x_1, x_2$。求
   - $x_1 + x_2$、$x_1 x_2$；
@@ -48,7 +52,8 @@
 
   ---
 
-  *综合题 5*（知识链：#secref("al02-factorization-as-reverse") + #secref("al03-common-denominator-operations") + #secref("al04-linear-one-variable")）
+  *综合题 5* \
+  涉及章节：#secref("al02-factorization-as-reverse") + #secref("al03-common-denominator-operations") + #secref("al04-linear-one-variable")
 
   化简 $frac(1, x - 1) - frac(2, x^2 - 1) + frac(3, x + 1)$（$x != plus.minus 1$）；并解方程
 

@@ -22,6 +22,8 @@
   + 某商品进价 $40$ 元/件，以 $x$ 元/件出售时每天销量为 $(120 - 2 x)$ 件（$x > 40$ 且 $120 - 2 x > 0$）。要使每天利润达到 $600$ 元，定价 $x$ 应为多少？（#secref("al04-modeling-word-problems")、#secref("al05-quadratic-solving")）
 ]
 
+#line(length: 100%, stroke: 0.3pt + luma(200))
+
 #side-hack[
   *参考答案*
 

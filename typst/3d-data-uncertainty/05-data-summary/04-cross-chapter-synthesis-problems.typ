@@ -11,7 +11,8 @@
 ]
 
 #tryit[
-  *综合题 1*（知识链：#secref("dt01-organizing-data") + #secref("dt03-center-and-spread") + #secref("dt06-variance")）
+  *综合题 1* \
+  涉及章节：#secref("dt01-organizing-data") + #secref("dt03-center-and-spread") + #secref("dt06-variance")
 
   某次小测 $10$ 人成绩为 $72, 85, 90, 68, 76, 88, 95, 70, 82, 74$。
 
@@ -21,7 +22,8 @@
 
   ---
 
-  *综合题 2*（知识链：#secref("dt04-frequency-distributions") + #secref("dt05-histograms")）
+  *综合题 2* \
+  涉及章节：#secref("dt04-frequency-distributions") + #secref("dt05-histograms")
 
   一份 $n = 100$ 的数据按组距 $5$ 分档得到频率 $0.04, 0.18, 0.30, 0.28, 0.14, 0.06$（区间 $[60, 90)$，共 $6$ 档）。
 
@@ -31,7 +33,8 @@
 
   ---
 
-  *综合题 3*（知识链：#secref("dt07-sample-spaces") + #secref("dt08-probability-language")）
+  *综合题 3* \
+  涉及章节：#secref("dt07-sample-spaces") + #secref("dt08-probability-language")
 
   袋中 $5$ 红、$3$ 蓝、$2$ 黄共 $10$ 球，*不放回*依次摸两次。
 
@@ -42,7 +45,8 @@
 
   ---
 
-  *综合题 4*（知识链：#secref("dt08-probability-language") + #secref("dt09-experimental-frequency")）
+  *综合题 4* \
+  涉及章节：#secref("dt08-probability-language") + #secref("dt09-experimental-frequency")
 
   把一枚硬币抛 $200$ 次，得到正面 $112$ 次。
 
@@ -52,7 +56,8 @@
 
   ---
 
-  *综合题 5*（知识链：#secref("dt10-population-vs-sample") + #secref("dt11-sampling-bias") + #secref("dt12-estimation")）
+  *综合题 5* \
+  涉及章节：#secref("dt10-population-vs-sample") + #secref("dt11-sampling-bias") + #secref("dt12-estimation")
 
   某市要估计中学生平均每周课外阅读时间。调研者*只在某重点中学的图书馆门口*随机访问了 $300$ 人，得到 $bar x = 6.4$ 小时。
 

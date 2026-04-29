@@ -11,7 +11,8 @@
 ]
 
 #tryit[
-  *综合题 1*（知识链：#secref("fn01-table-as-function-view") + #secref("fn11-model-choice")）
+  *综合题 1* \
+  涉及章节：#secref("fn01-table-as-function-view") + #secref("fn11-model-choice")
 
   下表给出某种装置的输入 $x$ 与输出 $y$：
 
@@ -27,7 +28,8 @@
 
   ---
 
-  *综合题 2*（知识链：#secref("fn05-linear-function") + #secref("fn06-slope-as-rate")）
+  *综合题 2* \
+  涉及章节：#secref("fn05-linear-function") + #secref("fn06-slope-as-rate")
 
   已知一次函数 $y = k x + b$ 的图像过两点 $(2, -1)$ 与 $(-1, 5)$。
 
@@ -37,7 +39,8 @@
 
   ---
 
-  *综合题 3*（知识链：#secref("fn07-inverse-proportion") + #secref("fn08-quadratic-function")）
+  *综合题 3* \
+  涉及章节：#secref("fn07-inverse-proportion") + #secref("fn08-quadratic-function")
 
   已知反比例函数 $y = k / x$ 与二次函数 $y = a x^2 + c$ 都过点 $(2, 3)$，且二次函数的顶点在 $y$ 轴上。
 
@@ -47,7 +50,8 @@
 
   ---
 
-  *综合题 4*（知识链：#secref("fn08-quadratic-function") + #secref("fn11-model-choice")）
+  *综合题 4* \
+  涉及章节：#secref("fn08-quadratic-function") + #secref("fn11-model-choice")
 
   一只小球从 $20$ 米高的台上水平掷出，水平距离 $x$（米）与离地高度 $h$（米）满足 $h = 20 - 0.05 x^2$（不计空气阻力）。
 
@@ -57,7 +61,8 @@
 
   ---
 
-  *综合题 5*（知识链：#secref("fn10-additive-vs-multiplicative-growth") + #secref("fn12-function-comparison")）
+  *综合题 5* \
+  涉及章节：#secref("fn10-additive-vs-multiplicative-growth") + #secref("fn12-function-comparison")
 
   甲方案：每年存入 $1000$ 元（加法增长，本金累加）；
   乙方案：本金 $1000$ 元，每年按 $r = 1.1$ 翻动（乘法增长 $y = 1000 dot 1.1^n$）。

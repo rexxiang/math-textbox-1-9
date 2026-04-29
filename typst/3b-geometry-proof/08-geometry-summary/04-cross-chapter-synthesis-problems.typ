@@ -11,7 +11,8 @@
 ]
 
 #tryit[
-  *综合题 1*（知识链：#secref("ge03-circle-basics-inscribed") + #secref("ge04-pythagorean")）
+  *综合题 1* \
+  涉及章节：#secref("ge03-circle-basics-inscribed") + #secref("ge04-pythagorean")
 
   $A B$ 是圆 $O$ 的直径，$A B = 10$。$C$ 在圆上，$A C = 6$。
 
@@ -20,7 +21,8 @@
 
   ---
 
-  *综合题 2*（知识链：#secref("ge02-similarity-aa-ratio") + #secref("ge04-pythagorean")）
+  *综合题 2* \
+  涉及章节：#secref("ge02-similarity-aa-ratio") + #secref("ge04-pythagorean")
 
   两个直角三角形相似，相似比 $2 : 3$。较小者两条直角边分别为 $6$、$8$。
 
@@ -29,7 +31,8 @@
 
   ---
 
-  *综合题 3*（知识链：#secref("ge05-coordinate-transforms") + #secref("ge04-pythagorean") + #secref("ge05-rigid-transforms")）
+  *综合题 3* \
+  涉及章节：#secref("ge05-coordinate-transforms") + #secref("ge04-pythagorean") + #secref("ge05-rigid-transforms")
 
   $triangle A B C$ 的顶点 $A(0, 0)$、$B(6, 0)$、$C(0, 8)$。
 
@@ -39,7 +42,8 @@
 
   ---
 
-  *综合题 4*（知识链：#secref("ge04-elevation-slope") + #secref("ge04-special-right-triangles")）
+  *综合题 4* \
+  涉及章节：#secref("ge04-elevation-slope") + #secref("ge04-special-right-triangles")
 
   某段水平直路的远端有一座塔。在 $A$ 处测得塔顶仰角 $= 30 degree$；沿路*朝塔走 $60$ 米*到 $B$ 处，再测得塔顶仰角 $= 60 degree$。
 
