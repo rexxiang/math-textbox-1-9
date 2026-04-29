@@ -14,10 +14,14 @@
 #chapter-route[
 
   + §1 画出几何的知识地图：从“图形直观（点 / 线 / 角 / 多边形 / 圆）”如何一步步被加结构，最终长出“全等 → 相似 → 四边形与圆 → 勾股 & 三角比 → 变换 & 视图”。每个知识点都带着章节编号方便你随时回到对应的那一章。
-  + §2 出 $3$ 道*跨章综合题*——每题都显式注明它用到了哪些知识链。
-  + §3 梳理分支学完之后最常见的*误读*与对应的*哪里不会回哪里*——只重读某一节，不重刷整章。
+  + §2 *能力清单*——逐条可勾选的几何分支动作；用来诊断"哪些地方该回看"。
+  + §3 *混合自测*——$5$ 道独立综合题，答案放在同节末尾的小提示里。
+  + §4 出 $3$ 道*跨章综合题*——每题都显式注明它用到了哪些知识链。
+  + §5 梳理分支学完之后最常见的*误读*与对应的*哪里不会回哪里*——只重读某一节，不重刷整章。
 ]
 
 #include "01-invention-tree-of-geometry.typ"
-#include "02-cross-chapter-synthesis-problems.typ"
-#include "03-common-misreadings-and-repair-routes.typ"
+#include "02-ge-checklist.typ"
+#include "03-ge-self-test.typ"
+#include "04-cross-chapter-synthesis-problems.typ"
+#include "05-common-misreadings-and-repair-routes.typ"

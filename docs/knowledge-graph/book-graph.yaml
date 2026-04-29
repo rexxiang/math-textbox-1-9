@@ -888,13 +888,23 @@ nodes:
   - id: meta-al-synthesis-problems
     type: chapter-meta
     chapter: ch:algebra-summary
-    path: typst/3a-algebra-symbols/07-algebra-summary/02-cross-chapter-synthesis-problems.typ
-    prerequisites: [meta-al-invention-tree]
+    path: typst/3a-algebra-symbols/07-algebra-summary/04-cross-chapter-synthesis-problems.typ
+    prerequisites: [meta-al-self-test]
   - id: meta-al-repair-routes
     type: chapter-meta
     chapter: ch:algebra-summary
-    path: typst/3a-algebra-symbols/07-algebra-summary/03-common-misreadings-and-repair-routes.typ
-    prerequisites: [meta-al-synthesis-problems]
+    path: typst/3a-algebra-symbols/07-algebra-summary/05-common-misreadings-and-repair-routes.typ
+    prerequisites: [meta-al-self-test]
+  - id: meta-al-checklist
+    type: chapter-meta
+    chapter: ch:algebra-summary
+    path: typst/3a-algebra-symbols/07-algebra-summary/02-al-checklist.typ
+    prerequisites: [meta-al-invention-tree]
+  - id: meta-al-self-test
+    type: chapter-meta
+    chapter: ch:algebra-summary
+    path: typst/3a-algebra-symbols/07-algebra-summary/03-al-self-test.typ
+    prerequisites: [meta-al-checklist]
   - id: ge01-congruence-correspondence
     type: knowledge-point
     chapter: ch:congruence-and-basic-criteria
@@ -1025,13 +1035,23 @@ nodes:
   - id: meta-ge-synthesis-problems
     type: chapter-meta
     chapter: ch:geometry-summary
-    path: typst/3b-geometry-proof/08-geometry-summary/02-cross-chapter-synthesis-problems.typ
-    prerequisites: [meta-ge-invention-tree]
+    path: typst/3b-geometry-proof/08-geometry-summary/04-cross-chapter-synthesis-problems.typ
+    prerequisites: [meta-ge-self-test]
   - id: meta-ge-repair-routes
     type: chapter-meta
     chapter: ch:geometry-summary
-    path: typst/3b-geometry-proof/08-geometry-summary/03-common-misreadings-and-repair-routes.typ
-    prerequisites: [meta-ge-synthesis-problems]
+    path: typst/3b-geometry-proof/08-geometry-summary/05-common-misreadings-and-repair-routes.typ
+    prerequisites: [meta-ge-self-test]
+  - id: meta-ge-checklist
+    type: chapter-meta
+    chapter: ch:geometry-summary
+    path: typst/3b-geometry-proof/08-geometry-summary/02-ge-checklist.typ
+    prerequisites: [meta-ge-invention-tree]
+  - id: meta-ge-self-test
+    type: chapter-meta
+    chapter: ch:geometry-summary
+    path: typst/3b-geometry-proof/08-geometry-summary/03-ge-self-test.typ
+    prerequisites: [meta-ge-checklist]
   - id: fn01-table-as-function-view
     type: knowledge-point
     chapter: ch:function-representations

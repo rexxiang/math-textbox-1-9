@@ -36,8 +36,10 @@ ch:similarity-scale-parallel-line-geometry
 ch:square-root-irrational-number-line
 ch:transformations-coordinate-geometry-views
 meta:advanced-criteria-and-proof-writing
+meta:al-checklist
 meta:al-invention-tree
 meta:al-repair-routes
+meta:al-self-test
 meta:al-synthesis-problems
 meta:algebra-summary
 meta:algebra-summary-review
@@ -75,8 +77,10 @@ meta:functions-checklist
 meta:functions-mixed-self-test
 meta:functions-summary
 meta:functions-summary-review
+meta:ge-checklist
 meta:ge-invention-tree
 meta:ge-repair-routes
+meta:ge-self-test
 meta:ge-synthesis-problems
 meta:geometry-summary
 meta:growth-models-function-comparison
