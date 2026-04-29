@@ -219,16 +219,35 @@
 
 
 #pitfall[
-  *高频错误*
+  Priya 这样判全等：
 
-  ✗ 把“非夹角”当成“夹角”套 SAS
-  → ✓ SAS 的 `A` 必须在两条已知边*中间*。角站在外侧（即是其中一边的对角）就不再是 SAS，要参考下一节的 SSA 讨论。
+  #block(inset: (left: 12pt))[
+    *题目*：$triangle A B C$ 与 $triangle D E F$ 中，$A B = D E = 6$、$A C = D F = 8$、$angle B = angle E = 50 degree$。能否用 SAS 判全等？
 
-  ✗ 写“$A B = D E$、$B C = E F$、$A C = E F$”就宣布 SSS
-  → ✓ 三条边要*一一对应*：$A B ↔ D E$、$B C ↔ E F$、$A C ↔ D F$。对应顶点错位了等于没证。
+    第 1 行：列条件——已知两条边 $A B, A C$ 和一个角 $angle B$。
 
-  ✗ 忘掉“公共边 / 公共角 / 对顶角”这些免费条件
-  → ✓ 很多题能凑齐 SSS 或 SAS 的“临门一脚”就是公共元素；列条件清单时要主动把它们写进去。
+    第 2 行：两条边一个角，套 SAS。
+
+    第 3 行：$triangle A B C tilde.eq triangle D E F$ (SAS)。
+  ]
+
+  ✎ Priya 的判定不成立。哪步错？
+
+  #block(width: 100%, fill: rgb("#FFFDE7"), radius: 2pt, inset: 8pt)[
+    *卡在哪里*：第 2 行没核对"角的位置"。SAS 的 `A` 必须*夹在两条已知边中间*。这里两条已知边是 $A B$ 和 $A C$，它们的*夹角*是 $angle A$，不是 $angle B$。$angle B$ 是 $A B$ 与 $B C$ 的夹角，对 $A C$ 来说是"对角"，对 $A B$ 来说才是端点角——不在两条已知边中间。
+
+    这种"两边 $+$ 非夹角"的配置叫 SSA，*不能保证全等*（同样的两边一角可以摆出两个不同三角形）。
+
+    *正确做法*：把 $angle B$ 换成 $angle A$，或补上第三条边 $B C = E F$ 退回 SSS，或换个判据。
+
+    ✓ 正确结论：仅凭 $A B = D E$、$A C = D F$、$angle B = angle E$ *不能*用 SAS 判全等。
+  ]
+
+  其余常见走错：
+
+  ✗ 写"$A B = D E$、$B C = E F$、$A C = E F$"就宣布 SSS → ✓ 三条边要*一一对应*：$A B$ ↔ $D E$、$B C$ ↔ $E F$、$A C$ ↔ $D F$。
+
+  ✗ 忘掉"公共边 / 公共角 / 对顶角"这些免费条件 → ✓ 列条件清单时主动把它们写进去。
 ]
 
 #mastery[
