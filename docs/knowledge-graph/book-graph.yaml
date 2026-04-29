@@ -1150,6 +1150,11 @@ nodes:
     chapter: ch:functions-summary
     path: typst/3c-functions-change/05-functions-summary/02-functions-mixed-self-test.typ
     prerequisites: [meta-functions-checklist]
+  - id: meta-fn-synthesis-problems
+    type: chapter-meta
+    chapter: ch:functions-summary
+    path: typst/3c-functions-change/05-functions-summary/04-cross-chapter-synthesis-problems.typ
+    prerequisites: [meta-functions-mixed-self-test]
   - id: dt01-organizing-data
     type: knowledge-point
     chapter: ch:data-displays-descriptive-statistics
@@ -1237,6 +1242,11 @@ nodes:
     chapter: ch:data-summary
     path: typst/3d-data-uncertainty/05-data-summary/02-data-mixed-self-test.typ
     prerequisites: [meta-data-checklist]
+  - id: meta-dt-synthesis-problems
+    type: chapter-meta
+    chapter: ch:data-summary
+    path: typst/3d-data-uncertainty/05-data-summary/04-cross-chapter-synthesis-problems.typ
+    prerequisites: [meta-data-mixed-self-test]
   - id: cp01-shared-tools-crossref
     type: chapter-meta
     chapter: ch:shared-invention-tree-review

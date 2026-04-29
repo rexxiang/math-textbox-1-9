@@ -62,10 +62,12 @@ meta:direct-variation-linear-functions-slope
 meta:distributive-identities-factorization
 meta:dt-invention-tree
 meta:dt-repair-routes
+meta:dt-synthesis-problems
 meta:equation-balance-inverse-operations
 meta:factors-multiples-prime-factorization
 meta:fn-invention-tree
 meta:fn-repair-routes
+meta:fn-synthesis-problems
 meta:foundation-readiness-check
 meta:foundation-readiness-check-review
 meta:four-operations-structure

@@ -3,6 +3,14 @@
 == 本章回顾 <meta:distributive-identities-factorization>
 
 #blueprint[
+  *一句话记住这一章*
+
+  *本章口诀*：乘开是公路、提公因式是回程。
+
+  *用法*：拿到一个表达式先问“它要被打开还是被合起来”——括号在外、要展开就走*乘开*；同形项已经在外要合并就走*提公因式*。
+]
+
+#blueprint[
   *知识速查卡*
 
   #table(

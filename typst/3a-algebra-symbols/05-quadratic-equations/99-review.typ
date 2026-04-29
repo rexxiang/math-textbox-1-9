@@ -3,6 +3,14 @@
 == 本章回顾 <meta:quadratic-equations>
 
 #blueprint[
+  *一句话记住这一章*
+
+  *本章口诀*：先看 $Delta = b^2 - 4 a c$；$Delta$ 是完全平方数就走因式分解，否则套求根公式。
+
+  *用法*：拿到 $a x^2 + b x + c = 0$ 立刻心算 $Delta = b^2 - 4 a c$，再决定走“因式分解”路还是“求根公式”路，少走一半冤枉路。
+]
+
+#blueprint[
   *知识速查卡*
 
   #table(

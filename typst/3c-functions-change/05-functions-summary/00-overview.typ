@@ -16,10 +16,12 @@
   + §1 *函数分支知识地图*：从“关系模板”到“四族函数 + 长期排名”这条主干怎么生长出来的，每个知识点都带着章节编号方便回查。
   + §2 *函数分支速查卡*：四族 + 乘法现象 + 模型选择流程，一张大表集中复核。
   + §3 *混合自测*——每题都显式注明它用到了哪些知识链。答案与讲解放在 本章回顾。
-  + §4 函数学完后最常见的*误读*与对应的*哪里不会回哪里*——不重刷全章，精确回到某一节。
+  + §4 出几道*跨章综合题*——每题都标出了它用到了哪些知识链，让你练习“在一道题里同时使用多节工具”。
+  + §5 函数学完后最常见的*误读*与对应的*哪里不会回哪里*——不重刷全章，精确回到某一节。
 ]
 
 #include "01-invention-tree-of-functions.typ"
 #include "02-functions-checklist.typ"
 #include "03-functions-mixed-self-test.typ"
-#include "04-common-misreadings-and-repair-routes.typ"
+#include "04-cross-chapter-synthesis-problems.typ"
+#include "05-common-misreadings-and-repair-routes.typ"

@@ -2,6 +2,14 @@
 
 == 本章回顾 <meta:congruence-and-basic-criteria>
 
+#blueprint[
+  *一句话记住这一章*
+
+  *本章口诀*：数等量条件——三对边 SSS；两边一夹角 SAS；其余下章续。
+
+  *用法*：拿到一道全等题先清点已知里有几对相等的边、几对相等的角，再按这两条判据迅速决定要不要继续找条件或换路线。
+]
+
 #knowledge-card(title: "知识速查卡")[
     #table(
     columns: (1fr, 1fr),
