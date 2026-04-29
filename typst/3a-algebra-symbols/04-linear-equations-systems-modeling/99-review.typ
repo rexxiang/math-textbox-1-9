@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": blueprint, mastery, secref
+#import "../../lib/theme-v2.typ": blueprint, mastery, side-hack, secref
 #import "../../lib/chapter-kit.typ": diagnostic-table, answer-cut
 
 == 本章回顾 <meta:linear-equations-systems-modeling>
@@ -115,6 +115,17 @@
 
   - 往后“函数与变化”部分会把方程看成“函数相等”；“几何证明”里设未知边解方程是标准工具；“数据与不确定性”里用加权平均推导常要联立方程组。
   - 想再往高走，可把本章的二元一次方程组推广到*矩阵 / 行列式*，那就是高中线性代数的入口。
+]
+
+#side-hack[
+  *☞ 高中桥*
+
+  本章用代入 / 加减消元解二元、三元线性方程组。到了高中你会进一步遇到：
+
+  - *矩阵*把方程组的系数排成矩形阵列；高斯消元把"加减消元"变成对矩阵行的操作，能一次处理几十个方程。
+  - *行列式*用一个数值判断方程组是否有唯一解——本章里 $cases(2 x + 3 y = 13, 3 x + 2 y = 12)$ 之所以有解，是因为对应行列式 $!= 0$。
+
+  这些工具不影响现在你掌握的五步流程——只是把它机械化、规模化。
 ]
 
 #diagnostic-table(

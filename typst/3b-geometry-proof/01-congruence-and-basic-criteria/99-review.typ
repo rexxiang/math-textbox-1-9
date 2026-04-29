@@ -63,7 +63,7 @@
   *挑战*
 
   + *反例构造*：构造（描述或画出）两个三角形，使它们满足"两边对应相等 + 一个非夹角相等（SSA）"但不全等。说明为什么 SSA 不能判全等。
-  + *找 Bug*：贝拉（Bella）在证明中写道："设 $triangle A B C tilde.eq triangle B C A$，所以 $A B = B C$"。找出这个推理的错误，并说明 $triangle A B C tilde.eq triangle B C A$ 实际上对三角形意味着什么。
+  + *找 Bug*：贝拉（Bella）在证明中写道："设 $triangle A B C tilde.eq triangle B C A$，所以 $A B = B C$"。找出错误位置，并说明：贝拉为什么会这样想？她混淆了*"三角形全等的对应关系"*与*"两个三角形是同一个三角形（自身全等）"*这两个概念——具体把哪一条读错了？$triangle A B C tilde.eq triangle B C A$ 这种"自身到自身"的全等实际上对三角形意味着什么样的对称约束？
 
   *串章大题*——这道题需要把整章工具串起来用：
 
