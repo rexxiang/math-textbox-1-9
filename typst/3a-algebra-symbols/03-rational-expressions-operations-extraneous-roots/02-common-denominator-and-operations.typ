@@ -3,6 +3,12 @@
 
 === 通分、分式加减与乘除 <tool:al03-common-denominator-operations>
 
+☞ *从结构到运算*——上一节我们看清了分式 $A/B$ 的结构（含字母的分数）和它的"软肋"（$B$ 不能取使它为 $0$ 的值）。
+
+本节把分式当成一个完整的对象来运算：加、减、乘、除。和小学分数一样，加减仍然要*统一分母*；不一样的是，分母是含字母的式子，找公分母前要先因式分解。
+
+带着上节的"$x$ 不能让分母为零"这把警惕，进入正式运算。
+
 #vocab[通分 finding a common denominator][最简公分母 least common denominator][分式加减 adding and subtracting rational expressions][分式乘除 multiplying and dividing rational expressions]
 
 #crisis[

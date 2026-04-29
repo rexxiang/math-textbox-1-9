@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, self-check, answer-cut
 #import "../../lib/diagram-packages.typ": cetz
 
 === 圆的基础与圆周角定理 <tool:ge03-circle-basics-inscribed>
@@ -114,6 +114,12 @@
 
   - *Thales 定理*：直径所对的圆周角 $= 90 degree$。证：直径对应的圆心角 $= 180 degree$，圆周角 $= 1 slash 2 times 180 degree = 90 degree$。
   - *同弧等角*：同一弧所对的所有圆周角相等（因为它们共享同一个圆心角）。
+]
+
+#self-check[
+  停一下——读到这里你已经看到了"圆心角""圆周角""弧"三种相关角。
+  + 哪两种角"等弧对相等"是显然的，哪一种需要证明？
+  + 用自己的话写一句：圆周角和它对应的圆心角的关系是什么？
 ]
 
 #side-hack[

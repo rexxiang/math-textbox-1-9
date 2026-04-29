@@ -37,6 +37,8 @@
   + 在圆中，若弦 $A B$ 经过圆心，则 $angle A C B = 90 degree$（泰勒斯定理）。利用三角形内角和（#secref("pf08-triangles-angle-sum")）求当 $angle C A B = 35 degree$ 时 $angle A B C$ 的度数。
   + 不用精确计算，判断：一个半径为 $5$ 的圆的内接正三角形的边长是否大于 $8$？说明理由。  // 跨章回顾
   + 已知圆的半径 $r$ cm，面积 $= pi r^2$，周长 $= 2 pi r$（回顾 #secref("pf07-perimeter-area") 圆的公式）。若圆的面积等于周长的 $5$ 倍（$pi r^2 = 5 times 2 pi r$），用一元方程（回顾 #secref("al04-linear-one-variable")）求 $r$。
+  // 跨章回顾：勾股定理求弦长
+  + 圆 $O$ 的半径 $= 5$，弦 $A B$ 到圆心 $O$ 的距离（即 $O$ 到 $A B$ 的垂线段长）$= 3$。利用勾股定理（回顾 #secref("ge04-pythagorean")）求弦长 $A B$。提示：连 $O A$ 得直角三角形，斜边 $= R$，一条直角边 $=$ 弦心距，另一条 $= A B slash 2$。
 ]
 
 ==== 参考答案
@@ -52,6 +54,7 @@
 + $angle A C B = 90 degree$（泰勒斯定理）；$angle C A B + angle A B C = 90 degree$（三角形内角和）；$angle A B C = 90 degree - 35 degree = 55 degree$。
 + 内接正三角形边长 $= R sqrt(3) = 5 sqrt(3) approx 5 times 1.732 = 8.66 > 8$。所以边长大于 $8$。估算时只需知道 $sqrt(3) approx 1.73$。
 + $pi r^2 = 10 pi r$；除以 $pi r$（$r > 0$）得 $r = 10$ cm。（参见 #secref("pf07-perimeter-area") 与 #secref("al04-linear-one-variable")）
++ 设 $M$ 为 $O$ 到 $A B$ 的垂足，则 $A M = A B slash 2$。在直角 $triangle O M A$ 中：$O A = 5$（半径，斜边），$O M = 3$（弦心距）。由勾股定理 $A M = sqrt(5^2 - 3^2) = sqrt(16) = 4$，所以 $A B = 2 times 4 = 8$。（参见 #secref("ge04-pythagorean")）
 
 #blueprint[
   *巩固复习*

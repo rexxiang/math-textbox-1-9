@@ -163,8 +163,8 @@
 
       line((-3.0, 1.3), (-0.4, 0.3), stroke: 0.6pt + gray)
       line((3.0, 1.3), (0.4, 0.3), stroke: 0.6pt + gray)
-      content((-2.4, 0.5), text(size: 8pt, fill: blue)[$+$ 邻边相等])
-      content((2.4, 0.5), text(size: 8pt, fill: blue)[$+$ 一角直角])
+      content((-2.7, 0.5), text(size: 8pt, fill: blue)[$+$ 邻边相等])
+      content((2.7, 0.5), text(size: 8pt, fill: blue)[$+$ 一角直角])
 
       content((0, 0), text(weight: "bold")[正方形])
     }),
