@@ -341,19 +341,6 @@
   ]
 }
 
-// ── 章首三段模板（chapter-nav + chapter-route + 可选自检）────────────
-// 将章首的三个固定结构块封装为一个函数，方便统一维护。
-// 用法：
-//   #chapter-overview(route: [+ 步骤...], selfcheck: [入章自检...])[概览内容]
-//   #chapter-overview(route: [...])[ 无自检时省略 selfcheck 参数 ]
-#let chapter-overview(route: [], selfcheck: none, body) = {
-  chapter-nav(body)
-  chapter-route(route)
-  if selfcheck != none {
-    side-hack(selfcheck)
-  }
-}
-
 // ── 元认知自检（discovery 中段或 blueprint 之后插入）──────────────
 // 渲染：浅靛色左边框 + 无底色，紧凑。
 // 用法：#self-check[你能说出……是什么意思吗？]
