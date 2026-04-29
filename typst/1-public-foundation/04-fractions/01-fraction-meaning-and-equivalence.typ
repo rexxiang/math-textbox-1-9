@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 分数的意义与等值 <tool:pf04-fraction-equivalence>
@@ -38,6 +38,10 @@
   - 把 $2$ 张披萨平均分给 $3$ 个人，每人得到 $2\/3$ 张——可见 $2\/3$ 同时也表示"$2 div 3$"，分数也能表示除法结果。
 
   *麻烦还没完*：测量员 B 用"$3$ 份切法"得到 $2\/3$，测量员 C 用"$5$ 份切法"得到 $3\/5$——*它们能比较吗？甚至会不会其实是同一个量？*
+
+  #self-check[
+    合上书或遮住下面，先自己写一个回答，再读后续。具体写：$2\/3$ 和 $3\/5$ 哪个更大？先猜一个答案，再想想有没有办法比较，把你的猜想和思路写下来。
+  ]
 
   这就要把两种切法叠在同一张图里看。以"$1$ 个长方形"代表整体，做面积模型：
 

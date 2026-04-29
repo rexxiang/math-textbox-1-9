@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 分配律的双向使用 <tool:al02-distributive-rewrite>
@@ -76,7 +76,13 @@
 
   $ 5 a + 5 b = 5 (a + b) $
 
-  那 $6 x^2 + 9 x$ 呢？两项系数有公因数 $3$，字母有公共的 $x$，所以公因式是 $3 x$：
+  那 $6 x^2 + 9 x$ 呢？
+
+  #self-check[
+    合上书或遮住下面，先自己写一个回答，再读后续。具体写：找出 $6x^2 + 9x$ 的公因式，把它提出来，写出提完后的式子，再往下读。
+  ]
+
+  两项系数有公因数 $3$，字母有公共的 $x$，所以公因式是 $3 x$：
 
   $ 6 x^2 + 9 x = 3 x (2 x + 3) $
 

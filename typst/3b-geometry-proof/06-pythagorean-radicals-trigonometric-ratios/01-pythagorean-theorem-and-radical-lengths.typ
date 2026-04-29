@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, lab, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 勾股定理与根号边长 <tool:ge04-pythagorean>
@@ -23,6 +23,10 @@
   再添一组 $a = 1$、$b = 1$：斜边 $approx 1.414$，$(1 + 1) times ? = 1.414$，倍数 $approx 0.707$。三组的"倍数"是 $0.714, 0.765, 0.707$——并不恒定。换"斜边 $= a + b - $ 某数"、"$= a^2 / b + $ 某数"……同样找不到一条全适用的公式。
 
   在加法、减法这一层翻来翻去都没结果。也许该问的是：把三条边*乘起来*，会不会出现固定关系？
+
+  #self-check[
+    合上书或遮住下面，先自己写一个回答，再读后续。具体写：针对 $(3, 4, 5)$，分别算出 $3^2$、$4^2$、$5^2$，再看它们之间有什么关系，写下你的猜想。
+  ]
 
   *一张拼图说明一切*
 
@@ -194,6 +198,22 @@
   ✗ 逆定理只用 $a^2 + b^2 >= c^2$ 这种弱条件 → ✓ 逆定理要*等号*：$a^2 + b^2 = c^2 <=>$ 直角。
 
   ✗ 答案停在 $sqrt(50)$ 不化简 → ✓ 写到最简：$sqrt(50) = 5 sqrt(2)$。
+]
+
+#side-hack[
+  *两条路对比：勾股定理 vs 相似比*
+
+  #table(
+    columns: (auto, 1fr, 1fr),
+    inset: 6pt,
+    stroke: 0.4pt,
+    [*情境*], [*方法 A：勾股定理 $a^2 + b^2 = c^2$*], [*方法 B：相似比*],
+    [何时更快], [图中有直角且给出两条边（或斜边与一直角边）：如已知直角边 $3, 4$，直接代入 $sqrt(9 + 16) = 5$，一步得第三边], [两三角形已被证明相似（如 $"AA"$ 或平行线截线段），给出对应边之一：利用 $frac(A D, A B) = frac(D E, B C)$ 列比例方程，步骤往往比勾股更少],
+    [典型陷阱], [斜边和直角边搞混：斜边 $c$ 是最长边满足 $c^2 = a^2 + b^2$（相加）；求直角边则是 $a = sqrt(c^2 - b^2)$（相减）——一个加、一个减，不能混], [对应边搞错：$triangle A B C tilde.op triangle D E F$ 意味着 $A B$ 对应 $D E$、$B C$ 对应 $E F$，写比例前先核对对应顶点的字母顺序],
+    [建议先用], [图中明确标有直角（$90 degree$ 或小方块）且给出两边长时，勾股定理最直接；判断直角三角形时也用逆定理], [图中有平行线或已知角相等（暗示相似）时，相似比往往步骤更少；两种方法都可用时，优先看哪种已知信息更完整],
+  )
+
+  *经验法则*：有直角 + 两边长 → 勾股；有已证明的相似三角形 + 一对对应边 → 相似比。两种方法有时都可行——哪种信息更直接就选哪种。
 ]
 
 #mastery[

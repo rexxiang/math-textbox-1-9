@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut
+#import "../../lib/theme-v2.typ": crisis, discovery, blueprint, mastery, history-note, side-hack, vocab, tryit, pitfall, secref, answer-cut, self-check
 #import "../../lib/diagram-packages.typ": cetz
 
 === 一元二次方程：配方法 → 求根公式 <tool:al05-quadratic-solving>
@@ -27,6 +27,10 @@
 
 #discovery[
   解 $x^2 - 5x + 6 = 0$：找两个数和为 $5$、积为 $6$——$2$ 和 $3$ 刚好；因式分解为 $(x-2)(x-3) = 0$，解是 $x = 2$ 或 $x = 3$，干净利落。再试 $x^2 + x - 7 = 0$：找两个整数和为 $1$、积为 $-7$——
+
+  #self-check[
+    合上书或遮住下面，先自己写一个回答，再读后续。具体写：和为 $1$、积为 $-7$——你能找到这样的整数对吗？写下你试过的几组数对，再往下读。
+  ]
 
   试着推下去——
 
@@ -257,6 +261,22 @@
   ✗ 套求根公式时漏掉 $b$ 的负号 → ✓ 对 $3 x^2 - 5 x + 1 = 0$，$b = -5$，分子是 $-(-5) = 5$。
 
   ✗ 看到 $Delta < 0$ 就写"$x = 0$" → ✓ 应写"在实数范围内无解"。
+]
+
+#side-hack[
+  *两条路对比：因式分解法 vs 求根公式*
+
+  #table(
+    columns: (auto, 1fr, 1fr),
+    inset: 6pt,
+    stroke: 0.4pt,
+    [*情境*], [*方法 A：因式分解*], [*方法 B：求根公式*],
+    [何时更快], [$Delta = b^2 - 4 a c$ 是完全平方（$0, 1, 4, 9, 25, dots$）且 $a = 1$：如 $x^2 - 5 x + 6 = 0$（$Delta = 1$），一眼认出 $(x - 2)(x - 3) = 0$], [$Delta$ 不是完全平方或 $a != 1$ 系数大（如 $3 x^2 - 7 x + 1 = 0$，$Delta = 37$）：整数根组合试不出，直接套 $x = frac(-b plus.minus sqrt(Delta), 2 a)$],
+    [典型陷阱], [在 $Delta$ 不是完全平方时仍苦寻整数因子，耗时过长——建议先算 $Delta$，若非完全平方立即放弃因式分解], [套公式时 $b$ 的符号：对 $3 x^2 - 5 x + 1 = 0$，$b = -5$，分子是 $-b = 5$ 不是 $-5$；另外分母是 $2 a = 6$ 不是 $2$],
+    [建议先用], [先算 $Delta$：若 $Delta$ 是完全平方且 $a = 1$，用因式分解；特例 $a x^2 + b x = 0$（无常数项）也用提公因式], [其余所有情况（$a != 1$、$Delta$ 非完全平方、系数含分数）直接套求根公式],
+  )
+
+  *经验法则*：先算 $Delta = b^2 - 4 a c$——若 $Delta in {0, 1, 4, 9, 16, 25, dots}$（完全平方）且 $a = 1$，优先因式分解；否则直接套求根公式一步得出结果。
 ]
 
 #mastery[
