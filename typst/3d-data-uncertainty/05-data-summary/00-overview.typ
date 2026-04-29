@@ -13,9 +13,13 @@
 
 #chapter-route[
 
-  + §1 *数据分支速查卡*：$12$ 个工具按“描述 / 压缩 / 不确定 / 推断”四层集中复核。
-  + §2 *混合自测*——每题都显式注明它用到了哪些知识链。答案与讲解放在本章回顾。
+  + §1 *数据分支知识地图*：从“整理数据”到“从样本估总体”这条主干怎么生长出来的，每个知识点都带着章节编号方便回查。
+  + §2 *数据分支速查卡*：$12$ 个工具按“描述 / 压缩 / 不确定 / 推断”四层集中复核。
+  + §3 *混合自测*——每题都显式注明它用到了哪些知识链。答案与讲解放在本章回顾。
+  + §4 数据学完后最常见的*误读*与对应的*哪里不会回哪里*——不重刷全章，精确回到某一节。
 ]
 
-#include "01-data-checklist.typ"
-#include "02-data-mixed-self-test.typ"
+#include "01-invention-tree-of-data.typ"
+#include "02-data-checklist.typ"
+#include "03-data-mixed-self-test.typ"
+#include "04-common-misreadings-and-repair-routes.typ"

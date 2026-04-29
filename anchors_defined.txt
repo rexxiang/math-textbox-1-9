@@ -46,6 +46,8 @@ meta:bridge-readiness-contracts-review
 meta:circles-and-inscribed-circumscribed
 meta:congruence-and-basic-criteria
 meta:coordinate-position-plane
+meta:cp-cross-branch-bridges
+meta:cp-four-branch-trees
 meta:cross-domain-problem-solving-modeling
 meta:cross-domain-problem-solving-modeling-review
 meta:data-checklist
@@ -56,8 +58,12 @@ meta:data-summary
 meta:decimals-units-estimation-measurement
 meta:direct-variation-linear-functions-slope
 meta:distributive-identities-factorization
+meta:dt-invention-tree
+meta:dt-repair-routes
 meta:equation-balance-inverse-operations
 meta:factors-multiples-prime-factorization
+meta:fn-invention-tree
+meta:fn-repair-routes
 meta:foundation-readiness-check
 meta:foundation-readiness-check-review
 meta:four-operations-structure
