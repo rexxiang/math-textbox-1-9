@@ -1,5 +1,25 @@
 # 工具依赖总表(SSOT,独立于源码布局)
 
+> **SSOT 角色说明**：
+> - 机器可读 canonical：`docs/knowledge-graph/book-graph.yaml`（被 `make kg-validate-book` 校验）；Typst 交叉引用由 `make validate-secrefs` 单独校验
+> - 本文件：人类阅读视图，按工具 slug 前缀展示工具依赖关系,不被校验脚本读取
+> - `book-graph.yaml` 的 `prerequisites` 只记录主线必备依赖，不包含 `☞ 高中桥` / `☞ 继续往前` 或挑战题、选做题中出现的延伸工具
+> - Typst label 使用 `<tool:pf01-...>` / `<ch:...>` / `<meta:...>`；`book-graph.yaml` node-id 使用不带 `tool:` 的 slug（如 `pf01-...`）。`#secref("pf01-...")` 是兼容简写，会按 `tool:` 解析；新写法优先用显式 `tool:`。
+> - 详见 `docs/SSOT-VERSION.md`
+>
+> **工具 slug 前缀**：
+>
+> | 前缀 | 含义 | 源码目录 |
+> |---|---|---|
+> | pf | public foundation | `typst/1-public-foundation/` |
+> | cb | common bridges | `typst/2-common-bridges/` |
+> | al | algebra & symbols | `typst/3a-algebra-symbols/` |
+> | ge | geometry & proof | `typst/3b-geometry-proof/` |
+> | fn | functions & change | `typst/3c-functions-change/` |
+> | dt | data & uncertainty | `typst/3d-data-uncertainty/` |
+>
+> **迁移边界**：下方 `a01-...` / `b01-...` 等域字母表格是重排规划用的人类视图，不是当前 Typst label，也不是当前 `book-graph.yaml` node-id。迁移真正落地前，机器校验与正文引用仍以 `pf` / `cb` / `al` / `ge` / `fn` / `dt` slug 为准。
+
 > **目的**:为"完全重新规划章节"提供事实依据。本文件把全书所有知识点摊平成一张表,**完全独立于 typst 源码章节号与文件名**——源码位置列仅用于溯源。
 >
 > **如何用它重排章节**:

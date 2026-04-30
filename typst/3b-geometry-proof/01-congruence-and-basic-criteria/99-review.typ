@@ -20,8 +20,19 @@
   )
 ]
 
+#blueprint[
+  *做题前你应该会*
+
+  - 会从 $triangle A B C tilde.eq triangle D E F$ 的字母顺序读出对应顶点、边、角。
+  - 会先清点条件，再决定是否能用 SSS 或 SAS，而不是看到“三个条件”就下结论。
+  - 会解释 AAA 只保证形状相同，不保证大小相同。
+  - 会把证明写成“已知条件 → 判定法 → 对应元素结论”的顺序。
+]
+
 #mastery[
   *混合自测*
+
+  _技能分层：1–2 题查对应关系和判定法，3–6 题查证明路线，跨章与挑战题查反例和书写。_
 
   + 若 $triangle A B C tilde.eq triangle D E F$，且 $angle A = 50 degree$、$angle C = 70 degree$、$A B = 6$，求 $angle E$ 与 $D E$。
   + 下列条件能否判定 $triangle A B C tilde.eq triangle D E F$？写出缩写或理由。
@@ -76,7 +87,9 @@
   （思路提示见末尾参考答案；先别看答案，自己尝试。）
 ]
 
-==== 参考答案
+#pagebreak()
+
+==== 参考答案（含关键步骤）
 
 + $angle E = angle B = 180 degree - 50 degree - 70 degree = 60 degree$；$D E = A B = 6$。
 + `SAS`（$angle B$ 是 $A B$、$B C$ 的夹角）；`SSS`（三边对应相等）；不行（AAA，只相似不全等）。
@@ -99,17 +112,21 @@
 + 在 $triangle A B M$ 与 $triangle A C M$ 中：$A B = A C$（已知）、$B M = C M$（$M$ 是 $B C$ 中点）、$A M = A M$（公共边）；由 SSS 得 $triangle A B M tilde.eq triangle A C M$。
 + 由全等得 $angle B = angle C$（对应角，即等腰三角形两底角相等）。又得 $angle A M B = angle A M C$（对应角）；由 $B$、$M$、$C$ 共线，$angle A M B + angle A M C = 180 degree$，所以 $angle A M B = angle A M C = 90 degree$，即 $A M perp B C$。整章工具：对应顶点 $+$ SSS $+$ 由全等读对应元素。
 
+查漏：若全等式字母顺序读错，回 #secref("tool:ge01-congruence-correspondence")；若 SSS / SAS 条件清点不稳，回 #secref("tool:ge01-sss-sas")；若证明顺序乱，回 #secref("tool:ge01-two-step-proof-chain")。
+
 #blueprint[
   *巩固复习*
 
-  - 回看 #secref("pf07-angles")：对顶角、邻补角、角的定义是很多证明里"免费条件"的来源。
-  - 回看 #secref("pf08-parallel-transversal")：内错角、同位角、同旁内角随时在证明里充当桥梁。
-  - 衔接 #secref("ch:advanced-criteria-and-proof-writing")：下一章补齐 ASA / AAS 判定法，并把证明写成"陈述 | 理由"的两栏格式。
-  - 衔接 #secref("ch:similarity-scale-parallel-line-geometry")：相似三角形把"完全重合"松动成"同形放缩"，但"先判定、再读对应"的骨架不变。
+  - 对顶角、邻补角和直角定义常常给证明送来“免费角”：需要找角条件时，先回看 #secref("tool:pf07-angles")。
+  - 平行线给同位角、内错角、同旁内角；这些旧角关系常被拿来凑 SAS 或后续 ASA。忘了就回看 #secref("tool:pf08-parallel-transversal")。
+  - 下一章会补齐 ASA / AAS，并把证明写成“陈述 | 理由”：本章的“先判定、再读对应”会延续到 #secref("ch:advanced-criteria-and-proof-writing")。
+  - 相似会把“完全重合”放宽成“同形放缩”，但仍要先确认对应关系：提前看看 #secref("ch:similarity-scale-parallel-line-geometry") 的入口。
 
   *☞ 高中桥*
 
   _以下是预告，现在看不懂完全正常 — 等到高中再回来。_
+
+  这只是向前看的预告，不作为后续主线先修。
 
   - 高中立体几何仍沿用"判定 + 对应"模式，只是把三角形全等换成空间中的刚性变换 / 平面全等。
   - 向量视角下，SSS / SAS 等价于"两向量相等 $arrow.l.r.double$ 长度、方向同"。
@@ -117,15 +134,14 @@
 ]
 
 #diagnostic-table(
-  [全等时对应顶点顺序搞错],
-  secref("ge01-congruence-correspondence"),
-  [$tilde.eq$ 两侧字母顺序就是对应关系；对应顶点对应边对应角，一写就定],
-
-  [SAS 和 SSA 分不清哪个能判全等],
-  secref("ge01-sss-sas"),
-  [SAS 要求是两边的夹角；非夹角的 SSA 存在反例，不能判全等],
-
-  [证明步骤不知从哪开始],
-  secref("ge01-two-step-proof-chain"),
-  [先写已知，找出三对对应元素（边或角），再核对判定法（SSS/SAS/ASA...）],
+  [全等式两侧字母顺序读错], secref("tool:ge01-congruence-correspondence"), [$triangle A B C tilde.eq triangle D E F$ 锁定 $A <-> D$、$B <-> E$、$C <-> F$；边角都按这个顺序读],
+  [只读出一条对应边，忘了全等会打包九条结论], secref("tool:ge01-congruence-correspondence"), [全等一旦成立，三对边和三对角都对应相等；但必须先确认对应顺序],
+  [把全等和相似混同，看到 AAA 就判全等], secref("tool:ge01-congruence-correspondence"), [AAA 只锁形状，不锁大小；全等要求形状和大小都一样],
+  [SSS 写了三条边相等，但顺序不是对应边], secref("tool:ge01-sss-sas"), [三边必须逐对对应；先写出两个三角形的对应顶点，再核对三条边],
+  [SAS 中的角不是两条已知边的夹角], secref("tool:ge01-sss-sas"), [SAS 的 A 必须夹在两条 S 之间；若角在其中一边对面，就变成 SSA，不能直接判全等],
+  [把 SSA 当成可用判定法], secref("tool:ge01-sss-sas"), [SSA 有二义性，可能画出两个不全等三角形；要补夹角、第三边或换路线],
+  [条件不足时硬写“所以全等”], secref("tool:ge01-two-step-proof-chain"), [先清点条件：少于可用判定法所需的三组对应条件，就继续找公共边、对顶角、平行线角等],
+  [证明书写先写结论，再倒回找理由], secref("tool:ge01-two-step-proof-chain"), [按“已知 / 可推出的相等 → 判定法 → 对应元素”顺序写，别把要证结论当已知],
+  [公共边、对顶角、邻补角这些“免费条件”漏用], secref("tool:pf07-angles"), [图中同一条边可写公共边；相交线给对顶角；平行线给同位角 / 内错角],
+  [用全等读结论时读错目标边角], secref("tool:ge01-congruence-correspondence"), [全等后再回到对应表，逐字母读出目标边或角，不要凭图形位置猜],
 )

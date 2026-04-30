@@ -7,6 +7,10 @@
 
 把这一部分当作一次毕业旅行：回顾过去，检验现在，展望未来。
 
+#side-hack[
+  *综合题工具映射*：跨域综合题会标注涉及工具。做错时，不要只重算一遍；先按工具映射反查对应小节，补上卡住的工具，再回到原题重做。
+]
+
 #table(
   columns: (auto, 1fr, auto, auto),
   align: (center, left, center, center),

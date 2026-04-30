@@ -18,7 +18,7 @@
 #discovery[
   *长度跟 $k$ 走；面积跟 $k^2$ 走*
 
-  设 $triangle A B C tilde triangle D E F$，相似比为 $k$（即 $D E = k dot A B$，余同）。那么：
+  设 $triangle D E F tilde triangle A B C$，相似比为 $k$（即 $D E = k dot A B$，余同）。那么：
 
   $ frac("周长"(triangle D E F), "周长"(triangle A B C)) = frac(D E + E F + F D, A B + B C + C A) = frac(k(A B + B C + C A), A B + B C + C A) = k. $
 

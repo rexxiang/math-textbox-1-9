@@ -36,6 +36,33 @@
 
   *本节默认约定*：以下直方图的*各档等宽*，纵轴可以直接写*频率*（$p_k$）也可以写*频率 / 组距*（$p_k / w$）。两者只差一个常数 $w$，形状完全一样。
 
+  #figure(
+    cetz.canvas(length: 0.45cm, {
+      import cetz.draw: *
+      line((-0.5, 0), (9.2, 0), stroke: 0.4pt, mark: (end: ">"))
+      line((0, -0.5), (0, 7.2), stroke: 0.4pt, mark: (end: ">"))
+      content((9.5, 0), text(size: 6pt)[树高/m], anchor: "west")
+      content((0, 7.6), text(size: 6pt)[频数], anchor: "south")
+      let freqs = (6, 12, 9, 3)
+      let bins = ($[2,4)$, $[4,6)$, $[6,8)$, $[8,10)$)
+      let scale = 0.45
+      for i in range(freqs.len()) {
+        let x1 = i * 2
+        let h = freqs.at(i) * scale
+        rect((x1, 0), (x1 + 2, h), fill: rgb("#E3F2FD"), stroke: 0.6pt + rgb("#1976D2"))
+        content((x1 + 1, h + 0.35), text(size: 6pt, fill: rgb("#1976D2"))[#freqs.at(i)], anchor: "south")
+        content((x1 + 1, -0.7), text(size: 5pt)[#bins.at(i)], anchor: "north")
+      }
+      for val in (0, 6, 12) {
+        let y = val * scale
+        line((-0.25, y), (0, y), stroke: 0.3pt)
+        content((-0.55, y), text(size: 5pt)[#val], anchor: "east")
+      }
+      content((4.0, 6.4), text(size: 6pt, fill: rgb("#C62828"))[柱宽相同时可直接比柱高], anchor: "center")
+    }),
+    caption: [等宽分组直方图：每个区间宽度都是 $2$ 米，柱高直接表示频数；柱宽相同时可直接比柱高。]
+  )
+
   *画出分数直方图*
 
   用上节表里的六档数据（$n = 50$，组距 $w = 10$）：

@@ -5,6 +5,8 @@
 #blueprint[
   *速查卡：12 条高中桥*
 
+  这只是向前看的预告，不作为后续主线先修。
+
   #table(
     columns: (auto, auto),
     inset: 6pt,

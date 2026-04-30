@@ -8,7 +8,7 @@
   *难度*：★★★★☆ \
   *核心问题*：当分母里也出现字母时，“有意义的前提”“约分的法则”“解方程后为什么要验根”这三件事，各该怎么说清楚？ \
   *需要先会*：#secref("pf04-fraction-equivalence")、#secref("pf04-fraction-arithmetic")、#secref("cb06-solving-linear")、#secref("al02-factorization-as-reverse")。 \
-  *本章在全书的位置*：代数分支第三章——把小学的分数四则正式升级为“分母含字母的分式”，并第一次引入“增根”。
+  *本章在全书的位置*：代数分支第三章——把小学的分数四则扩展为“分母含字母的分式”，并第一次引入“增根”。
 ]
 
 #chapter-route[

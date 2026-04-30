@@ -15,8 +15,19 @@
   )
 ]
 
+#blueprint[
+  *做题前你应该会*
+
+  - 会区分“两个平方根”与“算术平方根 $sqrt(a)$”。
+  - 会用 $sqrt(a^2)=|a|$ 处理正负号。
+  - 会把非完全平方数写成最简根号，并用相邻平方数估算位置。
+  - 会分清有理数、无理数、实数，以及它们在数轴上的位置。
+]
+
 #mastery[
   *混合自测*
+
+  _技能分层：1–3 题查平方根概念，4–7 题查化简与估算，后面的跨章与挑战题查数域判断。_
 
   + 求 $225$、$169$ 的两个平方根；写出各自的算术平方根。
   + 计算：$sqrt(81)$、$sqrt(0.04)$、$sqrt(16/25)$。
@@ -58,7 +69,7 @@
   + *估算 / 量级题*：不用计算器，估算 $sqrt(200)$ 的值精确到个位，并判断 $sqrt(200)$ 比 $14$ 大还是小。写出你的推理（提示：找最近的完全平方数）。
 ]
 
-==== 参考答案
+==== 参考答案（含关键步骤）
 
 + $plus.minus 15$，算术平方根 $15$；$plus.minus 13$，算术平方根 $13$。
 + $9$、$0.2$、$4/5$。
@@ -83,28 +94,27 @@
 #blueprint[
   *巩固复习*
 
-  - 回看 #secref("pf07-perimeter-area")、#secref("pf07-volume")：面积、体积问题一旦反解“边长”，就必然呼唤平方根。
-  - 回看 #secref("cb02-rational-numbers")：$QQ$ 的稠密性解释了“有理数铺得很密”，而无理数解释了“密不等于满”。
-  - 回看 #secref("pf04-fraction-equivalence")：既约分数的定义正是反证 $sqrt(2)$ 无理性的出发点。
+  - 面积 / 体积给了平方与立方，反过来求边长就需要平方根：面积公式不稳时回看 #secref("tool:pf07-perimeter-area")，体积直觉不稳时回看 #secref("tool:pf07-volume")。
+  - 有理数在数轴上很密，但仍没有填满；先回看 #secref("tool:cb02-rational-numbers")，再理解为什么 $sqrt(2)$ 要把 $QQ$ 扩成 $RR$。
+  - 反证 $sqrt(2)$ 无理会用到“既约分数”不能再同时约分；这和 #secref("tool:pf04-fraction-equivalence") 的等值分数工具相连。
 
   *☞ 高中桥*
 
   _以下是预告，现在看不懂完全正常 — 等到高中再回来。_
+
+  这只是向前看的预告，不作为后续主线先修。
 
   - 高中会正式处理 $n$ 次方根、有理指数和无理指数，并在实数完备性上讨论极限与连续。
   - 虚数 / 复数是 $RR$ 的下一次扩展，用来回答“$sqrt(-1)$ 在哪”这种问题。
 ]
 
 #diagnostic-table(
-  [算术平方根和"两个平方根"概念混淆],
-  secref("cb07-square-and-square-root"),
-  [$sqrt(a)$（$a >= 0$）约定非负；完整的两个平方根写 $plus.minus sqrt(a)$],
-
-  [不明白 $sqrt(a^2) = |a|$ 而非直接等于 $a$],
-  secref("cb07-square-and-square-root"),
-  [若 $a < 0$，$sqrt(a^2) = -a > 0$；绝对值保证结果非负],
-
-  [无理数概念模糊],
-  secref("cb07-irrational-numbers"),
-  [无法写成 $p/q$（$p, q$ 整数，$q != 0$）；十进制表示不终止且不循环],
+  [算术平方根和“两个平方根”概念混淆], secref("tool:cb07-square-and-square-root"), [$sqrt(a)$（$a >= 0$）约定非负；完整的两个平方根写 $plus.minus sqrt(a)$],
+  [把 $sqrt(a^2)$ 直接写成 $a$], secref("tool:cb07-square-and-square-root"), [正确是 $sqrt(a^2)=|a|$；若 $a<0$，平方后再开算术平方根会回到正距离],
+  [化简根号时没提出最大平方因子], secref("tool:cb07-square-and-square-root"), [先找被开方数中的完全平方因子，如 $72=36 times 2$，所以 $sqrt(72)=6sqrt(2)$],
+  [估算平方根时只靠小数感觉], secref("tool:cb07-real-number-line"), [找相邻完全平方数：若 $25<30<36$，就有 $5<sqrt(30)<6$],
+  [把所有无限小数都叫无理数], secref("tool:cb07-irrational-numbers"), [循环无限小数仍是有理数；无理数的十进制不终止且不循环],
+  [以为 $QQ$ 很密就等于铺满数轴], secref("tool:cb07-real-number-line"), [有理数很密，但仍有 $sqrt(2)$、$pi$ 这样的“洞”；实数 $RR$ 才对应整条数轴],
+  [解 $x^2=49$ 只写正根], secref("tool:cb07-square-and-square-root"), [平方会把正负两侧都送到同一个正数；方程解要写 $x=7$ 或 $x=-7$],
+  [两个无理数运算后得到有理数，就反推它们原来是有理数], secref("tool:cb07-irrational-numbers"), [反推不成立；例如 $sqrt(2) times sqrt(8)=4$，但两个因子仍是无理数],
 )

@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": blueprint, mastery, secref
+#import "../../lib/chapter-kit.typ": blueprint, mastery, secref, diagnostic-table
 
 == 本章回顾 <meta:distributive-identities-factorization>
 
@@ -23,8 +23,19 @@
   )
 ]
 
+#blueprint[
+  *做题前你应该会*
+
+  - 会把分配律正用为展开，反用为提公因式。
+  - 会识别平方差与完全平方，并检查中间项符号。
+  - 会用“和为 $b$、积为 $c$”分解简单 $x^2 + b x + c$。
+  - 会按“先提公因式 → 再看公式 → 不能再分才停”的流程检查答案。
+]
+
 #mastery[
   *混合自测*
+
+  _技能分层：1–3 题查展开与公式，4–7 题查因式分解流程，后面的方程、跨章与找错题查迁移。_
 
   + 乘开 $-4(a - 3 b + 2)$。
   + 提公因式 $12 x^3 - 18 x^2 + 6 x$。
@@ -45,7 +56,7 @@
   + 一件商品先涨价 $20%$，再打 $8$ 折出售（回顾 #secref("cb01-percent") 百分数计算）。设原价为 $P$，用分配律（本章 #secref("al02-distributive-rewrite")）把两次价格变动合并为一个折扣系数，写出最终售价的代数式并化简，再说明相对原价是涨还是降，幅度多少。
 ]
 
-==== 参考答案
+==== 参考答案（含关键步骤）
 
 + $-4 a + 12 b - 8$。
 + $6 x (2 x^2 - 3 x + 1) = 6 x(2 x - 1)(x - 1)$（最后一步由两数匹配得到）。
@@ -65,16 +76,29 @@
 #blueprint[
   *巩固复习*
 
-  - 回看 #secref("pf02-order-laws")：分配律一条规则，正用、反用都是它。
-  - 回看 #secref("pf03-gcd-lcm")：提公因式时，“数字取 GCD”就是小学最大公因数的再用。
-  - 回看 #secref("al01-multiply-polynomials")：本章的所有公式都是该节乘法展开的“高频结果”。
-  - 衔接 #secref("ch:rational-expressions-operations-extraneous-roots")：下一章所有约分、通分都依赖“能不能把分子分母再因式分解”。
-  - 衔接 #secref("ch:polynomials-like-terms-operations")：那里的乘法是“源”，这里的因式分解是“逆运算”。
+  - 分配律正用是展开，反用是提公因式；如果“为什么能反用”说不清，回看 #secref("tool:pf02-order-laws")。
+  - 提公因式时数字取 GCD，这正是 #secref("tool:pf03-gcd-lcm") 的旧工具；字母部分则取共同出现的最低指数。
+  - 平方差、完全平方都不是新公式凭空来，而是整式乘法的高频结果；回看 #secref("tool:al01-multiply-polynomials") 可以重新乘开验证。
+  - 下一章分式约分、通分会先问“分子分母能不能分解”：这是 #secref("ch:rational-expressions-operations-extraneous-roots") 的入口。
+  - 本章是 #secref("ch:polynomials-like-terms-operations") 的逆向训练：那里学会乘开，这里学会合回乘积。
 
   *☞ 高中桥*
+
+  这只是向前看的预告，不作为后续主线先修。
 
   _以下是预告，现在看不懂完全正常 — 等到高中再回来。_
 
   - 高中会继续做一元二次方程的求根公式、判别式、韦达定理——本章“两数和为 $b$、积为 $c$”正是韦达定理的雏形。
   - 把因式分解推广到“配方法”：$a x^2 + b x + c = a(x - h)^2 + k$，这也是二次函数图象的顶点式的代数入口。
 ]
+
+#diagnostic-table(
+  [展开和因式分解方向混乱], secref("tool:al02-distributive-rewrite"), [展开把乘法拆成加减项；因式分解把加减项合成乘积。先判断题目要“乘开”还是“合起来”],
+  [提公因式只提了一部分就停], secref("tool:al02-factorization-as-reverse"), [数字取 GCD，字母取共同出现的最低指数；提完后检查括号里还能不能继续提],
+  [平方差公式把中间项凭空写出来], secref("tool:al02-special-identities"), [平方差只有两项：$a^2-b^2=(a+b)(a-b)$；出现中间项时先考虑完全平方或其他方法],
+  [完全平方中间项符号或系数错], secref("tool:al02-special-identities"), [首末开平方，中间项必须是 $plus.minus 2 a b$；符号由中间项决定],
+  [$x^2 + b x + c$ 分解时只看积，不看和], secref("tool:al02-factorization-as-reverse"), [找两个数 $p,q$ 同时满足 $p+q=b$、$p q=c$，缺一不可],
+  [因式分解流程跳过“先提公因式”], secref("tool:al02-factorization-as-reverse"), [先提公因式会让公式更明显；否则容易漏掉外层因子或答案不彻底],
+  [用因式分解解方程时只令一个括号为 $0$], secref("tool:al02-factorization-as-reverse"), [乘积为 $0$ 意味着至少一个因式为 $0$；每个一次因式都要给出一个候选根并检验],
+  [跨章百分数题只算数值，不写出代数折扣系数], secref("tool:cb01-percent"), [先设原价 $P$，把涨跌写成 $P times 1.2 times 0.8$，再化简为 $0.96 P$],
+)

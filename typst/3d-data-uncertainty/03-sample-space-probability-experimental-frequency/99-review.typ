@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": blueprint, mastery, side-hack, secref
+#import "../../lib/chapter-kit.typ": blueprint, mastery, side-hack, secref, diagnostic-table
 
 == 本章回顾 <meta:sample-space-probability-experimental-frequency>
 
@@ -23,8 +23,19 @@
   )
 ]
 
+#blueprint[
+  *做题前你应该会*
+
+  - 会把所有等可能结果列成样本空间，并把事件看成其中的一部分。
+  - 会用 $P(A)=|A|/|Omega|$ 计算古典概率，并检查等可能前提。
+  - 会用对立事件处理“至少一次 / 不是……”这类问题。
+  - 会区分理论概率与实验频率，知道小样本会波动。
+]
+
 #mastery[
   *混合自测*
+
+  _技能分层：1–3 题查样本空间与古典概率，4–6 题查计数和对立事件，后面的判断、跨章与构造题查迁移。_
 
   + 抛 $3$ 枚硬币。
     - (a) 写出样本空间。
@@ -58,7 +69,7 @@
 
 #pagebreak()
 
-=== 参考答案 <meta:sample-space-probability-experimental-frequency-answers>
+=== 参考答案（含关键步骤） <meta:sample-space-probability-experimental-frequency-answers>
 
 #mastery[
   + (a) $|Omega| = 8$：$H H H, H H T, H T H, H T T, T H H, T H T, T T H, T T T$。(b) 恰 $1$ 次 $= \{H T T, T H T, T T H\} = 3 / 8$；至少 $1$ 次正面 $= 1 - P("全反") = 1 - 1 / 8 = 7 / 8$；$3$ 次都一样 $= \{H H H, T T T\} = 2 / 8 = 1 / 4$。【工具：$P = |A| / |Omega|$；对立事件 $P(A^c) = 1 - P(A)$】
@@ -77,10 +88,10 @@
 #blueprint[
   *巩固复习*
 
-  - #secref("cb01-ratio-basics")、#secref("cb01-percent")：概率本质上是 $[0, 1]$ 的比例——用分数、小数、百分比都能写。
-  - #secref("dt04-frequency-distributions")：本章的“相对频率”就是上章“频率”在重复试验中的应用。
-  - #secref("dt01-organizing-data")、#secref("dt02-charts-and-readings")：模拟结果的可视化可以画成频率 / 直方图。
-  - 下一章预告：从“知道真实概率后推理”转向“不知道真实比例、用样本估计总体”——本章的大数定律是抽样理论的直接基石。
+  - 概率是 $[0,1]$ 内的比例：能写成分数、小数、百分数。若互化不稳，回看 #secref("tool:cb01-ratio-basics") 与 #secref("tool:cb01-percent")。
+  - 相对频率就是重复试验中的“频率列”；上章 #secref("tool:dt04-frequency-distributions") 处理的是数据分组，本章把同一思想用于随机试验。
+  - 模拟结果也要可视化：先整理数据、再选择合适图表。需要时回看 #secref("tool:dt01-organizing-data") 与 #secref("tool:dt02-charts-and-readings")。
+  - 下一章会从“已知概率”转向“用样本估计总体比例”；本章的大数定律直觉就是那个入口。
 ]
 
 #side-hack[
@@ -88,9 +99,22 @@
 
   _以下是预告，现在看不懂完全正常 — 等到高中再回来。_
 
+  这只是向前看的预告，不作为后续主线先修。
+
   - *条件概率* $P(B | A) = P(A inter B) \/ P(A)$：在“已知 $A$ 发生”的前提下 $B$ 的概率。本章刻意不碰——高中概率统计必修。
   - *独立事件*：若 $P(A inter B) = P(A) times P(B)$，两事件独立。投两枚硬币的各次投掷就是独立事件的最简例。
   - *贝叶斯公式*：条件概率的反向公式——“从证据反推原因概率”。高中选修 / 大学统计必修。
   - *几何概率*：当样本空间是连续的（如在一条线段上随便取一个点），$P(A)$ 换成“长度比”或“面积比”。本章默认有限样本空间。
   - *随机变量 & 期望*：把“事件”抽象成随机变量 $X$；$E(X) = sum x_i P(X = x_i)$ 是概率在代数层面的升级版。
 ]
+
+#diagnostic-table(
+  [样本空间漏结果或重复结果], secref("tool:dt07-sample-spaces"), [先规定试验步骤，再系统列出所有等可能样本点；树状图适合多步试验],
+  [有序 / 无序没分清，导致总数翻倍或少算], secref("tool:dt07-sample-spaces"), [题目说“有序抽两张”就把 $(1,2)$ 与 $(2,1)$ 分开；无序才合并],
+  [用 $P(A)=|A|/|Omega|$ 时没检查等可能], secref("tool:dt08-probability-language"), [古典概率要求有限且等可能；若颜色球数量不同，样本点应按每一颗球而不是每种颜色来数],
+  [“至少一次”类题直接硬数，容易漏], secref("tool:dt08-probability-language"), [优先数对立事件：$P("至少一次") = 1 - P("一次都没有")$],
+  [互斥事件和重叠事件混淆，直接把概率相加], secref("tool:dt08-probability-language"), [互斥才可直接相加；若事件重叠，要意识到共同部分会被重复计算],
+  [把实验频率当成每次试验必然结果], secref("tool:dt09-experimental-frequency"), [频率会随机波动；样本越大，长期频率通常越接近真实概率],
+  [连续出现正面后以为下一次反面概率会变大], secref("tool:dt09-experimental-frequency"), [这是赌徒谬误；公平硬币每次试验的正反概率仍由同一模型决定],
+  [概率、比、百分数互化不稳], secref("tool:cb01-percent"), [概率是 $0$ 到 $1$ 的比例；$3/6=1/2=50%$，理论次数可用总次数乘概率估算],
+)

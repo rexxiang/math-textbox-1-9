@@ -93,6 +93,59 @@
     }),
     caption: [$Q(3, -4)$ 沿 $x$ 轴翻折得 $Q'(3, 4)$：横坐标不变，纵坐标变号],
   )
+
+  三角形也逐点平移：每个顶点都做同一个坐标变化，整块图形就“搬家”。
+
+  #figure(
+    cetz.canvas(length: 0.55cm, {
+      import cetz.draw: *
+      // Axes and light grid
+      for i in range(-3, 5) {
+        line((i, -1), (i, 5), stroke: 0.15pt + rgb("#E0E0E0"))
+      }
+      for j in range(-1, 6) {
+        line((-3, j), (4, j), stroke: 0.15pt + rgb("#E0E0E0"))
+      }
+      line((-3.2, 0), (4.3, 0), stroke: 0.45pt + rgb("#333"), mark: (end: ">"))
+      line((0, -1.2), (0, 5.3), stroke: 0.45pt + rgb("#333"), mark: (end: ">"))
+      content((4.45, 0), $x$, anchor: "west")
+      content((0, 5.45), $y$, anchor: "south")
+      for i in range(-3, 5) {
+        if i != 0 {
+          content((i, -0.35), text(size: 5pt)[#str(i)], anchor: "north")
+        }
+      }
+      for j in range(1, 6) {
+        content((-0.25, j), text(size: 5pt)[#str(j)], anchor: "east")
+      }
+      let A = (-2, 2)
+      let B = (0, 2)
+      let C = (-1, 4)
+      let Ap = (1, 0)
+      let Bp = (3, 0)
+      let Cp = (2, 2)
+      line(A, B, C, close: true, stroke: (paint: rgb("#1565C0"), thickness: 0.8pt, dash: "dashed"))
+      line(Ap, Bp, Cp, close: true, stroke: 0.9pt + rgb("#C62828"))
+      for pair in ((A, Ap), (B, Bp), (C, Cp)) {
+        line(pair.at(0), pair.at(1), stroke: 0.55pt + rgb("#E65100"), mark: (end: ">"))
+      }
+      for item in (
+        (A, [$A(-2,2)$], "north-east", rgb("#1565C0")),
+        (B, [$B(0,2)$], "south", rgb("#1565C0")),
+        (C, [$C(-1,4)$], "south", rgb("#1565C0")),
+        (Ap, [$A'(1,0)$], "north", rgb("#C62828")),
+        (Bp, [$B'(3,0)$], "north", rgb("#C62828")),
+        (Cp, [$C'(2,2)$], "west", rgb("#C62828")),
+      ) {
+        let p = item.at(0)
+        let clr = item.at(3)
+        circle(p, radius: 0.07, fill: clr)
+        content(p, text(size: 5.5pt, fill: clr)[#item.at(1)], anchor: item.at(2), padding: 2pt)
+      }
+      content((1.2, 3.6), text(size: 7pt, fill: rgb("#E65100"))[$(x,y) -> (x+3, y-2)$], anchor: "west")
+    }),
+    caption: [三角形的 before-after 平移：每个顶点都按 $(x,y) -> (x+3,y-2)$ 变化，得到红色像三角形。],
+  )
 ]
 
 #side-hack[

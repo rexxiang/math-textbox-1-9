@@ -19,6 +19,10 @@
   + §4 *完整答卷示范*：3 道题，把*草稿 / 正式书写 / 回检*三栏分开——这是自学者最该模仿的一项工作流。
 ]
 
+#side-hack[
+  *如何反查工具*：综合题尾的 `// tools:` 标记不是答案的一部分，而是一张小索引。做完题后如果某一步卡住，可以沿着这些工具名回到对应章节查漏；先独立尝试，再用它反查。
+]
+
 #include "01-strategy-toolbox.typ"
 #include "02-multi-step-modeling.typ"
 #include "03-geometry-algebra-data-mix.typ"

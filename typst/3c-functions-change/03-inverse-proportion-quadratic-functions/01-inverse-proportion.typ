@@ -69,37 +69,47 @@
   - $x$ 越接近 $0$，$|y|$ 越大（趋于无穷）；$|x|$ 越大，$|y|$ 越接近 $0$。
   - $x$ 与 $y$ 每行乘起来都是 $12$——这是反比例的*本质*。
 
-  *图*（$k > 0$）：
+  *图*（以 $y = 1 / x$ 为例，$k > 0$）：
 
   #figure(
     cetz.canvas(length: 0.5cm, {
       import cetz.draw: *
-      line((-5, 0), (5, 0), stroke: 0.4pt, mark: (end: ">"))
-      line((0, -5), (0, 5), stroke: 0.4pt, mark: (end: ">"))
+      line((-5, 0), (5, 0), stroke: (paint: rgb("#555"), thickness: 0.55pt, dash: "dashed"), mark: (end: ">"))
+      line((0, -5), (0, 5), stroke: (paint: rgb("#555"), thickness: 0.55pt, dash: "dashed"), mark: (end: ">"))
       content((5.2, 0), $x$, anchor: "west")
       content((0, 5.3), $y$, anchor: "south")
-      // branch I: y = 2/x for x in [0.5, 5]
-      let samples1 = range(0, 45).map(i => {
-        let x = 0.5 + 0.1 * i
-        (x, 2.0 / x)
+      content((3.4, -0.5), text(size: 6pt, fill: rgb("#555"))[渐近线 $y = 0$], anchor: "north")
+      content((0.35, 4.2), text(size: 6pt, fill: rgb("#555"))[渐近线 $x = 0$], anchor: "west")
+      content((0.35, -4.3), text(size: 6pt, fill: rgb("#C62828"))[$x = 0$ 不能取], anchor: "west")
+      // branch I: y = 1/x for x in [0.25, 5]
+      let samples1 = range(0, 96).map(i => {
+        let x = 0.25 + 0.05 * i
+        (x, 1.0 / x)
       })
       for i in range(0, samples1.len() - 1) {
         line(samples1.at(i), samples1.at(i + 1), stroke: 0.7pt + rgb("#1976D2"))
       }
-      // branch III: y = 2/x for x in [-5, -0.5]
-      let samples2 = range(0, 45).map(i => {
-        let x = -5 + 0.1 * i
-        (x, 2.0 / x)
+      // branch III: y = 1/x for x in [-5, -0.25]
+      let samples2 = range(0, 96).map(i => {
+        let x = -5 + 0.05 * i
+        (x, 1.0 / x)
       })
       for i in range(0, samples2.len() - 1) {
         line(samples2.at(i), samples2.at(i + 1), stroke: 0.7pt + rgb("#1976D2"))
       }
-      content((3.5, 1.3), text(7pt)[$y = k / x$, $k > 0$])
+      for pt in ((1, 1), (2, 0.5), (0.5, 2), (-1, -1), (-2, -0.5), (-0.5, -2)) {
+        circle(pt, radius: 0.11, fill: rgb("#C62828"), stroke: 0.5pt + rgb("#7F0000"))
+      }
+      content((1.1, 1.25), text(size: 6pt, fill: rgb("#C62828"))[$(1,1)$], anchor: "south-west")
+      content((2.1, 0.8), text(size: 6pt, fill: rgb("#C62828"))[$(2,1/2)$], anchor: "south-west")
+      content((-1.1, -1.25), text(size: 6pt, fill: rgb("#C62828"))[$(-1,-1)$], anchor: "north-east")
+      content((-2.1, -0.8), text(size: 6pt, fill: rgb("#C62828"))[$(-2,-1/2)$], anchor: "north-east")
+      content((3.0, 2.0), text(7pt)[$y = 1 / x$], anchor: "west")
     }),
-    caption: [反比例函数（$k > 0$）的图像：两支*双曲线*分别位于第一、第三象限，不相交、不穿过坐标轴。]
+    caption: [$y = 1 / x$ 的图像：两支双曲线在第一、第三象限；坐标轴是渐近线，点会越来越靠近它们，但不会经过 $x = 0$。]
   )
 
-  图像有*两支*，分别位于第一、三象限（$k > 0$）或第二、四象限（$k < 0$）。每支都靠近 $x$ 轴和 $y$ 轴但*永不相交*——这两条轴叫*渐近线*。
+  图像有*两支*，分别位于第一、三象限（$k > 0$）或第二、四象限（$k < 0$）。每支都靠近 $x$ 轴和 $y$ 轴但*永不相交*——这两条轴叫*渐近线*；特别是 $x = 0$ 会让分母为 $0$，所以图像不能穿过 $y$ 轴。
 
   #figure(
     cetz.canvas(length: 0.5cm, {

@@ -10,8 +10,9 @@ validate_book_graph.py — 验证 book-graph.yaml 语义知识图谱
   2. part-id、chapter-id、node-id 唯一性
   3. node.type 必填，限于 knowledge-point | chapter-meta | optional-bridge
   4. node.chapter 必填，且必须引用已存在的 chapter-id
-  5. 每个 prerequisite 引用已存在的 node-id 或 chapter-id
-  6. node prerequisites 无环（Kahn 算法）
+  5. chapter prerequisites 引用已存在的 chapter-id
+  6. node prerequisites / dependencies 引用已存在的 node-id
+  7. node prerequisites / dependencies 无环（Kahn 算法）
 
 无外部依赖（纯标准库）。
 
@@ -24,6 +25,7 @@ from collections import defaultdict, deque
 
 REQUIRED_TOP_KEYS = {"meta", "parts", "chapters", "nodes"}
 VALID_NODE_TYPES = {"knowledge-point", "chapter-meta", "optional-bridge"}
+NODE_DEPENDENCY_FIELDS = ("prerequisites", "dependencies")
 
 # ── 最小 YAML 解析器 ────────────────────────────────────────────────────────
 
@@ -199,6 +201,14 @@ def load_yaml(path: str) -> dict:
 # ── 检查函数 ───────────────────────────────────────────────────────────────
 
 
+def _as_list(value) -> list:
+    if value is None:
+        return []
+    if isinstance(value, list):
+        return value
+    return [value]
+
+
 def check_top_level_keys(data: dict) -> list[str]:
     errors: list[str] = []
     missing = REQUIRED_TOP_KEYS - data.keys()
@@ -255,14 +265,29 @@ def check_chapter_ids(chapters: list, part_ids: set[str]) -> tuple[list[str], se
     return errors, ids
 
 
+def check_chapter_prereq_refs(chapters: list, chapter_ids: set[str]) -> list[str]:
+    errors: list[str] = []
+    for i, ch in enumerate(chapters):
+        if not isinstance(ch, dict):
+            continue
+        cid = ch.get("id") or f"chapters[{i}]"
+        for ref in _as_list(ch.get("prerequisites")):
+            if ref not in chapter_ids:
+                errors.append(
+                    f"[MISSING_REF] chapter '{cid}' 的 prerequisite '{ref}' "
+                    "不是已知 chapter-id"
+                )
+    return errors
+
+
 def check_nodes(
     nodes: list, chapter_ids: set[str]
 ) -> tuple[list[str], set[str], dict[str, list[str]]]:
-    """Returns (errors, node_id_set, prereq_map)"""
+    """Returns (errors, node_id_set, dependency_map)."""
     errors: list[str] = []
     seen: set[str] = set()
     ids: set[str] = set()
-    prereq_map: dict[str, list[str]] = {}
+    dependency_map: dict[str, list[str]] = {}
 
     for i, node in enumerate(nodes):
         if not isinstance(node, dict):
@@ -297,41 +322,49 @@ def check_nodes(
                 f"[MISSING_REF] node '{nid}' 的 chapter '{ch_ref}' 不存在"
             )
 
-        prereqs = node.get("prerequisites") or []
-        if not isinstance(prereqs, list):
-            prereqs = [prereqs]
-        prereq_map[nid] = prereqs
+        dependencies: list[str] = []
+        for field in NODE_DEPENDENCY_FIELDS:
+            for ref in _as_list(node.get(field)):
+                if not isinstance(ref, str) or not ref:
+                    errors.append(
+                        f"[INVALID] node '{nid}' 的 {field} 含非空字符串以外的值: {ref!r}"
+                    )
+                    continue
+                if ref == nid:
+                    errors.append(
+                        f"[SELF_DEP] node '{nid}' 的 {field} 不能引用自身"
+                    )
+                dependencies.append(ref)
+        dependency_map[nid] = dependencies
 
-    return errors, ids, prereq_map
+    return errors, ids, dependency_map
 
 
-def check_prereq_refs(
-    prereq_map: dict[str, list[str]],
+def check_node_dependency_refs(
+    dependency_map: dict[str, list[str]],
     node_ids: set[str],
-    chapter_ids: set[str],
 ) -> list[str]:
     errors: list[str] = []
-    valid_refs = node_ids | chapter_ids
-    for nid, prereqs in prereq_map.items():
-        for ref in prereqs:
-            if ref not in valid_refs:
+    for nid, refs in dependency_map.items():
+        for ref in refs:
+            if ref not in node_ids:
                 errors.append(
-                    f"[MISSING_REF] node '{nid}' 的 prerequisite '{ref}' "
-                    "既不是已知 node-id 也不是已知 chapter-id"
+                    f"[MISSING_REF] node '{nid}' 的 dependency/prerequisite '{ref}' "
+                    "不是已知 node-id"
                 )
     return errors
 
 
 def check_cycles(
-    node_ids: set[str], prereq_map: dict[str, list[str]]
+    node_ids: set[str], dependency_map: dict[str, list[str]]
 ) -> list[str]:
-    """Kahn's algorithm — only considers node→node edges (chapter refs are leaves)."""
+    """Kahn's algorithm over node→node dependency edges."""
     in_degree: dict[str, int] = {nid: 0 for nid in node_ids}
     dependents: dict[str, list[str]] = defaultdict(list)
 
-    for nid, prereqs in prereq_map.items():
+    for nid, refs in dependency_map.items():
         seen_in_node: set[str] = set()
-        for ref in prereqs:
+        for ref in refs:
             if ref in node_ids and ref not in seen_in_node:
                 seen_in_node.add(ref)
                 in_degree[nid] += 1
@@ -350,7 +383,7 @@ def check_cycles(
     cycle_nodes = [nid for nid, deg in in_degree.items() if deg > 0]
     if cycle_nodes:
         return [
-            f"[CYCLE] prerequisites 中存在环，涉及 {len(cycle_nodes)} 个节点: "
+            f"[CYCLE] node prerequisites/dependencies 中存在环，涉及 {len(cycle_nodes)} 个节点: "
             + ", ".join(sorted(cycle_nodes))
         ]
     return []
@@ -387,16 +420,17 @@ def main() -> None:
     # 3. Chapter IDs
     ch_errs, chapter_ids = check_chapter_ids(chapters, part_ids)
     all_errors.extend(ch_errs)
+    all_errors.extend(check_chapter_prereq_refs(chapters, chapter_ids))
 
     # 4. Node IDs, types, chapter refs
-    node_errs, node_ids, prereq_map = check_nodes(nodes, chapter_ids)
+    node_errs, node_ids, dependency_map = check_nodes(nodes, chapter_ids)
     all_errors.extend(node_errs)
 
-    # 5. Prerequisite references
-    all_errors.extend(check_prereq_refs(prereq_map, node_ids, chapter_ids))
+    # 5. Node-level prerequisite/dependency references
+    all_errors.extend(check_node_dependency_refs(dependency_map, node_ids))
 
-    # 6. Cycle detection
-    all_errors.extend(check_cycles(node_ids, prereq_map))
+    # 6. Node-level cycle detection
+    all_errors.extend(check_cycles(node_ids, dependency_map))
 
     _report(all_errors, parts=parts, chapters=chapters, nodes=nodes)
 
@@ -417,7 +451,7 @@ def _report(
         f"[validate_book_graph] ✓ 通过 — "
         f"{len(parts or [])} 个 part, "
         f"{len(chapters or [])} 个 chapter, "
-        f"{len(nodes or [])} 个 node，无重复，无缺失引用，无环",
+        f"{len(nodes or [])} 个 node，无重复，无缺失引用，node 依赖无环",
         file=sys.stderr,
     )
     sys.exit(0)

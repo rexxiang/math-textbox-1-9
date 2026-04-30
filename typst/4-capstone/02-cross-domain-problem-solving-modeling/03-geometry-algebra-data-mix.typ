@@ -4,6 +4,7 @@
 
 本节给 4 道*已解案例*，每道题标出“使用哪些分支工具”以及“为何该用它们”。
 
+// tools: ge04-special-right-triangles, ge04-pythagorean, cb05-letters-represent-numbers, cb07-square-and-square-root
 #blueprint[
   *案例 A：几何 $+$ 代数 —— 三角比结合方程*
 
@@ -19,6 +20,7 @@
   *使用知识链*：#secref("ge04-special-right-triangles") $->$ #secref("ge04-pythagorean") $->$ #secref("al05-quadratic-solving")（仅开方一步）$->$ #secref("cb07-square-and-square-root")。
 ]
 
+// tools: fn11-model-choice, fn05-linear-function, al05-linear-inequalities, dt02-charts-and-readings
 #blueprint[
   *案例 B：函数 $+$ 数据 —— 模型选择与比较*
 

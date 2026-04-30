@@ -20,8 +20,19 @@
   )
 ]
 
+#blueprint[
+  *做题前你应该会*
+
+  - 会读出单项式的系数、次数，以及多项式的项数和次数。
+  - 会用“字母种类和每个指数都相同”判断同类项。
+  - 会处理去括号，尤其是括号前的负号。
+  - 会把整式乘法看成“每一项都要握手一次”，再合并同类项。
+]
+
 #mastery[
   *混合自测*
+
+  _技能分层：1–2 题查项、次数、系数，3–5 题查加减去括号，6–9 题查乘法展开，后面的跨章题查迁移。_
 
   + 写出 $-(2/5) a^3 b^2$ 的系数与次数。
   + $7 u^3 - 2 u^2 v + u v - 6$ 的项数与次数分别是多少？
@@ -70,7 +81,7 @@
 
 ]
 
-==== 参考答案
+==== 参考答案（含关键步骤）
 
 + 系数 $-2/5$；次数 $3 + 2 = 5$。
 + 四项；次数 $3$。
@@ -95,29 +106,28 @@
 #blueprint[
   *巩固复习*
 
-  - 回看 #secref("pf02-order-laws")：分配律是所有整式乘法的根。
-  - 回看 #secref("cb05-expressions-and-like-terms")：前面给“项/同类项”搭好了骨架，本章只是把骨架压实。
-  - 回看 #secref("cb06-equality-properties")：当整式出现在方程里，两边同时整理必须守住等式平衡。
-  - 衔接 #secref("ch:distributive-identities-factorization")：本章的乘法展开正是下一章“公式 $+$ 因式分解”的原料。
+  - 分配律是整式乘法的根：每一项乘每一项，本质上还是 #secref("tool:pf02-order-laws") 里的分配律。
+  - 代数式里“项 / 同类项”的骨架来自共通桥梁；若合并同类项不稳，先回看 #secref("tool:cb05-expressions-and-like-terms")。
+  - 整式进入方程后，两边整理必须保持平衡；这会反复调用 #secref("tool:cb06-equality-properties")。
+  - 下一章的乘法公式和因式分解都以本章展开为原料；衔接 #secref("ch:distributive-identities-factorization") 前，请先能完整展开并合并。
 
   *☞ 高中桥*
 
   _以下是预告，现在看不懂完全正常 — 等到高中再回来。_
+
+  这只是向前看的预告，不作为后续主线先修。
 
   - 把整式加减乘法迁移到“多项式函数 $f(x)$”之上——一个多项式被当作一个函数来看，本章的展开就是 $f(x) dot g(x)$ 的对应运算。
   - 多项式除法、综合除法、多项式恒等定理，都以本章“项的拼装”为前置。
 ]
 
 #diagnostic-table(
-  [哪些是同类项分不清],
-  secref("al01-like-terms-and-combine"),
-  [字母种类和每个字母的指数都要相同；系数大小不影响是否同类],
-
-  [去括号前面有减号时漏变号],
-  secref("al01-add-subtract-polynomials"),
-  [括号前 $-$ 号时，括号内每一项符号都要取反（不只是第一项）],
-
-  [多项式乘法漏掉某些项],
-  secref("al01-multiply-polynomials"),
-  [前括号每项都要乘后括号每项；可用"表格法"列清楚所有乘积],
+  [单项式系数漏掉负号或分数], secref("tool:al01-monomials-coefficient-degree"), [系数是字母因子前的整个数，包括负号和分数；次数只数所有字母指数之和],
+  [多项式次数误加所有项的次数], secref("tool:al01-polynomials-and-degree"), [多项式次数取各项次数的最大值，不是求和；项数则看有几项],
+  [把次数相同的项都当同类项], secref("tool:al01-like-terms-and-combine"), [同类项要求字母种类和每个字母指数都相同；次数相同只是必要条件，不够],
+  [括号前有负号时只改第一项], secref("tool:al01-add-subtract-polynomials"), [减去一个括号等于加上它的相反式；括号内每一项都要变号],
+  [相同底数相乘时把指数相乘], secref("tool:al01-multiply-polynomials"), [$x^m dot x^n = x^(m+n)$；指数相加来自“因子个数”相加],
+  [单项式相乘时系数符号和字母指数分别处理混乱], secref("tool:al01-multiply-polynomials"), [先乘系数并确定正负，再按同底数幂法则合并字母],
+  [多项式乘法漏乘某一项], secref("tool:al01-multiply-polynomials"), [前括号每项都要乘后括号每项；用表格法或“握手法”检查项数],
+  [代入负数时忘记平方括号], secref("tool:cb03-rational-multiplication-division"), [把 $a=-2$ 代入 $a^2$ 时写成 $(-2)^2$；负号是否被平方要看括号],
 )

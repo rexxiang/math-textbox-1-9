@@ -8,6 +8,7 @@
 - *正式栏*：你给阅卷老师（或未来的自己）看的那一份，结构清楚、步骤可复现。
 - *回检栏*：交卷前最后 $2$ 分钟检查。
 
+// tools: al04-modeling-word-problems, cb06-equation-as-balance, pf02-add-subtract-undo
 #blueprint[
   *示范题 I：线性方程应用*
 
@@ -32,6 +33,7 @@
   *回检栏*：$14 + 22 = 36$ ✓；调后甲 $= 22 + 2 = 24$，乙 $= 14 - 2 = 12$，$24 = 2 times 12$ ✓。
 ]
 
+// tools: pf07-perimeter-area, al05-quadratic-solving, cb07-square-and-square-root
 #blueprint[
   *示范题 II：几何 $+$ 二次方程*
 

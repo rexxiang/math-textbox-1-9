@@ -70,6 +70,10 @@
       line((0, -1), (0, 10), stroke: 0.4pt, mark: (end: ">"))
       content((5.3, 0), $x$, anchor: "west")
       content((0, 10.3), $y$, anchor: "south")
+      content((-4.6, 9.3), text(size: 6pt)[1 特殊点：先算几组], anchor: "west")
+      // symmetry axis coincides with the y-axis for y = x^2
+      line((0, -0.8), (0, 9.5), stroke: (paint: rgb("#7B1FA2"), thickness: 0.7pt, dash: "dashed"))
+      content((0.35, 8.5), text(size: 6pt, fill: rgb("#7B1FA2"))[2 对称轴 $x = 0$], anchor: "west")
       let samples = range(0, 81).map(i => {
         let x = -4 + 0.1 * i
         (x, x * x)
@@ -77,10 +81,15 @@
       for i in range(0, samples.len() - 1) {
         line(samples.at(i), samples.at(i + 1), stroke: 0.7pt + rgb("#1976D2"))
       }
-      circle((0, 0), radius: 0.14, fill: rgb("#B71C1C"))
-      content((0.5, -0.5), text(7pt)[顶点 $(0, 0)$])
+      for pt in ((-1, 1), (0, 0), (1, 1)) {
+        circle(pt, radius: 0.16, fill: rgb("#B71C1C"), stroke: 0.6pt + rgb("#7F0000"))
+      }
+      content((-1.15, 1.5), text(size: 6pt, fill: rgb("#B71C1C"))[$(-1, 1)$], anchor: "south-east")
+      content((1.15, 1.5), text(size: 6pt, fill: rgb("#B71C1C"))[$(1, 1)$], anchor: "south-west")
+      content((0.45, -0.45), text(size: 6pt, fill: rgb("#B71C1C"))[3 顶点 $(0, 0)$], anchor: "north-west")
+      content((2.8, 5.5), text(size: 6pt, fill: rgb("#1976D2"))[4 顺着点连成光滑曲线], anchor: "west")
     }),
-    caption: [$y = x^2$ 的图像：一条关于 $y$ 轴对称的*抛物线*，顶点在原点，开口朝上。]
+    caption: [$y = x^2$ 的渐进画法：先标特殊点 $(-1,1),(0,0),(1,1)$，再画对称轴 $x = 0$、确认顶点，最后连成光滑抛物线。]
   )
 
   这种左右对称的弯曲轨迹，正式名字叫*抛物线*。
@@ -92,7 +101,7 @@
   - $a > 0$：开口朝上，顶点是最低点；
   - $a < 0$：开口朝下（图像颠倒），顶点是最高点；
   - $|a|$ 大：开口窄（“瘦”）；$|a|$ 小：开口宽（“胖”）；
-  - $a = 0$：退化为 $y = 0$，不再是二次，排除。
+  - $a = 0$：退化为 $y = 0$，最高次项消失，不再是二次；二次函数要求最高次项系数非零，所以 $a != 0$。
 
   #figure(
     cetz.canvas(length: 0.35cm, {
@@ -209,7 +218,7 @@
   其中 $b = -2 a h$、$c = a h^2 + k$。这条公式叫*一般式* $y = a x^2 + b x + c$（要求 $a != 0$）。
 
   #side-hack[
-    *☞ 工具速成——本节用到的三把钥匙*
+    *☞ 这一节会用到的三个小工具*
 
     *A. 完全平方公式*
 
@@ -276,7 +285,7 @@
 #blueprint[
   *工具一：二次函数 $y = a x^2 + b x + c$（$a != 0$）*
 
-  *定义*：最高次为 $x^2$ 的函数，形如一般式 $y = a x^2 + b x + c$ 或顶点式 $y = a (x - h)^2 + k$。图像都是一条*抛物线*。
+  *定义*：最高次为 $x^2$ 的函数，形如一般式 $y = a x^2 + b x + c$ 或顶点式 $y = a (x - h)^2 + k$，其中最高次项系数必须非零，即 $a != 0$。图像都是一条*抛物线*。
 
   *工具二：顶点式 $y = a (x - h)^2 + k$*
 

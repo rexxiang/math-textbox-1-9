@@ -8,7 +8,7 @@
   *难度*：★★★☆☆ \
   *核心问题*：一旦用字母代替具体数，我就不只在算一次题，而是写下一条随时可以重算的*规则*。怎样准确地写出、读懂这条规则？ \
   *需要先会*：#secref("pf02-order-laws")、#secref("pf02-mul-div-structure")、#secref("pf02-add-subtract-undo")、#secref("cb02-number-line-extends-left")（允许系数为负）。 \
-  *本章在全书的位置*：共通桥梁 / 算术升级为代数：从“填具体数”到“保留字母”。
+  *本章在全书的位置*：共通桥梁 / 算术延伸为代数：从“填具体数”到“保留字母”。
 ]
 
 #chapter-route[

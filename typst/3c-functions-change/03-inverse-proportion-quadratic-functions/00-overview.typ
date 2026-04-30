@@ -7,7 +7,7 @@
 #chapter-nav[
   *难度*：★★★★★ \
   *核心问题*：除了“每加 $1$ 单位 $x$ 加固定量”的直线一族外，还有两类非常常见的函数：*乘积不变*（反比例 $y = k / x$）和*左右对称、先升后降或先降后升*（二次 $y = a x^2 + b x + c$）。它们的公式、图像、数据指纹各是什么？拿到一张数据表如何快速判断它出自哪一族？ \
-  *需要先会*：完全平方公式与配方法（本章 §2 有速成）、分母不能为零的直觉（#secref("ch:fractions") 已建立）、平移与坐标变换的直觉（#secref("cb04-plotting-transforming")，本章 §2 有速成）、#secref("fn05-linear-function")（一次函数）、#secref("fn06-slope-as-rate")（斜率 / 变化率）。 \
+  *需要先会*：完全平方公式与配方法（如果先学过代数分支 #secref("al02-special-identities") 会更稳；本章 §2 有速成，仅够本章使用，不替代代数训练）、分母不能为零的直觉（#secref("tool:pf04-fraction-equivalence") 已建立）、平移与坐标变换的直觉（#secref("cb04-plotting-transforming")，本章 §2 有速成）、#secref("fn05-linear-function")（一次函数）、#secref("fn06-slope-as-rate")（斜率 / 变化率）。建议在进入 §2 主线前，先把速成段的 #raw("#tryit") 做完。如想要更深入的训练，可先去 #secref("ch:distributive-identities-factorization")。 \
   *本章在全书的位置*：函数分支*第二类 & 第三类具体函数族*——反比例由“乘积恒定”抽象出来；二次由“先增后减”与“先减后增”的左右对称轨迹抽象出来，并借助已学的配方法把一般式 $y = a x^2 + b x + c$ 与顶点式 $y = a (x - h)^2 + k$ 打通。
 ]
 

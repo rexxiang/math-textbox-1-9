@@ -65,7 +65,7 @@
 #history-note[
   约公元前 $1$ 世纪，《九章算术》第八章"方程"的书吏要解决一个新问题：单条等式不够用了——粮食、赋税、工分这类问题里同时有好几个未知量。他们把每条方程的系数排成一列算筹（纵横排开，形似今天的矩阵），再逐列相消求解。这种排表化简的工具就叫"方程"——汉语里"方程"二字最早正是从这种"方阵列式"的排法来的，这比欧洲的矩阵方法早了近两千年。约 $820$ 年，波斯数学家花拉子米（al-Khwārizmī）在面对类似问题时，提出"al-jabr"——把减去的项移到等号另一边变成加项——这个动作便是今天所说的"移项"，也是 algebra（代数）一词的源头。
 
-  ☞ 历史接力 → 花拉子米的天平法在代数分支中被系统扩展为五步标准流程；见 #secref("al04-linear-one-variable")。
+  ☞ 这条历史线索后续在： 花拉子米的天平法在代数分支中被系统扩展为五步标准流程；见 #secref("al04-linear-one-variable")。
 ]
 
 #history-note[
@@ -165,6 +165,77 @@
         text(size: 10pt, weight: "bold")[$2x + 3 = 11$], anchor: "north")
     }),
     caption: [方程就是一架天平：两边一样重；对两边做相同的操作，天平仍然平衡],
+  )
+
+  #figure(
+    cetz.canvas(length: 0.35cm, {
+      import cetz.draw: *
+      // stage 1: 2x + 3 = 9
+      let y0 = 1.0
+      content((4.2, 6.4), text(size: 7pt, weight: "bold")[$2x + 3 = 9$], anchor: "south")
+      rect((0, y0), (3.6, y0 + 3.8), fill: rgb("#E3F2FD"), stroke: 0.5pt + rgb("#1565C0"), radius: 3pt)
+      rect((4.8, y0), (8.4, y0 + 3.8), fill: rgb("#FFF3E0"), stroke: 0.5pt + rgb("#E65100"), radius: 3pt)
+      content((4.2, y0 + 2.0), text(size: 12pt, weight: "bold")[=])
+      for i in range(2) {
+        let bx = 0.35 + i * 1.45
+        rect((bx, y0 + 2.35), (bx + 1.1, y0 + 3.25), fill: rgb("#BBDEFB"), stroke: 0.6pt + rgb("#1565C0"), radius: 2pt)
+        content((bx + 0.55, y0 + 2.8), text(size: 7pt, weight: "bold", fill: rgb("#0D47A1"))[$x$])
+      }
+      for i in range(3) {
+        let cx = 0.65 + i * 1.0
+        circle((cx, y0 + 1.25), radius: 0.28, fill: rgb("#EEEEEE"), stroke: 0.45pt + rgb("#757575"))
+        content((cx, y0 + 1.25), text(size: 5pt)[1])
+      }
+      for i in range(9) {
+        let col = calc.rem(i, 3)
+        let row = calc.floor(i / 3)
+        let cx = 5.35 + col * 0.85
+        let cy = y0 + 1.0 + row * 0.8
+        circle((cx, cy), radius: 0.25, fill: rgb("#EEEEEE"), stroke: 0.45pt + rgb("#757575"))
+        content((cx, cy), text(size: 4.5pt)[1])
+      }
+      // operation arrow 1
+      line((8.9, y0 + 2.0), (10.5, y0 + 2.0), stroke: 0.8pt + rgb("#555"), mark: (end: ">"))
+      content((9.7, y0 + 2.45), text(size: 6pt)[两边去 $3$], anchor: "south")
+
+      // stage 2: 2x = 6
+      let x2 = 11.0
+      content((x2 + 4.2, 6.4), text(size: 7pt, weight: "bold")[$2x = 6$], anchor: "south")
+      rect((x2, y0), (x2 + 3.6, y0 + 3.8), fill: rgb("#E3F2FD"), stroke: 0.5pt + rgb("#1565C0"), radius: 3pt)
+      rect((x2 + 4.8, y0), (x2 + 8.4, y0 + 3.8), fill: rgb("#FFF3E0"), stroke: 0.5pt + rgb("#E65100"), radius: 3pt)
+      content((x2 + 4.2, y0 + 2.0), text(size: 12pt, weight: "bold")[=])
+      for i in range(2) {
+        let bx = x2 + 0.55 + i * 1.35
+        rect((bx, y0 + 2.0), (bx + 1.1, y0 + 2.9), fill: rgb("#BBDEFB"), stroke: 0.6pt + rgb("#1565C0"), radius: 2pt)
+        content((bx + 0.55, y0 + 2.45), text(size: 7pt, weight: "bold", fill: rgb("#0D47A1"))[$x$])
+      }
+      for i in range(6) {
+        let col = calc.rem(i, 3)
+        let row = calc.floor(i / 3)
+        let cx = x2 + 5.35 + col * 0.85
+        let cy = y0 + 1.25 + row * 0.8
+        circle((cx, cy), radius: 0.25, fill: rgb("#EEEEEE"), stroke: 0.45pt + rgb("#757575"))
+        content((cx, cy), text(size: 4.5pt)[1])
+      }
+      line((x2 + 8.9, y0 + 2.0), (x2 + 10.5, y0 + 2.0), stroke: 0.8pt + rgb("#555"), mark: (end: ">"))
+      content((x2 + 9.7, y0 + 2.45), text(size: 6pt)[两边除以 $2$], anchor: "south")
+
+      // stage 3: x = 3
+      let x3 = 22.0
+      content((x3 + 4.2, 6.4), text(size: 7pt, weight: "bold", fill: rgb("#2E7D32"))[$x = 3$], anchor: "south")
+      rect((x3, y0), (x3 + 3.6, y0 + 3.8), fill: rgb("#E8F5E9"), stroke: 0.5pt + rgb("#388E3C"), radius: 3pt)
+      rect((x3 + 4.8, y0), (x3 + 8.4, y0 + 3.8), fill: rgb("#FFF3E0"), stroke: 0.5pt + rgb("#E65100"), radius: 3pt)
+      content((x3 + 4.2, y0 + 2.0), text(size: 12pt, weight: "bold")[=])
+      rect((x3 + 1.25, y0 + 2.0), (x3 + 2.35, y0 + 2.9), fill: rgb("#C8E6C9"), stroke: 0.7pt + rgb("#388E3C"), radius: 2pt)
+      content((x3 + 1.8, y0 + 2.45), text(size: 7pt, weight: "bold", fill: rgb("#2E7D32"))[$x$])
+      for i in range(3) {
+        let cx = x3 + 5.5 + i * 0.9
+        circle((cx, y0 + 2.05), radius: 0.27, fill: rgb("#EEEEEE"), stroke: 0.45pt + rgb("#757575"))
+        content((cx, y0 + 2.05), text(size: 4.5pt)[1])
+      }
+      content((13.2, 0.3), text(size: 6pt, fill: rgb("#555"))[每一步左右做同样操作，所以天平一直平衡], anchor: "center")
+    }),
+    caption: [天平解 $2x+3=9$：初始平衡 → 两边同时去掉 $3$ 个单位砝码 → 两边同时分成 $2$ 份，得到 $x=3$。],
   )
 ]
 

@@ -7,7 +7,7 @@
 #chapter-nav[
   *难度*：★★★★☆ \
   *核心问题*：从小学起我们就会填“$x$ 变了、$y$ 跟着变”的两列表，初中也画过许多坐标点和直线。但什么样的“对应关系”才专门叫*函数*？同一个函数，为什么有时写成表、有时画成图、有时写成公式？这三种写法之间怎样互相翻译？哪些坐标图不代表函数？ \
-  *需要先会*：#secref("cb04-rectangular-system")（坐标平面与点）、#secref("cb05-letters-represent-numbers")（字母代替数）、#secref("cb05-expressions-and-like-terms")（代数式）、#secref("cb06-equation-as-balance")（方程与变形）、#secref("cb07-square-and-square-root")（根号合法性）、分母不能为 $0$（从 #secref("ch:fractions") 与 #secref("cb05-expressions-and-like-terms") 可知）。 \
+  *需要先会*：#secref("cb04-rectangular-system")（坐标平面与点）、#secref("cb05-letters-represent-numbers")（字母代替数）、#secref("cb05-expressions-and-like-terms")（代数式）、#secref("cb06-equation-as-balance")（方程与变形）、#secref("cb07-square-and-square-root")（根号合法性）、分母不能为 $0$（从 #secref("tool:pf04-fraction-equivalence") 与 #secref("cb05-expressions-and-like-terms") 可知）。 \
   *本章在全书的位置*：函数分支*入口*——把“函数”这个总概念独立出来、同时给出它最常用的三张面孔（表 / 图 / 公式），为后续*具体函数类型*（正比例、一次、反比例、二次 ……）搭好共用语言。
 ]
 

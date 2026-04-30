@@ -38,7 +38,17 @@
 
   但光有物理直觉还不够——写下来时，必须先约定"谁对谁"。
 
-  考虑两组三角形 $triangle A B C$ 与 $triangle D E F$。当你尝试把它们叠到一起时，*实际上是在做一张顶点对照表*。可同样这两个三角形，可能存在不同的对照方式：
+  考虑两组三角形 $triangle A B C$ 与 $triangle D E F$。当你尝试把它们叠到一起时，*实际上是在做一张顶点对照表*。可同样这两个三角形，可能存在不同的对照方式。
+
+  #self-check[
+    合上书或遮住下面，先自己写一个回答，再读后续。具体写：假设 $triangle A B C$ 与 $triangle D E F$ 完全可以叠合，但你不知道"哪个顶点贴哪个"。$A$ 可以贴 $D$、$E$ 或 $F$，$B$ 又能贴剩下两个之一……一共能写出多少种"$A B C$ 到 $D E F$"的顶点对照表？随便挑两种写下来，再写出两种各自要满足的*对应边相等*关系。
+
+    ☞ 写完再继续：
+    - ✓ 总共有 $6$ 种排列方式。如果你写出像"$A <-> D, B <-> E, C <-> F$ → $A B = D E, B C = E F$"和"$A <-> E, B <-> D, C <-> F$ → $A B = E D, B C = D F$"两种且发现*两套等式不一样*——方向完全对，下面要做的就是把"哪种对照"压进记号里。
+    - ✗ 如果你只写了一种方式就停了，再尝试调换顶点字母——你会发现"叠得上"并不告诉你"谁贴谁"。
+  ]
+
+  下面挑出其中两种代表性的对照方式来看看。
 
   *方式 1*：$A <-> D$、$B <-> E$、$C <-> F$。这意味着：
   $ A B = D E, quad B C = E F, quad A C = D F, $
@@ -127,13 +137,25 @@
 ]
 
 #tryit[
-  若 $triangle A B C tilde.eq triangle D E F$ 且 $angle A = 35 degree$、$angle B = 65 degree$，求 $angle F$。
+  已知 $triangle A B C tilde.eq triangle D E F$，且 $A B = D E = 5$、$angle A = angle D = 60 degree$、$A C = D F = 7$。
+
+  + 按对应关系写出全部能立刻得到的等式：边 3 条、角 3 条。
+  + 哪些等式已经带有具体数值？哪些只是"相等但数值暂时未知"？
+  + 反向检查：如果有人把 $B C$ 对应成 $D F$，他错在哪里？
+
+  ☞ 提示：先把字母顺序翻译成顶点表：$A <-> D$、$B <-> E$、$C <-> F$。边用两个端点一起换，角用顶点字母换。
+
+  #answer-cut[
+    + *答*：对应边 $A B = D E$、$B C = E F$、$A C = D F$；对应角 $angle A = angle D$、$angle B = angle E$、$angle C = angle F$。*做法*：先写顶点表 $A <-> D$、$B <-> E$、$C <-> F$，再按端点替换。*验证*：每一条都由同一张顶点表按顺序得到。
+    + *答*：已知带数值的有 $A B = D E = 5$、$A C = D F = 7$、$angle A = angle D = 60 degree$；暂时只知道相等但不知道具体值的有 $B C = E F$、$angle B = angle E$、$angle C = angle F$。*做法*：把题目给出的数值和全等打包出的等式分开列。*验证*：题目没有给 $B C$ 或 $E F$ 的长度，也没有给 $B, C, E, F$ 处角度。
+    + *结论*：把 $B C$ 对应成 $D F$ 是错的。*理由*：$B <-> E$、$C <-> F$，所以 $B C$ 对应 $E F$；$D F$ 对应的是 $A C$。*自查*：把 $A C$ 的两个端点 $A, C$ 分别换成 $D, F$，才得到 $D F$。
+  ]
 ]
 
 #history-note[
   约前 300 年，欧几里得（Euclid）在《几何原本》第一卷里要回答一个朴素却关键的问题：怎样判断两个三角形"算不算同一个"？他的答案是动手——把一个三角形搬到另一个上面，看能不能严丝合缝叠合（"叠合法"）。希腊语里"全等"的词根本意正是"吻合"。这个朴素的想法后来成了两千多年里所有几何证明的起点。在 #secref("pf06-polygons-and-circle") 你已经学过多边形怎么按边数分类；这一节把"分类"再往前推一步：同样是三角形，什么时候能说它们是*同一个三角形的另一份副本*。
 
-  ☞ 历史接力 → 欧几里得叠合法依赖的"第五公设"两千年后被罗巴切夫斯基推翻，催生非欧几何；本书平行线角关系见 #secref("ge02-parallel-line-angles")。
+  ☞ 这条历史线索后续在： 欧几里得叠合法依赖的"第五公设"两千年后被罗巴切夫斯基推翻，催生非欧几何；本书平行线角关系见 #secref("ge02-parallel-line-angles")。
 ]
 
 #blueprint[
@@ -212,22 +234,51 @@
 ]
 
 
-#pitfall[
-  *高频错误*
 
-  ✗ 看字母集合相同，就断言“两种写法一样”
-  → ✓ $triangle A B C tilde.eq triangle D E F$ 与 $triangle A B C tilde.eq triangle E D F$ *完全不同*。对应关系靠*顺序*，不靠“字母齐不齐”。
-  把全等当成“两个集合一样”，于是只比字母够不够、不看排列。
+#side-hack[
+  *完整示例*——从全等顺序读出所有对应
 
-  ✗ 只验了两组对应边就写“全等”
-  → ✓ 定义要求的是*三边与三角全部一一对应相等*。之后会学到更简洁的判定法，但在没证完判定法之前，别当“两组相等已经够”。
-
-  ✗ 把图里“看起来相等”的边当成对应边
-  → ✓ 对应边*不是用眼睛挑*的，必须从结论中字母顺序里读出来；图可能是误导的（比如刻意画歪）。
-
-  ✗ 写 $tilde.eq$ 却把符号画成 $=$ 或 $tilde$
-  → ✓ $tilde.eq$ 专门用来标记全等；$=$ 是数相等，$tilde$ 是相似（下一章）。三者含义不同，不能互换。
+  + *看题*：已知 $triangle A B C tilde.eq triangle D E F$，且 $A B = 7$，$D E = y + 2$，$angle B = 58 degree$，$angle E = (2z - 10) degree$。先写出 $6$ 条对应等式，再求 $y, z$。
+  + *选工具*：全等符号里的顶点顺序就是对应关系：$A$ 对 $D$，$B$ 对 $E$，$C$ 对 $F$。
+  + *动手*：
+    $ A B &= D E, quad B C = E F, quad A C = D F \
+      angle A &= angle D, quad angle B = angle E, quad angle C = angle F. $
+    所以 $7 = y + 2 => y = 5$；$58 = 2z - 10 => 2z = 68 => z = 34$。
+  + *回看*：用到的正是 $A B$ 对 $D E$、$angle B$ 对 $angle E$。如果把 $B$ 错配成 $F$，后面的等式会全乱。
 ]
+
+#pitfall[
+  *高频错误：全等顺序不能随便换*
+
+  已知 $triangle A B C tilde.eq triangle D E F$。小林这样用对应关系：
+
+  #block(inset: (left: 12pt))[
+    第 1 行：反正都是这六个字母，写成 $triangle A B C tilde.eq triangle E D F$ 也差不多。$quad$ ✗
+
+    第 2 行：所以 $B C = D F$，$angle B = angle D$。$quad$ ✗
+  ]
+
+  *错处*：第 1 行。全等式里的字母顺序就是对应关系，不能把右边的 $D, E, F$ 随便换。第 2 行的边角对应也因此跟着错了。
+
+  *正确读法*：
+
+  $ triangle A B C tilde.eq triangle D E F $
+
+  表示 $A <-> D$，$B <-> E$，$C <-> F$。所以：
+
+  $ cases(A B = D E, B C = E F, A C = D F, angle A = angle D, angle B = angle E, angle C = angle F) $ $quad$ ✓
+
+  *自查句*：每次写“由全等得……”前，先在纸边写三组顶点对应；边和角只能从这三组对应里读出来。
+
+  其余常见走错：
+
+  ✗ 只验了两组对应边就写“全等” → ✓ 定义要求三边与三角全部一一对应相等；判定法要等下一节按条件使用。
+
+  ✗ 把图里“看起来相等”的边当成对应边 → ✓ 对应边必须从结论中字母顺序里读出来，图可能会误导。
+
+  ✗ 写 $tilde.eq$ 却把符号画成 $=$ 或 $tilde$ → ✓ $tilde.eq$、$=$、$tilde$ 含义不同，不能互换。
+]
+
 
 #mastery[
   *基础*
@@ -246,12 +297,14 @@
   + 一位同学把结论写成 $triangle A B C tilde.eq triangle B A C$。请说明：什么样的三角形才可能满足这样的对应关系？它其实隐含了什么条件？
   + 若 $triangle A B C tilde.eq triangle D E F$ 且 $angle B = angle C$，求证 $angle E = angle F$。（提示：先用对应角，再用传递。）
   + 已知 $triangle A B C tilde.eq triangle D E F$，$A B = 2 x + 1$，$D E = x + 5$。求 $x$ 与 $A B$ 的长。
+  + 已知 $triangle A B C tilde.eq triangle D E F$，$A B = 7$、$B C = 6$、$A C = 5$，且 $angle A = 50 degree$、$angle C = 65 degree$。求 $triangle D E F$ 的周长和 $angle E$。
 
   *挑战*
 
   + 判断并说明：若 $triangle A B C tilde.eq triangle D E F$ 且 $triangle D E F tilde.eq triangle G H I$，能否立刻得 $triangle A B C tilde.eq triangle G H I$？为什么？
   + 已知 $triangle A B C tilde.eq triangle A' B' C'$，点 $M$、$M'$ 分别是 $B C$、$B' C'$ 的中点。能不能得出 $A M = A' M'$？写下你的理由。
   + 有人把 $triangle A B C tilde.eq triangle D E F$ 的九条结论压缩成一句话"三对对应边、三对对应角都相等"。请解释：为什么"对应"这两个字不能省。
+  + *[找 Bug]* 已知 $triangle A B C tilde.eq triangle D E F$。Rania 写：“$A B$ 对应 $E F$，所以 $A B = E F$；$angle C$ 对应 $angle D$。”她的对应顺序错在哪里？按字母顺序写出正确对应。
   + *[反直觉 / 反例]* 给两个三角形：三对边长都相等、三对角度也都相等，但它们*不是全等*——可能吗？请举例说明，或证明不可能。然后再判断："只要两个三角形的三对角相等，它们就全等。" 是否成立？给反例。
   + *[跨知识点]* 已知 $triangle A B C tilde.eq triangle D E F$，$A B = 5$、$B C = 7$、$angle B = 60°$。利用对应关系，再借助 #secref("tool:pf08-triangles-angle-sum") 的"三角形内角和 $= 180°$"，能否唯一确定 $angle E$、$angle F$ 等所有六元素？哪些信息够、哪些不够？
   + *[构造题]* 在网格纸上画两个全等三角形 $triangle A B C$ 与 $triangle D E F$，使 $D$ 是 $A$ 关于直线 $ell$ 的对称点（$ell$ 不经过 $A B C$ 任何顶点）。请给出顶点坐标，并写出三对对应顶点。这种关系下，两个三角形是否方向相反？为什么*镜像*的两个三角形仍然算全等？
@@ -271,11 +324,13 @@
   + 对应关系要求 $A <-> B$、$B <-> A$、$C <-> C$。于是 $A B = B A$（自动）、$B C = A C$、$angle A = angle B$。即 $triangle A B C$ 必须是一个以 $A$、$B$ 为两个底角、$C$ 为顶角的*等腰三角形*（$A C = B C$）。
   + 由全等对应角：$angle E = angle B$、$angle F = angle C$。已知 $angle B = angle C$，故 $angle E = angle F$。
   + 对应边相等，$2 x + 1 = x + 5$，解得 $x = 4$，所以 $A B = 2 times 4 + 1 = 9$。
+  + 由全等对应边，$D E = A B = 7$、$E F = B C = 6$、$D F = A C = 5$，所以周长 $= 18$。先用三角形内角和求 $angle B = 180 degree - 50 degree - 65 degree = 65 degree$；再由对应角得 $angle E = angle B = 65 degree$。
 
   *挑战*
   + 能。设第一次对应 $A <-> D$、$B <-> E$、$C <-> F$，第二次 $D <-> G$、$E <-> H$、$F <-> I$。把两张对应表串起来得 $A <-> G$、$B <-> H$、$C <-> I$，且各条边角都沿链条传递相等，所以 $triangle A B C tilde.eq triangle G H I$。
   + 能。对应关系里 $B C$ 对应 $B' C'$，所以它们的中点也对应（$M <-> M'$），而 $A M$ 与 $A' M'$ 是两侧“顶点到对应中点”的线段，由对应关系的整体性它们相等。（严格证明要再用一次全等判定，下一节就给出工具。）
   + 因为"相等"可以随便挑一对，但"对应相等"要求*一张固定的表*把左右两边的边、角一一配对。没有"对应"两字，就可能只抓到了"都有一条长 $5$ 的边"，而这条边在两个三角形里的位置根本不同，结论立刻失效。
+  + 字母顺序已经给出固定对应：$A <-> D$、$B <-> E$、$C <-> F$。所以 $A B$ 对应 $D E$，$B C$ 对应 $E F$，$A C$ 对应 $D F$；$angle C$ 对应 $angle F$。Rania 把右边三角形里的字母顺序跳着读，等于换了对应表，结论自然会错。
   + 不可能"三对边相等且三对角相等却不全等"——因为两组边角合起来已经足够把三角形完全定形（所有 SSS / SAS / ASA / AAS 都被同时满足）。但"三对角相等就全等"是错的：例如等边三角形，边长 $1$ 和边长 $100$ 的两个等边三角形三对角都是 $60°$，相似但不全等（AAA 只决定形状，不决定大小）。
   + 由全等对应：$D E = A B = 5$，$E F = B C = 7$，$angle E = angle B = 60°$。但 $angle A、angle C$ 还未给出，所以 $angle D、angle F$ 暂未确定；若再加任一信息（如 $angle A$ 或 $A C$），即可由 #secref("tool:pf08-triangles-angle-sum") 算出第三角，配合对应关系填齐六元素。已知三元素已能确定一个三角形（SAS），自然也能传递到全等的另一个，但当前题目缺少把 $triangle A B C$ 自身定形的第三条信息——所以六元素不能全部唯一确定。
   + 例：$A(0, 0), B(2, 0), C(0, 1)$。取直线 $ell$ 为 $y = -1$（不过任何顶点）。$A$ 关于 $ell$ 的对称点 $D = (0, -2)$；同理 $B → E = (2, -2)$，$C → F = (0, -3)$。对应顶点 $A <-> D$、$B <-> E$、$C <-> F$。镜像后方向相反（$triangle A B C$ 顺时针、$triangle D E F$ 逆时针），但全等只要求边、角对应相等，*不要求方向一致*——三条边和三个角都被反射保留下来了（轴对称是保距变换，所以镜像三角形仍全等）。

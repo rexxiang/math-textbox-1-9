@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": blueprint, mastery, secref
+#import "../../lib/chapter-kit.typ": blueprint, mastery, secref, diagnostic-table
 
 == 本章回顾 <meta:factors-multiples-prime-factorization>
 
@@ -17,8 +17,19 @@
   )
 ]
 
+#blueprint[
+  *做题前你应该会*
+
+  - 会用乘法等式判断谁是谁的因数 / 倍数。
+  - 会用 $2$、$3$、$5$ 的整除线索做快速判断。
+  - 会分清 $1$、质数、合数，并把合数拆成质因数。
+  - 会在情境里判断要找最大公因数还是最小公倍数。
+]
+
 #mastery[
   *混合自测*
+
+  _技能分层：1–4 题查概念辨认，5–8 题查 GCD / LCM，后面的跨章与构造题查情境判断。_
 
   + 写出 36 的所有因数，并说明为什么 36 也是 6 的倍数。
   + 判断 135、248、410 分别能被 2、3、5 中哪些数整除。
@@ -37,7 +48,7 @@
   + 用乘法分配律（回顾 #secref("pf02-order-laws")）展开 $6 times (n + 4)$，再代入 $n = 12$，验证结果。为什么说"$a times b$ 一定是 $a$ 的倍数"？（回顾 #secref("pf02-mul-div-structure") 乘法的打包结构）用这条道理解释：12 的倍数中，为什么所有的 $12k$（$k$ 为正整数）都有因数 $12$。
 ]
 
-==== 参考答案
+==== 参考答案（含关键步骤）
 
 + 因数有 $1, 2, 3, 4, 6, 9, 12, 18, 36$；因为 $36 = 6 times 6$，所以 36 是 6 的倍数。
 + 135 能被 3、5 整除；248 能被 2 整除；410 能被 2、5 整除。
@@ -56,6 +67,40 @@
 
 ==== 巩固复习
 
-+ #secref("pf02-mul-div-structure") 把乘除看成“打包”和“拆开”；到了 #secref("pf03-factors-multiples")，这种结构眼光为什么能帮助我们判断一个数能否整齐分开？
-+ #secref("pf03-primes-factorization") 里的质因数分解，和 #secref("pf04-fraction-equivalence") 里约分会怎样接起来？先提前猜一猜。
-+ 对照 #secref("pf03-gcd-lcm") 与 #secref("pf02-order-laws")：一个在重排算式结构，一个在总结整数内部结构。它们都在追求什么样的“看清楚”？
++ 乘除的“打包 / 拆开”是因数与倍数的来源：$a times b$ 说明结果能被 $a$ 和 $b$ 整齐拆开。若这句话不稳，回看 #secref("tool:pf02-mul-div-structure") 后再读 #secref("tool:pf03-factors-multiples")。
++ 质因数分解像把整数拆成最小砖块；后面约分会用这些砖块找共同因子。先回看 #secref("tool:pf03-primes-factorization")，再连接 #secref("tool:pf04-fraction-equivalence")。
++ GCD / LCM 是“整数内部结构”的整理，运算律是“算式外部结构”的整理：对照 #secref("tool:pf03-gcd-lcm") 与 #secref("tool:pf02-order-laws")，都在寻找不变结构。
+
+#diagnostic-table(
+  [把“3 是 24 的倍数”和“3 是 24 的因数”说反],
+  secref("tool:pf03-factors-multiples"),
+  [用乘法句子检查：$24 = 3 times 8$，所以 $3$ 是 $24$ 的因数，$24$ 是 $3$ 的倍数],
+
+  [写因数时漏成对出现的因数],
+  secref("tool:pf03-factors-multiples"),
+  [从小到大试除，每找到一个 $d$，同时写出配对因数 $n/d$；平方数中间那一项只写一次],
+
+  [把 $1$ 当质数],
+  secref("tool:pf03-primes-factorization"),
+  [质数必须恰好有两个正因数；$1$ 只有一个正因数，所以既不是质数也不是合数],
+
+  [整除线索只看末位，忘了 $3$ 要看各位数字和],
+  secref("tool:pf03-factors-multiples"),
+  [$2$ 看偶数末位，$5$ 看 $0$ 或 $5$，$3$ 看各位数字和能否被 $3$ 整除],
+
+  [质因数分解没拆到质数就停],
+  secref("tool:pf03-primes-factorization"),
+  [括号里若还有合数就继续拆；最后只允许出现质数相乘],
+
+  [最大公因数和最小公倍数在应用题里选反],
+  secref("tool:pf03-gcd-lcm"),
+  [“最大能平均分 / 剪成多长”找 GCD；“多久同时发生 / 最小共同周期”找 LCM],
+
+  [用质因数求 GCD / LCM 时指数取错],
+  secref("tool:pf03-gcd-lcm"),
+  [GCD 取共同质因数的较小指数；LCM 取出现过质因数的较大指数],
+
+  [跨章题里看到 $a times b$ 却说不清倍数结构],
+  secref("tool:pf02-mul-div-structure"),
+  [$a times b$ 是 $b$ 组 $a$，结果天然是 $a$ 的倍数；用这个解释因数 / 倍数而不是只背词],
+)

@@ -1,4 +1,4 @@
-#import "../../lib/theme-v2.typ": blueprint, mastery, side-hack, secref
+#import "../../lib/chapter-kit.typ": blueprint, mastery, side-hack, secref, diagnostic-table
 
 == 本章回顾 <meta:function-representations>
 
@@ -14,14 +14,25 @@
     [表作面孔 #secref("fn01-table-as-function-view")], [查看是否“同一输入对应不同输出”——有则不是函数。输出列允许重复。],
     [图作面孔 #secref("fn02-graph-as-function-view")], [*垂线检验*：任一铅垂线与图最多相交一次 $<=>$ 是函数。圆不是函数，抛物线是函数。],
     [公式作面孔 #secref("fn03-formula-as-function-view")], [$y = f(x)$；独立变量 $x$、因变量 $y$；默认定义域是让公式合法的全部实数。],
-    [定义域常见限制], [分母 $!= 0$（从 #secref("ch:fractions") 你已知除以 $0$ 无意义——含 $x$ 的分式同理）；根号下 $>= 0$（#secref("cb07-square-and-square-root")）；现实约束（正数、整数等）。],
+    [定义域常见限制], [分母 $!= 0$（从 #secref("tool:pf04-fraction-equivalence") 你已知除以 $0$ 无意义——含 $x$ 的分式同理）；根号下 $>= 0$（#secref("cb07-square-and-square-root")）；现实约束（正数、整数等）。],
     [函数记号 $f(x)$], [$f$ 是函数名；$f(x)$ 是“$f$ 在 $x$ 处的输出”，不是乘法。$f(a + b) != f(a) + f(b)$ 一般不成立。],
     [三面孔互译], [表 → 图：描点；公式 → 表：代入；图 → 公式：读几个特征点（后续章节展开）。],
   )
 ]
 
+#blueprint[
+  *做题前你应该会*
+
+  - 会用“每个输入只能有一个输出”判断表格、图像和公式是不是函数。
+  - 会在表、图、公式之间互译：代入成表，描点成图，从图上读输入输出。
+  - 会找简单定义域限制：分母不能为 $0$，根号下不能小于 $0$。
+  - 会分清“不同输入得到同一输出”是允许的，“同一输入得到不同输出”才不允许。
+]
+
 #mastery[
   *混合自测*
+
+  _技能分层：1–2 题查唯一性，3–6 题查表 / 图 / 公式互译和定义域，后面的跨章与找错题查迁移。_
 
   + 下表是否为函数？说明理由。
     #align(center, table(
@@ -43,7 +54,9 @@
   + *找错误*：Fatima说"$y^2 = x$ 是 $y$ 关于 $x$ 的函数，因为给定正数 $x$ 都能算出 $y$。"找出错误并纠正。
 ]
 
-==== 参考答案
+#pagebreak()
+
+==== 参考答案（含关键步骤）
 
 + *不是函数*。同一输入 $-1$ 出现两次但配了不同输出 $2$ 与 $11$——违反单值对应。
 + 第一问：每个时刻只有一个气温，*是函数*。第二问：同一个温度值可能出现在*多个*时刻（气温先升后降再升很常见）——*不是函数*。
@@ -57,15 +70,17 @@
 + 定义域 ${x | x != 3}$（分母非零）。解 $frac(2 x + 1, x - 3) = 5$：两边乘 $(x - 3)$ 得 $2 x + 1 = 5 x - 15$，$16 = 3 x$，$x = 16 / 3$。检验 $x != 3$ ✓。
 + 错误：$x = 4$ 时 $y = 2$ 或 $y = -2$，同一输入对应两个不同输出——违反函数单值性。纠正：$y = sqrt(x)$（只取非负根）才是函数；$y^2 = x$ 整体不是 $y$ 关于 $x$ 的函数。
 
+查漏：若同一输入 / 多个输出判断卡住，回 #secref("tool:fn01-table-as-function-view")；若定义域或 $f(x)=c$ 卡住，回 #secref("tool:fn03-formula-as-function-view") 与 #secref("tool:cb06-equality-properties")。
+
 #blueprint[
   *巩固复习*
 
-  - 坐标点、四象限、描点：#secref("cb04-rectangular-system")、#secref("cb04-plotting-transforming")。函数图像就是“所有 $(x, f(x))$ 描出来”的那条曲线。
-  - 字母代替数、代数式：#secref("cb05-letters-represent-numbers")、#secref("cb05-expressions-and-like-terms")。函数公式本质是一条*带独立变量*的代数式 $+$ 一份定义域。
-  - 方程的等式性质：#secref("cb06-equality-properties")。求“$f(x) = 0$ 对应什么 $x$”时要把方程技术拿过来用。
-  - 分式的合法性：从 #secref("ch:fractions") 你已经知道分母不能为 $0$——含字母的分式也一样，哪些 $x$ 让分母变 $0$ 就必须排除出定义域。
-  - 根号合法性：#secref("cb07-square-and-square-root")。$sqrt$ 下面必须 $>= 0$，决定含根号函数的定义域。
-  - 下一章衔接：把独立变量与因变量的关系写成*最简单的*一类公式 $y = k x$、$y = k x + b$，它们的图像是直线。
+  - 函数图像是把所有 $(x, f(x))$ 描出来的集合；若描点或四象限不稳，先回到 #secref("tool:cb04-rectangular-system") 与 #secref("tool:cb04-plotting-transforming")。
+  - 函数公式是一条带独立变量的代数式，再加一份定义域；字母代替数见 #secref("tool:cb05-letters-represent-numbers")，代数式整理见 #secref("tool:cb05-expressions-and-like-terms")。
+  - 求“哪个 $x$ 让 $f(x)=5$”就是解方程；等式两边合法变形这件事来自 #secref("tool:cb06-equality-properties")。
+  - 分母不能为 $0$ 早在分数里已经出现；含字母时要把会让分母为 $0$ 的输入排除，必要时回看 #secref("tool:pf04-fraction-equivalence") 中的分数意义。
+  - 根号下必须非负来自平方根定义：含根号函数的定义域不稳时，回看 #secref("tool:cb07-square-and-square-root")。
+  - 下一章会把关系压缩成直线公式 $y = k x$、$y = k x + b$；本章的三面孔互译会继续使用。
 ]
 
 #side-hack[
@@ -73,7 +88,21 @@
 
   _以下是预告，现在看不懂完全正常 — 等到高中再回来。_
 
+  这只是向前看的预告，不作为后续主线先修。
+
   - 本章默认定义域只用“分式 / 根号”两类简单限制。高中会再加上*对数底数 $> 0$ 且 $!= 1$*、*反三角函数值域限制*、*复合函数的外层先看内层值域*等更复杂规则。
   - 函数的三张面孔在高中又会扩充出第四张：*用方程 $F(x, y) = 0$ 隐式定义*。这时候“是不是函数”就要逐段拆看。
   - 分段函数（像出租车计费表）是高中常见的情境化函数，其公式需要用 $cases(...)$ 写；本章暂不展开。
 ]
+
+#diagnostic-table(
+  [只记“函数是一条规则”，却没有逐面孔检查唯一输出], secref("tool:fn01-table-as-function-view"), [表看同输入是否冲突；图用垂线检验；公式先说明定义域，再代入检查每个输入的输出],
+  [表格里同一输入出现两次，却给了不同输出还判成函数], secref("tool:fn01-table-as-function-view"), [函数只允许每个输入有唯一输出；先按输入分组检查是否有冲突],
+  [看到两个输入输出相同，就误判“不是函数”], secref("tool:fn01-table-as-function-view"), [不同输入可以得到同一输出；函数禁止的是同一输入对应多个输出],
+  [表、图、公式互译时丢了输入范围], secref("tool:fn03-formula-as-function-view"), [公式只是规则，还要说明哪些 $x$ 允许代入；现实情境也可能限制定义域],
+  [垂线检验只记口号，不会解释圆为什么失败], secref("tool:fn02-graph-as-function-view"), [任一铅垂线代表同一个输入 $x$；若它交图像两次，就说明同一输入有两个输出],
+  [分母含 $x$ 时忘记排除让分母为 $0$ 的输入], secref("tool:fn03-formula-as-function-view"), [先列“分母不等于 $0$”，解出被禁止的 $x$，再计算函数值或解方程],
+  [根号函数定义域只看外面的式子，忘了根号下 $>= 0$], secref("tool:cb07-square-and-square-root"), [根号形式要求“根号下表达式非负”；先解不等式，再写定义域],
+  [把 $f(x)$ 当成 $f times x$], secref("tool:fn03-formula-as-function-view"), [$f$ 是函数名，$f(x)$ 是“输入 $x$ 后的输出”；一般不能拆成乘法],
+  [把 $y^2 = x$ 直接当作 $y$ 关于 $x$ 的函数], secref("tool:fn02-graph-as-function-view"), [代一个正数如 $x=4$，会得到 $y=2$ 和 $y=-2$；同一输入两个输出，失败],
+)

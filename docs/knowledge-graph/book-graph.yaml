@@ -1,6 +1,6 @@
 # book-graph.yaml — 语义知识图谱 SSOT
 # Schema version: 1.0
-# 所有章节节点从本文件派生；nodes 列表现阶段为空，后续迭代填充。
+# 所有章节与工具节点从本文件派生；nodes.prerequisites 记录主线工具级依赖 DAG。
 
 meta:
   schema_version: "1.0"
@@ -146,6 +146,7 @@ chapters:
     difficulty: 3
     mainline: true
     kind: readiness
+    prerequisites: [ch:parallel-triangles-basic-geometry]
 
   # ── Part 2: Common Bridges ─────────────────────────────────────────────────
   - id: ch:ratio-proportion-percent
@@ -155,6 +156,7 @@ chapters:
     path: typst/2-common-bridges/01-ratio-proportion-percent
     difficulty: 3
     mainline: true
+    prerequisites: [ch:fractions, ch:decimals-units-estimation-measurement]
 
   - id: ch:number-line-negative-rational
     title_zh: 数轴·负数·有理数
@@ -163,6 +165,7 @@ chapters:
     path: typst/2-common-bridges/02-number-line-negative-rational
     difficulty: 3
     mainline: true
+    prerequisites: [ch:number-place-value-decimal, ch:four-operations-structure]
 
   - id: ch:rational-arithmetic
     title_zh: 有理数四则运算
@@ -171,6 +174,7 @@ chapters:
     path: typst/2-common-bridges/03-rational-arithmetic
     difficulty: 3
     mainline: true
+    prerequisites: [ch:number-line-negative-rational, ch:fractions]
 
   - id: ch:coordinate-position-plane
     title_zh: 坐标·位置·平面
@@ -179,6 +183,7 @@ chapters:
     path: typst/2-common-bridges/04-coordinate-position-plane
     difficulty: 3
     mainline: true
+    prerequisites: [ch:number-line-negative-rational, ch:points-lines-segments]
 
   - id: ch:letters-expressions-relationship-templates
     title_zh: 字母·式子·关系模板
@@ -187,6 +192,7 @@ chapters:
     path: typst/2-common-bridges/05-letters-expressions-relationship-templates
     difficulty: 3
     mainline: true
+    prerequisites: [ch:four-operations-structure, ch:foundation-readiness-check]
 
   - id: ch:equation-balance-inverse-operations
     title_zh: 方程·平衡·逆运算
@@ -195,6 +201,7 @@ chapters:
     path: typst/2-common-bridges/06-equation-balance-inverse-operations
     difficulty: 3
     mainline: true
+    prerequisites: [ch:letters-expressions-relationship-templates, ch:rational-arithmetic]
 
   - id: ch:square-root-irrational-number-line
     title_zh: 平方根·无理数·数轴
@@ -203,6 +210,7 @@ chapters:
     path: typst/2-common-bridges/07-square-root-irrational-number-line
     difficulty: 3
     mainline: true
+    prerequisites: [ch:rational-arithmetic, ch:perimeter-area-volume-angle]
 
   - id: ch:bridge-readiness-contracts
     title_zh: 桥梁就绪契约
@@ -212,6 +220,7 @@ chapters:
     difficulty: 4
     mainline: true
     kind: readiness
+    prerequisites: [ch:square-root-irrational-number-line, ch:equation-balance-inverse-operations, ch:coordinate-position-plane]
 
   # ── Part 3a: Algebra & Symbols ─────────────────────────────────────────────
   - id: ch:polynomials-like-terms-operations
@@ -221,6 +230,7 @@ chapters:
     path: typst/3a-algebra-symbols/01-polynomials-like-terms-operations
     difficulty: 4
     mainline: true
+    prerequisites: [ch:bridge-readiness-contracts, ch:letters-expressions-relationship-templates]
 
   - id: ch:distributive-identities-factorization
     title_zh: 分配律·恒等式·因式分解
@@ -229,6 +239,7 @@ chapters:
     path: typst/3a-algebra-symbols/02-distributive-identities-factorization
     difficulty: 4
     mainline: true
+    prerequisites: [ch:polynomials-like-terms-operations]
 
   - id: ch:rational-expressions-operations-extraneous-roots
     title_zh: 有理式·运算·增根
@@ -237,6 +248,7 @@ chapters:
     path: typst/3a-algebra-symbols/03-rational-expressions-operations-extraneous-roots
     difficulty: 4
     mainline: true
+    prerequisites: [ch:distributive-identities-factorization, ch:fractions]
 
   - id: ch:linear-equations-systems-modeling
     title_zh: 一次方程组·建模
@@ -245,6 +257,7 @@ chapters:
     path: typst/3a-algebra-symbols/04-linear-equations-systems-modeling
     difficulty: 4
     mainline: true
+    prerequisites: [ch:equation-balance-inverse-operations, ch:polynomials-like-terms-operations]
 
   - id: ch:quadratic-equations
     title_zh: 一元二次方程
@@ -253,6 +266,7 @@ chapters:
     path: typst/3a-algebra-symbols/05-quadratic-equations
     difficulty: 5
     mainline: true
+    prerequisites: [ch:distributive-identities-factorization, ch:square-root-irrational-number-line]
 
   - id: ch:linear-inequalities
     title_zh: 一元一次不等式
@@ -261,6 +275,7 @@ chapters:
     path: typst/3a-algebra-symbols/06-linear-inequalities
     difficulty: 5
     mainline: true
+    prerequisites: [ch:linear-equations-systems-modeling, ch:number-line-negative-rational]
 
   - id: ch:algebra-summary
     title_zh: 代数小结
@@ -270,6 +285,7 @@ chapters:
     difficulty: 5
     mainline: true
     kind: summary
+    prerequisites: [ch:quadratic-equations, ch:linear-inequalities, ch:rational-expressions-operations-extraneous-roots]
 
   # ── Part 3b: Geometry & Proof ──────────────────────────────────────────────
   - id: ch:congruence-and-basic-criteria
@@ -279,6 +295,7 @@ chapters:
     path: typst/3b-geometry-proof/01-congruence-and-basic-criteria
     difficulty: 4
     mainline: true
+    prerequisites: [ch:bridge-readiness-contracts, ch:parallel-triangles-basic-geometry]
 
   - id: ch:advanced-criteria-and-proof-writing
     title_zh: 判定深化与证明书写
@@ -287,6 +304,7 @@ chapters:
     path: typst/3b-geometry-proof/02-advanced-criteria-and-proof-writing
     difficulty: 4
     mainline: true
+    prerequisites: [ch:congruence-and-basic-criteria]
 
   - id: ch:similarity-scale-parallel-line-geometry
     title_zh: 相似·比例·平行线几何
@@ -295,6 +313,7 @@ chapters:
     path: typst/3b-geometry-proof/03-similarity-scale-parallel-line-geometry
     difficulty: 4
     mainline: true
+    prerequisites: [ch:advanced-criteria-and-proof-writing, ch:ratio-proportion-percent]
 
   - id: ch:quadrilateral-family
     title_zh: 四边形家族
@@ -303,6 +322,7 @@ chapters:
     path: typst/3b-geometry-proof/04-quadrilateral-family
     difficulty: 4
     mainline: true
+    prerequisites: [ch:advanced-criteria-and-proof-writing]
 
   - id: ch:circles-and-inscribed-circumscribed
     title_zh: 圆与内接外切
@@ -311,6 +331,7 @@ chapters:
     path: typst/3b-geometry-proof/05-circles-and-inscribed-circumscribed
     difficulty: 4
     mainline: true
+    prerequisites: [ch:similarity-scale-parallel-line-geometry]
 
   - id: ch:pythagorean-radicals-trigonometric-ratios
     title_zh: 勾股定理·根式·三角比
@@ -319,6 +340,7 @@ chapters:
     path: typst/3b-geometry-proof/06-pythagorean-radicals-trigonometric-ratios
     difficulty: 5
     mainline: true
+    prerequisites: [ch:similarity-scale-parallel-line-geometry, ch:square-root-irrational-number-line]
 
   - id: ch:transformations-coordinate-geometry-views
     title_zh: 变换·坐标几何·视图
@@ -327,6 +349,7 @@ chapters:
     path: typst/3b-geometry-proof/07-transformations-coordinate-geometry-views
     difficulty: 5
     mainline: true
+    prerequisites: [ch:coordinate-position-plane, ch:congruence-and-basic-criteria]
 
   - id: ch:geometry-summary
     title_zh: 几何小结
@@ -336,6 +359,7 @@ chapters:
     difficulty: 5
     mainline: true
     kind: summary
+    prerequisites: [ch:circles-and-inscribed-circumscribed, ch:pythagorean-radicals-trigonometric-ratios, ch:transformations-coordinate-geometry-views]
 
   # ── Part 3c: Functions & Change ────────────────────────────────────────────
   - id: ch:function-representations
@@ -345,6 +369,7 @@ chapters:
     path: typst/3c-functions-change/01-function-representations
     difficulty: 4
     mainline: true
+    prerequisites: [ch:bridge-readiness-contracts, ch:coordinate-position-plane]
 
   - id: ch:direct-variation-linear-functions-slope
     title_zh: 正比例·一次函数·斜率
@@ -353,6 +378,7 @@ chapters:
     path: typst/3c-functions-change/02-direct-variation-linear-functions-slope
     difficulty: 4
     mainline: true
+    prerequisites: [ch:function-representations, ch:ratio-proportion-percent]
 
   - id: ch:inverse-proportion-quadratic-functions
     title_zh: 反比例·二次函数
@@ -361,6 +387,7 @@ chapters:
     path: typst/3c-functions-change/03-inverse-proportion-quadratic-functions
     difficulty: 5
     mainline: true
+    prerequisites: [ch:direct-variation-linear-functions-slope, ch:distributive-identities-factorization]
 
   - id: ch:growth-models-function-comparison
     title_zh: 增长模型·函数比较
@@ -369,6 +396,7 @@ chapters:
     path: typst/3c-functions-change/04-growth-models-function-comparison
     difficulty: 5
     mainline: true
+    prerequisites: [ch:inverse-proportion-quadratic-functions]
 
   - id: ch:functions-summary
     title_zh: 函数小结
@@ -378,6 +406,7 @@ chapters:
     difficulty: 5
     mainline: true
     kind: summary
+    prerequisites: [ch:growth-models-function-comparison]
 
   # ── Part 3d: Data & Uncertainty ────────────────────────────────────────────
   - id: ch:data-displays-descriptive-statistics
@@ -387,6 +416,7 @@ chapters:
     path: typst/3d-data-uncertainty/01-data-displays-descriptive-statistics
     difficulty: 4
     mainline: true
+    prerequisites: [ch:bridge-readiness-contracts, ch:fractions]
 
   - id: ch:frequency-histograms-variance
     title_zh: 频率·直方图·方差
@@ -395,6 +425,7 @@ chapters:
     path: typst/3d-data-uncertainty/02-frequency-histograms-variance
     difficulty: 4
     mainline: true
+    prerequisites: [ch:data-displays-descriptive-statistics]
 
   - id: ch:sample-space-probability-experimental-frequency
     title_zh: 样本空间·概率·实验频率
@@ -403,6 +434,7 @@ chapters:
     path: typst/3d-data-uncertainty/03-sample-space-probability-experimental-frequency
     difficulty: 4
     mainline: true
+    prerequisites: [ch:fractions, ch:ratio-proportion-percent]
 
   - id: ch:population-samples-estimation
     title_zh: 总体·样本·估计
@@ -411,6 +443,7 @@ chapters:
     path: typst/3d-data-uncertainty/04-population-samples-estimation
     difficulty: 5
     mainline: true
+    prerequisites: [ch:sample-space-probability-experimental-frequency, ch:frequency-histograms-variance]
 
   - id: ch:data-summary
     title_zh: 数据小结
@@ -420,6 +453,7 @@ chapters:
     difficulty: 5
     mainline: true
     kind: summary
+    prerequisites: [ch:population-samples-estimation]
 
   # ── Part 4: Capstone ───────────────────────────────────────────────────────
   - id: ch:shared-invention-tree-review
@@ -430,6 +464,7 @@ chapters:
     difficulty: 3
     mainline: true
     kind: capstone
+    prerequisites: [ch:algebra-summary, ch:geometry-summary, ch:functions-summary, ch:data-summary]
 
   - id: ch:cross-domain-problem-solving-modeling
     title_zh: 跨领域解题与建模
@@ -439,6 +474,7 @@ chapters:
     difficulty: 5
     mainline: true
     kind: capstone
+    prerequisites: [ch:shared-invention-tree-review]
 
   - id: ch:next-learning-map
     title_zh: 下一阶段学习地图
@@ -448,6 +484,7 @@ chapters:
     difficulty: 3
     mainline: true
     kind: capstone
+    prerequisites: [ch:cross-domain-problem-solving-modeling]
 
 nodes:
   - id: pf01-place-counting
@@ -1296,3 +1333,42 @@ nodes:
     chapter: ch:next-learning-map
     path: typst/4-capstone/03-next-learning-map/02-how-to-keep-studying.typ
     prerequisites: [cp05-full-solution-writeups]
+
+  # ── Optional bridges: high-school / forward-looking notes only ──────────────
+  # These nodes document existing "☞ 高中桥 / ☞ 继续往前" notes.
+  # They are intentionally not referenced by any mainline prerequisites.
+  - id: bridge-cb05-function-notation-preview
+    type: optional-bridge
+    chapter: ch:letters-expressions-relationship-templates
+    path: typst/2-common-bridges/05-letters-expressions-relationship-templates/99-review.typ
+    title_zh: 函数统一记法预告
+    description: 高中桥中把代数式、模板继续推进到 y = f(x) 的统一写法。
+    prerequisites: []
+  - id: bridge-al02-vieta-quadratic-preview
+    type: optional-bridge
+    chapter: ch:distributive-identities-factorization
+    path: typst/3a-algebra-symbols/02-distributive-identities-factorization/99-review.typ
+    title_zh: 韦达与配方法预告
+    description: 高中桥中把因式分解、配方法与二次方程和二次函数顶点式相连。
+    prerequisites: []
+  - id: bridge-ge01-vector-analytic-preview
+    type: optional-bridge
+    chapter: ch:congruence-and-basic-criteria
+    path: typst/3b-geometry-proof/01-congruence-and-basic-criteria/99-review.typ
+    title_zh: 向量与解析几何预告
+    description: 高中桥中说明全等证明会在向量和解析几何中以新语言重现。
+    prerequisites: []
+  - id: bridge-fn03-advanced-function-families-preview
+    type: optional-bridge
+    chapter: ch:inverse-proportion-quadratic-functions
+    path: typst/3c-functions-change/03-inverse-proportion-quadratic-functions/99-review.typ
+    title_zh: 高阶函数族预告
+    description: 高中桥中预告判别式、分式函数、三角函数与高次多项式函数。
+    prerequisites: []
+  - id: bridge-dt03-conditional-probability-preview
+    type: optional-bridge
+    chapter: ch:sample-space-probability-experimental-frequency
+    path: typst/3d-data-uncertainty/03-sample-space-probability-experimental-frequency/99-review.typ
+    title_zh: 条件概率与随机变量预告
+    description: 高中桥中预告条件概率、独立事件、几何概率、随机变量与期望。
+    prerequisites: []
